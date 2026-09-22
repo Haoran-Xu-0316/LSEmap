@@ -35,3 +35,10 @@ cover modeled study areas only; the MAR web interior omits upper-office slabs th
 obscure the ground hall. The SAW interior isolates the spiral stair study, and the
 LRB view includes the existing roof lightwell and triangular grid. The compressed
 model catalogue records the source hash.
+
+Edition 04 adds Columbia House street elevations and the Connaught House entrance.
+References: archived LSE Estate photographs and the 2025/26 LSE Property Handbook.
+Upper-bay repetition, roof shape and component dimensions remain estimates.
+The LSE logo is reproduced from the owner's existing personal-site SVG asset.
+The square favicon uses the original red LSE mark from that same vector artwork.
+The mark belongs to LSE; its display does not imply endorsement or affiliation.
