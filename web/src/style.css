@@ -102,14 +102,15 @@ svg {
   flex-shrink: 0;
 }
 .brand-mark {
-  display: grid;
-  place-items: center;
-  background: var(--accent);
-  color: #fff;
-  font-size: 24px;
-  font-weight: 700;
-  width: 32px;
+  display: block;
+  width: 34px;
   height: 34px;
+}
+.about-logo {
+  display: block;
+  width: 187px;
+  height: 64px;
+  margin-bottom: 24px;
 }
 .brand strong {
   font-size: 23px;
@@ -839,9 +840,8 @@ dialog::backdrop {
     gap: 7px;
   }
   .brand-mark {
-    width: 26px;
+    width: 29px;
     height: 29px;
-    font-size: 21px;
   }
   .brand strong {
     font-size: 20px;
