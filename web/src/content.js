@@ -7,6 +7,24 @@ export const statusNames = {
   unlocated: "独立轮廓待确认",
 };
 export const buildingDetails = {
+  COL: {
+    description:
+      "Columbia House以浅色石材立面沿Aldwych与Houghton Street转角展开。凹入窗洞、石材分缝、连续檐口与Garrick转角店面构成沿街层次。",
+    note: "已深化街面及木门入口；窗列节奏、屋顶和未见背面为估计，未建立完整内部。",
+    images: [
+      ["col-exterior", "Columbia House沿街石材立面"],
+      ["col-entrance", "木门、铭牌与石门廊"],
+    ],
+  },
+  CON: {
+    description:
+      "Connaught House的Aldwych入口由深色石材门墩、层叠石檐和后退的玻璃门构成，门框、拉手与台阶保留入口的进深。",
+    note: "本轮重点为实拍可见入口；上层窗列为估计，其余立面保留简化模型，未建立完整内部。",
+    images: [
+      ["con-entrance", "Connaught House凹入门廊"],
+      ["con-exterior", "Aldwych立面与入口位置"],
+    ],
+  },
   MAR: {
     description:
       "混凝土立面下是通透的Grand Hall。查看大厅围护、树状柱、弧形楼梯与夹层栏杆的连接。",
