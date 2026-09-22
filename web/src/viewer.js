@@ -226,7 +226,11 @@ export class CampusViewer {
     const center = box.getCenter(new THREE.Vector3());
     const mobileDetail = this.container.clientWidth < 700 && this.activeCode;
     const up = new THREE.Vector3(0, 1, 0);
-    const right = new THREE.Vector3().crossVectors(up, direction).normalize();
+    const right = new THREE.Vector3().crossVectors(up, direction);
+    // An exactly vertical view still needs a horizontal frame for fitting bounds.
+    // A zero cross product otherwise collapses both projected extents to zero.
+    if (right.lengthSq() < 1e-8) right.set(1, 0, 0);
+    else right.normalize();
     const cameraUp = new THREE.Vector3()
       .crossVectors(direction, right)
       .normalize();
