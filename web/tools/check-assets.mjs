@@ -31,9 +31,15 @@ assert.equal(catalogue.buildings.length, 31);
 assert.equal(new Set(catalogue.buildings.map((b) => b.code)).size, 31);
 assert.equal(
   catalogue.buildings.filter((b) => b.status === "detailed").length,
-  12,
+  14,
 );
 for (const building of catalogue.buildings) {
+  if (["COL", "CON"].includes(building.code)) {
+    const direction = building.exteriorDirection;
+    assert(direction && Math.hypot(...direction) > 0.99);
+    assert(Math.hypot(direction[0], direction[2]) > 0.25,
+      `${building.code} must open toward its street facade`);
+  }
   if (building.interior)
     await stat(
       join(output, `models/${building.code.toLowerCase()}-interior.glb`),
