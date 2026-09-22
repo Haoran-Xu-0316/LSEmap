@@ -45,7 +45,7 @@ test("desktop exploration, search, images, interior and navigation work without 
   );
   await page.locator("#overview").click();
   await page.locator("#detail-filter").click();
-  await expect(page.locator(".building-row")).toHaveCount(12);
+  await expect(page.locator(".building-row")).toHaveCount(14);
   await page.locator("#building-search").fill("zzmissing");
   await expect(page.locator("#empty-search")).toBeVisible();
   await page.locator("#building-search").fill("MAR");
