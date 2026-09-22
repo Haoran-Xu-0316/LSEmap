@@ -11,10 +11,14 @@ import bpy
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v03.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v04.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
+# Review-only cameras need their owning view layer evaluated before matrix_world.
+for scene in bpy.data.scenes:
+    for layer in scene.view_layers:
+        layer.update()
 source_scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
 bpy.context.window.scene = source_scene
 # Small bevels multiply the triangle count without changing the campus silhouette.
@@ -29,7 +33,7 @@ for original in source_scene.objects:
 bpy.context.view_layer.update()
 depsgraph = bpy.context.evaluated_depsgraph_get()
 records = json.loads((ROOT / 'data/buildings.json').read_text())['buildings']
-DETAIL_CODES = {'MAR', 'SAW', 'CBG', 'LRB', 'CKK', 'OLD', 'SAL', 'CLM', 'KSW', 'OCS', 'PAN', 'FAW'}
+DETAIL_CODES = {'MAR', 'SAW', 'CBG', 'LRB', 'CKK', 'OLD', 'SAL', 'CLM', 'KSW', 'OCS', 'PAN', 'FAW', 'COL', 'CON'}
 material_cache = {}
 
 
@@ -141,6 +145,7 @@ exterior_cameras = {
     'CBG': 'CBG_QA_01_facade', 'OLD': 'OLD_DETAIL_Houghton_entry',
     'SAL': 'SAL_DETAIL_north_facade', 'CLM': 'CLM_D3_front_camera',
     'KSW': 'KSW_D3_front_camera', 'OCS': 'OCS_D3_front_street_camera',
+    'COL': 'COL_D4_facade', 'CON': 'CON_D4_facade',
     'PAN': 'PAN_FAW_D3_frontage', 'FAW': 'PAN_FAW_D3_frontage',
 }
 for record in metadata:
@@ -187,7 +192,7 @@ for record in metadata:
     export_scene(interior_scene, code.lower() + '-interior.glb')
 
 payload = {
-    'version': '03', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '04', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
