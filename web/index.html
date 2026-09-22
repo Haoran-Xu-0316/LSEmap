@@ -1,0 +1,259 @@
+<!doctype html>
+<!--
+THESIS: Free exploration of a real, locally authored architectural study.
+OWN-WORLD: Cool daylight model table, white index, blue-black type, deep red selection.
+STORY: Locate a building, orbit its architecture, inspect the source model's details.
+FIRST VIEWPORT: Full-height model beside a retractable 292px index; controls below.
+FORM: User-selected free exploration. No introductory marketing page or auto tour.
+-->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e7ecef" />
+    <meta
+      name="description"
+      content="自由探索伦敦政治经济学院校园建筑。旋转模型、定位楼宇，查看建筑外观与公共空间细节。独立建筑研究项目。"
+    />
+    <title>LSEmap — 校园漫游</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#building-search">跳到建筑目录</a>
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="LSEmap，返回校园总览"
+        ><span class="brand-mark" aria-hidden="true">L</span
+        ><strong>LSE<span>map</span></strong></a
+      >
+      <span class="masthead-caption">London School of Economics</span>
+      <nav aria-label="页面功能">
+        <button
+          id="index-toggle"
+          class="text-button"
+          aria-controls="sidebar"
+          aria-expanded="true"
+        >
+          建筑目录
+        </button>
+        <button id="help-open" class="text-button">操作指南</button>
+        <button id="about-open" class="text-button">关于</button>
+      </nav>
+    </header>
+    <main class="workspace">
+      <aside id="sidebar" class="sidebar" aria-label="建筑目录与详情">
+        <section id="index-panel" class="index-panel">
+          <div class="index-heading">
+            <p class="location">HOLBORN, LONDON</p>
+            <h1>校园漫游</h1>
+            <p>从一栋建筑，走进一所大学。</p>
+          </div>
+          <label class="search-box"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5" />
+              <path d="m16 16 5 5" /></svg
+            ><input
+              id="building-search"
+              type="search"
+              placeholder="搜索楼名或代码"
+              autocomplete="off"
+          /></label>
+          <div class="index-meta">
+            <span id="result-count">建筑目录</span
+            ><button id="detail-filter" aria-pressed="false">
+              仅看深化模型
+            </button>
+          </div>
+          <div
+            id="building-list"
+            class="building-list"
+            aria-label="楼宇列表"
+          ></div>
+          <p id="empty-search" class="empty-state" hidden>
+            未找到这栋建筑。<br />试试楼宇代码，如MAR。
+          </p>
+          <footer class="index-footer">
+            <span class="legend-dot"></span>已深化模型<span
+              class="secondary-legend"
+              >其余为体量或待确认条目</span
+            >
+          </footer>
+        </section>
+        <section
+          id="detail-panel"
+          class="detail-panel"
+          hidden
+          aria-label="建筑详情"
+        ></section>
+      </aside>
+      <section id="stage" class="stage" aria-label="交互式校园模型">
+        <div id="canvas-container"></div>
+        <div id="labels" class="labels" aria-label="地图上的建筑"></div>
+        <div class="scene-heading">
+          <p id="scene-kicker">LSE CAMPUS</p>
+          <h2 id="scene-title">伦敦的这一角</h2>
+          <p id="scene-subtitle">拖动旋转，点击建筑探索</p>
+        </div>
+        <div id="loading" class="loading" role="status">
+          <span class="loading-indicator" aria-hidden="true"></span
+          ><span id="loading-copy">正在准备校园模型…</span>
+        </div>
+        <div id="fallback" class="fallback" hidden>
+          <img src="/images/campus.webp" alt="LSE校园建筑模型鸟瞰" />
+          <div>
+            <h2>暂时无法显示3D模型</h2>
+            <p id="fallback-message">你仍可以从建筑目录查看细节图。</p>
+            <button id="retry" class="primary-button">重新加载</button>
+          </div>
+        </div>
+        <button
+          id="north"
+          class="north"
+          aria-label="朝北俯视校园"
+          title="朝北俯视"
+        >
+          <span>N</span
+          ><svg viewBox="0 0 30 38" aria-hidden="true">
+            <path d="M15 2 27 33 15 27 3 33Z" />
+            <path d="M15 2v25" />
+          </svg>
+        </button>
+        <div class="map-toolbar" role="group" aria-label="模型视图控制">
+          <button id="overview" title="返回校园总览" aria-label="校园总览">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m3 10 9-7 9 7v11h-6v-7H9v7H3Z" /></svg
+            ><span>总览</span>
+          </button>
+          <span class="tool-divider"></span>
+          <button id="zoom-in" title="放大" aria-label="放大">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5v14" />
+            </svg>
+          </button>
+          <button id="zoom-out" title="缩小" aria-label="缩小">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14" />
+            </svg>
+          </button>
+          <span class="tool-divider"></span>
+          <button
+            id="labels-toggle"
+            aria-pressed="true"
+            title="显示或隐藏楼宇名称"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 5h16v12H9l-5 4Z" />
+              <path d="M8 9h8M8 13h5" /></svg
+            ><span>标签</span>
+          </button>
+          <button
+            id="context-toggle"
+            aria-pressed="true"
+            title="显示或隐藏周边建筑"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 21V9h7v12M10 21V3h11v18M1 21h22M14 7h3M14 11h3M14 15h3"
+              /></svg
+            ><span>周边</span>
+          </button>
+        </div>
+        <div class="map-caption">
+          <span id="view-mode">校园全景</span
+          ><span class="gesture-hint">拖动旋转 / 双指缩放</span>
+        </div>
+        <a
+          class="attribution"
+          href="https://www.openstreetmap.org/copyright"
+          target="_blank"
+          rel="noopener noreferrer"
+          >© OpenStreetMap contributors</a
+        >
+      </section>
+    </main>
+    <dialog
+      id="gallery-dialog"
+      class="gallery-dialog"
+      aria-labelledby="gallery-title"
+    >
+      <button class="dialog-close" data-close aria-label="关闭图片">×</button>
+      <figure>
+        <img id="gallery-image" src="/images/campus.webp" alt="校园总览模型" />
+        <figcaption>
+          <h2 id="gallery-title"></h2>
+          <p>Blender模型渲染，非实景照片。</p>
+        </figcaption>
+      </figure>
+      <div class="gallery-controls">
+        <button id="gallery-prev" aria-label="上一张">←</button
+        ><span id="gallery-position"></span
+        ><button id="gallery-next" aria-label="下一张">→</button>
+      </div>
+    </dialog>
+    <dialog id="help-dialog" class="info-dialog" aria-labelledby="help-title">
+      <button class="dialog-close" data-close aria-label="关闭指南">×</button>
+      <p class="dialog-kicker">开始探索</p>
+      <h2 id="help-title">把校园放在手中</h2>
+      <dl>
+        <dt>旋转</dt>
+        <dd>鼠标左键拖动；手机单指拖动。</dd>
+        <dt>平移</dt>
+        <dd>鼠标右键拖动；手机双指拖动。</dd>
+        <dt>缩放</dt>
+        <dd>鼠标滚轮、双指捏合，或底部加减按钮。</dd>
+        <dt>定位</dt>
+        <dd>点击建筑或标签，也可在目录搜索楼名、代码。</dd>
+        <dt>键盘</dt>
+        <dd>
+          用Tab选择目录与控制按钮；聚焦模型后用方向键平移，+ /
+          −缩放，Home返回总览。
+        </dd>
+        <dt>内部</dt>
+        <dd>部分建筑提供公共内部研究模型，点击详情中的公共内部查看。</dd>
+      </dl>
+      <p class="dialog-note">这是一份建筑研究模型，不提供真实路线导航。</p>
+    </dialog>
+    <dialog id="about-dialog" class="info-dialog" aria-labelledby="about-title">
+      <button class="dialog-close" data-close aria-label="关闭项目说明">
+        ×
+      </button>
+      <p class="dialog-kicker">独立建筑研究</p>
+      <h2 id="about-title">关于LSEmap</h2>
+      <p>
+        以公开地图、建筑资料与照片为依据，逐步复刻LSE校园的建筑形态和公共空间。本页展示第03版模型。
+      </p>
+      <p>
+        31个楼宇代码中，12栋已开展细节深化；其余包含简化体量、施工地块和待确认条目。5处公共内部可单独查看。
+      </p>
+      <p>
+        多数楼高、构件尺寸和内部位置依据照片估计，未达到竣工测绘精度。网页材质经过简化，细节图保留Blender渲染效果。资料时间不一，不代表当前现场。
+      </p>
+      <p>本项目与LSE无官方隶属关系。</p>
+      <div class="source-links">
+        <a
+          href="https://www.lse.ac.uk/lse-information/campus-map"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LSE官方校园地图 ↗</a
+        ><a
+          href="https://www.openstreetmap.org/copyright"
+          target="_blank"
+          rel="noopener noreferrer"
+          >地理数据来源及许可 ↗</a
+        ><a
+          href="https://github.com/Haoran-Xu-0316/LSEmap"
+          target="_blank"
+          rel="noopener noreferrer"
+          >项目源码 ↗</a
+        >
+      </div>
+    </dialog>
+    <noscript
+      ><div class="noscript">
+        此页面需要JavaScript加载交互模型。<a href="/images/campus.webp"
+          >查看校园总览图片</a
+        >
+      </div></noscript
+    >
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
