@@ -56,6 +56,10 @@ building roofs and are culled when overlapping. The selected code stays visible.
 
 ## Components
 
+The masthead uses the original square LSE vector mark at its native aspect ratio.
+The full lockup appears in the project information dialog, alongside the independent
+project attribution. Preserve the supplied logo artwork and its original red.
+
 Searchable building list. Selection panel with model render and plain-language
 scope. Exterior/interior toggle appears only when an interior study exists. Selection
 opens an isolated building view, with a toolbar action to restore its surroundings. Bottom
