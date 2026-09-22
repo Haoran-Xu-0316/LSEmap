@@ -17,7 +17,7 @@ Prepare static output for the user's later Cloudflare deployment.
 
 Orbit, pan, zoom, select buildings and inspect architectural renderings. Existing
 public-interior studies are separate views, not a promise of navigable rooms.
-Source: the local version 03 Blender campus. There are 31 map-code records, 12
+Source: the local version 04 Blender campus. There are 31 map-code records, 14
 buildings with developed details, and two unresolved footprints. Most dimensions
 are estimated. This is an independent study, not an official map or route planner.
 
@@ -32,7 +32,7 @@ Their relationship to LSE is unspecified; navigation should need no prior knowle
 
 ## Evidence on Hand
 
-Existing version 03 model, building catalogue, OSM footprint provenance and native
+Existing version 04 model, building catalogue, OSM footprint provenance and native
 Blender renders. Web materials simplify procedural shaders; detail images preserve
 the rendered finishes. There is no verified complete interior survey.
 
