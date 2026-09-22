@@ -1,0 +1,21 @@
+# Publish the viewer only. Research archives and editable models stay local.
+/*
+!/.gitignore
+!/README.md
+!/PRODUCT.md
+!/DESIGN.md
+!/package.json
+!/package-lock.json
+!/vite.config.js
+!/playwright.config.js
+!/wrangler.jsonc
+!/web/
+.DS_Store
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.log
+*.blend
+*.blend1
+.env*
