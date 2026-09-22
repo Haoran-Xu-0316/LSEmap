@@ -11,6 +11,13 @@ public-interior studies load on demand. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
 fallback when WebGL is unavailable.
 
+Edition 04 adds Columbia House stone reveals, rusticated courses, entrance joinery
+and the Connaught House recessed portal. Four new render views document these
+changes. Fourteen buildings now contain detail studies; CON remains an entrance-led
+study with estimated upper bays. Heights and unseen elevations remain approximate.
+The LSE mark comes from the existing personal-site vector asset, with no affiliation
+or endorsement implied.
+
 ## Local preview
 
 Requires Node.js 22.12 or newer.
