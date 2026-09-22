@@ -1,0 +1,742 @@
+{
+  "version": "03",
+  "sourceModelSha256": "09986ce9be3fbfd5778d067987ab792f94023904f3fcac3d9e9e6a22dd028a0c",
+  "coordinateSystem": "Local metres; X east, Y up, Z south",
+  "origin": [
+    -0.1167,
+    51.5146
+  ],
+  "buildings": [
+    {
+      "code": "61A",
+      "name": "61 Aldwych",
+      "address": "61 Aldwych",
+      "status": "provisional",
+      "bounds": {
+        "min": [
+          -76.85647583007812,
+          0.0,
+          47.57329177856445
+        ],
+        "max": [
+          -25.59868621826172,
+          30.25,
+          133.3164520263672
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "CBG",
+      "name": "Centre Building",
+      "address": "2 Houghton Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          2.060716152191162,
+          -0.13249999284744263,
+          31.516820907592773
+        ],
+        "max": [
+          68.16556549072266,
+          53.279998779296875,
+          100.0077896118164
+        ]
+      },
+      "interior": true,
+      "exteriorDirection": [
+        0.3290587365627289,
+        0.49755552411079407,
+        0.8025950193405151
+      ],
+      "interiorView": {
+        "position": [
+          43.64379119873047,
+          1.75,
+          57.76911926269531
+        ],
+        "target": [
+          53.48973083496094,
+          9.151405334472656,
+          42.01232147216797
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          2.8369922637939453,
+          -0.2750000059604645,
+          32.052616119384766
+        ],
+        "max": [
+          67.38612365722656,
+          52.19499969482422,
+          99.47199249267578
+        ]
+      }
+    },
+    {
+      "code": "CKK",
+      "name": "Cheng Kin Ku Building",
+      "address": "54 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -138.37171936035156,
+          0.0,
+          -101.94637298583984
+        ],
+        "max": [
+          -82.46043395996094,
+          29.0,
+          -53.928897857666016
+        ]
+      },
+      "interior": true,
+      "interiorView": {
+        "position": [
+          -97.4619140625,
+          4.800000190734863,
+          -68.80329895019531
+        ],
+        "target": [
+          -112.6413803100586,
+          6.388347625732422,
+          -81.728515625
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          -129.93069458007812,
+          -0.15000000596046448,
+          -96.27594757080078
+        ],
+        "max": [
+          -91.05134582519531,
+          14.042499542236328,
+          -58.8443489074707
+        ]
+      }
+    },
+    {
+      "code": "CLM",
+      "name": "Clement House",
+      "address": "99 Aldwych",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          99.23820495605469,
+          -0.03500000014901161,
+          121.30353546142578
+        ],
+        "max": [
+          132.280029296875,
+          29.149999618530273,
+          155.49176025390625
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.3913891613483429,
+        0.48209914565086365,
+        0.7838334441184998
+      ]
+    },
+    {
+      "code": "COL",
+      "name": "Columbia House",
+      "address": "69 Aldwych",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          3.17525053024292,
+          0.0,
+          98.20407104492188
+        ],
+        "max": [
+          23.255640029907227,
+          29.25,
+          127.8695297241211
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "CON",
+      "name": "Connaught House",
+      "address": "63-65 Aldwych",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -34.34856414794922,
+          0.0,
+          96.73214721679688
+        ],
+        "max": [
+          -4.919323444366455,
+          29.25,
+          134.03517150878906
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "COW",
+      "name": "Cowdray House",
+      "address": "6 Portugal Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -6.073170185089111,
+          0.0,
+          -7.473414897918701
+        ],
+        "max": [
+          31.31922149658203,
+          18.25,
+          14.46843147277832
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "FAW",
+      "name": "Fawcett House",
+      "address": "2 Clement’s Inn",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          72.36564636230469,
+          0.0,
+          76.17027282714844
+        ],
+        "max": [
+          106.32102966308594,
+          44.22999954223633,
+          97.4258804321289
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        0.5941781401634216,
+        0.48337969183921814,
+        -0.6428813338279724
+      ]
+    },
+    {
+      "code": "KGS",
+      "name": "King’s Chambers",
+      "address": "29-31 Portugal Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -33.50767517089844,
+          0.0,
+          -12.221452713012695
+        ],
+        "max": [
+          -12.606090545654297,
+          16.25,
+          5.0454559326171875
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "KSW",
+      "name": "20 Kingsway",
+      "address": "20 Kingsway",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -81.10916900634766,
+          0.0,
+          36.45901870727539
+        ],
+        "max": [
+          -47.3437385559082,
+          20.549999237060547,
+          60.44700622558594
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.7772495150566101,
+        0.48201504349708557,
+        0.4044066071510315
+      ]
+    },
+    {
+      "code": "LAK",
+      "name": "Lakatos Building",
+      "address": "7 Portugal Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          2.400794744491577,
+          0.0,
+          -13.922300338745117
+        ],
+        "max": [
+          23.812145233154297,
+          16.25,
+          6.294039726257324
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "LCH",
+      "name": "Lincoln Chambers",
+      "address": "2-4 Portsmouth Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -34.73127746582031,
+          0.0,
+          -25.697275161743164
+        ],
+        "max": [
+          -6.7622151374816895,
+          14.25,
+          -4.998415946960449
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "5LF",
+      "name": "5 Lincoln’s Inn Fields",
+      "address": "5 Lincoln’s Inn Fields",
+      "status": "unlocated",
+      "bounds": null,
+      "interior": false
+    },
+    {
+      "code": "35L",
+      "name": "35 Lincoln’s Inn Fields",
+      "address": "35 Lincoln’s Inn Fields",
+      "status": "construction",
+      "bounds": {
+        "min": [
+          58.05344009399414,
+          0.0,
+          -109.31193542480469
+        ],
+        "max": [
+          108.45762634277344,
+          2.700000047683716,
+          -57.532066345214844
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "49L",
+      "name": "Coopers Restaurant",
+      "address": "49 Lincoln’s Inn Fields",
+      "status": "unlocated",
+      "bounds": null,
+      "interior": false
+    },
+    {
+      "code": "50L",
+      "name": "50 Lincoln’s Inn Fields",
+      "address": "50 Lincoln’s Inn Fields",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -55.87167739868164,
+          0.0,
+          -66.30464172363281
+        ],
+        "max": [
+          -45.68274688720703,
+          13.25,
+          -52.291099548339844
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "51L",
+      "name": "51 Lincoln’s Inn Fields",
+      "address": "51 Lincoln’s Inn Fields",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -74.82528686523438,
+          0.0,
+          -58.53145217895508
+        ],
+        "max": [
+          -56.35746383666992,
+          15.25,
+          -36.09071350097656
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "LRB",
+      "name": "Lionel Robbins Building，Library",
+      "address": "10 Portugal Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          24.92513656616211,
+          0.0,
+          -41.29721450805664
+        ],
+        "max": [
+          114.51506042480469,
+          27.315105438232422,
+          27.600141525268555
+        ]
+      },
+      "interior": true,
+      "interiorView": {
+        "position": [
+          69.63214874267578,
+          1.5,
+          -10.39675235748291
+        ],
+        "target": [
+          69.63214874267578,
+          21.09505844116211,
+          -14.400962829589844
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          25.21265411376953,
+          -0.019999999552965164,
+          -41.15494155883789
+        ],
+        "max": [
+          114.29000091552734,
+          27.315105438232422,
+          27.380033493041992
+        ]
+      }
+    },
+    {
+      "code": "MAR",
+      "name": "Marshall Building",
+      "address": "44 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -45.36587142944336,
+          0.0,
+          -80.22404479980469
+        ],
+        "max": [
+          23.157800674438477,
+          42.79999923706055,
+          -24.454532623291016
+        ]
+      },
+      "interior": true,
+      "exteriorDirection": [
+        -0.3176555037498474,
+        0.4841021001338959,
+        -0.8153159618377686
+      ],
+      "interiorView": {
+        "position": [
+          1.6433366537094116,
+          1.7000000476837158,
+          -66.45145416259766
+        ],
+        "target": [
+          -12.009961128234863,
+          3.3012337684631348,
+          -51.9248046875
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          -44.53135299682617,
+          0.10000000149011612,
+          -77.66929626464844
+        ],
+        "max": [
+          23.157800674438477,
+          12.800000190734863,
+          -24.454532623291016
+        ]
+      }
+    },
+    {
+      "code": "OLD",
+      "name": "Old Building",
+      "address": "Houghton Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -39.16532897949219,
+          0.0,
+          26.9625244140625
+        ],
+        "max": [
+          17.64790153503418,
+          28.375,
+          100.10848236083984
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        0.7883862853050232,
+        0.48807665705680847,
+        0.37447047233581543
+      ]
+    },
+    {
+      "code": "OCS",
+      "name": "Old Curiosity Shop",
+      "address": "13-14 Portsmouth Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -47.91916275024414,
+          0.1379999965429306,
+          -47.04456329345703
+        ],
+        "max": [
+          -38.47317886352539,
+          6.659917831420898,
+          -39.1242561340332
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.23757842183113098,
+        0.4821758270263672,
+        0.8432455658912659
+      ]
+    },
+    {
+      "code": "PAN",
+      "name": "Pankhurst House",
+      "address": "1 Clement’s Inn",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          53.72006607055664,
+          0.0,
+          54.27970504760742
+        ],
+        "max": [
+          80.25440979003906,
+          44.22999954223633,
+          86.5759048461914
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        0.5941781401634216,
+        0.48337969183921814,
+        -0.6428813338279724
+      ]
+    },
+    {
+      "code": "PAR",
+      "name": "Parish Hall",
+      "address": "Sheffield Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -49.204490661621094,
+          0.0,
+          2.3778076171875
+        ],
+        "max": [
+          -25.371952056884766,
+          11.25,
+          16.687314987182617
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "PEA",
+      "name": "Peacock Theatre",
+      "address": "Portugal Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -75.16309356689453,
+          0.0,
+          11.783889770507812
+        ],
+        "max": [
+          -54.78813552856445,
+          12.25,
+          30.395496368408203
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "PEL",
+      "name": "Pethick-Lawrence House",
+      "address": "3 Clement’s Inn",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          100.57416534423828,
+          0.0,
+          88.59693145751953
+        ],
+        "max": [
+          125.50901794433594,
+          44.25,
+          118.90597534179688
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "POR",
+      "name": "1 Portsmouth Street",
+      "address": "1 Portsmouth Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -39.153839111328125,
+          0.0,
+          -27.78675079345703
+        ],
+        "max": [
+          -28.884843826293945,
+          13.25,
+          -14.94102954864502
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "SAR",
+      "name": "Sardinia House",
+      "address": "52 Lincoln’s Inn Fields",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -92.68938446044922,
+          0.0,
+          -54.89435577392578
+        ],
+        "max": [
+          -65.96768951416016,
+          23.25,
+          -28.2945613861084
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "SAW",
+      "name": "Saw Swee Hock Student Centre",
+      "address": "1 Sheffield Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -84.64329528808594,
+          -0.054999999701976776,
+          -37.45360565185547
+        ],
+        "max": [
+          -46.9441032409668,
+          27.954999923706055,
+          16.283767700195312
+        ]
+      },
+      "interior": true,
+      "exteriorDirection": [
+        0.851334273815155,
+        0.4969167709350586,
+        -0.16823700070381165
+      ],
+      "interiorBounds": {
+        "min": [
+          -64.704833984375,
+          0.20000000298023224,
+          -16.360464096069336
+        ],
+        "max": [
+          -58.64506530761719,
+          15.309844017028809,
+          -10.300694465637207
+        ]
+      }
+    },
+    {
+      "code": "SHF",
+      "name": "Sheffield Street",
+      "address": "9-10 Sheffield Street",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -43.90477752685547,
+          0.0,
+          -17.757997512817383
+        ],
+        "max": [
+          -34.2043571472168,
+          13.25,
+          -1.002700924873352
+        ]
+      },
+      "interior": false
+    },
+    {
+      "code": "SAL",
+      "name": "Sir Arthur Lewis Building",
+      "address": "32 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          91.76612091064453,
+          -0.03999999910593033,
+          -137.53904724121094
+        ],
+        "max": [
+          159.88121032714844,
+          38.20000076293945,
+          -76.38041687011719
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.6556274890899658,
+        0.4838261604309082,
+        -0.5797110795974731
+      ]
+    },
+    {
+      "code": "STC",
+      "name": "St Clement’s",
+      "address": "Clare Market",
+      "status": "massing",
+      "bounds": {
+        "min": [
+          -17.63115119934082,
+          0.0,
+          10.701240539550781
+        ],
+        "max": [
+          28.3637638092041,
+          21.25,
+          35.90584182739258
+        ]
+      },
+      "interior": false
+    }
+  ],
+  "limitations": "Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.",
+  "footprintAttribution": "© OpenStreetMap contributors, ODbL 1.0"
+}
