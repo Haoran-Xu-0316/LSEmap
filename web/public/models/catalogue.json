@@ -1,6 +1,6 @@
 {
-  "version": "03",
-  "sourceModelSha256": "09986ce9be3fbfd5778d067987ab792f94023904f3fcac3d9e9e6a22dd028a0c",
+  "version": "04",
+  "sourceModelSha256": "d43b32dad2fa3241b8c0d43aca8575ca7ed515b889d17eadfa2f843622816f32",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -147,26 +147,31 @@
       "code": "COL",
       "name": "Columbia House",
       "address": "69 Aldwych",
-      "status": "massing",
+      "status": "detailed",
       "bounds": {
         "min": [
-          3.17525053024292,
-          0.0,
-          98.20407104492188
+          2.9004480838775635,
+          -0.20250000059604645,
+          98.30819702148438
         ],
         "max": [
-          23.255640029907227,
-          29.25,
-          127.8695297241211
+          23.38327980041504,
+          29.0,
+          128.17990112304688
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.5543825626373291,
+        0.5000902414321899,
+        0.6652591228485107
+      ]
     },
     {
       "code": "CON",
       "name": "Connaught House",
       "address": "63-65 Aldwych",
-      "status": "massing",
+      "status": "detailed",
       "bounds": {
         "min": [
           -34.34856414794922,
@@ -175,11 +180,16 @@
         ],
         "max": [
           -4.919323444366455,
-          29.25,
+          29.360000610351562,
           134.03517150878906
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.13161249458789825,
+        0.5131147503852844,
+        0.8481693863868713
+      ]
     },
     {
       "code": "COW",
