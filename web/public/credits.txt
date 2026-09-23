@@ -44,7 +44,7 @@ The square favicon uses the original red LSE mark from that same vector artwork.
 The mark belongs to LSE; its display does not imply endorsement or affiliation.
 
 Individual detail downloads retain the native evaluated bevels and curve resolution.
-Twenty-nine building models and five public-interior studies load on demand.
+Thirty building models and five public-interior studies load on demand.
 Building models include the existing authored floor plates, stairs and roof slabs;
 this does not establish complete or surveyed interiors. Metric UV layers are
 normalized during export to preserve the source brick and slate courses.
@@ -75,3 +75,12 @@ https://61aldwych.mybuildings.com/Core/Content/BuildingProfile/Content9121.aspx
 The OSM candidates remain provisionally attributed. Stone bays, tall pilasters,
 roof dormers and the corner pavilion are approximate authored geometry.
 No proposed redevelopment interior, reference photograph or image texture is shipped.
+
+Edition 08 corrects the 49L restaurant and adjoining 50/50A building envelopes.
+Source: Rock Townsend Architects, LSE Cooper's Restaurant Block Plan,
+RT22055-RTA-XX-XX-DR-A-00002, PL01, 22 June 2022:
+https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf
+The drawing is a reference only and is not redistributed. Its outlines are
+approximately registered to five OCS corners in the existing OSM-derived campus.
+Neither registration nor rendered envelopes establish surveyed or tenancy boundaries.
+Facade details follow archived LSE estate photos; vertical dimensions are estimated.
