@@ -72,9 +72,13 @@ function showGallery(images, index) {
   $("#gallery-dialog").showModal();
 }
 
+function galleryImageUrl(name) {
+  return `/images/${name}.webp?v=16-${modelRevision.slice(0, 12)}`;
+}
+
 function renderGallery() {
   const [name, caption] = gallery[galleryIndex];
-  $("#gallery-image").src = `/images/${name}.webp`;
+  $("#gallery-image").src = galleryImageUrl(name);
   $("#gallery-image").alt = caption;
   $("#gallery-title").textContent = caption;
   $("#gallery-position").textContent =
@@ -98,7 +102,7 @@ function renderDetail(building) {
     const photo = element("button", "detail-photo");
     photo.setAttribute("aria-label", `放大查看${details.images[0][1]}`);
     const image = element("img");
-    image.src = `/images/${details.images[0][0]}.webp`;
+    image.src = galleryImageUrl(details.images[0][0]);
     image.alt = details.images[0][1];
     image.width = 500;
     image.height = 360;
@@ -193,7 +197,7 @@ function renderDetail(building) {
       const button = element("button");
       button.setAttribute("aria-label", caption);
       const image = element("img");
-      image.src = `/images/${name}.webp`;
+      image.src = galleryImageUrl(name);
       image.alt = "";
       image.loading = "lazy";
       button.append(image);
