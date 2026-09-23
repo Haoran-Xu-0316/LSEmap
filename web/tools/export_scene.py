@@ -13,7 +13,7 @@ import bpy
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v07.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v08.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -44,6 +44,7 @@ DETAIL_CODES = {'MAR', 'SAW', 'CBG', 'LRB', 'CKK', 'OLD', 'SAL', 'CLM', 'KSW', '
 FACADE_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage05/infill-manifest.json').read_text())['buildings']}
 FACADE_RECORDS['5LF'] = json.loads((ROOT / 'result/blender/stage06/attribution.json').read_text())
 FACADE_RECORDS['61A'] = json.loads((ROOT / 'result/blender/stage07/aldwych-manifest.json').read_text())
+FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage08/coopers-manifest.json').read_text())['buildings']})
 material_cache = {}
 
 
@@ -189,9 +190,7 @@ for record in records:
     exterior = [o for c in root_collection.children if 'INTERIOR' not in c.name and 'UNRESOLVED' not in c.name for o in c.all_objects]
     obj, bounds = clone_group(exterior, code, campus_scene)
     state = 'detailed' if code in DETAIL_CODES else 'facade' if code in FACADE_RECORDS else 'massing'
-    if code == '49L':
-        state = 'unlocated'
-    elif code == '61A':
+    if code == '61A':
         state = 'provisional'
     elif code == '35L':
         state = 'construction'
@@ -221,6 +220,8 @@ for record in metadata:
         study = FACADE_RECORDS[record['code']]
         record['exteriorDirection'] = list(Vector(study['exteriorDirection']).normalized())
         record['facadeScope'] = study['scope']
+        if 'sourceDrawing' in study:
+            record['footprintSource'] = {'drawing': study['sourceDrawing'], 'sourcePage': study['sourcePage'], 'registration': 'Approximate registration to five OCS outline corners; not surveyed coordinates'}
         if 'sourcePoint' in study:
             record['footprintSource'] = {key: study[key] for key in ['osmId', 'sourcePoint', 'sourcePage', 'sourceMap']}
 
@@ -345,12 +346,12 @@ for record in metadata:
             objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name]
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
-report_path = ROOT / 'result/web/edition07/export-manifest.json'
+report_path = ROOT / 'result/web/edition08/export-manifest.json'
 report_path.parent.mkdir(parents=True, exist_ok=True)
 report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
-    'version': '07', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '08', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
