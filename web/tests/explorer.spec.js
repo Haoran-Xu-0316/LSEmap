@@ -129,14 +129,14 @@ test("mobile map and detail sheet remain usable without horizontal overflow", as
 test("model network failure preserves gallery access and retry recovers", async ({
   page,
 }) => {
-  await page.route("**/models/campus.glb", (route) => route.abort());
+  await page.route("**/models/campus.glb*", (route) => route.abort());
   await page.goto("/");
   await expect(page.locator("#fallback")).toBeVisible({ timeout: 60000 });
   await page.locator('.building-row[data-code="OCS"]').click();
   await page.locator(".detail-photo").click();
   await expect(page.locator("#gallery-dialog")).toBeVisible();
   await page.keyboard.press("Escape");
-  await page.unroute("**/models/campus.glb");
+  await page.unroute("**/models/campus.glb*");
   await page.locator("#retry").click();
   await expect(page.locator('canvas[data-ready="true"]')).toBeVisible({
     timeout: 60000,
