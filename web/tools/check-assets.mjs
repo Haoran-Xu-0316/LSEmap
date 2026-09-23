@@ -56,7 +56,7 @@ for (const detail of Object.values(buildingDetails)) {
 }
 const detailAssets = catalogue.buildings.flatMap((building) =>
   [building.detailedExterior, building.detailedInterior].filter(Boolean));
-assert.equal(detailAssets.length, 33);
+assert.equal(detailAssets.length, 34);
 assert.equal(catalogue.buildings.filter((b) => b.status === "facade").length, 14);
 for (const asset of detailAssets) {
   const buffer = await readFile(join(output, asset.url));
