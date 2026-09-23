@@ -173,6 +173,18 @@ function renderDetail(building) {
     }
   }
   if (actions.childElementCount) detailPanel.append(actions);
+  if (building.detailedExterior && $("#fallback").hidden) {
+    const quality = element("div", "detail-quality");
+    const status = element("span", "", "正在准备建筑细节…");
+    status.id = "detail-quality-status";
+    status.setAttribute("role", "status");
+    const retry = element("button", "", "重试加载");
+    retry.id = "detail-quality-retry";
+    retry.hidden = true;
+    retry.addEventListener("click", () => viewer?.retryDetails(building));
+    quality.append(status, retry);
+    detailPanel.append(quality);
+  }
   detailPanel.append(element("p", "detail-description", details.description));
   if (details.images.length > 1) {
     const strip = element("div", "detail-gallery");
@@ -198,6 +210,17 @@ function renderDetail(building) {
   );
   detailPanel.append(note);
   detailPanel.scrollTop = 0;
+}
+
+function updateDetailQuality({ code, kind, state }) {
+  if (current?.code !== code) return;
+  const status = $("#detail-quality-status");
+  if (!status) return;
+  const subject = kind === "interior" ? "内部细节" : "外观细节";
+  status.textContent = state === "ready" ? `${subject}已加载`
+    : state === "error" ? "细节加载失败，当前显示基础模型"
+    : `正在加载${subject}，可继续浏览…`;
+  $("#detail-quality-retry").hidden = state !== "error";
 }
 
 function setSceneCopy(building) {
@@ -284,7 +307,7 @@ async function start() {
   viewer = null;
   try {
     if (!buildings.length) {
-      const response = await fetch("/models/catalogue.json");
+      const response = await fetch("/models/catalogue.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("catalogue");
       const data = await response.json();
       buildings = [...data.buildings].sort(
@@ -305,6 +328,7 @@ async function start() {
       selectBuilding,
       () =>
         showFailure("浏览器暂停了3D显示。可以重新加载，或继续查看建筑细节图。"),
+      updateDetailQuality,
     );
     await viewer.load((event) => {
       $("#loading-copy").textContent = event.total
