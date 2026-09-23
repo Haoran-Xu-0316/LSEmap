@@ -1,0 +1,233 @@
+{
+  "buildings": [
+    {
+      "code": "61A",
+      "status": "provisional",
+      "detailedExterior": {
+        "sha256": "7a16781c3b7e8c3c0b9befc9f76756ffa464f45f2a06769f2827c02db9b2be2f"
+      }
+    },
+    {
+      "code": "CBG",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "80b68ec81575282fc4cfbc27c49e9f1e447d5b7110b4f66e9d02dd8a16cf3d19"
+      },
+      "detailedInterior": {
+        "sha256": "db8ddd837ea0648ead4fc56dc57871282db92ac9ee5c3bb9614315672b9c539c"
+      }
+    },
+    {
+      "code": "CKK",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "ead5cf422b7c051ddf8d41e7e08fefd3d2e20a85b8e064a3bc39e82d3f960675"
+      },
+      "detailedInterior": {
+        "sha256": "91fa2b1c4d5d1e56b0ca6d78aa914d3dea46cc184fafb1127c134710b0a46a35"
+      }
+    },
+    {
+      "code": "CLM",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "025af837b0e3009a5bcee3864e2c34b13ee0b5a388597b6e47bfa1ae049e5143"
+      }
+    },
+    {
+      "code": "COL",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "f48d7288d7ce64df5604ead8f9300ded2c051bfb8bc13f22b4ac44171ff23990"
+      }
+    },
+    {
+      "code": "CON",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "365b56fde61a71a8ffb32fc41b3d8e05fec4e620ccb07075a321dd1857686386"
+      }
+    },
+    {
+      "code": "COW",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "8b7da0253b30d8d21dea2dd10db9383feaa41ea2b65b557e81cd98494659c0f9"
+      }
+    },
+    {
+      "code": "FAW",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "94d72461a6e407d03e702a0e4a7a2e0e17cd9400ae7b874f879e30537635ec34"
+      }
+    },
+    {
+      "code": "KGS",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "d93cf8df8e86e22ce1a500e4933b32e4b69cbe2dfd73ad0562098d989aef0874"
+      }
+    },
+    {
+      "code": "KSW",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "d8447c4017a752f58a758436bf8d57f4d8176f64a69d5fe11a9b5a74f647169d"
+      }
+    },
+    {
+      "code": "LAK",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "18aeea91825507ef40872cb56bd21ce562698905f4854c5a01b23a82891ad7ca"
+      }
+    },
+    {
+      "code": "LCH",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "e5abd90bde65ec0eb009da4afd9b15e859270090d2b06952a07280f7dee7e3de"
+      }
+    },
+    {
+      "code": "5LF",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "d2f15238c35d67e33f7a1433368b6179825ee7f2ca3bf8c2b26d38b04f34c9a7"
+      }
+    },
+    {
+      "code": "35L",
+      "status": "construction"
+    },
+    {
+      "code": "49L",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "203bf040d7451a854a6ee29ce15fdaa73ba625b6d5373111b8a8e5b39697bc1c"
+      }
+    },
+    {
+      "code": "50L",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "56d67271c32a70158820098ff2f2b1c2dce68d2c1ac18af47bff1466aba53f7a"
+      }
+    },
+    {
+      "code": "51L",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "8cb66ef6e5e7e3a9df599c82152255e4e3ffeb1d2c8b20bbf315241e1d1d4d40"
+      }
+    },
+    {
+      "code": "LRB",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "a3029857b1c22114f1595ba68bd95702d1b51f4f5457958785e111d0563f228c"
+      },
+      "detailedInterior": {
+        "sha256": "dc2490939e939f3e7b123b2128b648951759b0428fe263b4da9b35bb721f9144"
+      }
+    },
+    {
+      "code": "MAR",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "58638a4e26cbaf042842ccad4c6c6462fcf9a76ea266c10a95ca8b828f3c0582"
+      },
+      "detailedInterior": {
+        "sha256": "11915d8f9c7f752765cb0e437ff88f492a63592edb40c674da3eb6c4be5c1797"
+      }
+    },
+    {
+      "code": "OLD",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "396d6a5302fefa059780a53c55910ba6b20e611f6936a7105b801c62174d1028"
+      }
+    },
+    {
+      "code": "OCS",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "c5066c74b014d02e343f74e04f091bd09ee0832beb955ac9422a647dcd889813"
+      }
+    },
+    {
+      "code": "PAN",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "34dc0ca6fe2d53c71e4ec34ccf801a51e619d59d5c54b51599cdcf849a0fb8cd"
+      }
+    },
+    {
+      "code": "PAR",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "1d36195f7e83dce71c1957a09779aff8289901d0f5efae02fd93d4c151b94199"
+      }
+    },
+    {
+      "code": "PEA",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "a266f3271365b0fca3518379c1ab1c12e20f8c6fe7fb8c2a2470bc75977c6b81"
+      }
+    },
+    {
+      "code": "PEL",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "2c1e667b8722e81cb7945d71e94bf1ef129f3d393676ca0d7520a8a2013f0669"
+      }
+    },
+    {
+      "code": "POR",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "c6bcff33de6fcb129ba0f5c93c3b71e181681fd56e49584e82fdadb8354ea329"
+      }
+    },
+    {
+      "code": "SAR",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "b4fbd5aef8dc68ef07861d5a68fc141d774a644005139d473e64c6eb4e4b2875"
+      }
+    },
+    {
+      "code": "SAW",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "81b4e6012245854b82fa5a7f8159cf1f05222f4fd3ae76fa42ffc8d1fd17056e"
+      },
+      "detailedInterior": {
+        "sha256": "202c3d2153433cfd35b43f175e23d59aaf751f6526badbe957db6739b76bb3b3"
+      }
+    },
+    {
+      "code": "SHF",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "ce1d7b68076f10c551154ebd667e659bb289c72143921b79fd466a9c97ec2a36"
+      }
+    },
+    {
+      "code": "SAL",
+      "status": "detailed",
+      "detailedExterior": {
+        "sha256": "b98a77dd752b6b5f49aa4f8877a7cb799a9e77a4a023452a8ef87bbaf93d2d4c"
+      }
+    },
+    {
+      "code": "STC",
+      "status": "facade",
+      "detailedExterior": {
+        "sha256": "3d1e41471359804a2f532e6606c31ca6170621e1dbbbf6a0f428e6b2ca7c46a8"
+      }
+    }
+  ]
+}
