@@ -26,6 +26,8 @@ export class CampusViewer {
     this.disposed = false;
     this.groups = new Map();
     this.interiors = new Map();
+    this.exteriors = new Map();
+    this.exteriorLoads = new Map();
     this.labels = [];
     this.activeCode = null;
     this.mode = "campus";
@@ -209,6 +211,42 @@ export class CampusViewer {
     this.home(false);
     this.needsRender = true;
     this.canvas.dataset.ready = "true";
+    void this.loadCampusExteriors();
+  }
+
+  // Exterior geometry belongs to the campus, not to a temporary selection.
+  async loadExterior(building) {
+    if (this.exteriors.has(building.code)) return this.exteriors.get(building.code);
+    if (this.exteriorLoads.has(building.code)) return this.exteriorLoads.get(building.code);
+    const pending = (async () => {
+      const { scene: group } = await this.loadAsset(building.detailedExterior.url);
+      if (this.disposed) {
+        disposeModel(group);
+        throw new Error("Viewer disposed");
+      }
+      prepareDetailedModel(group);
+      group.userData.buildingCode = building.code;
+      this.scene.add(group);
+      this.exteriors.set(building.code, group);
+      this.toggleContext(this.contextVisible);
+      return group;
+    })();
+    this.exteriorLoads.set(building.code, pending);
+    try { return await pending; }
+    finally { this.exteriorLoads.delete(building.code); }
+  }
+
+  async loadCampusExteriors() {
+    const buildings = this.buildings.filter((building) => building.detailedExterior);
+    // Marshall first; sequential background decoding keeps initial navigation usable.
+    buildings.sort((a, b) => Number(b.code === "MAR") - Number(a.code === "MAR"));
+    for (const building of buildings) {
+      if (this.disposed) return;
+      try { await this.loadExterior(building); }
+      catch (error) {
+        if (!this.disposed) console.warn(`Exterior unavailable: ${building.code}`, error);
+      }
+    }
   }
 
   addLabel(building) {
@@ -357,7 +395,9 @@ export class CampusViewer {
     const request = ++this.detailRequest;
     this.onDetailState({ code: building.code, kind, state: "loading" });
     try {
-      const group = await this.detailCache.request(`${kind}-${building.code}`, asset.url);
+      const group = kind === "exterior"
+        ? await this.loadExterior(building)
+        : await this.detailCache.request(`${kind}-${building.code}`, asset.url);
       if (this.disposed || request !== this.detailRequest || this.activeCode !== building.code) return;
       this.detailCache.hideAll();
       this.activeDetail = { code: building.code, kind, group };
@@ -450,6 +490,7 @@ export class CampusViewer {
     this.campus.visible = false;
     for (const [name, group] of this.interiors) group.visible = name === code;
     this.mode = "interior";
+    this.toggleContext(this.contextVisible);
     this.updateCameraProjection();
     this.controls.maxPolarAngle = Math.PI * 0.94;
     this.controls.minDistance = 0.5;
@@ -492,8 +533,17 @@ export class CampusViewer {
           name === this.activeCode ||
           name === companion;
     }
-    if (this.activeDetail?.kind === "exterior")
-      this.groups.get(this.activeDetail.code).visible = false;
+    const visibleExteriors = [];
+    for (const [code, group] of this.exteriors) {
+      group.visible = this.mode !== "interior" &&
+        (!this.activeCode || visible || code === this.activeCode || code === companion);
+      if (group.visible) {
+        const base = this.groups.get(code);
+        if (base) base.visible = false;
+        visibleExteriors.push(code);
+      }
+    }
+    this.canvas.dataset.campusDetails = visibleExteriors.sort().join(",");
     this.renderer.shadowMap.needsUpdate = true;
     this.needsRender = true;
   }
@@ -559,7 +609,7 @@ export class CampusViewer {
     );
     this.raycaster.setFromCamera(this.pointer, this.camera);
     const visibleBuildings = this.pickable.filter((group) => group.visible);
-    if (this.activeDetail?.kind === "exterior") visibleBuildings.push(this.activeDetail.group);
+    visibleBuildings.push(...[...this.exteriors.values()].filter((group) => group.visible));
     const hit = this.raycaster.intersectObjects(visibleBuildings, true)[0];
     if (!hit) return;
     let object = hit.object;
@@ -619,7 +669,7 @@ export class CampusViewer {
       const maxY = mobileDetail ? height * 0.53 : height - 115;
       let visible =
         this.labelsVisible &&
-        (this.groups.get(label.code)?.visible || this.activeDetail?.code === label.code) &&
+        (this.groups.get(label.code)?.visible || this.exteriors.get(label.code)?.visible || this.activeDetail?.code === label.code) &&
         this.mode === "campus" &&
         projected.z > -1 &&
         projected.z < 1 &&
@@ -674,6 +724,8 @@ export class CampusViewer {
     this.disposed = true;
     this.detailRequest += 1;
     this.detailCache.dispose();
+    for (const group of this.exteriors.values()) disposeModel(group);
+    this.exteriors.clear();
     cancelAnimationFrame(this.frame);
     this.resizeObserver.disconnect();
     this.controls.dispose();
