@@ -8,6 +8,7 @@ const list = $("#building-list");
 const detailPanel = $("#detail-panel");
 const mobile = matchMedia("(max-width: 700px)");
 let buildings = [];
+let modelRevision = "";
 let viewer;
 let current = null;
 let detailedOnly = false;
@@ -310,6 +311,7 @@ async function start() {
       const response = await fetch("/models/catalogue.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("catalogue");
       const data = await response.json();
+      modelRevision = data.sourceModelSha256;
       buildings = [...data.buildings].sort(
         (a, b) =>
           Number(b.status === "detailed") - Number(a.status === "detailed") ||
@@ -329,6 +331,7 @@ async function start() {
       () =>
         showFailure("浏览器暂停了3D显示。可以重新加载，或继续查看建筑细节图。"),
       updateDetailQuality,
+      modelRevision,
     );
     await viewer.load((event) => {
       $("#loading-copy").textContent = event.total
