@@ -44,10 +44,17 @@ The square favicon uses the original red LSE mark from that same vector artwork.
 The mark belongs to LSE; its display does not imply endorsement or affiliation.
 
 Individual detail downloads retain the native evaluated bevels and curve resolution.
-Fourteen building models and five public-interior studies load on demand.
+Twenty-seven building models and five public-interior studies load on demand.
 Building models include the existing authored floor plates, stairs and roof slabs;
 this does not establish complete or surveyed interiors. Metric UV layers are
 normalized during export to preserve the source brick and slate courses.
 Procedural brick/noise parameters are carried as material metadata and approximated
 by browser shaders. This is not a texture bake or a claim of Cycles render parity.
 Photographic projection materials never export their image or shader descriptor.
+
+Edition 05 adds thirteen first-pass street-facade studies: COW, KGS, LAK, LCH,
+50L, 51L, PAR, PEA, PEL, POR, SAR, SHF and STC. Their original gallery renders
+show authored geometry, not archival photographs. Street character follows archived
+LSE Estate images; heights, bay spacing, unseen backs and roof depth are estimated.
+Party-wall identification uses the local OSM footprint snapshot. These studies
+remain distinct from the fourteen previously developed detail models.
