@@ -8,6 +8,11 @@ export const statusNames = {
   unlocated: "独立轮廓待确认",
 };
 export const buildingDetails = {
+  "49L": {
+    description: "Coopers餐厅占据Lincoln’s Inn Fields与Portsmouth Street的转角。蓝色底层、白色推拉窗、百叶窗板和带雨篷的斜角入口构成街面特征。",
+    note: "位置与外轮廓依据2022年规划总图配准至校园模型，外观参考归档照片。楼高、窗距、屋顶和未见背面仍为估计；图示外壳不等同餐厅全部产权或租赁范围。",
+    images: [["49l-exterior", "Coopers转角门面与蓝色底层"]],
+  },
   "61A": {
     description: "Aldwych与Kingsway转角的浅色石材建筑。连续窗列、跨层壁柱、水平檐口与转角入口共同组织街面，屋顶保留照片中的退台窗和坡顶亭阁。",
     note: "沿街外观依据改造前归档照片深化。两块地图轮廓的归属仍待核实，楼高、窗距、屋顶进深和未见背面仍为估计；未将未来改造方案或内部效果图作为现状建模。",
@@ -59,8 +64,8 @@ export const buildingDetails = {
     ]
 },
   "50L": {
-    "description": "50 Lincoln’s Inn Fields的入口以石材拱框嵌入砖墙，窗台与水平檐口保留小楼的立面层次。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "description": "Portsmouth Street的50/50A连续门面以红砖、浅色窗框和石材拱形入口展开。50号入口与相邻餐厅分别定位，保留各自的街面尺度。",
+    "note": "根据2022年规划总图修正楼体位置，外壳覆盖50/50A连续建筑，不代表50L独占全部铺面。楼高、窗距、屋顶与未见背面仍为估计；未建立内部。",
     "images": [
         [
             "50l-exterior",
