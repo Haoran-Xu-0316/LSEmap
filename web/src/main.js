@@ -1,4 +1,5 @@
 import "./style.css";
+import { startReleaseSync } from "./release-sync.js";
 import { detailFor, statusNames } from "./content.js";
 
 const $ = (selector) => document.querySelector(selector);
@@ -454,8 +455,11 @@ window.addEventListener("pagehide", () => viewer?.dispose());
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
     viewer = null;
+    startReleaseSync();
     start();
   }
 });
 setSidebar(!mobile.matches);
 start();
+
+startReleaseSync();
