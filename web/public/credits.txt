@@ -84,3 +84,35 @@ The drawing is a reference only and is not redistributed. Its outlines are
 approximately registered to five OCS corners in the existing OSM-derived campus.
 Neither registration nor rendered envelopes establish surveyed or tenancy boundaries.
 Facade details follow archived LSE estate photos; vertical dimensions are estimated.
+
+Local refinement after edition 08: Cowdray House and King's Chambers.
+Authored geometry follows the archived LSE estate exterior photographs and
+the archived King's Chambers entrance photograph. No photographs or textures
+from that archive are redistributed. Ornamental profiles and dimensions remain
+approximate; these facade studies do not establish surveyed interiors.
+
+Parish Hall local refinement uses the archived LSE estate facade photograph and
+the small-buildings reference archive for the low entrance, four street bays,
+tiled roof and dormers. Model dimensions and unseen backs remain estimated.
+Source images are not redistributed; the gallery contains original model renders.
+
+St Clement’s local refinement uses the archived LSE estate entrance photograph,
+the archived 2022 Geograph street-corner photograph and the 2025 campus map to
+align facade geometry. Public renders contain authored geometry only. The
+historical corner artwork is represented by its panel position, not reproduced.
+
+Three final local rounds use the archived LSE Lincoln Chambers entrance images,
+Lakatos street/plaza photographs and built MAR north-facade photographs. Public
+images are original geometry renders; reference photographs are not embedded.
+All unmeasured sizes and hidden elevations remain estimates.
+
+Local edition 16: individual exterior finish pass on all 31 records.
+Window beads, sill edges and drainage details follow existing modeled openings;
+profile sizes remain estimated. Portsmouth corner shopfront follows archived
+photography; ALPHA BOOKS signage is historical, not verified current tenancy.
+35L remains indicative construction hoarding. No current workstage is asserted.
+Original research photographs are not included in the browser assets.
+
+Edition 16 release: interactive details and all gallery images use the same
+version-16 native model. Runtime AgX tone mapping is aligned with the renders;
+real-time shading and Cycles illumination are still different renderers.
