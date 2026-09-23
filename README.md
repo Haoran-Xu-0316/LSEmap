@@ -3,6 +3,8 @@
 A browser-based exploration of the London School of Economics campus, built from
 an independent Blender architectural study.
 
+[Explore the live campus](https://lsemap.xhr0316.workers.dev/)
+
 ![Campus architectural model](web/public/images/campus.webp)
 
 Explore the campus by orbiting, panning and zooming. Select a building directly or
@@ -17,6 +19,16 @@ changes. Fourteen buildings now contain detail studies; CON remains an entrance-
 study with estimated upper bays. Heights and unseen elevations remain approximate.
 The LSE mark comes from the existing personal-site vector asset, with no affiliation
 or endorsement implied.
+
+Columbia and Connaught also include an **入口细节** camera preset for close inspection.
+Isolated views hide other building labels and exclude hidden geometry from selection.
+
+## Cloudflare Workers deployment
+
+The static Worker is named `lsemap`. After signing in with Wrangler, `npm run deploy`
+builds and validates the site, then uploads `dist` to Cloudflare. Wrangler is pinned
+in the project lockfile. The existing Cloudflare Pages settings below remain usable
+for a separate Git-connected Pages deployment.
 
 ## Local preview
 
