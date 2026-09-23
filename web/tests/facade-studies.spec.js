@@ -17,7 +17,7 @@ test('all fifteen street studies have their own gallery and honest scope', async
     await expect(page.locator('#interior-view')).toHaveCount(0);
     await page.locator('.detail-photo').click();
     const image = page.locator('#gallery-image');
-    await expect(image).toHaveAttribute('src', `/images/${building.code.toLowerCase()}-exterior.webp`);
+    await expect(image).toHaveAttribute('src', new RegExp('^' + `/images/${building.code.toLowerCase()}-exterior.webp`.replace('.webp', '\\.webp') + '\\?v=16-[a-f0-9]{12}$'));
     await expect.poll(() => image.evaluate(img => img.complete && img.naturalWidth >= 800)).toBe(true);
     await page.keyboard.press('Escape');
     await page.locator('.detail-note summary').click();
