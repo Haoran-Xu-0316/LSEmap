@@ -24,45 +24,25 @@ export const buildingDetails = {
     images: [["5lf-exterior", "5 Lincoln’s Inn Fields砖立面与入口"]],
   },
   "COW": {
-    "description": "红砖墙面与浅色石材转角带形成Cowdray House的街道轮廓。斜折屋顶、老虎窗和拱形门洞已加入模型。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "cow-exterior",
-            "Cowdray House砖石转角"
-        ]
-    ]
-},
+    description: "Cowdray House以红砖、浅色转角石带和斜折屋顶形成街道轮廓。细窗格、尖顶屋顶窗、齿饰檐口与转角石材门廊呈现近看的层次。",
+    note: "沿街立面依据归档照片继续细化，保留原有地图轮廓。楼高、窗距、装饰截面、屋顶进深与未见背面仍为估计；未建立内部。",
+    images: [["cow-exterior", "Cowdray House屋顶窗与砖石转角"], ["cow-entrance", "Cowdray House拱券、柱饰与入口细节"]],
+  },
   "KGS": {
-    "description": "King’s Chambers沿Portugal Street展开，突出的窗列、浅色横向石带与中央拱形入口构成首轮立面研究。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "kgs-exterior",
-            "King’s Chambers沿街窗列"
-        ]
-    ]
-},
-  "LAK": {
-    "description": "Lakatos Building以红砖、白色多格窗和首层店面呈现Portugal Street的小尺度街面。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "lak-exterior",
-            "Lakatos Building砖墙与店面"
-        ]
-    ]
-},
-  "LCH": {
-    "description": "Lincoln Chambers入口采用木门、拱形窗套与绿色名称牌，上层以砖墙和窗列连接街区。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "lch-exterior",
-            "Lincoln Chambers入口与立面"
-        ]
-    ]
-},
+    description: "King’s Chambers的两组石材凸窗向街道展开，铅色弧顶与三角山花构成屋顶轮廓。中央入口保留拱券、卷饰和带金色字样的绿色铭牌。",
+    note: "沿街外观与入口根据归档照片继续细化，保留原有地图轮廓。楼高、窗距、装饰截面、屋顶进深与未见背面仍为估计；未建立内部。",
+    images: [["kgs-exterior", "King’s Chambers凸窗与弧顶"], ["kgs-entrance", "King’s Chambers石材拱券与绿色入口铭牌"]],
+  },
+  LAK: {
+    description: "Lakatos Building的两侧街面分别采用大幅店面玻璃和拱形底层窗，上层保留细格推拉窗、石材窗楣、转角石带与齿饰檐口。",
+    note: "根据归档照片深化两侧立面。窗数、屋顶坡度、屋顶窗位置与未见背面仍为估计；历史山花的位置尚未确认，未纳入模型。",
+    images: [["lak-exterior", "Lakatos转角砖石立面与坡顶"], ["lak-windows", "广场侧拱窗、细窗格与石材窗饰"]],
+  },
+  LCH: {
+    description: "Lincoln Chambers的木门入口退入石材门廊，两侧拱口朝向中央。绿色题字牌、卷饰、木门镶板与棋盘石地面构成近看层次。",
+    note: "重点深化实拍可见入口；门廊进深、装饰尺寸仍为估计，上层保留此前的简化立面，未建立内部。",
+    images: [["lch-exterior", "Lincoln Chambers沿街立面"], ["lch-entrance", "凹入门廊、三面拱口与棋盘地面"]],
+  },
   "50L": {
     "description": "Portsmouth Street的50/50A连续门面以红砖、浅色窗框和石材拱形入口展开。50号入口与相邻餐厅分别定位，保留各自的街面尺度。",
     "note": "根据2022年规划总图修正楼体位置，外壳覆盖50/50A连续建筑，不代表50L独占全部铺面。楼高、窗距、屋顶与未见背面仍为估计；未建立内部。",
@@ -84,15 +64,10 @@ export const buildingDetails = {
     ]
 },
   "PAR": {
-    "description": "Parish Hall的砖墙、山墙轮廓与高烟囱建立Sheffield Street的历史建筑形态。入口保留拱形石框。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "par-exterior",
-            "Parish Hall山墙与入口"
-        ]
-    ]
-},
+    description: "Parish Hall的低入口门厅与四组窗列形成高低错落的街面。尖拱砖券、题字横梁和十字饰件标识入口，红瓦坡屋顶上排列着四座小屋顶窗与高烟囱。",
+    note: "根据归档照片重做门厅、窗列与屋顶，保留原有地图轮廓。楼高、屋顶进深、装饰截面与未见背面仍为估计；未建立内部。",
+    images: [["par-exterior", "Parish Hall低门厅与红瓦坡屋顶"], ["par-entrance", "Parish Hall尖拱砖券与题字入口"]],
+  },
   "PEA": {
     "description": "Peacock Theatre的入口雨棚、竖向剧院标识和首层海报框形成辨识特征，上方保留浅色窗列。",
     "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
@@ -114,13 +89,14 @@ export const buildingDetails = {
     ]
 },
   "POR": {
-    "description": "1 Portsmouth Street以深色砖墙、细分窗格和浅色首层店面衔接周边小楼。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "description": "1 Portsmouth Street按归档照片重建转角书店：斜切入口、外挑招牌、铅条橱窗、街名牌与上层木窗分别建模。",
+    "note": "店面名称对应历史照片，不代表当前租户。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
     "images": [
         [
             "por-exterior",
-            "1 Portsmouth Street店面与窗列"
-        ]
+            "1 Portsmouth Street转角与店面"
+        ],
+        ["por-entrance", "转角入口、铅条橱窗与街名牌"]
     ]
 },
   "SAR": {
@@ -143,16 +119,14 @@ export const buildingDetails = {
         ]
     ]
 },
-  "STC": {
-    "description": "St Clement’s以浅色墙面、连续窗列和红色入口标识组织Clare Market街面。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "stc-exterior",
-            "St Clement’s浅色立面与入口"
-        ]
-    ]
-},
+  STC: {
+    description: "St Clement’s的Clare Market长立面以凹入窗列展开，退后的顶层与转角红色平台形成高低层次。入口保留红色门侧、灰色招牌、玻璃门与花槽。",
+    note: "依据归档照片深化外观。壁画仅保留面板位置；楼高、窗距、入口具体开间与未见背面仍为估计，未建立内部。",
+    images: [
+      ["stc-exterior", "St Clement’s窗列与转角平台"],
+      ["stc-entrance", "红色门侧、招牌与凹入入口"],
+    ],
+  },
   COL: {
     description:
       "Columbia House以浅色石材立面沿Aldwych与Houghton Street转角展开。凹入窗洞、石材分缝、连续檐口与Garrick转角店面构成沿街层次。",
@@ -172,11 +146,11 @@ export const buildingDetails = {
     ],
   },
   MAR: {
-    description:
-      "混凝土立面下是通透的Grand Hall。查看大厅围护、树状柱、弧形楼梯与夹层栏杆的连接。",
-    note: "大厅开洞、楼梯半径与家具布局依据照片比例估计，未复刻全部楼层。",
+    description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。可近看入口门框、前场灯柱，再进入Grand Hall查看树状柱与弧形楼梯。",
+    note: "立面构件、入口、楼梯半径与家具布局依据实拍比例估计；保留公共大厅研究，未复刻全部楼层。",
     images: [
-      ["mar-exterior", "Marshall Building立面"],
+      ["mar-exterior", "Marshall Building北立面"],
+      ["mar-entrance", "斜向入口、露台玻璃与前场灯柱"],
       ["mar-hall", "Grand Hall公共大厅"],
       ["mar-stair", "弧形楼梯与平台连接"],
     ],
