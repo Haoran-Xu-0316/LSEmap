@@ -8,6 +8,11 @@ export const statusNames = {
   unlocated: "独立轮廓待确认",
 };
 export const buildingDetails = {
+  "61A": {
+    description: "Aldwych与Kingsway转角的浅色石材建筑。连续窗列、跨层壁柱、水平檐口与转角入口共同组织街面，屋顶保留照片中的退台窗和坡顶亭阁。",
+    note: "沿街外观依据改造前归档照片深化。两块地图轮廓的归属仍待核实，楼高、窗距、屋顶进深和未见背面仍为估计；未将未来改造方案或内部效果图作为现状建模。",
+    images: [["61a-exterior", "61 Aldwych转角入口与石材立面"]],
+  },
   "5LF": {
     description: "Lincoln’s Inn Fields北侧的四层排屋，以黄褐色砖墙、三列白色推拉窗和浅色底层构成立面。入口台阶、黑色栏杆与两侧烟囱已加入模型。",
     note: "用LSE官方地址地图定位点匹配OSM独立轮廓，正面参考归档照片。楼高、窗距、屋顶与未见背面仍为估计；未建立内部。",
