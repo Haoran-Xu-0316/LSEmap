@@ -8,6 +8,11 @@ export const statusNames = {
   unlocated: "独立轮廓待确认",
 };
 export const buildingDetails = {
+  "5LF": {
+    description: "Lincoln’s Inn Fields北侧的四层排屋，以黄褐色砖墙、三列白色推拉窗和浅色底层构成立面。入口台阶、黑色栏杆与两侧烟囱已加入模型。",
+    note: "用LSE官方地址地图定位点匹配OSM独立轮廓，正面参考归档照片。楼高、窗距、屋顶与未见背面仍为估计；未建立内部。",
+    images: [["5lf-exterior", "5 Lincoln’s Inn Fields砖立面与入口"]],
+  },
   "COW": {
     "description": "红砖墙面与浅色石材转角带形成Cowdray House的街道轮廓。斜折屋顶、老虎窗和拱形门洞已加入模型。",
     "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
