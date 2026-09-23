@@ -4,7 +4,7 @@ import { ModelCache } from "../src/model-cache.js";
 
 const catalogue = JSON.parse(await readFile("web/public/models/catalogue.json", "utf8"));
 
-test("all fourteen exteriors and five interiors render their detailed assets without shader errors", async ({ page }) => {
+test("all twenty-seven exteriors and five interiors render without shader errors", async ({ page }) => {
   test.setTimeout(180000);
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
@@ -18,7 +18,7 @@ test("all fourteen exteriors and five interiors render their detailed assets wit
     await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready', `exterior-${building.code}`, { timeout: 45000 });
     await expect(page.locator('#detail-quality-status')).toHaveText('外观细节已加载');
     await page.waitForTimeout(1100);
-    if (['MAR', 'SAL', 'OLD'].includes(building.code))
+    if (['MAR', 'SAL', 'OLD', 'COW', 'PEA', 'KGS'].includes(building.code))
       await page.screenshot({ path: `result/web/detail-upgrade/${building.code.toLowerCase()}-exterior.png` });
     if (building.detailedInterior) {
       await page.locator('#interior-view').click();
