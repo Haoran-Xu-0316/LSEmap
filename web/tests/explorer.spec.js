@@ -74,8 +74,8 @@ test("desktop exploration, search, images, interior and navigation work without 
   await page.locator("#detail-filter").click();
   await page.locator("#building-search").fill("49L");
   await page.locator('.building-row[data-code="49L"]').click();
-  await expect(page.locator("#detail-panel")).toContainText("独立轮廓待确认");
-  await expect(page.locator("#exterior-view")).toHaveCount(0);
+  await expect(page.locator("#detail-panel")).toContainText("沿街立面研究");
+  await expect(page.locator("canvas")).toHaveAttribute("data-detail-ready", "exterior-49L", { timeout: 45000 });
   await page.locator("#overview").click();
   await page.locator("#labels-toggle").click();
   await expect(page.locator("#labels-toggle")).toHaveAttribute(
