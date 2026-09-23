@@ -4,9 +4,9 @@ import { readFile } from 'node:fs/promises';
 const catalogue = JSON.parse(await readFile('web/public/models/catalogue.json', 'utf8'));
 const facades = catalogue.buildings.filter(building => building.status === 'facade');
 
-test('all fourteen street studies have their own gallery and honest scope', async ({ page }) => {
+test('all fifteen street studies have their own gallery and honest scope', async ({ page }) => {
   test.setTimeout(120000);
-  expect(facades).toHaveLength(14);
+  expect(facades).toHaveLength(15);
   await page.goto('/#COW');
   await expect(page.locator('canvas[data-ready="true"]')).toBeVisible({ timeout: 60000 });
   for (const building of facades) {
