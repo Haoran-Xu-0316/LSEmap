@@ -339,6 +339,31 @@ export class CampusViewer {
     this.needsRender = true;
   }
 
+  showDetail(building) {
+    if (!this.ready || !building.detailView) return;
+    this.select(building);
+    this.mode = "detail";
+    const view = building.detailView;
+    const target = new THREE.Vector3(...view.target);
+    const position = new THREE.Vector3(...view.position);
+    this.camera.fov = view.fov;
+    this.camera.updateProjectionMatrix();
+    this.controls.minDistance = 1;
+    if (this.container.clientWidth < 700) {
+      // Keep the doorway in the free upper area above the mobile detail sheet.
+      target.y -= 0.6;
+      position.y -= 0.6;
+      const offset = position.clone().sub(target).multiplyScalar(1.45);
+      position.copy(target).add(offset);
+      const right = new THREE.Vector3().crossVectors(this.camera.up, offset).normalize();
+      const cameraUp = new THREE.Vector3().crossVectors(offset, right).normalize();
+      const shift = -offset.length() * Math.tan(THREE.MathUtils.degToRad(view.fov / 2)) * 0.44;
+      target.addScaledVector(cameraUp, shift);
+      position.addScaledVector(cameraUp, shift);
+    }
+    this.moveCamera(position, target);
+  }
+
   async showInterior(building) {
     const code = building.code;
     const request = ++this.viewRequest;
@@ -466,7 +491,8 @@ export class CampusViewer {
       -((event.clientY - rect.top) / rect.height) * 2 + 1,
     );
     this.raycaster.setFromCamera(this.pointer, this.camera);
-    const hit = this.raycaster.intersectObjects(this.pickable, true)[0];
+    const visibleBuildings = this.pickable.filter((group) => group.visible);
+    const hit = this.raycaster.intersectObjects(visibleBuildings, true)[0];
     if (!hit) return;
     let object = hit.object;
     while (object && !object.userData.buildingCode) object = object.parent;
@@ -525,6 +551,7 @@ export class CampusViewer {
       const maxY = mobileDetail ? height * 0.53 : height - 115;
       let visible =
         this.labelsVisible &&
+        this.groups.get(label.code)?.visible &&
         this.mode === "campus" &&
         projected.z > -1 &&
         projected.z < 1 &&
