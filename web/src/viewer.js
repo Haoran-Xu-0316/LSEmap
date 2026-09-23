@@ -4,6 +4,9 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
+import { ModelCache } from "./model-cache.js";
+import { prepareDetailedModel, disposeModel } from "./surface-materials.js";
+
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const boxFromData = ({ min, max }) =>
@@ -11,11 +14,15 @@ const boxFromData = ({ min, max }) =>
 
 /** Rendering and camera state are separate from the accessible HTML interface. */
 export class CampusViewer {
-  constructor(container, labels, buildings, onPick, onContextLost) {
+  constructor(container, labels, buildings, onPick, onContextLost, onDetailState = () => {}) {
     this.container = container;
     this.labelLayer = labels;
     this.buildings = buildings;
     this.onPick = onPick;
+    this.onDetailState = onDetailState;
+    this.detailRequest = 0;
+    this.activeDetail = null;
+    this.disposed = false;
     this.groups = new Map();
     this.interiors = new Map();
     this.labels = [];
@@ -96,6 +103,12 @@ export class CampusViewer {
       })
       .setWorkerLimit(2);
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
+    this.detailCache = new ModelCache(
+      async (url) => (await this.loadAsset(url)).scene,
+      (group) => { prepareDetailedModel(group); this.scene.add(group); },
+      disposeModel,
+      matchMedia("(max-width: 720px)").matches ? 2 : 3,
+    );
     this.raycaster = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();
     this.canvas.addEventListener("pointerdown", (event) => {
@@ -289,6 +302,11 @@ export class CampusViewer {
 
   showCampus() {
     this.viewRequest += 1;
+    this.detailRequest += 1;
+    this.detailCache.activate(null);
+    this.detailCache.hideAll();
+    this.activeDetail = null;
+    delete this.canvas.dataset.detailReady;
     this.campus.visible = true;
     this.controls.maxPolarAngle = Math.PI * 0.49;
     this.controls.minDistance = 5;
@@ -313,6 +331,34 @@ export class CampusViewer {
           ? new THREE.Vector3(...building.exteriorDirection)
           : HOME_DIRECTION,
       );
+    this.upgradeModel(building, "exterior");
+  }
+
+  async upgradeModel(building, kind) {
+    const asset = kind === "interior" ? building.detailedInterior : building.detailedExterior;
+    if (!asset || !this.ready) return;
+    const request = ++this.detailRequest;
+    this.onDetailState({ code: building.code, kind, state: "loading" });
+    try {
+      const group = await this.detailCache.request(`${kind}-${building.code}`, asset.url);
+      if (this.disposed || request !== this.detailRequest || this.activeCode !== building.code) return;
+      this.detailCache.hideAll();
+      this.activeDetail = { code: building.code, kind, group };
+      if (kind === "exterior") this.groups.get(building.code).visible = false;
+      else this.interiors.get(building.code).visible = false;
+      group.visible = true;
+      this.canvas.dataset.detailReady = `${kind}-${building.code}`;
+      this.renderer.shadowMap.needsUpdate = true;
+      this.needsRender = true;
+      this.onDetailState({ code: building.code, kind, state: "ready" });
+    } catch (error) {
+      if (this.disposed || request !== this.detailRequest || error.name === "AbortError") return;
+      this.onDetailState({ code: building.code, kind, state: "error" });
+    }
+  }
+
+  retryDetails(building) {
+    this.upgradeModel(building, this.mode === "interior" ? "interior" : "exterior");
   }
 
   highlight(code) {
@@ -365,6 +411,8 @@ export class CampusViewer {
   }
 
   async showInterior(building) {
+    this.detailRequest += 1;
+    this.detailCache.activate(null);
     const code = building.code;
     const request = ++this.viewRequest;
     if (!this.interiors.has(code)) {
@@ -384,6 +432,9 @@ export class CampusViewer {
     }
     // Selection can change while the model is downloading.
     if (this.activeCode !== code || request !== this.viewRequest) return false;
+    this.detailCache.hideAll();
+    this.activeDetail = null;
+    delete this.canvas.dataset.detailReady;
     this.campus.visible = false;
     for (const [name, group] of this.interiors) group.visible = name === code;
     this.mode = "interior";
@@ -406,6 +457,7 @@ export class CampusViewer {
       );
     }
     this.needsRender = true;
+    this.upgradeModel(building, "interior");
     return true;
   }
 
@@ -427,6 +479,8 @@ export class CampusViewer {
           name === this.activeCode ||
           name === companion;
     }
+    if (this.activeDetail?.kind === "exterior")
+      this.groups.get(this.activeDetail.code).visible = false;
     this.renderer.shadowMap.needsUpdate = true;
     this.needsRender = true;
   }
@@ -492,6 +546,7 @@ export class CampusViewer {
     );
     this.raycaster.setFromCamera(this.pointer, this.camera);
     const visibleBuildings = this.pickable.filter((group) => group.visible);
+    if (this.activeDetail?.kind === "exterior") visibleBuildings.push(this.activeDetail.group);
     const hit = this.raycaster.intersectObjects(visibleBuildings, true)[0];
     if (!hit) return;
     let object = hit.object;
@@ -551,7 +606,7 @@ export class CampusViewer {
       const maxY = mobileDetail ? height * 0.53 : height - 115;
       let visible =
         this.labelsVisible &&
-        this.groups.get(label.code)?.visible &&
+        (this.groups.get(label.code)?.visible || this.activeDetail?.code === label.code) &&
         this.mode === "campus" &&
         projected.z > -1 &&
         projected.z < 1 &&
@@ -603,6 +658,9 @@ export class CampusViewer {
   }
 
   dispose() {
+    this.disposed = true;
+    this.detailRequest += 1;
+    this.detailCache.dispose();
     cancelAnimationFrame(this.frame);
     this.resizeObserver.disconnect();
     this.controls.dispose();
