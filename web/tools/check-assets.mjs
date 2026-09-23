@@ -2,6 +2,7 @@
 import { readdir, stat, readFile } from "node:fs/promises";
 import { resolve, relative, join } from "node:path";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { buildingDetails } from "../src/content.js";
 
 const output = resolve("dist");
@@ -53,7 +54,17 @@ for (const detail of Object.values(buildingDetails)) {
   for (const [image] of detail.images)
     await stat(join(output, `images/${image}.webp`));
 }
+const detailAssets = catalogue.buildings.flatMap((building) =>
+  [building.detailedExterior, building.detailedInterior].filter(Boolean));
+assert.equal(detailAssets.length, 19);
+for (const asset of detailAssets) {
+  const buffer = await readFile(join(output, asset.url));
+  assert.equal(buffer.length, asset.bytes);
+  assert.equal(createHash("sha256").update(buffer).digest("hex"), asset.sha256);
+  assert(asset.triangles > 0);
+}
 for (const filename of [
+  ...detailAssets.map((asset) => asset.url.replace("/models/", "")),
   "campus.glb",
   ...catalogue.buildings
     .filter((b) => b.interior)
@@ -73,6 +84,16 @@ for (const filename of [
     !document.images?.length,
     `${filename} must not redistribute source photographs`,
   );
+  if (filename.startsWith("details/")) {
+    for (const mesh of document.meshes) {
+      for (const primitive of mesh.primitives) {
+        const surface = document.materials[primitive.material]?.extras?.surfaceDetail;
+        if (surface?.kind !== "brick") continue;
+        assert("TEXCOORD_0" in primitive.attributes, `${filename} has no brick coordinates`);
+        assert(!("TEXCOORD_1" in primitive.attributes), `${filename} has mismatched facade UV layers`);
+      }
+    }
+  }
   if (filename === "campus.glb") {
     const codes = new Set(
       document.nodes.map((node) => node.extras?.buildingCode),
