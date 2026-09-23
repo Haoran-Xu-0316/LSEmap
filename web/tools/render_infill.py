@@ -1,4 +1,4 @@
-"""Render original version-07 street model for public gallery thumbnails.
+"""Render original version-08 street models for public gallery thumbnails.
 Run inside Blender. No archival reference photograph is read or embedded.
 """
 from pathlib import Path
@@ -6,11 +6,11 @@ import json
 import bpy
 from mathutils import Vector
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'result/blender/stage07/renders'
+OUT = ROOT / 'result/blender/stage08/renders'
 OUT.mkdir(parents=True, exist_ok=True)
-bpy.ops.wm.open_mainfile(filepath=str(ROOT / 'result/blender/LSE_campus_detailed_v07.blend'))
-# Earlier galleries remain unchanged; render the newly developed Aldwych elevation.
-records = [json.loads((ROOT / 'result/blender/stage07/aldwych-manifest.json').read_text())]
+bpy.ops.wm.open_mainfile(filepath=str(ROOT / 'result/blender/LSE_campus_detailed_v08.blend'))
+# Earlier galleries remain unchanged; render the corrected Coopers and neighbouring 50/50A elevations.
+records = json.loads((ROOT / 'result/blender/stage08/coopers-manifest.json').read_text())['buildings']
 for record in records:
     code = record['code']
     scene = bpy.data.scenes.new('RENDER_INFILL_'+code)
