@@ -22,7 +22,7 @@ for (const code of ["COL", "CON"]) {
     await page.keyboard.press("Escape");
     await page.locator("#about-open").click();
     await expect(page.locator(".about-logo")).toHaveJSProperty("naturalWidth", 234);
-    await expect(page.locator("#about-dialog")).toContainText("第05版");
+    await expect(page.locator("#about-dialog")).toContainText("第06版");
     await expect(page.locator("#about-dialog")).toContainText("14栋");
     expect(errors).toEqual([]);
   });
