@@ -33,8 +33,11 @@ Their relationship to LSE is unspecified; navigation should need no prior knowle
 ## Evidence on Hand
 
 Existing version 04 model, building catalogue, OSM footprint provenance and native
-Blender renders. Web materials simplify procedural shaders; detail images preserve
-the rendered finishes. There is no verified complete interior survey.
+Blender renders. The overview uses simplified materials. Fourteen on-demand
+buildings preserve evaluated bevels, curve resolution and existing internal
+structure; five separate public-space views retain deliberate cutaways. Browser
+shaders approximate source brick/noise parameters without distributing archival
+photographs. Detail images preserve the Cycles finishes. There is no verified complete interior survey.
 
 ## Product Principles
 
