@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build && node web/tools/check-assets.mjs",
+    "build": "vite build && node web/tools/prepare_release.mjs && node web/tools/check-assets.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test": "playwright test",
     "check": "node --check web/src/main.js && node --check web/src/viewer.js",
