@@ -1,6 +1,6 @@
 {
-  "version": "04",
-  "sourceModelSha256": "d43b32dad2fa3241b8c0d43aca8575ca7ed515b889d17eadfa2f843622816f32",
+  "version": "05",
+  "sourceModelSha256": "9a0723906bdff03f9e2f2f8efb5c68b4de4675ff61beb22dbe97723eeba2f091",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -349,20 +349,44 @@
       "code": "COW",
       "name": "Cowdray House",
       "address": "6 Portugal Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -6.073170185089111,
+          -6.204202175140381,
           0.0,
-          -7.473414897918701
+          -7.471505641937256
         ],
         "max": [
-          31.31922149658203,
-          18.25,
-          14.46843147277832
+          31.304912567138672,
+          20.600000381469727,
+          14.450531959533691
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.8201667666435242,
+        0.5449883937835693,
+        0.17411008477210999
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/cow-exterior-b4702a38c90c.glb",
+        "bytes": 1939776,
+        "triangles": 155796,
+        "sha256": "b4702a38c90caf73395bd981bc54ad3c17647ad4d153c7b9d874f38a15e4f610",
+        "bounds": {
+          "min": [
+            -6.201710224151611,
+            0.0,
+            -7.466561794281006
+          ],
+          "max": [
+            31.301143646240234,
+            20.600000381469727,
+            14.447929382324219
+          ]
+        }
+      }
     },
     {
       "code": "FAW",
@@ -410,20 +434,44 @@
       "code": "KGS",
       "name": "King’s Chambers",
       "address": "29-31 Portugal Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -33.50767517089844,
+          -33.509010314941406,
           0.0,
-          -12.221452713012695
+          -12.12070083618164
         ],
         "max": [
-          -12.606090545654297,
-          16.25,
-          5.0454559326171875
+          -12.533234596252441,
+          16.55388832092285,
+          5.032217502593994
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        0.6430067420005798,
+        0.5449883341789246,
+        0.5380799174308777
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/kgs-exterior-45d3d3c37e2b.glb",
+        "bytes": 757956,
+        "triangles": 57755,
+        "sha256": "45d3d3c37e2b9ae88948a46c8a022e4f531cbc6bba19dcbec9c580a35892a2ac",
+        "bounds": {
+          "min": [
+            -33.50490951538086,
+            0.0,
+            -12.11610221862793
+          ],
+          "max": [
+            -12.538186073303223,
+            16.55388832092285,
+            5.0281147956848145
+          ]
+        }
+      }
     },
     {
       "code": "KSW",
@@ -471,39 +519,87 @@
       "code": "LAK",
       "name": "Lakatos Building",
       "address": "7 Portugal Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          2.400794744491577,
+          2.4008851051330566,
           0.0,
-          -13.922300338745117
+          -13.921525955200195
         ],
         "max": [
-          23.812145233154297,
-          16.25,
-          6.294039726257324
+          23.763460159301758,
+          15.75,
+          6.067502021789551
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.6453550457954407,
+        0.5449883341789246,
+        -0.5352611541748047
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/lak-exterior-9eb5f9509073.glb",
+        "bytes": 810384,
+        "triangles": 63168,
+        "sha256": "9eb5f950907372b7569379ab3a93e42bcd8229243d3487248dcadb6181617466",
+        "bounds": {
+          "min": [
+            2.405834197998047,
+            0.0,
+            -13.916584968566895
+          ],
+          "max": [
+            23.75852394104004,
+            15.75,
+            6.063527584075928
+          ]
+        }
+      }
     },
     {
       "code": "LCH",
       "name": "Lincoln Chambers",
       "address": "2-4 Portsmouth Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -34.73127746582031,
+          -34.48431396484375,
           0.0,
-          -25.697275161743164
+          -25.687063217163086
         ],
         "max": [
-          -6.7622151374816895,
-          14.25,
-          -4.998415946960449
+          -15.502896308898926,
+          13.649999618530273,
+          -8.528922080993652
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        0.3495925962924957,
+        0.5449883341789246,
+        -0.762084424495697
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/lch-exterior-fcaf4f051c80.glb",
+        "bytes": 485996,
+        "triangles": 35262,
+        "sha256": "fcaf4f051c80acd8fcdd586fdcdf313103ab03b12ad342a8e6bc81efc4eafec1",
+        "bounds": {
+          "min": [
+            -34.47998046875,
+            0.0,
+            -25.682403564453125
+          ],
+          "max": [
+            -15.507649421691895,
+            13.649999618530273,
+            -8.53351879119873
+          ]
+        }
+      }
     },
     {
       "code": "5LF",
@@ -544,39 +640,87 @@
       "code": "50L",
       "name": "50 Lincoln’s Inn Fields",
       "address": "50 Lincoln’s Inn Fields",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -55.87167739868164,
+          -55.86215591430664,
           0.0,
-          -66.30464172363281
+          -66.29132843017578
         ],
         "max": [
-          -45.68274688720703,
-          13.25,
-          -52.291099548339844
+          -45.69108963012695,
+          12.949999809265137,
+          -52.41556930541992
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.28505030274391174,
+        0.5449883937835693,
+        -0.7885012030601501
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/50l-exterior-86458ddc8177.glb",
+        "bytes": 746884,
+        "triangles": 53751,
+        "sha256": "86458ddc8177428e36404b1bbb3106fcfb329ff505e5a667cb41cfa11a719152",
+        "bounds": {
+          "min": [
+            -55.85747146606445,
+            0.0,
+            -66.28724670410156
+          ],
+          "max": [
+            -45.69432067871094,
+            12.949999809265137,
+            -52.420265197753906
+          ]
+        }
+      }
     },
     {
       "code": "51L",
       "name": "51 Lincoln’s Inn Fields",
       "address": "51 Lincoln’s Inn Fields",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -74.82528686523438,
+          -74.75822448730469,
           0.0,
-          -58.53145217895508
+          -58.5260124206543
         ],
         "max": [
-          -56.35746383666992,
-          15.25,
-          -36.09071350097656
+          -56.368648529052734,
+          20.950000762939453,
+          -36.1026496887207
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.33960288763046265,
+        0.5449883937835693,
+        -0.7665883302688599
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/51l-exterior-8cb66ef6e5e7.glb",
+        "bytes": 1883980,
+        "triangles": 144143,
+        "sha256": "8cb66ef6e5e7e3a9df599c82152255e4e3ffeb1d2c8b20bbf315241e1d1d4d40",
+        "bounds": {
+          "min": [
+            -74.75358581542969,
+            0.0,
+            -58.52198791503906
+          ],
+          "max": [
+            -56.373260498046875,
+            20.950000762939453,
+            -36.107147216796875
+          ]
+        }
+      }
     },
     {
       "code": "LRB",
@@ -873,96 +1017,216 @@
       "code": "PAR",
       "name": "Parish Hall",
       "address": "Sheffield Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -49.204490661621094,
+          -49.18892288208008,
           0.0,
-          2.3778076171875
+          2.3946423530578613
         ],
         "max": [
-          -25.371952056884766,
-          11.25,
-          16.687314987182617
+          -25.369123458862305,
+          14.649999618530273,
+          16.66602897644043
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        0.20659904181957245,
+        0.5449883937835693,
+        -0.8125913143157959
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/par-exterior-3bbf3a0e72ce.glb",
+        "bytes": 843644,
+        "triangles": 63921,
+        "sha256": "3bbf3a0e72ceed4183f94c6f0dbf5dce6729abcb574b681d0dd9a2065fa15a13",
+        "bounds": {
+          "min": [
+            -49.185550689697266,
+            0.0,
+            2.397599220275879
+          ],
+          "max": [
+            -25.37409210205078,
+            14.649999618530273,
+            16.664613723754883
+          ]
+        }
+      }
     },
     {
       "code": "PEA",
       "name": "Peacock Theatre",
       "address": "Portugal Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -75.16309356689453,
+          -74.9002685546875,
           0.0,
-          11.783889770507812
+          12.04423999786377
         ],
         "max": [
-          -54.78813552856445,
-          12.25,
-          30.395496368408203
+          -54.799713134765625,
+          19.649999618530273,
+          31.77621841430664
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        0.32542428374290466,
+        0.5449883341789246,
+        0.772713840007782
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/pea-exterior-a266f3271365.glb",
+        "bytes": 1098740,
+        "triangles": 83841,
+        "sha256": "a266f3271365b0fca3518379c1ab1c12e20f8c6fe7fb8c2a2470bc75977c6b81",
+        "bounds": {
+          "min": [
+            -74.89566802978516,
+            0.0,
+            12.048808097839355
+          ],
+          "max": [
+            -54.80430603027344,
+            19.649999618530273,
+            31.771617889404297
+          ]
+        }
+      }
     },
     {
       "code": "PEL",
       "name": "Pethick-Lawrence House",
       "address": "3 Clement’s Inn",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          100.57416534423828,
+          100.59361267089844,
           0.0,
-          88.59693145751953
+          88.61661529541016
         ],
         "max": [
-          125.50901794433594,
-          44.25,
-          118.90597534179688
+          125.48580932617188,
+          44.150001525878906,
+          118.8875961303711
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        0.48151347041130066,
+        0.5449883937835693,
+        -0.6863909959793091
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/pel-exterior-2c1e667b8722.glb",
+        "bytes": 4595136,
+        "triangles": 387399,
+        "sha256": "2c1e667b8722e81cb7945d71e94bf1ef129f3d393676ca0d7520a8a2013f0669",
+        "bounds": {
+          "min": [
+            100.59568786621094,
+            0.0,
+            88.61859893798828
+          ],
+          "max": [
+            125.485107421875,
+            44.150001525878906,
+            118.8851547241211
+          ]
+        }
+      }
     },
     {
       "code": "POR",
       "name": "1 Portsmouth Street",
       "address": "1 Portsmouth Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -39.153839111328125,
+          -39.1405143737793,
           0.0,
-          -27.78675079345703
+          -27.782596588134766
         ],
         "max": [
-          -28.884843826293945,
-          13.25,
-          -14.94102954864502
+          -29.006786346435547,
+          14.149999618530273,
+          -15.1935453414917
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        0.363170862197876,
+        0.5449883341789246,
+        -0.7557079792022705
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/por-exterior-c6bcff33de6f.glb",
+        "bytes": 519064,
+        "triangles": 37921,
+        "sha256": "c6bcff33de6fcb129ba0f5c93c3b71e181681fd56e49584e82fdadb8354ea329",
+        "bounds": {
+          "min": [
+            -39.13644027709961,
+            0.0,
+            -27.778146743774414
+          ],
+          "max": [
+            -29.011474609375,
+            14.149999618530273,
+            -15.197975158691406
+          ]
+        }
+      }
     },
     {
       "code": "SAR",
       "name": "Sardinia House",
       "address": "52 Lincoln’s Inn Fields",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -92.68938446044922,
+          -92.5556411743164,
           0.0,
-          -54.89435577392578
+          -54.88335037231445
         ],
         "max": [
-          -65.96768951416016,
-          23.25,
-          -28.2945613861084
+          -66.10152435302734,
+          23.149999618530273,
+          -28.556074142456055
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.33349406719207764,
+        0.5449883937835693,
+        -0.7692655324935913
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/sar-exterior-b4fbd5aef8dc.glb",
+        "bytes": 1384412,
+        "triangles": 108355,
+        "sha256": "b4fbd5aef8dc68ef07861d5a68fc141d774a644005139d473e64c6eb4e4b2875",
+        "bounds": {
+          "min": [
+            -92.55103302001953,
+            0.0,
+            -54.878726959228516
+          ],
+          "max": [
+            -66.10612487792969,
+            23.149999618530273,
+            -28.56066131591797
+          ]
+        }
+      }
     },
     {
       "code": "SAW",
@@ -1040,20 +1304,44 @@
       "code": "SHF",
       "name": "Sheffield Street",
       "address": "9-10 Sheffield Street",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -43.90477752685547,
+          -43.89044189453125,
           0.0,
-          -17.757997512817383
+          -17.612600326538086
         ],
         "max": [
-          -34.2043571472168,
-          13.25,
-          -1.002700924873352
+          -34.47522735595703,
+          13.149999618530273,
+          -1.0133118629455566
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.2490837275981903,
+        0.5449883341789246,
+        0.8005903363227844
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/shf-exterior-ce1d7b68076f.glb",
+        "bytes": 621684,
+        "triangles": 46753,
+        "sha256": "ce1d7b68076f10c551154ebd667e659bb289c72143921b79fd466a9c97ec2a36",
+        "bounds": {
+          "min": [
+            -43.886680603027344,
+            0.0,
+            -17.60883903503418
+          ],
+          "max": [
+            -34.47895812988281,
+            13.149999618530273,
+            -1.0168768167495728
+          ]
+        }
+      }
     },
     {
       "code": "SAL",
@@ -1101,20 +1389,44 @@
       "code": "STC",
       "name": "St Clement’s",
       "address": "Clare Market",
-      "status": "massing",
+      "status": "facade",
       "bounds": {
         "min": [
-          -17.63115119934082,
+          -17.616357803344727,
           0.0,
-          10.701240539550781
+          10.717530250549316
         ],
         "max": [
-          28.3637638092041,
-          21.25,
-          35.90584182739258
+          28.351415634155273,
+          21.149999618530273,
+          35.8935432434082
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.306612491607666,
+        0.5449883341789246,
+        0.7803694009780884
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "detailedExterior": {
+        "url": "/models/details/stc-exterior-5995098d9532.glb",
+        "bytes": 3538456,
+        "triangles": 287833,
+        "sha256": "5995098d9532a5b4db9fc96d4b6e3cc2fb920e9484043583e5d9142a394d0ddf",
+        "bounds": {
+          "min": [
+            -17.61273956298828,
+            0.0,
+            10.72066593170166
+          ],
+          "max": [
+            28.347043991088867,
+            21.149999618530273,
+            35.889156341552734
+          ]
+        }
+      }
     }
   ],
   "limitations": "Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.",
