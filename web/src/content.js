@@ -1,12 +1,143 @@
 /** Public display copy: source-aware descriptions, not claims of measured accuracy. */
 export const statusNames = {
   detailed: "已深化建筑模型",
+  facade: "沿街立面研究",
   massing: "简化体量模型",
   provisional: "轮廓归属待确认",
   construction: "施工地块",
   unlocated: "独立轮廓待确认",
 };
 export const buildingDetails = {
+  "COW": {
+    "description": "红砖墙面与浅色石材转角带形成Cowdray House的街道轮廓。斜折屋顶、老虎窗和拱形门洞已加入模型。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "cow-exterior",
+            "Cowdray House砖石转角"
+        ]
+    ]
+},
+  "KGS": {
+    "description": "King’s Chambers沿Portugal Street展开，突出的窗列、浅色横向石带与中央拱形入口构成首轮立面研究。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "kgs-exterior",
+            "King’s Chambers沿街窗列"
+        ]
+    ]
+},
+  "LAK": {
+    "description": "Lakatos Building以红砖、白色多格窗和首层店面呈现Portugal Street的小尺度街面。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "lak-exterior",
+            "Lakatos Building砖墙与店面"
+        ]
+    ]
+},
+  "LCH": {
+    "description": "Lincoln Chambers入口采用木门、拱形窗套与绿色名称牌，上层以砖墙和窗列连接街区。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "lch-exterior",
+            "Lincoln Chambers入口与立面"
+        ]
+    ]
+},
+  "50L": {
+    "description": "50 Lincoln’s Inn Fields的入口以石材拱框嵌入砖墙，窗台与水平檐口保留小楼的立面层次。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "50l-exterior",
+            "50 Lincoln’s Inn Fields沿街立面"
+        ]
+    ]
+},
+  "51L": {
+    "description": "51 Lincoln’s Inn Fields的红砖窗列与浅色底层、转角石带相接，体现街角建筑的竖向比例。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "51l-exterior",
+            "51 Lincoln’s Inn Fields街角"
+        ]
+    ]
+},
+  "PAR": {
+    "description": "Parish Hall的砖墙、山墙轮廓与高烟囱建立Sheffield Street的历史建筑形态。入口保留拱形石框。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "par-exterior",
+            "Parish Hall山墙与入口"
+        ]
+    ]
+},
+  "PEA": {
+    "description": "Peacock Theatre的入口雨棚、竖向剧院标识和首层海报框形成辨识特征，上方保留浅色窗列。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "pea-exterior",
+            "Peacock Theatre入口雨棚"
+        ]
+    ]
+},
+  "PEL": {
+    "description": "Pethick-Lawrence House以预制板分缝和重复窗列建立塔楼立面，底部加入黄色入口框。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "pel-exterior",
+            "Pethick-Lawrence House塔楼"
+        ]
+    ]
+},
+  "POR": {
+    "description": "1 Portsmouth Street以深色砖墙、细分窗格和浅色首层店面衔接周边小楼。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "por-exterior",
+            "1 Portsmouth Street店面与窗列"
+        ]
+    ]
+},
+  "SAR": {
+    "description": "Sardinia House的红砖立面配以浅色窗台、分格窗和入口名称牌，保留沿街连续窗列的节奏。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "sar-exterior",
+            "Sardinia House红砖立面"
+        ]
+    ]
+},
+  "SHF": {
+    "description": "Sheffield Street的小尺度砖楼采用白色多格窗与首层店面，入口标识作为识别点。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "shf-exterior",
+            "Sheffield Street沿街小楼"
+        ]
+    ]
+},
+  "STC": {
+    "description": "St Clement’s以浅色墙面、连续窗列和红色入口标识组织Clare Market街面。",
+    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "images": [
+        [
+            "stc-exterior",
+            "St Clement’s浅色立面与入口"
+        ]
+    ]
+},
   COL: {
     description:
       "Columbia House以浅色石材立面沿Aldwych与Houghton Street转角展开。凹入窗洞、石材分缝、连续檐口与Garrick转角店面构成沿街层次。",
