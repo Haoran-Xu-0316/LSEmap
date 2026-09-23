@@ -1,4 +1,4 @@
-"""Render original version-05 street models for public gallery thumbnails.
+"""Render original version-06 street model for public gallery thumbnails.
 Run inside Blender. No archival reference photograph is read or embedded.
 """
 from pathlib import Path
@@ -6,10 +6,11 @@ import json
 import bpy
 from mathutils import Vector
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'result/blender/stage05/renders'
-OUT.mkdir(exist_ok=True)
-bpy.ops.wm.open_mainfile(filepath=str(ROOT / 'result/blender/LSE_campus_detailed_v05.blend'))
-records = json.loads((ROOT / 'result/blender/stage05/infill-manifest.json').read_text())['buildings']
+OUT = ROOT / 'result/blender/stage06/renders'
+OUT.mkdir(parents=True, exist_ok=True)
+bpy.ops.wm.open_mainfile(filepath=str(ROOT / 'result/blender/LSE_campus_detailed_v06.blend'))
+# Earlier galleries remain unchanged; render the newly attributed townhouse.
+records = [json.loads((ROOT / 'result/blender/stage06/attribution.json').read_text())]
 for record in records:
     code = record['code']
     scene = bpy.data.scenes.new('RENDER_INFILL_'+code)
@@ -21,7 +22,7 @@ for record in records:
     high = Vector(tuple(max(p[i] for p in points) for i in range(3)))
     center = (low+high)/2
     direction = record['exteriorDirection']
-    normal = Vector((direction[0],-direction[2],.42)).normalized()
+    normal = Vector((direction[0],-direction[2],.18)).normalized()
     camera_data = bpy.data.cameras.new(code+'_gallery_camera')
     camera = bpy.data.objects.new(camera_data.name,camera_data)
     scene.collection.objects.link(camera)
