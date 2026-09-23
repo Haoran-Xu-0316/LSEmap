@@ -155,6 +155,30 @@ for record in metadata:
         direction = Vector((outward.x, max(0.55, outward.z), -outward.y)).normalized()
         record['exteriorDirection'] = list(direction)
 
+# Entrance presets use the reviewed cameras and their street plane as orbit targets.
+# Intersect the optical axis with the facade instead of orbiting around a guessed depth.
+site_records = {b['code']: b for b in json.loads((ROOT / 'result/blender/site_geometry.json').read_text())['buildings'] if b['code']}
+for record in metadata:
+    code = record['code']
+    if code not in {'COL', 'CON'}:
+        continue
+    camera = bpy.data.objects[code + '_D4_entrance']
+    ring = site_records[code]['rings'][0]
+    edge = 10 if code == 'COL' else 4
+    p, q = Vector((*ring[edge], 0)), Vector((*ring[edge + 1], 0))
+    normal = Vector((q.y - p.y, p.x - q.x, 0)).normalized()
+    position = camera.matrix_world.translation
+    direction = camera.matrix_world.to_quaternion() @ Vector((0, 0, -1))
+    distance = (p - position).dot(normal) / direction.dot(normal)
+    assert 0 < distance < 30, f'Invalid entrance camera for {code}'
+    target = position + direction * distance
+    record['detailView'] = {
+        'label': '入口细节',
+        'position': [position.x, position.z, -position.y],
+        'target': [target.x, target.z, -target.y],
+        'fov': 46,
+    }
+
 for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_heights', 'CONTEXT'), ('03_PUBLIC_REALM', 'LANDSCAPE')]:
     collection = bpy.data.collections.get(collection_name)
     if collection:
