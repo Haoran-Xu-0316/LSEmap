@@ -44,7 +44,7 @@ The square favicon uses the original red LSE mark from that same vector artwork.
 The mark belongs to LSE; its display does not imply endorsement or affiliation.
 
 Individual detail downloads retain the native evaluated bevels and curve resolution.
-Twenty-eight building models and five public-interior studies load on demand.
+Twenty-nine building models and five public-interior studies load on demand.
 Building models include the existing authored floor plates, stairs and roof slabs;
 this does not establish complete or surveyed interiors. Metric UV layers are
 normalized during export to preserve the source brick and slate courses.
@@ -66,3 +66,12 @@ https://goo.gl/maps/hm3DbTQC8eH2
 The place point is latitude 51.5168142, longitude -0.1182048. The existing
 context envelope was replaced, not duplicated. The front elevation follows
 archived estate imagery; heights, window spacing, roof and rear remain estimates.
+
+Edition 07 develops the existing provisional 61A envelope from an archived
+pre-redevelopment exterior photograph. The LSE redevelopment announcement and
+building profile support its street-corner context, not a surveyed parcel boundary:
+https://www.lse.ac.uk/news/feixmerlin-and-alison-brooks-architects-selected-to-redevelop-61-aldwych
+https://61aldwych.mybuildings.com/Core/Content/BuildingProfile/Content9121.aspx
+The OSM candidates remain provisionally attributed. Stone bays, tall pilasters,
+roof dormers and the corner pavilion are approximate authored geometry.
+No proposed redevelopment interior, reference photograph or image texture is shipped.
