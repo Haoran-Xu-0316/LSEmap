@@ -14,6 +14,8 @@ keyboard navigation, reduced motion, shareable building links and a gallery
 fallback when WebGL is unavailable. Twenty-eight building models and five interior
 views progressively load native bevels and source-derived procedural materials.
 The lightweight campus remains available while these assets download.
+Fixed-name campus and interior downloads carry the catalogue source revision, so
+returning visitors cannot combine a new catalogue with an older cached model.
 
 Edition 06 adds the independently attributed 5LF townhouse, with sash windows,
 a rusticated ground floor, entrance steps, forecourt railings and chimney stacks.
