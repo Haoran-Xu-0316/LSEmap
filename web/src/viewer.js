@@ -14,10 +14,11 @@ const boxFromData = ({ min, max }) =>
 
 /** Rendering and camera state are separate from the accessible HTML interface. */
 export class CampusViewer {
-  constructor(container, labels, buildings, onPick, onContextLost, onDetailState = () => {}) {
+  constructor(container, labels, buildings, onPick, onContextLost, onDetailState = () => {}, modelRevision = "") {
     this.container = container;
     this.labelLayer = labels;
     this.buildings = buildings;
+    this.modelRevision = modelRevision;
     this.onPick = onPick;
     this.onDetailState = onDetailState;
     this.detailRequest = 0;
@@ -134,6 +135,11 @@ export class CampusViewer {
   }
 
   async loadAsset(url, onProgress) {
+    // Fixed model names must follow the freshly loaded catalogue across releases.
+    // Detailed models already carry their content hash in the filename.
+    if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
+      url += `?v=${encodeURIComponent(this.modelRevision)}`;
+    }
     let timer;
     try {
       return await Promise.race([
@@ -344,8 +350,8 @@ export class CampusViewer {
       if (this.disposed || request !== this.detailRequest || this.activeCode !== building.code) return;
       this.detailCache.hideAll();
       this.activeDetail = { code: building.code, kind, group };
-      if (kind === "exterior") this.groups.get(building.code).visible = false;
-      else this.interiors.get(building.code).visible = false;
+      const base = kind === "exterior" ? this.groups.get(building.code) : this.interiors.get(building.code);
+      if (base) base.visible = false;
       group.visible = true;
       this.canvas.dataset.detailReady = `${kind}-${building.code}`;
       this.renderer.shadowMap.needsUpdate = true;
