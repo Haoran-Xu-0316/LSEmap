@@ -11,7 +11,9 @@ Explore the campus by orbiting, panning and zooming. Select a building directly 
 search by its name/code. Detail panels open original model renderings, and five
 public-interior studies load on demand. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
-fallback when WebGL is unavailable.
+fallback when WebGL is unavailable. Fourteen building models and five interior
+views progressively load native bevels and source-derived procedural materials.
+The lightweight campus remains available while these assets download.
 
 Edition 04 adds Columbia House stone reveals, rusticated courses, entrance joinery
 and the Connaught House recessed portal. Four new render views document these
@@ -102,19 +104,25 @@ npm test
 
 Tests cover desktop/mobile selection, search and empty results, gallery navigation,
 public-interior switching, unknown footprints, deep links, keyboard/reduced-motion
-behavior and recovery after a model network failure. On macOS the browser tests use
+behavior, all nineteen detailed assets, shader compilation, stale-response isolation,
+bounded-cache disposal and recovery after a model network failure. On macOS the browser tests use
 ANGLE Metal; the default headless software renderer may not create a WebGL context.
 
 ## Model scope and attribution
 
 The catalogue contains 31 official map-code records, not 31 independent finished
-buildings. Twelve have developed exterior details; 5LF and 49L remain unresolved,
+buildings. Fourteen contain architectural detail studies; 5LF and 49L remain unresolved,
 61A has provisional attribution, and 35L is represented as a construction site.
 Most dimensions are photo-based estimates. This is not a measured survey, a live
 campus map or a route planner. The project has no official affiliation with LSE.
 
-Web models simplify small bevels and procedural materials. High-detail renderings
-retain more of the Blender finishes. The OLD photographic relief reference is
+The campus overview simplifies small bevels and procedural materials. Selected
+buildings load their evaluated native geometry, including existing interior floor
+plates and roof slabs. Separate interior views use deliberate cutaways. Metric UVs
+preserve brick and slate courses; browser noise approximates the source parameters
+for stone, concrete and timber. These shaders are not baked Blender renders.
+A bounded cache releases old models, and failed detail downloads can be retried
+without losing the base view. High-detail renderings retain the Cycles finishes. The OLD photographic relief reference is
 removed from the public model and its public rendering.
 
 Footprints: ©[OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
