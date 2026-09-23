@@ -1060,3 +1060,23 @@ dialog::backdrop {
   padding: 14px 18px;
   border-radius: 6px;
 }
+
+.detail-quality {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.detail-quality button {
+  min-height: 32px;
+  padding: 4px 8px;
+  color: var(--ink);
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .detail-quality { grid-column: 1 / -1; margin: 8px 0 0; }
+}
