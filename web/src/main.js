@@ -117,11 +117,30 @@ function renderDetail(building) {
       setSceneCopy(building);
       $("#exterior-view")?.setAttribute("aria-pressed", "true");
       $("#interior-view")?.setAttribute("aria-pressed", "false");
+      $("#detail-view")?.setAttribute("aria-pressed", "false");
       $("#context-toggle").disabled = false;
       $("#context-toggle").setAttribute("aria-pressed", "false");
       stage.classList.remove("interior-view");
     });
     actions.append(exterior);
+    if (building.detailView) {
+      const closeup = element("button", "", building.detailView.label);
+      closeup.id = "detail-view";
+      closeup.setAttribute("aria-pressed", "false");
+      closeup.disabled = !viewer?.ready;
+      closeup.addEventListener("click", () => {
+        viewer.showDetail(building);
+        closeup.setAttribute("aria-pressed", "true");
+        exterior.setAttribute("aria-pressed", "false");
+        $("#interior-view")?.setAttribute("aria-pressed", "false");
+        $("#scene-subtitle").textContent = "拖动旋转，近距离观察入口构件";
+        $("#view-mode").textContent = building.detailView.label;
+        $("#context-toggle").disabled = true;
+        $("#context-toggle").setAttribute("aria-pressed", "false");
+        stage.classList.remove("interior-view");
+      });
+      actions.append(closeup);
+    }
     if (building.interior) {
       const interior = element("button", "", "公共内部");
       interior.id = "interior-view";
@@ -136,6 +155,7 @@ function renderDetail(building) {
           if (!activated || current?.code !== building.code) return;
           interior.setAttribute("aria-pressed", "true");
           exterior.setAttribute("aria-pressed", "false");
+          $("#detail-view")?.setAttribute("aria-pressed", "false");
           $("#scene-kicker").textContent = `${building.code} / PUBLIC INTERIOR`;
           $("#scene-subtitle").textContent = "公共空间研究模型，可旋转观察";
           $("#view-mode").textContent = "公共内部";
