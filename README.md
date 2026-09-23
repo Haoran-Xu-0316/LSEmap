@@ -11,9 +11,14 @@ Explore the campus by orbiting, panning and zooming. Select a building directly 
 search by its name/code. Detail panels open original model renderings, and five
 public-interior studies load on demand. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
-fallback when WebGL is unavailable. Twenty-seven building models and five interior
+fallback when WebGL is unavailable. Twenty-eight building models and five interior
 views progressively load native bevels and source-derived procedural materials.
 The lightweight campus remains available while these assets download.
+
+Edition 06 adds the independently attributed 5LF townhouse, with sash windows,
+a rusticated ground floor, entrance steps, forecourt railings and chimney stacks.
+The official LSE address-map point falls inside OSM way/1184094775.
+Heights and unseen elevations remain estimated.
 
 Edition 05 adds first-pass street facades for COW, KGS, LAK, LCH, 50L, 51L, PAR,
 PEA, PEL, POR, SAR, SHF and STC. Brickwork, sash windows, stone courses and
@@ -106,15 +111,15 @@ npm test
 
 Tests cover desktop/mobile selection, search and empty results, gallery navigation,
 public-interior switching, unknown footprints, deep links, keyboard/reduced-motion
-behavior, all thirty-two on-demand assets, shader compilation, stale-response isolation,
+behavior, all thirty-three on-demand assets, shader compilation, stale-response isolation,
 bounded-cache disposal and recovery after a model network failure. On macOS the browser tests use
 ANGLE Metal; the default headless software renderer may not create a WebGL context.
 
 ## Model scope and attribution
 
 The catalogue contains 31 official map-code records, not 31 independent finished
-buildings. Fourteen contain developed detail studies and thirteen have initial street-facade
-studies; 5LF and 49L remain unresolved,
+buildings. Fourteen contain developed detail studies and fourteen have initial street-facade
+studies; 49L remains unresolved,
 61A has provisional attribution, and 35L is represented as a construction site.
 Most dimensions are photo-based estimates. This is not a measured survey, a live
 campus map or a route planner. The project has no official affiliation with LSE.
