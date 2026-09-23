@@ -1,6 +1,6 @@
 {
-  "version": "08",
-  "sourceModelSha256": "c60aee10ece1505b8209e21270a53034c5974d296a4566164033a6988807aa89",
+  "version": "16",
+  "sourceModelSha256": "9690604ae8ccae1ad82aa5c82e12970b83ba274cc13cc5d064cc5f2441bd86a2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -31,11 +31,16 @@
         0.6857454180717468
       ],
       "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
+      "localRefinement": {
+        "description": "Bronze perimeter beads, recessed seals and drained lower glazing channels",
+        "newComponents": 2266,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-7a16781c3b7e.glb",
-        "bytes": 3314952,
-        "triangles": 282345,
-        "sha256": "7a16781c3b7e8c3c0b9befc9f76756ffa464f45f2a06769f2827c02db9b2be2f",
+        "url": "/models/details/61a-exterior-6f323016a825.glb",
+        "bytes": 3587152,
+        "triangles": 309537,
+        "sha256": "6f323016a82563e2d1613638752d63ef6c821e12bce7aa6a1d58c6a6ce93b1b8",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -73,6 +78,11 @@
         0.49755552411079407,
         0.8025950193405151
       ],
+      "localRefinement": {
+        "description": "Curtain-wall pressure caps, dark perimeter seals and sill drainage outlets",
+        "newComponents": 13676,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "interiorView": {
         "position": [
           43.64379119873047,
@@ -99,10 +109,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-80b68ec81575.glb",
-        "bytes": 2479744,
-        "triangles": 283212,
-        "sha256": "80b68ec81575282fc4cfbc27c49e9f1e447d5b7110b4f66e9d02dd8a16cf3d19",
+        "url": "/models/details/cbg-exterior-3af711f968dc.glb",
+        "bytes": 4052084,
+        "triangles": 447324,
+        "sha256": "3af711f968dcdb981acbfa5fbb84757f0fe7225a1b6401615d67919610c7517b",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -153,6 +163,11 @@
         ]
       },
       "interior": true,
+      "localRefinement": {
+        "description": "LIF window reveal beads, separate sill noses and end returns",
+        "newComponents": 3828,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "interiorView": {
         "position": [
           -97.4619140625,
@@ -179,10 +194,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-ead5cf422b7c.glb",
-        "bytes": 909392,
-        "triangles": 92466,
-        "sha256": "ead5cf422b7c051ddf8d41e7e08fefd3d2e20a85b8e064a3bc39e82d3f960675",
+        "url": "/models/details/ckk-exterior-36efef9dd59d.glb",
+        "bytes": 1381908,
+        "triangles": 138402,
+        "sha256": "36efef9dd59d744979ddfbaa3270c7fde5eb4da6dc9fe2dcdaed2b26deeaf7ff",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -238,11 +253,16 @@
         0.48209914565086365,
         0.7838334441184998
       ],
+      "localRefinement": {
+        "description": "Masonry window rebates, stone sill drips and dressed sill returns",
+        "newComponents": 583,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-025af837b0e3.glb",
-        "bytes": 473444,
-        "triangles": 46052,
-        "sha256": "025af837b0e3009a5bcee3864e2c34b13ee0b5a388597b6e47bfa1ae049e5143",
+        "url": "/models/details/clm-exterior-7573b354f1c0.glb",
+        "bytes": 552440,
+        "triangles": 53048,
+        "sha256": "7573b354f1c0d93a2172626469ca075b2ce3f2102e278be5d2956a15cb1db54d",
         "bounds": {
           "min": [
             99.23820495605469,
@@ -280,6 +300,11 @@
         0.5000902414321899,
         0.6652591228485107
       ],
+      "localRefinement": {
+        "description": "Recessed glazing beads and projecting sill-edge water checks",
+        "newComponents": 1067,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailView": {
         "label": "入口细节",
         "position": [
@@ -295,10 +320,10 @@
         "fov": 46
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-f48d7288d7ce.glb",
-        "bytes": 281516,
-        "triangles": 26496,
-        "sha256": "f48d7288d7ce64df5604ead8f9300ded2c051bfb8bc13f22b4ac44171ff23990",
+        "url": "/models/details/col-exterior-faa7f16517ba.glb",
+        "bytes": 421480,
+        "triangles": 39300,
+        "sha256": "faa7f16517babf3b0a20d799a12fd3f9952b25d5a3beee890459dfc9b08e6517",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -336,6 +361,11 @@
         0.5131147503852844,
         0.8481693863868713
       ],
+      "localRefinement": {
+        "description": "Street-window reveal beads, sill noses and masonry sill returns",
+        "newComponents": 374,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailView": {
         "label": "入口细节",
         "position": [
@@ -351,10 +381,10 @@
         "fov": 46
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-365b56fde61a.glb",
-        "bytes": 296952,
-        "triangles": 27850,
-        "sha256": "365b56fde61a71a8ffb32fc41b3d8e05fec4e620ccb07075a321dd1857686386",
+        "url": "/models/details/con-exterior-ae8778966c3d.glb",
+        "bytes": 346804,
+        "triangles": 32338,
+        "sha256": "ae8778966c3d42940cf282fb5280b22ba8d98249004812a5b1bc9143f80a6e29",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -376,38 +406,57 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -6.204202175140381,
+          -6.507339954376221,
           0.0,
-          -7.471505641937256
+          -7.595107555389404
         ],
         "max": [
-          31.304912567138672,
-          20.600000381469727,
-          14.450531959533691
+          31.551820755004883,
+          22.479999542236328,
+          14.707598686218262
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        -0.8201667666435242,
-        0.5449883937835693,
-        0.17411008477210999
+        -0.8388007283210754,
+        0.5144957900047302,
+        0.17806582152843475
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photographed heritage facade details; footprint retained. Heights, ornamental profiles, roof depth and unseen elevations remain estimates. No surveyed interior claim.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -19.085157206404723,
+          4.4,
+          7.92495901812355
+        ],
+        "target": [
+          -5.390338268892609,
+          3.7,
+          5.017737962070278
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Sash putty beads, lower weatherboards and paired sill end grains",
+        "newComponents": 1210,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-b4702a38c90c.glb",
-        "bytes": 1939776,
-        "triangles": 155796,
-        "sha256": "b4702a38c90caf73395bd981bc54ad3c17647ad4d153c7b9d874f38a15e4f610",
+        "url": "/models/details/cow-exterior-0f3173505d40.glb",
+        "bytes": 2871912,
+        "triangles": 231679,
+        "sha256": "0f3173505d40a1147877745bbd416d4772b06da4d8d033ab97752dee8d36724b",
         "bounds": {
           "min": [
-            -6.201710224151611,
+            -6.504848003387451,
             0.0,
-            -7.466561794281006
+            -7.590163707733154
           ],
           "max": [
-            31.301143646240234,
-            20.600000381469727,
-            14.447929382324219
+            31.549266815185547,
+            22.479999542236328,
+            14.704972267150879
           ]
         }
       }
@@ -435,11 +484,16 @@
         0.48337969183921814,
         -0.6428813338279724
       ],
+      "localRefinement": {
+        "description": "Continuous ribbon-window seals, metal sill caps and spaced drain slots",
+        "newComponents": 1716,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/faw-exterior-94d72461a6e4.glb",
-        "bytes": 276536,
-        "triangles": 25129,
-        "sha256": "94d72461a6e407d03e702a0e4a7a2e0e17cd9400ae7b874f879e30537635ec34",
+        "url": "/models/details/faw-exterior-a12501a927fe.glb",
+        "bytes": 492444,
+        "triangles": 45721,
+        "sha256": "a12501a927fe5766792c1a62663dbb7935277597b8594062eae150719b60326c",
         "bounds": {
           "min": [
             72.36564636230469,
@@ -461,38 +515,57 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -33.509010314941406,
+          -33.602169036865234,
           0.0,
           -12.12070083618164
         ],
         "max": [
-          -12.533234596252441,
-          16.55388832092285,
-          5.032217502593994
+          -12.460378646850586,
+          18.65999984741211,
+          5.265872955322266
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        0.6430067420005798,
-        0.5449883341789246,
-        0.5380799174308777
+        0.6576157808303833,
+        0.5144957900047302,
+        0.5503050088882446
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photographed heritage facade details; footprint retained. Heights, ornamental profiles, roof depth and unseen elevations remain estimates. No surveyed interior claim.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -6.04868076177555,
+          4.4,
+          8.450577616500295
+        ],
+        "target": [
+          -16.785353392828412,
+          3.7,
+          -0.5340682203482792
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Inset sash putty edges, bottom weatherboards and end-grain sill joints",
+        "newComponents": 539,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-45d3d3c37e2b.glb",
-        "bytes": 757956,
-        "triangles": 57755,
-        "sha256": "45d3d3c37e2b9ae88948a46c8a022e4f531cbc6bba19dcbec9c580a35892a2ac",
+        "url": "/models/details/kgs-exterior-0f42cebcbcb2.glb",
+        "bytes": 1642972,
+        "triangles": 123521,
+        "sha256": "0f42cebcbcb2f98ede0b3c7ce09f42c7e07ca0f41bd392b7d8b885fe5cfcef05",
         "bounds": {
           "min": [
-            -33.50490951538086,
+            -33.59806823730469,
             0.0,
-            -12.11610221862793
+            -12.12070083618164
           ],
           "max": [
-            -12.538186073303223,
-            16.55388832092285,
-            5.0281147956848145
+            -12.465330123901367,
+            18.65999984741211,
+            5.261770248413086
           ]
         }
       }
@@ -520,11 +593,16 @@
         0.48201504349708557,
         0.4044066071510315
       ],
+      "localRefinement": {
+        "description": "Stone-framed window rebates with projecting drip edges and sill end blocks",
+        "newComponents": 220,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-d8447c4017a7.glb",
-        "bytes": 148172,
-        "triangles": 11818,
-        "sha256": "d8447c4017a752f58a758436bf8d57f4d8176f64a69d5fe11a9b5a74f647169d",
+        "url": "/models/details/ksw-exterior-5bec191f841e.glb",
+        "bytes": 179348,
+        "triangles": 14458,
+        "sha256": "5bec191f841ed957cd126422683ee0b7c6706eb8affcd13c6a1e67921e61ebfa",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -546,38 +624,57 @@
       "status": "facade",
       "bounds": {
         "min": [
-          2.4008851051330566,
+          2.289186954498291,
           0.0,
-          -13.921525955200195
+          -14.035511016845703
         ],
         "max": [
-          23.763460159301758,
-          15.75,
+          23.84626007080078,
+          17.549999237060547,
           6.067502021789551
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        -0.6453550457954407,
-        0.5449883341789246,
-        -0.5352611541748047
+        -0.34407711029052734,
+        0.3713906705379486,
+        -0.8623687624931335
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photograph-informed Portugal Street shopfront and John Watkins Plaza arched windows, sash divisions, quoins, cornice and roof study. Heights, bay counts, dormer positions and roof depth estimated. Historical pediment not assigned without firmer location evidence. No verified interior.",
+      "detailView": {
+        "label": "窗饰细节",
+        "position": [
+          22.02361314676945,
+          5.0,
+          -15.261922606988971
+        ],
+        "target": [
+          15.775301150309488,
+          3.4,
+          -7.454323896928851
+        ],
+        "fov": 45
+      },
+      "localRefinement": {
+        "description": "Street, plaza and dormer sash beads and weathered sill edges",
+        "newComponents": 396,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/lak-exterior-9eb5f9509073.glb",
-        "bytes": 810384,
-        "triangles": 63168,
-        "sha256": "9eb5f950907372b7569379ab3a93e42bcd8229243d3487248dcadb6181617466",
+        "url": "/models/details/lak-exterior-dfd3566010f7.glb",
+        "bytes": 1188332,
+        "triangles": 93984,
+        "sha256": "dfd3566010f76b1c0747e85d18379a2ff9e3eb5edc86943fa0604f5aec75ca6b",
         "bounds": {
           "min": [
-            2.405834197998047,
+            2.2941360473632812,
             0.0,
-            -13.916584968566895
+            -14.030570983886719
           ],
           "max": [
-            23.75852394104004,
-            15.75,
-            6.063527584075928
+            23.841318130493164,
+            17.549999237060547,
+            6.067502021789551
           ]
         }
       }
@@ -601,16 +698,35 @@
       },
       "interior": false,
       "exteriorDirection": [
-        0.3495925962924957,
-        0.5449883341789246,
-        -0.762084424495697
+        0.38022950291633606,
+        0.41036465764045715,
+        -0.8288705348968506
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photographed recessed entrance with splayed side arches, timber doors, green name panel and checker floor. Upper envelope retained from the prior approximate study. Dimensions, ornamental profiles and unseen elevations estimated; no verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -21.234198123019937,
+          3.7,
+          -32.25497290348563
+        ],
+        "target": [
+          -25.362044894498588,
+          2.08,
+          -23.256590651030873
+        ],
+        "fov": 42
+      },
+      "localRefinement": {
+        "description": "Upper sash recess beads, low sill weatherboards and edge joints",
+        "newComponents": 187,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-fcaf4f051c80.glb",
-        "bytes": 485996,
-        "triangles": 35262,
-        "sha256": "fcaf4f051c80acd8fcdd586fdcdf313103ab03b12ad342a8e6bc81efc4eafec1",
+        "url": "/models/details/lch-exterior-52511c275f3d.glb",
+        "bytes": 1026880,
+        "triangles": 80882,
+        "sha256": "52511c275f3d1a7123eb11c9872734a08591f021e3c9373b98399c800f868653",
         "bounds": {
           "min": [
             -34.47998046875,
@@ -658,11 +774,16 @@
         "sourcePage": "https://info.lse.ac.uk/staff/services/faculty-accommodation/property-portfolio/five-lincolns-inn-fields",
         "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
       },
+      "localRefinement": {
+        "description": "Georgian sash perimeter putty and projecting painted sill noses",
+        "newComponents": 121,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/5lf-exterior-d2f15238c35d.glb",
-        "bytes": 227160,
-        "triangles": 16406,
-        "sha256": "d2f15238c35d67e33f7a1433368b6179825ee7f2ca3bf8c2b26d38b04f34c9a7",
+        "url": "/models/details/5lf-exterior-57d2bf0c3228.glb",
+        "bytes": 245344,
+        "triangles": 17858,
+        "sha256": "57d2bf0c3228f6b7bb267ab09acc6dd20639a1f8dc967a6b6d94039af4b5f535",
         "bounds": {
           "min": [
             -112.59539794921875,
@@ -684,17 +805,22 @@
       "status": "construction",
       "bounds": {
         "min": [
-          58.05344009399414,
+          57.982948303222656,
           0.0,
-          -109.31193542480469
+          -109.38243103027344
         ],
         "max": [
-          108.45762634277344,
-          2.700000047683716,
-          -57.532066345214844
+          108.52578735351562,
+          2.7700002193450928,
+          -57.46314239501953
         ]
       },
-      "interior": false
+      "interior": false,
+      "localRefinement": {
+        "description": "Indicative hoarding panel seams and cap rails; no claim about current construction progress",
+        "newComponents": 147,
+        "scope": "Construction site representation only; panel spacing estimated."
+      }
     },
     {
       "code": "49L",
@@ -725,11 +851,16 @@
         "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
         "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
       },
+      "localRefinement": {
+        "description": "Coopers sash beads and sill drips behind the existing shutters",
+        "newComponents": 165,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/49l-exterior-203bf040d745.glb",
-        "bytes": 960076,
-        "triangles": 76593,
-        "sha256": "203bf040d7451a854a6ee29ce15fdaa73ba625b6d5373111b8a8e5b39697bc1c",
+        "url": "/models/details/49l-exterior-3dc31b8daf94.glb",
+        "bytes": 984124,
+        "triangles": 78573,
+        "sha256": "3dc31b8daf94c6e3a57fd9fab245286ce0108c1589f5349a6eeb4340210eefd3",
         "bounds": {
           "min": [
             -56.261409759521484,
@@ -773,11 +904,16 @@
         "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
         "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
       },
+      "localRefinement": {
+        "description": "Tall sash perimeter beads, lower weatherboards and sill end joints",
+        "newComponents": 121,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-56d67271c32a.glb",
-        "bytes": 177952,
-        "triangles": 12480,
-        "sha256": "56d67271c32a70158820098ff2f2b1c2dce68d2c1ac18af47bff1466aba53f7a",
+        "url": "/models/details/50l-exterior-17c8fc3fa693.glb",
+        "bytes": 196232,
+        "triangles": 13932,
+        "sha256": "17c8fc3fa6937011012fd2730d164c7028df4ed5d012fc64eff581475a02f140",
         "bounds": {
           "min": [
             -51.51279830932617,
@@ -816,11 +952,16 @@
         -0.7665883302688599
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Stone-window inner rebates and projecting sill-edge returns",
+        "newComponents": 1056,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-8cb66ef6e5e7.glb",
-        "bytes": 1883980,
-        "triangles": 144143,
-        "sha256": "8cb66ef6e5e7e3a9df599c82152255e4e3ffeb1d2c8b20bbf315241e1d1d4d40",
+        "url": "/models/details/51l-exterior-22d85f7410f5.glb",
+        "bytes": 2023284,
+        "triangles": 156815,
+        "sha256": "22d85f7410f5c773e4d10a238c34f2b23ef173442afc481ac9f8a8bd7be0a3f8",
         "bounds": {
           "min": [
             -74.75358581542969,
@@ -853,6 +994,11 @@
         ]
       },
       "interior": true,
+      "localRefinement": {
+        "description": "Library external glazing pressure caps and sill-channel drain details",
+        "newComponents": 4620,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "interiorView": {
         "position": [
           69.63214874267578,
@@ -879,10 +1025,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-a3029857b1c2.glb",
-        "bytes": 4073384,
-        "triangles": 512384,
-        "sha256": "a3029857b1c22114f1595ba68bd95702d1b51f4f5457958785e111d0563f228c",
+        "url": "/models/details/lrb-exterior-4070f3d9ad39.glb",
+        "bytes": 4614932,
+        "triangles": 567824,
+        "sha256": "4070f3d9ad39134e579974d4f9c66aa9b7cd01e1cc96d4cc51c253f6eff627a9",
         "bounds": {
           "min": [
             24.92513656616211,
@@ -922,9 +1068,9 @@
       "status": "detailed",
       "bounds": {
         "min": [
-          -45.36587142944336,
+          -45.36553955078125,
           0.0,
-          -80.22404479980469
+          -80.22682189941406
         ],
         "max": [
           23.157800674438477,
@@ -934,10 +1080,30 @@
       },
       "interior": true,
       "exteriorDirection": [
-        -0.3176555037498474,
-        0.4841021001338959,
-        -0.8153159618377686
+        -0.3350583016872406,
+        0.4472135901451111,
+        -0.8292984366416931
       ],
+      "facadeScope": "Built-photo refinement of the north middle screen, sloping entrance return, recessed podium glazing, balcony guards, entrance doors and lantern forecourt piers. Existing public hall retained. Positions, heights and profiles remain photo-proportion estimates.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -28.22005746732383,
+          5.2,
+          -83.50629934420296
+        ],
+        "target": [
+          -21.02761087373832,
+          4.3,
+          -65.70436933652064
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Upper facade recessed window beads, sill channels and fine drain slots",
+        "newComponents": 6730,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "interiorView": {
         "position": [
           1.6433366537094116,
@@ -964,15 +1130,15 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-da593034da0f.glb",
-        "bytes": 3562940,
-        "triangles": 364054,
-        "sha256": "da593034da0f792e636c8e453546ab62f4b359a34f910c46af1570200e2454d0",
+        "url": "/models/details/mar-exterior-c6c7d6681e6c.glb",
+        "bytes": 5189556,
+        "triangles": 524212,
+        "sha256": "c6c7d6681e6ccb8131913f9a95a8cf199c5899df252c3872df5106bdce3a3e18",
         "bounds": {
           "min": [
-            -45.36587142944336,
+            -45.36549377441406,
             0.0,
-            -80.22404479980469
+            -80.22334289550781
           ],
           "max": [
             23.157800674438477,
@@ -1023,11 +1189,16 @@
         0.48807665705680847,
         0.37447047233581543
       ],
+      "localRefinement": {
+        "description": "Historic masonry window rebates and dressed sill drip courses",
+        "newComponents": 5104,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-396d6a5302fe.glb",
-        "bytes": 11265400,
-        "triangles": 926283,
-        "sha256": "396d6a5302fefa059780a53c55910ba6b20e611f6936a7105b801c62174d1028",
+        "url": "/models/details/old-exterior-939d22ec32fd.glb",
+        "bytes": 11888872,
+        "triangles": 987531,
+        "sha256": "939d22ec32fd191b07bbdcc695eed2f71d8da3d4614785d1fc32e7055c7b771f",
         "bounds": {
           "min": [
             -39.15880584716797,
@@ -1065,11 +1236,16 @@
         0.4821758270263672,
         0.8432455658912659
       ],
+      "localRefinement": {
+        "description": "Green timber glazing beads and separate shop-window sill weatherboards",
+        "newComponents": 77,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/ocs-exterior-c5066c74b014.glb",
-        "bytes": 1293348,
-        "triangles": 112236,
-        "sha256": "c5066c74b014d02e343f74e04f091bd09ee0832beb955ac9422a647dcd889813",
+        "url": "/models/details/ocs-exterior-57c9d3fbf65e.glb",
+        "bytes": 1306196,
+        "triangles": 113160,
+        "sha256": "57c9d3fbf65ed135c07eef1f35b8caf6a48cbd3f90cd820254b21be02b361c6b",
         "bounds": {
           "min": [
             -47.91916275024414,
@@ -1107,11 +1283,16 @@
         0.48337969183921814,
         -0.6428813338279724
       ],
+      "localRefinement": {
+        "description": "Long window-band seals, lower aluminium caps and drain slots",
+        "newComponents": 1344,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-34dc0ca6fe2d.glb",
-        "bytes": 550940,
-        "triangles": 52637,
-        "sha256": "34dc0ca6fe2d53c71e4ec34ccf801a51e619d59d5c54b51599cdcf849a0fb8cd",
+        "url": "/models/details/pan-exterior-b1e2f7014108.glb",
+        "bytes": 719060,
+        "triangles": 68765,
+        "sha256": "b1e2f70141088ca34dc959ef5b50f77883f0bab5eb51801b8ad383168ebcfe37",
         "bounds": {
           "min": [
             53.72006607055664,
@@ -1133,38 +1314,57 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -49.18892288208008,
-          0.0,
-          2.3946423530578613
+          -49.06182098388672,
+          -0.019999999552965164,
+          1.6842665672302246
         ],
         "max": [
-          -25.369123458862305,
-          14.649999618530273,
-          16.66602897644043
+          -25.57349967956543,
+          15.470000267028809,
+          16.611709594726562
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        0.20659904181957245,
-        0.5449883937835693,
-        -0.8125913143157959
+        0.2203938066959381,
+        0.4472135901451111,
+        -0.8668485879898071
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photo-informed low entrance hall, four-bay street elevation and pitched tile roof. Footprint retained; heights, roof depths, ornamental profiles and unseen elevations estimated. No verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -24.363430536661845,
+          3.8,
+          -7.406429805794218
+        ],
+        "target": [
+          -28.059546969209414,
+          3.1,
+          7.13106348272278
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Hall and dormer sash putty beads, sill weatherboards and end joints",
+        "newComponents": 539,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-3bbf3a0e72ce.glb",
-        "bytes": 843644,
-        "triangles": 63921,
-        "sha256": "3bbf3a0e72ceed4183f94c6f0dbf5dce6729abcb574b681d0dd9a2065fa15a13",
+        "url": "/models/details/par-exterior-a92c1ac3d327.glb",
+        "bytes": 1060236,
+        "triangles": 82976,
+        "sha256": "a92c1ac3d327c366311ffc2fe079766ae16a2ca2b5743f2ca480b44cb513b70f",
         "bounds": {
           "min": [
-            -49.185550689697266,
-            0.0,
-            2.397599220275879
+            -49.058448791503906,
+            -0.019999999552965164,
+            1.686956524848938
           ],
           "max": [
-            -25.37409210205078,
-            14.649999618530273,
-            16.664613723754883
+            -25.57349967956543,
+            15.470000267028809,
+            16.610294342041016
           ]
         }
       }
@@ -1193,11 +1393,16 @@
         0.772713840007782
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Theatre window gasket lines and metal sill channels; canopy soffit ribs",
+        "newComponents": 673,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/pea-exterior-a266f3271365.glb",
-        "bytes": 1098740,
-        "triangles": 83841,
-        "sha256": "a266f3271365b0fca3518379c1ab1c12e20f8c6fe7fb8c2a2470bc75977c6b81",
+        "url": "/models/details/pea-exterior-b39a1e5765f8.glb",
+        "bytes": 1186616,
+        "triangles": 91917,
+        "sha256": "b39a1e5765f8515dcec5979033e5ebe34944c095083b102b39597d19047ad4f4",
         "bounds": {
           "min": [
             -74.89566802978516,
@@ -1207,7 +1412,7 @@
           "max": [
             -54.80430603027344,
             19.649999618530273,
-            31.771617889404297
+            31.815387725830078
           ]
         }
       }
@@ -1236,11 +1441,16 @@
         -0.6863909959793091
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Dark window seals, slim sill caps and drainage joints along the curved envelope",
+        "newComponents": 3575,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-2c1e667b8722.glb",
-        "bytes": 4595136,
-        "triangles": 387399,
-        "sha256": "2c1e667b8722e81cb7945d71e94bf1ef129f3d393676ca0d7520a8a2013f0669",
+        "url": "/models/details/pel-exterior-49e2ca8a439b.glb",
+        "bytes": 5036080,
+        "triangles": 430299,
+        "sha256": "49e2ca8a439b13347e494218d694297193b96cffdfb4a374ddc767d680e9156f",
         "bounds": {
           "min": [
             100.59568786621094,
@@ -1262,38 +1472,57 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -39.1405143737793,
+          -39.28082275390625,
           0.0,
-          -27.782596588134766
+          -28.297054290771484
         ],
         "max": [
-          -29.006786346435547,
-          14.149999618530273,
+          -28.910921096801758,
+          15.949999809265137,
           -15.1935453414917
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        0.363170862197876,
-        0.5449883341789246,
-        -0.7557079792022705
+        -0.34432581067085266,
+        0.3713906705379486,
+        -0.8622694611549377
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photo-informed chamfered corner entrance, projecting fascia, historical bookshop fronts, sash windows, street plaques and roof edge. Footprint retained; heights, openings, hidden roof and ornamental dimensions estimated. Branding reflects the archived photograph, not verified current tenancy.",
+      "detailView": {
+        "label": "转角细节",
+        "position": [
+          -38.240465215674796,
+          3.8,
+          -36.400646925201144
+        ],
+        "target": [
+          -34.53196256541387,
+          2.65,
+          -27.113719940414157
+        ],
+        "fov": 45
+      },
+      "localRefinement": {
+        "description": "Rebuilt chamfered bookshop entrance, leaded shopfronts, street plaques and sash finish",
+        "newComponents": 253,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/por-exterior-c6bcff33de6f.glb",
-        "bytes": 519064,
-        "triangles": 37921,
-        "sha256": "c6bcff33de6fcb129ba0f5c93c3b71e181681fd56e49584e82fdadb8354ea329",
+        "url": "/models/details/por-exterior-d02ecabd78c1.glb",
+        "bytes": 909780,
+        "triangles": 70815,
+        "sha256": "d02ecabd78c1b8021bbb6488633bd75da9f966749840b1ae7b91f6c0deca7884",
         "bounds": {
           "min": [
-            -39.13644027709961,
+            -39.27674865722656,
             0.0,
-            -27.778146743774414
+            -28.292604446411133
           ],
           "max": [
-            -29.011474609375,
-            14.149999618530273,
-            -15.197975158691406
+            -28.915613174438477,
+            15.949999809265137,
+            -15.1935453414917
           ]
         }
       }
@@ -1322,11 +1551,16 @@
         -0.7692655324935913
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Recessed sash putty beads and white sill weatherboards with end joints",
+        "newComponents": 858,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-b4fbd5aef8dc.glb",
-        "bytes": 1384412,
-        "triangles": 108355,
-        "sha256": "b4fbd5aef8dc68ef07861d5a68fc141d774a644005139d473e64c6eb4e4b2875",
+        "url": "/models/details/sar-exterior-af638a4d774f.glb",
+        "bytes": 1492704,
+        "triangles": 118651,
+        "sha256": "af638a4d774f24a4e61b0e556b08f737874e5aba8a641628257529b8219f88b3",
         "bounds": {
           "min": [
             -92.55103302001953,
@@ -1364,6 +1598,11 @@
         0.4969167709350586,
         -0.16823700070381165
       ],
+      "localRefinement": {
+        "description": "Recessed glazing gasket edges and drained metal sills behind the folded brick screen",
+        "newComponents": 1534,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "interiorBounds": {
         "min": [
           -64.704833984375,
@@ -1377,10 +1616,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-81b4e6012245.glb",
-        "bytes": 8688376,
-        "triangles": 962328,
-        "sha256": "81b4e6012245854b82fa5a7f8159cf1f05222f4fd3ae76fa42ffc8d1fd17056e",
+        "url": "/models/details/saw-exterior-4432c0ef1932.glb",
+        "bytes": 8873368,
+        "triangles": 980736,
+        "sha256": "4432c0ef193263f3049c69fd103a0fae4beff792773f482bc0eebae5af7f51cb",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -1437,11 +1676,16 @@
         0.8005903363227844
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Street sash putty beads, projecting sill noses and painted sill end joints",
+        "newComponents": 352,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-ce1d7b68076f.glb",
-        "bytes": 621684,
-        "triangles": 46753,
-        "sha256": "ce1d7b68076f10c551154ebd667e659bb289c72143921b79fd466a9c97ec2a36",
+        "url": "/models/details/shf-exterior-0a4f01d598d9.glb",
+        "bytes": 668904,
+        "triangles": 50977,
+        "sha256": "0a4f01d598d913849fe926153ee89931949fdb7ecfa0f656d14c86246a2376ef",
         "bounds": {
           "min": [
             -43.886680603027344,
@@ -1479,11 +1723,16 @@
         0.4838261604309082,
         -0.5797110795974731
       ],
+      "localRefinement": {
+        "description": "Stone-window inner beads, sill drip courses and dressed end returns",
+        "newComponents": 2761,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-b98a77dd752b.glb",
-        "bytes": 9331884,
-        "triangles": 780644,
-        "sha256": "b98a77dd752b6b5f49aa4f8877a7cb799a9e77a4a023452a8ef87bbaf93d2d4c",
+        "url": "/models/details/sal-exterior-94a714dd0925.glb",
+        "bytes": 9670200,
+        "triangles": 813776,
+        "sha256": "94a714dd0925dfcb80bbe39775f99ebac087619edf68ba8c0632f99315612c30",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -1505,38 +1754,57 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -17.616357803344727,
+          -17.60181427001953,
           0.0,
-          10.717530250549316
+          10.732993125915527
         ],
         "max": [
-          28.351415634155273,
-          21.149999618530273,
-          35.8935432434082
+          28.39092254638672,
+          20.90999984741211,
+          35.9212532043457
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        -0.306612491607666,
-        0.5449883341789246,
-        0.7803694009780884
+        -0.9215719103813171,
+        0.3872324824333191,
+        0.027498407289385796
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Photo-informed Clare Market window reveals, recessed roof storey, red landing strip, corner panel and recessed entrance. Artwork represented by panel placement only; heights, exact entry bay and unseen surfaces estimated. No verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -2.481489256186876,
+          3.3,
+          39.05230083951075
+        ],
+        "target": [
+          1.9068203417821792,
+          2.25,
+          27.88347163685877
+        ],
+        "fov": 44
+      },
+      "localRefinement": {
+        "description": "Clare Market and attic window seals, metal sill channels and drainage outlets",
+        "newComponents": 2024,
+        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+      },
       "detailedExterior": {
-        "url": "/models/details/stc-exterior-5995098d9532.glb",
-        "bytes": 3538456,
-        "triangles": 287833,
-        "sha256": "5995098d9532a5b4db9fc96d4b6e3cc2fb920e9484043583e5d9142a394d0ddf",
+        "url": "/models/details/stc-exterior-3a181d2002dc.glb",
+        "bytes": 3464096,
+        "triangles": 294351,
+        "sha256": "3a181d2002dcd06760c6a8ee7aeefefe352c6d45bb2dd34f236f54861d5cefd7",
         "bounds": {
           "min": [
-            -17.61273956298828,
+            -17.60181427001953,
             0.0,
-            10.72066593170166
+            10.732993125915527
           ],
           "max": [
-            28.347043991088867,
-            21.149999618530273,
-            35.889156341552734
+            28.39092254638672,
+            20.90999984741211,
+            35.9212532043457
           ]
         }
       }
