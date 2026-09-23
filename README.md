@@ -44,6 +44,18 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 16
+
+The working model is version 16; the deployment target is the same edition 16.
+Cowdray House now includes detailed sash bars, dentil cornices, pitched dormers,
+corner portal and chimney stacks. King's Chambers gains canted stone bays, a
+ribbed lead dome and an arched entrance with its green sign. Both have an entrance
+camera preset and original close-up rendering. Dimensions remain estimated.
+Parish Hall also has a low entrance wing, four window groups, red tiled roof,
+dormers, brick arches, gutters and basement railings. Its new entrance close-up
+shows the separate portals and inscribed lintel.
+Edition 16 is authorized for GitHub publication and Cloudflare deployment.
+
 ## Cloudflare Workers deployment
 
 The static Worker is named `lsemap`. After signing in with Wrangler, `npm run deploy`
@@ -147,3 +159,29 @@ removed from the public model and its public rendering.
 Footprints: ©[OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
 ODbL 1.0. See [asset credits](web/public/credits.txt) for source institutions,
 model limitations and software licenses. Reference photos/PDFs are not redistributed.
+
+St Clement’s local refinement adds recessed window rows, a setback roof storey,
+red corner landings and a recessed signed entrance. The corner artwork is
+represented by its panel placement only; no source photograph is embedded.
+
+The final three local rounds refine Lincoln Chambers' recessed portal, Lakatos'
+street and plaza elevations, and MAR's north entrance/screen. MAR was prioritized
+for the third round. The Portsmouth version 14 draft was not used in edition 15. Edition 16 rebuilds
+Portsmouth on top of edition 15, preserving MAR and prior local work. No deployment was performed.
+
+Edition 16 completes an exterior finishing pass on all 31 catalogue records.
+Each building has a separate manifest entry and source-pane selection. Historic
+windows gain putty/rebate beads and sill drips; modern glazing gains seals, metal
+sill channels and drainage slots. POR has a rebuilt corner shopfront. 35L gains
+indicative hoarding seams and cap rails only. Public interiors are unchanged.
+The local research workspace retains per-building geometry audit records.
+The published `release.json` and `gallery-manifest.json` identify current assets.
+
+## Edition 16 release alignment
+
+The interactive detailed assets and every gallery rendering derive from the same
+version-16 native source. The viewer uses AgX tone mapping; real-time procedural
+shading remains an approximation of the Cycles renders. Gallery URLs include the
+model revision, and the release manifest records file hashes. The deployment
+package includes only currently referenced model variants; local archives remain
+untouched. Native regeneration requires the private local Blender research files.
