@@ -72,8 +72,8 @@ test("desktop exploration, search, images, interior and navigation work without 
   await expect(page.locator("#view-mode")).toHaveText("建筑外观");
   await page.locator("#overview").click();
   await page.locator("#detail-filter").click();
-  await page.locator("#building-search").fill("5LF");
-  await page.locator('.building-row[data-code="5LF"]').click();
+  await page.locator("#building-search").fill("49L");
+  await page.locator('.building-row[data-code="49L"]').click();
   await expect(page.locator("#detail-panel")).toContainText("独立轮廓待确认");
   await expect(page.locator("#exterior-view")).toHaveCount(0);
   await page.locator("#overview").click();
