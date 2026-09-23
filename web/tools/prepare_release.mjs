@@ -23,11 +23,15 @@ for (const name of images) {
   if (createHash('sha256').update(bytes).digest('hex') !== record.sha256) throw new Error(`Stale gallery render: ${name}`);
 }
 const paths = [...models].map(name => `models/${name}`).concat([...images].map(name => `images/${name}.webp`));
-paths.push('gallery-manifest.json');
+paths.push('gallery-manifest.json', 'index.html');
+const html = await readFile(join(root, 'index.html'), 'utf8');
+const entryScript = html.match(/<script[^>]*src="(\/assets\/[^"]+\.js)"/)?.[1];
+if (!entryScript) throw new Error('Missing application entry script');
+for (const file of await readdir(join(root, 'assets'))) paths.push(`assets/${file}`);
 const assets = {};
 for (const path of paths) {
   const data = await readFile(join(root, path));
   assets[`/${path}`] = { bytes: data.length, sha256: createHash('sha256').update(data).digest('hex') };
 }
-await writeFile(join(root, 'release.json'), JSON.stringify({ version: catalogue.version, sourceModelSha256: catalogue.sourceModelSha256, assets }, null, 2)+'\n');
+await writeFile(join(root, 'release.json'), JSON.stringify({ version: catalogue.version, sourceModelSha256: catalogue.sourceModelSha256, entryScript, assets }, null, 2)+'\n');
 console.log(`Prepared edition ${catalogue.version}: ${models.size} model files and ${images.size} gallery images.`);
