@@ -11,11 +11,16 @@ Explore the campus by orbiting, panning and zooming. Select a building directly 
 search by its name/code. Detail panels open original model renderings, and five
 public-interior studies load on demand. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
-fallback when WebGL is unavailable. Twenty-eight building models and five interior
+fallback when WebGL is unavailable. Twenty-nine building models and five interior
 views progressively load native bevels and source-derived procedural materials.
 The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
 returning visitors cannot combine a new catalogue with an older cached model.
+
+Edition 07 develops the provisional 61A envelope with stone window bays, tall
+pilasters, a recessed corner entrance, roof dormers and a hipped pavilion.
+Its independent footprint attribution remains provisional; the reference is an
+archived pre-redevelopment photograph, not a proposed LSE redesign.
 
 Edition 06 adds the independently attributed 5LF townhouse, with sash windows,
 a rusticated ground floor, entrance steps, forecourt railings and chimney stacks.
@@ -113,7 +118,7 @@ npm test
 
 Tests cover desktop/mobile selection, search and empty results, gallery navigation,
 public-interior switching, unknown footprints, deep links, keyboard/reduced-motion
-behavior, all thirty-three on-demand assets, shader compilation, stale-response isolation,
+behavior, all thirty-four on-demand assets, shader compilation, stale-response isolation,
 bounded-cache disposal and recovery after a model network failure. On macOS the browser tests use
 ANGLE Metal; the default headless software renderer may not create a WebGL context.
 
