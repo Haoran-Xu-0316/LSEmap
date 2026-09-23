@@ -19,3 +19,5 @@ playwright-report/
 *.blend
 *.blend1
 .env*
+__pycache__/
+*.pyc
