@@ -1,6 +1,6 @@
 {
-  "version": "06",
-  "sourceModelSha256": "d664fdd00acf8fdfc2a260228d50fcc9acbfd7acf073290479f5443cbc4cedf1",
+  "version": "07",
+  "sourceModelSha256": "ccf570841dc83a8804b2288a52d2ccc010e0a4349caab8e1cdd8e2c8ba771a3d",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -14,17 +14,41 @@
       "status": "provisional",
       "bounds": {
         "min": [
-          -76.85647583007812,
+          -77.13259887695312,
           0.0,
-          47.57329177856445
+          47.836158752441406
         ],
         "max": [
-          -25.59868621826172,
-          30.25,
-          133.3164520263672
+          -25.881681442260742,
+          38.5,
+          133.56549072265625
         ]
       },
-      "interior": false
+      "interior": false,
+      "exteriorDirection": [
+        -0.533357560634613,
+        0.4952605664730072,
+        0.6857454180717468
+      ],
+      "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
+      "detailedExterior": {
+        "url": "/models/details/61a-exterior-7a16781c3b7e.glb",
+        "bytes": 3314952,
+        "triangles": 282345,
+        "sha256": "7a16781c3b7e8c3c0b9befc9f76756ffa464f45f2a06769f2827c02db9b2be2f",
+        "bounds": {
+          "min": [
+            -77.12799072265625,
+            0.0,
+            47.84075927734375
+          ],
+          "max": [
+            -25.88298225402832,
+            38.5,
+            133.56060791015625
+          ]
+        }
+      }
     },
     {
       "code": "CBG",
