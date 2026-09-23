@@ -1,6 +1,6 @@
 {
-  "version": "07",
-  "sourceModelSha256": "ccf570841dc83a8804b2288a52d2ccc010e0a4349caab8e1cdd8e2c8ba771a3d",
+  "version": "08",
+  "sourceModelSha256": "c60aee10ece1505b8209e21270a53034c5974d296a4566164033a6988807aa89",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -700,9 +700,49 @@
       "code": "49L",
       "name": "Coopers Restaurant",
       "address": "49 Lincoln’s Inn Fields",
-      "status": "unlocated",
-      "bounds": null,
-      "interior": false
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -56.261409759521484,
+          0.0,
+          -65.79364776611328
+        ],
+        "max": [
+          -43.47058868408203,
+          11.914999961853027,
+          -51.59469985961914
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.5681107640266418,
+        0.411933571100235,
+        -0.7124330997467041
+      ],
+      "facadeScope": "Block-plan-derived exterior envelope. The 50/50A frontage is a shared physical building, not an assertion of exclusive 50L tenancy. Vertical dimensions and unseen details are estimates.",
+      "footprintSource": {
+        "drawing": "RT22055-RTA-XX-XX-DR-A-00002, PL01, 2022-06-22",
+        "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
+        "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
+      },
+      "detailedExterior": {
+        "url": "/models/details/49l-exterior-203bf040d745.glb",
+        "bytes": 960076,
+        "triangles": 76593,
+        "sha256": "203bf040d7451a854a6ee29ce15fdaa73ba625b6d5373111b8a8e5b39697bc1c",
+        "bounds": {
+          "min": [
+            -56.261409759521484,
+            0.0,
+            -65.78994750976562
+          ],
+          "max": [
+            -43.474910736083984,
+            11.914999961853027,
+            -51.59941101074219
+          ]
+        }
+      }
     },
     {
       "code": "50L",
@@ -711,38 +751,43 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -55.86215591430664,
+          -51.517513275146484,
           0.0,
-          -66.29132843017578
+          -54.27339553833008
         ],
         "max": [
-          -45.69108963012695,
-          12.949999809265137,
-          -52.41556930541992
+          -40.59330368041992,
+          12.484999656677246,
+          -44.29985427856445
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        -0.28505030274391174,
-        0.5449883937835693,
-        -0.7885012030601501
+        -0.8848124742507935,
+        0.3618395924568176,
+        0.29356247186660767
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Block-plan-derived exterior envelope. The 50/50A frontage is a shared physical building, not an assertion of exclusive 50L tenancy. Vertical dimensions and unseen details are estimates.",
+      "footprintSource": {
+        "drawing": "RT22055-RTA-XX-XX-DR-A-00002, PL01, 2022-06-22",
+        "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
+        "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
+      },
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-86458ddc8177.glb",
-        "bytes": 746884,
-        "triangles": 53751,
-        "sha256": "86458ddc8177428e36404b1bbb3106fcfb329ff505e5a667cb41cfa11a719152",
+        "url": "/models/details/50l-exterior-56d67271c32a.glb",
+        "bytes": 177952,
+        "triangles": 12480,
+        "sha256": "56d67271c32a70158820098ff2f2b1c2dce68d2c1ac18af47bff1466aba53f7a",
         "bounds": {
           "min": [
-            -55.85747146606445,
+            -51.51279830932617,
             0.0,
-            -66.28724670410156
+            -54.27339553833008
           ],
           "max": [
-            -45.69432067871094,
-            12.949999809265137,
-            -52.420265197753906
+            -40.59330368041992,
+            12.484999656677246,
+            -44.304569244384766
           ]
         }
       }
