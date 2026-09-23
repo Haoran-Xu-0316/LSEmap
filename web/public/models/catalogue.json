@@ -1,6 +1,6 @@
 {
-  "version": "05",
-  "sourceModelSha256": "9a0723906bdff03f9e2f2f8efb5c68b4de4675ff61beb22dbe97723eeba2f091",
+  "version": "06",
+  "sourceModelSha256": "d664fdd00acf8fdfc2a260228d50fcc9acbfd7acf073290479f5443cbc4cedf1",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -605,9 +605,53 @@
       "code": "5LF",
       "name": "5 Lincoln’s Inn Fields",
       "address": "5 Lincoln’s Inn Fields",
-      "status": "unlocated",
-      "bounds": null,
-      "interior": false
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -112.59539794921875,
+          0.0,
+          -264.3106689453125
+        ],
+        "max": [
+          -98.30729675292969,
+          16.229999542236328,
+          -241.37252807617188
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        0.2915275990962982,
+        0.5144957900047302,
+        0.8064153790473938
+      ],
+      "facadeScope": "Official LSE address-map point is inside the attributed OSM polygon. Front facade follows archived estate imagery; heights and rear geometry remain estimated.",
+      "footprintSource": {
+        "osmId": "way/1184094775",
+        "sourcePoint": {
+          "longitude": -0.1182048,
+          "latitude": 51.5168142
+        },
+        "sourcePage": "https://info.lse.ac.uk/staff/services/faculty-accommodation/property-portfolio/five-lincolns-inn-fields",
+        "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
+      },
+      "detailedExterior": {
+        "url": "/models/details/5lf-exterior-d2f15238c35d.glb",
+        "bytes": 227160,
+        "triangles": 16406,
+        "sha256": "d2f15238c35d67e33f7a1433368b6179825ee7f2ca3bf8c2b26d38b04f34c9a7",
+        "bounds": {
+          "min": [
+            -112.59539794921875,
+            0.0,
+            -264.3106689453125
+          ],
+          "max": [
+            -98.3113784790039,
+            16.229999542236328,
+            -241.37660217285156
+          ]
+        }
+      }
     },
     {
       "code": "35L",
