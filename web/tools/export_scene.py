@@ -2,11 +2,13 @@
 
 Run this file in Blender's Text Editor. It reads the model without saving changes.
 Blender exports evaluated meshes, so curves and architectural lettering survive.
-Procedural materials become simple PBR colors; original renders retain finer finishes.
+The overview uses simple PBR colors; on-demand models retain evaluated bevels,
+metric UVs and source-derived procedural parameters for browser shading.
 """
 from pathlib import Path
 import hashlib
 import json
+import struct
 import bpy
 from mathutils import Vector
 
@@ -23,12 +25,17 @@ source_scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
 bpy.context.window.scene = source_scene
 # Small bevels multiply the triangle count without changing the campus silhouette.
 # Keep the archival model intact on disk; the browser uses a lighter derivative.
+modifier_states = []
+curve_resolutions = []
+full_detail = False
 for original in source_scene.objects:
     for modifier in original.modifiers:
         if modifier.type == 'BEVEL':
+            modifier_states.append((modifier, modifier.show_viewport, modifier.show_render))
             modifier.show_viewport = False
             modifier.show_render = False
     if original.type in {'FONT', 'CURVE'}:
+        curve_resolutions.append((original.data, original.data.resolution_u))
         original.data.resolution_u = min(original.data.resolution_u, 4)
 bpy.context.view_layer.update()
 depsgraph = bpy.context.evaluated_depsgraph_get()
@@ -37,9 +44,47 @@ DETAIL_CODES = {'MAR', 'SAW', 'CBG', 'LRB', 'CKK', 'OLD', 'SAL', 'CLM', 'KSW', '
 material_cache = {}
 
 
+def surface_descriptor(source):
+    """Transfer authored procedural parameters, never archive image textures.
+
+    Browser noise approximates the Blender shader; it is not a texture bake.
+    UV brick dimensions and color endpoints come directly from the source nodes.
+    """
+    if not source or not source.use_nodes:
+        return None
+    nodes = source.node_tree.nodes
+    if any(n.type == 'TEX_IMAGE' for n in nodes):
+        return None
+    texture = next((n for n in nodes if n.type == 'TEX_BRICK'), None)
+    if not texture:
+        texture = next((n for n in nodes if n.type == 'TEX_NOISE'), None)
+    if not texture:
+        return None
+    bump = next((n for n in nodes if n.type == 'BUMP'), None)
+    result = {
+        'kind': 'brick' if texture.type == 'TEX_BRICK' else 'noise',
+        'scale': float(texture.inputs['Scale'].default_value),
+        'bump': float(bump.inputs['Distance'].default_value * bump.inputs['Strength'].default_value) if bump else 0,
+        'approximation': 'Source-derived browser procedural shader, not a Blender bake',
+    }
+    if texture.type == 'TEX_BRICK':
+        for key, socket in [('colorA', 'Color1'), ('colorB', 'Color2'), ('mortarColor', 'Mortar')]:
+            result[key] = list(texture.inputs[socket].default_value)[:3]
+        result['brickWidth'] = float(texture.inputs['Brick Width'].default_value)
+        result['rowHeight'] = float(texture.inputs['Row Height'].default_value)
+        result['mortarSize'] = float(texture.inputs['Mortar Size'].default_value)
+    else:
+        ramp = next((n for n in nodes if n.type == 'VALTORGB'), None)
+        principled = next((n for n in nodes if n.type == 'BSDF_PRINCIPLED'), None)
+        if ramp and principled and principled.inputs['Base Color'].is_linked:
+            result['colorA'] = list(ramp.color_ramp.elements[0].color)[:3]
+            result['colorB'] = list(ramp.color_ramp.elements[-1].color)[:3]
+    return result
+
+
 def web_material(source):
     """Use bounded PBR properties; avoid expensive screen-space transmission."""
-    key = source.name if source else 'unassigned'
+    key = ('DETAIL_' if full_detail else '') + (source.name if source else 'unassigned')
     if key in material_cache:
         return material_cache[key]
     material = bpy.data.materials.new('WEB_' + key)
@@ -56,12 +101,16 @@ def web_material(source):
             metallic = principled.inputs['Metallic'].default_value
             transmission = principled.inputs['Transmission Weight'].default_value
     node.inputs['Base Color'].default_value = color[:3] + (1,)
-    node.inputs['Roughness'].default_value = max(0.35, roughness)
-    node.inputs['Metallic'].default_value = min(0.35, metallic)
+    node.inputs['Roughness'].default_value = max(0.12 if full_detail else 0.35, roughness)
+    node.inputs['Metallic'].default_value = min(1.0 if full_detail else 0.35, metallic)
     if transmission > 0.1:
         node.inputs['Alpha'].default_value = 0.30
         material.surface_render_method = 'DITHERED'
     material.diffuse_color = color
+    if full_detail:
+        descriptor = surface_descriptor(source)
+        if descriptor:
+            material['surfaceDetail'] = descriptor
     material_cache[key] = material
     return material
 
@@ -77,6 +126,15 @@ def clone_group(objects, name, target_scene):
         mesh = bpy.data.meshes.new_from_object(evaluated, depsgraph=depsgraph)
         if not mesh or not mesh.vertices:
             continue
+        # Joining differently named UV layers would put some facades in UV1 while
+        # the browser samples UV0. Normalize only these temporary export meshes.
+        if full_detail and mesh.uv_layers:
+            active = next((layer for layer in mesh.uv_layers if layer.active_render), mesh.uv_layers.active)
+            for layer in list(mesh.uv_layers):
+                if layer != active:
+                    mesh.uv_layers.remove(layer)
+            active.name = 'SurfaceUV'
+            active.active_render = True
         mesh.transform(original.matrix_world)
         points.extend(v.co.copy() for v in mesh.vertices)
         # Keep explicit primitive material indices but never ship archived photographs.
@@ -110,7 +168,7 @@ def export_scene(scene, filename):
     bpy.ops.export_scene.gltf(
         filepath=str(OUTPUT / filename), export_format='GLB', use_selection=True, use_active_scene=True,
         export_cameras=False, export_lights=False, export_extras=True,
-        export_animations=False, export_texcoords=False, export_normals=True,
+        export_animations=False, export_texcoords=full_detail, export_normals=True,
         export_materials='EXPORT', export_yup=True,
         export_draco_mesh_compression_enable=True,
         export_draco_mesh_compression_level=6,
@@ -214,6 +272,71 @@ for record in metadata:
         }
     record['interiorBounds'] = bounds
     export_scene(interior_scene, code.lower() + '-interior.glb')
+
+# Restore the native evaluated geometry for individual building downloads.
+# The campus overview stays light; high-detail files are loaded only on selection.
+full_detail = True
+for modifier, viewport, render in modifier_states:
+    modifier.show_viewport, modifier.show_render = viewport, render
+for curve, resolution in curve_resolutions:
+    curve.resolution_u = resolution
+bpy.context.window.scene = source_scene
+bpy.context.view_layer.update()
+depsgraph = bpy.context.evaluated_depsgraph_get()
+(OUTPUT / 'details').mkdir(exist_ok=True)
+detail_report = []
+
+
+def export_detail(objects, code, kind):
+    scene = bpy.data.scenes.new('WEB_DETAIL_' + code + '_' + kind)
+    obj, bounds = clone_group(objects, code, scene)
+    assert obj and bounds
+    staging = f'details/{code.lower()}-{kind}.glb'
+    export_scene(scene, staging)
+    data = (OUTPUT / staging).read_bytes()
+    digest = hashlib.sha256(data).hexdigest()
+    filename = f'details/{code.lower()}-{kind}-{digest[:12]}.glb'
+    (OUTPUT / staging).replace(OUTPUT / filename)
+    size = struct.unpack_from('<I', data, 12)[0]
+    document = json.loads(data[20:20+size])
+    triangles = sum(document['accessors'][p['indices']]['count'] // 3
+                    for mesh in document['meshes'] for p in mesh['primitives'])
+    descriptor = {'url': '/models/' + filename, 'bytes': len(data), 'triangles': triangles,
+                  'sha256': digest, 'bounds': bounds}
+    assert len(data) < 25 * 1024 * 1024, f'Detail asset too large: {code}'
+    detail_report.append({'code': code, 'kind': kind, **descriptor})
+    for item in list(scene.objects):
+        bpy.data.objects.remove(item, do_unlink=True)
+    bpy.data.scenes.remove(scene)
+    bpy.data.batch_remove(ids=[mesh for mesh in bpy.data.meshes if mesh.users == 0])
+    return descriptor
+
+
+for record in metadata:
+    code = record['code']
+    if code not in DETAIL_CODES:
+        continue
+    objects = list(bpy.data.collections[code + '_EXTERIOR'].all_objects)
+    if record['interior']:
+        # Floor plates, roof slabs and public stairs complete the visible shell.
+        # The separate interior view below retains its deliberate cutaway scope.
+        objects += list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
+    objects = list(dict.fromkeys(objects))
+    record['detailedExterior'] = export_detail(objects, code, 'exterior')
+    if record['interior']:
+        objects = list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
+        if code == 'MAR':
+            objects = [o for o in objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
+            objects += [o for o in bpy.data.collections['MAR_EXTERIOR'].all_objects if 'ground_glass_panes' in o.name]
+        elif code == 'SAW':
+            objects = [o for o in objects if '_floor_' not in o.name]
+        elif code == 'LRB':
+            objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name]
+        record['detailedInterior'] = export_detail(objects, code, 'interior')
+
+report_path = ROOT / 'result/web/detail-upgrade/export-manifest.json'
+report_path.parent.mkdir(parents=True, exist_ok=True)
+report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'version': '04', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
