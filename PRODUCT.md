@@ -11,7 +11,7 @@ web
 Present the existing LSE architectural model as a browser-based campus exploration.
 The user explicitly chose free exploration over a guided building sequence.
 Publish website source and display assets to Haoran-Xu-0316/LSEmap on GitHub.
-Prepare static output for the user's later Cloudflare deployment.
+Deploy the reviewed static website to the user's Cloudflare account.
 
 ## Capabilities and Constraints
 
@@ -23,7 +23,7 @@ are estimated. This is an independent study, not an official map or route planne
 
 Original research photographs, PDFs, credentials, local paths and editable Blender
 files are excluded from the public repository. No account or external API needed.
-Do not deploy to Cloudflare as part of this request. Do not delegate to subagents.
+The user authorized Cloudflare deployment after review. Do not delegate to subagents.
 
 ## Users
 
