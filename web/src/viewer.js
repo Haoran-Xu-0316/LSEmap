@@ -42,7 +42,7 @@ export class CampusViewer {
     });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
     this.renderer.setClearColor(0xe7ecef);
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.toneMapping = THREE.AgXToneMapping;
     this.renderer.toneMappingExposure = 0.95;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.canvas = this.renderer.domElement;
@@ -236,8 +236,19 @@ export class CampusViewer {
     if (!width || !height) return;
     this.renderer.setSize(width, height);
     this.camera.aspect = width / height;
-    this.camera.updateProjectionMatrix();
+    this.updateCameraProjection();
     this.needsRender = true;
+  }
+
+  updateCameraProjection() {
+    const width = this.container.clientWidth;
+    const height = this.container.clientHeight;
+    this.camera.clearViewOffset();
+    if (this.mode === "detail" && width < 700 && width > 0 && height > 0) {
+      // Frame the entrance above the mobile sheet without moving the camera underground.
+      this.camera.setViewOffset(width, height, 0, height * 0.22, width, height);
+    }
+    this.camera.updateProjectionMatrix();
   }
 
   fit(bounds, animate = true, direction = HOME_DIRECTION) {
@@ -317,10 +328,10 @@ export class CampusViewer {
     this.controls.maxPolarAngle = Math.PI * 0.49;
     this.controls.minDistance = 5;
     this.camera.fov = 38;
-    this.camera.updateProjectionMatrix();
+    this.mode = "campus";
+    this.updateCameraProjection();
     this.renderer.shadowMap.needsUpdate = true;
     for (const group of this.interiors.values()) group.visible = false;
-    this.mode = "campus";
     this.needsRender = true;
   }
 
@@ -399,7 +410,7 @@ export class CampusViewer {
     const target = new THREE.Vector3(...view.target);
     const position = new THREE.Vector3(...view.position);
     this.camera.fov = view.fov;
-    this.camera.updateProjectionMatrix();
+    this.updateCameraProjection();
     this.controls.minDistance = 1;
     if (this.container.clientWidth < 700) {
       // Keep the doorway in the free upper area above the mobile detail sheet.
@@ -407,11 +418,6 @@ export class CampusViewer {
       position.y -= 0.6;
       const offset = position.clone().sub(target).multiplyScalar(1.45);
       position.copy(target).add(offset);
-      const right = new THREE.Vector3().crossVectors(this.camera.up, offset).normalize();
-      const cameraUp = new THREE.Vector3().crossVectors(offset, right).normalize();
-      const shift = -offset.length() * Math.tan(THREE.MathUtils.degToRad(view.fov / 2)) * 0.44;
-      target.addScaledVector(cameraUp, shift);
-      position.addScaledVector(cameraUp, shift);
     }
     this.moveCamera(position, target);
   }
@@ -444,13 +450,14 @@ export class CampusViewer {
     this.campus.visible = false;
     for (const [name, group] of this.interiors) group.visible = name === code;
     this.mode = "interior";
+    this.updateCameraProjection();
     this.controls.maxPolarAngle = Math.PI * 0.94;
     this.controls.minDistance = 0.5;
     this.renderer.shadowMap.needsUpdate = true;
     if (building.interiorView) {
       const view = building.interiorView;
       this.camera.fov = view.fov;
-      this.camera.updateProjectionMatrix();
+      this.updateCameraProjection();
       this.moveCamera(
         new THREE.Vector3(...view.position),
         new THREE.Vector3(...view.target),
