@@ -62,7 +62,10 @@ project attribution. Preserve the supplied logo artwork and its original red.
 
 Searchable building list. Selection panel with model render and plain-language
 scope. Exterior/interior toggle appears only when an interior study exists. Selection
-opens an isolated building view, with a toolbar action to restore its surroundings. Bottom
+opens an isolated building view, with a toolbar action to restore its surroundings.
+A quiet status line reports detail loading and offers retry on failure; the base
+model stays interactive during loading. Desktop caches at most three detailed
+models and mobile at most two. Bottom
 map toolbar controls camera, labels and surrounding context. Native dialogs hold
 large render images and concise usage/about content. Keyboard actions and visible
 focus remain available when canvas interaction is unavailable.
