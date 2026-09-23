@@ -30,7 +30,7 @@ Three.js, MIT license: https://github.com/mrdoob/three.js/blob/dev/LICENSE
 Draco, Apache License 2.0: https://github.com/google/draco/blob/main/LICENSE
 Vite, MIT license: https://github.com/vitejs/vite/blob/main/LICENSE
 
-Public models simplify small bevels and procedural shading. Public-interior views
+The campus overview simplifies small bevels and procedural shading. Public-interior views
 cover modeled study areas only; the MAR web interior omits upper-office slabs that
 obscure the ground hall. The SAW interior isolates the spiral stair study, and the
 LRB view includes the existing roof lightwell and triangular grid. The compressed
@@ -42,3 +42,12 @@ Upper-bay repetition, roof shape and component dimensions remain estimates.
 The LSE logo is reproduced from the owner's existing personal-site SVG asset.
 The square favicon uses the original red LSE mark from that same vector artwork.
 The mark belongs to LSE; its display does not imply endorsement or affiliation.
+
+Individual detail downloads retain the native evaluated bevels and curve resolution.
+Fourteen building models and five public-interior studies load on demand.
+Building models include the existing authored floor plates, stairs and roof slabs;
+this does not establish complete or surveyed interiors. Metric UV layers are
+normalized during export to preserve the source brick and slate courses.
+Procedural brick/noise parameters are carried as material metadata and approximated
+by browser shaders. This is not a texture bake or a claim of Cycles render parity.
+Photographic projection materials never export their image or shader descriptor.
