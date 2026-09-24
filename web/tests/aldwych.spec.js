@@ -13,7 +13,7 @@ for (const width of [1440, 390]) {
     await page.waitForTimeout(1100);
     await page.screenshot({ path: `result/web/edition07/61a-${width}.png` });
     await page.locator('.detail-photo').click();
-    await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + '/images/61a-exterior.webp'.replace('.webp', '\\.webp') + '\\?v=16-[a-f0-9]{12}$'));
+    await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + '/images/61a-exterior.webp'.replace('.webp', '\\.webp') + '\\?v=17-[a-f0-9]{12}$'));
     await expect.poll(() => page.locator('#gallery-image').evaluate(image => image.complete && image.naturalWidth >= 800)).toBe(true);
     await page.keyboard.press('Escape');
     await page.locator('#overview').click();
