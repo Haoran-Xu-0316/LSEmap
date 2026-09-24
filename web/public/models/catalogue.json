@@ -1,6 +1,6 @@
 {
-  "version": "16",
-  "sourceModelSha256": "9690604ae8ccae1ad82aa5c82e12970b83ba274cc13cc5d064cc5f2441bd86a2",
+  "version": "17",
+  "sourceModelSha256": "3deb7bef10ac50cb42cda1b13f5525ca7827659c1b36d896a1d0f0ffdefaf896",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -32,15 +32,15 @@
       ],
       "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
       "localRefinement": {
-        "description": "Bronze perimeter beads, recessed seals and drained lower glazing channels",
-        "newComponents": 2266,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 1448,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-6f323016a825.glb",
-        "bytes": 3587152,
-        "triangles": 309537,
-        "sha256": "6f323016a82563e2d1613638752d63ef6c821e12bce7aa6a1d58c6a6ce93b1b8",
+        "url": "/models/details/61a-exterior-e90d56871700.glb",
+        "bytes": 4420280,
+        "triangles": 373249,
+        "sha256": "e90d56871700757688d31c1ed80f9b531229446bd78b79d58260cbde9acdfeac",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -79,9 +79,9 @@
         0.8025950193405151
       ],
       "localRefinement": {
-        "description": "Curtain-wall pressure caps, dark perimeter seals and sill drainage outlets",
-        "newComponents": 13676,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 8772,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "interiorView": {
         "position": [
@@ -109,10 +109,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-3af711f968dc.glb",
-        "bytes": 4052084,
-        "triangles": 447324,
-        "sha256": "3af711f968dcdb981acbfa5fbb84757f0fe7225a1b6401615d67919610c7517b",
+        "url": "/models/details/cbg-exterior-2102bf70516d.glb",
+        "bytes": 8811216,
+        "triangles": 833292,
+        "sha256": "2102bf70516d3424f52d0a004463d1f5a151f8926020107d71dcf0c70d744c96",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -164,9 +164,9 @@
       },
       "interior": true,
       "localRefinement": {
-        "description": "LIF window reveal beads, separate sill noses and end returns",
-        "newComponents": 3828,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 2784,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "interiorView": {
         "position": [
@@ -194,10 +194,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-36efef9dd59d.glb",
-        "bytes": 1381908,
-        "triangles": 138402,
-        "sha256": "36efef9dd59d744979ddfbaa3270c7fde5eb4da6dc9fe2dcdaed2b26deeaf7ff",
+        "url": "/models/details/ckk-exterior-bcea3e812739.glb",
+        "bytes": 3025172,
+        "triangles": 260898,
+        "sha256": "bcea3e8127390b4e556b7df3e216835aaf861c5fae69be54c720bca1fd833233",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -254,15 +254,15 @@
         0.7838334441184998
       ],
       "localRefinement": {
-        "description": "Masonry window rebates, stone sill drips and dressed sill returns",
-        "newComponents": 583,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 424,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-7573b354f1c0.glb",
-        "bytes": 552440,
-        "triangles": 53048,
-        "sha256": "7573b354f1c0d93a2172626469ca075b2ce3f2102e278be5d2956a15cb1db54d",
+        "url": "/models/details/clm-exterior-3de6b534942a.glb",
+        "bytes": 820204,
+        "triangles": 71704,
+        "sha256": "3de6b534942a5880a4c8d9ec160ed334470f85465dc8c677408b0f5a3d3394b6",
         "bounds": {
           "min": [
             99.23820495605469,
@@ -301,9 +301,9 @@
         0.6652591228485107
       ],
       "localRefinement": {
-        "description": "Recessed glazing beads and projecting sill-edge water checks",
-        "newComponents": 1067,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 776,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailView": {
         "label": "入口细节",
@@ -320,10 +320,10 @@
         "fov": 46
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-faa7f16517ba.glb",
-        "bytes": 421480,
-        "triangles": 39300,
-        "sha256": "faa7f16517babf3b0a20d799a12fd3f9952b25d5a3beee890459dfc9b08e6517",
+        "url": "/models/details/col-exterior-d13dee626dd7.glb",
+        "bytes": 901044,
+        "triangles": 73444,
+        "sha256": "d13dee626dd79690b1633e99f78b3294f779917248564531456b470a7a2f2c33",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -362,9 +362,9 @@
         0.8481693863868713
       ],
       "localRefinement": {
-        "description": "Street-window reveal beads, sill noses and masonry sill returns",
-        "newComponents": 374,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 272,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailView": {
         "label": "入口细节",
@@ -381,10 +381,10 @@
         "fov": 46
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-ae8778966c3d.glb",
-        "bytes": 346804,
-        "triangles": 32338,
-        "sha256": "ae8778966c3d42940cf282fb5280b22ba8d98249004812a5b1bc9143f80a6e29",
+        "url": "/models/details/con-exterior-2744ddb2b3a4.glb",
+        "bytes": 514824,
+        "triangles": 44306,
+        "sha256": "2744ddb2b3a4e1f455de0f5e748eb3b73243a6d67cf5885aa7346fcf551c6ec6",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -438,15 +438,15 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Sash putty beads, lower weatherboards and paired sill end grains",
-        "newComponents": 1210,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 990,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-0f3173505d40.glb",
-        "bytes": 2871912,
-        "triangles": 231679,
-        "sha256": "0f3173505d40a1147877745bbd416d4772b06da4d8d033ab97752dee8d36724b",
+        "url": "/models/details/cow-exterior-52510930330a.glb",
+        "bytes": 3474892,
+        "triangles": 275239,
+        "sha256": "52510930330af8ca84feb4b5c393a5cd2b53d060567849d885d34e1ee35474e3",
         "bounds": {
           "min": [
             -6.504848003387451,
@@ -485,15 +485,15 @@
         -0.6428813338279724
       ],
       "localRefinement": {
-        "description": "Continuous ribbon-window seals, metal sill caps and spaced drain slots",
-        "newComponents": 1716,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 1224,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/faw-exterior-a12501a927fe.glb",
-        "bytes": 492444,
-        "triangles": 45721,
-        "sha256": "a12501a927fe5766792c1a62663dbb7935277597b8594062eae150719b60326c",
+        "url": "/models/details/faw-exterior-3449976168fa.glb",
+        "bytes": 1212004,
+        "triangles": 99577,
+        "sha256": "3449976168fa6ea3e517c14c4996b70d62f3fd5578777787bc4d7c93eef77e12",
         "bounds": {
           "min": [
             72.36564636230469,
@@ -547,15 +547,15 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Inset sash putty edges, bottom weatherboards and end-grain sill joints",
-        "newComponents": 539,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 441,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-0f42cebcbcb2.glb",
-        "bytes": 1642972,
-        "triangles": 123521,
-        "sha256": "0f42cebcbcb2f98ede0b3c7ce09f42c7e07ca0f41bd392b7d8b885fe5cfcef05",
+        "url": "/models/details/kgs-exterior-36b3899ccbb6.glb",
+        "bytes": 1919516,
+        "triangles": 142925,
+        "sha256": "36b3899ccbb6a1fa8fa9955cb3c0261236c563443b4af10c65a646817ac09038",
         "bounds": {
           "min": [
             -33.59806823730469,
@@ -594,15 +594,15 @@
         0.4044066071510315
       ],
       "localRefinement": {
-        "description": "Stone-framed window rebates with projecting drip edges and sill end blocks",
-        "newComponents": 220,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 160,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-5bec191f841e.glb",
-        "bytes": 179348,
-        "triangles": 14458,
-        "sha256": "5bec191f841ed957cd126422683ee0b7c6706eb8affcd13c6a1e67921e61ebfa",
+        "url": "/models/details/ksw-exterior-5ccf0e11fabb.glb",
+        "bytes": 281576,
+        "triangles": 21498,
+        "sha256": "5ccf0e11fabbd93f47923da95baa577f3265300ecfc2904c75e935e8fb39094a",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -656,15 +656,15 @@
         "fov": 45
       },
       "localRefinement": {
-        "description": "Street, plaza and dormer sash beads and weathered sill edges",
-        "newComponents": 396,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 324,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/lak-exterior-dfd3566010f7.glb",
-        "bytes": 1188332,
-        "triangles": 93984,
-        "sha256": "dfd3566010f76b1c0747e85d18379a2ff9e3eb5edc86943fa0604f5aec75ca6b",
+        "url": "/models/details/lak-exterior-591f1b35696f.glb",
+        "bytes": 1390732,
+        "triangles": 108240,
+        "sha256": "591f1b35696fd3d0291bcc0ac23a3f59a14f4983dfb5e6acec2967d395a1c7ee",
         "bounds": {
           "min": [
             2.2941360473632812,
@@ -718,15 +718,15 @@
         "fov": 42
       },
       "localRefinement": {
-        "description": "Upper sash recess beads, low sill weatherboards and edge joints",
-        "newComponents": 187,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 153,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-52511c275f3d.glb",
-        "bytes": 1026880,
-        "triangles": 80882,
-        "sha256": "52511c275f3d1a7123eb11c9872734a08591f021e3c9373b98399c800f868653",
+        "url": "/models/details/lch-exterior-dc550b7a1c36.glb",
+        "bytes": 1126440,
+        "triangles": 87614,
+        "sha256": "dc550b7a1c36c037bd97c5c22cd60689f9ec11df374f3a0d7a0e2b01079dc604",
         "bounds": {
           "min": [
             -34.47998046875,
@@ -775,15 +775,15 @@
         "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
       },
       "localRefinement": {
-        "description": "Georgian sash perimeter putty and projecting painted sill noses",
-        "newComponents": 121,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 99,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/5lf-exterior-57d2bf0c3228.glb",
-        "bytes": 245344,
-        "triangles": 17858,
-        "sha256": "57d2bf0c3228f6b7bb267ab09acc6dd20639a1f8dc967a6b6d94039af4b5f535",
+        "url": "/models/details/5lf-exterior-573c95c9082d.glb",
+        "bytes": 311616,
+        "triangles": 22214,
+        "sha256": "573c95c9082d55e7a36c7d52b5e80550155146a703cd45b259940344d8ce8439",
         "bounds": {
           "min": [
             -112.59539794921875,
@@ -805,21 +805,21 @@
       "status": "construction",
       "bounds": {
         "min": [
-          57.982948303222656,
+          57.855247497558594,
           0.0,
-          -109.38243103027344
+          -109.5101318359375
         ],
         "max": [
-          108.52578735351562,
+          108.66145324707031,
           2.7700002193450928,
-          -57.46314239501953
+          -57.32981872558594
         ]
       },
       "interior": false,
       "localRefinement": {
-        "description": "Indicative hoarding panel seams and cap rails; no claim about current construction progress",
-        "newComponents": 147,
-        "scope": "Construction site representation only; panel spacing estimated."
+        "description": "Indicative hoarding post foot plates",
+        "newComponents": 74,
+        "scope": "Schematic construction boundary only, not the current workstage"
       }
     },
     {
@@ -852,15 +852,15 @@
         "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
       },
       "localRefinement": {
-        "description": "Coopers sash beads and sill drips behind the existing shutters",
-        "newComponents": 165,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 135,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/49l-exterior-3dc31b8daf94.glb",
-        "bytes": 984124,
-        "triangles": 78573,
-        "sha256": "3dc31b8daf94c6e3a57fd9fab245286ce0108c1589f5349a6eeb4340210eefd3",
+        "url": "/models/details/49l-exterior-738998668e1b.glb",
+        "bytes": 1072788,
+        "triangles": 84513,
+        "sha256": "738998668e1b0ce3f21dff1d60f460706d509b355ab5758659e347a6011485cb",
         "bounds": {
           "min": [
             -56.261409759521484,
@@ -905,15 +905,15 @@
         "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
       },
       "localRefinement": {
-        "description": "Tall sash perimeter beads, lower weatherboards and sill end joints",
-        "newComponents": 121,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 99,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-17c8fc3fa693.glb",
-        "bytes": 196232,
-        "triangles": 13932,
-        "sha256": "17c8fc3fa6937011012fd2730d164c7028df4ed5d012fc64eff581475a02f140",
+        "url": "/models/details/50l-exterior-d3172656bec6.glb",
+        "bytes": 261504,
+        "triangles": 18288,
+        "sha256": "d3172656bec6b68c92f8e43f4b25de7211b5dc50dd8a705f11773c13cd74a38f",
         "bounds": {
           "min": [
             -51.51279830932617,
@@ -953,15 +953,15 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Stone-window inner rebates and projecting sill-edge returns",
-        "newComponents": 1056,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 768,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-22d85f7410f5.glb",
-        "bytes": 2023284,
-        "triangles": 156815,
-        "sha256": "22d85f7410f5c773e4d10a238c34f2b23ef173442afc481ac9f8a8bd7be0a3f8",
+        "url": "/models/details/51l-exterior-953907c615c1.glb",
+        "bytes": 2507384,
+        "triangles": 190607,
+        "sha256": "953907c615c17215108cf92fce2825d667c6dd6848982688204c979b791cc7e0",
         "bounds": {
           "min": [
             -74.75358581542969,
@@ -995,9 +995,9 @@
       },
       "interior": true,
       "localRefinement": {
-        "description": "Library external glazing pressure caps and sill-channel drain details",
-        "newComponents": 4620,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 2940,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "interiorView": {
         "position": [
@@ -1025,10 +1025,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-4070f3d9ad39.glb",
-        "bytes": 4614932,
-        "triangles": 567824,
-        "sha256": "4070f3d9ad39134e579974d4f9c66aa9b7cd01e1cc96d4cc51c253f6eff627a9",
+        "url": "/models/details/lrb-exterior-b003c3b433a1.glb",
+        "bytes": 6275724,
+        "triangles": 697184,
+        "sha256": "b003c3b433a1de9ea610b8091b54972db66b78c6f23342375c6a724536512d8a",
         "bounds": {
           "min": [
             24.92513656616211,
@@ -1100,9 +1100,9 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Upper facade recessed window beads, sill channels and fine drain slots",
-        "newComponents": 6730,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 4291,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "interiorView": {
         "position": [
@@ -1130,10 +1130,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-c6c7d6681e6c.glb",
-        "bytes": 5189556,
-        "triangles": 524212,
-        "sha256": "c6c7d6681e6ccb8131913f9a95a8cf199c5899df252c3872df5106bdce3a3e18",
+        "url": "/models/details/mar-exterior-21742893b0e5.glb",
+        "bytes": 7577128,
+        "triangles": 713016,
+        "sha256": "21742893b0e535ea3013c33bc095abeacf629f731171732e854d92442a153e41",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -1190,15 +1190,15 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Historic masonry window rebates and dressed sill drip courses",
-        "newComponents": 5104,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 3712,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-939d22ec32fd.glb",
-        "bytes": 11888872,
-        "triangles": 987531,
-        "sha256": "939d22ec32fd191b07bbdcc695eed2f71d8da3d4614785d1fc32e7055c7b771f",
+        "url": "/models/details/old-exterior-f52b3217aa60.glb",
+        "bytes": 14006648,
+        "triangles": 1150859,
+        "sha256": "f52b3217aa60f1e5c79762b8ee43ac3ad6cc01cc79049fadfa5e3db9a91d6d4c",
         "bounds": {
           "min": [
             -39.15880584716797,
@@ -1237,15 +1237,15 @@
         0.8432455658912659
       ],
       "localRefinement": {
-        "description": "Green timber glazing beads and separate shop-window sill weatherboards",
-        "newComponents": 77,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 63,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/ocs-exterior-57c9d3fbf65e.glb",
-        "bytes": 1306196,
-        "triangles": 113160,
-        "sha256": "57c9d3fbf65ed135c07eef1f35b8caf6a48cbd3f90cd820254b21be02b361c6b",
+        "url": "/models/details/ocs-exterior-4b2b357d2e4e.glb",
+        "bytes": 1350560,
+        "triangles": 115932,
+        "sha256": "4b2b357d2e4eea769caaae48f6427a3c4430e0093ed0f3253a3ee01d19b55b43",
         "bounds": {
           "min": [
             -47.91916275024414,
@@ -1284,15 +1284,15 @@
         -0.6428813338279724
       ],
       "localRefinement": {
-        "description": "Long window-band seals, lower aluminium caps and drain slots",
-        "newComponents": 1344,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 960,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-b1e2f7014108.glb",
-        "bytes": 719060,
-        "triangles": 68765,
-        "sha256": "b1e2f70141088ca34dc959ef5b50f77883f0bab5eb51801b8ad383168ebcfe37",
+        "url": "/models/details/pan-exterior-247ed924e0f7.glb",
+        "bytes": 1285352,
+        "triangles": 111005,
+        "sha256": "247ed924e0f780055837613488fab782eeba2ec1d40a078b2655aa681a123c55",
         "bounds": {
           "min": [
             53.72006607055664,
@@ -1346,19 +1346,19 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Hall and dormer sash putty beads, sill weatherboards and end joints",
-        "newComponents": 539,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 441,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-a92c1ac3d327.glb",
-        "bytes": 1060236,
-        "triangles": 82976,
-        "sha256": "a92c1ac3d327c366311ffc2fe079766ae16a2ca2b5743f2ca480b44cb513b70f",
+        "url": "/models/details/par-exterior-ee7837243b96.glb",
+        "bytes": 1335696,
+        "triangles": 102380,
+        "sha256": "ee7837243b96ed39a376e88636e7ca6df900440f25b2b5cead992ccc68a6d876",
         "bounds": {
           "min": [
             -49.058448791503906,
-            -0.019999999552965164,
+            -0.047499991953372955,
             1.686956524848938
           ],
           "max": [
@@ -1394,15 +1394,15 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Theatre window gasket lines and metal sill channels; canopy soffit ribs",
-        "newComponents": 673,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 420,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/pea-exterior-b39a1e5765f8.glb",
-        "bytes": 1186616,
-        "triangles": 91917,
-        "sha256": "b39a1e5765f8515dcec5979033e5ebe34944c095083b102b39597d19047ad4f4",
+        "url": "/models/details/pea-exterior-1c6961eec2d9.glb",
+        "bytes": 1450800,
+        "triangles": 110397,
+        "sha256": "1c6961eec2d9658c57d5954d1d612730855a1257a73e7ce908875f91eab62d10",
         "bounds": {
           "min": [
             -74.89566802978516,
@@ -1442,15 +1442,15 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Dark window seals, slim sill caps and drainage joints along the curved envelope",
-        "newComponents": 3575,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 2275,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-49e2ca8a439b.glb",
-        "bytes": 5036080,
-        "triangles": 430299,
-        "sha256": "49e2ca8a439b13347e494218d694297193b96cffdfb4a374ddc767d680e9156f",
+        "url": "/models/details/pel-exterior-572f3877d412.glb",
+        "bytes": 6394316,
+        "triangles": 530399,
+        "sha256": "572f3877d4124143fe892d4328088e31cef5cb2f86eb7cce7ebd5a6562fe0a3b",
         "bounds": {
           "min": [
             100.59568786621094,
@@ -1504,15 +1504,15 @@
         "fov": 45
       },
       "localRefinement": {
-        "description": "Rebuilt chamfered bookshop entrance, leaded shopfronts, street plaques and sash finish",
-        "newComponents": 253,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 207,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/por-exterior-d02ecabd78c1.glb",
-        "bytes": 909780,
-        "triangles": 70815,
-        "sha256": "d02ecabd78c1b8021bbb6488633bd75da9f966749840b1ae7b91f6c0deca7884",
+        "url": "/models/details/por-exterior-f46238e82814.glb",
+        "bytes": 1044668,
+        "triangles": 79923,
+        "sha256": "f46238e82814711192cf1278f73489805df1ae3e6cc53e88e3de2793a40e7cf0",
         "bounds": {
           "min": [
             -39.27674865722656,
@@ -1552,15 +1552,15 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Recessed sash putty beads and white sill weatherboards with end joints",
-        "newComponents": 858,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 702,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-af638a4d774f.glb",
-        "bytes": 1492704,
-        "triangles": 118651,
-        "sha256": "af638a4d774f24a4e61b0e556b08f737874e5aba8a641628257529b8219f88b3",
+        "url": "/models/details/sar-exterior-922e71c2bdee.glb",
+        "bytes": 1918660,
+        "triangles": 149539,
+        "sha256": "922e71c2bdeef0b4b6d3e1b025eb0997fd42f5013ee0d98ed40d589049ee43fd",
         "bounds": {
           "min": [
             -92.55103302001953,
@@ -1599,9 +1599,9 @@
         -0.16823700070381165
       ],
       "localRefinement": {
-        "description": "Recessed glazing gasket edges and drained metal sills behind the folded brick screen",
-        "newComponents": 1534,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 990,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "interiorBounds": {
         "min": [
@@ -1616,10 +1616,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-4432c0ef1932.glb",
-        "bytes": 8873368,
-        "triangles": 980736,
-        "sha256": "4432c0ef193263f3049c69fd103a0fae4beff792773f482bc0eebae5af7f51cb",
+        "url": "/models/details/saw-exterior-d61b34ff966e.glb",
+        "bytes": 9441732,
+        "triangles": 1024296,
+        "sha256": "d61b34ff966e4108ce5686fd83b9bef58f563440020b534646580996412b1ca6",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -1677,15 +1677,15 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Street sash putty beads, projecting sill noses and painted sill end joints",
-        "newComponents": 352,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 288,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-0a4f01d598d9.glb",
-        "bytes": 668904,
-        "triangles": 50977,
-        "sha256": "0a4f01d598d913849fe926153ee89931949fdb7ecfa0f656d14c86246a2376ef",
+        "url": "/models/details/shf-exterior-6b9471c54c49.glb",
+        "bytes": 850976,
+        "triangles": 63649,
+        "sha256": "6b9471c54c4950d0c1a35a328f8200b99d78f1fbdc261e98f4eaf2b8dd19a542",
         "bounds": {
           "min": [
             -43.886680603027344,
@@ -1724,15 +1724,15 @@
         -0.5797110795974731
       ],
       "localRefinement": {
-        "description": "Stone-window inner beads, sill drip courses and dressed end returns",
-        "newComponents": 2761,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 2008,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-94a714dd0925.glb",
-        "bytes": 9670200,
-        "triangles": 813776,
-        "sha256": "94a714dd0925dfcb80bbe39775f99ebac087619edf68ba8c0632f99315612c30",
+        "url": "/models/details/sal-exterior-669327f0001e.glb",
+        "bytes": 10845036,
+        "triangles": 902128,
+        "sha256": "669327f0001e78540c47d1cd74e2cebb805a7d1cda66f02ead9dc2a9d907d520",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -1786,15 +1786,15 @@
         "fov": 44
       },
       "localRefinement": {
-        "description": "Clare Market and attic window seals, metal sill channels and drainage outlets",
-        "newComponents": 2024,
-        "scope": "Source-informed finish study; dimensions and unseen elevations estimated."
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 1288,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "detailedExterior": {
-        "url": "/models/details/stc-exterior-3a181d2002dc.glb",
-        "bytes": 3464096,
-        "triangles": 294351,
-        "sha256": "3a181d2002dcd06760c6a8ee7aeefefe352c6d45bb2dd34f236f54861d5cefd7",
+        "url": "/models/details/stc-exterior-3051ebe8c77e.glb",
+        "bytes": 4227784,
+        "triangles": 351023,
+        "sha256": "3051ebe8c77e30031ef93b7f8e2a35fda41bfb5c7870badbbe628c14a97c3317",
         "bounds": {
           "min": [
             -17.60181427001953,
