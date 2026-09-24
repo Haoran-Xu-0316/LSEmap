@@ -14,7 +14,7 @@ for (const code of ['KGS','MAR']) {
       expect(await page.locator('script[type=module][src]').getAttribute('src')).toBe(release.entryScript);
       await page.locator('.detail-photo img').evaluate(image=>image.decode());
       await page.waitForTimeout(1100);
-      await page.locator('canvas').screenshot({path:`result/web/release16/parity-${code}-${name}.png`});
+      await page.locator('canvas').screenshot({path:`result/web/release${release.version}/parity-${code}-${name}.png`});
       await page.close();
     }
     await context.close();
