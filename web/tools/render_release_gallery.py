@@ -1,12 +1,12 @@
-"""Render every published gallery from the same edition-16 native model.
+"""Render every published gallery from the same edition-17 native model.
 Run in Blender. Archive photographs are removed before rendering public assets.
 """
 from pathlib import Path
 import bpy,json,hashlib,math
 from mathutils import Vector
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/web/release16/renders';OUT.mkdir(parents=True,exist_ok=True)
-MODEL=ROOT/'result/blender/LSE_campus_detailed_v16.blend'
+OUT=ROOT/'result/web/release17/renders';OUT.mkdir(parents=True,exist_ok=True)
+MODEL=ROOT/'result/blender/LSE_campus_detailed_v17.blend'
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
 for scene in bpy.data.scenes:
  for layer in scene.view_layers:layer.update()
@@ -16,7 +16,7 @@ for material in bpy.data.materials:
    if node.type=='TEX_IMAGE':material.node_tree.nodes.remove(node)
   if 'photo_projection' in material.name:material.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.55,.52,.46,1)
 catalogue={r['code']:r for r in json.loads((ROOT/'web/public/models/catalogue.json').read_text())['buildings']}
-plan=json.loads((ROOT/'result/web/release16/gallery-plan.json').read_text())
+plan=json.loads((ROOT/'result/web/release17/gallery-plan.json').read_text())
 # Existing source cameras for architectural features beyond entrance presets.
 camera_names=[o.name for o in bpy.data.objects if o.type=='CAMERA']
 (OUT.parent/'cameras.json').write_text(json.dumps(camera_names,indent=2))
@@ -27,7 +27,7 @@ for job in plan+[{'code':'CAMPUS','name':'campus','label':'Campus'}]:
  name,code=job['name'],job['code']
  if any(r['name']==name for r in reports):continue
  record=catalogue.get(code)
- scene=bpy.data.scenes.new('RELEASE16_'+name)
+ scene=bpy.data.scenes.new('RELEASE17_'+name)
  if code=='CAMPUS':
   source=bpy.data.scenes['00_CAMPUS_COMPLETE']
   for col in source.collection.children:scene.collection.children.link(col)
