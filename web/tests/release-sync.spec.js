@@ -24,3 +24,16 @@ test('an unavailable release manifest does not block the current model', async (
   await page.goto('/#POR');
   await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-POR',{timeout:60000});
 });
+
+test('a model-only release refreshes even when the application bundle is unchanged', async ({ page }) => {
+  let navigations = 0;
+  page.on('framenavigated', frame => { if (frame === page.mainFrame()) navigations++; });
+  await page.route('**/release.json', async route => {
+    await page.locator('canvas[data-ready="true"]').waitFor();
+    await route.fulfill({json:{...manifest,sourceModelSha256:'a'.repeat(64)}});
+  });
+  await page.goto('/#MAR');
+  await expect.poll(() => navigations, {timeout:60000}).toBe(2);
+  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-MAR',{timeout:60000});
+  expect(new URL(page.url()).hash).toBe('#MAR');
+});
