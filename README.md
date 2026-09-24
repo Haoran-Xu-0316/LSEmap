@@ -46,7 +46,7 @@ Isolated views hide other building labels and exclude hidden geometry from selec
 
 ## Edition 16
 
-The working model is version 16; the deployment target is the same edition 16.
+Edition 16 is preserved as the preceding release; the current release is edition 17.
 Cowdray House now includes detailed sash bars, dentil cornices, pitched dormers,
 corner portal and chimney stacks. King's Chambers gains canted stone bays, a
 ribbed lead dome and an arched entrance with its green sign. Both have an entrance
@@ -147,14 +147,12 @@ studies; 61A has provisional attribution, and 35L is represented as a constructi
 Most dimensions are photo-based estimates. This is not a measured survey, a live
 campus map or a route planner. The project has no official affiliation with LSE.
 
-The campus overview simplifies small bevels and procedural materials. Selected
-buildings load their evaluated native geometry, including existing interior floor
-plates and roof slabs. Separate interior views use deliberate cutaways. Metric UVs
-preserve brick and slate courses; browser noise approximates the source parameters
-for stone, concrete and timber. These shaders are not baked Blender renders.
-A bounded cache releases old models, and failed detail downloads can be retried
-without losing the base view. High-detail renderings retain the Cycles finishes. The OLD photographic relief reference is
-removed from the public model and its public rendering.
+The campus first displays a lightweight base, then progressively replaces all
+thirty available exteriors with the same detailed geometry used in building views.
+Those exterior models remain resident across selection changes; public interior
+studies retain a bounded cache. Metric UVs preserve brick and slate courses;
+browser procedural shading approximates the source materials. Gallery images
+use Cycles. The OLD photographic relief reference is excluded from public assets.
 
 Footprints: ©[OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
 ODbL 1.0. See [asset credits](web/public/credits.txt) for source institutions,
@@ -185,3 +183,18 @@ shading remains an approximation of the Cycles renders. Gallery URLs include the
 model revision, and the release manifest records file hashes. The deployment
 package includes only currently referenced model variants; local archives remain
 untouched. Native regeneration requires the private local Blender research files.
+
+
+## Edition 17
+
+Edition 17 adds layered joinery to each existing exterior, following the same
+opening positions: sash-box linings and parting grooves, stepped masonry jambs
+and sill bearings, or folded metal returns and flashing downstands. Construction
+profiles and dimensions are interpretive, not surveyed. The 35L construction
+boundary gains indicative post feet only. The original geometry is fingerprinted
+before and after the pass; interior and primary building geometry are preserved.
+
+The builder is `web/tools/build_exterior_joinery.py`, with explicit per-building
+source selectors in `web/tools/exterior-joinery.json`. Local evidence is saved in
+`result/blender/stage17/all-buildings-manifest.json`. The edition-17 release packages the matching interactive assets and 45 gallery
+images. Both the campus overview and selected views use the refined exteriors.
