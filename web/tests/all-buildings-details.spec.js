@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 const catalogue = JSON.parse(await readFile('web/public/models/catalogue.json', 'utf8'));
-const before = JSON.parse(await readFile('web/tests/fixtures/edition15-digests.json', 'utf8'));
+const before = JSON.parse(await readFile('web/tests/fixtures/edition16-digests.json', 'utf8'));
 
 test('all 31 records have new geometry; five public interiors retain their hashes', () => {
-  expect(catalogue.version).toBe('16');
+  expect(catalogue.version).toBe('17');
   expect(catalogue.buildings).toHaveLength(31);
   for (const building of catalogue.buildings) {
     expect(building.localRefinement.newComponents).toBeGreaterThan(0);
@@ -46,7 +46,7 @@ for (const width of [1440, 390]) {
     await page.screenshot({ path: `result/web/all-buildings/por-corner-${width}.png` });
     await page.locator('.detail-photo').click();
     await page.locator('#gallery-next').click();
-    await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + '/images/por-entrance.webp'.replace('.webp', '\\.webp') + '\\?v=16-[a-f0-9]{12}$'));
+    await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + '/images/por-entrance.webp'.replace('.webp', '\\.webp') + '\\?v=17-[a-f0-9]{12}$'));
     await expect.poll(() => page.locator('#gallery-image').evaluate(image => image.complete && image.naturalWidth >= 1000)).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
