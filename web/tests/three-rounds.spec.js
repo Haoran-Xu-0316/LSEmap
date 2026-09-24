@@ -23,7 +23,7 @@ for (const study of studies) {
       await page.locator('.detail-photo').click();
       await page.locator('#gallery-next').click();
       await expect(page.locator('#gallery-position')).toHaveText(`2 / ${study.images}`);
-      await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + `/images/${study.image}.webp`.replace('.webp', '\\.webp') + '\\?v=16-[a-f0-9]{12}$'));
+      await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + `/images/${study.image}.webp`.replace('.webp', '\\.webp') + '\\?v=17-[a-f0-9]{12}$'));
       await expect.poll(() => page.locator('#gallery-image').evaluate(image => image.complete && image.naturalWidth >= 1000)).toBe(true);
       await page.keyboard.press('Escape');
       if (study.code === 'MAR') {
