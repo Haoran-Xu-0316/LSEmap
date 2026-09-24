@@ -1,0 +1,758 @@
+{
+  "buildings": [
+    {
+      "code": "61A",
+      "status": "provisional",
+      "detailedExterior": {
+        "url": "/models/details/61a-exterior-6f323016a825.glb",
+        "bytes": 3587152,
+        "triangles": 309537,
+        "sha256": "6f323016a82563e2d1613638752d63ef6c821e12bce7aa6a1d58c6a6ce93b1b8",
+        "bounds": {
+          "min": [
+            -77.12799072265625,
+            0.0,
+            47.84075927734375
+          ],
+          "max": [
+            -25.88298225402832,
+            38.5,
+            133.56060791015625
+          ]
+        }
+      }
+    },
+    {
+      "code": "CBG",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/cbg-exterior-3af711f968dc.glb",
+        "bytes": 4052084,
+        "triangles": 447324,
+        "sha256": "3af711f968dcdb981acbfa5fbb84757f0fe7225a1b6401615d67919610c7517b",
+        "bounds": {
+          "min": [
+            2.060716152191162,
+            -0.2750000059604645,
+            31.516820907592773
+          ],
+          "max": [
+            68.16556549072266,
+            53.279998779296875,
+            100.0077896118164
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/cbg-interior-db8ddd837ea0.glb",
+        "bytes": 347116,
+        "triangles": 38244,
+        "sha256": "db8ddd837ea0648ead4fc56dc57871282db92ac9ee5c3bb9614315672b9c539c",
+        "bounds": {
+          "min": [
+            2.8369922637939453,
+            -0.2750000059604645,
+            32.052616119384766
+          ],
+          "max": [
+            67.38612365722656,
+            52.19499969482422,
+            99.47199249267578
+          ]
+        }
+      }
+    },
+    {
+      "code": "CKK",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/ckk-exterior-36efef9dd59d.glb",
+        "bytes": 1381908,
+        "triangles": 138402,
+        "sha256": "36efef9dd59d744979ddfbaa3270c7fde5eb4da6dc9fe2dcdaed2b26deeaf7ff",
+        "bounds": {
+          "min": [
+            -138.37171936035156,
+            -0.15000000596046448,
+            -101.94637298583984
+          ],
+          "max": [
+            -82.46043395996094,
+            29.0,
+            -53.928897857666016
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/ckk-interior-91fa2b1c4d5d.glb",
+        "bytes": 689064,
+        "triangles": 70212,
+        "sha256": "91fa2b1c4d5d1e56b0ca6d78aa914d3dea46cc184fafb1127c134710b0a46a35",
+        "bounds": {
+          "min": [
+            -129.93069458007812,
+            -0.15000000596046448,
+            -96.27594757080078
+          ],
+          "max": [
+            -91.05134582519531,
+            14.042499542236328,
+            -58.8443489074707
+          ]
+        }
+      }
+    },
+    {
+      "code": "CLM",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/clm-exterior-7573b354f1c0.glb",
+        "bytes": 552440,
+        "triangles": 53048,
+        "sha256": "7573b354f1c0d93a2172626469ca075b2ce3f2102e278be5d2956a15cb1db54d",
+        "bounds": {
+          "min": [
+            99.23820495605469,
+            -0.03500000014901161,
+            121.30353546142578
+          ],
+          "max": [
+            132.280029296875,
+            29.149999618530273,
+            155.49176025390625
+          ]
+        }
+      }
+    },
+    {
+      "code": "COL",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/col-exterior-faa7f16517ba.glb",
+        "bytes": 421480,
+        "triangles": 39300,
+        "sha256": "faa7f16517babf3b0a20d799a12fd3f9952b25d5a3beee890459dfc9b08e6517",
+        "bounds": {
+          "min": [
+            2.9004480838775635,
+            -0.20250000059604645,
+            98.30819702148438
+          ],
+          "max": [
+            23.38327980041504,
+            29.0,
+            128.17990112304688
+          ]
+        }
+      }
+    },
+    {
+      "code": "CON",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/con-exterior-ae8778966c3d.glb",
+        "bytes": 346804,
+        "triangles": 32338,
+        "sha256": "ae8778966c3d42940cf282fb5280b22ba8d98249004812a5b1bc9143f80a6e29",
+        "bounds": {
+          "min": [
+            -34.34856414794922,
+            0.0,
+            96.73214721679688
+          ],
+          "max": [
+            -4.919323444366455,
+            29.360000610351562,
+            134.03517150878906
+          ]
+        }
+      }
+    },
+    {
+      "code": "COW",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/cow-exterior-0f3173505d40.glb",
+        "bytes": 2871912,
+        "triangles": 231679,
+        "sha256": "0f3173505d40a1147877745bbd416d4772b06da4d8d033ab97752dee8d36724b",
+        "bounds": {
+          "min": [
+            -6.504848003387451,
+            0.0,
+            -7.590163707733154
+          ],
+          "max": [
+            31.549266815185547,
+            22.479999542236328,
+            14.704972267150879
+          ]
+        }
+      }
+    },
+    {
+      "code": "FAW",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/faw-exterior-a12501a927fe.glb",
+        "bytes": 492444,
+        "triangles": 45721,
+        "sha256": "a12501a927fe5766792c1a62663dbb7935277597b8594062eae150719b60326c",
+        "bounds": {
+          "min": [
+            72.36564636230469,
+            0.0,
+            76.17027282714844
+          ],
+          "max": [
+            106.32102966308594,
+            44.22999954223633,
+            97.4258804321289
+          ]
+        }
+      }
+    },
+    {
+      "code": "KGS",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/kgs-exterior-0f42cebcbcb2.glb",
+        "bytes": 1642972,
+        "triangles": 123521,
+        "sha256": "0f42cebcbcb2f98ede0b3c7ce09f42c7e07ca0f41bd392b7d8b885fe5cfcef05",
+        "bounds": {
+          "min": [
+            -33.59806823730469,
+            0.0,
+            -12.12070083618164
+          ],
+          "max": [
+            -12.465330123901367,
+            18.65999984741211,
+            5.261770248413086
+          ]
+        }
+      }
+    },
+    {
+      "code": "KSW",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/ksw-exterior-5bec191f841e.glb",
+        "bytes": 179348,
+        "triangles": 14458,
+        "sha256": "5bec191f841ed957cd126422683ee0b7c6706eb8affcd13c6a1e67921e61ebfa",
+        "bounds": {
+          "min": [
+            -81.10916900634766,
+            0.0,
+            36.45901870727539
+          ],
+          "max": [
+            -47.3437385559082,
+            20.549999237060547,
+            60.44700622558594
+          ]
+        }
+      }
+    },
+    {
+      "code": "LAK",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/lak-exterior-dfd3566010f7.glb",
+        "bytes": 1188332,
+        "triangles": 93984,
+        "sha256": "dfd3566010f76b1c0747e85d18379a2ff9e3eb5edc86943fa0604f5aec75ca6b",
+        "bounds": {
+          "min": [
+            2.2941360473632812,
+            0.0,
+            -14.030570983886719
+          ],
+          "max": [
+            23.841318130493164,
+            17.549999237060547,
+            6.067502021789551
+          ]
+        }
+      }
+    },
+    {
+      "code": "LCH",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/lch-exterior-52511c275f3d.glb",
+        "bytes": 1026880,
+        "triangles": 80882,
+        "sha256": "52511c275f3d1a7123eb11c9872734a08591f021e3c9373b98399c800f868653",
+        "bounds": {
+          "min": [
+            -34.47998046875,
+            0.0,
+            -25.682403564453125
+          ],
+          "max": [
+            -15.507649421691895,
+            13.649999618530273,
+            -8.53351879119873
+          ]
+        }
+      }
+    },
+    {
+      "code": "5LF",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/5lf-exterior-57d2bf0c3228.glb",
+        "bytes": 245344,
+        "triangles": 17858,
+        "sha256": "57d2bf0c3228f6b7bb267ab09acc6dd20639a1f8dc967a6b6d94039af4b5f535",
+        "bounds": {
+          "min": [
+            -112.59539794921875,
+            0.0,
+            -264.3106689453125
+          ],
+          "max": [
+            -98.3113784790039,
+            16.229999542236328,
+            -241.37660217285156
+          ]
+        }
+      }
+    },
+    {
+      "code": "35L",
+      "status": "construction"
+    },
+    {
+      "code": "49L",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/49l-exterior-3dc31b8daf94.glb",
+        "bytes": 984124,
+        "triangles": 78573,
+        "sha256": "3dc31b8daf94c6e3a57fd9fab245286ce0108c1589f5349a6eeb4340210eefd3",
+        "bounds": {
+          "min": [
+            -56.261409759521484,
+            0.0,
+            -65.78994750976562
+          ],
+          "max": [
+            -43.474910736083984,
+            11.914999961853027,
+            -51.59941101074219
+          ]
+        }
+      }
+    },
+    {
+      "code": "50L",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/50l-exterior-17c8fc3fa693.glb",
+        "bytes": 196232,
+        "triangles": 13932,
+        "sha256": "17c8fc3fa6937011012fd2730d164c7028df4ed5d012fc64eff581475a02f140",
+        "bounds": {
+          "min": [
+            -51.51279830932617,
+            0.0,
+            -54.27339553833008
+          ],
+          "max": [
+            -40.59330368041992,
+            12.484999656677246,
+            -44.304569244384766
+          ]
+        }
+      }
+    },
+    {
+      "code": "51L",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/51l-exterior-22d85f7410f5.glb",
+        "bytes": 2023284,
+        "triangles": 156815,
+        "sha256": "22d85f7410f5c773e4d10a238c34f2b23ef173442afc481ac9f8a8bd7be0a3f8",
+        "bounds": {
+          "min": [
+            -74.75358581542969,
+            0.0,
+            -58.52198791503906
+          ],
+          "max": [
+            -56.373260498046875,
+            20.950000762939453,
+            -36.107147216796875
+          ]
+        }
+      }
+    },
+    {
+      "code": "LRB",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/lrb-exterior-4070f3d9ad39.glb",
+        "bytes": 4614932,
+        "triangles": 567824,
+        "sha256": "4070f3d9ad39134e579974d4f9c66aa9b7cd01e1cc96d4cc51c253f6eff627a9",
+        "bounds": {
+          "min": [
+            24.92513656616211,
+            -0.019999999552965164,
+            -41.29721450805664
+          ],
+          "max": [
+            114.51506042480469,
+            27.315105438232422,
+            27.600141525268555
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/lrb-interior-dc2490939e93.glb",
+        "bytes": 3827324,
+        "triangles": 486940,
+        "sha256": "dc2490939e939f3e7b123b2128b648951759b0428fe263b4da9b35bb721f9144",
+        "bounds": {
+          "min": [
+            25.21265411376953,
+            -0.019999999552965164,
+            -41.15494155883789
+          ],
+          "max": [
+            114.29000091552734,
+            27.315105438232422,
+            27.380033493041992
+          ]
+        }
+      }
+    },
+    {
+      "code": "MAR",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/mar-exterior-c6c7d6681e6c.glb",
+        "bytes": 5189556,
+        "triangles": 524212,
+        "sha256": "c6c7d6681e6ccb8131913f9a95a8cf199c5899df252c3872df5106bdce3a3e18",
+        "bounds": {
+          "min": [
+            -45.36549377441406,
+            0.0,
+            -80.22334289550781
+          ],
+          "max": [
+            23.157800674438477,
+            42.79999923706055,
+            -24.454532623291016
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/mar-interior-11915d8f9c7f.glb",
+        "bytes": 451836,
+        "triangles": 46403,
+        "sha256": "11915d8f9c7f752765cb0e437ff88f492a63592edb40c674da3eb6c4be5c1797",
+        "bounds": {
+          "min": [
+            -44.53135299682617,
+            0.10000000149011612,
+            -77.66929626464844
+          ],
+          "max": [
+            23.157800674438477,
+            12.800000190734863,
+            -24.454532623291016
+          ]
+        }
+      }
+    },
+    {
+      "code": "OLD",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/old-exterior-939d22ec32fd.glb",
+        "bytes": 11888872,
+        "triangles": 987531,
+        "sha256": "939d22ec32fd191b07bbdcc695eed2f71d8da3d4614785d1fc32e7055c7b771f",
+        "bounds": {
+          "min": [
+            -39.15880584716797,
+            0.0,
+            26.96942710876465
+          ],
+          "max": [
+            17.640804290771484,
+            28.375,
+            100.1051254272461
+          ]
+        }
+      }
+    },
+    {
+      "code": "OCS",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/ocs-exterior-57c9d3fbf65e.glb",
+        "bytes": 1306196,
+        "triangles": 113160,
+        "sha256": "57c9d3fbf65ed135c07eef1f35b8caf6a48cbd3f90cd820254b21be02b361c6b",
+        "bounds": {
+          "min": [
+            -47.91916275024414,
+            0.1379999965429306,
+            -47.04456329345703
+          ],
+          "max": [
+            -38.47317886352539,
+            6.659917831420898,
+            -39.1242561340332
+          ]
+        }
+      }
+    },
+    {
+      "code": "PAN",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/pan-exterior-b1e2f7014108.glb",
+        "bytes": 719060,
+        "triangles": 68765,
+        "sha256": "b1e2f70141088ca34dc959ef5b50f77883f0bab5eb51801b8ad383168ebcfe37",
+        "bounds": {
+          "min": [
+            53.72006607055664,
+            0.0,
+            54.27970504760742
+          ],
+          "max": [
+            80.25440979003906,
+            44.22999954223633,
+            86.5759048461914
+          ]
+        }
+      }
+    },
+    {
+      "code": "PAR",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/par-exterior-a92c1ac3d327.glb",
+        "bytes": 1060236,
+        "triangles": 82976,
+        "sha256": "a92c1ac3d327c366311ffc2fe079766ae16a2ca2b5743f2ca480b44cb513b70f",
+        "bounds": {
+          "min": [
+            -49.058448791503906,
+            -0.019999999552965164,
+            1.686956524848938
+          ],
+          "max": [
+            -25.57349967956543,
+            15.470000267028809,
+            16.610294342041016
+          ]
+        }
+      }
+    },
+    {
+      "code": "PEA",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/pea-exterior-b39a1e5765f8.glb",
+        "bytes": 1186616,
+        "triangles": 91917,
+        "sha256": "b39a1e5765f8515dcec5979033e5ebe34944c095083b102b39597d19047ad4f4",
+        "bounds": {
+          "min": [
+            -74.89566802978516,
+            0.0,
+            12.048808097839355
+          ],
+          "max": [
+            -54.80430603027344,
+            19.649999618530273,
+            31.815387725830078
+          ]
+        }
+      }
+    },
+    {
+      "code": "PEL",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/pel-exterior-49e2ca8a439b.glb",
+        "bytes": 5036080,
+        "triangles": 430299,
+        "sha256": "49e2ca8a439b13347e494218d694297193b96cffdfb4a374ddc767d680e9156f",
+        "bounds": {
+          "min": [
+            100.59568786621094,
+            0.0,
+            88.61859893798828
+          ],
+          "max": [
+            125.485107421875,
+            44.150001525878906,
+            118.8851547241211
+          ]
+        }
+      }
+    },
+    {
+      "code": "POR",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/por-exterior-d02ecabd78c1.glb",
+        "bytes": 909780,
+        "triangles": 70815,
+        "sha256": "d02ecabd78c1b8021bbb6488633bd75da9f966749840b1ae7b91f6c0deca7884",
+        "bounds": {
+          "min": [
+            -39.27674865722656,
+            0.0,
+            -28.292604446411133
+          ],
+          "max": [
+            -28.915613174438477,
+            15.949999809265137,
+            -15.1935453414917
+          ]
+        }
+      }
+    },
+    {
+      "code": "SAR",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/sar-exterior-af638a4d774f.glb",
+        "bytes": 1492704,
+        "triangles": 118651,
+        "sha256": "af638a4d774f24a4e61b0e556b08f737874e5aba8a641628257529b8219f88b3",
+        "bounds": {
+          "min": [
+            -92.55103302001953,
+            0.0,
+            -54.878726959228516
+          ],
+          "max": [
+            -66.10612487792969,
+            23.149999618530273,
+            -28.56066131591797
+          ]
+        }
+      }
+    },
+    {
+      "code": "SAW",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/saw-exterior-4432c0ef1932.glb",
+        "bytes": 8873368,
+        "triangles": 980736,
+        "sha256": "4432c0ef193263f3049c69fd103a0fae4beff792773f482bc0eebae5af7f51cb",
+        "bounds": {
+          "min": [
+            -84.64329528808594,
+            -0.054999999701976776,
+            -37.45181655883789
+          ],
+          "max": [
+            -46.94651794433594,
+            27.954999923706055,
+            16.283767700195312
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/saw-interior-202c3d215343.glb",
+        "bytes": 51632,
+        "triangles": 4608,
+        "sha256": "202c3d2153433cfd35b43f175e23d59aaf751f6526badbe957db6739b76bb3b3",
+        "bounds": {
+          "min": [
+            -64.704833984375,
+            0.20000000298023224,
+            -16.360464096069336
+          ],
+          "max": [
+            -58.64506530761719,
+            15.309844017028809,
+            -10.300694465637207
+          ]
+        }
+      }
+    },
+    {
+      "code": "SHF",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/shf-exterior-0a4f01d598d9.glb",
+        "bytes": 668904,
+        "triangles": 50977,
+        "sha256": "0a4f01d598d913849fe926153ee89931949fdb7ecfa0f656d14c86246a2376ef",
+        "bounds": {
+          "min": [
+            -43.886680603027344,
+            0.0,
+            -17.60883903503418
+          ],
+          "max": [
+            -34.47895812988281,
+            13.149999618530273,
+            -1.0168768167495728
+          ]
+        }
+      }
+    },
+    {
+      "code": "SAL",
+      "status": "detailed",
+      "detailedExterior": {
+        "url": "/models/details/sal-exterior-94a714dd0925.glb",
+        "bytes": 9670200,
+        "triangles": 813776,
+        "sha256": "94a714dd0925dfcb80bbe39775f99ebac087619edf68ba8c0632f99315612c30",
+        "bounds": {
+          "min": [
+            91.77310180664062,
+            -0.03999999910593033,
+            -137.53207397460938
+          ],
+          "max": [
+            159.8742218017578,
+            38.20000076293945,
+            -76.38739013671875
+          ]
+        }
+      }
+    },
+    {
+      "code": "STC",
+      "status": "facade",
+      "detailedExterior": {
+        "url": "/models/details/stc-exterior-3a181d2002dc.glb",
+        "bytes": 3464096,
+        "triangles": 294351,
+        "sha256": "3a181d2002dcd06760c6a8ee7aeefefe352c6d45bb2dd34f236f54861d5cefd7",
+        "bounds": {
+          "min": [
+            -17.60181427001953,
+            0.0,
+            10.732993125915527
+          ],
+          "max": [
+            28.39092254638672,
+            20.90999984741211,
+            35.9212532043457
+          ]
+        }
+      }
+    }
+  ]
+}
