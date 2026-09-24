@@ -10,6 +10,7 @@ const detailPanel = $("#detail-panel");
 const mobile = matchMedia("(max-width: 700px)");
 let buildings = [];
 let modelRevision = "";
+let modelEdition = "";
 let viewer;
 let current = null;
 let detailedOnly = false;
@@ -74,7 +75,7 @@ function showGallery(images, index) {
 }
 
 function galleryImageUrl(name) {
-  return `/images/${name}.webp?v=16-${modelRevision.slice(0, 12)}`;
+  return `/images/${name}.webp?v=${modelEdition}-${modelRevision.slice(0, 12)}`;
 }
 
 function renderGallery() {
@@ -317,6 +318,8 @@ async function start() {
       if (!response.ok) throw new Error("catalogue");
       const data = await response.json();
       modelRevision = data.sourceModelSha256;
+      modelEdition = data.version;
+      document.documentElement.dataset.modelRevision = modelRevision;
       buildings = [...data.buildings].sort(
         (a, b) =>
           Number(b.status === "detailed") - Number(a.status === "detailed") ||
