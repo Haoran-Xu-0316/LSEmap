@@ -1,4 +1,4 @@
-/** Refresh long-lived tabs when their entry bundle no longer matches the server. */
+/** Refresh long-lived tabs when their application or model edition changes. */
 export function startReleaseSync() {
   const script = document.querySelector('script[type="module"][src]');
   if (!script) return;
@@ -17,12 +17,16 @@ export function startReleaseSync() {
       if (!response.ok) return;
       const release = await response.json();
       const next = release.entryScript;
-      if (stopped || typeof next !== 'string' || !/^\/assets\/[\w.-]+\.js$/.test(next) || next === current) return;
+      const model = document.documentElement.dataset.modelRevision;
+      const nextModel = release.sourceModelSha256;
+      const modelChanged = model && /^[a-f0-9]{64}$/.test(nextModel || '') && model !== nextModel;
+      if (stopped || typeof next !== 'string' || !/^\/assets\/[\w.-]+\.js$/.test(next) || (next === current && !modelChanged)) return;
+      const identity = `${next}:${nextModel || ''}`;
       // A transient CDN mismatch must not trap the visitor in a reload loop.
       const key = 'lsemap-release-reload';
       const previous = JSON.parse(sessionStorage.getItem(key) || 'null');
-      if (previous?.entry === next && Date.now() - previous.at < 60000) return;
-      sessionStorage.setItem(key, JSON.stringify({ entry: next, at: Date.now() }));
+      if (previous?.entry === identity && Date.now() - previous.at < 60000) return;
+      sessionStorage.setItem(key, JSON.stringify({ entry: identity, at: Date.now() }));
       location.reload(); // Keep the current building hash and URL.
     } catch {
       // Offline and temporarily unavailable manifests leave exploration intact.
