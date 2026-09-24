@@ -1,0 +1,338 @@
+{
+  "61A": {
+    "style": "bronze",
+    "sourceMeshes": [
+      "D5_glazing_glass"
+    ],
+    "color": [
+      0.22,
+      0.17,
+      0.1
+    ]
+  },
+  "CBG": {
+    "style": "curtain",
+    "sourceMeshes": [
+      "curtain_wall_glazing",
+      "end_wall_glazing"
+    ],
+    "color": [
+      0.39,
+      0.41,
+      0.4
+    ]
+  },
+  "CKK": {
+    "style": "stone",
+    "sourceMeshes": [
+      "EXTERIOR_Glazing_bays"
+    ],
+    "color": [
+      0.65,
+      0.63,
+      0.57
+    ]
+  },
+  "CLM": {
+    "style": "stone",
+    "sourceMeshes": [
+      "D3_window_glass"
+    ],
+    "color": [
+      0.62,
+      0.57,
+      0.47
+    ]
+  },
+  "COL": {
+    "style": "stone",
+    "sourceMeshes": [
+      "D4_recessed_glass"
+    ],
+    "color": [
+      0.58,
+      0.55,
+      0.47
+    ]
+  },
+  "CON": {
+    "style": "stone",
+    "sourceMeshes": [
+      "D4_recessed_glass"
+    ],
+    "color": [
+      0.62,
+      0.59,
+      0.51
+    ]
+  },
+  "COW": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_window_glass_glass"
+    ],
+    "color": [
+      0.66,
+      0.64,
+      0.57
+    ]
+  },
+  "FAW": {
+    "style": "ribbon",
+    "sourceMeshes": [
+      "D3_recessed_window_bands"
+    ],
+    "color": [
+      0.28,
+      0.3,
+      0.29
+    ]
+  },
+  "KGS": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_window_glass_glass"
+    ],
+    "color": [
+      0.59,
+      0.58,
+      0.51
+    ]
+  },
+  "KSW": {
+    "style": "stone",
+    "sourceMeshes": [
+      "D3_window_glass"
+    ],
+    "color": [
+      0.58,
+      0.54,
+      0.44
+    ]
+  },
+  "LAK": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_sash_glass_glass",
+      "D5_dormer_glass_glass"
+    ],
+    "color": [
+      0.67,
+      0.65,
+      0.59
+    ]
+  },
+  "LCH": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass"
+    ],
+    "color": [
+      0.64,
+      0.62,
+      0.56
+    ]
+  },
+  "5LF": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_glass_glass"
+    ],
+    "color": [
+      0.72,
+      0.7,
+      0.64
+    ]
+  },
+  "49L": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_window_glass"
+    ],
+    "color": [
+      0.71,
+      0.7,
+      0.64
+    ]
+  },
+  "50L": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_window_glass"
+    ],
+    "color": [
+      0.68,
+      0.67,
+      0.61
+    ]
+  },
+  "51L": {
+    "style": "stone",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass"
+    ],
+    "color": [
+      0.65,
+      0.6,
+      0.5
+    ]
+  },
+  "LRB": {
+    "style": "curtain",
+    "sourceMeshes": [
+      "EXTERIOR_Glazing_bays"
+    ],
+    "color": [
+      0.28,
+      0.31,
+      0.31
+    ]
+  },
+  "MAR": {
+    "style": "bronze",
+    "sourceMeshes": [
+      "MAR_recessed_window_glass"
+    ],
+    "color": [
+      0.29,
+      0.25,
+      0.2
+    ]
+  },
+  "OLD": {
+    "style": "stone",
+    "sourceMeshes": [
+      "OLD_Window_glazing"
+    ],
+    "color": [
+      0.62,
+      0.58,
+      0.49
+    ]
+  },
+  "OCS": {
+    "style": "timber",
+    "sourceMeshes": [
+      "D3_upper_sash_glass",
+      "D3_shop_display_glass"
+    ],
+    "color": [
+      0.045,
+      0.115,
+      0.07
+    ]
+  },
+  "PAN": {
+    "style": "ribbon",
+    "sourceMeshes": [
+      "D3_recessed_window_bands"
+    ],
+    "color": [
+      0.31,
+      0.32,
+      0.3
+    ]
+  },
+  "PAR": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass",
+      "D5_dormer_glass_glass"
+    ],
+    "color": [
+      0.64,
+      0.63,
+      0.57
+    ]
+  },
+  "PEA": {
+    "style": "metal",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass"
+    ],
+    "color": [
+      0.15,
+      0.17,
+      0.16
+    ]
+  },
+  "PEL": {
+    "style": "ribbon",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass"
+    ],
+    "color": [
+      0.13,
+      0.15,
+      0.14
+    ]
+  },
+  "POR": {
+    "style": "timber",
+    "sourceMeshes": [
+      "D5_sash_glass_glass",
+      "D5_shop_display_glass"
+    ],
+    "color": [
+      0.62,
+      0.62,
+      0.53
+    ]
+  },
+  "SAR": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass"
+    ],
+    "color": [
+      0.68,
+      0.66,
+      0.6
+    ]
+  },
+  "SAW": {
+    "style": "metal",
+    "sourceMeshes": [
+      "SAW_recessed_window_glass"
+    ],
+    "color": [
+      0.18,
+      0.2,
+      0.19
+    ]
+  },
+  "SHF": {
+    "style": "sash",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass"
+    ],
+    "color": [
+      0.7,
+      0.68,
+      0.62
+    ]
+  },
+  "SAL": {
+    "style": "stone",
+    "sourceMeshes": [
+      "SAL_Window_glazing"
+    ],
+    "color": [
+      0.64,
+      0.59,
+      0.49
+    ]
+  },
+  "STC": {
+    "style": "metal",
+    "sourceMeshes": [
+      "D5_recessed_glass_glass",
+      "D5_attic_glass_glass"
+    ],
+    "color": [
+      0.38,
+      0.38,
+      0.34
+    ]
+  }
+}
