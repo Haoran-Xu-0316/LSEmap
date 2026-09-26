@@ -18,7 +18,7 @@ test('5LF opens at its attributed northern address and remains usable on mobile'
   await page.goto('/#5LF');
   await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready', 'exterior-5LF', { timeout: 60000 });
   await expect(page.locator('#detail-panel h2')).toContainText('5 Lincoln');
-  await expect(page.locator('#interior-view')).toHaveCount(0);
+  await expect(page.locator('#interior-view')).toHaveText('室内样本');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.waitForTimeout(1100);
   await page.screenshot({ path: 'result/web/edition06/5lf-mobile.png' });
