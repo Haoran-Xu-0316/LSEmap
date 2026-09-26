@@ -13,7 +13,7 @@ import bpy
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v17.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v24.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -53,6 +53,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage24/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage24/building-review.json').read_text())['buildings']}
 material_cache = {}
 
 
@@ -208,6 +210,8 @@ for record in records:
     interior = bpy.data.collections.get(code + '_PUBLIC_INTERIOR_study')
     has_interior = bool(interior and any(o.type == 'MESH' for o in interior.all_objects))
     metadata.append({'code': code, 'name': record['name'], 'address': record['address'], 'status': state, 'bounds': bounds, 'interior': has_interior})
+    if has_interior and interior.get('roomSample'):
+        metadata[-1]['interiorStudy'] = {'kind': 'room-sample', 'label': interior['roomLabel'], 'scope': ROOM_RECORDS[code]['scope']}
 
 # Street-facing orientation from the reviewed Blender cameras; preserve an elevated
 # orbit angle so roofs and the selected facade remain visible together.
@@ -242,6 +246,15 @@ for record in metadata:
 for record in metadata:
     finish = FINISH_RECORDS[record['code']]
     record['localRefinement'] = {key: finish[key] for key in ['description', 'newComponents', 'scope']}
+    review = REVIEW_RECORDS[record['code']]
+    record['latestReview'] = {'version': 24, 'status': review['status'], 'addedObjects': len(review['addedObjects'])}
+    for key in ['interiorSections', 'interiorSectionScope']:
+        if key in review:
+            record[key] = [{field: section[field] for field in ['id', 'label', 'minHeight', 'maxHeight', 'scope']} for section in review[key]] if key == 'interiorSections' else review[key]
+    if review.get('detailView'):
+        view = review['detailView']
+        record['detailView'] = {**view, **{key: [view[key][0], view[key][2], -view[key][1]] for key in ['position', 'target']}}
+        record['closeupImage'] = record['code'].lower() + ('-windows' if '窗' in view['label'] else '-entrance')
 
 # Entrance presets use the reviewed cameras and their street plane as orbit targets.
 # Intersect the optical axis with the facade instead of orbiting around a guessed depth.
@@ -272,6 +285,13 @@ for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_h
     if collection:
         clone_group(collection.all_objects, name, campus_scene)
 export_scene(campus_scene, 'campus.glb')
+for room in json.loads((ROOT / 'result/blender/stage24/room-spaces.json').read_text())['spaces']:
+    source_scene.collection.children.link(bpy.data.collections[room['collection']])
+for code in ROOM_RECORDS:
+    source_scene.collection.children.link(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'])
+bpy.context.window.scene = source_scene
+bpy.context.view_layer.update()
+depsgraph = bpy.context.evaluated_depsgraph_get()
 
 for record in metadata:
     if not record['interior']:
@@ -290,7 +310,12 @@ for record in metadata:
     _, bounds = clone_group(interior_objects, code + '_INTERIOR', interior_scene)
     assert bounds, f'No public-interior geometry exported for {code}'
     camera_names = {'MAR': 'MAR_D3_hall', 'LRB': 'ATRIA_LRB_spiral_and_lifts', 'CKK': 'ATRIA_CKK_timber_landscape', 'CBG': 'CBG_QA_03_academic_stair'}
-    if code in camera_names:
+    if code in ROOM_RECORDS:
+        room = ROOM_RECORDS[code]
+        record['interiorView'] = {'position': [room['camera'][0], room['camera'][2], -room['camera'][1]],
+                                  'target': [room['target'][0], room['target'][2], -room['target'][1]],
+                                  'fov': room.get('fov', 50)}
+    elif code in camera_names:
         camera = bpy.data.objects[camera_names[code]]
         position = camera.matrix_world.translation
         direction = camera.matrix_world.to_quaternion() @ Vector((0, 0, -1))
@@ -347,7 +372,7 @@ for record in metadata:
     if code not in DETAIL_CODES and code not in FACADE_RECORDS:
         continue
     objects = list(bpy.data.collections[code + '_EXTERIOR'].all_objects)
-    if record['interior']:
+    if record['interior'] and not record.get('interiorStudy'):
         # Floor plates, roof slabs and public stairs complete the visible shell.
         # The separate interior view below retains its deliberate cutaway scope.
         objects += list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
@@ -364,12 +389,26 @@ for record in metadata:
             objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name]
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
+# Additional rooms retain their own identity instead of replacing the building's hall.
+for room in json.loads((ROOT / 'result/blender/stage24/room-spaces.json').read_text())['spaces']:
+    record = next(item for item in metadata if item['code'] == room['code'])
+    descriptor = export_detail(list(bpy.data.collections[room['collection']].all_objects), room['id'], 'interior')
+    study = {'kind':'room-sample', 'label':room['label'], 'scope':room['scope']}
+    record.setdefault('interiorSpaces', []).append({
+        'id':room['id'], 'label':room['label'], 'scope':room['scope'],
+        'interiorAsset':descriptor['url'], 'detailedInterior':descriptor,
+        'interiorStudy':study, 'interiorBounds':descriptor['bounds'],
+        'interiorView':{'position':[room['camera'][0],room['camera'][2],-room['camera'][1]],
+                        'target':[room['target'][0],room['target'][2],-room['target'][1]], 'fov':50},
+        'gallery':room['id']+'-interior',
+    })
+
 report_path = ROOT / 'result/web/all-buildings/export-manifest.json'
 report_path.parent.mkdir(parents=True, exist_ok=True)
 report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
-    'version': '17', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '24', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
