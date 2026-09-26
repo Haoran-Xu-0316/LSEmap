@@ -6,7 +6,7 @@ import hashlib
 import json
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[2]
-RELEASE=ROOT/'result/web/release17'
+RELEASE=ROOT/'result/web/release24'
 records=json.loads((RELEASE/'gallery-manifest.json').read_text())
 plan=json.loads((RELEASE/'gallery-plan.json').read_text())
 expected={r['name'] for r in plan}|{'campus'}
@@ -22,5 +22,5 @@ for record in records:
   image.convert('RGB').save(target,quality=92,method=6)
  data=target.read_bytes()
  output.append({**record,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
-(ROOT/'web/public/gallery-manifest.json').write_text(json.dumps({'version':'17','sourceModelSha256':catalogue['sourceModelSha256'],'images':output},indent=2)+'\n')
-print('Published',len(output),'edition-17 gallery images')
+(ROOT/'web/public/gallery-manifest.json').write_text(json.dumps({'version':'24','sourceModelSha256':catalogue['sourceModelSha256'],'images':output},indent=2)+'\n')
+print('Published',len(output),'edition-24 gallery images')
