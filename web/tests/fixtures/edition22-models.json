@@ -1,0 +1,3044 @@
+{
+  "version": "22",
+  "sourceModelSha256": "cad647d273204191695039d47a3e48fc1711a57cd4391865cb353887b46f6b40",
+  "coordinateSystem": "Local metres; X east, Y up, Z south",
+  "origin": [
+    -0.1167,
+    51.5146
+  ],
+  "buildings": [
+    {
+      "code": "61A",
+      "name": "61 Aldwych",
+      "address": "61 Aldwych",
+      "status": "provisional",
+      "bounds": {
+        "min": [
+          -77.13259887695312,
+          0.0,
+          47.836158752441406
+        ],
+        "max": [
+          -25.881681442260742,
+          38.5,
+          133.56549072265625
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.533357560634613,
+        0.4952605664730072,
+        0.6857454180717468
+      ],
+      "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 1448,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailedExterior": {
+        "url": "/models/details/61a-exterior-e90d56871700.glb",
+        "bytes": 4420280,
+        "triangles": 373249,
+        "sha256": "e90d56871700757688d31c1ed80f9b531229446bd78b79d58260cbde9acdfeac",
+        "bounds": {
+          "min": [
+            -77.12799072265625,
+            0.0,
+            47.84075927734375
+          ],
+          "max": [
+            -25.88298225402832,
+            38.5,
+            133.56060791015625
+          ]
+        }
+      }
+    },
+    {
+      "code": "CBG",
+      "name": "Centre Building",
+      "address": "2 Houghton Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          2.060716152191162,
+          -0.13249999284744263,
+          31.516820907592773
+        ],
+        "max": [
+          68.16556549072266,
+          53.279998779296875,
+          100.0077896118164
+        ]
+      },
+      "interior": true,
+      "exteriorDirection": [
+        0.3290587365627289,
+        0.49755552411079407,
+        0.8025950193405151
+      ],
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 8772,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          43.64379119873047,
+          1.75,
+          57.76911926269531
+        ],
+        "target": [
+          53.48973083496094,
+          9.151405334472656,
+          42.01232147216797
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          2.8369922637939453,
+          -0.2750000059604645,
+          32.052616119384766
+        ],
+        "max": [
+          67.38612365722656,
+          52.19499969482422,
+          99.47199249267578
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/cbg-exterior-2102bf70516d.glb",
+        "bytes": 8811216,
+        "triangles": 833292,
+        "sha256": "2102bf70516d3424f52d0a004463d1f5a151f8926020107d71dcf0c70d744c96",
+        "bounds": {
+          "min": [
+            2.060716152191162,
+            -0.2750000059604645,
+            31.516820907592773
+          ],
+          "max": [
+            68.16556549072266,
+            53.279998779296875,
+            100.0077896118164
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/cbg-interior-db8ddd837ea0.glb",
+        "bytes": 347116,
+        "triangles": 38244,
+        "sha256": "db8ddd837ea0648ead4fc56dc57871282db92ac9ee5c3bb9614315672b9c539c",
+        "bounds": {
+          "min": [
+            2.8369922637939453,
+            -0.2750000059604645,
+            32.052616119384766
+          ],
+          "max": [
+            67.38612365722656,
+            52.19499969482422,
+            99.47199249267578
+          ]
+        }
+      }
+    },
+    {
+      "code": "CKK",
+      "name": "Cheng Kin Ku Building",
+      "address": "54 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -138.37171936035156,
+          0.0,
+          -101.94637298583984
+        ],
+        "max": [
+          -82.46043395996094,
+          29.0,
+          -53.928897857666016
+        ]
+      },
+      "interior": true,
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 2784,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          -97.4619140625,
+          4.800000190734863,
+          -68.80329895019531
+        ],
+        "target": [
+          -112.6413803100586,
+          6.388347625732422,
+          -81.728515625
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          -129.93069458007812,
+          -0.15000000596046448,
+          -96.27594757080078
+        ],
+        "max": [
+          -91.05134582519531,
+          14.042499542236328,
+          -58.8443489074707
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/ckk-exterior-bcea3e812739.glb",
+        "bytes": 3025172,
+        "triangles": 260898,
+        "sha256": "bcea3e8127390b4e556b7df3e216835aaf861c5fae69be54c720bca1fd833233",
+        "bounds": {
+          "min": [
+            -138.37171936035156,
+            -0.15000000596046448,
+            -101.94637298583984
+          ],
+          "max": [
+            -82.46043395996094,
+            29.0,
+            -53.928897857666016
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/ckk-interior-91fa2b1c4d5d.glb",
+        "bytes": 689064,
+        "triangles": 70212,
+        "sha256": "91fa2b1c4d5d1e56b0ca6d78aa914d3dea46cc184fafb1127c134710b0a46a35",
+        "bounds": {
+          "min": [
+            -129.93069458007812,
+            -0.15000000596046448,
+            -96.27594757080078
+          ],
+          "max": [
+            -91.05134582519531,
+            14.042499542236328,
+            -58.8443489074707
+          ]
+        }
+      }
+    },
+    {
+      "code": "CLM",
+      "name": "Clement House",
+      "address": "99 Aldwych",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          99.23820495605469,
+          -0.03500000014901161,
+          121.30353546142578
+        ],
+        "max": [
+          132.280029296875,
+          29.149999618530273,
+          155.49176025390625
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CLM.1.01小组教室",
+        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+      },
+      "exteriorDirection": [
+        -0.3913891613483429,
+        0.48209914565086365,
+        0.7838334441184998
+      ],
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 424,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          8,
+          6.8,
+          8
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -4.2210001945495605,
+          -0.15000000596046448,
+          -3.3479385375976562
+        ],
+        "max": [
+          4.2210001945495605,
+          3.200000047683716,
+          3.200000047683716
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/clm-exterior-3de6b534942a.glb",
+        "bytes": 820204,
+        "triangles": 71704,
+        "sha256": "3de6b534942a5880a4c8d9ec160ed334470f85465dc8c677408b0f5a3d3394b6",
+        "bounds": {
+          "min": [
+            99.23820495605469,
+            -0.03500000014901161,
+            121.30353546142578
+          ],
+          "max": [
+            132.280029296875,
+            29.149999618530273,
+            155.49176025390625
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/clm-interior-18441fed03f8.glb",
+        "bytes": 470304,
+        "triangles": 34420,
+        "sha256": "18441fed03f8fefce6e90f1dba8c5e90a51645a4f8c9707ff6746b32a2861536",
+        "bounds": {
+          "min": [
+            -4.2210001945495605,
+            -0.15000000596046448,
+            -3.3479385375976562
+          ],
+          "max": [
+            4.2210001945495605,
+            3.200000047683716,
+            3.200000047683716
+          ]
+        }
+      }
+    },
+    {
+      "code": "COL",
+      "name": "Columbia House",
+      "address": "69 Aldwych",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          2.9004480838775635,
+          -0.20250000059604645,
+          98.30819702148438
+        ],
+        "max": [
+          23.38327980041504,
+          29.0,
+          128.17990112304688
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Garrick咖啡厅用餐区",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。餐饮照片拍摄日期未知；仅可见用餐区，布局深度和后部楼梯关系为照片比例估计。"
+      },
+      "exteriorDirection": [
+        -0.5543825626373291,
+        0.5000902414321899,
+        0.6652591228485107
+      ],
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 776,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          15.614480018615723,
+          5.0,
+          138.43194580078125
+        ],
+        "target": [
+          16.679906845092773,
+          3.000002861022949,
+          127.4544677734375
+        ],
+        "fov": 46
+      },
+      "interiorView": {
+        "position": [
+          11,
+          11,
+          14
+        ],
+        "target": [
+          0,
+          0.8,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -3.880000114440918,
+          -0.18000000715255737,
+          -5.579999923706055
+        ],
+        "max": [
+          3.799999952316284,
+          3.799999952316284,
+          5.5
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/col-exterior-d13dee626dd7.glb",
+        "bytes": 901044,
+        "triangles": 73444,
+        "sha256": "d13dee626dd79690b1633e99f78b3294f779917248564531456b470a7a2f2c33",
+        "bounds": {
+          "min": [
+            2.9004480838775635,
+            -0.20250000059604645,
+            98.30819702148438
+          ],
+          "max": [
+            23.38327980041504,
+            29.0,
+            128.17990112304688
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/col-interior-5317388f80f6.glb",
+        "bytes": 724616,
+        "triangles": 63648,
+        "sha256": "5317388f80f6dc50bb354fb30abcf1c30235278f71f26aca797b4af2014787a6",
+        "bounds": {
+          "min": [
+            -3.880000114440918,
+            -0.18000000715255737,
+            -5.579999923706055
+          ],
+          "max": [
+            3.799999952316284,
+            3.799999952316284,
+            5.5
+          ]
+        }
+      }
+    },
+    {
+      "code": "CON",
+      "name": "Connaught House",
+      "address": "63-65 Aldwych",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -34.34856414794922,
+          0.0,
+          96.73214721679688
+        ],
+        "max": [
+          -4.919323444366455,
+          29.360000610351562,
+          134.03517150878906
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CON.7.04会议室",
+        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+      },
+      "exteriorDirection": [
+        -0.13161249458789825,
+        0.5131147503852844,
+        0.8481693863868713
+      ],
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 272,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -15.132238388061523,
+          5.0,
+          141.20135498046875
+        ],
+        "target": [
+          -16.17835807800293,
+          3.0000014305114746,
+          130.22201538085938
+        ],
+        "fov": 46
+      },
+      "interiorView": {
+        "position": [
+          7,
+          5.7,
+          6
+        ],
+        "target": [
+          0,
+          0.75,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -3.2799999713897705,
+          -0.23999999463558197,
+          -2.180000066757202
+        ],
+        "max": [
+          3.2209999561309814,
+          3.0,
+          2.0999999046325684
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/con-exterior-4d88ac0995a3.glb",
+        "bytes": 530964,
+        "triangles": 45082,
+        "sha256": "4d88ac0995a3d176db117a79d24c6db71516013d6ae35b5138f5ce57d2a049d2",
+        "bounds": {
+          "min": [
+            -34.34856414794922,
+            0.0,
+            96.73214721679688
+          ],
+          "max": [
+            -4.919323444366455,
+            29.360000610351562,
+            134.03517150878906
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/con-interior-0ebf0d1c23a5.glb",
+        "bytes": 299704,
+        "triangles": 22396,
+        "sha256": "0ebf0d1c23a57b877f1319850727fbd07f2bf95c067e46fd2f1dac151682d209",
+        "bounds": {
+          "min": [
+            -3.2799999713897705,
+            -0.23999999463558197,
+            -2.180000066757202
+          ],
+          "max": [
+            3.2209999561309814,
+            3.0,
+            2.0999999046325684
+          ]
+        }
+      }
+    },
+    {
+      "code": "COW",
+      "name": "Cowdray House",
+      "address": "6 Portugal Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -6.507339954376221,
+          0.0,
+          -7.595107555389404
+        ],
+        "max": [
+          31.551820755004883,
+          22.479999542236328,
+          14.707598686218262
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Cowdray研讨厅局部",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。2019项目照片，无房间号或平面；仅研讨厅可见构件，座椅数量不代表核定容量。"
+      },
+      "exteriorDirection": [
+        -0.8388007283210754,
+        0.5144957900047302,
+        0.17806582152843475
+      ],
+      "facadeScope": "Photographed heritage facade details; footprint retained. Heights, ornamental profiles, roof depth and unseen elevations remain estimates. No surveyed interior claim.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -19.085157206404723,
+          4.4,
+          7.92495901812355
+        ],
+        "target": [
+          -5.390338268892609,
+          3.7,
+          5.017737962070278
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 990,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          13,
+          10,
+          13
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -4.579999923706055,
+          -0.18000000715255737,
+          -5.079999923706055
+        ],
+        "max": [
+          4.5,
+          3.700000047683716,
+          5.0
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/cow-exterior-52510930330a.glb",
+        "bytes": 3474892,
+        "triangles": 275239,
+        "sha256": "52510930330af8ca84feb4b5c393a5cd2b53d060567849d885d34e1ee35474e3",
+        "bounds": {
+          "min": [
+            -6.504848003387451,
+            0.0,
+            -7.590163707733154
+          ],
+          "max": [
+            31.549266815185547,
+            22.479999542236328,
+            14.704972267150879
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/cow-interior-760673784fcb.glb",
+        "bytes": 1881456,
+        "triangles": 142812,
+        "sha256": "760673784fcbd236b60939ec99a9871ddf9c36cb929e53e8e750f2b6832ac3f9",
+        "bounds": {
+          "min": [
+            -4.579999923706055,
+            -0.18000000715255737,
+            -5.079999923706055
+          ],
+          "max": [
+            4.5,
+            3.700000047683716,
+            5.0
+          ]
+        }
+      }
+    },
+    {
+      "code": "FAW",
+      "name": "Fawcett House",
+      "address": "2 Clement’s Inn",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          72.36564636230469,
+          0.0,
+          76.17027282714844
+        ],
+        "max": [
+          106.32102966308594,
+          44.22999954223633,
+          97.4258804321289
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "FAW.1.01小组教室",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.5941781401634216,
+        0.48337969183921814,
+        -0.6428813338279724
+      ],
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 1224,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          10,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -4.579999923706055,
+          -0.20000000298023224,
+          -3.630000114440918
+        ],
+        "max": [
+          4.5,
+          3.0999999046325684,
+          3.0950000286102295
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/faw-exterior-3449976168fa.glb",
+        "bytes": 1212004,
+        "triangles": 99577,
+        "sha256": "3449976168fa6ea3e517c14c4996b70d62f3fd5578777787bc4d7c93eef77e12",
+        "bounds": {
+          "min": [
+            72.36564636230469,
+            0.0,
+            76.17027282714844
+          ],
+          "max": [
+            106.32102966308594,
+            44.22999954223633,
+            97.4258804321289
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/faw-interior-5cab24c5244a.glb",
+        "bytes": 555584,
+        "triangles": 42104,
+        "sha256": "5cab24c5244a74585c0bb7cf32956c9f1deb68ce88d1aa3bb0bf4ff40e5cebd8",
+        "bounds": {
+          "min": [
+            -4.579999923706055,
+            -0.20000000298023224,
+            -3.630000114440918
+          ],
+          "max": [
+            4.5,
+            3.0999999046325684,
+            3.0950000286102295
+          ]
+        }
+      }
+    },
+    {
+      "code": "KGS",
+      "name": "King’s Chambers",
+      "address": "29-31 Portugal Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -33.602169036865234,
+          0.0,
+          -12.12070083618164
+        ],
+        "max": [
+          -12.460378646850586,
+          18.65999984741211,
+          5.265872955322266
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "KGS.1.02协作教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。官方历史平面标24席；几何尺寸、净高估算，非现状测绘。"
+      },
+      "exteriorDirection": [
+        0.6576157808303833,
+        0.5144957900047302,
+        0.5503050088882446
+      ],
+      "facadeScope": "Photographed heritage facade details; footprint retained. Heights, ornamental profiles, roof depth and unseen elevations remain estimates. No surveyed interior claim.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -6.04868076177555,
+          4.4,
+          8.450577616500295
+        ],
+        "target": [
+          -16.785353392828412,
+          3.7,
+          -0.5340682203482792
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 441,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          10,
+          11,
+          13
+        ],
+        "target": [
+          0,
+          0.5,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -2.9800000190734863,
+          -0.18000000715255737,
+          -5.679999828338623
+        ],
+        "max": [
+          2.9000000953674316,
+          3.299999952316284,
+          5.599999904632568
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/kgs-exterior-36b3899ccbb6.glb",
+        "bytes": 1919516,
+        "triangles": 142925,
+        "sha256": "36b3899ccbb6a1fa8fa9955cb3c0261236c563443b4af10c65a646817ac09038",
+        "bounds": {
+          "min": [
+            -33.59806823730469,
+            0.0,
+            -12.12070083618164
+          ],
+          "max": [
+            -12.465330123901367,
+            18.65999984741211,
+            5.261770248413086
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/kgs-interior-c09d5fd7ad61.glb",
+        "bytes": 565692,
+        "triangles": 46968,
+        "sha256": "c09d5fd7ad616d112c4c8f5f9fa88980e6ae56bcfd65e9383a18568ad8f901fe",
+        "bounds": {
+          "min": [
+            -2.9800000190734863,
+            -0.18000000715255737,
+            -5.679999828338623
+          ],
+          "max": [
+            2.9000000953674316,
+            3.299999952316284,
+            5.599999904632568
+          ]
+        }
+      }
+    },
+    {
+      "code": "KSW",
+      "name": "20 Kingsway",
+      "address": "20 Kingsway",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -81.10916900634766,
+          0.0,
+          36.45901870727539
+        ],
+        "max": [
+          -47.3437385559082,
+          20.549999237060547,
+          60.44700622558594
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "KSW.1.01小组教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。历史平面为5组桌；每组6席按图建立，尺寸、颜色具体分布为照片近似。"
+      },
+      "exteriorDirection": [
+        -0.7772495150566101,
+        0.48201504349708557,
+        0.4044066071510315
+      ],
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 160,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -87.02011211284176,
+          3.6,
+          58.99127611885645
+        ],
+        "target": [
+          -78.58240896084087,
+          2.6,
+          55.81202139328099
+        ],
+        "fov": 50
+      },
+      "closeupImage": "ksw-entrance",
+      "interiorView": {
+        "position": [
+          11,
+          11,
+          13
+        ],
+        "target": [
+          0,
+          0.55,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -4.079999923706055,
+          -0.18000000715255737,
+          -4.880000114440918
+        ],
+        "max": [
+          4.0,
+          3.0999999046325684,
+          4.800000190734863
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/ksw-exterior-8e54d73ab627.glb",
+        "bytes": 444152,
+        "triangles": 31984,
+        "sha256": "8e54d73ab627628927e16fbe5bfc1b8e035e332ee2bbf317a86dcbdbeb3dc3a4",
+        "bounds": {
+          "min": [
+            -81.10916900634766,
+            0.0,
+            36.45901870727539
+          ],
+          "max": [
+            -47.3437385559082,
+            20.549999237060547,
+            60.44700622558594
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/ksw-interior-b575b26bd4ec.glb",
+        "bytes": 638568,
+        "triangles": 51064,
+        "sha256": "b575b26bd4ecdd8a5baa10c2abad64f254d1bb8845ea6f02b78e1c4d3987c47c",
+        "bounds": {
+          "min": [
+            -4.079999923706055,
+            -0.18000000715255737,
+            -4.880000114440918
+          ],
+          "max": [
+            4.0,
+            3.0999999046325684,
+            4.800000190734863
+          ]
+        }
+      }
+    },
+    {
+      "code": "LAK",
+      "name": "Lakatos Building",
+      "address": "7 Portugal Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          2.289186954498291,
+          0.0,
+          -14.035511016845703
+        ],
+        "max": [
+          23.84626007080078,
+          17.549999237060547,
+          6.067502021789551
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Lakatos2012入口楼梯",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。依据2012入口改造照片；只重建楼梯入口片段，不外推整栋40平方米接待区或电梯位置。"
+      },
+      "exteriorDirection": [
+        -0.34407711029052734,
+        0.3713906705379486,
+        -0.8623687624931335
+      ],
+      "facadeScope": "Photograph-informed Portugal Street shopfront and John Watkins Plaza arched windows, sash divisions, quoins, cornice and roof study. Heights, bay counts, dormer positions and roof depth estimated. Historical pediment not assigned without firmer location evidence. No verified interior.",
+      "detailView": {
+        "label": "窗饰细节",
+        "position": [
+          22.02361314676945,
+          5.0,
+          -15.261922606988971
+        ],
+        "target": [
+          15.775301150309488,
+          3.4,
+          -7.454323896928851
+        ],
+        "fov": 45
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 324,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          8,
+          7,
+          9
+        ],
+        "target": [
+          0,
+          0.7,
+          -0.6
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -2.4800000190734863,
+          -0.18000000715255737,
+          -3.380000114440918
+        ],
+        "max": [
+          2.4000000953674316,
+          3.4000000953674316,
+          3.299999952316284
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/lak-exterior-591f1b35696f.glb",
+        "bytes": 1390732,
+        "triangles": 108240,
+        "sha256": "591f1b35696fd3d0291bcc0ac23a3f59a14f4983dfb5e6acec2967d395a1c7ee",
+        "bounds": {
+          "min": [
+            2.2941360473632812,
+            0.0,
+            -14.030570983886719
+          ],
+          "max": [
+            23.841318130493164,
+            17.549999237060547,
+            6.067502021789551
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/lak-interior-9e9f41262e8b.glb",
+        "bytes": 242996,
+        "triangles": 18228,
+        "sha256": "9e9f41262e8b576ca2354503c8f3680cb3a7b88de6163eba48bebeb944f655a4",
+        "bounds": {
+          "min": [
+            -2.4800000190734863,
+            -0.18000000715255737,
+            -3.380000114440918
+          ],
+          "max": [
+            2.4000000953674316,
+            3.4000000953674316,
+            3.299999952316284
+          ]
+        }
+      }
+    },
+    {
+      "code": "LCH",
+      "name": "Lincoln Chambers",
+      "address": "2-4 Portsmouth Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -34.48431396484375,
+          0.0,
+          -25.687063217163086
+        ],
+        "max": [
+          -15.502896308898926,
+          13.649999618530273,
+          -8.528922080993652
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        0.38022950291633606,
+        0.41036465764045715,
+        -0.8288705348968506
+      ],
+      "facadeScope": "Photographed recessed entrance with splayed side arches, timber doors, green name panel and checker floor. Upper envelope retained from the prior approximate study. Dimensions, ornamental profiles and unseen elevations estimated; no verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -21.234198123019937,
+          3.7,
+          -32.25497290348563
+        ],
+        "target": [
+          -25.362044894498588,
+          2.08,
+          -23.256590651030873
+        ],
+        "fov": 42
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 153,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailedExterior": {
+        "url": "/models/details/lch-exterior-dc550b7a1c36.glb",
+        "bytes": 1126440,
+        "triangles": 87614,
+        "sha256": "dc550b7a1c36c037bd97c5c22cd60689f9ec11df374f3a0d7a0e2b01079dc604",
+        "bounds": {
+          "min": [
+            -34.47998046875,
+            0.0,
+            -25.682403564453125
+          ],
+          "max": [
+            -15.507649421691895,
+            13.649999618530273,
+            -8.53351879119873
+          ]
+        }
+      }
+    },
+    {
+      "code": "5LF",
+      "name": "5 Lincoln’s Inn Fields",
+      "address": "5 Lincoln’s Inn Fields",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -112.59539794921875,
+          0.0,
+          -264.3106689453125
+        ],
+        "max": [
+          -98.30729675292969,
+          16.240999221801758,
+          -241.37252807617188
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "教职工公寓双人卧室样本",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.2915275990962982,
+        0.5144957900047302,
+        0.8064153790473938
+      ],
+      "facadeScope": "Official LSE address-map point is inside the attributed OSM polygon. Front facade follows archived estate imagery; heights and rear geometry remain estimated.",
+      "footprintSource": {
+        "osmId": "way/1184094775",
+        "sourcePoint": {
+          "longitude": -0.1182048,
+          "latitude": 51.5168142
+        },
+        "sourcePage": "https://info.lse.ac.uk/staff/services/faculty-accommodation/property-portfolio/five-lincolns-inn-fields",
+        "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 99,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          0,
+          6.5,
+          9
+        ],
+        "target": [
+          0,
+          0.8,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -2.930000066757202,
+          -0.20000000298023224,
+          -2.4800000190734863
+        ],
+        "max": [
+          2.8499999046325684,
+          2.700000047683716,
+          2.4000000953674316
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/5lf-exterior-379e27b77b3a.glb",
+        "bytes": 322252,
+        "triangles": 22862,
+        "sha256": "379e27b77b3aa7e559993acecd31b2c5303859d88f0d0f7b02848740818f9727",
+        "bounds": {
+          "min": [
+            -112.59539794921875,
+            0.0,
+            -264.3106689453125
+          ],
+          "max": [
+            -98.3113784790039,
+            16.240999221801758,
+            -241.37660217285156
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/5lf-interior-201052502ecb.glb",
+        "bytes": 110500,
+        "triangles": 7260,
+        "sha256": "201052502ecb43e24a26fda2dce1cb4f2ff6b28c62ed5e166b7ae1cae0da595d",
+        "bounds": {
+          "min": [
+            -2.930000066757202,
+            -0.20000000298023224,
+            -2.4800000190734863
+          ],
+          "max": [
+            2.8499999046325684,
+            2.700000047683716,
+            2.4000000953674316
+          ]
+        }
+      }
+    },
+    {
+      "code": "35L",
+      "name": "35 Lincoln’s Inn Fields",
+      "address": "35 Lincoln’s Inn Fields",
+      "status": "construction",
+      "bounds": {
+        "min": [
+          57.855247497558594,
+          0.0,
+          -109.5101318359375
+        ],
+        "max": [
+          108.66145324707031,
+          2.7700002193450928,
+          -57.32981872558594
+        ]
+      },
+      "interior": false,
+      "localRefinement": {
+        "description": "Indicative hoarding post foot plates",
+        "newComponents": 74,
+        "scope": "Schematic construction boundary only, not the current workstage"
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      }
+    },
+    {
+      "code": "49L",
+      "name": "Coopers Restaurant",
+      "address": "49 Lincoln’s Inn Fields",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -56.261409759521484,
+          0.0,
+          -65.79364776611328
+        ],
+        "max": [
+          -43.47058868408203,
+          11.914999961853027,
+          -51.59469985961914
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Coopers餐厅用餐区样本",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        -0.5681107640266418,
+        0.411933571100235,
+        -0.7124330997467041
+      ],
+      "facadeScope": "Block-plan-derived exterior envelope. The 50/50A frontage is a shared physical building, not an assertion of exclusive 50L tenancy. Vertical dimensions and unseen details are estimates.",
+      "footprintSource": {
+        "drawing": "RT22055-RTA-XX-XX-DR-A-00002, PL01, 2022-06-22",
+        "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
+        "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 135,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          9,
+          7,
+          9
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -4.079999923706055,
+          -0.20000000298023224,
+          -3.5799999237060547
+        ],
+        "max": [
+          4.0,
+          3.200000047683716,
+          3.5
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/49l-exterior-738998668e1b.glb",
+        "bytes": 1072788,
+        "triangles": 84513,
+        "sha256": "738998668e1b0ce3f21dff1d60f460706d509b355ab5758659e347a6011485cb",
+        "bounds": {
+          "min": [
+            -56.261409759521484,
+            0.0,
+            -65.78994750976562
+          ],
+          "max": [
+            -43.474910736083984,
+            11.914999961853027,
+            -51.59941101074219
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/49l-interior-70b363393af3.glb",
+        "bytes": 579236,
+        "triangles": 45756,
+        "sha256": "70b363393af3907d81f2654f160d852a19b1cf9afbd7e1e6a6fe5cac8cbeed86",
+        "bounds": {
+          "min": [
+            -4.079999923706055,
+            -0.20000000298023224,
+            -3.5799999237060547
+          ],
+          "max": [
+            4.0,
+            3.200000047683716,
+            3.5
+          ]
+        }
+      }
+    },
+    {
+      "code": "50L",
+      "name": "50 Lincoln’s Inn Fields",
+      "address": "50 Lincoln’s Inn Fields",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -51.65165328979492,
+          0.0,
+          -54.27339553833008
+        ],
+        "max": [
+          -40.59330368041992,
+          12.484999656677246,
+          -44.29985427856445
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.8848124742507935,
+        0.3618395924568176,
+        0.29356247186660767
+      ],
+      "facadeScope": "Block-plan-derived exterior envelope. The 50/50A frontage is a shared physical building, not an assertion of exclusive 50L tenancy. Vertical dimensions and unseen details are estimates.",
+      "footprintSource": {
+        "drawing": "RT22055-RTA-XX-XX-DR-A-00002, PL01, 2022-06-22",
+        "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
+        "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 99,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -57.17638778890998,
+          3.0,
+          -47.71152807880601
+        ],
+        "target": [
+          -50.666497499305315,
+          2.0,
+          -50.3428458194848
+        ],
+        "fov": 50
+      },
+      "closeupImage": "50l-entrance",
+      "detailedExterior": {
+        "url": "/models/details/50l-exterior-053779bde328.glb",
+        "bytes": 539140,
+        "triangles": 36560,
+        "sha256": "053779bde32803b89de4f13b21c1ac65a3ca861db77d51c2e07ac7c8ffd277c1",
+        "bounds": {
+          "min": [
+            -51.64693832397461,
+            0.0,
+            -54.27339553833008
+          ],
+          "max": [
+            -40.59330368041992,
+            12.484999656677246,
+            -44.304569244384766
+          ]
+        }
+      }
+    },
+    {
+      "code": "51L",
+      "name": "51 Lincoln’s Inn Fields",
+      "address": "51 Lincoln’s Inn Fields",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -74.75822448730469,
+          0.0,
+          -58.59324645996094
+        ],
+        "max": [
+          -56.368648529052734,
+          20.950000762939453,
+          -36.1026496887207
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.33960288763046265,
+        0.5449883937835693,
+        -0.7665883302688599
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 768,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -62.12764637114242,
+          3.5,
+          -64.72419142381968
+        ],
+        "target": [
+          -65.16224163712695,
+          2.5,
+          -57.843513048754346
+        ],
+        "fov": 50
+      },
+      "closeupImage": "51l-entrance",
+      "detailedExterior": {
+        "url": "/models/details/51l-exterior-63f49aac7052.glb",
+        "bytes": 3239432,
+        "triangles": 248159,
+        "sha256": "63f49aac7052e46361cc0915c9c4c8bc1bdf5852099e785923153accbf471bf5",
+        "bounds": {
+          "min": [
+            -74.75358581542969,
+            0.0,
+            -58.5892219543457
+          ],
+          "max": [
+            -56.373260498046875,
+            20.950000762939453,
+            -36.107147216796875
+          ]
+        }
+      }
+    },
+    {
+      "code": "LRB",
+      "name": "Lionel Robbins Building，Library",
+      "address": "10 Portugal Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          24.92513656616211,
+          0.0,
+          -41.29721450805664
+        ],
+        "max": [
+          114.51506042480469,
+          27.315105438232422,
+          27.600141525268555
+        ]
+      },
+      "interior": true,
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 2940,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorSections": [
+        {
+          "id": "LG",
+          "label": "LG层：电脑与政府出版物",
+          "minHeight": -0.02,
+          "maxHeight": 3.92,
+          "scope": "官方LG导览图支持电脑、分组学习与政府出版物区域；家具为估算。沿用既有最低层，地下绝对高程尚未校准。"
+        },
+        {
+          "id": "G",
+          "label": "G层：LSE LIFE学习区",
+          "minHeight": 3.98,
+          "maxHeight": 7.92,
+          "scope": "依据官方G层导览图补充LSE LIFE开放学习工作区；未重建服务柜台与封闭房间，保留原有估算家具。"
+        },
+        {
+          "id": "1",
+          "label": "1层：主要藏书与课程藏书",
+          "minHeight": 7.98,
+          "maxHeight": 11.92,
+          "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
+        },
+        {
+          "id": "2",
+          "label": "2层：经济类藏书与期刊",
+          "minHeight": 11.98,
+          "maxHeight": 15.92,
+          "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
+        },
+        {
+          "id": "3",
+          "label": "3层：社会科学藏书与期刊",
+          "minHeight": 15.98,
+          "maxHeight": 19.92,
+          "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
+        },
+        {
+          "id": "4",
+          "label": "4层：专题阅览与分组学习",
+          "minHeight": 19.98,
+          "maxHeight": 22.9,
+          "scope": "依据官方4层图补充本科生、研究生、Women’s Library阅览与分组学习区域；不推断PhD Academy、保密资料室或5层员工空间。"
+        }
+      ],
+      "interiorSectionScope": "LG、G、1、2、3、4共6个公共楼层依照官方导览图分配功能区，沿用原模型相对层级估算；LG地下绝对高程尚未校准，中庭与平面位置存在偏差，外围区域定位及家具尺寸、数量均为估算，非完整实测布局。",
+      "interiorView": {
+        "position": [
+          69.63214874267578,
+          1.5,
+          -10.39675235748291
+        ],
+        "target": [
+          69.63214874267578,
+          21.09505844116211,
+          -14.400962829589844
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          25.21265411376953,
+          -0.019999999552965164,
+          -41.15494155883789
+        ],
+        "max": [
+          114.29000091552734,
+          27.315105438232422,
+          27.380033493041992
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/lrb-exterior-e569ba8442d3.glb",
+        "bytes": 7422420,
+        "triangles": 813092,
+        "sha256": "e569ba8442d36bcd08af591bc0fbd22611c8d21e9e5e8e05b90f2ee856afd989",
+        "bounds": {
+          "min": [
+            24.92513656616211,
+            -0.019999999552965164,
+            -41.29721450805664
+          ],
+          "max": [
+            114.51506042480469,
+            27.315105438232422,
+            27.600141525268555
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/lrb-interior-ddc03d541561.glb",
+        "bytes": 4976512,
+        "triangles": 602848,
+        "sha256": "ddc03d5415615fc54a54be188ca4931a41346e60f9b81704f1caa831143825cf",
+        "bounds": {
+          "min": [
+            25.21265411376953,
+            -0.019999999552965164,
+            -41.15494155883789
+          ],
+          "max": [
+            114.29000091552734,
+            27.315105438232422,
+            27.380033493041992
+          ]
+        }
+      }
+    },
+    {
+      "code": "MAR",
+      "name": "Marshall Building",
+      "address": "44 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -45.36553955078125,
+          0.0,
+          -80.22682189941406
+        ],
+        "max": [
+          23.157800674438477,
+          42.79999923706055,
+          -24.454532623291016
+        ]
+      },
+      "interior": true,
+      "exteriorDirection": [
+        -0.3350583016872406,
+        0.4472135901451111,
+        -0.8292984366416931
+      ],
+      "facadeScope": "Built-photo refinement of the north middle screen, sloping entrance return, recessed podium glazing, balcony guards, entrance doors and lantern forecourt piers. Existing public hall retained. Positions, heights and profiles remain photo-proportion estimates.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -28.22005746732383,
+          5.2,
+          -83.50629934420296
+        ],
+        "target": [
+          -21.02761087373832,
+          4.3,
+          -65.70436933652064
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 4291,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "refined",
+        "addedObjects": 52
+      },
+      "interiorView": {
+        "position": [
+          1.6433366537094116,
+          1.7000000476837158,
+          -66.45145416259766
+        ],
+        "target": [
+          -12.009961128234863,
+          3.3012337684631348,
+          -51.9248046875
+        ],
+        "fov": 65
+      },
+      "interiorBounds": {
+        "min": [
+          -44.53135299682617,
+          0.10000000149011612,
+          -77.66929626464844
+        ],
+        "max": [
+          23.157800674438477,
+          12.800000190734863,
+          -24.454532623291016
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/mar-exterior-21742893b0e5.glb",
+        "bytes": 7577128,
+        "triangles": 713016,
+        "sha256": "21742893b0e535ea3013c33bc095abeacf629f731171732e854d92442a153e41",
+        "bounds": {
+          "min": [
+            -45.36549377441406,
+            0.0,
+            -80.22334289550781
+          ],
+          "max": [
+            23.157800674438477,
+            42.79999923706055,
+            -24.454532623291016
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/mar-interior-11915d8f9c7f.glb",
+        "bytes": 451836,
+        "triangles": 46403,
+        "sha256": "11915d8f9c7f752765cb0e437ff88f492a63592edb40c674da3eb6c4be5c1797",
+        "bounds": {
+          "min": [
+            -44.53135299682617,
+            0.10000000149011612,
+            -77.66929626464844
+          ],
+          "max": [
+            23.157800674438477,
+            12.800000190734863,
+            -24.454532623291016
+          ]
+        }
+      },
+      "interiorSpaces": [
+        {
+          "id": "mar-104",
+          "label": "MAR.1.04阶梯教室",
+          "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。",
+          "interiorAsset": "/models/details/mar-104-interior-ef2db3ea7a36.glb",
+          "detailedInterior": {
+            "url": "/models/details/mar-104-interior-ef2db3ea7a36.glb",
+            "bytes": 656868,
+            "triangles": 59272,
+            "sha256": "ef2db3ea7a361c5f6ad8e59aa53056b5f3708d4619a593435bcc3a40b33e9b79",
+            "bounds": {
+              "min": [
+                -6.960000038146973,
+                -0.18000000715255737,
+                -7.184999942779541
+              ],
+              "max": [
+                7.085000038146973,
+                4.96999979019165,
+                8.375
+              ]
+            }
+          },
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "MAR.1.04阶梯教室",
+            "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。"
+          },
+          "interiorBounds": {
+            "min": [
+              -6.960000038146973,
+              -0.18000000715255737,
+              -7.184999942779541
+            ],
+            "max": [
+              7.085000038146973,
+              4.96999979019165,
+              8.375
+            ]
+          },
+          "interiorView": {
+            "position": [
+              17.8,
+              15.0,
+              -20.8
+            ],
+            "target": [
+              0,
+              1.5,
+              0.2
+            ],
+            "fov": 50
+          },
+          "gallery": "mar-104-interior"
+        }
+      ]
+    },
+    {
+      "code": "OLD",
+      "name": "Old Building",
+      "address": "Houghton Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -39.16532897949219,
+          0.0,
+          26.9625244140625
+        ],
+        "max": [
+          17.64790153503418,
+          28.375,
+          100.10848236083984
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OLD.4.10阶梯教室",
+        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+      },
+      "exteriorDirection": [
+        0.7883862853050232,
+        0.48807665705680847,
+        0.37447047233581543
+      ],
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 3712,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          17,
+          12,
+          -1
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -8.0,
+          -0.25999999046325684,
+          -4.425000190734863
+        ],
+        "max": [
+          8.0600004196167,
+          3.4000000953674316,
+          4.389999866485596
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/old-exterior-f52b3217aa60.glb",
+        "bytes": 14006648,
+        "triangles": 1150859,
+        "sha256": "f52b3217aa60f1e5c79762b8ee43ac3ad6cc01cc79049fadfa5e3db9a91d6d4c",
+        "bounds": {
+          "min": [
+            -39.15880584716797,
+            0.0,
+            26.96942710876465
+          ],
+          "max": [
+            17.640804290771484,
+            28.375,
+            100.1051254272461
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/old-interior-f9864ce7fc08.glb",
+        "bytes": 1351476,
+        "triangles": 113028,
+        "sha256": "f9864ce7fc08b0fa5fc7f38d6dab47c7e5d6ba3be16960f0ae6abe8c229710df",
+        "bounds": {
+          "min": [
+            -8.0,
+            -0.25999999046325684,
+            -4.425000190734863
+          ],
+          "max": [
+            8.0600004196167,
+            3.4000000953674316,
+            4.389999866485596
+          ]
+        }
+      }
+    },
+    {
+      "code": "OCS",
+      "name": "Old Curiosity Shop",
+      "address": "13-14 Portsmouth Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -47.91916275024414,
+          0.1379999965429306,
+          -47.04456329345703
+        ],
+        "max": [
+          -38.47317886352539,
+          6.659917831420898,
+          -39.1242561340332
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OCS鞋店历史室内样本",
+        "scope": "鞋店历史室内局部样本，拍摄日期未注明；尺寸与陈列位置估算，非整栋内部。"
+      },
+      "exteriorDirection": [
+        -0.23757842183113098,
+        0.4821758270263672,
+        0.8432455658912659
+      ],
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 63,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          7.6,
+          7.0,
+          10.4
+        ],
+        "target": [
+          0,
+          1.05,
+          -0.05
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -2.369999885559082,
+          -0.20999999344348907,
+          -3.4700000286102295
+        ],
+        "max": [
+          2.299999952316284,
+          2.4700000286102295,
+          3.4000000953674316
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/ocs-exterior-4b2b357d2e4e.glb",
+        "bytes": 1350560,
+        "triangles": 115932,
+        "sha256": "4b2b357d2e4eea769caaae48f6427a3c4430e0093ed0f3253a3ee01d19b55b43",
+        "bounds": {
+          "min": [
+            -47.91916275024414,
+            0.1379999965429306,
+            -47.04456329345703
+          ],
+          "max": [
+            -38.47317886352539,
+            6.659917831420898,
+            -39.1242561340332
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/ocs-interior-147dbfb86b18.glb",
+        "bytes": 262368,
+        "triangles": 18099,
+        "sha256": "147dbfb86b18b1402bb6b558659d48891022dd0b9a5e47870a5791dddd3575ab",
+        "bounds": {
+          "min": [
+            -2.369999885559082,
+            -0.20999999344348907,
+            -3.4700000286102295
+          ],
+          "max": [
+            2.299999952316284,
+            2.4700000286102295,
+            3.4000000953674316
+          ]
+        }
+      }
+    },
+    {
+      "code": "PAN",
+      "name": "Pankhurst House",
+      "address": "1 Clement’s Inn",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          53.72006607055664,
+          0.0,
+          54.27970504760742
+        ],
+        "max": [
+          80.25440979003906,
+          44.22999954223633,
+          86.5759048461914
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "PAN.1.01小组教室",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.5941781401634216,
+        0.48337969183921814,
+        -0.6428813338279724
+      ],
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 960,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          10,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -4.579999923706055,
+          -0.20000000298023224,
+          -4.235000133514404
+        ],
+        "max": [
+          4.5,
+          3.0999999046325684,
+          3.5
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/pan-exterior-247ed924e0f7.glb",
+        "bytes": 1285352,
+        "triangles": 111005,
+        "sha256": "247ed924e0f780055837613488fab782eeba2ec1d40a078b2655aa681a123c55",
+        "bounds": {
+          "min": [
+            53.72006607055664,
+            0.0,
+            54.27970504760742
+          ],
+          "max": [
+            80.25440979003906,
+            44.22999954223633,
+            86.5759048461914
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/pan-interior-a23abb17e8c0.glb",
+        "bytes": 733684,
+        "triangles": 56212,
+        "sha256": "a23abb17e8c0e5c96effc0a64de1cc21c6b98642c09eb3c7ac1b365411f30f1e",
+        "bounds": {
+          "min": [
+            -4.579999923706055,
+            -0.20000000298023224,
+            -4.235000133514404
+          ],
+          "max": [
+            4.5,
+            3.0999999046325684,
+            3.5
+          ]
+        }
+      }
+    },
+    {
+      "code": "PAR",
+      "name": "Parish Hall",
+      "address": "Sheffield Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -49.06182098388672,
+          -0.019999999552965164,
+          1.6842665672302246
+        ],
+        "max": [
+          -25.57349967956543,
+          15.470000267028809,
+          16.611709594726562
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "PAR.1.02小组教室",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.2203938066959381,
+        0.4472135901451111,
+        -0.8668485879898071
+      ],
+      "facadeScope": "Photo-informed low entrance hall, four-bay street elevation and pitched tile roof. Footprint retained; heights, roof depths, ornamental profiles and unseen elevations estimated. No verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -24.363430536661845,
+          3.8,
+          -7.406429805794218
+        ],
+        "target": [
+          -28.059546969209414,
+          3.1,
+          7.13106348272278
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 441,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          15,
+          12,
+          13
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -7.079999923706055,
+          -0.20000000298023224,
+          -4.079999923706055
+        ],
+        "max": [
+          7.0,
+          3.674999952316284,
+          4.0
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/par-exterior-ee7837243b96.glb",
+        "bytes": 1335696,
+        "triangles": 102380,
+        "sha256": "ee7837243b96ed39a376e88636e7ca6df900440f25b2b5cead992ccc68a6d876",
+        "bounds": {
+          "min": [
+            -49.058448791503906,
+            -0.047499991953372955,
+            1.686956524848938
+          ],
+          "max": [
+            -25.57349967956543,
+            15.470000267028809,
+            16.610294342041016
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/par-interior-e51f3e8154f9.glb",
+        "bytes": 1222880,
+        "triangles": 96344,
+        "sha256": "e51f3e8154f9f25501943556f4f31ab1ead4edef8b160088a4e556842263c633",
+        "bounds": {
+          "min": [
+            -7.079999923706055,
+            -0.20000000298023224,
+            -4.079999923706055
+          ],
+          "max": [
+            7.0,
+            3.674999952316284,
+            4.0
+          ]
+        }
+      }
+    },
+    {
+      "code": "PEA",
+      "name": "Peacock Theatre",
+      "address": "Portugal Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -74.9002685546875,
+          0.0,
+          12.04423999786377
+        ],
+        "max": [
+          -54.799713134765625,
+          19.649999618530273,
+          31.77621841430664
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Peacock舞台与前排观众席",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。舞台口尺寸来自运营方技术规格，其余估算。"
+      },
+      "exteriorDirection": [
+        0.32542428374290466,
+        0.5449883341789246,
+        0.772713840007782
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 420,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          23,
+          18,
+          -22
+        ],
+        "target": [
+          0,
+          2.6,
+          1
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -9.75,
+          -0.25,
+          -8.5
+        ],
+        "max": [
+          9.75,
+          7.5,
+          10.800000190734863
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/pea-exterior-c3fa7fafc358.glb",
+        "bytes": 1495912,
+        "triangles": 114549,
+        "sha256": "c3fa7fafc35898c7074c1d97328916a4d029c28bee79ef80d996794615230e33",
+        "bounds": {
+          "min": [
+            -74.89566802978516,
+            0.0,
+            12.048808097839355
+          ],
+          "max": [
+            -54.80430603027344,
+            19.649999618530273,
+            31.815387725830078
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/pea-interior-e1287011d835.glb",
+        "bytes": 930780,
+        "triangles": 78660,
+        "sha256": "e1287011d835ab1dd4ce81b0b349f2455e0aa5288fd3069c438a5bc3a608ec9b",
+        "bounds": {
+          "min": [
+            -9.75,
+            -0.25,
+            -8.5
+          ],
+          "max": [
+            9.75,
+            7.5,
+            10.800000190734863
+          ]
+        }
+      }
+    },
+    {
+      "code": "PEL",
+      "name": "Pethick-Lawrence House",
+      "address": "3 Clement’s Inn",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          100.59361267089844,
+          0.0,
+          88.61661529541016
+        ],
+        "max": [
+          125.48580932617188,
+          44.150001525878906,
+          118.8875961303711
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Tower3屋顶媒体演播室访谈区",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.48151347041130066,
+        0.5449883937835693,
+        -0.6863909959793091
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 2275,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          8,
+          6,
+          8
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -3.4800000190734863,
+          -0.20000000298023224,
+          -2.7300000190734863
+        ],
+        "max": [
+          3.4000000953674316,
+          3.200000047683716,
+          2.6500000953674316
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/pel-exterior-3fce650fa5a6.glb",
+        "bytes": 6396568,
+        "triangles": 530423,
+        "sha256": "3fce650fa5a6967bfc818f13e6dd919f7fef9209aef4fa02f4ed5f36ae4e375f",
+        "bounds": {
+          "min": [
+            100.59568786621094,
+            0.0,
+            88.61859893798828
+          ],
+          "max": [
+            125.485107421875,
+            44.150001525878906,
+            118.8851547241211
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/pel-interior-fa734fc0df60.glb",
+        "bytes": 146340,
+        "triangles": 10956,
+        "sha256": "fa734fc0df601fe19e497f86d88b44152d18f94b6e4c3005c521c6c3ea0f3cb7",
+        "bounds": {
+          "min": [
+            -3.4800000190734863,
+            -0.20000000298023224,
+            -2.7300000190734863
+          ],
+          "max": [
+            3.4000000953674316,
+            3.200000047683716,
+            2.6500000953674316
+          ]
+        }
+      }
+    },
+    {
+      "code": "POR",
+      "name": "1 Portsmouth Street",
+      "address": "1 Portsmouth Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -39.28082275390625,
+          0.0,
+          -28.297054290771484
+        ],
+        "max": [
+          -28.910921096801758,
+          15.949999809265137,
+          -15.1935453414917
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.34432581067085266,
+        0.3713906705379486,
+        -0.8622694611549377
+      ],
+      "facadeScope": "Photo-informed chamfered corner entrance, projecting fascia, historical bookshop fronts, sash windows, street plaques and roof edge. Footprint retained; heights, openings, hidden roof and ornamental dimensions estimated. Branding reflects the archived photograph, not verified current tenancy.",
+      "detailView": {
+        "label": "转角细节",
+        "position": [
+          -38.240465215674796,
+          3.8,
+          -36.400646925201144
+        ],
+        "target": [
+          -34.53196256541387,
+          2.65,
+          -27.113719940414157
+        ],
+        "fov": 45
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 207,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailedExterior": {
+        "url": "/models/details/por-exterior-f46238e82814.glb",
+        "bytes": 1044668,
+        "triangles": 79923,
+        "sha256": "f46238e82814711192cf1278f73489805df1ae3e6cc53e88e3de2793a40e7cf0",
+        "bounds": {
+          "min": [
+            -39.27674865722656,
+            0.0,
+            -28.292604446411133
+          ],
+          "max": [
+            -28.915613174438477,
+            15.949999809265137,
+            -15.1935453414917
+          ]
+        }
+      }
+    },
+    {
+      "code": "SAR",
+      "name": "Sardinia House",
+      "address": "52 Lincoln’s Inn Fields",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -92.75189208984375,
+          0.0,
+          -55.23292541503906
+        ],
+        "max": [
+          -66.10152435302734,
+          23.149999618530273,
+          -28.556074142456055
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "2015改造茶水间样本",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        -0.33349406719207764,
+        0.5449883937835693,
+        -0.7692655324935913
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 702,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "拱窗细节",
+        "position": [
+          -89.95638969694006,
+          3.7,
+          -67.05056656320497
+        ],
+        "target": [
+          -83.49206587100052,
+          2.7,
+          -50.7566465696868
+        ],
+        "fov": 50
+      },
+      "closeupImage": "sar-windows",
+      "interiorView": {
+        "position": [
+          8,
+          6.4,
+          7
+        ],
+        "target": [
+          0,
+          0.9,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -3.380000114440918,
+          -0.20000000298023224,
+          -2.7799999713897705
+        ],
+        "max": [
+          3.299999952316284,
+          3.25,
+          2.700000047683716
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/sar-exterior-94fe96144ea0.glb",
+        "bytes": 2247212,
+        "triangles": 175691,
+        "sha256": "94fe96144ea089c8e7e0b3d90a3016a33ce261598906abde68aa4c3670c31c1f",
+        "bounds": {
+          "min": [
+            -92.74727630615234,
+            0.0,
+            -55.22830581665039
+          ],
+          "max": [
+            -66.10612487792969,
+            23.149999618530273,
+            -28.56066131591797
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/sar-interior-4a099bcd8062.glb",
+        "bytes": 262752,
+        "triangles": 18980,
+        "sha256": "4a099bcd8062b09b327fdf2759856fcdeca92aa85195dbcf4c62e77858f391ab",
+        "bounds": {
+          "min": [
+            -3.380000114440918,
+            -0.20000000298023224,
+            -2.7799999713897705
+          ],
+          "max": [
+            3.299999952316284,
+            3.25,
+            2.700000047683716
+          ]
+        }
+      }
+    },
+    {
+      "code": "SAW",
+      "name": "Saw Swee Hock Student Centre",
+      "address": "1 Sheffield Street",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          -84.64329528808594,
+          -0.054999999701976776,
+          -37.45360565185547
+        ],
+        "max": [
+          -46.9441032409668,
+          27.954999923706055,
+          16.283767700195312
+        ]
+      },
+      "interior": true,
+      "exteriorDirection": [
+        0.851334273815155,
+        0.4969167709350586,
+        -0.16823700070381165
+      ],
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 990,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorBounds": {
+        "min": [
+          -64.70494079589844,
+          0.20000000298023224,
+          -16.36056900024414
+        ],
+        "max": [
+          -58.644962310791016,
+          15.309844017028809,
+          -10.300589561462402
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/saw-exterior-92354579cbdb.glb",
+        "bytes": 9677588,
+        "triangles": 1047480,
+        "sha256": "92354579cbdb9042820b70be3a0ed82c7d5745f79c89ed14e5023797d35a26e8",
+        "bounds": {
+          "min": [
+            -84.64329528808594,
+            -0.054999999701976776,
+            -37.45181655883789
+          ],
+          "max": [
+            -46.94651794433594,
+            27.954999923706055,
+            16.283767700195312
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/saw-interior-ca16e957f1cd.glb",
+        "bytes": 287484,
+        "triangles": 27792,
+        "sha256": "ca16e957f1cd29ff885c04cc7d27a7da7abdf018ecef29bfe8048a21561e46e8",
+        "bounds": {
+          "min": [
+            -64.70494079589844,
+            0.20000000298023224,
+            -16.36056900024414
+          ],
+          "max": [
+            -58.644962310791016,
+            15.309844017028809,
+            -10.300589561462402
+          ]
+        }
+      }
+    },
+    {
+      "code": "SHF",
+      "name": "Sheffield Street",
+      "address": "9-10 Sheffield Street",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -43.89044189453125,
+          0.0,
+          -17.612600326538086
+        ],
+        "max": [
+          -34.47522735595703,
+          13.149999618530273,
+          -1.0133118629455566
+        ]
+      },
+      "interior": false,
+      "exteriorDirection": [
+        -0.2490837275981903,
+        0.5449883341789246,
+        0.8005903363227844
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 288,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailedExterior": {
+        "url": "/models/details/shf-exterior-6b9471c54c49.glb",
+        "bytes": 850976,
+        "triangles": 63649,
+        "sha256": "6b9471c54c4950d0c1a35a328f8200b99d78f1fbdc261e98f4eaf2b8dd19a542",
+        "bounds": {
+          "min": [
+            -43.886680603027344,
+            0.0,
+            -17.60883903503418
+          ],
+          "max": [
+            -34.47895812988281,
+            13.149999618530273,
+            -1.0168768167495728
+          ]
+        }
+      }
+    },
+    {
+      "code": "SAL",
+      "name": "Sir Arthur Lewis Building",
+      "address": "32 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "bounds": {
+        "min": [
+          91.76612091064453,
+          -0.03999999910593033,
+          -137.53904724121094
+        ],
+        "max": [
+          159.88121032714844,
+          38.20000076293945,
+          -76.38041687011719
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "SAL.G.01研讨教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
+      },
+      "exteriorDirection": [
+        -0.6556274890899658,
+        0.4838261604309082,
+        -0.5797110795974731
+      ],
+      "localRefinement": {
+        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
+        "newComponents": 2008,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          12,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -5.079999923706055,
+          -0.18000000715255737,
+          -3.5799999237060547
+        ],
+        "max": [
+          5.0,
+          3.450000047683716,
+          3.5
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/sal-exterior-669327f0001e.glb",
+        "bytes": 10845036,
+        "triangles": 902128,
+        "sha256": "669327f0001e78540c47d1cd74e2cebb805a7d1cda66f02ead9dc2a9d907d520",
+        "bounds": {
+          "min": [
+            91.77310180664062,
+            -0.03999999910593033,
+            -137.53207397460938
+          ],
+          "max": [
+            159.8742218017578,
+            38.20000076293945,
+            -76.38739013671875
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/sal-interior-c5767d839d56.glb",
+        "bytes": 526224,
+        "triangles": 42972,
+        "sha256": "c5767d839d56d922817107aae80529281e7ae3e2fd8635650d6a7dc67fd15a28",
+        "bounds": {
+          "min": [
+            -5.079999923706055,
+            -0.18000000715255737,
+            -3.5799999237060547
+          ],
+          "max": [
+            5.0,
+            3.450000047683716,
+            3.5
+          ]
+        }
+      }
+    },
+    {
+      "code": "STC",
+      "name": "St Clement’s",
+      "address": "Clare Market",
+      "status": "facade",
+      "bounds": {
+        "min": [
+          -17.60181427001953,
+          0.0,
+          10.732993125915527
+        ],
+        "max": [
+          28.39092254638672,
+          20.90999984741211,
+          35.9212532043457
+        ]
+      },
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "STC.S018计算机学习区",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。无可用平面，只有照片中的计算机岛和教学墙；围合边界、席位与尺寸均为示意。"
+      },
+      "exteriorDirection": [
+        -0.9215719103813171,
+        0.3872324824333191,
+        0.027498407289385796
+      ],
+      "facadeScope": "Photo-informed Clare Market window reveals, recessed roof storey, red landing strip, corner panel and recessed entrance. Artwork represented by panel placement only; heights, exact entry bay and unseen surfaces estimated. No verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -2.481489256186876,
+          3.3,
+          39.05230083951075
+        ],
+        "target": [
+          1.9068203417821792,
+          2.25,
+          27.88347163685877
+        ],
+        "fov": 44
+      },
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 1288,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 22,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          9,
+          8,
+          10
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorBounds": {
+        "min": [
+          -3.5799999237060547,
+          -0.18000000715255737,
+          -3.3299999237060547
+        ],
+        "max": [
+          3.5,
+          3.115000009536743,
+          3.25
+        ]
+      },
+      "detailedExterior": {
+        "url": "/models/details/stc-exterior-3051ebe8c77e.glb",
+        "bytes": 4227784,
+        "triangles": 351023,
+        "sha256": "3051ebe8c77e30031ef93b7f8e2a35fda41bfb5c7870badbbe628c14a97c3317",
+        "bounds": {
+          "min": [
+            -17.60181427001953,
+            0.0,
+            10.732993125915527
+          ],
+          "max": [
+            28.39092254638672,
+            20.90999984741211,
+            35.9212532043457
+          ]
+        }
+      },
+      "detailedInterior": {
+        "url": "/models/details/stc-interior-954e7b3ae366.glb",
+        "bytes": 492420,
+        "triangles": 35468,
+        "sha256": "954e7b3ae3667a91e31f548dbd3cd236298ea382bff302b742265ea376230795",
+        "bounds": {
+          "min": [
+            -3.5799999237060547,
+            -0.18000000715255737,
+            -3.3299999237060547
+          ],
+          "max": [
+            3.5,
+            3.115000009536743,
+            3.25
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": "Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.",
+  "footprintAttribution": "© OpenStreetMap contributors, ODbL 1.0"
+}
