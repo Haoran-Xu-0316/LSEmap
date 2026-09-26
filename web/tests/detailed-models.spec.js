@@ -4,8 +4,8 @@ import { ModelCache } from "../src/model-cache.js";
 
 const catalogue = JSON.parse(await readFile("web/public/models/catalogue.json", "utf8"));
 
-test("all thirty exteriors and five interiors render without shader errors", async ({ page }) => {
-  test.setTimeout(180000);
+test("all thirty exteriors and twenty-five interiors render without shader errors", async ({ page }) => {
+  test.setTimeout(240000);
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   page.on("console", (message) => { if (message.type() === "error") errors.push(message.text()); });
