@@ -20,7 +20,7 @@ for (const width of [1440, 390]) {
       }
       await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready', `exterior-${code}`, { timeout: 60000 });
       await expect(page.locator('.model-state')).toHaveText('沿街立面研究');
-      await expect(page.locator('#interior-view')).toHaveCount(0);
+      await expect(page.locator('#interior-view')).toHaveCount(code === '49L' ? 1 : 0);
       await page.locator('.detail-note summary').click();
       await expect(page.locator('.detail-note')).toContainText('2022年规划总图');
       await page.waitForTimeout(1100);
