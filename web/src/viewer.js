@@ -46,9 +46,9 @@ export class CampusViewer {
       powerPreference: "high-performance",
     });
     this.renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio, 1.5), 1.75));
-    this.renderer.setClearColor(0xe7ecef);
-    this.renderer.toneMapping = THREE.AgXToneMapping;
-    this.renderer.toneMappingExposure = 0.95;
+    this.renderer.setClearColor(0xe9e8e3);
+    this.renderer.toneMapping = THREE.NeutralToneMapping;
+    this.renderer.toneMappingExposure = 0.9;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.canvas = this.renderer.domElement;
     this.canvas.tabIndex = 0;
@@ -58,13 +58,24 @@ export class CampusViewer {
     );
     this.container.append(this.canvas);
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(38, 1, 0.1, 3000);
+    this.detailGround = new THREE.Mesh(
+      new THREE.PlaneGeometry(6000, 6000),
+      new THREE.ShadowMaterial({ color: 0x34312b, opacity: 0.2 }),
+    );
+    this.detailGround.rotation.x = -Math.PI / 2;
+    this.detailGround.position.y = -0.03;
+    this.detailGround.receiveShadow = true;
+    this.detailGround.visible = false;
+    this.scene.add(this.detailGround);
+    this.camera = new THREE.PerspectiveCamera(38, 1, 0.02, 6000);
     this.camera.position.set(-280, 330, 370);
     this.controls = new OrbitControls(this.camera, this.canvas);
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.08;
-    this.controls.minDistance = 5;
-    this.controls.maxDistance = 1100;
+    this.controls.minDistance = 0.25;
+    this.controls.maxDistance = 2400;
+    this.controls.zoomToCursor = true;
+    this.controls.zoomSpeed = 1.25;
     this.controls.maxPolarAngle = Math.PI * 0.49;
     this.controls.screenSpacePanning = true;
     this.controls.target.set(10, 0, -10);
@@ -74,11 +85,11 @@ export class CampusViewer {
     this.controls.addEventListener("start", () => {
       this.transition = null;
     });
-    this.scene.add(new THREE.HemisphereLight(0xf5faff, 0x89958a, 1.3));
-    const sun = new THREE.DirectionalLight(0xfff7e9, 2.2);
+    this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
+    const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
     sun.position.set(-120, 240, 100);
     sun.castShadow = true;
-    sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.mapSize.set(4096, 4096);
     Object.assign(sun.shadow.camera, {
       left: -310,
       right: 310,
@@ -87,19 +98,22 @@ export class CampusViewer {
       near: 1,
       far: 650,
     });
-    sun.shadow.normalBias = 0.25;
+    sun.shadow.normalBias = 0.025;
+    sun.shadow.bias = -0.00005;
+    this.sun = sun;
+    this.scene.add(sun.target);
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.shadowMap.autoUpdate = false;
     this.scene.add(sun);
-    const fill = new THREE.DirectionalLight(0xe2edff, 0.7);
+    const fill = new THREE.DirectionalLight(0xe7edff, 0.25);
     fill.position.set(100, 70, -130);
     this.scene.add(fill);
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     const environment = new RoomEnvironment();
     this.environmentTarget = pmrem.fromScene(environment, 0.04);
     this.scene.environment = this.environmentTarget.texture;
-    this.scene.environmentIntensity = 0.55;
+    this.scene.environmentIntensity = 0.35;
     environment.dispose();
     pmrem.dispose();
     this.draco = new DRACOLoader()
@@ -182,6 +196,9 @@ export class CampusViewer {
         });
         if (object.material.length === 1) object.material = object.material[0];
       }
+    });
+    this.groups.get("SITE")?.traverse((object) => {
+      if (object.isMesh) object.castShadow = false;
     });
     const context = this.groups.get("CONTEXT");
     context?.traverse((object) => {
@@ -356,6 +373,7 @@ export class CampusViewer {
     this.toggleContext(true);
     this.mode = "campus";
     this.fit(this.campusBounds, animate);
+    this.fitSunShadow(this.campusBounds);
   }
 
   showCampus() {
@@ -370,7 +388,7 @@ export class CampusViewer {
     delete this.canvas.dataset.detailReady;
     this.campus.visible = true;
     this.controls.maxPolarAngle = Math.PI * 0.49;
-    this.controls.minDistance = 5;
+    this.controls.minDistance = 0.25;
     this.camera.fov = 38;
     this.mode = "campus";
     this.updateCameraProjection();
@@ -392,6 +410,7 @@ export class CampusViewer {
           ? new THREE.Vector3(...building.exteriorDirection)
           : HOME_DIRECTION,
       );
+    if (building.bounds) this.fitSunShadow(boxFromData(building.bounds));
     this.upgradeModel(building, "exterior");
   }
 
@@ -471,7 +490,7 @@ export class CampusViewer {
     const position = new THREE.Vector3(...view.position);
     this.camera.fov = view.fov;
     this.updateCameraProjection();
-    this.controls.minDistance = 1;
+    this.controls.minDistance = 0.15;
     if (this.container.clientWidth < 700) {
       // Keep the doorway in the free upper area above the mobile detail sheet.
       target.y -= 0.6;
@@ -544,10 +563,11 @@ export class CampusViewer {
     for (const [name, group] of this.interiors) group.visible = name === key;
     this.clearInteriorSection();
     this.mode = "interior";
+    this.fitSunShadow(boxFromData(interior.interiorBounds));
     this.toggleContext(this.contextVisible);
     this.updateCameraProjection();
     this.controls.maxPolarAngle = Math.PI * 0.94;
-    this.controls.minDistance = 0.5;
+    this.controls.minDistance = 0.15;
     this.renderer.shadowMap.needsUpdate = true;
     if (interior.interiorView) {
       const view = interior.interiorView;
@@ -613,6 +633,7 @@ export class CampusViewer {
 
   toggleContext(visible) {
     this.contextVisible = visible;
+    this.detailGround.visible = this.mode !== "interior" && Boolean(this.activeCode) && !visible;
     const companion =
       this.activeCode === "PAN"
         ? "FAW"
@@ -620,7 +641,10 @@ export class CampusViewer {
           ? "PAN"
           : null;
     for (const [name, group] of this.groups) {
-      if (name === "SITE") continue;
+      if (name === "SITE") {
+        group.visible = visible || !this.activeCode;
+        continue;
+      }
       if (name === "CONTEXT" || name === "LANDSCAPE") group.visible = visible;
       else
         group.visible =
@@ -649,11 +673,28 @@ export class CampusViewer {
     this.needsRender = true;
   }
 
+  // Spend the shadow-map resolution on the space currently being inspected.
+  fitSunShadow(bounds) {
+    const centre = bounds.getCenter(new THREE.Vector3());
+    const radius = Math.max(12, bounds.getSize(new THREE.Vector3()).length() * 0.65);
+    this.sun.target.position.copy(centre);
+    this.sun.position.copy(centre).addScaledVector(
+      new THREE.Vector3(0.8, 1.6, 1).normalize(), radius * 3,
+    );
+    Object.assign(this.sun.shadow.camera, {
+      left: -radius, right: radius, top: radius, bottom: -radius,
+      near: 0.1, far: radius * 6,
+    });
+    this.sun.shadow.camera.updateProjectionMatrix();
+    this.sun.target.updateMatrixWorld();
+    this.renderer.shadowMap.needsUpdate = true;
+  }
+
   zoom(factor) {
-    const offset = this.camera.position
-      .clone()
-      .sub(this.controls.target)
-      .multiplyScalar(factor);
+    const pending = this.transition?.kind === "zoom" ? this.transition : null;
+    const target = (pending?.target ?? this.controls.target).clone();
+    const offset = (pending?.position ?? this.camera.position)
+      .clone().sub(target).multiplyScalar(factor);
     offset.setLength(
       THREE.MathUtils.clamp(
         offset.length(),
@@ -662,9 +703,12 @@ export class CampusViewer {
       ),
     );
     this.moveCamera(
-      this.controls.target.clone().add(offset),
-      this.controls.target.clone(),
+      target.clone().add(offset), target,
     );
+    if (this.transition) {
+      this.transition.kind = "zoom";
+      this.transition.duration = 180;
+    }
   }
 
   north() {
