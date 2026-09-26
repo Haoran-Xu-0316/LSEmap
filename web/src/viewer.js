@@ -26,6 +26,8 @@ export class CampusViewer {
     this.disposed = false;
     this.groups = new Map();
     this.interiors = new Map();
+    this.interiorLoads = new Map();
+    this.activeInterior = null;
     this.exteriors = new Map();
     this.exteriorLoads = new Map();
     this.labels = [];
@@ -38,11 +40,12 @@ export class CampusViewer {
     this.viewRequest = 0;
     this.needsRender = true;
     this.renderer = new THREE.WebGLRenderer({
-      antialias: true,
+      // Multisample clipping left ghost fragments on Metal; downsample instead.
+      antialias: false,
       logarithmicDepthBuffer: true,
       powerPreference: "high-performance",
     });
-    this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+    this.renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio, 1.5), 1.75));
     this.renderer.setClearColor(0xe7ecef);
     this.renderer.toneMapping = THREE.AgXToneMapping;
     this.renderer.toneMappingExposure = 0.95;
@@ -356,11 +359,14 @@ export class CampusViewer {
   }
 
   showCampus() {
+    this.clearInteriorSection();
     this.viewRequest += 1;
     this.detailRequest += 1;
     this.detailCache.activate(null);
     this.detailCache.hideAll();
     this.activeDetail = null;
+    this.activeInterior = null;
+    delete this.canvas.dataset.interiorSpace;
     delete this.canvas.dataset.detailReady;
     this.campus.visible = true;
     this.controls.maxPolarAngle = Math.PI * 0.49;
@@ -389,33 +395,47 @@ export class CampusViewer {
     this.upgradeModel(building, "exterior");
   }
 
-  async upgradeModel(building, kind) {
-    const asset = kind === "interior" ? building.detailedInterior : building.detailedExterior;
+  interiorSpace(building, spaceId = null) {
+    if (spaceId === null) return building;
+    return building.interiorSpaces?.find((space) => space.id === spaceId) ?? null;
+  }
+
+  async upgradeModel(building, kind, spaceId = null) {
+    const interior = kind === "interior" ? this.interiorSpace(building, spaceId) : null;
+    const asset = kind === "interior" ? interior?.detailedInterior : building.detailedExterior;
     if (!asset || !this.ready) return;
+    const interiorKey = `${building.code}:${spaceId ?? "default"}`;
+    const detailKey = `${kind}-${building.code}${spaceId === null ? "" : `:${spaceId}`}`;
+    const isCurrent = () => !this.disposed && request === this.detailRequest &&
+      this.activeCode === building.code &&
+      (kind !== "interior" || (this.mode === "interior" && this.activeInterior?.key === interiorKey));
     const request = ++this.detailRequest;
-    this.onDetailState({ code: building.code, kind, state: "loading" });
+    this.onDetailState({ code: building.code, kind, spaceId, state: "loading" });
     try {
       const group = kind === "exterior"
         ? await this.loadExterior(building)
-        : await this.detailCache.request(`${kind}-${building.code}`, asset.url);
-      if (this.disposed || request !== this.detailRequest || this.activeCode !== building.code) return;
+        : await this.detailCache.request(detailKey, asset.url);
+      if (!isCurrent()) return;
       this.detailCache.hideAll();
-      this.activeDetail = { code: building.code, kind, group };
-      const base = kind === "exterior" ? this.groups.get(building.code) : this.interiors.get(building.code);
+      this.activeDetail = { code: building.code, kind, spaceId, group };
+      const base = kind === "exterior" ? this.groups.get(building.code) : this.interiors.get(interiorKey);
       if (base) base.visible = false;
       group.visible = true;
-      this.canvas.dataset.detailReady = `${kind}-${building.code}`;
+      this.canvas.dataset.detailReady = detailKey;
       this.renderer.shadowMap.needsUpdate = true;
       this.needsRender = true;
-      this.onDetailState({ code: building.code, kind, state: "ready" });
+      this.onDetailState({ code: building.code, kind, spaceId, state: "ready" });
     } catch (error) {
-      if (this.disposed || request !== this.detailRequest || error.name === "AbortError") return;
-      this.onDetailState({ code: building.code, kind, state: "error" });
+      if (!isCurrent() || error.name === "AbortError") return;
+      this.onDetailState({ code: building.code, kind, spaceId, state: "error" });
     }
   }
 
   retryDetails(building) {
-    this.upgradeModel(building, this.mode === "interior" ? "interior" : "exterior");
+    if (this.activeInterior?.code === building.code) {
+      return this.showInterior(building, this.activeInterior.spaceId);
+    }
+    return this.upgradeModel(building, "exterior");
   }
 
   highlight(code) {
@@ -462,15 +482,21 @@ export class CampusViewer {
     this.moveCamera(position, target);
   }
 
-  async showInterior(building) {
-    this.detailRequest += 1;
-    this.detailCache.activate(null);
-    const code = building.code;
-    const request = ++this.viewRequest;
-    if (!this.interiors.has(code)) {
-      const gltf = await this.loadAsset(
-        `/models/${code.toLowerCase()}-interior.glb`,
-      );
+  async loadInterior(building, spaceId, interior) {
+    const key = `${building.code}:${spaceId ?? "default"}`;
+    if (this.interiors.has(key)) return this.interiors.get(key);
+    if (this.interiorLoads.has(key)) return this.interiorLoads.get(key);
+    const asset = interior.interiorAsset;
+    const url = typeof asset === "string" ? asset : asset?.url;
+    // Additional rooms must never silently load the building's default lobby.
+    const source = url ?? (spaceId === null ? `/models/${building.code.toLowerCase()}-interior.glb` : null);
+    if (!source) throw new Error(`Missing interior asset: ${key}`);
+    const loading = (async () => {
+      const gltf = await this.loadAsset(source);
+      if (this.disposed) {
+        disposeModel(gltf.scene);
+        return null;
+      }
       gltf.scene.visible = false;
       gltf.scene.traverse((object) => {
         if (!object.isMesh) return;
@@ -480,38 +506,108 @@ export class CampusViewer {
         for (const material of materials) material.side = THREE.DoubleSide;
       });
       this.scene.add(gltf.scene);
-      this.interiors.set(code, gltf.scene);
+      this.interiors.set(key, gltf.scene);
+      return gltf.scene;
+    })();
+    this.interiorLoads.set(key, loading);
+    try {
+      return await loading;
+    } finally {
+      this.interiorLoads.delete(key);
     }
-    // Selection can change while the model is downloading.
-    if (this.activeCode !== code || request !== this.viewRequest) return false;
+  }
+
+  async showInterior(building, spaceId = null) {
+    const interior = this.interiorSpace(building, spaceId);
+    if (!this.ready || !interior || this.activeCode !== building.code) return false;
+    this.detailRequest += 1;
+    this.detailCache.activate(null);
+    const code = building.code;
+    const key = `${code}:${spaceId ?? "default"}`;
+    const request = ++this.viewRequest;
+    this.activeInterior = { code, spaceId, key };
+    delete this.canvas.dataset.detailReady;
+    delete this.canvas.dataset.interiorSpace;
+    try {
+      await this.loadInterior(building, spaceId, interior);
+    } catch (error) {
+      if (this.disposed || request !== this.viewRequest || this.activeCode !== code) return false;
+      throw error;
+    }
+    // Check both selection and request generation: even A -> B -> A can finish out of order.
+    if (this.disposed || this.activeCode !== code || request !== this.viewRequest ||
+        this.activeInterior?.key !== key) return false;
     this.detailCache.hideAll();
     this.activeDetail = null;
-    delete this.canvas.dataset.detailReady;
+    this.canvas.dataset.interiorSpace = spaceId ?? "default";
     this.campus.visible = false;
-    for (const [name, group] of this.interiors) group.visible = name === code;
+    for (const [name, group] of this.interiors) group.visible = name === key;
+    this.clearInteriorSection();
     this.mode = "interior";
     this.toggleContext(this.contextVisible);
     this.updateCameraProjection();
     this.controls.maxPolarAngle = Math.PI * 0.94;
     this.controls.minDistance = 0.5;
     this.renderer.shadowMap.needsUpdate = true;
-    if (building.interiorView) {
-      const view = building.interiorView;
+    if (interior.interiorView) {
+      const view = interior.interiorView;
       this.camera.fov = view.fov;
       this.updateCameraProjection();
-      this.moveCamera(
-        new THREE.Vector3(...view.position),
-        new THREE.Vector3(...view.target),
-      );
+      if (interior.interiorStudy && this.container.clientWidth < 700) {
+        const direction = new THREE.Vector3(...view.position)
+          .sub(new THREE.Vector3(...view.target)).normalize();
+        this.fit(interior.interiorBounds, true, direction);
+      } else {
+        this.moveCamera(
+          new THREE.Vector3(...view.position),
+          new THREE.Vector3(...view.target),
+        );
+      }
     } else {
       this.fit(
-        building.interiorBounds,
+        interior.interiorBounds,
         true,
         new THREE.Vector3(-0.7, 0.55, 1).normalize(),
       );
     }
     this.needsRender = true;
-    this.upgradeModel(building, "interior");
+    void this.upgradeModel(building, "interior", spaceId);
+    return true;
+  }
+
+  clearInteriorSection() {
+    this.renderer.clippingPlanes = [];
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.needsUpdate = true;
+    delete this.canvas.dataset.interiorSection;
+    this.needsRender = true;
+  }
+
+  setInteriorSection(building, id) {
+    if (this.mode !== "interior" || this.activeCode !== building.code) return false;
+    const interior = this.interiorSpace(building, this.activeInterior?.spaceId ?? null);
+    const section = interior?.interiorSections?.find(item => item.id === id);
+    if (id !== "all" && !section) return false;
+    const bounds = boxFromData(interior.interiorBounds);
+    this.clearInteriorSection();
+    if (section) {
+      if (!Number.isFinite(section.minHeight) || !Number.isFinite(section.maxHeight)
+          || section.maxHeight <= section.minHeight) return false;
+      bounds.min.y = Math.max(bounds.min.y, section.minHeight);
+      bounds.max.y = Math.min(bounds.max.y, section.maxHeight);
+      this.renderer.clippingPlanes = [
+        new THREE.Plane(new THREE.Vector3(0, 1, 0), -section.minHeight),
+        new THREE.Plane(new THREE.Vector3(0, -1, 0), section.maxHeight),
+      ];
+      // Hidden upper floors must not cast shadows onto the selected floor.
+      this.renderer.shadowMap.enabled = false;
+    }
+    this.canvas.dataset.interiorSection = id;
+    const direction = this.camera.position.clone().sub(this.controls.target).normalize();
+    if (direction.y < 0.25) direction.y = 0.65;
+    direction.normalize();
+    this.fit(bounds, true, direction);
+    this.needsRender = true;
     return true;
   }
 
