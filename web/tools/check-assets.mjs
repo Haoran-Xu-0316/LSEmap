@@ -3,7 +3,7 @@ import { readdir, stat, readFile } from "node:fs/promises";
 import { resolve, relative, join } from "node:path";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { buildingDetails } from "../src/content.js";
+import { detailFor } from "../src/content.js";
 
 const output = resolve("dist");
 const files = [];
@@ -50,13 +50,16 @@ for (const building of catalogue.buildings) {
       [...building.bounds.min, ...building.bounds.max].every(Number.isFinite),
     );
 }
-for (const detail of Object.values(buildingDetails)) {
+for (const building of catalogue.buildings) {
+  const detail = detailFor(building);
   for (const [image] of detail.images)
     await stat(join(output, `images/${image}.webp`));
 }
 const detailAssets = catalogue.buildings.flatMap((building) =>
-  [building.detailedExterior, building.detailedInterior].filter(Boolean));
-assert.equal(detailAssets.length, 35);
+  [building.detailedExterior, building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)].filter(Boolean));
+assert.equal(detailAssets.length, 30 + catalogue.buildings.filter(b => b.interior).length + catalogue.buildings.reduce((count,b) => count + (b.interiorSpaces || []).length, 0));
+assert.equal(catalogue.buildings.filter((b) => b.interior).length, 25);
+assert.equal(catalogue.buildings.filter(b => b.interiorStudy).length, 20);
 assert.equal(catalogue.buildings.filter((b) => b.status === "facade").length, 15);
 for (const asset of detailAssets) {
   const buffer = await readFile(join(output, asset.url));
