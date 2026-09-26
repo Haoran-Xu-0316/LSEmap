@@ -16,14 +16,14 @@ for (const code of ["COL", "CON"]) {
     await page.waitForTimeout(1100);
     await page.screenshot({ path: `result/web/edition04-${code.toLowerCase()}.png` });
     await page.locator(".detail-photo").click();
-    await expect(page.locator("#gallery-position")).toHaveText("1 / 2");
+    await expect(page.locator("#gallery-position")).toHaveText("1 / 3");
     await page.locator("#gallery-next").click();
-    await expect(page.locator("#gallery-position")).toHaveText("2 / 2");
+    await expect(page.locator("#gallery-position")).toHaveText("2 / 3");
     await page.keyboard.press("Escape");
     await page.locator("#about-open").click();
     await expect(page.locator(".about-logo")).toHaveJSProperty("naturalWidth", 234);
-    await expect(page.locator("#about-dialog")).toContainText("第08版");
-    await expect(page.locator("#about-dialog")).toContainText("14栋");
+    await expect(page.locator("#about-dialog")).toContainText("31个楼宇条目");
+    await expect(page.locator("#about-dialog")).toContainText("25栋提供局部内部");
     expect(errors).toEqual([]);
   });
 }
