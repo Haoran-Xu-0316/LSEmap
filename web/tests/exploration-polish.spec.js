@@ -48,7 +48,7 @@ test('hidden buildings cannot intercept a click on the visible model', async () 
     pointerStart: { id: 1, x: 50, y: 50, time: performance.now() },
     canvas: { getBoundingClientRect: () => ({ left: 0, top: 0, width: 100, height: 100 }) },
     pointer: new THREE.Vector2(), raycaster: new THREE.Raycaster(), camera,
-    pickable: [hidden, visible], onPick: (code) => { selected = code; },
+    pickable: [hidden, visible], exteriors: new Map([['HIDDEN', hidden]]), onPick: (code) => { selected = code; },
   };
   CampusViewer.prototype.pick.call(viewer, { button: 0, pointerId: 1, clientX: 50, clientY: 50 });
   expect(selected).toBe('VISIBLE');
