@@ -9,14 +9,14 @@
 :root {
   font-family: "Roboto", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: #172c38;
-  background: #e7ecef;
+  background: #e9e8e3;
   font-synthesis: none;
   --ink: #172c38;
   --muted: #526671;
   --accent: #a92332;
   --line: #d4dde2;
   --surface: #fff;
-  --canvas: #e7ecef;
+  --canvas: #e9e8e3;
   --control-shadow: 0 4px 18px #172c3814;
 }
 * {
@@ -454,7 +454,7 @@ canvas {
   font-size: 9px;
   color: #455b67;
   text-decoration: none;
-  background: #e7ecefe8;
+  background: #e9e8e3e8;
   padding: 4px 6px;
   border-radius: 3px;
 }
