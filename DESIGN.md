@@ -2,7 +2,7 @@
 name: LSE Campus Explorer
 description: A daylight architectural model table for free exploration.
 colors:
-  canvas: "#e7ecef"
+  canvas: "#e9e8e3"
   surface: "#ffffff"
   ink: "#172c38"
   muted: "#526671"
@@ -29,7 +29,7 @@ This is a digital architectural model table, not a promotional landing page.
 
 ## Colors
 
-Cool daylight canvas and white control surfaces. Blue-black text, muted slate
+Warm neutral canvas and white control surfaces. Blue-black text, muted slate
 secondary text. Deep red marks current selection and the primary action.
 
 ## Typography
@@ -75,3 +75,12 @@ focus remain available when canvas interaction is unavailable.
 Use source-derived model assets. Respect reduced motion. Allow inspection without
 an autoplay tour. Keep missing footprints and estimated dimensions explicit. Do
 not imply official affiliation, live campus conditions or complete rooms.
+
+## Interactive model presentation
+
+Neutral tone mapping retains brick and stone colour separation. A restrained
+fill light and a shadow camera fitted to the selected building reveal facade
+relief. Isolated exteriors use a neutral shadow-receiving ground; the campus
+view retains the geographic site. This is illustrative lighting, not a solar study.
+Wheel zoom follows the pointer. Button presses accumulate over a short transition;
+close inspection permits a 0.15–0.25m orbit radius and campus zoom extends to 2400m.
