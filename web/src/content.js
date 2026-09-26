@@ -3,11 +3,16 @@ export const statusNames = {
   detailed: "已深化建筑模型",
   facade: "沿街立面研究",
   massing: "简化体量模型",
-  provisional: "轮廓归属待确认",
+  provisional: "轮廓边界待校准",
   construction: "施工地块",
   unlocated: "独立轮廓待确认",
 };
 export const buildingDetails = {
+  "35L": {
+    description: "2026年7月的施工记录显示，35L主体结构、立面修复、Agora钢构和CLT结构施工正在推进。",
+    note: "当前仅展示示意围挡。已核验照片覆盖局部施工空间，无法可靠定位完整施工体量；不将未来竣工方案作为现状。依据LSE2026年7月建设通讯，非当前实时进度。",
+    images: [],
+  },
   "49L": {
     description: "Coopers餐厅占据Lincoln’s Inn Fields与Portsmouth Street的转角。蓝色底层、白色推拉窗、百叶窗板和带雨篷的斜角入口构成街面特征。",
     note: "位置与外轮廓依据2022年规划总图配准至校园模型，外观参考归档照片。楼高、窗距、屋顶和未见背面仍为估计；图示外壳不等同餐厅全部产权或租赁范围。",
@@ -15,7 +20,7 @@ export const buildingDetails = {
   },
   "61A": {
     description: "Aldwych与Kingsway转角的浅色石材建筑。连续窗列、跨层壁柱、水平檐口与转角入口共同组织街面，屋顶保留照片中的退台窗和坡顶亭阁。",
-    note: "沿街外观依据改造前归档照片深化。两块地图轮廓的归属仍待核实，楼高、窗距、屋顶进深和未见背面仍为估计；未将未来改造方案或内部效果图作为现状建模。",
+    note: "沿街外观依据改造前归档照片深化。61A已确认为LSE物业，模型占地边界及与邻楼衔接仍待校准，楼高、窗距、屋顶进深和未见背面仍为估计；未将未来改造方案或内部效果图作为现状建模。",
     images: [["61a-exterior", "61 Aldwych转角入口与石材立面"]],
   },
   "5LF": {
@@ -79,7 +84,7 @@ export const buildingDetails = {
     ]
 },
   "PEL": {
-    "description": "Pethick-Lawrence House以预制板分缝和重复窗列建立塔楼立面，底部加入黄色入口框。",
+    "description": "Pethick-Lawrence House以预制板分缝和重复窗列建立塔楼立面，底部保留黄色入口框，并补充侧面的红色竖向导向牌。",
     "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
     "images": [
         [
@@ -100,7 +105,7 @@ export const buildingDetails = {
     ]
 },
   "SAR": {
-    "description": "Sardinia House的红砖立面配以浅色窗台、分格窗和入口名称牌，保留沿街连续窗列的节奏。",
+    "description": "Sardinia House的红砖立面配以浅色窗台、分格窗和入口名称牌，首层上方补充连续檐口与齿饰。",
     "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
     "images": [
         [
@@ -139,10 +144,11 @@ export const buildingDetails = {
   CON: {
     description:
       "Connaught House的Aldwych入口由深色石材门墩、层叠石檐和后退的玻璃门构成，门框、拉手与台阶保留入口的进深。",
-    note: "本轮重点为实拍可见入口；上层窗列为估计，其余立面保留简化模型，未建立完整内部。",
+    note: "入口依据实拍重建，上层窗列仍有估计。内部新增CON.7.04会议室样本，依据历史照片和平面图研究，不代表当前布局或整栋内部。",
     images: [
       ["con-entrance", "Connaught House凹入门廊"],
       ["con-exterior", "Aldwych立面与入口位置"],
+      ["con-interior", "CON.7.04会议室，八席长桌与木饰面"],
     ],
   },
   MAR: {
@@ -158,7 +164,7 @@ export const buildingDetails = {
   SAW: {
     description:
       "折面红砖表皮围合Sheffield Street转角。立面凹折、透空砖屏与窗洞形成丰富层次。",
-    note: "砖屏为几何重建；内部仅为螺旋楼梯研究，不代表完整功能布局。",
+    note: "砖屏为几何重建；内部补充螺旋楼梯内外扶手和托架，仍不代表完整功能布局或实际通行条件。",
     images: [
       ["saw-exterior", "Saw Swee Hock折面立面"],
       ["saw-brick", "透空砖屏细节"],
@@ -185,8 +191,8 @@ export const buildingDetails = {
   OLD: {
     description:
       "Houghton Street的传统石材立面，以入口、门廊与连续窗列呈现校园历史建筑的尺度。",
-    note: "入口及窗套已深化，雕饰简化，未建立完整内部。",
-    images: [["old-exterior", "Old Building入口"]],
+    note: "入口及窗套已深化，雕饰简化。内部提供OLD.4.10阶梯教室历史布局样本，桌椅、标高和尺寸为研究性估计。",
+    images: [["old-exterior", "Old Building入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
   },
   SAL: {
     description:
@@ -197,8 +203,8 @@ export const buildingDetails = {
   CLM: {
     description:
       "面向Aldwych的凸弧石材立面，配以柱列门廊、檐口和带老虎窗的阁楼屋顶。",
-    note: "门廊雕饰为简化形态，后侧与屋顶设备未逐项复刻。",
-    images: [["clm-exterior", "Clement House的Aldwych立面"]],
+    note: "门廊雕饰、后侧与屋顶仍有简化。内部新增CLM.1.01小组教室，三角桌、木墙裙和窗户依据历史资料研究，尺寸估算。",
+    images: [["clm-exterior", "Clement House的Aldwych立面"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
   },
   KSW: {
     description:
@@ -236,12 +242,23 @@ export const buildingDetails = {
 };
 
 export function detailFor(building) {
-  if (buildingDetails[building.code]) return buildingDetails[building.code];
+  const existing = buildingDetails[building.code];
+  if (existing) {
+    let exteriorImages = building.closeupImage && !existing.images.some(([name]) => name === building.closeupImage)
+      ? [...existing.images, [building.closeupImage, `${building.name}${building.detailView.label}`]] : existing.images;
+    exteriorImages = [...exteriorImages, ...(building.interiorSpaces || []).map(space => [space.gallery, space.label])];
+    if (!building.interiorStudy) return { ...existing, images: exteriorImages };
+    const imageName = `${building.code.toLowerCase()}-interior`;
+    const images = exteriorImages.some(([name]) => name === imageName)
+      ? exteriorImages : [...exteriorImages, [imageName, building.interiorStudy.label]];
+    const note = existing.note.replace(/未建立内部|未建内部/g, "未建立完整内部");
+    return { ...existing, images, note: `${note}${building.interiorStudy.scope}` };
+  }
   const descriptions = {
     unlocated:
       "已建立楼宇资料条目，尚未确认独立建筑轮廓，地图中不虚构位置或形体。",
     provisional:
-      "当前展示暂定归属的建筑体量，轮廓与代码对应关系仍需进一步确认。",
+      "建筑身份已确认，模型占地边界及与相邻建筑的衔接仍待校准。",
     construction: "当前保留施工地块，不将未来方案效果图作为已经建成的建筑。",
     massing:
       "已按地图轮廓建立简化建筑体量。立面节奏和高度为估计，细节将继续完善。",
