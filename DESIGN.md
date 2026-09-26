@@ -10,7 +10,7 @@ colors:
   line: "#d4dde2"
 typography:
   body:
-    fontFamily: "Arial, PingFang SC, Microsoft YaHei, sans-serif"
+    fontFamily: "Roboto, PingFang SC, Microsoft YaHei, sans-serif"
     fontSize: "14px"
     lineHeight: 1.5
 rounded:
