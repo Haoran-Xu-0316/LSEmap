@@ -8,10 +8,10 @@ an independent Blender architectural study.
 ![Campus architectural model](web/public/images/campus.webp)
 
 Explore the campus by orbiting, panning and zooming. Select a building directly or
-search by its name/code. Detail panels open original model renderings, and five
-public-interior studies load on demand. The interface supports mobile screens,
+search by its name/code. Detail panels open original model renderings, and twenty-nine
+interior studies load on demand across twenty-five buildings: five public spaces and twenty-four historical room samples. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
-fallback when WebGL is unavailable. Thirty building models and five interior
+fallback when WebGL is unavailable. Thirty building models and twenty-nine interior
 views progressively load native bevels and source-derived procedural materials.
 The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
@@ -44,9 +44,65 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 24 historical interiors
+
+61 Aldwych gains a separate reception study from three matching photographs in
+the 2021 commercial brochure. SAW gains the photographed Denning Learning Café
+corner from its 2014 occupants guide. Neither represents a current measured
+interior; the café does not invent seating or computers outside the photograph.
+Existing campus geometry is preserved.
+
+## Edition 23 classroom extension
+
+CBG.1.02 adds seven six-seat teaching tables, glazing, exposed ducts and acoustic
+ceiling panels. CKK.1.04 adds an 80-seat classroom with long desks, red/black chairs
+and arched glazing. Both remain separate from the existing public atria. Historical
+plans and matching photographs support the studies; unmeasured dimensions and
+CKK floor-height differences remain unverified.
+
+## Edition 22 teaching-room extension
+
+Marshall now includes MAR.1.04 as a second selectable interior, preserving Grand
+Hall and the public stairs. The 90-seat teaching-room study follows matching LSE
+photography and an official plan; dimensions and individual seat positions remain
+estimated. Original campus geometry is retained.
+
+## Edition 21 library and retail extension
+
+OCS now includes an independent historical shoe-shop interior based on two
+attributed Sanders photographs. The library adds reading and collection areas
+across six relative levels, selectable through a floor section control. Original
+geometry is preserved; source plans are undimensioned, the library atrium does
+not exactly register to those plans, and absolute floor elevations remain
+uncalibrated. These are partial architectural studies, not complete surveys.
+
+The interface uses locally hosted Roboto. Public display assets remain separate
+from private reference photos and native Blender archives.
+
+## Edition 20 room and facade extension
+
+Fifteen additional interior studies cover historical classrooms, Cowdray's seminar
+hall, the Garrick and Coopers dining areas, a computer learning area, an entrance
+stair, a media studio, a kitchenette, a staff apartment bedroom and Peacock's stage
+with a partial audience area. Room dimensions remain estimated except identified
+technical dimensions; no whole-building or current-layout claim is made.
+
+KSW's stone portal, the 50L fanlight, 51L's canted entrance and SAR's arched street
+windows replace the earlier conflicting geometry. Each has a close-up camera and
+render. Every replacement is explicitly listed and all other native meshes are
+checked against edition 19. The building directory can filter interior studies.
+
+Gallery reuse is permitted only when evaluated geometry, materials, cameras and
+lighting have matching render fingerprints; both the rendered source edition and
+verified current model are recorded. UV values are compared to one-millionth-unit
+precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
+Changed views are rendered again.
+The current source and build target edition 24. Check the live `/release.json`
+manifest to verify the deployed version and native source fingerprint.
+
 ## Edition 16
 
-Edition 16 is preserved as the preceding release; the current release is edition 17.
+Edition 16 is preserved as an earlier release.
 Cowdray House now includes detailed sash bars, dentil cornices, pitched dormers,
 corner portal and chimney stacks. King's Chambers gains canted stone bays, a
 ribbed lead dome and an arched entrance with its green sign. Both have an entrance
@@ -54,7 +110,7 @@ camera preset and original close-up rendering. Dimensions remain estimated.
 Parish Hall also has a low entrance wing, four window groups, red tiled roof,
 dormers, brick arches, gutters and basement railings. Its new entrance close-up
 shows the separate portals and inscribed lintel.
-Edition 16 is authorized for GitHub publication and Cloudflare deployment.
+
 
 ## Cloudflare Workers deployment
 
