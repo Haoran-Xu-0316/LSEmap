@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
-  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Roboto", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: #172c38;
   background: #e7ecef;
   font-synthesis: none;
@@ -224,6 +232,32 @@ input::placeholder {
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.interior-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.interior-filter-row button {
+  padding: 8px 0;
+  min-height: 40px;
+  font-size: 12px;
+}
+.interior-filter-row button[aria-pressed="true"] {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.interior-hint {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
 }
 .building-list {
   overflow-y: auto;
@@ -910,6 +944,11 @@ dialog::backdrop {
     font-size: 11px;
     margin-bottom: 10px;
   }
+  .detail-panel .room-study-caption {
+    grid-column: 1 / -1;
+    margin: 8px 0 2px;
+    line-height: 1.6;
+  }
   .detail-photo {
     grid-column: 2;
     grid-row: 2 / 6;
@@ -1055,7 +1094,7 @@ dialog::backdrop {
   }
 }
 
-.stage.interior-view .scene-heading {
+.stage.detail-open .scene-heading {
   background: #fffffff2;
   padding: 14px 18px;
   border-radius: 6px;
@@ -1080,3 +1119,21 @@ dialog::backdrop {
 @media (max-width: 700px) {
   .detail-quality { grid-column: 1 / -1; margin: 8px 0 0; }
 }
+
+.interior-sections {
+  grid-column: 1 / -1;
+  margin: 12px 0;
+  font-size: 12px;
+}
+.interior-sections label { display: block; margin-bottom: 6px; }
+.interior-sections select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+.interior-sections p { color: var(--muted); line-height: 1.6; margin: 8px 0 0; }
