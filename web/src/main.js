@@ -14,6 +14,7 @@ let modelEdition = "";
 let viewer;
 let current = null;
 let detailedOnly = false;
+let interiorsOnly = false;
 let gallery = [];
 let galleryIndex = 0;
 let loadAttempt = 0;
@@ -37,6 +38,7 @@ function renderList() {
   const filtered = buildings.filter(
     (building) =>
       (!detailedOnly || building.status === "detailed") &&
+      (!interiorsOnly || building.interior) &&
       `${building.code} ${building.name} ${building.address}`
         .toLocaleLowerCase()
         .includes(query),
@@ -47,12 +49,16 @@ function renderList() {
     row.dataset.code = building.code;
     row.setAttribute(
       "aria-label",
-      `${building.code} ${building.name}，${statusNames[building.status]}`,
+      `${building.code} ${building.name}，${statusNames[building.status]}${building.interior ? "，有局部内部" : "，暂无内部模型"}`,
     );
     row.append(
       element("span", "building-code", building.code),
       element("span", "building-name", building.name),
     );
+    if (building.interior) {
+      row.querySelector(".building-name").append(element("span", "interior-hint",
+        building.interiorStudy ? building.interiorStudy.label : "公共空间研究"));
+    }
     const marker = element(
       "span",
       building.status === "detailed" ? "status-dot" : "row-arrow",
@@ -65,6 +71,10 @@ function renderList() {
   }
   $("#result-count").textContent = `${filtered.length}个楼宇条目`;
   $("#empty-search").hidden = Boolean(filtered.length);
+  $("#empty-search").textContent = interiorsOnly
+    ? "没有符合条件的内部模型。可取消筛选，继续查看建筑外观。"
+    : "未找到这栋建筑。试试楼宇代码，如MAR。";
+  $("#interior-count").textContent = `${buildings.filter(building => building.interior).length}栋可查看局部内部`;
 }
 
 function showGallery(images, index) {
@@ -114,12 +124,15 @@ function renderDetail(building) {
   }
   detailPanel.append(element("p", "model-state", statusNames[building.status]));
   const actions = element("div", "detail-actions");
+  let openInterior;
+  let requestedInteriorSpace = null;
   if (building.bounds) {
     const exterior = element("button", "", "建筑外观");
     exterior.id = "exterior-view";
     exterior.setAttribute("aria-pressed", "true");
     exterior.disabled = !viewer?.ready;
     exterior.addEventListener("click", () => {
+      requestedInteriorSpace = null;
       viewer.select(building);
       setSceneCopy(building);
       $("#exterior-view")?.setAttribute("aria-pressed", "true");
@@ -128,6 +141,8 @@ function renderDetail(building) {
       $("#context-toggle").disabled = false;
       $("#context-toggle").setAttribute("aria-pressed", "false");
       stage.classList.remove("interior-view");
+      if ($("#interior-sections")) $("#interior-sections").hidden = true;
+      if ($("#interior-spaces")) $("#interior-spaces").hidden = true;
     });
     actions.append(exterior);
     if (building.detailView) {
@@ -145,41 +160,111 @@ function renderDetail(building) {
         $("#context-toggle").disabled = true;
         $("#context-toggle").setAttribute("aria-pressed", "false");
         stage.classList.remove("interior-view");
+      if ($("#interior-sections")) $("#interior-sections").hidden = true;
+      if ($("#interior-spaces")) $("#interior-spaces").hidden = true;
       });
       actions.append(closeup);
     }
     if (building.interior) {
-      const interior = element("button", "", "公共内部");
+      const interiorLabel = building.interiorStudy ? "室内样本" : "公共内部";
+      const interior = element("button", "", interiorLabel);
       interior.id = "interior-view";
       interior.setAttribute("aria-pressed", "false");
       interior.disabled = !viewer?.ready;
-      interior.addEventListener("click", async () => {
+      openInterior = async (spaceId = null) => {
+        requestedInteriorSpace = spaceId;
+        const space = building.interiorSpaces?.find(item => item.id === spaceId);
+        const study = space?.interiorStudy || building.interiorStudy;
+        const spaceControl = $("#interior-space");
+        if (spaceControl) spaceControl.disabled = true;
         interior.disabled = true;
         delete interior.dataset.failed;
         interior.textContent = "正在加载…";
         try {
-          const activated = await viewer.showInterior(building);
+          const activated = await viewer.showInterior(building, spaceId);
           if (!activated || current?.code !== building.code) return;
           interior.setAttribute("aria-pressed", "true");
           exterior.setAttribute("aria-pressed", "false");
           $("#detail-view")?.setAttribute("aria-pressed", "false");
-          $("#scene-kicker").textContent = `${building.code} / PUBLIC INTERIOR`;
-          $("#scene-subtitle").textContent = "公共空间研究模型，可旋转观察";
-          $("#view-mode").textContent = "公共内部";
+          $("#scene-kicker").textContent = `${building.code} / ${study ? "ROOM STUDY" : "PUBLIC INTERIOR"}`;
+          $("#scene-subtitle").textContent = study
+            ? `${study.label}，历史布局研究，尺寸估算`
+            : "公共空间研究模型，可旋转观察";
+          $("#view-mode").textContent = interiorLabel;
           $("#context-toggle").disabled = true;
           stage.classList.add("interior-view");
+          if (spaceControl) {
+            $("#interior-spaces").hidden = false;
+            spaceControl.value = spaceId || "default";
+            $("#interior-space-scope").textContent = space?.scope || "公共空间与楼梯局部研究，未复原全部楼层。";
+          }
+          if ($("#interior-sections")) {
+            $("#interior-sections").hidden = false;
+            $("#interior-level").value = "all";
+            $("#interior-section-scope").textContent = building.interiorSectionScope;
+          }
         } catch {
+          if (spaceControl) spaceControl.value = viewer.canvas.dataset.interiorSpace || "default";
           interior.textContent = "加载失败，重试";
           interior.dataset.failed = "true";
         } finally {
           interior.disabled = false;
-          if (!interior.dataset.failed) interior.textContent = "公共内部";
+          if (spaceControl) spaceControl.disabled = false;
+          if (!interior.dataset.failed) interior.textContent = interiorLabel;
         }
-      });
+      };
+      interior.addEventListener("click", () => openInterior(interior.dataset.failed ? requestedInteriorSpace : null));
       actions.append(interior);
     }
   }
   if (actions.childElementCount) detailPanel.append(actions);
+  if (building.interiorSpaces?.length) {
+    const panel = element("div", "interior-sections");
+    panel.id = "interior-spaces";
+    panel.hidden = true;
+    const label = element("label", "", "查看空间");
+    label.htmlFor = "interior-space";
+    const select = element("select", "");
+    select.id = "interior-space";
+    for (const space of [{id: "default", label: building.code === "MAR" ? "Grand Hall与公共楼梯" : building.code === "SAW" ? "公共楼梯" : "公共中庭与楼梯"}, ...building.interiorSpaces]) {
+      const option = element("option", "", space.label);
+      option.value = space.id;
+      select.append(option);
+    }
+    const scope = element("p", "");
+    scope.id = "interior-space-scope";
+    select.addEventListener("change", () => openInterior(select.value === "default" ? null : select.value));
+    panel.append(label, select, scope);
+    detailPanel.append(panel);
+  }
+  if (building.interiorSections?.length) {
+    const section = element("div", "interior-sections");
+    section.id = "interior-sections";
+    section.hidden = true;
+    const label = element("label", "", "查看楼层");
+    label.htmlFor = "interior-level";
+    const select = element("select", "");
+    select.id = "interior-level";
+    for (const level of [{id: "all", label: "全部楼层"}, ...building.interiorSections]) {
+      const option = element("option", "", level.label);
+      option.value = level.id;
+      select.append(option);
+    }
+    const scope = element("p", "", building.interiorSectionScope || "楼层关系示意，尺寸估算。");
+    scope.id = "interior-section-scope";
+    select.addEventListener("change", () => {
+      if (viewer?.setInteriorSection(building, select.value)) {
+        const level = building.interiorSections.find(item => item.id === select.value);
+        scope.textContent = level?.scope || building.interiorSectionScope;
+      }
+    });
+    section.append(label, select, scope);
+    detailPanel.append(section);
+  }
+  if (building.interiorStudy) {
+    detailPanel.append(element("p", "detail-address room-study-caption",
+      `${building.interiorStudy.label}，历史布局样本，尺寸估算。`));
+  }
   if (building.detailedExterior && $("#fallback").hidden) {
     const quality = element("div", "detail-quality");
     const status = element("span", "", "正在准备建筑细节…");
@@ -325,6 +410,9 @@ async function start() {
           Number(b.status === "detailed") - Number(a.status === "detailed") ||
           a.code.localeCompare(b.code),
       );
+      const exteriorCount = buildings.filter(building => building.detailedExterior).length;
+      const interiorCount = buildings.filter(building => building.interior).length;
+      $("#coverage-summary").textContent = `收录${buildings.length}个楼宇条目，${exteriorCount}栋提供外观模型，${interiorCount}栋提供局部内部。35L保留示意施工围挡，61A模型边界仍待校准；均非整栋内外完整复原。`;
       renderList();
       const code = decodeURIComponent(location.hash.slice(1));
       if (code) selectBuilding(code, false);
@@ -379,6 +467,11 @@ $("#building-search").addEventListener("input", renderList);
 $("#detail-filter").addEventListener("click", () => {
   detailedOnly = !detailedOnly;
   $("#detail-filter").setAttribute("aria-pressed", String(detailedOnly));
+  renderList();
+});
+$("#interior-filter").addEventListener("click", () => {
+  interiorsOnly = !interiorsOnly;
+  $("#interior-filter").setAttribute("aria-pressed", String(interiorsOnly));
   renderList();
 });
 $("#index-toggle").addEventListener("click", () => {
