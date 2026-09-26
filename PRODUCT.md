@@ -8,79 +8,102 @@ web
 
 ## Product Purpose
 
-Present the existing LSE architectural model as a browser-based campus exploration.
-The user explicitly chose free exploration over a guided building sequence.
-Publish website source and display assets to Haoran-Xu-0316/LSEmap on GitHub.
-Deploy the reviewed static website to the user's Cloudflare account.
+Build a browser-based model of the LSE campus, with free exploration, individually
+inspectable buildings, exterior details and evidence-supported interiors. The
+user's goal is the complete campus, not merely a gallery of isolated room samples.
+Publish reviewed source and display assets to Haoran-Xu-0316/LSEmap and Cloudflare
+when release is requested. Local development and a verified public release are
+separate deliverables.
 
-## Capabilities and Constraints
-
-Orbit, pan, zoom, select buildings and inspect architectural renderings. Existing
-public-interior studies are separate views, not a promise of navigable rooms.
-Source: the local version 16 Blender campus; the deployment target is the same edition 16. There are 31 map-code records, 14
-buildings with developed details, 15 initial street-facade studies, and a provisionally attributed 61A facade. Most dimensions
-are estimated. This is an independent study, not an official map or route planner.
-
-Original research photographs, PDFs, credentials, local paths and editable Blender
-files are excluded from the public repository. No account or external API needed.
-The user authorized Cloudflare deployment after review. Do not delegate to subagents.
-
-## Users
+## Users and Interaction
 
 Assumption: people viewing the user's architectural work on desktop or mobile.
-Their relationship to LSE is unspecified; navigation should need no prior knowledge.
+Orbit, pan, zoom, select a building, inspect its exterior and switch to available
+interior studies. Pair the building code with its name. Preserve free exploration;
+do not turn the experience into a mandatory guided sequence.
 
-## Evidence on Hand
+## Current Verified Baseline
 
-Existing version 16 model, building catalogue, OSM footprint provenance and native
-Blender renders. The overview uses simplified materials. Thirty on-demand
-buildings preserve evaluated bevels, curve resolution and existing internal
-structure; five separate public-space views retain deliberate cutaways. Browser
-shaders approximate source brick/noise parameters without distributing archival
-photographs. Detail images preserve the Cycles finishes. There is no verified complete interior survey.
+Edition 24 is the current source and release target. It contains 31 catalogue records,
+30 exterior models and partial interiors in 25 buildings: five public-space studies
+and twenty-four room samples, including independent classrooms in Marshall, CBG
+and CKK. Fifteen room samples were added in edition 20, with exterior repairs
+to KSW, 50L, 51L and SAR. All 73 gallery views are tied to the native source hash;
+unchanged views may be reused only after comparing evaluated render inputs.
+The viewer approximates Cycles finishes with self-hosted real-time materials.
+Detailed geometry loads on demand; the overview retains the exterior construction
+but omits sub-centimetre finishing and uses simpler shading.
 
-## Product Principles
+The edition-24 build validates 182 deployable files. All 92 local checks pass
+after updating legacy gallery counts, interior availability and a viewer fixture.
+The two online parity checks are opt-in and recorded separately from local tests.
+Existing edition-23 model asset hashes are unchanged and
+4044 native meshes are preserved. These checks do not establish measured fidelity.
+Deployment status is established separately by the hosting receipt and live
+release manifest. Compare every referenced asset hash before claiming online parity.
 
-The model leads. Building code and full name stay paired. Missing geometry is
-explicit. Preserve research assets. Keep the runtime entirely self-hosted.
+Edition 21 adds OCS's historical retail cutaway and library reading/collection
+areas over six relative levels. Section controls isolate a level without modifying
+the source model. The highest section stops below the roof deck to expose the
+reading area. Six-level attribution follows the library guide; absolute elevations
+and plan registration remain estimated. Roboto is served with the site.
 
-Edition 05 distinguishes first-pass street facades from developed detail studies.
-Do not promote their estimated bay spacing, heights or unobserved backs to surveyed
-geometry. 35L remains a construction-site representation. 49L and the 50/50A envelope
-are placed using the 2022 architectural block plan, not an assertion of tenancy boundaries. 61A now has a developed
-street elevation while retaining its provisional footprint attribution.
+Edition 22 adds MAR.1.04 from the matching official room photo and 90-seat plan.
+Its estimated dimensions and seat positions remain separate from the Grand Hall;
+no measured connection or current full-floor reconstruction is claimed.
 
-The user requested local refinement first, followed by an explicit complete-release deployment.
-Publication was explicitly requested for the complete edition 16. Cowdray
-and King's Chambers now include additional photographed heritage details and
-entrance views; their unmeasured dimensions and unseen elevations stay explicit.
+Edition 23 adds CBG.1.02 and CKK.1.04 from matched historical room plans and
+photographs. CBG uses seven six-seat groups. CKK has 80 seat symbols; floor
+height differences are not established, so the room uses a flat-floor study.
+Both preserve their buildings' existing atria and carry explicit scope limits.
 
-Parish Hall now has a photo-informed stepped entrance wing, four street window
-groups and pitched tiled roof with dormers. The previous uniform three-storey
-facade was replaced. The original footprint stays fixed; unseen sides remain estimates.
+Edition 24 adds the 2021 reception at 61 Aldwych and the photographed 2014
+Denning café corner at SAW. These are isolated historical studies; neither
+establishes current use, a whole floor, or measured connections to the shell.
 
-St Clement’s now has distinct Clare Market window rows, a narrow corner panel,
-recessed red landings, a setback top floor and an entry close-up. Artwork imagery
-is omitted; entry bay, heights and unseen elevations remain approximate.
+## Completion Requirements
 
-The final three local rounds refine Lincoln Chambers' recessed portal, Lakatos'
-street and plaza elevations, and MAR's north entrance/screen. MAR was prioritized
-for the third round. The Portsmouth version 14 draft was not used in edition 15. Edition 16 rebuilds
-Portsmouth on top of edition 15, preserving MAR and prior local work. No deployment was performed.
+The user accepts missing interiors when a bounded source search finds no usable
+evidence. The delivered scope is an evidence-supported campus study; a fully
+measured reconstruction would additionally require evidence for:
 
-Edition 16 completes an exterior finishing pass on all 31 catalogue records.
-Each building has a separate manifest entry and source-pane selection. Historic
-windows gain putty/rebate beads and sill drips; modern glazing gains seals, metal
-sill channels and drainage slots. POR has a rebuilt corner shopfront. 35L gains
-indicative hoarding seams and cap rails only. Public interiors are unchanged.
-The local research workspace retains per-building geometry audit records.
-The published `release.json` and `gallery-manifest.json` identify current assets.
+- Every campus record's identity, footprint and construction status.
+- Each building's exterior proportions, openings, entrances, roof and visible
+  elevations, with unresolved or inferred geometry explicitly identified.
+- Supported interior coverage beyond isolated room samples, including the spatial
+  relationships and levels that available plans and photographs establish.
+- Working desktop and mobile exploration, entry links, selection, interior controls,
+  resource loading and recovery after failures.
+- A consistent native model, web exports, thumbnails, gallery and release manifest.
+- A reviewed complete release with verified GitHub inclusion and live asset parity
+  when publication is requested.
 
-## Edition 16 release alignment
+There is no verified complete interior survey. Missing internal evidence is not
+permission to fabricate rooms or label an entire building complete. Conceptual
+layouts require a distinct presentation and an explicit user decision.
 
-The interactive detailed assets and every gallery rendering derive from the same
-version-16 native source. The viewer uses AgX tone mapping; real-time procedural
-shading remains an approximation of the Cycles renders. Gallery URLs include the
-model revision, and the release manifest records file hashes. The deployment
-package includes only currently referenced model variants; local archives remain
-untouched. Native regeneration requires the private local Blender research files.
+## Known Gaps
+
+61A is confirmed LSE property; the model boundary and adjoining geometry remain uncalibrated. 35L is a construction-site representation,
+not a completed future design. LCH, POR, 50L, 51L and SHF have no published
+interior model in edition 24. Existing room samples represent historical or partial
+observations, not current floor-by-floor coverage. Unseen elevations, dimensions
+and some roof geometry remain estimated. PEA's 108 modelled front seats are not
+its total venue capacity. The 49L/50L envelope follows the 2022 architectural block
+plan and does not establish current tenancy boundaries.
+
+Use BUILDING_STATUS.md and source manifests to track the actual scope. A successful
+load, screenshot or green test alone cannot close an architectural evidence gap.
+
+## Asset and Workflow Constraints
+
+This is an independent architectural study, not an official map or route planner.
+Keep original photographs, PDFs, credentials, private local paths and editable
+Blender archives out of the public repository and deployment. Preserve the private
+research archive and prior model editions. No external API or account is required
+at runtime. Host runtime dependencies locally.
+
+The user prioritizes conserving Codex quota. Existing subagent work is integrated
+and stopped; do not create further agents for routine research or small changes. Avoid repeated rendering or deployment without
+new changes requiring it. When pushing, stage an explicit allowlist and use a
+separate descriptive English commit for each included file.
