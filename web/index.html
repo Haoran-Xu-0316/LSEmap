@@ -15,6 +15,7 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
       name="description"
       content="自由探索伦敦政治经济学院校园建筑。旋转模型、定位楼宇，查看建筑外观与公共空间细节。独立建筑研究项目。"
     />
+    <link rel="preload" href="/src/fonts/Roboto-variable.ttf" as="font" type="font/ttf" crossorigin />
     <title>LSEmap — 校园漫游</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
@@ -62,6 +63,10 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
             ><button id="detail-filter" aria-pressed="false">
               仅看深化模型
             </button>
+          </div>
+          <div class="interior-filter-row">
+            <button id="interior-filter" aria-pressed="false">有内部空间</button>
+            <span id="interior-count"></span>
           </div>
           <div
             id="building-list"
@@ -208,7 +213,7 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
           −缩放，Home返回总览。
         </dd>
         <dt>内部</dt>
-        <dd>部分建筑提供公共内部研究模型，点击详情中的公共内部查看。</dd>
+        <dd>部分建筑提供公共空间或房间研究模型，点击详情中的公共内部或室内样本查看。</dd>
       </dl>
       <p class="dialog-note">这是一份建筑研究模型，不提供真实路线导航。</p>
     </dialog>
@@ -220,10 +225,10 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
       <p class="dialog-kicker">独立建筑研究</p>
       <h2 id="about-title">关于LSEmap</h2>
       <p>
-        以公开地图、建筑资料与照片为依据，逐步复刻LSE校园的建筑形态和公共空间。本页模型与效果图统一来自第16版。
+        以公开地图、建筑资料与照片为依据，逐步复刻LSE校园的建筑形态和公共空间。本页模型与效果图按同一版本生成。
       </p>
       <p>
-        31个楼宇条目均已完成本轮外观细化：30栋可查看精细外观，35L保留施工围挡。61A轮廓归属仍待确认，5处公共内部可单独查看。
+        <span id="coverage-summary">收录31个楼宇条目，外观和内部覆盖以各楼说明为准。</span>
       </p>
       <p>
         多数楼高、构件尺寸和内部位置依据照片估计，未达到竣工测绘精度。选中建筑后按需加载精细几何，保留原模型已有倒角。砖、石材与木材表面按原材质参数在网页重建，仍不等同于Blender渲染。资料时间不一，不代表当前现场。
