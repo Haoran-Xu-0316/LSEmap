@@ -57,7 +57,7 @@ test("desktop exploration, search, images, interior and navigation work without 
   await page.locator(".detail-photo").click();
   await expect(page.locator("#gallery-dialog")).toBeVisible();
   await page.locator("#gallery-next").click();
-  await expect(page.locator("#gallery-position")).toHaveText("2 / 4");
+  await expect(page.locator("#gallery-position")).toHaveText("2 / 5");
   await page.keyboard.press("Escape");
   await expect(page.locator("#gallery-dialog")).toBeHidden();
   await page.locator("#interior-view").click();
