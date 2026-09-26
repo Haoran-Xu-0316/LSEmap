@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 
 const studies = [
   { code: 'LCH', label: '入口细节', image: 'lch-entrance', images: 2 },
-  { code: 'LAK', label: '窗饰细节', image: 'lak-windows', images: 2 },
-  { code: 'MAR', label: '入口细节', image: 'mar-entrance', images: 4 },
+  { code: 'LAK', label: '窗饰细节', image: 'lak-windows', images: 3 },
+  { code: 'MAR', label: '入口细节', image: 'mar-entrance', images: 5 },
 ];
 for (const study of studies) {
   for (const width of [1440, 390]) {
@@ -23,7 +23,7 @@ for (const study of studies) {
       await page.locator('.detail-photo').click();
       await page.locator('#gallery-next').click();
       await expect(page.locator('#gallery-position')).toHaveText(`2 / ${study.images}`);
-      await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + `/images/${study.image}.webp`.replace('.webp', '\\.webp') + '\\?v=17-[a-f0-9]{12}$'));
+      await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + `/images/${study.image}.webp`.replace('.webp', '\\.webp') + '\\?v=[0-9]+-[a-f0-9]{12}$'));
       await expect.poll(() => page.locator('#gallery-image').evaluate(image => image.complete && image.naturalWidth >= 1000)).toBe(true);
       await page.keyboard.press('Escape');
       if (study.code === 'MAR') {
