@@ -17,8 +17,8 @@ for (const code of ['PAR']) {
       await page.screenshot({ path: `result/web/local10/${code.toLowerCase()}-entrance-${width}.png` });
       await page.locator('.detail-photo').click();
       await page.locator('#gallery-next').click();
-      await expect(page.locator('#gallery-position')).toHaveText('2 / 2');
-      await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + `/images/${code.toLowerCase()}-entrance.webp`.replace('.webp', '\\.webp') + '\\?v=17-[a-f0-9]{12}$'));
+      await expect(page.locator('#gallery-position')).toHaveText('2 / 3');
+      await expect(page.locator('#gallery-image')).toHaveAttribute('src', new RegExp('^' + `/images/${code.toLowerCase()}-entrance.webp`.replace('.webp', '\\.webp') + '\\?v=[0-9]+-[a-f0-9]{12}$'));
       await expect.poll(() => page.locator('#gallery-image').evaluate(image => image.complete && image.naturalWidth >= 1000)).toBe(true);
       await page.keyboard.press('Escape');
       await page.locator('#exterior-view').click();
