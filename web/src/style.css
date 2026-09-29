@@ -349,6 +349,8 @@ canvas {
   touch-action: none;
 }
 .scene-heading {
+  max-width: calc(100% - 112px);
+  overflow-wrap: anywhere;
   position: absolute;
   left: 34px;
   top: 30px;
