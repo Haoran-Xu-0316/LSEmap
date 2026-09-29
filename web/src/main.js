@@ -11,6 +11,8 @@ const mobile = matchMedia("(max-width: 700px)");
 let buildings = [];
 let modelRevision = "";
 let modelEdition = "";
+let modelAssetRevision = "";
+let galleryDigests = new Map();
 let viewer;
 let current = null;
 let detailedOnly = false;
@@ -85,7 +87,8 @@ function showGallery(images, index) {
 }
 
 function galleryImageUrl(name) {
-  return `/images/${name}.webp?v=${modelEdition}-${modelRevision.slice(0, 12)}`;
+  const revision = galleryDigests.get(name) ?? modelRevision;
+  return `/images/${name}.webp?v=${modelEdition}-${revision.slice(0, 12)}`;
 }
 
 function renderGallery() {
@@ -404,6 +407,15 @@ async function start() {
       const data = await response.json();
       modelRevision = data.sourceModelSha256;
       modelEdition = data.version;
+      const galleryResponse = await fetch("/gallery-manifest.json", { cache: "no-cache" });
+      if (!galleryResponse.ok) throw new Error("gallery manifest");
+      const galleryManifest = await galleryResponse.json();
+      if (galleryManifest.sourceModelSha256 !== modelRevision || galleryManifest.version !== modelEdition)
+        throw new Error("Model and gallery releases do not match");
+      galleryDigests = new Map(galleryManifest.images.map(image => [image.name, image.sha256]));
+      modelAssetRevision = galleryManifest.modelAssetsSha256 || modelRevision;
+      document.documentElement.dataset.modelAssetRevision = modelAssetRevision;
+      $("#fallback img").src = galleryImageUrl("campus");
       document.documentElement.dataset.modelRevision = modelRevision;
       buildings = [...data.buildings].sort(
         (a, b) =>
@@ -427,7 +439,7 @@ async function start() {
       () =>
         showFailure("浏览器暂停了3D显示。可以重新加载，或继续查看建筑细节图。"),
       updateDetailQuality,
-      modelRevision,
+      modelAssetRevision || modelRevision,
     );
     await viewer.load((event) => {
       $("#loading-copy").textContent = event.total
@@ -544,8 +556,8 @@ window.addEventListener("popstate", () => {
   else overview(false, false);
 });
 mobile.addEventListener("change", () => {
-  if (current) selectBuilding(current.code, false);
-  else setSidebar(!mobile.matches);
+  // CSS and ResizeObserver adapt layout without rebuilding the selected view.
+  if (!current) setSidebar(!mobile.matches);
 });
 window.addEventListener("pagehide", () => viewer?.dispose());
 window.addEventListener("pageshow", (event) => {
