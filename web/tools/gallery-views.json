@@ -1,0 +1,457 @@
+[
+  {
+    "code": "61A",
+    "name": "61a-exterior",
+    "label": "61 Aldwych转角入口与石材立面"
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-exterior",
+    "label": "Centre Building遮阳构件"
+  },
+  {
+    "code": "CKK",
+    "name": "ckk-exterior",
+    "label": "Cheng Kin Ku正立面与坡屋顶"
+  },
+  {
+    "code": "CKK",
+    "name": "ckk-entrance",
+    "label": "中央拱形采光窗与柱式门厅"
+  },
+  {
+    "code": "CKK",
+    "name": "ckk-interior",
+    "label": "Cheng Kin Ku公共中庭"
+  },
+  {
+    "code": "CLM",
+    "name": "clm-exterior",
+    "label": "Clement House的Aldwych立面"
+  },
+  {
+    "code": "CLM",
+    "name": "clm-interior",
+    "label": "CLM.1.01小组教室，四组三角桌与木墙裙"
+  },
+  {
+    "code": "COL",
+    "name": "col-exterior",
+    "label": "Columbia House沿街石材立面"
+  },
+  {
+    "code": "COL",
+    "name": "col-entrance",
+    "label": "木门、铭牌与石门廊"
+  },
+  {
+    "code": "COL",
+    "name": "col-interior",
+    "label": "Garrick咖啡厅用餐区"
+  },
+  {
+    "code": "CON",
+    "name": "con-entrance",
+    "label": "Connaught House凹入门廊"
+  },
+  {
+    "code": "CON",
+    "name": "con-exterior",
+    "label": "Aldwych立面与入口位置"
+  },
+  {
+    "code": "CON",
+    "name": "con-interior",
+    "label": "CON.7.04会议室，八席长桌与木饰面"
+  },
+  {
+    "code": "COW",
+    "name": "cow-exterior",
+    "label": "Cowdray House屋顶窗与砖石转角"
+  },
+  {
+    "code": "COW",
+    "name": "cow-entrance",
+    "label": "Cowdray House拱券、柱饰与入口细节"
+  },
+  {
+    "code": "COW",
+    "name": "cow-interior",
+    "label": "Cowdray研讨厅局部"
+  },
+  {
+    "code": "PAN",
+    "name": "pan-faw-exterior",
+    "label": "Pankhurst与Fawcett整体立面",
+    "contextCodes": [
+      "FAW"
+    ]
+  },
+  {
+    "code": "PAN",
+    "name": "pan-faw-entrance",
+    "label": "双旋转门与镂空门楣",
+    "view": {
+      "position": [
+        88.5912857055664,
+        2.1500000953674316,
+        64.30379486083984
+      ],
+      "target": [
+        78.63777160644531,
+        2.53725528717041,
+        65.1855697631836
+      ],
+      "fov": 55.79454491464854
+    },
+    "contextCodes": [
+      "FAW"
+    ]
+  },
+  {
+    "code": "FAW",
+    "name": "faw-interior",
+    "label": "FAW.1.01小组教室"
+  },
+  {
+    "code": "KGS",
+    "name": "kgs-exterior",
+    "label": "King’s Chambers凸窗与弧顶"
+  },
+  {
+    "code": "KGS",
+    "name": "kgs-entrance",
+    "label": "King’s Chambers石材拱券与绿色入口铭牌"
+  },
+  {
+    "code": "KGS",
+    "name": "kgs-interior",
+    "label": "KGS.1.02协作教室"
+  },
+  {
+    "code": "KSW",
+    "name": "ksw-exterior",
+    "label": "20 Kingsway完整主立面"
+  },
+  {
+    "code": "KSW",
+    "name": "ksw-entrance",
+    "label": "20 Kingsway入口细节"
+  },
+  {
+    "code": "KSW",
+    "name": "ksw-interior",
+    "label": "KSW.1.01小组教室"
+  },
+  {
+    "code": "LAK",
+    "name": "lak-exterior",
+    "label": "Lakatos转角砖石立面与坡顶"
+  },
+  {
+    "code": "LAK",
+    "name": "lak-windows",
+    "label": "广场侧拱窗、细窗格与石材窗饰"
+  },
+  {
+    "code": "LAK",
+    "name": "lak-interior",
+    "label": "Lakatos2012入口楼梯"
+  },
+  {
+    "code": "LCH",
+    "name": "lch-exterior",
+    "label": "Lincoln Chambers沿街立面"
+  },
+  {
+    "code": "LCH",
+    "name": "lch-entrance",
+    "label": "凹入门廊、三面拱口与棋盘地面"
+  },
+  {
+    "code": "5LF",
+    "name": "5lf-exterior",
+    "label": "5 Lincoln’s Inn Fields砖立面与入口"
+  },
+  {
+    "code": "5LF",
+    "name": "5lf-interior",
+    "label": "教职工公寓双人卧室样本"
+  },
+  {
+    "code": "49L",
+    "name": "49l-exterior",
+    "label": "Coopers转角门面与蓝色底层"
+  },
+  {
+    "code": "49L",
+    "name": "49l-interior",
+    "label": "Coopers餐厅用餐区样本"
+  },
+  {
+    "code": "50L",
+    "name": "50l-exterior",
+    "label": "50 Lincoln’s Inn Fields沿街立面"
+  },
+  {
+    "code": "50L",
+    "name": "50l-entrance",
+    "label": "50 Lincoln’s Inn Fields入口细节"
+  },
+  {
+    "code": "51L",
+    "name": "51l-exterior",
+    "label": "51 Lincoln’s Inn Fields街角"
+  },
+  {
+    "code": "51L",
+    "name": "51l-entrance",
+    "label": "51 Lincoln’s Inn Fields入口细节"
+  },
+  {
+    "code": "LRB",
+    "name": "lrb-exterior",
+    "label": "图书馆广场侧窗格与石带"
+  },
+  {
+    "code": "LRB",
+    "name": "lrb-interior",
+    "label": "图书馆螺旋坡道与电梯"
+  },
+  {
+    "code": "MAR",
+    "name": "mar-exterior",
+    "label": "Marshall Building北立面"
+  },
+  {
+    "code": "MAR",
+    "name": "mar-entrance",
+    "label": "斜向入口、露台玻璃与前场灯柱"
+  },
+  {
+    "code": "MAR",
+    "name": "mar-hall",
+    "label": "Grand Hall公共大厅",
+    "view": {
+      "position": [
+        1.6433366537094116,
+        1.7000000476837158,
+        -66.45145416259766
+      ],
+      "target": [
+        -5.183311939239502,
+        2.5006167888641357,
+        -59.18812942504883
+      ],
+      "fov": 73.73979461915735
+    }
+  },
+  {
+    "code": "MAR",
+    "name": "mar-stair",
+    "label": "弧形楼梯与平台连接",
+    "view": {
+      "position": [
+        -12.067785263061523,
+        1.7000000476837158,
+        -57.67619705200195
+      ],
+      "target": [
+        -18.573497772216797,
+        3.5318565368652344,
+        -50.30598449707031
+      ],
+      "fov": 69.39030966512573
+    }
+  },
+  {
+    "code": "OLD",
+    "name": "old-exterior",
+    "label": "Old Building入口"
+  },
+  {
+    "code": "OLD",
+    "name": "old-interior",
+    "label": "OLD.4.10阶梯教室，三组座席与教学墙"
+  },
+  {
+    "code": "OCS",
+    "name": "ocs-exterior",
+    "label": "Old Curiosity Shop街景"
+  },
+  {
+    "code": "OCS",
+    "name": "ocs-roof",
+    "label": "瓦屋顶与木框门窗",
+    "view": {
+      "position": [
+        -47.05178451538086,
+        2.5999999046325684,
+        -26.497413635253906
+      ],
+      "target": [
+        -44.34181594848633,
+        2.9726223945617676,
+        -36.11600112915039
+      ],
+      "fov": 45.42882443399458
+    }
+  },
+  {
+    "code": "OCS",
+    "name": "ocs-interior",
+    "label": "OCS鞋店历史室内样本"
+  },
+  {
+    "code": "PAN",
+    "name": "pan-interior",
+    "label": "PAN.1.01小组教室"
+  },
+  {
+    "code": "PAR",
+    "name": "par-exterior",
+    "label": "Parish Hall低门厅与红瓦坡屋顶"
+  },
+  {
+    "code": "PAR",
+    "name": "par-entrance",
+    "label": "Parish Hall尖拱砖券与题字入口"
+  },
+  {
+    "code": "PAR",
+    "name": "par-interior",
+    "label": "PAR.1.02小组教室"
+  },
+  {
+    "code": "PEA",
+    "name": "pea-exterior",
+    "label": "Peacock Theatre入口雨棚"
+  },
+  {
+    "code": "PEA",
+    "name": "pea-interior",
+    "label": "Peacock舞台与前排观众席"
+  },
+  {
+    "code": "PEL",
+    "name": "pel-exterior",
+    "label": "Pethick-Lawrence House塔楼"
+  },
+  {
+    "code": "PEL",
+    "name": "pel-interior",
+    "label": "Tower3屋顶媒体演播室访谈区"
+  },
+  {
+    "code": "POR",
+    "name": "por-exterior",
+    "label": "1 Portsmouth Street转角与店面"
+  },
+  {
+    "code": "POR",
+    "name": "por-entrance",
+    "label": "转角入口、铅条橱窗与街名牌"
+  },
+  {
+    "code": "SAR",
+    "name": "sar-exterior",
+    "label": "Sardinia House红砖立面"
+  },
+  {
+    "code": "SAR",
+    "name": "sar-windows",
+    "label": "Sardinia House拱窗细节"
+  },
+  {
+    "code": "SAR",
+    "name": "sar-interior",
+    "label": "2015改造茶水间样本"
+  },
+  {
+    "code": "SAW",
+    "name": "saw-exterior",
+    "label": "Saw Swee Hock折面立面"
+  },
+  {
+    "code": "SAW",
+    "name": "saw-brick",
+    "label": "透空砖屏细节",
+    "view": {
+      "position": [
+        -42.711181640625,
+        15.5,
+        -33.694637298583984
+      ],
+      "target": [
+        -52.61602020263672,
+        14.609131813049316,
+        -32.64558410644531
+      ],
+      "fov": 41.9115536340994
+    }
+  },
+  {
+    "code": "SHF",
+    "name": "shf-exterior",
+    "label": "Sheffield Street沿街小楼"
+  },
+  {
+    "code": "SAL",
+    "name": "sal-exterior",
+    "label": "Sir Arthur Lewis Building沿街立面"
+  },
+  {
+    "code": "SAL",
+    "name": "sal-interior",
+    "label": "SAL.G.01研讨教室"
+  },
+  {
+    "code": "STC",
+    "name": "stc-exterior",
+    "label": "St Clement’s窗列与转角平台"
+  },
+  {
+    "code": "STC",
+    "name": "stc-entrance",
+    "label": "红色门侧、招牌与凹入入口"
+  },
+  {
+    "code": "STC",
+    "name": "stc-interior",
+    "label": "STC.S018计算机学习区"
+  },
+  {
+    "code": "MAR",
+    "name": "mar-104-interior",
+    "label": "MAR.1.04阶梯教室",
+    "spaceId": "mar-104"
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-102-interior",
+    "label": "CBG-102",
+    "spaceId": "cbg-102"
+  },
+  {
+    "code": "CKK",
+    "name": "ckk-104-interior",
+    "label": "CKK-104",
+    "spaceId": "ckk-104"
+  },
+  {
+    "code": "SAW",
+    "name": "saw-denning-interior",
+    "label": "Denning Learning Café历史局部",
+    "spaceId": "saw-denning"
+  },
+  {
+    "code": "61A",
+    "name": "61a-interior",
+    "label": "2021历史接待厅"
+  },
+  {
+    "code": "CAMPUS",
+    "name": "campus",
+    "label": "Campus"
+  }
+]
