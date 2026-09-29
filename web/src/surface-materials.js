@@ -18,20 +18,61 @@ float surfaceNoise(vec3 p) {
 }
 `;
 
+const preparedMaterials = new WeakSet();
+
+// Presentation refinements are deliberately separate from source-model parameters.
+// They describe a material finish, not measured ageing or photographic textures.
+export function refineMaterialFinish(material) {
+  if (preparedMaterials.has(material)) return;
+  preparedMaterials.add(material);
+  const name = material.name.toLowerCase();
+  const matches = (pattern) => pattern.test(name);
+  if (matches(/glass|glazing/)) {
+    // Preserve tinted glazing while reducing the exaggerated cyan in older assets.
+    const luminance = material.color.r * .2126 + material.color.g * .7152 + material.color.b * .0722;
+    material.color.lerp(new THREE.Color(luminance, luminance, luminance), .28);
+    material.roughness = THREE.MathUtils.clamp(material.roughness, .12, .22);
+    material.metalness = 0;
+    material.envMapIntensity = 1.65;
+    if (material.isMeshPhysicalMaterial) {
+      material.ior = 1.5;
+      material.specularIntensity = 1;
+    }
+    // Retain the source transparency; an unmodeled interior is not a glass void.
+    if (material.transparent) material.depthWrite = false;
+  } else if (matches(/gold|bronze|brass|copper/)) {
+    material.metalness = Math.max(material.metalness, 0.72);
+    material.roughness = Math.min(material.roughness, 0.34);
+    material.envMapIntensity = 0.9;
+  } else if (matches(/lead|zinc|aluminium|aluminum/)) {
+    material.metalness = Math.max(material.metalness, 0.65);
+    material.roughness = 0.48;
+    material.envMapIntensity = 0.75;
+  }
+  material.needsUpdate = true;
+}
+
 export function applySurfaceDetail(material) {
-  const detail = material.userData.surfaceDetail;
+  let detail = material.userData.surfaceDetail;
+  if (!detail && /stone|concrete|limestone|sandstone|render|stucco/i.test(material.name)) {
+    detail = {
+      kind: "noise", scale: 3, bump: 0.00035,
+      colorA: material.color.clone().multiplyScalar(0.96).toArray(),
+      colorB: material.color.clone().multiplyScalar(1.025).toArray(),
+    };
+  }
   if (!detail || !["noise", "brick"].includes(detail.kind)) return;
   const brick = detail.kind === "brick";
   const color = (value) => value ? new THREE.Color(...value) : material.color.clone();
   const uniforms = {
     surfaceScale: { value: detail.scale },
-    surfaceBump: { value: Math.min(0.015, detail.bump) },
+    surfaceBump: { value: Math.min(0.006, Math.max(brick ? 0.0008 : 0, detail.bump || 0)) },
     surfaceColorA: { value: color(detail.colorA) },
     surfaceColorB: { value: color(detail.colorB) },
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-${brick ? "brick" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish3-${brick ? "brick" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -49,27 +90,46 @@ export function applySurfaceDetail(material) {
     ` + shader.fragmentShader;
     const pattern = brick ? `
       vec2 brickPoint = vSurfaceUv * surfaceScale;
+      // Measure the unshifted coordinates: staggered row offsets are discontinuous.
+      vec2 footprint = fwidth(brickPoint);
+      float tileVisibility = 1.0 - smoothstep(0.45, 1.25,
+        max(footprint.x / surfaceBrick.x, footprint.y / surfaceBrick.y));
       float row = floor(brickPoint.y / surfaceBrick.y);
       brickPoint.x += mod(row, 2.0) * surfaceBrick.x * 0.5;
       vec2 inBrick = mod(brickPoint, surfaceBrick.xy);
       vec2 seamDistance = min(inBrick, surfaceBrick.xy - inBrick);
-      float edgeWidth = max(fwidth(brickPoint.x), fwidth(brickPoint.y));
+      float edgeWidth = max(footprint.x, footprint.y);
       float face = smoothstep(surfaceBrick.z * .45 - edgeWidth,
                               surfaceBrick.z * .45 + edgeWidth,
                               min(seamDistance.x, seamDistance.y));
       float variation = surfaceHash(vec3(floor(brickPoint / surfaceBrick.xy), 1.0));
-      vec3 surfaceColor = mix(surfaceMortar, mix(surfaceColorA, surfaceColorB, variation), face);
-      float surfaceHeight = face * surfaceBump;
+      vec3 resolvedColor = mix(surfaceMortar, mix(surfaceColorA, surfaceColorB, variation), face);
+      // Subpixel tiles converge to their area-weighted colour instead of aliasing.
+      float averageFace = (1.0 - surfaceBrick.z * .9 / surfaceBrick.x) *
+                          (1.0 - surfaceBrick.z * .9 / surfaceBrick.y);
+      vec3 averageColor = mix(surfaceMortar, mix(surfaceColorA, surfaceColorB, .5), averageFace);
+      vec3 surfaceColor = mix(averageColor, resolvedColor, tileVisibility);
+      float surfaceHeight = face * surfaceBump * tileVisibility;
     ` : `
       vec3 surfacePoint = vec3(vSurfacePosition.x, -vSurfacePosition.z, vSurfacePosition.y) * surfaceScale;
       float grain = surfaceNoise(surfacePoint) * .75 + surfaceNoise(surfacePoint * 2.0) * .25;
-      vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, grain);
+      // Keep the source palette midpoint without oversized concrete blotches.
+      vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * 0.32);
       float surfaceHeight = grain * surfaceBump;
     `;
     shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", `
       #include <color_fragment>
       ${pattern}
-      diffuseColor.rgb = surfaceColor;
+      // Fade fine grain before it becomes a subpixel pattern at campus scale.
+      vec3 finePoint = vSurfacePosition * 85.0;
+      float grainVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(finePoint)));
+      float fineGrain = (surfaceNoise(finePoint) - 0.5) * grainVisibility;
+      diffuseColor.rgb = surfaceColor * (1.0 + fineGrain * 0.08);
+      surfaceHeight += fineGrain * 0.00018;
+    `);
+    shader.fragmentShader = shader.fragmentShader.replace("#include <roughnessmap_fragment>", `
+      #include <roughnessmap_fragment>
+      roughnessFactor = clamp(roughnessFactor + fineGrain * 0.12, 0.04, 1.0);
     `);
     shader.fragmentShader = shader.fragmentShader.replace("#include <normal_fragment_maps>", `
       #include <normal_fragment_maps>
@@ -93,6 +153,7 @@ export function prepareDetailedModel(group) {
     object.receiveShadow = true;
     for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
       material.side = THREE.DoubleSide;
+      refineMaterialFinish(material);
       applySurfaceDetail(material);
     }
   });
