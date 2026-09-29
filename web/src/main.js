@@ -354,7 +354,7 @@ function overview(keepIndex = false, updateHash = true) {
   $("#context-toggle").setAttribute("aria-pressed", "true");
   setSceneCopy(null);
   viewer?.home();
-  document.title = "LSEmap — 校园漫游";
+  document.title = "LSEmap — LSE校园地图";
   if (updateHash)
     history.pushState(null, "", location.pathname + location.search);
 }
