@@ -10,10 +10,11 @@ import hashlib
 import json
 import struct
 import bpy
+import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v24.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v43.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -53,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage24/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage24/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage43/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage43/building-review.json').read_text())['buildings']}
 material_cache = {}
 
 
@@ -118,7 +119,7 @@ def web_material(source):
     node.inputs['Roughness'].default_value = max(0.12 if full_detail else 0.35, roughness)
     node.inputs['Metallic'].default_value = min(1.0 if full_detail else 0.35, metallic)
     if transmission > 0.1:
-        node.inputs['Alpha'].default_value = 0.30
+        node.inputs['Alpha'].default_value = float(source.get('webOpacity', 0.30))
         material.surface_render_method = 'DITHERED'
     material.diffuse_color = color
     if full_detail:
@@ -129,7 +130,24 @@ def web_material(source):
     return material
 
 
-def clone_group(objects, name, target_scene):
+def clip_below_ground(mesh):
+    """Trim temporary world-space meshes; retain native underground geometry."""
+    if not any(vertex.co.z < -1e-6 for vertex in mesh.vertices):
+        return
+    editable = bmesh.new()
+    editable.from_mesh(mesh)
+    bmesh.ops.bisect_plane(
+        editable, geom=list(editable.verts) + list(editable.edges) + list(editable.faces),
+        dist=1e-6, plane_co=(0, 0, 0), plane_no=(0, 0, 1),
+        clear_inner=True, clear_outer=False,
+    )
+    editable.to_mesh(mesh)
+    editable.free()
+    mesh.update()
+    assert all(vertex.co.z >= -1e-5 for vertex in mesh.vertices)
+
+
+def clone_group(objects, name, target_scene, hide_basement=False):
     """Merge each semantic building into one object with its material primitives."""
     copies = []
     points = []
@@ -143,6 +161,12 @@ def clone_group(objects, name, target_scene):
         mesh = bpy.data.meshes.new_from_object(evaluated, depsgraph=depsgraph)
         if not mesh or not mesh.vertices:
             continue
+        # A missing UV layer silently turns procedural brick into solid mortar
+        # after meshes are joined. Reject that source error before publishing.
+        is_exterior = any(collection.name.endswith('_EXTERIOR') for collection in original.users_collection)
+        has_brick = any((surface_descriptor(material) or {}).get('kind') == 'brick' for material in mesh.materials)
+        if full_detail and is_exterior and has_brick and not mesh.uv_layers:
+            raise ValueError(f"Exterior brick requires metric UVs: {original.name}")
         # Joining differently named UV layers would put some facades in UV1 while
         # the browser samples UV0. Normalize only these temporary export meshes.
         if full_detail and mesh.uv_layers:
@@ -153,12 +177,22 @@ def clone_group(objects, name, target_scene):
             active.name = 'SurfaceUV'
             active.active_render = True
         mesh.transform(original.matrix_world)
+        if hide_basement and any(c.name == 'LRB_PUBLIC_INTERIOR_study' for c in original.users_collection):
+            clip_below_ground(mesh)
+            if not mesh.polygons:
+                bpy.data.meshes.remove(mesh)
+                continue
         points.extend(v.co.copy() for v in mesh.vertices)
         # Keep explicit primitive material indices but never ship archived photographs.
         materials = [web_material(m) for m in mesh.materials]
+        # Clearing slots resets polygon indices in Blender. Preserve two-tone
+        # assemblies instead of silently painting every face with the first slot.
+        material_indices = [polygon.material_index for polygon in mesh.polygons]
         mesh.materials.clear()
         for material in materials or [web_material(None)]:
             mesh.materials.append(material)
+        for polygon, material_index in zip(mesh.polygons, material_indices):
+            polygon.material_index = material_index
         clone = bpy.data.objects.new(name + '_part', mesh)
         target_scene.collection.objects.link(clone)
         copies.append(clone)
@@ -244,10 +278,19 @@ for record in metadata:
             record['footprintSource'] = {key: study[key] for key in ['osmId', 'sourcePoint', 'sourcePage', 'sourceMap']}
 
 for record in metadata:
+    if record['code'] == 'CKK':
+        record['exteriorDirection'] = list(Vector((0.927, 0.65, -0.375)).normalized())
+        record['detailView'] = {'label': '入口细节', 'position': [-73, 8, -93], 'target': [-89, 4, -86], 'fov': 38}
+
+for record in metadata:
+    if record['code'] == 'LRB':
+        record['exteriorDirection'] = list(Vector((-0.648, 0.55, 0.761)).normalized())
+
+for record in metadata:
     finish = FINISH_RECORDS[record['code']]
     record['localRefinement'] = {key: finish[key] for key in ['description', 'newComponents', 'scope']}
     review = REVIEW_RECORDS[record['code']]
-    record['latestReview'] = {'version': 24, 'status': review['status'], 'addedObjects': len(review['addedObjects'])}
+    record['latestReview'] = {'version': 43, 'status': review['status'], 'addedObjects': len(review['addedObjects'])}
     for key in ['interiorSections', 'interiorSectionScope']:
         if key in review:
             record[key] = [{field: section[field] for field in ['id', 'label', 'minHeight', 'maxHeight', 'scope']} for section in review[key]] if key == 'interiorSections' else review[key]
@@ -285,7 +328,7 @@ for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_h
     if collection:
         clone_group(collection.all_objects, name, campus_scene)
 export_scene(campus_scene, 'campus.glb')
-for room in json.loads((ROOT / 'result/blender/stage24/room-spaces.json').read_text())['spaces']:
+for room in json.loads((ROOT / 'result/blender/stage43/room-spaces.json').read_text())['spaces']:
     source_scene.collection.children.link(bpy.data.collections[room['collection']])
 for code in ROOM_RECORDS:
     source_scene.collection.children.link(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'])
@@ -306,7 +349,7 @@ for record in metadata:
     if code == 'SAW':
         interior_objects = [o for o in interior_objects if '_floor_' not in o.name]
     if code == 'LRB':
-        interior_objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name]
+        interior_objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
     _, bounds = clone_group(interior_objects, code + '_INTERIOR', interior_scene)
     assert bounds, f'No public-interior geometry exported for {code}'
     camera_names = {'MAR': 'MAR_D3_hall', 'LRB': 'ATRIA_LRB_spiral_and_lifts', 'CKK': 'ATRIA_CKK_timber_landscape', 'CBG': 'CBG_QA_03_academic_stair'}
@@ -344,7 +387,7 @@ detail_report = []
 
 def export_detail(objects, code, kind):
     scene = bpy.data.scenes.new('WEB_DETAIL_' + code + '_' + kind)
-    obj, bounds = clone_group(objects, code, scene)
+    obj, bounds = clone_group(objects, code, scene, hide_basement=code == 'LRB' and kind == 'exterior')
     assert obj and bounds
     staging = f'details/{code.lower()}-{kind}.glb'
     export_scene(scene, staging)
@@ -386,11 +429,11 @@ for record in metadata:
         elif code == 'SAW':
             objects = [o for o in objects if '_floor_' not in o.name]
         elif code == 'LRB':
-            objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name]
+            objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
 # Additional rooms retain their own identity instead of replacing the building's hall.
-for room in json.loads((ROOT / 'result/blender/stage24/room-spaces.json').read_text())['spaces']:
+for room in json.loads((ROOT / 'result/blender/stage43/room-spaces.json').read_text())['spaces']:
     record = next(item for item in metadata if item['code'] == room['code'])
     descriptor = export_detail(list(bpy.data.collections[room['collection']].all_objects), room['id'], 'interior')
     study = {'kind':'room-sample', 'label':room['label'], 'scope':room['scope']}
@@ -408,7 +451,7 @@ report_path.parent.mkdir(parents=True, exist_ok=True)
 report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
-    'version': '24', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '43', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
