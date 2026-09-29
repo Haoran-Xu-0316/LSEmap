@@ -123,3 +123,7 @@ The native Cycles gallery is an offline reference only. The renderer signature
 includes camera presets and shared shader code; the model signature includes the
 catalogue and base campus. Build rejects either mismatch. Thumbnail and enlarged
 image URLs use each image's own content digest, including renderer-only changes.
+
+## Interface refinement
+
+Use neutral translucent surfaces for the navigation and map controls, with restrained blur and charcoal selected states. No pink UI fills. Keep Roboto. The directory presents all buildings through search and names; omit model-quality filters, progress labels and secondary promotional copy. Preserve load-error recovery and keep source limitations in the collapsed detail note.
