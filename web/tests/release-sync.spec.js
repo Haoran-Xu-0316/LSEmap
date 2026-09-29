@@ -37,3 +37,18 @@ test('a model-only release refreshes even when the application bundle is unchang
   await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-MAR',{timeout:60000});
   expect(new URL(page.url()).hash).toBe('#MAR');
 });
+
+test('re-exported assets refresh an open tab even when native source and bundle are unchanged', async ({ page }) => {
+  const manifest = JSON.parse(await readFile('dist/release.json', 'utf8'));
+  let changed = false;
+  await page.route('**/release.json', route => route.fulfill({ json: changed
+    ? { ...manifest, modelAssetsSha256: 'b'.repeat(64) } : manifest }));
+  await page.goto('/#CBG');
+  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready', 'exterior-CBG', { timeout: 60000 });
+  changed = true;
+  await page.waitForTimeout(5100);
+  const navigation = page.waitForEvent('framenavigated', frame => frame === page.mainFrame());
+  await page.evaluate(() => window.dispatchEvent(new Event('focus')));
+  await navigation;
+  expect(new URL(page.url()).hash).toBe('#CBG');
+});
