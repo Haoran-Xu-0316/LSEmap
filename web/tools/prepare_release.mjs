@@ -3,10 +3,18 @@ import { readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { detailFor } from '../src/content.js';
+import { galleryRendererSignature, galleryModelSignature } from './gallery_signature.mjs';
 const root = 'dist';
 const catalogue = JSON.parse(await readFile(join(root, 'models/catalogue.json'), 'utf8'));
 const gallery = JSON.parse(await readFile(join(root, 'gallery-manifest.json'), 'utf8'));
 if (gallery.sourceModelSha256 !== catalogue.sourceModelSha256) throw new Error('Gallery/model source mismatch');
+const rendererSha256 = await galleryRendererSignature();
+const modelAssetsSha256 = await galleryModelSignature(root);
+if (gallery.modelAssetsSha256 !== modelAssetsSha256) throw new Error("Gallery models are stale. Run npm run gallery.");
+if (gallery.renderer !== 'campus-viewer' || gallery.rendererSha256 !== rendererSha256)
+  throw new Error('Gallery renderer is stale. Run npm run gallery before building.');
+if (gallery.images.some(image => image.rendererSha256 !== rendererSha256 || image.renderer !== 'campus-viewer' || image.modelAssetsSha256 !== modelAssetsSha256))
+  throw new Error('Mixed gallery renderers or versions');
 const models = new Set(['campus.glb', 'catalogue.json']);
 for (const building of catalogue.buildings) {
   for (const detail of [building.detailedExterior, building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)].filter(Boolean)) models.add(detail.url.replace('/models/', ''));
@@ -33,5 +41,5 @@ for (const path of paths) {
   const data = await readFile(join(root, path));
   assets[`/${path}`] = { bytes: data.length, sha256: createHash('sha256').update(data).digest('hex') };
 }
-await writeFile(join(root, 'release.json'), JSON.stringify({ version: catalogue.version, sourceModelSha256: catalogue.sourceModelSha256, entryScript, assets }, null, 2)+'\n');
+await writeFile(join(root, 'release.json'), JSON.stringify({ version: catalogue.version, sourceModelSha256: catalogue.sourceModelSha256, modelAssetsSha256, rendererSha256, entryScript, assets }, null, 2)+'\n');
 console.log(`Prepared edition ${catalogue.version}: ${models.size} model files and ${images.size} gallery images.`);
