@@ -47,7 +47,10 @@ export class CampusViewer {
       logarithmicDepthBuffer: true,
       powerPreference: "high-performance",
     });
-    this.renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio, 1.5), 1.75));
+    this.restPixelRatio = Math.min(Math.max(devicePixelRatio, 1.5), 1.75);
+    this.interacting = false;
+    this.qualityRestoreAt = 0;
+    this.renderer.setPixelRatio(this.restPixelRatio);
     this.renderer.setClearColor(0xe9e8e3);
     this.renderer.toneMapping = THREE.NeutralToneMapping;
     this.renderer.toneMappingExposure = 0.9;
@@ -86,6 +89,11 @@ export class CampusViewer {
     });
     this.controls.addEventListener("start", () => {
       this.transition = null;
+      this.interacting = true;
+    });
+    this.controls.addEventListener("end", () => {
+      this.interacting = false;
+      this.qualityRestoreAt = performance.now() + 250;
     });
     this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
     const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
@@ -885,6 +893,14 @@ export class CampusViewer {
   tick(time) {
     this.frame = requestAnimationFrame(this.tick);
     if (document.hidden) return;
+    // Keep full geometry, reducing only raster resolution while the user moves.
+    // Restore the original sharp presentation once the gesture settles.
+    const pixelRatio = this.interacting || time < this.qualityRestoreAt
+      ? 1 : this.restPixelRatio;
+    if (this.renderer.getPixelRatio() !== pixelRatio) {
+      this.renderer.setPixelRatio(pixelRatio);
+      this.needsRender = true;
+    }
     if (this.transition) {
       const state = this.transition;
       const progress = Math.min(1, (time - state.start) / state.duration);
