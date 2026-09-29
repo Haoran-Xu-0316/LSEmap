@@ -1,0 +1,20 @@
+import {test, expect} from '@playwright/test';
+import * as THREE from 'three';
+import {refineMaterialFinish} from '../src/surface-materials.js';
+test('glass finish preserves luminance and source transparency without repeated tint drift',()=>{
+ const glass=new THREE.MeshPhysicalMaterial({color:new THREE.Color(.05,.20,.23),roughness:.02,transmission:.6});
+ glass.name='Facade_glass';
+ const original=glass.color.clone();
+ const light=c=>c.r*.2126+c.g*.7152+c.b*.0722;
+ refineMaterialFinish(glass);
+ expect(light(glass.color)).toBeCloseTo(light(original),8);
+ expect(glass.color.g-glass.color.r).toBeLessThan(original.g-original.r);
+ expect(glass.transmission).toBe(.6);
+ expect(glass.transparent).toBe(false);
+ expect(glass.roughness).toBe(.12);
+ const colour=glass.color.clone();refineMaterialFinish(glass);
+ expect(glass.color.toArray()).toEqual(colour.toArray());
+ const stone=new THREE.MeshStandardMaterial({color:0xaabbcc,roughness:.7});stone.name='Portland_stone';
+ const stoneColour=stone.color.clone();refineMaterialFinish(stone);
+ expect(stone.color.toArray()).toEqual(stoneColour.toArray());expect(stone.roughness).toBe(.7);
+});
