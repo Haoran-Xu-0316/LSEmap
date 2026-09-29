@@ -1,4 +1,4 @@
-"""Render edition 24, reusing only views with identical evaluated render inputs.
+"""Render edition 26, reusing only views with identical evaluated render inputs.
 
 Run in Blender. The original render edition and the verified current model edition
 are both recorded, so reuse never masquerades as a new render or an unchecked copy.
@@ -9,11 +9,11 @@ from mathutils import Vector
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gallery_fingerprint import RenderFingerprint
 ROOT = Path(__file__).resolve().parents[2]
-RELEASE = ROOT / 'result/web/release24'
+RELEASE = ROOT / 'result/web/release26'
 OUT = RELEASE / 'renders'
 OUT.mkdir(parents=True, exist_ok=True)
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v24.blend'
-PREVIOUS = ROOT / 'result/blender/LSE_campus_detailed_v23.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v26.blend'
+PREVIOUS = ROOT / 'result/blender/LSE_campus_detailed_v25.blend'
 extras = {'mar-hall':'MAR_D3_hall','mar-stair':'MAR_D3_stair','saw-brick':'SAW_brick_screen_closeup','ocs-roof':'OCS_D3_front_street_camera','pan-faw-entrance':'PAN_FAW_D3_entrance'}
 def native(vector):
  return Vector((vector[0], -vector[2], vector[1]))
@@ -111,7 +111,7 @@ for job in jobs:
   continue
  scene = build_scene(job, catalogue)
  signature = fingerprints.scene(scene)
- previous_image = ROOT / 'result/web/release23/renders' / (name+'.png')
+ previous_image = ROOT / 'result/web/release25/renders' / (name+'.png')
  reused = old_signatures.get(name) == signature and previous_image.exists()
  if reused:
   shutil.copyfile(previous_image, OUT / (name+'.png'))
