@@ -9,6 +9,8 @@ import { prepareDetailedModel, disposeModel } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+// Match the CSS bottom-sheet breakpoint, not the canvas narrowed by a desktop sidebar.
+const mobileLayout = matchMedia("(max-width: 700px)");
 const boxFromData = ({ min, max }) =>
   new THREE.Box3(new THREE.Vector3(...min), new THREE.Vector3(...max));
 
@@ -76,7 +78,7 @@ export class CampusViewer {
     this.controls.maxDistance = 2400;
     this.controls.zoomToCursor = true;
     this.controls.zoomSpeed = 1.25;
-    this.controls.maxPolarAngle = Math.PI * 0.49;
+    this.controls.maxPolarAngle = Math.PI;
     this.controls.screenSpacePanning = true;
     this.controls.target.set(10, 0, -10);
     this.controls.addEventListener("change", () => {
@@ -98,8 +100,8 @@ export class CampusViewer {
       near: 1,
       far: 650,
     });
-    sun.shadow.normalBias = 0.025;
-    sun.shadow.bias = -0.00005;
+    sun.shadow.normalBias = 0.04;
+    sun.shadow.bias = -0.0005;
     this.sun = sun;
     this.scene.add(sun.target);
     this.renderer.shadowMap.enabled = true;
@@ -132,14 +134,22 @@ export class CampusViewer {
     this.raycaster = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();
     this.canvas.addEventListener("pointerdown", (event) => {
+      if (!event.isPrimary) {
+        this.pointerStart = null;
+        return;
+      }
       this.pointerStart = {
+        moved: false,
         x: event.clientX,
         y: event.clientY,
         time: performance.now(),
         id: event.pointerId,
       };
     });
+    this.canvas.addEventListener("pointermove", (event) => this.trackPointer(event));
+    this.canvas.addEventListener("pointercancel", () => { this.pointerStart = null; });
     this.canvas.addEventListener("pointerup", (event) => this.pick(event));
+    this.canvas.addEventListener("dblclick", (event) => this.focusSurface(event));
     this.canvas.addEventListener("keydown", (event) => this.onKey(event));
     this.canvas.addEventListener("webglcontextlost", (event) => {
       event.preventDefault();
@@ -302,7 +312,7 @@ export class CampusViewer {
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     this.camera.clearViewOffset();
-    if (this.mode === "detail" && width < 700 && width > 0 && height > 0) {
+    if (this.mode === "detail" && mobileLayout.matches && width > 0 && height > 0) {
       // Frame the entrance above the mobile sheet without moving the camera underground.
       this.camera.setViewOffset(width, height, 0, height * 0.22, width, height);
     }
@@ -312,7 +322,7 @@ export class CampusViewer {
   fit(bounds, animate = true, direction = HOME_DIRECTION) {
     const box = bounds instanceof THREE.Box3 ? bounds : boxFromData(bounds);
     const center = box.getCenter(new THREE.Vector3());
-    const mobileDetail = this.container.clientWidth < 700 && this.activeCode;
+    const mobileDetail = mobileLayout.matches && this.activeCode;
     const up = new THREE.Vector3(0, 1, 0);
     const right = new THREE.Vector3().crossVectors(up, direction);
     // An exactly vertical view still needs a horizontal frame for fitting bounds.
@@ -387,7 +397,7 @@ export class CampusViewer {
     delete this.canvas.dataset.interiorSpace;
     delete this.canvas.dataset.detailReady;
     this.campus.visible = true;
-    this.controls.maxPolarAngle = Math.PI * 0.49;
+    this.controls.maxPolarAngle = Math.PI;
     this.controls.minDistance = 0.25;
     this.camera.fov = 38;
     this.mode = "campus";
@@ -491,7 +501,7 @@ export class CampusViewer {
     this.camera.fov = view.fov;
     this.updateCameraProjection();
     this.controls.minDistance = 0.15;
-    if (this.container.clientWidth < 700) {
+    if (mobileLayout.matches) {
       // Keep the doorway in the free upper area above the mobile detail sheet.
       target.y -= 0.6;
       position.y -= 0.6;
@@ -566,14 +576,14 @@ export class CampusViewer {
     this.fitSunShadow(boxFromData(interior.interiorBounds));
     this.toggleContext(this.contextVisible);
     this.updateCameraProjection();
-    this.controls.maxPolarAngle = Math.PI * 0.94;
+    this.controls.maxPolarAngle = Math.PI;
     this.controls.minDistance = 0.15;
     this.renderer.shadowMap.needsUpdate = true;
     if (interior.interiorView) {
       const view = interior.interiorView;
       this.camera.fov = view.fov;
       this.updateCameraProjection();
-      if (interior.interiorStudy && this.container.clientWidth < 700) {
+      if (interior.interiorStudy && mobileLayout.matches) {
         const direction = new THREE.Vector3(...view.position)
           .sub(new THREE.Vector3(...view.target)).normalize();
         this.fit(interior.interiorBounds, true, direction);
@@ -726,6 +736,39 @@ export class CampusViewer {
     );
   }
 
+  trackPointer(event) {
+    const start = this.pointerStart;
+    // Remember the whole gesture, including drags that return to their origin.
+    if (start?.id === event.pointerId &&
+        Math.hypot(event.clientX - start.x, event.clientY - start.y) > 6) {
+      start.moved = true;
+    }
+  }
+
+  focusSurface(event) {
+    if (!this.ready || !this.activeCode || event.button !== 0) return;
+    const root = this.activeDetail?.group ??
+      (this.activeInterior ? this.interiors.get(this.activeInterior.key) :
+        this.exteriors.get(this.activeCode) ?? this.groups.get(this.activeCode));
+    if (!root?.visible) return;
+    const meshes = [];
+    root.traverseVisible(object => { if (object.isMesh) meshes.push(object); });
+    const rect = this.canvas.getBoundingClientRect();
+    this.pointer.set(
+      (event.clientX - rect.left) / rect.width * 2 - 1,
+      -(event.clientY - rect.top) / rect.height * 2 + 1,
+    );
+    this.raycaster.setFromCamera(this.pointer, this.camera);
+    const hit = this.raycaster.intersectObjects(meshes, false).find(hit =>
+      this.renderer.clippingPlanes.every(plane => plane.distanceToPoint(hit.point) >= 0));
+    if (!hit || hit.distance <= this.controls.minDistance) return;
+    this.transition = null;
+    // Keep the observer in place; subsequent rotation orbits the chosen detail.
+    this.controls.target.copy(hit.point);
+    this.controls.update();
+    this.needsRender = true;
+  }
+
   pick(event) {
     if (
       !this.ready ||
@@ -737,6 +780,8 @@ export class CampusViewer {
     const start = this.pointerStart;
     this.pointerStart = null;
     if (
+      start.moved ||
+      event.detail > 1 ||
       start.id !== event.pointerId ||
       Math.hypot(event.clientX - start.x, event.clientY - start.y) > 6 ||
       performance.now() - start.time > 600
@@ -754,7 +799,8 @@ export class CampusViewer {
     if (!hit) return;
     let object = hit.object;
     while (object && !object.userData.buildingCode) object = object.parent;
-    if (object) this.onPick(object.userData.buildingCode);
+    if (object && object.userData.buildingCode !== this.activeCode)
+      this.onPick(object.userData.buildingCode);
   }
 
   onKey(event) {
@@ -797,7 +843,7 @@ export class CampusViewer {
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     const occupied = [];
-    const mobileDetail = width < 700 && this.activeCode;
+    const mobileDetail = mobileLayout.matches && this.activeCode;
     const ordered = [...this.labels].sort(
       (a, b) =>
         Number(b.code === this.activeCode) - Number(a.code === this.activeCode),
