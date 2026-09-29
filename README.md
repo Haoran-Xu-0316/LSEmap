@@ -97,7 +97,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current source and build target edition 24. Check the live `/release.json`
+The current local source and build target is edition 43. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
@@ -127,6 +127,12 @@ Requires Node.js 22.12 or newer.
 npm ci
 npm run dev
 ```
+
+Gallery stills are generated with the same `CampusViewer`, model assets, materials
+and lighting as the interactive map. After changing models, viewer rendering or
+gallery camera presets, run `npm run gallery` before building. The build rejects
+stale renderer/model signatures. Native Cycles renders are offline archives and
+are not published as website detail images.
 
 For the production build:
 
