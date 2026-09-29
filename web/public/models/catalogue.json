@@ -1,6 +1,6 @@
 {
-  "version": "24",
-  "sourceModelSha256": "298813ccfcf293246d8859b8ae3f63864fac98a613a014ee632bed257b27975e",
+  "version": "43",
+  "sourceModelSha256": "3e467482e8964fe02601184dc907012933d9c35083b6040a748e1d1447ba0347",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -42,9 +42,9 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
-        "status": "refined",
-        "addedObjects": 55
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
       },
       "interiorView": {
         "position": [
@@ -137,7 +137,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -167,10 +167,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-2102bf70516d.glb",
-        "bytes": 8811216,
+        "url": "/models/details/cbg-exterior-5bf87a3bb874.glb",
+        "bytes": 8818524,
         "triangles": 833292,
-        "sha256": "2102bf70516d3424f52d0a004463d1f5a151f8926020107d71dcf0c70d744c96",
+        "sha256": "5bf87a3bb874e8f2a0768db8923914ca40aee3b77838b71b5afa09ec2f89504f",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -269,22 +269,41 @@
         "min": [
           -138.37171936035156,
           0.0,
-          -101.94637298583984
+          -101.81769561767578
         ],
         "max": [
-          -82.46043395996094,
-          29.0,
+          -82.27122497558594,
+          32.14500045776367,
           -53.928897857666016
         ]
       },
       "interior": true,
+      "exteriorDirection": [
+        0.7772497534751892,
+        0.5449971556663513,
+        -0.3144214451313019
+      ],
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -73,
+          8,
+          -93
+        ],
+        "target": [
+          -89,
+          4,
+          -86
+        ],
+        "fov": 38
+      },
       "localRefinement": {
         "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
         "newComponents": 2784,
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -314,19 +333,19 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-bcea3e812739.glb",
-        "bytes": 3025172,
-        "triangles": 260898,
-        "sha256": "bcea3e8127390b4e556b7df3e216835aaf861c5fae69be54c720bca1fd833233",
+        "url": "/models/details/ckk-exterior-dfb4006cd556.glb",
+        "bytes": 2681600,
+        "triangles": 233288,
+        "sha256": "dfb4006cd556cbdea452eedec518be2b37c767c6eeb3778f19c6bd588a574c06",
         "bounds": {
           "min": [
             -138.37171936035156,
             -0.15000000596046448,
-            -101.94637298583984
+            -101.81769561767578
           ],
           "max": [
-            -82.46043395996094,
-            29.0,
+            -82.27122497558594,
+            32.14500045776367,
             -53.928897857666016
           ]
         }
@@ -441,7 +460,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -471,10 +490,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-3de6b534942a.glb",
-        "bytes": 820204,
-        "triangles": 71704,
-        "sha256": "3de6b534942a5880a4c8d9ec160ed334470f85465dc8c677408b0f5a3d3394b6",
+        "url": "/models/details/clm-exterior-b84eeafceedd.glb",
+        "bytes": 823348,
+        "triangles": 71968,
+        "sha256": "b84eeafceeddac435542a4580e2c128adc70dc4c16f9ac489c213ec85fa62193",
         "bounds": {
           "min": [
             99.23820495605469,
@@ -541,7 +560,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -585,10 +604,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-d13dee626dd7.glb",
-        "bytes": 901044,
+        "url": "/models/details/col-exterior-1f8d81321031.glb",
+        "bytes": 901056,
         "triangles": 73444,
-        "sha256": "d13dee626dd79690b1633e99f78b3294f779917248564531456b470a7a2f2c33",
+        "sha256": "1f8d8132103158f53740d2f126b01ad4796aed1e482fbdb2d0d90137ce2be853",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -655,7 +674,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -699,10 +718,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-4d88ac0995a3.glb",
-        "bytes": 530964,
-        "triangles": 45082,
-        "sha256": "4d88ac0995a3d176db117a79d24c6db71516013d6ae35b5138f5ce57d2a049d2",
+        "url": "/models/details/con-exterior-c62479b948f4.glb",
+        "bytes": 563932,
+        "triangles": 47188,
+        "sha256": "c62479b948f4c6dfc1f7b411c977ecb11e969d2c5b8791f7483b38ffc81e63e7",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -784,7 +803,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -884,7 +903,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -999,8 +1018,8 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
-        "status": "reviewed-no-change",
+        "version": 43,
+        "status": "refined",
         "addedObjects": 0
       },
       "interiorView": {
@@ -1029,10 +1048,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-36b3899ccbb6.glb",
-        "bytes": 1919516,
+        "url": "/models/details/kgs-exterior-7d82b4dcc22c.glb",
+        "bytes": 1937532,
         "triangles": 142925,
-        "sha256": "36b3899ccbb6a1fa8fa9955cb3c0261236c563443b4af10c65a646817ac09038",
+        "sha256": "7d82b4dcc22cda27258bb9130c1082b4d834e794d891cbbfae05096b9ece26b3",
         "bounds": {
           "min": [
             -33.59806823730469,
@@ -1099,7 +1118,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1144,10 +1163,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-8e54d73ab627.glb",
-        "bytes": 444152,
+        "url": "/models/details/ksw-exterior-309e4837359f.glb",
+        "bytes": 449524,
         "triangles": 31984,
-        "sha256": "8e54d73ab627628927e16fbe5bfc1b8e035e332ee2bbf317a86dcbdbeb3dc3a4",
+        "sha256": "309e4837359f128cfa9aeeb6aa1ee2fc7d4a65c0e7d722dcb409fb0ea7713c41",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -1229,7 +1248,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1302,14 +1321,14 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -34.48431396484375,
+          -34.67495346069336,
           0.0,
-          -25.687063217163086
+          -26.038593292236328
         ],
         "max": [
-          -15.502896308898926,
-          13.649999618530273,
-          -8.528922080993652
+          -15.446763038635254,
+          13.5,
+          -8.325874328613281
         ]
       },
       "interior": false,
@@ -1322,14 +1341,14 @@
       "detailView": {
         "label": "入口细节",
         "position": [
-          -21.234198123019937,
-          3.7,
-          -32.25497290348563
+          -17.7,
+          3.9,
+          -31.7
         ],
         "target": [
-          -25.362044894498588,
-          2.08,
-          -23.256590651030873
+          -22.4,
+          2.1,
+          -22.1
         ],
         "fov": 42
       },
@@ -1339,25 +1358,26 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
+      "closeupImage": "lch-entrance",
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-dc550b7a1c36.glb",
-        "bytes": 1126440,
-        "triangles": 87614,
-        "sha256": "dc550b7a1c36c037bd97c5c22cd60689f9ec11df374f3a0d7a0e2b01079dc604",
+        "url": "/models/details/lch-exterior-1b4645d9cef7.glb",
+        "bytes": 1198732,
+        "triangles": 93164,
+        "sha256": "1b4645d9cef74243ce28679e09bc9bf194b09dba26f13e175ddbc93fe73d097c",
         "bounds": {
           "min": [
-            -34.47998046875,
+            -34.67495346069336,
             0.0,
-            -25.682403564453125
+            -26.033891677856445
           ],
           "max": [
-            -15.507649421691895,
-            13.649999618530273,
-            -8.53351879119873
+            -15.446763038635254,
+            13.5,
+            -8.325874328613281
           ]
         }
       }
@@ -1406,7 +1426,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1496,7 +1516,7 @@
         "scope": "Schematic construction boundary only, not the current workstage"
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       }
@@ -1541,7 +1561,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1642,7 +1662,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1710,7 +1730,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1755,24 +1775,29 @@
       "status": "detailed",
       "bounds": {
         "min": [
-          24.92513656616211,
+          24.830078125,
           0.0,
           -41.29721450805664
         ],
         "max": [
           114.51506042480469,
-          27.315105438232422,
+          32.105308532714844,
           27.600141525268555
         ]
       },
       "interior": true,
+      "exteriorDirection": [
+        -0.5680005550384521,
+        0.4820992350578308,
+        0.6670500040054321
+      ],
       "localRefinement": {
         "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
         "newComponents": 2940,
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1780,104 +1805,104 @@
         {
           "id": "LG",
           "label": "LG层：电脑与政府出版物",
-          "minHeight": -0.02,
-          "maxHeight": 3.92,
-          "scope": "官方LG导览图支持电脑、分组学习与政府出版物区域；家具为估算。沿用既有最低层，地下绝对高程尚未校准。"
+          "minHeight": -4.02,
+          "maxHeight": -0.08,
+          "scope": "官方导览图支持电脑、分组学习与政府出版物区域。LG位于G层下方，地下深度按4米层高估算，非测绘标高。"
         },
         {
           "id": "G",
           "label": "G层：LSE LIFE学习区",
-          "minHeight": 3.98,
-          "maxHeight": 7.92,
-          "scope": "依据官方G层导览图补充LSE LIFE开放学习工作区；未重建服务柜台与封闭房间，保留原有估算家具。"
+          "minHeight": -0.02,
+          "maxHeight": 3.92,
+          "scope": "依据官方G层导览图布置LSE LIFE学习区，已移除无依据的通用书架；服务柜台与封闭房间尚未重建。"
         },
         {
           "id": "1",
           "label": "1层：主要藏书与课程藏书",
-          "minHeight": 7.98,
-          "maxHeight": 11.92,
+          "minHeight": 3.98,
+          "maxHeight": 7.92,
           "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
         },
         {
           "id": "2",
           "label": "2层：经济类藏书与期刊",
-          "minHeight": 11.98,
-          "maxHeight": 15.92,
+          "minHeight": 7.98,
+          "maxHeight": 11.92,
           "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
         },
         {
           "id": "3",
           "label": "3层：社会科学藏书与期刊",
-          "minHeight": 15.98,
-          "maxHeight": 19.92,
+          "minHeight": 11.98,
+          "maxHeight": 15.92,
           "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
         },
         {
           "id": "4",
           "label": "4层：专题阅览与分组学习",
-          "minHeight": 19.98,
-          "maxHeight": 22.9,
+          "minHeight": 15.98,
+          "maxHeight": 18.9,
           "scope": "依据官方4层图补充本科生、研究生、Women’s Library阅览与分组学习区域；不推断PhD Academy、保密资料室或5层员工空间。"
         }
       ],
-      "interiorSectionScope": "LG、G、1、2、3、4共6个公共楼层依照官方导览图分配功能区，沿用原模型相对层级估算；LG地下绝对高程尚未校准，中庭与平面位置存在偏差，外围区域定位及家具尺寸、数量均为估算，非完整实测布局。",
+      "interiorSectionScope": "LG、G、1、2、3、4共6层功能分区。G层对齐入口基准，LG位于其下；层高暂按4米估算。中庭已按导览图近似配准；各层开口形状、房间边界及家具尺度仍待校准，非实测布局。",
       "interiorView": {
         "position": [
-          69.63214874267578,
-          1.5,
-          -10.39675235748291
+          75.5933837890625,
+          -2.5,
+          -9.662314414978027
         ],
         "target": [
-          69.63214874267578,
-          21.09505844116211,
-          -14.400962829589844
+          75.5933837890625,
+          17.09505844116211,
+          -13.666524887084961
         ],
         "fov": 65
       },
       "interiorBounds": {
         "min": [
           25.21265411376953,
-          -0.019999999552965164,
+          -4.019999980926514,
           -41.15494155883789
         ],
         "max": [
           114.29000091552734,
-          27.315105438232422,
+          32.105308532714844,
           27.380033493041992
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-e569ba8442d3.glb",
-        "bytes": 7422420,
-        "triangles": 813092,
-        "sha256": "e569ba8442d36bcd08af591bc0fbd22611c8d21e9e5e8e05b90f2ee856afd989",
+        "url": "/models/details/lrb-exterior-792b70673bc8.glb",
+        "bytes": 6138012,
+        "triangles": 691296,
+        "sha256": "792b70673bc83e50328097707448224da43f3a3239445d9226611db3d795a2af",
         "bounds": {
           "min": [
-            24.92513656616211,
-            -0.019999999552965164,
+            24.830078125,
+            -1.4901161193847656e-08,
             -41.29721450805664
           ],
           "max": [
             114.51506042480469,
-            27.315105438232422,
+            32.105308532714844,
             27.600141525268555
           ]
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-ddc03d541561.glb",
-        "bytes": 4976512,
-        "triangles": 602848,
-        "sha256": "ddc03d5415615fc54a54be188ca4931a41346e60f9b81704f1caa831143825cf",
+        "url": "/models/details/lrb-interior-5ab20cf90fe2.glb",
+        "bytes": 4457480,
+        "triangles": 564234,
+        "sha256": "5ab20cf90fe25aafc250b0df31d39507e6a4171ad832eefe8dfc7b9a9ecc11d6",
         "bounds": {
           "min": [
             25.21265411376953,
-            -0.019999999552965164,
+            -4.019999980926514,
             -41.15494155883789
           ],
           "max": [
             114.29000091552734,
-            27.315105438232422,
+            32.105308532714844,
             27.380033493041992
           ]
         }
@@ -1927,7 +1952,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -1957,10 +1982,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-21742893b0e5.glb",
-        "bytes": 7577128,
-        "triangles": 713016,
-        "sha256": "21742893b0e535ea3013c33bc095abeacf629f731171732e854d92442a153e41",
+        "url": "/models/details/mar-exterior-c7fe1a8a749e.glb",
+        "bytes": 8810964,
+        "triangles": 822168,
+        "sha256": "c7fe1a8a749e5a2518be5b3ad432cb215a4502c5b20e973636f85773fa104f83",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -1975,10 +2000,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-11915d8f9c7f.glb",
-        "bytes": 451836,
+        "url": "/models/details/mar-interior-9d1561f4bddf.glb",
+        "bytes": 453236,
         "triangles": 46403,
-        "sha256": "11915d8f9c7f752765cb0e437ff88f492a63592edb40c674da3eb6c4be5c1797",
+        "sha256": "9d1561f4bddff952fcbad7aaf5ccba8988fce3a786ad46f62999288ad9ef555f",
         "bounds": {
           "min": [
             -44.53135299682617,
@@ -2084,8 +2109,8 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
-        "status": "reviewed-no-change",
+        "version": 43,
+        "status": "refined",
         "addedObjects": 0
       },
       "interiorView": {
@@ -2114,10 +2139,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-f52b3217aa60.glb",
-        "bytes": 14006648,
+        "url": "/models/details/old-exterior-787661a333c6.glb",
+        "bytes": 14006780,
         "triangles": 1150859,
-        "sha256": "f52b3217aa60f1e5c79762b8ee43ac3ad6cc01cc79049fadfa5e3db9a91d6d4c",
+        "sha256": "787661a333c601f36adc571c68f5f81cdf2815949b360dae00b4fbb33cd0ff07",
         "bounds": {
           "min": [
             -39.15880584716797,
@@ -2184,7 +2209,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2284,7 +2309,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2399,7 +2424,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2500,7 +2525,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2601,7 +2626,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2711,7 +2736,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2769,7 +2794,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -2879,9 +2904,9 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
-        "status": "refined",
-        "addedObjects": 53
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
       },
       "interiorBounds": {
         "min": [
@@ -2896,10 +2921,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-92354579cbdb.glb",
-        "bytes": 9677588,
+        "url": "/models/details/saw-exterior-22179f05cc82.glb",
+        "bytes": 9677716,
         "triangles": 1047480,
-        "sha256": "92354579cbdb9042820b70be3a0ed82c7d5745f79c89ed14e5023797d35a26e8",
+        "sha256": "22179f05cc82cb72707de987345f1933008e31366e1bb891552c351b7dc495de",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -3019,7 +3044,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
@@ -3076,8 +3101,8 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
-        "status": "reviewed-no-change",
+        "version": 43,
+        "status": "refined",
         "addedObjects": 0
       },
       "interiorView": {
@@ -3106,10 +3131,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-669327f0001e.glb",
-        "bytes": 10845036,
+        "url": "/models/details/sal-exterior-3dc371649297.glb",
+        "bytes": 10845352,
         "triangles": 902128,
-        "sha256": "669327f0001e78540c47d1cd74e2cebb805a7d1cda66f02ead9dc2a9d907d520",
+        "sha256": "3dc37164929798a8d7c58bf560153a0f44389e9bd21f8fc9add2708082380014",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -3191,7 +3216,7 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 24,
+        "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
