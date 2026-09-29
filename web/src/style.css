@@ -334,6 +334,7 @@ canvas {
   background: var(--glass);
   box-shadow: var(--control-shadow);
   display: flex;
+  gap: 6px;
   padding: 6px;
   border-radius: 14px;
   align-items: center;
@@ -922,6 +923,7 @@ dialog::backdrop {
     top: 17px;
   }
   .map-toolbar {
+    gap: 4px;
     bottom: 45px;
     padding: 4px;
     max-width: calc(100% - 20px);
@@ -1049,7 +1051,7 @@ dialog::backdrop {
 .interior-sections p { color: var(--muted); line-height: 1.6; margin: 8px 0 0; }
 
 /* Frosted surfaces keep controls legible over the campus without tinting them. */
-.masthead, .sidebar, .map-toolbar, .map-label,
+.masthead, .sidebar, .map-toolbar,
 .stage.detail-open .scene-heading {
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
@@ -1058,12 +1060,12 @@ dialog::backdrop {
 .map-toolbar button:hover { background: var(--glass-hover); }
 .map-toolbar button[aria-pressed="true"]:hover { background: var(--control-active); }
 @supports not (backdrop-filter: blur(1px)) {
-  .masthead, .sidebar, .map-toolbar, .map-label,
+  .masthead, .sidebar, .map-toolbar,
   .stage.detail-open .scene-heading { background: #f5f5f2; }
   .map-label.is-selected { background: var(--control-active); }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .masthead, .sidebar, .map-toolbar, .map-label,
+  .masthead, .sidebar, .map-toolbar,
   .stage.detail-open .scene-heading {
     background: #f5f5f2;
     -webkit-backdrop-filter: none;
@@ -1071,3 +1073,7 @@ dialog::backdrop {
   }
   .map-label.is-selected { background: var(--control-active); }
 }
+
+/* Moving labels avoid a separate backdrop blur pass on every animation frame. */
+.map-label { background: rgb(255 255 255 / 95%); }
+.map-label.is-selected { background: var(--control-active); }
