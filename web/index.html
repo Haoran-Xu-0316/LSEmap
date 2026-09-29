@@ -44,9 +44,7 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
       <aside id="sidebar" class="sidebar" aria-label="建筑目录与详情">
         <section id="index-panel" class="index-panel">
           <div class="index-heading">
-            <p class="location">HOLBORN, LONDON</p>
             <h1>校园漫游</h1>
-            <p>从一栋建筑，走进一所大学。</p>
           </div>
           <label class="search-box"
             ><svg viewBox="0 0 24 24" aria-hidden="true">
@@ -54,20 +52,11 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
               <path d="m16 16 5 5" /></svg
             ><input
               id="building-search"
+              aria-label="搜索楼名或代码"
               type="search"
               placeholder="搜索楼名或代码"
               autocomplete="off"
           /></label>
-          <div class="index-meta">
-            <span id="result-count">建筑目录</span
-            ><button id="detail-filter" aria-pressed="false">
-              仅看深化模型
-            </button>
-          </div>
-          <div class="interior-filter-row">
-            <button id="interior-filter" aria-pressed="false">有内部空间</button>
-            <span id="interior-count"></span>
-          </div>
           <div
             id="building-list"
             class="building-list"
@@ -76,12 +65,6 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
           <p id="empty-search" class="empty-state" hidden>
             未找到这栋建筑。<br />试试楼宇代码，如MAR。
           </p>
-          <footer class="index-footer">
-            <span class="legend-dot"></span>已深化模型<span
-              class="secondary-legend"
-              >另含沿街立面与待确认条目</span
-            >
-          </footer>
         </section>
         <section
           id="detail-panel"
@@ -94,9 +77,9 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
         <div id="canvas-container"></div>
         <div id="labels" class="labels" aria-label="地图上的建筑"></div>
         <div class="scene-heading">
-          <p id="scene-kicker">LSE CAMPUS</p>
+          <p id="scene-kicker" hidden>LSE CAMPUS</p>
           <h2 id="scene-title">伦敦的这一角</h2>
-          <p id="scene-subtitle">拖动旋转，点击建筑探索</p>
+          <p id="scene-subtitle" hidden>拖动旋转，点击建筑探索</p>
         </div>
         <div id="loading" class="loading" role="status">
           <span class="loading-indicator" aria-hidden="true"></span
@@ -164,7 +147,7 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
         </div>
         <div class="map-caption">
           <span id="view-mode">校园全景</span
-          ><span class="gesture-hint">拖动旋转 / 双击设旋转中心</span>
+          >
         </div>
         <a
           class="attribution"
