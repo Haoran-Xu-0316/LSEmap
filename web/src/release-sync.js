@@ -20,8 +20,11 @@ export function startReleaseSync() {
       const model = document.documentElement.dataset.modelRevision;
       const nextModel = release.sourceModelSha256;
       const modelChanged = model && /^[a-f0-9]{64}$/.test(nextModel || '') && model !== nextModel;
-      if (stopped || typeof next !== 'string' || !/^\/assets\/[\w.-]+\.js$/.test(next) || (next === current && !modelChanged)) return;
-      const identity = `${next}:${nextModel || ''}`;
+      const assetRevision = document.documentElement.dataset.modelAssetRevision;
+      const nextAssets = release.modelAssetsSha256;
+      const assetsChanged = assetRevision && /^[a-f0-9]{64}$/.test(nextAssets || '') && assetRevision !== nextAssets;
+      if (stopped || typeof next !== 'string' || !/^\/assets\/[\w.-]+\.js$/.test(next) || (next === current && !modelChanged && !assetsChanged)) return;
+      const identity = `${next}:${nextModel || ''}:${nextAssets || ''}`;
       // A transient CDN mismatch must not trap the visitor in a reload loop.
       const key = 'lsemap-release-reload';
       const previous = JSON.parse(sessionStorage.getItem(key) || 'null');
