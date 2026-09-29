@@ -44,8 +44,8 @@ export const buildingDetails = {
     images: [["lak-exterior", "Lakatos转角砖石立面与坡顶"], ["lak-windows", "广场侧拱窗、细窗格与石材窗饰"]],
   },
   LCH: {
-    description: "Lincoln Chambers的木门入口退入石材门廊，两侧拱口朝向中央。绿色题字牌、卷饰、木门镶板与棋盘石地面构成近看层次。",
-    note: "重点深化实拍可见入口；门廊进深、装饰尺寸仍为估计，上层保留此前的简化立面，未建立内部。",
+    description: "Lincoln Chambers中央拱窗与上层三联窗连接两侧石材凸窗，红棕砖墙与浅色窗框相间。首层宽店窗围合退入式三拱门廊，保留绿色铭牌、木门与棋盘地面。",
+    note: "沿街立面依据LSE2025年照片及建筑名录重建；立面配准、尺度和装饰尺寸仍为估计。背面与屋顶简化，屋顶窗位置未确认，未建立内部。",
     images: [["lch-exterior", "Lincoln Chambers沿街立面"], ["lch-entrance", "凹入门廊、三面拱口与棋盘地面"]],
   },
   "50L": {
@@ -143,7 +143,7 @@ export const buildingDetails = {
   },
   CON: {
     description:
-      "Connaught House的Aldwych入口由深色石材门墩、层叠石檐和后退的玻璃门构成，门框、拉手与台阶保留入口的进深。",
+      "Connaught House的Aldwych入口以下部灰色花岗岩、上部浅色石材和层叠石檐形成层次，后退的玻璃门保留门廊进深。",
     note: "入口依据实拍重建，上层窗列仍有估计。内部新增CON.7.04会议室样本，依据历史照片和平面图研究，不代表当前布局或整栋内部。",
     images: [
       ["con-entrance", "Connaught House凹入门廊"],
@@ -152,8 +152,8 @@ export const buildingDetails = {
     ],
   },
   MAR: {
-    description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。可近看入口门框、前场灯柱，再进入Grand Hall查看树状柱与弧形楼梯。",
-    note: "立面构件、入口、楼梯半径与家具布局依据实拍比例估计；保留公共大厅研究，未复刻全部楼层。",
+    description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。上部遮阳片前缘收窄，北侧退台补充浅色铺装、金属栏杆与局部种植。可近看入口，再进入Grand Hall查看树状柱与弧形楼梯。",
+    note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
     images: [
       ["mar-exterior", "Marshall Building北立面"],
       ["mar-entrance", "斜向入口、露台玻璃与前场灯柱"],
@@ -172,21 +172,21 @@ export const buildingDetails = {
   },
   CBG: {
     description:
-      "Centre Building以竖向遮阳构件组织立面，面向Houghton Street形成开放的首层空间。",
+      "Centre Building以红色为主、橙色侧面的遮阳构件组织立面，配合灰白框架与玻璃幕墙。面向Houghton Street形成开放的首层空间。",
     note: "已深化遮阳构件与局部公共内部，尺寸和室内位置仍含估计。",
     images: [["cbg-exterior", "Centre Building遮阳构件"]],
   },
   LRB: {
     description:
-      "图书馆的螺旋坡道、垂直交通与顶部采光共同构成中庭。切换公共内部可单独观察空间关系。",
-    note: "坡道半径、标高和书架布置为研究性估计，未恢复全部藏书布局。",
-    images: [["lrb-interior", "图书馆螺旋坡道与电梯"]],
+      "广场侧立面以宽幅分格窗、砖墙和浅色石带组成。顶部朝北斜切的圆顶为螺旋坡道及玻璃电梯中庭采光。",
+    note: "广场侧参考2008年照片，窗距与层高为估计；2025年计划更换的闸机及新增屋顶设备布局未核实。",
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-interior", "图书馆螺旋坡道与电梯"]],
   },
   CKK: {
     description:
-      "历史建筑外壳中嵌入明亮的公共中庭，木饰面、楼梯和天窗构成空间的主要层次。",
-    note: "中庭家具、细部尺度和部分顶部结构根据公开图片估计。",
-    images: [["ckk-interior", "Cheng Kin Ku公共中庭"]],
+      "面向Lincoln’s Inn Fields的石材立面以中央拱形门厅、两侧窄窗组和双排老虎窗坡顶组成。内部设木饰面公共中庭与玻璃天窗。",
+    note: "屋顶及中庭尺寸依据照片估计。2025/26计划中的Cafe54改造后布局尚未核实。",
+    images: [["ckk-exterior", "Cheng Kin Ku正立面与坡屋顶"], ["ckk-entrance", "中央拱形采光窗与柱式门厅"], ["ckk-interior", "Cheng Kin Ku公共中庭"]],
   },
   OLD: {
     description:
