@@ -1,6 +1,6 @@
 import "./style.css";
 import { startReleaseSync } from "./release-sync.js";
-import { detailFor, statusNames } from "./content.js";
+import { detailFor } from "./content.js";
 
 const $ = (selector) => document.querySelector(selector);
 const sidebar = $("#sidebar");
@@ -15,8 +15,6 @@ let modelAssetRevision = "";
 let galleryDigests = new Map();
 let viewer;
 let current = null;
-let detailedOnly = false;
-let interiorsOnly = false;
 let gallery = [];
 let galleryIndex = 0;
 let loadAttempt = 0;
@@ -39,8 +37,6 @@ function renderList() {
   const query = $("#building-search").value.trim().toLocaleLowerCase();
   const filtered = buildings.filter(
     (building) =>
-      (!detailedOnly || building.status === "detailed") &&
-      (!interiorsOnly || building.interior) &&
       `${building.code} ${building.name} ${building.address}`
         .toLocaleLowerCase()
         .includes(query),
@@ -51,32 +47,20 @@ function renderList() {
     row.dataset.code = building.code;
     row.setAttribute(
       "aria-label",
-      `${building.code} ${building.name}，${statusNames[building.status]}${building.interior ? "，有局部内部" : "，暂无内部模型"}`,
+      `${building.code} ${building.name}`,
     );
     row.append(
       element("span", "building-code", building.code),
       element("span", "building-name", building.name),
     );
-    if (building.interior) {
-      row.querySelector(".building-name").append(element("span", "interior-hint",
-        building.interiorStudy ? building.interiorStudy.label : "公共空间研究"));
-    }
-    const marker = element(
-      "span",
-      building.status === "detailed" ? "status-dot" : "row-arrow",
-      building.status === "detailed" ? "" : "›",
-    );
+    const marker = element("span", "row-arrow", "›");
     marker.setAttribute("aria-hidden", "true");
     row.append(marker);
     row.addEventListener("click", () => selectBuilding(building.code));
     list.append(row);
   }
-  $("#result-count").textContent = `${filtered.length}个楼宇条目`;
   $("#empty-search").hidden = Boolean(filtered.length);
-  $("#empty-search").textContent = interiorsOnly
-    ? "没有符合条件的内部模型。可取消筛选，继续查看建筑外观。"
-    : "未找到这栋建筑。试试楼宇代码，如MAR。";
-  $("#interior-count").textContent = `${buildings.filter(building => building.interior).length}栋可查看局部内部`;
+
 }
 
 function showGallery(images, index) {
@@ -125,7 +109,6 @@ function renderDetail(building) {
     photo.addEventListener("click", () => showGallery(details.images, 0));
     detailPanel.append(photo);
   }
-  detailPanel.append(element("p", "model-state", statusNames[building.status]));
   const actions = element("div", "detail-actions");
   let openInterior;
   let requestedInteriorSpace = null;
@@ -264,10 +247,6 @@ function renderDetail(building) {
     section.append(label, select, scope);
     detailPanel.append(section);
   }
-  if (building.interiorStudy) {
-    detailPanel.append(element("p", "detail-address room-study-caption",
-      `${building.interiorStudy.label}，历史布局样本，尺寸估算。`));
-  }
   if (building.detailedExterior && $("#fallback").hidden) {
     const quality = element("div", "detail-quality");
     const status = element("span", "", "正在准备建筑细节…");
@@ -278,6 +257,7 @@ function renderDetail(building) {
     retry.hidden = true;
     retry.addEventListener("click", () => viewer?.retryDetails(building));
     quality.append(status, retry);
+    quality.hidden = true;
     detailPanel.append(quality);
   }
   detailPanel.append(element("p", "detail-description", details.description));
@@ -312,6 +292,7 @@ function updateDetailQuality({ code, kind, state }) {
   const status = $("#detail-quality-status");
   if (!status) return;
   const subject = kind === "interior" ? "内部细节" : "外观细节";
+  status.parentElement.hidden = state !== "error";
   status.textContent = state === "ready" ? `${subject}已加载`
     : state === "error" ? "细节加载失败，当前显示基础模型"
     : `正在加载${subject}，可继续浏览…`;
@@ -476,16 +457,6 @@ async function start() {
 }
 
 $("#building-search").addEventListener("input", renderList);
-$("#detail-filter").addEventListener("click", () => {
-  detailedOnly = !detailedOnly;
-  $("#detail-filter").setAttribute("aria-pressed", String(detailedOnly));
-  renderList();
-});
-$("#interior-filter").addEventListener("click", () => {
-  interiorsOnly = !interiorsOnly;
-  $("#interior-filter").setAttribute("aria-pressed", String(interiorsOnly));
-  renderList();
-});
 $("#index-toggle").addEventListener("click", () => {
   if (current) {
     overview(true);
