@@ -84,3 +84,42 @@ relief. Isolated exteriors use a neutral shadow-receiving ground; the campus
 view retains the geographic site. This is illustrative lighting, not a solar study.
 Wheel zoom follows the pointer. Button presses accumulate over a short transition;
 close inspection permits a 0.15–0.25m orbit radius and campus zoom extends to 2400m.
+
+## Surface finishes
+
+Keep each source material's base colour unless a building-specific photo review documents a correction. Separate glass, warm metals and lead
+with material-specific roughness and reflection strength. Stone gets restrained
+procedural grain where no source surface descriptor exists. Brick joints receive
+a subtle relief treatment; fine grain fades below pixel resolution in the overview.
+These browser finish adjustments are artistic approximations, not measured
+weathering or a change to the archived Blender geometry.
+
+MAR's exterior palette is separately corrected against the archived Nick Kane
+north-elevation photographs, MAR_mar_kane_01 and MAR_mar_kane_02. Use a lighter
+neutral precast-concrete tone and deeper blue-grey window panes; these visual
+estimates do not imply calibrated reflectance or alter the separate interior model.
+Reference: https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/
+
+Exterior shadow maps use a 0.04m normal bias and -0.0002 depth bias.
+MAR roof review at desktop and phone sizes confirmed this removes self-shadow
+striping while retaining facade recess and ground shadows.
+
+## Edition 26 exterior palette
+
+CBG follows the user's explicit red-dominant, orange-secondary direction. Broad
+solar-blade faces are red; narrow returns are orange. Pale structural members
+and glass retain distinct finishes. This palette is stored in the native model
+and exported into both campus and detailed assets, not applied only on selection.
+MAR warm concrete and blue-grey glazing, and SAW restrained red brick with
+neutral mortar, are now stored in source materials as photo-guided visual estimates.
+Reference photos: MAR Kane 01/02; SAW Photography909 01/02. No measured colour
+calibration or complete architectural reconstruction is claimed.
+
+## Gallery consistency
+
+Website stills are captured from CampusViewer with the same exported models,
+lighting, tone mapping, shadows and material shaders as the interactive scene.
+The native Cycles gallery is an offline reference only. The renderer signature
+includes camera presets and shared shader code; the model signature includes the
+catalogue and base campus. Build rejects either mismatch. Thumbnail and enlarged
+image URLs use each image's own content digest, including renderer-only changes.
