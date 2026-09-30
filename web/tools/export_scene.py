@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v45.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v46.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage45/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage45/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage46/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage46/building-review.json').read_text())['buildings']}
 material_cache = {}
 
 
@@ -122,7 +122,7 @@ def web_material(source):
         node.inputs['Alpha'].default_value = float(source.get('webOpacity', 0.30))
         material.surface_render_method = 'DITHERED'
     material.diffuse_color = color
-    if full_detail:
+    if full_detail or (source and source.get('siteDetail')):
         descriptor = surface_descriptor(source)
         if descriptor:
             material['surfaceDetail'] = descriptor
@@ -338,7 +338,7 @@ for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_h
     if collection:
         clone_group(collection.all_objects, name, campus_scene)
 export_scene(campus_scene, 'campus.glb')
-for room in json.loads((ROOT / 'result/blender/stage45/room-spaces.json').read_text())['spaces']:
+for room in json.loads((ROOT / 'result/blender/stage46/room-spaces.json').read_text())['spaces']:
     source_scene.collection.children.link(bpy.data.collections[room['collection']])
 for code in ROOM_RECORDS:
     source_scene.collection.children.link(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'])
@@ -443,7 +443,7 @@ for record in metadata:
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
 # Additional rooms retain their own identity instead of replacing the building's hall.
-for room in json.loads((ROOT / 'result/blender/stage45/room-spaces.json').read_text())['spaces']:
+for room in json.loads((ROOT / 'result/blender/stage46/room-spaces.json').read_text())['spaces']:
     record = next(item for item in metadata if item['code'] == room['code'])
     descriptor = export_detail(list(bpy.data.collections[room['collection']].all_objects), room['id'], 'interior')
     study = {'kind':'room-sample', 'label':room['label'], 'scope':room['scope']}
@@ -462,7 +462,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage45/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '45', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '46', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
