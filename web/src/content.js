@@ -188,7 +188,7 @@ export const buildingDetails = {
     description:
       "广场侧立面以宽幅分格窗、砖墙和浅色石带组成。顶部朝北斜切的圆顶为螺旋坡道及玻璃电梯中庭采光。",
     note: "广场侧参考2008年照片，窗距与层高为估计；2025年计划更换的闸机及新增屋顶设备布局未核实。",
-    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza长椅与铺装"]],
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-roof", "斜屋面与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza长椅与铺装"]],
   },
   CKK: {
     description:
