@@ -37,7 +37,7 @@ test('street close-up is accessible from the building gallery',async({page})=>{
  await page.goto('/#MAR');
  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-MAR',{timeout:60000});
  const image=page.locator('.detail-gallery img[src*="portsmouth-street"]');
- await expect(image).toHaveAttribute('src',/v=48-/);
+ await expect(image).toHaveAttribute('src',/v=49-/);
  await image.click();
  await expect(page.locator('#gallery-image')).toHaveAttribute('src',/portsmouth-street/);
 });
