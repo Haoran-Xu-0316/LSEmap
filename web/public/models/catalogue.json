@@ -2,13 +2,13 @@
   "generatedTextures": [
     {
       "name": "globe-map",
-      "sha256": "a6395a5480b1ed25808da8ef84772a6f4c53ae8285a272c7e00268cdfcdcaa34",
+      "sha256": "f99b35dc9be0b09e535020be9e04753344c0de2711ff37547471f6684a04c852",
       "source": "Natural Earth public-domain cartography",
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "46",
-  "sourceModelSha256": "fe6b7ed70ae9df544599799c9ded8633de4657499f6ccbd3847722f94f3e5a60",
+  "version": "48",
+  "sourceModelSha256": "fd7f0867f0e7b6606758ee796dba6209ccf8c2657347d2365fe37c467e2be79f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1990,10 +1990,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-c7fe1a8a749e.glb",
-        "bytes": 8810964,
-        "triangles": 822168,
-        "sha256": "c7fe1a8a749e5a2518be5b3ad432cb215a4502c5b20e973636f85773fa104f83",
+        "url": "/models/details/mar-exterior-415a2e78d74c.glb",
+        "bytes": 8837716,
+        "triangles": 824936,
+        "sha256": "415a2e78d74c851d2c5fa1e8af2569770974aef4eb39a9c11dd7474181c9667d",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -3019,6 +3019,61 @@
             "fov": 50
           },
           "gallery": "saw-denning-interior"
+        },
+        {
+          "id": "saw-three-tuns",
+          "label": "Three Tuns入口与2014平面",
+          "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。",
+          "interiorAsset": "/models/details/saw-three-tuns-interior-ee4bfd3c3197.glb",
+          "detailedInterior": {
+            "url": "/models/details/saw-three-tuns-interior-ee4bfd3c3197.glb",
+            "bytes": 48760,
+            "triangles": 4386,
+            "sha256": "ee4bfd3c31974fe48fb76e6a04857503dd6ef63c7717521ba261421b5a45cfd4",
+            "bounds": {
+              "min": [
+                -5.28000020980835,
+                0.0,
+                -7.028083324432373
+              ],
+              "max": [
+                6.965298652648926,
+                2.8399999141693115,
+                7.617499828338623
+              ]
+            }
+          },
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "Three Tuns入口与2014平面",
+            "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。"
+          },
+          "interiorBounds": {
+            "min": [
+              -5.28000020980835,
+              0.0,
+              -7.028083324432373
+            ],
+            "max": [
+              6.965298652648926,
+              2.8399999141693115,
+              7.617499828338623
+            ]
+          },
+          "interiorView": {
+            "position": [
+              1.0,
+              2.799999952316284,
+              12.0
+            ],
+            "target": [
+              0,
+              1.4,
+              7.5
+            ],
+            "fov": 50
+          },
+          "gallery": "saw-three-tuns-interior"
         }
       ]
     },
