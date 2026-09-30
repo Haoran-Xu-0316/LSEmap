@@ -44,7 +44,7 @@ test('SHF gallery loads the current roof view without errors',async({page})=>{
  await page.goto('/#SHF');
  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-SHF',{timeout:60000});
  const image=page.locator('.detail-gallery img[src*="shf-roof"]');
- await expect(image).toHaveAttribute('src',/v=50-/);await image.click();
+ await expect(image).toHaveAttribute('src',/v=51-/);await image.click();
  await expect(page.locator('#gallery-image')).toHaveAttribute('src',/shf-roof/);
  expect(errors).toEqual([]);
 });
