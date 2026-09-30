@@ -197,8 +197,8 @@ export const buildingDetails = {
   OLD: {
     description:
       "Houghton Street的传统石材立面，以入口、门廊与连续窗列呈现校园历史建筑的尺度。",
-    note: "入口及窗套已深化，雕饰简化。内部提供OLD.4.10阶梯教室历史布局样本，桌椅、标高和尺寸为研究性估计。",
-    images: [["old-exterior", "Old Building入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
+    note: "Clare Market入口补充蓝色窗框、石材分缝、台阶与立体标志，尺寸及位置估计；浮雕人物尚未细化。内部提供OLD.4.10阶梯教室历史布局样本，桌椅、标高和尺寸为研究性估计。",
+    images: [["old-exterior", "Old Building入口"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
   },
   SAL: {
     description:
