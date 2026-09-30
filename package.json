@@ -9,7 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "playwright test",
     "check": "node --check web/src/main.js && node --check web/src/viewer.js",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && node web/tools/deploy_release.mjs",
     "gallery": "node web/tools/render_web_gallery.mjs"
   },
   "dependencies": {
