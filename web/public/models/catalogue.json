@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "52",
-  "sourceModelSha256": "c6342b361e36d233f77e695e2dada5d75834e0d9a5de75e957879d14b1b1b2b1",
+  "version": "53",
+  "sourceModelSha256": "25a8cc82b7e4fbb30dd9de91e102290edf699ae1b5cf0f15ea6962856c996fef",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Houghton entrance with individual ashlar blocks, three-column blue steel windows, black entrance doors, recessed archivolt courses and a shallow five-figure relief",
+        "description": "Houghton entrance with individual ashlar blocks, three-column blue steel windows, black entrance doors, recessed archivolt courses, a shallow five-figure relief and a five-bay Clare Market lower frontage",
         "newComponents": 369,
-        "scope": "Photo-guided Houghton entrance only; dimensions estimated. Five-figure relief is an authored approximation, not a scan; heraldic carving, other elevations and roof remain unverified."
+        "scope": "Photo-guided Houghton entrance and Clare Market lower facade; dimensions estimated. Five-figure relief is an authored approximation, not a scan; Clare Market relief carving, heraldic carving, other elevations and roof remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-d028295bd15a.glb",
-        "bytes": 15351332,
-        "triangles": 1248685,
-        "sha256": "d028295bd15acf64fd53f33876ec0f761ad30f42e0452d508849bf91d9765c21",
+        "url": "/models/details/old-exterior-4a2067a1c049.glb",
+        "bytes": 15670108,
+        "triangles": 1269233,
+        "sha256": "4a2067a1c0491c02f86b6e3294b6cb2d59f0d57a8e1a9006225c5084ad04b28e",
         "bounds": {
           "min": [
             -39.15880584716797,
