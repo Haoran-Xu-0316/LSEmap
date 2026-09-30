@@ -280,6 +280,24 @@
   },
   {
     "code": "LRB",
+    "name": "lrb-roof",
+    "label": "斜屋面与北向采光顶",
+    "view": {
+      "position": [
+        95,
+        52,
+        -65
+      ],
+      "target": [
+        72,
+        27,
+        -12
+      ],
+      "fov": 48
+    }
+  },
+  {
+    "code": "LRB",
     "name": "lrb-interior",
     "label": "图书馆螺旋坡道与电梯"
   },
