@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "65",
-  "sourceModelSha256": "6d19f05a72353f4b36114a1f0ad3bc668dc3179e969aa2b1dcd6cef85e81bd2e",
+  "version": "66",
+  "sourceModelSha256": "45454cb012f048959e1b165c7ab1f535937313724c89573505ea8d8858bf9321",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2396,7 +2396,7 @@
         ],
         "max": [
           -25.57349967956543,
-          15.470000267028809,
+          15.489999771118164,
           16.611709594726562
         ]
       },
@@ -2427,9 +2427,9 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 441,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps",
+        "newComponents": 15,
+        "scope": "Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -2462,10 +2462,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-ee7837243b96.glb",
-        "bytes": 1335696,
-        "triangles": 102380,
-        "sha256": "ee7837243b96ed39a376e88636e7ca6df900440f25b2b5cead992ccc68a6d876",
+        "url": "/models/details/par-exterior-c1407d5c447a.glb",
+        "bytes": 1316968,
+        "triangles": 101160,
+        "sha256": "c1407d5c447a0ea283794c8a96be63ed083c13a91fa9700e481ddf694a94c4f9",
         "bounds": {
           "min": [
             -49.058448791503906,
@@ -2474,7 +2474,7 @@
           ],
           "max": [
             -25.57349967956543,
-            15.470000267028809,
+            15.489999771118164,
             16.610294342041016
           ]
         }
