@@ -20,7 +20,7 @@ test('SAW gallery exposes the globe view from the current release',async({page})
  await page.goto('/#SAW');
  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-SAW',{timeout:60000});
  const image=page.locator('.detail-gallery img[src*="saw-globe"]');
- await expect(image).toHaveAttribute('src',/v=46-/);
+ await expect(image).toHaveAttribute('src',/v=48-/);
  await image.click();
  await expect(page.locator('#gallery-image')).toHaveAttribute('src',/saw-globe/);
 });
