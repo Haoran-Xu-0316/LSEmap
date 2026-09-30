@@ -39,7 +39,7 @@ test('POR roof gallery loads the same current model without errors',async({page}
  await page.goto('/#POR');
  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-POR',{timeout:60000});
  const image=page.locator('.detail-gallery img[src*="por-roof"]');
- await expect(image).toHaveAttribute('src',/v=51-/);await image.click();
+ await expect(image).toHaveAttribute('src',new RegExp('v='+JSON.parse(await readFile('dist/models/catalogue.json')).version+'-'));await image.click();
  await expect(page.locator('#gallery-image')).toHaveAttribute('src',/por-roof/);
  expect(errors).toEqual([]);
 });
