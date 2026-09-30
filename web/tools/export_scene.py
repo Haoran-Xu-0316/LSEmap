@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v63.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v64.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage63/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage63/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage64/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage64/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -71,7 +71,7 @@ FINISH_RECORDS['LAK'] = {'description': 'Three-column sashes with six-row first-
 FINISH_RECORDS['LRB'] = {'description': 'Perimeter mansard, estimated dormers, connected lightwell deck and triangular skylight framing', 'newComponents': 24, 'scope': 'Perimeter roof character guided by structural-engineer project imagery completed in 2001. Roof rise, setback and dormer counts estimated; not a survey. Present roof plant, other facade details and complete interiors remain unverified.'}
 FINISH_RECORDS['PEL'] = {'description': 'Projecting silver entrance fascia, yellow reveals, first-floor window box and revolving glazing', 'newComponents': 20, 'scope': 'Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified.'}
 FINISH_RECORDS['PEA'] = {'description': 'Lower blue-black podium with brass starbursts, three-column upper wing, exposed brick side and right roof louvres', 'newComponents': 19, 'scope': 'Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained.'}
-FINISH_RECORDS['61A'] = {'description': 'Chamfered octagonal roof pavilion with lower windows, wrapping clerestory and hip roof', 'newComponents': 8, 'scope': 'Undated built project photography guides the corner pavilion only; dimensions estimated. Main facade, dormers, unseen elevations and current LSE interior conversion remain unresolved. Proposed redevelopment not modeled as built.'}
+FINISH_RECORDS['61A'] = {'description': 'Continuous three-storey stone piers and dark metal window belts, with chamfered roof pavilion', 'newComponents': 8, 'scope': 'Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved.'}
 material_cache = {}
 
 
@@ -478,7 +478,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '63', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '64', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
