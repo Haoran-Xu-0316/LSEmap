@@ -84,14 +84,9 @@ export const buildingDetails = {
     ]
 },
   "PEL": {
-    "description": "Pethick-Lawrence House以预制板分缝和重复窗列建立塔楼立面，底部保留黄色入口框，并补充侧面的红色竖向导向牌。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "pel-exterior",
-            "Pethick-Lawrence House塔楼"
-        ]
-    ]
+    "description": "Pethick-Lawrence House入口采用外挑银色金属门楣、黄色侧边、首层窗盒和旋转玻璃门。",
+    "note": "入口依据未注明拍摄日期的校方照片及2021年公共空间资料建模，尺寸与色彩为估算。塔楼上层窗列、屋顶和完整内部仍待核准。",
+    "images": [["pel-exterior", "Pethick-Lawrence House塔楼"], ["pel-entrance", "银色门楣与旋转玻璃门"]]
 },
   "POR": {
     "description": "1 Portsmouth Street的The Gilded Acorn转角书店：斜切入口、外挑招牌、铅条橱窗、街名牌与上层木窗分别建模，配以暖色砖墙、灰白窗框和照片可见的屋顶烟囱。",
