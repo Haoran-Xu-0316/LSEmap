@@ -184,7 +184,20 @@
   {
     "code": "5LF",
     "name": "5lf-exterior",
-    "label": "5 Lincoln’s Inn Fields砖立面与入口"
+    "label": "5 Lincoln’s Inn Fields砖立面与入口",
+    "view": {
+      "position": [
+        -92.36332865359338,
+        7.7,
+        -223.6087472555156
+      ],
+      "target": [
+        -102.14975401710677,
+        7.5,
+        -244.2086472213985
+      ],
+      "fov": 43
+    }
   },
   {
     "code": "5LF",
