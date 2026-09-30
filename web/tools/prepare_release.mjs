@@ -31,7 +31,12 @@ for (const name of images) {
   if (createHash('sha256').update(bytes).digest('hex') !== record.sha256) throw new Error(`Stale gallery render: ${name}`);
 }
 const paths = [...models].map(name => `models/${name}`).concat([...images].map(name => `images/${name}.webp`));
-paths.push('gallery-manifest.json', 'index.html');
+// These public files are loaded at runtime rather than imported by Vite.
+// Keep them in the same verified upload set as the model and application.
+paths.push('gallery-manifest.json', 'index.html', 'favicon.svg', 'logo-lse.svg',
+  'draco/draco_wasm_wrapper.js', 'draco/draco_decoder.wasm',
+  'draco/LICENSE.txt', 'draco/THREE-LICENSE.txt', 'draco/README.md',
+  '_headers', 'credits.txt', 'font-licenses/Roboto-OFL.txt');
 const html = await readFile(join(root, 'index.html'), 'utf8');
 const entryScript = html.match(/<script[^>]*src="(\/assets\/[^"]+\.js)"/)?.[1];
 if (!entryScript) throw new Error('Missing application entry script');
