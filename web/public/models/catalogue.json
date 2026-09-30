@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "51",
-  "sourceModelSha256": "d5ecb9b2e1fb1add8412ba448ca0b94eb74dd0306796b863867c1ffbf098e09f",
+  "version": "52",
+  "sourceModelSha256": "c6342b361e36d233f77e695e2dada5d75834e0d9a5de75e957879d14b1b1b2b1",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 3712,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Houghton entrance with individual ashlar blocks, three-column blue steel windows, black entrance doors, recessed archivolt courses and a shallow five-figure relief",
+        "newComponents": 369,
+        "scope": "Photo-guided Houghton entrance only; dimensions estimated. Five-figure relief is an authored approximation, not a scan; heraldic carving, other elevations and roof remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-0a89cbe751eb.glb",
-        "bytes": 14303632,
-        "triangles": 1169389,
-        "sha256": "0a89cbe751eb7df40dd4afa002da849403e0bdaee348f197bfdfe676ef67985a",
+        "url": "/models/details/old-exterior-d028295bd15a.glb",
+        "bytes": 15351332,
+        "triangles": 1248685,
+        "sha256": "d028295bd15acf64fd53f33876ec0f761ad30f42e0452d508849bf91d9765c21",
         "bounds": {
           "min": [
             -39.15880584716797,
