@@ -577,5 +577,22 @@
     "name": "saw-three-tuns-interior",
     "code": "SAW",
     "spaceId": "saw-three-tuns"
+  },
+  {
+    "name": "old-clare-market",
+    "code": "OLD",
+    "view": {
+      "position": [
+        -0.3631119728088379,
+        8.0,
+        25.35457992553711
+      ],
+      "target": [
+        -6.517889976501465,
+        4.5,
+        37.482181549072266
+      ],
+      "fov": 50
+    }
   }
 ]
