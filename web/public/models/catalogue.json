@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "64",
-  "sourceModelSha256": "40a542a923c3ea89b2532f00cd1257ace5309489195e400acf59094a1fbb15ec",
+  "version": "65",
+  "sourceModelSha256": "6d19f05a72353f4b36114a1f0ad3bc668dc3179e969aa2b1dcd6cef85e81bd2e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2091,7 +2091,7 @@
       "bounds": {
         "min": [
           -39.16532897949219,
-          -5.9604645663569045e-09,
+          -1.0728836485895954e-08,
           26.9625244140625
         ],
         "max": [
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Recessed concave Houghton arch, photo-guided five-figure shelf relief with two woven baskets, blue windows and corrected Clare Market lower facade",
+        "description": "Four-leaf Houghton entry with narrow transom, rectangular stone approach and divided steel rails; recessed arch, five-figure relief and blue Clare Market joinery retained",
         "newComponents": 5,
-        "scope": "Photo-guided Houghton entrance and Clare Market lower facade; dimensions estimated. Sculptural relief is an authored interpretation, not a scan or exact carving reproduction. Heraldic carving, other elevations, roof and complete interiors remain unresolved."
+        "scope": "User photographs guide Houghton joinery and rectangular stair approach; dimensions and terrace extent estimated. Sculptural relief remains an authored interpretation, not a scan or exact carving reproduction. Heraldic carving, upper elevations, roof and complete interiors remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -2147,14 +2147,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-33a91df4b557.glb",
-        "bytes": 15595120,
-        "triangles": 1255637,
-        "sha256": "33a91df4b557b4c84deb37521d446c1be6f5c951ea8d518bfcdf16184ac808de",
+        "url": "/models/details/old-exterior-2bb8b8255528.glb",
+        "bytes": 15567032,
+        "triangles": 1252997,
+        "sha256": "2bb8b8255528c38eb0c5ec30d285e94dde654dc989bf4078dea3bb535939cd8c",
         "bounds": {
           "min": [
             -39.15880584716797,
-            -5.9604645663569045e-09,
+            -1.0728836485895954e-08,
             26.96942710876465
           ],
           "max": [
