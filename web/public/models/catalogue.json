@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "45",
-  "sourceModelSha256": "4ba041b917ae1002b165205750ff57c635d64fe9935d60f26b654fde408604b5",
+  "version": "46",
+  "sourceModelSha256": "fe6b7ed70ae9df544599799c9ded8633de4657499f6ccbd3847722f94f3e5a60",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
