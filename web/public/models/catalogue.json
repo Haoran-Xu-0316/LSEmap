@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "57",
-  "sourceModelSha256": "d5ddd4474e89ae3d31a444c3cd47e20a3b7b4f301067440bd6b698db10b7a636",
+  "version": "58",
+  "sourceModelSha256": "7e2accb779f2b6a9f79abd8076451b0d6ff7908ec0507432b2ba25978994cf39",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -906,9 +906,9 @@
         -0.6428813338279724
       ],
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
-        "newComponents": 1224,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Warm aggregate bands, pale aluminium joinery, reflective glazing and matte interior curtains",
+        "newComponents": 0,
+        "scope": "Shared facade finish guided by an undated PAN entrance photograph; color is estimated, not calibrated. Independent FAW elevations, upper massing, roof and full interiors remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -941,10 +941,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/faw-exterior-3449976168fa.glb",
-        "bytes": 1212004,
+        "url": "/models/details/faw-exterior-701d95f220cd.glb",
+        "bytes": 1213024,
         "triangles": 99577,
-        "sha256": "3449976168fa6ea3e517c14c4996b70d62f3fd5578777787bc4d7c93eef77e12",
+        "sha256": "701d95f220cdfd1ff85f76d72dcddcdc4e82f670d45286debfdf69f60bcc313f",
         "bounds": {
           "min": [
             72.36564636230469,
@@ -2312,9 +2312,9 @@
         -0.6428813338279724
       ],
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
-        "newComponents": 960,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Warm aggregate bands, pale aluminium joinery, reflective glazing and matte interior curtains",
+        "newComponents": 0,
+        "scope": "Shared facade finish guided by an undated PAN entrance photograph; color is estimated, not calibrated. Independent FAW elevations, upper massing, roof and full interiors remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -2347,10 +2347,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-247ed924e0f7.glb",
-        "bytes": 1285352,
+        "url": "/models/details/pan-exterior-c98b0ebe485c.glb",
+        "bytes": 1284196,
         "triangles": 111005,
-        "sha256": "247ed924e0f780055837613488fab782eeba2ec1d40a078b2655aa681a123c55",
+        "sha256": "c98b0ebe485c5bbc0b2e814b180ce94a71d76324434ef519c854dc40aea6c024",
         "bounds": {
           "min": [
             53.72006607055664,
