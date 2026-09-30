@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "61",
-  "sourceModelSha256": "4ea8beae75395eb91370429eb34c83124c48488f45e3d260ec58519e8a7adc1c",
+  "version": "62",
+  "sourceModelSha256": "8b9276fd88d465e29898c2817502a07e90793bf522c7e2f384cee1032f13a685",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2505,14 +2505,14 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -74.9002685546875,
+          -74.89566040039062,
           0.0,
-          12.04423999786377
+          12.048809051513672
         ],
         "max": [
-          -54.799713134765625,
-          19.649999618530273,
-          31.77621841430664
+          -54.22328186035156,
+          19.530000686645508,
+          31.9190673828125
         ]
       },
       "interior": true,
@@ -2528,9 +2528,9 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
-        "newComponents": 420,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Lower blue-black podium with brass starbursts, three-column upper wing, exposed brick side and right roof louvres",
+        "newComponents": 19,
+        "scope": "Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained."
       },
       "latestReview": {
         "version": 43,
@@ -2563,20 +2563,20 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pea-exterior-c3fa7fafc358.glb",
-        "bytes": 1495912,
-        "triangles": 114549,
-        "sha256": "c3fa7fafc35898c7074c1d97328916a4d029c28bee79ef80d996794615230e33",
+        "url": "/models/details/pea-exterior-7e69dadc5eef.glb",
+        "bytes": 110232,
+        "triangles": 8549,
+        "sha256": "7e69dadc5eefd87070f57c64f2fedc1dcdfd62f7ab6305ce533b993d5f5a3453",
         "bounds": {
           "min": [
-            -74.89566802978516,
+            -74.89566040039062,
             0.0,
-            12.048808097839355
+            12.048809051513672
           ],
           "max": [
-            -54.80430603027344,
-            19.649999618530273,
-            31.815387725830078
+            -54.22328186035156,
+            19.530000686645508,
+            31.9190673828125
           ]
         }
       },
