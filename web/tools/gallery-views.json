@@ -470,5 +470,73 @@
       ],
       "fov": 40
     }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "sheffield-street",
+    "view": {
+      "position": [
+        -43,
+        10,
+        29
+      ],
+      "target": [
+        -48,
+        0.1,
+        20
+      ],
+      "fov": 50
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "portsmouth-street",
+    "view": {
+      "position": [
+        -44,
+        7,
+        -23
+      ],
+      "target": [
+        -39,
+        0,
+        -39
+      ],
+      "fov": 48
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "watkins-plaza",
+    "view": {
+      "position": [
+        45,
+        25,
+        8.2
+      ],
+      "target": [
+        45,
+        0.3,
+        8
+      ],
+      "fov": 35
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "portsmouth-bench",
+    "view": {
+      "position": [
+        -49,
+        18,
+        -21.8
+      ],
+      "target": [
+        -49,
+        0.4,
+        -22
+      ],
+      "fov": 35
+    }
   }
 ]
