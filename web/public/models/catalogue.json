@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "54",
-  "sourceModelSha256": "d74d423ca5e0f2e19955949d10ef538f8e9175eda92ed82be8b9a155cd861f96",
+  "version": "55",
+  "sourceModelSha256": "b08bc8f06a95f19866ad5f3f961ce3ba71997bdb26ed6710250974fa1d2dc1f8",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1398,7 +1398,7 @@
       "bounds": {
         "min": [
           -112.59539794921875,
-          0.0,
+          -2.38418573772492e-09,
           -264.3106689453125
         ],
         "max": [
@@ -1429,9 +1429,9 @@
         "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 99,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Three shallow segmental ground openings and yellow stock-brick facade",
+        "newComponents": 3,
+        "scope": "Street frontage guided by undated estate imagery; arch shape and vertical dimensions estimated. Steps and railings retained. Roof and unseen elevations remain unverified; interiors unchanged."
       },
       "latestReview": {
         "version": 43,
@@ -1464,14 +1464,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/5lf-exterior-379e27b77b3a.glb",
-        "bytes": 322252,
-        "triangles": 22862,
-        "sha256": "379e27b77b3aa7e559993acecd31b2c5303859d88f0d0f7b02848740818f9727",
+        "url": "/models/details/5lf-exterior-726713c0dac4.glb",
+        "bytes": 305956,
+        "triangles": 20984,
+        "sha256": "726713c0dac4fe407fc2f08472ae6f6995d9eaa8ec4e88e10e57da60b9e6d4bb",
         "bounds": {
           "min": [
             -112.59539794921875,
-            0.0,
+            -2.38418573772492e-09,
             -264.3106689453125
           ],
           "max": [
