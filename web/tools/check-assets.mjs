@@ -84,10 +84,16 @@ for (const filename of [
     `${filename} unexpectedly contains research scenes`,
   );
   assert(document.extensionsUsed.includes("KHR_draco_mesh_compression"));
-  assert(
-    !document.images?.length,
-    `${filename} must not redistribute source photographs`,
-  );
+  for (const image of document.images ?? []) {
+    // The sole image exception is the original, hash-identified globe map.
+    const approved = catalogue.generatedTextures?.find(texture => texture.name === image.name);
+    assert(filename === 'campus.glb' && approved && image.bufferView !== undefined && !image.uri,
+      `${filename} must not redistribute source photographs`);
+    const view = document.bufferViews[image.bufferView];
+    const start = 28 + jsonLength + (view.byteOffset ?? 0);
+    const hash = createHash('sha256').update(buffer.subarray(start, start + view.byteLength)).digest('hex');
+    assert.equal(hash, approved.sha256, 'Embedded globe map differs from the generated source');
+  }
   if (filename.startsWith("details/")) {
     for (const mesh of document.meshes) {
       for (const primitive of mesh.primitives) {
