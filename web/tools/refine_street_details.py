@@ -1,12 +1,12 @@
-"""Build edition46's street surfaces and furniture in native Blender geometry."""
+"""Build edition47's street surfaces and furniture in native Blender geometry."""
 from pathlib import Path
 import json, math, array, hashlib
 import bpy
 from mathutils import Vector
 
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage46'
-bpy.ops.wm.open_mainfile(filepath=str(ROOT/'result/blender/LSE_campus_detailed_v45.blend'))
+OUT=ROOT/'result/blender/stage47'
+bpy.ops.wm.open_mainfile(filepath=str(ROOT/'result/blender/LSE_campus_detailed_v46.blend'))
 bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
 for layer in bpy.context.scene.view_layers:layer.update()
 plan=json.loads((OUT/'street-plan.json').read_text())
@@ -19,7 +19,7 @@ def fingerprint(obj):
 before={o.name:fingerprint(o) for o in bpy.data.objects}
 materials={}
 def material(name,color,roughness=.85,metal=0,grain=0):
-    m=bpy.data.materials.new('SITE_V46_'+name);m.diffuse_color=(*color,1);m.use_nodes=True
+    m=bpy.data.materials.new('SITE_V47_'+name);m.diffuse_color=(*color,1);m.use_nodes=True
     shader=m.node_tree.nodes['Principled BSDF'];shader.inputs['Base Color'].default_value=m.diffuse_color
     shader.inputs['Roughness'].default_value=roughness;shader.inputs['Metallic'].default_value=metal
     if grain:
@@ -68,10 +68,10 @@ class MeshGroup:
 
 hidden=[]
 for obj in bpy.data.objects:
-    if obj.name.startswith('SITE_V44_') or obj.name.startswith('Public_bench_oak') or obj.name=='03_PUBLIC_REALM_Public_bench_leg':
+    if obj.name.startswith('SITE_V46_') or obj.name.startswith('SITE_V44_') or obj.name.startswith('Public_bench_oak') or obj.name=='03_PUBLIC_REALM_Public_bench_leg':
         obj.hide_render=True;obj.hide_set(True);hidden.append(obj.name)
 for record in plan['records']:
-    name=record['street'].replace(' ','_');group=MeshGroup('SITE_V46_'+name,'00_SITE')
+    name=record['street'].replace(' ','_');group=MeshGroup('SITE_V47_'+name,'00_SITE')
     group.triangles(record['base'],'grout',.040)
     kind='yorkstone' if record['street']=='Portsmouth Street' else 'slab'
     for tile in record['tiles']:
@@ -82,7 +82,7 @@ for record in plan['records']:
         group.triangles(border['bevel'],f"edge_{border['shade']+1}",.047)
     group.save()
 
-bench=MeshGroup('SITE_V46_Slatted_benches','03_PUBLIC_REALM')
+bench=MeshGroup('SITE_V47_Slatted_benches','03_PUBLIC_REALM')
 for index,obj in enumerate([bpy.data.objects[n] for n in hidden if n.startswith('Public_bench_oak')]):
     points=[obj.matrix_world @ vertex.co for vertex in obj.data.vertices]
     x=(min(p.x for p in points)+max(p.x for p in points))/2
@@ -93,9 +93,14 @@ for index,obj in enumerate([bpy.data.objects[n] for n in hidden if n.startswith(
     for slat in range(5):bench.box(at(0,(slat-2)*.115,.48),(2.8,.105,.055),f'wood_{(slat+index)%5}',angle)
     for offset in [-1.10,0,1.10]:
         bench.box(at(offset,0,.24),(.065,.47,.37),'iron',angle);bench.box(at(offset,0,.433),(.09,.55,.05),'iron',angle)
-        for side in [-1,1]:bench.box(at(offset,side*.18,.10),(.07,.055,.18),'iron',angle)
+        for side in [-1,1]:
+            bench.box(at(offset,side*.18,.10),(.07,.055,.18),'iron',angle)
+            bench.box(at(offset,side*.18,.061),(.16,.11,.016),'iron',angle)
+            for bolt in [-.045,.045]:
+                bx,by,bz=at(offset+bolt,side*.18,.071)
+                bench.cylinder(bx,by,.009,bz,.006,'steel')
 bench.save()
-fixtures=MeshGroup('SITE_V46_Mapped_street_furniture','03_PUBLIC_REALM')
+fixtures=MeshGroup('SITE_V47_Mapped_street_furniture','03_PUBLIC_REALM')
 counts={'tree':0,'bollard':0,'cycle':0}
 for item in plan['objects']:
     x,y=item['xy'];kind=item['kind'];counts[kind]+=1
@@ -105,7 +110,7 @@ for item in plan['objects']:
         for i in range(12):
             a=i*math.tau/12;fixtures.box((x+.43*math.cos(a),y+.43*math.sin(a),.048),(.45,.018,.004),'iron',a)
     elif kind=='bollard':
-        fixtures.cylinder(x,y,.057,.05,.86,'iron');fixtures.cylinder(x,y,.059,.76,.045,'band');fixtures.ring(x,y,.061,.015,.913,'iron')
+        fixtures.cylinder(x,y,.095,.05,.016,'iron');fixtures.cylinder(x,y,.057,.066,.844,'iron');fixtures.cylinder(x,y,.059,.76,.045,'band');fixtures.ring(x,y,.061,.015,.913,'iron')
     else:
         # Tubular Sheffield-style stand, reconstructed dimensions at the mapped point.
         for dx in [-.34,.34]:fixtures.cylinder(x+dx,y,.028,.05,.66,'steel')
@@ -118,19 +123,22 @@ for item in plan['objects']:
         faces=[(i*8+j,i*8+(j+1)%8,(i+1)*8+(j+1)%8,(i+1)*8+j) for i in range(segments) for j in range(8)]
         fixtures.add(points,faces,'steel')
 fixtures.save()
-gullies=MeshGroup('SITE_V46_Portsmouth_drainage_study','00_SITE')
+gullies=MeshGroup('SITE_V47_Portsmouth_drainage_study','00_SITE')
 for item in plan['gullies']:
     x,y=item['xy'];a=math.radians(item['angle']);c,s=math.cos(a),math.sin(a)
-    gullies.box((x,y,.043),(.60,.42,.008),'iron',a)
+    # A recessed dark sump lies below the open bars, not against their underside.
+    gullies.box((x,y,.030),(.60,.42,.006),'iron',a)
+    for side in [-1,1]:
+        gullies.box((x+c*side*.289,y+s*side*.289,.047),(.022,.42,.006),'steel',a)
     for i in range(12):
         offset=(i-5.5)*.045
-        gullies.box((x+c*offset,y+s*offset,.049),(.022,.36,.002),'steel',a)
-    for side in [-1,1]:gullies.box((x-s*side*.19,y+c*side*.19,.049),(.58,.028,.002),'steel',a)
+        gullies.box((x+c*offset,y+s*offset,.049),(.018,.36,.006),'steel',a)
+    for side in [-1,1]:gullies.box((x-s*side*.19,y+c*side*.19,.049),(.58,.028,.006),'steel',a)
 gullies.save()
 bpy.data.objects['SITE_V45_The_World_Turned_Upside_Down'].location.z=2.05
 for layer in bpy.context.scene.view_layers:layer.update()
 changed=[name for name,value in before.items() if fingerprint(bpy.data.objects[name])!=value]
-assert changed==['SITE_V45_The_World_Turned_Upside_Down'],changed
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'result/blender/LSE_campus_detailed_v46.blend'))
-(OUT/'street-audit.json').write_text(json.dumps({'version':46,'baseline':45,'hiddenReplacedObjects':hidden,'changedExistingObjects':changed,'unchangedExistingGeometry':len(before)-len(changed),'mappedFixtures':counts,'gullies':len(plan['gullies']),'pavers':sum(len(r['tiles']) for r in plan['records']),'buildingOverlapArea':plan['buildingOverlapArea'],'limitations':plan['limitations']},indent=2)+'\n')
+assert changed==[],changed
+bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'result/blender/LSE_campus_detailed_v47.blend'))
+(OUT/'street-audit.json').write_text(json.dumps({'version':47,'baseline':46,'hiddenReplacedObjects':hidden,'changedExistingObjects':changed,'unchangedExistingGeometry':len(before)-len(changed),'mappedFixtures':counts,'gullies':len(plan['gullies']),'pavers':sum(len(r['tiles']) for r in plan['records']),'buildingOverlapArea':plan['buildingOverlapArea'],'limitations':plan['limitations']},indent=2)+'\n')
 print('STREET_DETAILS_SAVED',counts)
