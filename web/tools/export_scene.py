@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v52.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v53.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,14 +54,14 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage52/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage52/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage53/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage53/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
 FINISH_RECORDS['SHF'] = {'description': 'Four-bay stock-brick facade, pale base, white joinery and four roof dormers', 'newComponents': FACADE_RECORDS['SHF']['components'], 'scope': FACADE_RECORDS['SHF']['scope']}
 old_houghton = json.loads((ROOT / 'result/blender/stage52/old-houghton-audit.json').read_text())
-FINISH_RECORDS['OLD'] = {'description': 'Houghton entrance with individual ashlar blocks, three-column blue steel windows, black entrance doors, recessed archivolt courses and a shallow five-figure relief', 'newComponents': old_houghton['stoneBlocks'], 'scope': 'Photo-guided Houghton entrance only; dimensions estimated. Five-figure relief is an authored approximation, not a scan; heraldic carving, other elevations and roof remain unverified.'}
+FINISH_RECORDS['OLD'] = {'description': 'Houghton entrance with individual ashlar blocks, three-column blue steel windows, black entrance doors, recessed archivolt courses, a shallow five-figure relief and a five-bay Clare Market lower frontage', 'newComponents': old_houghton['stoneBlocks'], 'scope': 'Photo-guided Houghton entrance and Clare Market lower facade; dimensions estimated. Five-figure relief is an authored approximation, not a scan; Clare Market relief carving, heraldic carving, other elevations and roof remain unverified.'}
 material_cache = {}
 
 
@@ -468,7 +468,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '52', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '53', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
