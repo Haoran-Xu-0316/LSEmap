@@ -1,6 +1,14 @@
 {
-  "version": "44",
-  "sourceModelSha256": "81d403d8cd1b8053ddb3fb4be73fe9a59d50a8276d6bbddc1854b7aa20c6f82b",
+  "generatedTextures": [
+    {
+      "name": "globe-map",
+      "sha256": "a6395a5480b1ed25808da8ef84772a6f4c53ae8285a272c7e00268cdfcdcaa34",
+      "source": "Natural Earth public-domain cartography",
+      "scope": "Original reconstructed map, not a source photograph"
+    }
+  ],
+  "version": "45",
+  "sourceModelSha256": "4ba041b917ae1002b165205750ff57c635d64fe9935d60f26b654fde408604b5",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
