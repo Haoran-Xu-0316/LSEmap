@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "58",
-  "sourceModelSha256": "7e2accb779f2b6a9f79abd8076451b0d6ff7908ec0507432b2ba25978994cf39",
+  "version": "59",
+  "sourceModelSha256": "c7c8eed5f0e275a837dd1c00bad9e3c63d116e2b7a6e684e84ebec7453605f0d",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1251,9 +1251,9 @@
         "fov": 45
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 324,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Three-column sashes with six-row first-storey and four-row upper windows, pale joinery and warm red brick",
+        "newComponents": 140,
+        "scope": "Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1286,10 +1286,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lak-exterior-591f1b35696f.glb",
-        "bytes": 1390732,
-        "triangles": 108240,
-        "sha256": "591f1b35696fd3d0291bcc0ac23a3f59a14f4983dfb5e6acec2967d395a1c7ee",
+        "url": "/models/details/lak-exterior-02e564e67d39.glb",
+        "bytes": 1220044,
+        "triangles": 93720,
+        "sha256": "02e564e67d39d6d727981890b5e94fc9abd8b2e5858c63bc4825e4907266ef1f",
         "bounds": {
           "min": [
             2.2941360473632812,
