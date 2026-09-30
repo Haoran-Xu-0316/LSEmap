@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "48",
-  "sourceModelSha256": "fd7f0867f0e7b6606758ee796dba6209ccf8c2657347d2365fe37c467e2be79f",
+  "version": "49",
+  "sourceModelSha256": "c91498289ff4c24a87631708b2738c14352d1b567fd5c344ec252be67eceda3e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2091,7 +2091,7 @@
       "bounds": {
         "min": [
           -39.16532897949219,
-          0.0,
+          -5.9604645663569045e-09,
           26.9625244140625
         ],
         "max": [
@@ -2147,14 +2147,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-787661a333c6.glb",
-        "bytes": 14006780,
-        "triangles": 1150859,
-        "sha256": "787661a333c601f36adc571c68f5f81cdf2815949b360dae00b4fbb33cd0ff07",
+        "url": "/models/details/old-exterior-0a89cbe751eb.glb",
+        "bytes": 14303632,
+        "triangles": 1169389,
+        "sha256": "0a89cbe751eb7df40dd4afa002da849403e0bdaee348f197bfdfe676ef67985a",
         "bounds": {
           "min": [
             -39.15880584716797,
-            0.0,
+            -5.9604645663569045e-09,
             26.96942710876465
           ],
           "max": [
