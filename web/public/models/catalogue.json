@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "50",
-  "sourceModelSha256": "b3d03225f8c3bdb9d88669aa2cb6e3835708ecd600cf421d628c2a2e6c425137",
+  "version": "51",
+  "sourceModelSha256": "d5ecb9b2e1fb1add8412ba448ca0b94eb74dd0306796b863867c1ffbf098e09f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2713,7 +2713,7 @@
         ],
         "max": [
           -28.910921096801758,
-          15.949999809265137,
+          17.579999923706055,
           -15.1935453414917
         ]
       },
@@ -2723,7 +2723,7 @@
         0.3713906705379486,
         -0.8622694611549377
       ],
-      "facadeScope": "Photo-informed chamfered corner entrance, projecting fascia, historical bookshop fronts, sash windows, street plaques and roof edge. Footprint retained; heights, openings, hidden roof and ornamental dimensions estimated. Branding reflects the archived photograph, not verified current tenancy.",
+      "facadeScope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified.",
       "detailView": {
         "label": "转角细节",
         "position": [
@@ -2739,9 +2739,9 @@
         "fov": 45
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 207,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks",
+        "newComponents": 8,
+        "scope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified."
       },
       "latestReview": {
         "version": 43,
@@ -2749,10 +2749,10 @@
         "addedObjects": 0
       },
       "detailedExterior": {
-        "url": "/models/details/por-exterior-f46238e82814.glb",
-        "bytes": 1044668,
-        "triangles": 79923,
-        "sha256": "f46238e82814711192cf1278f73489805df1ae3e6cc53e88e3de2793a40e7cf0",
+        "url": "/models/details/por-exterior-2b2f5c6285af.glb",
+        "bytes": 1078904,
+        "triangles": 82663,
+        "sha256": "2b2f5c6285af63dec43f7a37a93806d4f3c0d64f6f0c5310b1fd8a8d68258a97",
         "bounds": {
           "min": [
             -39.27674865722656,
@@ -2761,7 +2761,7 @@
           ],
           "max": [
             -28.915613174438477,
-            15.949999809265137,
+            17.579999923706055,
             -15.1935453414917
           ]
         }
