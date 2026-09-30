@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "60",
-  "sourceModelSha256": "833e6d16a87dd5770c01bb8b35093f5ac6c447693b710bbf2eb5a19cbe9b5b0d",
+  "version": "61",
+  "sourceModelSha256": "4ea8beae75395eb91370429eb34c83124c48488f45e3d260ec58519e8a7adc1c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2608,7 +2608,7 @@
         "min": [
           100.59361267089844,
           0.0,
-          88.61661529541016
+          87.91686248779297
         ],
         "max": [
           125.48580932617188,
@@ -2629,9 +2629,9 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
-        "newComponents": 2275,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Projecting silver entrance fascia, yellow reveals, first-floor window box and revolving glazing",
+        "newComponents": 20,
+        "scope": "Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -2664,15 +2664,15 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-3fce650fa5a6.glb",
-        "bytes": 6396568,
-        "triangles": 530423,
-        "sha256": "3fce650fa5a6967bfc818f13e6dd919f7fef9209aef4fa02f4ed5f36ae4e375f",
+        "url": "/models/details/pel-exterior-df4e1625434b.glb",
+        "bytes": 6295552,
+        "triangles": 522359,
+        "sha256": "df4e1625434be1ded07d8144e6c2cd1462495137d41c04ee50750683ba5b852b",
         "bounds": {
           "min": [
             100.59568786621094,
             0.0,
-            88.61859893798828
+            87.91686248779297
           ],
           "max": [
             125.485107421875,
