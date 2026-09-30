@@ -44,6 +44,16 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 44 campus paving
+
+Five pedestrian areas gain native Blender paving: Houghton Street, Sheffield
+Street, Portsmouth Street, Clare Market and John Watkins Plaza. Yorkstone-toned
+setts distinguish Portsmouth Street; the other areas use restrained grey slabs.
+Clipped courses, fine joints and flush edge bands follow the existing route
+footprints without overlapping mapped buildings. All 4,389 existing native objects
+remain unchanged. Courses, colours and widths are estimates rather than a survey;
+future Portugal Street landscaping is excluded.
+
 ## Edition 24 historical interiors
 
 61 Aldwych gains a separate reception study from three matching photographs in
@@ -97,7 +107,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition 43. Check the live `/release.json`
+The current local source and build target is edition 44. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
