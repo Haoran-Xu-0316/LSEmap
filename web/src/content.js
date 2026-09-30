@@ -168,6 +168,7 @@ export const buildingDetails = {
     images: [
       ["saw-exterior", "Saw Swee Hock折面立面"],
       ["saw-brick", "透空砖屏细节"],
+      ["saw-globe", "The World Turned Upside Down"],
     ],
   },
   CBG: {
