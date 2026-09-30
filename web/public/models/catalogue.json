@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "67",
-  "sourceModelSha256": "6abe57db1c1027940a794d49c9b639aec0e8d0e21f60d5432316df7c77327a89",
+  "version": "68",
+  "sourceModelSha256": "a289286b286c157df4fd8097d33f329b5aae705cdcfc89fe04615a88913f9b93",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -656,7 +656,7 @@
       "bounds": {
         "min": [
           -34.34856414794922,
-          0.0,
+          -0.020000001415610313,
           96.73214721679688
         ],
         "max": [
@@ -677,9 +677,9 @@
         0.8481693863868713
       ],
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 272,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Open street portal with warm recessed vestibule, inner glazed doors and split granite-limestone casing",
+        "newComponents": 8,
+        "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -726,14 +726,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-c62479b948f4.glb",
-        "bytes": 563932,
-        "triangles": 47188,
-        "sha256": "c62479b948f4c6dfc1f7b411c977ecb11e969d2c5b8791f7483b38ffc81e63e7",
+        "url": "/models/details/con-exterior-42ae2cf080b7.glb",
+        "bytes": 567412,
+        "triangles": 47244,
+        "sha256": "42ae2cf080b78d60ba7542cac0c3a10bc6927c5f692824e9dffb423cf040f040",
         "bounds": {
           "min": [
             -34.34856414794922,
-            0.0,
+            -0.020000001415610313,
             96.73214721679688
           ],
           "max": [
