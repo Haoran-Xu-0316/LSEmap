@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "66",
-  "sourceModelSha256": "45454cb012f048959e1b165c7ab1f535937313724c89573505ea8d8858bf9321",
+  "version": "67",
+  "sourceModelSha256": "6abe57db1c1027940a794d49c9b639aec0e8d0e21f60d5432316df7c77327a89",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -563,9 +563,9 @@
         0.6652591228485107
       ],
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 776,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet",
+        "newComponents": 5,
+        "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -612,10 +612,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-1f8d81321031.glb",
-        "bytes": 901056,
-        "triangles": 73444,
-        "sha256": "1f8d8132103158f53740d2f126b01ad4796aed1e482fbdb2d0d90137ce2be853",
+        "url": "/models/details/col-exterior-7b5db8c3ec04.glb",
+        "bytes": 960932,
+        "triangles": 77700,
+        "sha256": "7b5db8c3ec0403971c09581581d251434398de85b338fea866e6431585ea2b2f",
         "bounds": {
           "min": [
             2.9004480838775635,
