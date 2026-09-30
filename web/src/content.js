@@ -69,9 +69,9 @@ export const buildingDetails = {
     ]
 },
   "PAR": {
-    description: "Parish Hall的低入口门厅与四组窗列形成高低错落的街面。尖拱砖券、题字横梁和十字饰件标识入口，红瓦坡屋顶上排列着四座小屋顶窗与高烟囱。",
-    note: "根据归档照片重做门厅、窗列与屋顶，保留原有地图轮廓。楼高、屋顶进深、装饰截面与未见背面仍为估计；未建立内部。",
-    images: [["par-exterior", "Parish Hall低门厅与红瓦坡屋顶"], ["par-entrance", "Parish Hall尖拱砖券与题字入口"]],
+    description: "Parish Hall的低入口门厅与四组窗列形成高低错落的街面。尖拱砖券、题字横梁和十字饰件标识入口，高窗采用粗中央分隔，红瓦坡屋顶设四座深色屋顶窗、两个通风帽和圆形烟囱筒。",
+    note: "窗列和屋顶构件参考学校2015年改造资料及2025/26版物业手册。照片拍摄日期、尺寸及当前屋顶设备位置未核实；尚未完成整栋内部。",
+    images: [["par-exterior", "Parish Hall低门厅与红瓦坡屋顶"], ["par-entrance", "Parish Hall尖拱砖券与题字入口"], ["par-roof", "Parish Hall尖拱窗列与屋顶通风帽"]],
   },
   "PEA": {
     "description": "Peacock Theatre入口为蓝黑色门面、黄铜星形装饰和暖色雨棚灯。上部为三列窗的浅色体量，右侧较低并设屋顶百叶，侧面保留深色砖墙。",
