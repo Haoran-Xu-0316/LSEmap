@@ -115,13 +115,14 @@ export const buildingDetails = {
     ]
 },
   "SHF": {
-    "description": "Sheffield Street的小尺度砖楼采用白色多格窗与首层店面，入口标识作为识别点。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "description": "Sheffield Street长立面以四组白色多格窗、两层浅色基座与棕色砖墙组成，屋顶设四个宽窗与灰色斜坡屋面。",
+    "note": "依据官方照片修正四组窗和斜坡屋顶；层高、屋面进深及背面仍为估计，内部待补。",
     "images": [
         [
             "shf-exterior",
-            "Sheffield Street沿街小楼"
-        ]
+            "Sheffield Street四开间立面"
+        ],
+        ["shf-roof", "四个屋顶窗与棕砖窗列"]
     ]
 },
   STC: {
