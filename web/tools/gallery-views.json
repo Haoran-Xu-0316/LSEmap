@@ -227,12 +227,38 @@
   {
     "code": "51L",
     "name": "51l-exterior",
-    "label": "51 Lincoln’s Inn Fields街角"
+    "label": "51 Lincoln’s Inn Fields街角",
+    "view": {
+      "position": [
+        -57.857851136778656,
+        10.5,
+        -90.27260306961357
+      ],
+      "target": [
+        -65.43066610549587,
+        10.3,
+        -57.08988959633697
+      ],
+      "fov": 44
+    }
   },
   {
     "code": "51L",
     "name": "51l-entrance",
-    "label": "51 Lincoln’s Inn Fields入口细节"
+    "label": "51 Lincoln’s Inn Fields入口细节",
+    "view": {
+      "position": [
+        -61.77983943876207,
+        3.7,
+        -67.04184742630517
+      ],
+      "target": [
+        -65.16224167275132,
+        3.35,
+        -57.84351305928499
+      ],
+      "fov": 42
+    }
   },
   {
     "code": "LRB",
