@@ -5,7 +5,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 import { ModelCache } from "./model-cache.js";
-import { prepareDetailedModel, disposeModel } from "./surface-materials.js";
+import { prepareDetailedModel, disposeModel, applySurfaceDetail } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -210,6 +210,7 @@ export class CampusViewer {
         object.material = materials.map((material) => {
           const copy = material.clone();
           copy.side = THREE.DoubleSide;
+          if (copy.userData.surfaceDetail) applySurfaceDetail(copy);
           return copy;
         });
         if (object.material.length === 1) object.material = object.material[0];
