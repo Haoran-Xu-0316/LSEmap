@@ -7,7 +7,7 @@ test('campus GLB includes native paving in the SITE group',async()=>{
   const site=document.nodes.find(node=>node.extras?.buildingCode==='SITE');
   expect(site).toBeTruthy();
   const primitives=document.meshes[site.mesh].primitives;
-  const paving=primitives.filter(primitive=>document.materials[primitive.material].name.includes('SITE_V46_'));
+  const paving=primitives.filter(primitive=>document.materials[primitive.material].name.includes('SITE_V47_'));
   expect(paving.length).toBeGreaterThanOrEqual(15);
   expect(paving.reduce((sum,primitive)=>sum+document.accessors[primitive.indices].count/3,0)).toBeGreaterThan(14000);
   for(const primitive of paving){
