@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "49",
-  "sourceModelSha256": "c91498289ff4c24a87631708b2738c14352d1b567fd5c344ec252be67eceda3e",
+  "version": "50",
+  "sourceModelSha256": "b3d03225f8c3bdb9d88669aa2cb6e3835708ecd600cf421d628c2a2e6c425137",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3084,27 +3084,27 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -43.89044189453125,
+          -44.02347946166992,
           0.0,
-          -17.612600326538086
+          -17.631128311157227
         ],
         "max": [
-          -34.47522735595703,
-          13.149999618530273,
-          -1.0133118629455566
+          -34.47998046875,
+          18.600000381469727,
+          -1.1029605865478516
         ]
       },
       "interior": false,
       "exteriorDirection": [
-        -0.2490837275981903,
+        -0.7961925268173218,
         0.5449883341789246,
-        0.8005903363227844
+        -0.26280227303504944
       ],
-      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "facadeScope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed",
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 288,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Four-bay stock-brick facade, pale base, white joinery and four roof dormers",
+        "newComponents": 658,
+        "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
         "version": 43,
@@ -3112,20 +3112,20 @@
         "addedObjects": 0
       },
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-6b9471c54c49.glb",
-        "bytes": 850976,
-        "triangles": 63649,
-        "sha256": "6b9471c54c4950d0c1a35a328f8200b99d78f1fbdc261e98f4eaf2b8dd19a542",
+        "url": "/models/details/shf-exterior-0adfffa07720.glb",
+        "bytes": 836728,
+        "triangles": 63803,
+        "sha256": "0adfffa0772011d28e789a31c2a46020f8942f2c7b82ec42e8322be7a699426c",
         "bounds": {
           "min": [
-            -43.886680603027344,
+            -44.019718170166016,
             0.0,
-            -17.60883903503418
+            -17.62736701965332
           ],
           "max": [
-            -34.47895812988281,
-            13.149999618530273,
-            -1.0168768167495728
+            -34.47998046875,
+            18.600000381469727,
+            -1.1065255403518677
           ]
         }
       }
