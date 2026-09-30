@@ -94,14 +94,15 @@ export const buildingDetails = {
     ]
 },
   "POR": {
-    "description": "1 Portsmouth Street按归档照片重建转角书店：斜切入口、外挑招牌、铅条橱窗、街名牌与上层木窗分别建模。",
-    "note": "店面名称对应历史照片，不代表当前租户。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "description": "1 Portsmouth Street的The Gilded Acorn转角书店：斜切入口、外挑招牌、铅条橱窗、街名牌与上层木窗分别建模，配以暖色砖墙、灰白窗框和照片可见的屋顶烟囱。",
+    "note": "店名依据LSE现行商店页面更新；实拍日期未知，楼高、窗距及隐藏屋顶仍为估计，未建立内部。",
     "images": [
         [
             "por-exterior",
             "1 Portsmouth Street转角与店面"
         ],
-        ["por-entrance", "转角入口、铅条橱窗与街名牌"]
+        ["por-entrance", "转角入口、铅条橱窗与街名牌"],
+        ["por-roof", "转角红砖、烟囱与屋顶栏杆"]
     ]
 },
   "SAR": {
