@@ -44,6 +44,16 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 45 inverted globe
+
+The World Turned Upside Down is added outside SAW on Sheffield Street as a
+four-metre sphere with its north pole at ground level. The approximate placement
+uses the archived OpenStreetMap artwork point. A newly drawn political map from
+public-domain Natural Earth data supplies countries, borders and graticules; the
+artwork palette, lettering and rotational heading remain estimates. Its packed
+Blender texture is exported inside the campus GLB, preserving the same geometry
+and material in the map and gallery.
+
 ## Edition 44 campus paving
 
 Five pedestrian areas gain native Blender paving: Houghton Street, Sheffield
@@ -107,7 +117,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition 44. Check the live `/release.json`
+The current local source and build target is edition 45. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
