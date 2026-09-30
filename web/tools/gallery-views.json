@@ -453,5 +453,22 @@
     "code": "CAMPUS",
     "name": "campus",
     "label": "Campus"
+  },
+  {
+    "code": "CAMPUS",
+    "name": "saw-globe",
+    "view": {
+      "position": [
+        -43,
+        5.3,
+        28
+      ],
+      "target": [
+        -48.9262,
+        2.04,
+        20.3711
+      ],
+      "fov": 40
+    }
   }
 ]
