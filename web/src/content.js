@@ -159,6 +159,8 @@ export const buildingDetails = {
       ["mar-entrance", "斜向入口、露台玻璃与前场灯柱"],
       ["mar-hall", "Grand Hall公共大厅"],
       ["mar-stair", "弧形楼梯与平台连接"],
+      ["portsmouth-street", "Portsmouth Street铺装"],
+      ["portsmouth-bench", "街道长椅与铺装"],
     ],
   },
   SAW: {
@@ -169,6 +171,7 @@ export const buildingDetails = {
       ["saw-exterior", "Saw Swee Hock折面立面"],
       ["saw-brick", "透空砖屏细节"],
       ["saw-globe", "The World Turned Upside Down"],
+      ["sheffield-street", "Sheffield Street"],
     ],
   },
   CBG: {
@@ -181,7 +184,7 @@ export const buildingDetails = {
     description:
       "广场侧立面以宽幅分格窗、砖墙和浅色石带组成。顶部朝北斜切的圆顶为螺旋坡道及玻璃电梯中庭采光。",
     note: "广场侧参考2008年照片，窗距与层高为估计；2025年计划更换的闸机及新增屋顶设备布局未核实。",
-    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-interior", "图书馆螺旋坡道与电梯"]],
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza长椅与铺装"]],
   },
   CKK: {
     description:
