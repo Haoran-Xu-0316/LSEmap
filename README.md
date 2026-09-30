@@ -292,3 +292,11 @@ The builder is `web/tools/build_exterior_joinery.py`, with explicit per-building
 source selectors in `web/tools/exterior-joinery.json`. Local evidence is saved in
 `result/blender/stage17/all-buildings-manifest.json`. The edition-17 release packages the matching interactive assets and 45 gallery
 images. Both the campus overview and selected views use the refined exteriors.
+
+## Edition 47 public realm
+
+The Blender source adds paving continuity at nearby building frontages, open drainage bars above recessed sumps, bench anchor plates and bolts, and bollard feet. All existing building and globe geometry is preserved. There are 10,732 paving pieces across the five refined pedestrian areas; dimensions and frontage boundaries are interpretive. Drain locations retain the edition-46 illustrative positions. The overview and gallery use the same exported assets.
+
+Edition48 uses the supplied photographs for MAR's red-faced, white-sided LSE sculpture and five fine concentric paving inlays around the globe. Globe labels compensate for its inverted map, with collision filtering. Houghton Street has smaller staggered grey setts, merged by material rather than exported as thousands of objects. Sculpture dimensions, placement and stone dimensions remain estimates. Private reference photographs are not published.
+
+Three Tuns has a separate entrance and historical plan study based on the official2014 SAW occupants guide and an undated official entrance photograph. This is not an as-built reconstruction of the2026 refurbishment. The supplied red glass cube and reception photograph remain reference material pending verified placement; poster captions are not used to identify buildings.
