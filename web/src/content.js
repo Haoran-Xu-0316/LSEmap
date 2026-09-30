@@ -74,14 +74,9 @@ export const buildingDetails = {
     images: [["par-exterior", "Parish Hall低门厅与红瓦坡屋顶"], ["par-entrance", "Parish Hall尖拱砖券与题字入口"]],
   },
   "PEA": {
-    "description": "Peacock Theatre的入口雨棚、竖向剧院标识和首层海报框形成辨识特征，上方保留浅色窗列。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
-    "images": [
-        [
-            "pea-exterior",
-            "Peacock Theatre入口雨棚"
-        ]
-    ]
+    "description": "Peacock Theatre入口为蓝黑色门面、黄铜星形装饰和暖色雨棚灯。上部为三列窗的浅色体量，右侧较低并设屋顶百叶，侧面保留深色砖墙。",
+    "note": "依据场馆现行页面实拍建模，图片上传路径为2023年，准确拍摄日期未核实。楼高、体量分界与未见立面为估算，内部保留既有模型。",
+    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-frontage", "入口、星形装饰与高低体量"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "剧院内部"]]
 },
   "PEL": {
     "description": "Pethick-Lawrence House入口采用外挑银色金属门楣、黄色侧边、首层窗盒和旋转玻璃门。",
