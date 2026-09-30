@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "59",
-  "sourceModelSha256": "c7c8eed5f0e275a837dd1c00bad9e3c63d116e2b7a6e684e84ebec7453605f0d",
+  "version": "60",
+  "sourceModelSha256": "833e6d16a87dd5770c01bb8b35093f5ac6c447693b710bbf2eb5a19cbe9b5b0d",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1789,7 +1789,7 @@
         ],
         "max": [
           114.51506042480469,
-          32.105308532714844,
+          34.90530776977539,
           27.600141525268555
         ]
       },
@@ -1800,9 +1800,9 @@
         0.6670500040054321
       ],
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
-        "newComponents": 2940,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Perimeter mansard, estimated dormers, connected lightwell deck and triangular skylight framing",
+        "newComponents": 24,
+        "scope": "Perimeter roof character guided by structural-engineer project imagery completed in 2001. Roof rise, setback and dormer counts estimated; not a survey. Present roof plant, other facade details and complete interiors remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1875,15 +1875,15 @@
         ],
         "max": [
           114.29000091552734,
-          32.105308532714844,
+          34.90530776977539,
           27.380033493041992
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-792b70673bc8.glb",
-        "bytes": 6138012,
-        "triangles": 691296,
-        "sha256": "792b70673bc83e50328097707448224da43f3a3239445d9226611db3d795a2af",
+        "url": "/models/details/lrb-exterior-657a25d4e671.glb",
+        "bytes": 6194688,
+        "triangles": 695652,
+        "sha256": "657a25d4e671b9e6f1d8be82e3edd6c36e595c31484b022455886b950e0e8c12",
         "bounds": {
           "min": [
             24.830078125,
@@ -1892,16 +1892,16 @@
           ],
           "max": [
             114.51506042480469,
-            32.105308532714844,
+            34.90530776977539,
             27.600141525268555
           ]
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-5ab20cf90fe2.glb",
-        "bytes": 4457480,
-        "triangles": 564234,
-        "sha256": "5ab20cf90fe25aafc250b0df31d39507e6a4171ad832eefe8dfc7b9a9ecc11d6",
+        "url": "/models/details/lrb-interior-a2833915085e.glb",
+        "bytes": 4514156,
+        "triangles": 568590,
+        "sha256": "a2833915085e20bb9cdeb5ed8711eaa8f8951a5459d225f0bc120e99ee364731",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -1910,7 +1910,7 @@
           ],
           "max": [
             114.29000091552734,
-            32.105308532714844,
+            34.90530776977539,
             27.380033493041992
           ]
         }
