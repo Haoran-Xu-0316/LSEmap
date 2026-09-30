@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v44.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v45.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage44/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage44/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage45/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage45/building-review.json').read_text())['buildings']}
 material_cache = {}
 
 
@@ -126,6 +126,12 @@ def web_material(source):
         descriptor = surface_descriptor(source)
         if descriptor:
             material['surfaceDetail'] = descriptor
+    if source and source.get('globeMap'):
+        image_node = next(n for n in source.node_tree.nodes if n.type == 'TEX_IMAGE')
+        texture = material.node_tree.nodes.new('ShaderNodeTexImage')
+        texture.image = image_node.image
+        node.inputs['Base Color'].default_value = (1, 1, 1, 1)
+        material.node_tree.links.new(texture.outputs['Color'], node.inputs['Base Color'])
     material_cache[key] = material
     return material
 
@@ -169,7 +175,11 @@ def clone_group(objects, name, target_scene, hide_basement=False):
             raise ValueError(f"Exterior brick requires metric UVs: {original.name}")
         # Joining differently named UV layers would put some facades in UV1 while
         # the browser samples UV0. Normalize only these temporary export meshes.
-        if full_detail and mesh.uv_layers:
+        needs_uv = full_detail or any(m and m.get('globeMap') for m in mesh.materials)
+        if not needs_uv:
+            for layer in list(mesh.uv_layers):
+                mesh.uv_layers.remove(layer)
+        if needs_uv and mesh.uv_layers:
             active = next((layer for layer in mesh.uv_layers if layer.active_render), mesh.uv_layers.active)
             for layer in list(mesh.uv_layers):
                 if layer != active:
@@ -219,7 +229,7 @@ def export_scene(scene, filename):
     bpy.ops.export_scene.gltf(
         filepath=str(OUTPUT / filename), export_format='GLB', use_selection=True, use_active_scene=True,
         export_cameras=False, export_lights=False, export_extras=True,
-        export_animations=False, export_texcoords=full_detail, export_normals=True,
+        export_animations=False, export_texcoords=full_detail or filename == 'campus.glb', export_normals=True,
         export_materials='EXPORT', export_yup=True,
         export_draco_mesh_compression_enable=True,
         export_draco_mesh_compression_level=6,
@@ -328,7 +338,7 @@ for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_h
     if collection:
         clone_group(collection.all_objects, name, campus_scene)
 export_scene(campus_scene, 'campus.glb')
-for room in json.loads((ROOT / 'result/blender/stage44/room-spaces.json').read_text())['spaces']:
+for room in json.loads((ROOT / 'result/blender/stage45/room-spaces.json').read_text())['spaces']:
     source_scene.collection.children.link(bpy.data.collections[room['collection']])
 for code in ROOM_RECORDS:
     source_scene.collection.children.link(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'])
@@ -433,7 +443,7 @@ for record in metadata:
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
 # Additional rooms retain their own identity instead of replacing the building's hall.
-for room in json.loads((ROOT / 'result/blender/stage44/room-spaces.json').read_text())['spaces']:
+for room in json.loads((ROOT / 'result/blender/stage45/room-spaces.json').read_text())['spaces']:
     record = next(item for item in metadata if item['code'] == room['code'])
     descriptor = export_detail(list(bpy.data.collections[room['collection']].all_objects), room['id'], 'interior')
     study = {'kind':'room-sample', 'label':room['label'], 'scope':room['scope']}
@@ -451,7 +461,8 @@ report_path.parent.mkdir(parents=True, exist_ok=True)
 report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
-    'version': '44', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage45/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
+    'version': '45', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
