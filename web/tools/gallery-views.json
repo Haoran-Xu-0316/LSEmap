@@ -538,5 +538,44 @@
       ],
       "fov": 35
     }
+  },
+  {
+    "name": "portsmouth-drainage",
+    "code": "CAMPUS",
+    "view": {
+      "position": [
+        -51.05,
+        1.5,
+        -31.95
+      ],
+      "target": [
+        -49.89875,
+        0.04,
+        -33.38201
+      ],
+      "fov": 43
+    }
+  },
+  {
+    "name": "mar-lse-sign",
+    "code": "MAR",
+    "view": {
+      "position": [
+        -44.89505967263311,
+        2.15,
+        -67.2780554018339
+      ],
+      "target": [
+        -41.38868990088033,
+        1.275,
+        -62.87063313663871
+      ],
+      "fov": 43
+    }
+  },
+  {
+    "name": "saw-three-tuns-interior",
+    "code": "SAW",
+    "spaceId": "saw-three-tuns"
   }
 ]
