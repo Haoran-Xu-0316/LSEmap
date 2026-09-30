@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "62",
-  "sourceModelSha256": "8b9276fd88d465e29898c2817502a07e90793bf522c7e2f384cee1032f13a685",
+  "version": "63",
+  "sourceModelSha256": "fad2d5e4969e0b2db28090d07698806eeadbc5d2c7f955e64a365b69cbccb715",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -28,7 +28,7 @@
         ],
         "max": [
           -25.881681442260742,
-          38.5,
+          38.47999954223633,
           133.56549072265625
         ]
       },
@@ -45,9 +45,9 @@
       ],
       "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
-        "newComponents": 1448,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Chamfered octagonal roof pavilion with lower windows, wrapping clerestory and hip roof",
+        "newComponents": 8,
+        "scope": "Undated built project photography guides the corner pavilion only; dimensions estimated. Main facade, dormers, unseen elevations and current LSE interior conversion remain unresolved. Proposed redevelopment not modeled as built."
       },
       "latestReview": {
         "version": 43,
@@ -80,10 +80,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-e90d56871700.glb",
-        "bytes": 4420280,
-        "triangles": 373249,
-        "sha256": "e90d56871700757688d31c1ed80f9b531229446bd78b79d58260cbde9acdfeac",
+        "url": "/models/details/61a-exterior-2560446f41ff.glb",
+        "bytes": 4405028,
+        "triangles": 371785,
+        "sha256": "2560446f41ff9b2fa20fbefa4be5c731790ad4ee717cdbf67bdd38dc3c03e3d2",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -92,7 +92,7 @@
           ],
           "max": [
             -25.88298225402832,
-            38.5,
+            38.47999954223633,
             133.56060791015625
           ]
         }
