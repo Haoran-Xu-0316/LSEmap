@@ -1,4 +1,4 @@
-"""Prepare edition46 stone courses and mapped street-object placements.
+"""Prepare edition47 stone courses and mapped street-object placements.
 Dimensions are estimates; existing photographs establish the street character.
 """
 from pathlib import Path
@@ -8,7 +8,7 @@ from shapely.geometry import Polygon, Point, box, shape
 from shapely.ops import unary_union, substring
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT/'result/blender/stage46'
+OUT = ROOT/'result/blender/stage47'
 OUT.mkdir(parents=True,exist_ok=True)
 site=json.loads((ROOT/'result/blender/site_geometry.json').read_text())
 old=json.loads((ROOT/'result/blender/stage44/paving-plan.json').read_text())
@@ -17,6 +17,7 @@ buildings=unary_union([Polygon(b['rings'][0],b['rings'][1:]).buffer(0) for b in 
 def polygons(value):
     if value.is_empty:return []
     if value.geom_type=='Polygon':return [value]
+    if not hasattr(value,'geoms'):return []
     return [p for item in value.geoms for p in polygons(item)]
 
 def triangles(value):
@@ -36,6 +37,9 @@ for record in old['records']:
     region=unary_union([Polygon(t) for t in record['base']])
     # Fill the former slivers beside narrow centreline-based surfaces.
     region=region.buffer(.80,join_style=2).difference(buildings).difference(used).buffer(0)
+    # Close small gaps at nearby building frontages, without crossing footprints.
+    frontage=region.buffer(2.40,join_style=2).intersection(buildings.buffer(2.60)).difference(buildings).difference(used)
+    region=unary_union([region,frontage]).buffer(0)
     used=unary_union([used,region])
     local=affinity.rotate(region,-angle,origin=(0,0));interior=local.buffer(-.19)
     xmin,ymin,xmax,ymax=local.bounds
@@ -80,14 +84,9 @@ for filename in ['greenspace','street_objects']:
 # Drainage is confirmed in the completed Portsmouth scheme; these six locations are illustrative.
 port=next(r for r in records if r['street']=='Portsmouth Street')
 region=unary_union([Polygon(t) for t in port['base']]);local=affinity.rotate(region,-port['angle'],origin=(0,0))
-lo,_,hi,_=local.bounds;gullies=[]
-for i in range(6):
-    x=lo+(hi-lo)*(i+1)/7
-    cut=local.intersection(box(x-.32,-1000,x+.32,1000))
-    if cut.is_empty:continue
-    _,bottom,_,top=cut.bounds
-    point=affinity.rotate(Point(x,bottom+.7),port['angle'],origin=(0,0))
-    if region.buffer(-.36).covers(point):gullies.append({'xy':[point.x,point.y],'angle':port['angle']})
+# Keep the established illustrative gully positions when refining their construction.
+gullies=json.loads((ROOT/'result/blender/stage46/street-plan.json').read_text())['gullies']
+assert all(region.covers(Point(g['xy'])) for g in gullies)
 # Cut real openings so flush grilles do not fight the underlying paving faces.
 openings = [Point(item['xy']).buffer(.70) for item in objects if item['kind']=='tree']
 for item in gullies:
@@ -103,6 +102,6 @@ for record in records:
             if cut.area>.00001:clipped.append(course(cut,tile['shade']))
         record[component]=clipped
 assert used.intersection(buildings).area<1e-6
-payload={'records':records,'objects':objects,'gullies':gullies,'buildingOverlapArea':used.intersection(buildings).area,'limitations':['Stone courses and added surface widths estimated from existing street photographs','Mapped trees and furniture use archived OSM locations, not a current survey','Portsmouth gully locations illustrative; completion source confirms drainage works but no located plans','Existing seven bench centres retained; bench construction estimated','No future Portugal Street landscape added']}
+payload={'records':records,'objects':objects,'gullies':gullies,'buildingOverlapArea':used.intersection(buildings).area,'limitations':['Stone courses and frontage approach infill estimated from existing street photographs; not a surveyed boundary','Mapped trees and furniture use archived OSM locations, not a current survey','Portsmouth gully locations illustrative; completion source confirms drainage works but no located plans','Existing seven bench centres retained; bench construction estimated','No future Portugal Street landscape added']}
 (OUT/'street-plan.json').write_text(json.dumps(payload,separators=(',',':')))
 print('STREET_PLAN',sum(len(r['tiles']) for r in records),'pavers',len(objects),'mapped objects',len(gullies),'gullies')
