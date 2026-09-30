@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "53",
-  "sourceModelSha256": "25a8cc82b7e4fbb30dd9de91e102290edf699ae1b5cf0f15ea6962856c996fef",
+  "version": "54",
+  "sourceModelSha256": "d74d423ca5e0f2e19955949d10ef538f8e9175eda92ed82be8b9a155cd861f96",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1121,9 +1121,9 @@
         0.4044066071510315
       ],
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 160,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Curved central oriel sills, bowed glazing and pale stone upper surrounds",
+        "newComponents": 60,
+        "scope": "Central street oriel guided by an undated estate photograph; radius and dimensions estimated. Roof and unseen elevations remain unverified; interiors unchanged."
       },
       "latestReview": {
         "version": 43,
@@ -1171,10 +1171,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-309e4837359f.glb",
-        "bytes": 449524,
-        "triangles": 31984,
-        "sha256": "309e4837359f128cfa9aeeb6aa1ee2fc7d4a65c0e7d722dcb409fb0ea7713c41",
+        "url": "/models/details/ksw-exterior-101d59126042.glb",
+        "bytes": 581192,
+        "triangles": 77344,
+        "sha256": "101d59126042d5222a124a737d7ebbb8777cf5350754519d81e395dff316433e",
         "bounds": {
           "min": [
             -81.10916900634766,
