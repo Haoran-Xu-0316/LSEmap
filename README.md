@@ -44,6 +44,18 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 46 street details
+
+The five pedestrian areas gain bevelled stone courses, individually jointed edge
+bands and restrained source-derived stone grain. Estimated surface extensions
+close narrow gaps beside the previous centreline-based paving; mapped building
+footprints remain excluded. Seven existing bench centres now carry slatted timber
+seats with metal supports. Archived OSM points locate tree surrounds, bollards and
+cycle stands. Portsmouth drainage grilles are illustrative placements based on
+the completed council scheme, not surveyed drain locations. Previous paving and
+bench objects are retained but excluded from rendering; all other existing meshes
+remain unchanged. The globe is raised one centimetre to meet the new paving.
+
 ## Edition 45 inverted globe
 
 The World Turned Upside Down is added outside SAW on Sheffield Street as a
@@ -117,7 +129,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition 45. Check the live `/release.json`
+The current local source and build target is edition 46. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
