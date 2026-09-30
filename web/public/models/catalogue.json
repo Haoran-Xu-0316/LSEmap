@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "63",
-  "sourceModelSha256": "fad2d5e4969e0b2db28090d07698806eeadbc5d2c7f955e64a365b69cbccb715",
+  "version": "64",
+  "sourceModelSha256": "40a542a923c3ea89b2532f00cd1257ace5309489195e400acf59094a1fbb15ec",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -45,9 +45,9 @@
       ],
       "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
       "localRefinement": {
-        "description": "Chamfered octagonal roof pavilion with lower windows, wrapping clerestory and hip roof",
+        "description": "Continuous three-storey stone piers and dark metal window belts, with chamfered roof pavilion",
         "newComponents": 8,
-        "scope": "Undated built project photography guides the corner pavilion only; dimensions estimated. Main facade, dormers, unseen elevations and current LSE interior conversion remain unresolved. Proposed redevelopment not modeled as built."
+        "scope": "Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -80,10 +80,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-2560446f41ff.glb",
-        "bytes": 4405028,
-        "triangles": 371785,
-        "sha256": "2560446f41ff9b2fa20fbefa4be5c731790ad4ee717cdbf67bdd38dc3c03e3d2",
+        "url": "/models/details/61a-exterior-a65595f12597.glb",
+        "bytes": 3893108,
+        "triangles": 328369,
+        "sha256": "a65595f12597774536a882b142b78efe1e984121628211615e15a9b221a70812",
         "bounds": {
           "min": [
             -77.12799072265625,
