@@ -21,8 +21,8 @@ test('OLD overview and on-demand detail both contain the blue portal and red-whi
   const doc=JSON.parse(bytes.subarray(20,20+bytes.readUInt32LE(12)).toString());
   const node=doc.nodes.find(n=>n.extras?.buildingCode==='OLD')??doc.nodes.find(n=>n.mesh!==undefined);
   const names=doc.meshes[node.mesh].primitives.map(p=>doc.materials[p.material].name);
-  for(const key of ['blue','red','white','stone','metal'])expect(names.some(n=>n.includes('OLD_V49_'+key))).toBeTruthy();
-  const blue=doc.materials.find(m=>m.name.includes('OLD_V49_blue')).pbrMetallicRoughness.baseColorFactor;
+  for(const key of ['blue','red','white','stone','metal'])expect(names.some(n=>n.includes('OLD_V53_'+key))).toBeTruthy();
+  const blue=doc.materials.find(m=>m.name.includes('OLD_V53_blue')).pbrMetallicRoughness.baseColorFactor;
   expect(blue[2]).toBeGreaterThan(blue[1]);expect(blue[1]).toBeGreaterThan(blue[0]);
  }
 });
