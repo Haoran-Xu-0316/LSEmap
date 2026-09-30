@@ -129,7 +129,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition 46. Check the live `/release.json`
+The current local source and build target is edition 50. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
@@ -302,3 +302,5 @@ Edition48 uses the supplied photographs for MAR's red-faced, white-sided LSE scu
 Three Tuns has a separate entrance and historical plan study based on the official2014 SAW occupants guide and an undated official entrance photograph. This is not an as-built reconstruction of the2026 refurbishment. The supplied red glass cube and reception photograph remain reference material pending verified placement; poster captions are not used to identify buildings.
 
 Edition49 replaces the generic lower windows on OLD's central Clare Market GIS edge with photo-guided tall blue-framed bays, a recessed entrance, shallow steps, metal handrails, a raised stone planter and a red-faced/white-sided LSE sculpture. The original facade components survive as hidden native archival copies; other buildings are unchanged. Registration and dimensions are estimates. Relief panel framing is represented, but the figurative Frith carvings and complete Student Services interior remain unresolved. The official Food Hall programme describes design work in2026 and construction expected in2027; those planned changes are not presented as existing construction.
+
+Edition50 corrects SHF's principal elevation from the short south edge to the long Sheffield Street edge. The official estate photograph supports four window bays, a two-storey pale base, three brick storeys and four broad roof dormers. The replacement retains the GIS footprint, archives every previous SHF component and preserves other buildings' geometry. Warm stock-brick colours, white multi-light frames, stone lintels, dentils, door joinery and window planters are rebuilt. Heights, doorway registration, secondary elevations and mansard depth remain estimated; the official image has no verified capture date. No unsupported SHF interior is created.
