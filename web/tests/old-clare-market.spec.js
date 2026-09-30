@@ -31,7 +31,7 @@ test('OLD gallery exposes the refined Clare Market facade',async({page})=>{
  await page.goto('/#OLD');
  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-OLD',{timeout:60000});
  const image=page.locator('.detail-gallery img[src*="old-clare-market"]');
- await expect(image).toHaveAttribute('src',/v=51-/);
+ await expect(image).toHaveAttribute('src',new RegExp('v='+JSON.parse(await readFile('dist/models/catalogue.json')).version+'-'));
  await image.click();
  await expect(page.locator('#gallery-image')).toHaveAttribute('src',/old-clare-market/);
 });
