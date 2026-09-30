@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "56",
-  "sourceModelSha256": "3963aba5a4eba33c47168b45ab370829acef440bad629901a30bd7fde2f12356",
+  "version": "57",
+  "sourceModelSha256": "d5ddd4474e89ae3d31a444c3cd47e20a3b7b4f301067440bd6b698db10b7a636",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1717,7 +1717,7 @@
         "min": [
           -74.75822448730469,
           0.0,
-          -58.59324645996094
+          -58.58088684082031
         ],
         "max": [
           -56.368648529052734,
@@ -1733,9 +1733,9 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 768,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Filled segmental corner pediment, entrance board and three-column first upper sash with stone surround",
+        "newComponents": 3,
+        "scope": "Tree-obscured estate photograph guides the GIS chamfer entrance; dimensions and decorative profiles estimated. Upper quoins, unseen elevations, roof and interior remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1758,15 +1758,15 @@
       },
       "closeupImage": "51l-entrance",
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-63f49aac7052.glb",
-        "bytes": 3239432,
-        "triangles": 248159,
-        "sha256": "63f49aac7052e46361cc0915c9c4c8bc1bdf5852099e785923153accbf471bf5",
+        "url": "/models/details/51l-exterior-f70de6a73c30.glb",
+        "bytes": 3226660,
+        "triangles": 247479,
+        "sha256": "f70de6a73c305418c2808e27de7a3838c9bc152a239106c50affb6eed5965325",
         "bounds": {
           "min": [
             -74.75358581542969,
             0.0,
-            -58.5892219543457
+            -58.57686233520508
           ],
           "max": [
             -56.373260498046875,
