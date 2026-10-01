@@ -225,7 +225,7 @@ export const buildingDetails = {
       "与Fawcett House相接的灰色预制板塔楼。水平窗带延伸至转角，底部为双旋转门共用入口。",
     note: "13层依据地图属性，44m高度为估计；入口家具位置参考照片。",
     images: [
-      ["pan-faw-exterior", "Pankhurst与Fawcett整体立面"],
+      ["pan-faw-exterior", "Pankhurst House外观"],
       ["pan-faw-entrance", "双旋转门与镂空门楣"],
     ],
   },
@@ -234,7 +234,7 @@ export const buildingDetails = {
       "与Pankhurst House形成连续塔楼界面，灰色板缝、细金属窗框与部分遮帘表现立面节奏。",
     note: "共墙依据地理轮廓处理，未添加假窗；楼层高度仍为估计。",
     images: [
-      ["pan-faw-exterior", "Pankhurst与Fawcett整体立面"],
+      ["faw-exterior", "Fawcett House外观"],
       ["pan-faw-entrance", "共用入口细节"],
     ],
   },
