@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "98",
-  "sourceModelSha256": "424d4d2eadf8dbfef21b40f1950ef8bebcf032fcd4a8dbe98cd054333f6341ac",
+  "version": "99",
+  "sourceModelSha256": "d0cfcf58d4712d828b39a73c1f11bd0071d7f0596a51d657ac14c4d391be19c3",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -563,9 +563,9 @@
         0.6652591228485107
       ],
       "localRefinement": {
-        "description": "Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet",
-        "newComponents": 5,
-        "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved."
+        "description": "Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet; independent Garrick corner glazing, dark metal joinery, paired pull handles and a mounted red LSE badge beside lowercase lettering",
+        "newComponents": 14,
+        "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published."
       },
       "latestReview": {
         "version": 43,
@@ -612,10 +612,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-7b5db8c3ec04.glb",
-        "bytes": 960932,
-        "triangles": 77700,
-        "sha256": "7b5db8c3ec0403971c09581581d251434398de85b338fea866e6431585ea2b2f",
+        "url": "/models/details/col-exterior-c43ad174d81a.glb",
+        "bytes": 980280,
+        "triangles": 78552,
+        "sha256": "c43ad174d81a1cde4d05272291ec067807a078f7b3c698e0b492da42f23f5a36",
         "bounds": {
           "min": [
             2.9004480838775635,
