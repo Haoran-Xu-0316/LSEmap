@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "71",
-  "sourceModelSha256": "5f8b42cb5de17a36a3eae7f614c2e0ab6b930775bafb4b09c19f2905e21ce63c",
+  "version": "72",
+  "sourceModelSha256": "4a28495b975cb888fe90cd20ced1458e37923b5d2d7c16c07f2e60d930eeabb5",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1642,8 +1642,8 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -51.65165328979492,
-          0.0,
+          -51.667205810546875,
+          -4.76837147544984e-09,
           -54.27339553833008
         ],
         "max": [
@@ -1665,9 +1665,9 @@
         "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 99,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Broad panelled sandstone portal, dark unbarred semicircular fanlight, six timber panels, distinct door knobs, letterbox and two low metal-nosed steps",
+        "newComponents": 15,
+        "scope": "No.50 entrance guided by the LSE 2025/26 property handbook photograph. Neighboring round windows excluded; dimensions and carved profiles estimated, capture date unknown. Upper elevations, roof and complete interior still require review."
       },
       "latestReview": {
         "version": 43,
@@ -1690,14 +1690,14 @@
       },
       "closeupImage": "50l-entrance",
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-053779bde328.glb",
-        "bytes": 539140,
-        "triangles": 36560,
-        "sha256": "053779bde32803b89de4f13b21c1ac65a3ca861db77d51c2e07ac7c8ffd277c1",
+        "url": "/models/details/50l-exterior-c47ad9483e84.glb",
+        "bytes": 346456,
+        "triangles": 23788,
+        "sha256": "c47ad9483e84bac333a47f7c32544a321eac91ff4ef93139a27ad678bdc3edd2",
         "bounds": {
           "min": [
-            -51.64693832397461,
-            0.0,
+            -51.667205810546875,
+            -4.76837147544984e-09,
             -54.27339553833008
           ],
           "max": [
