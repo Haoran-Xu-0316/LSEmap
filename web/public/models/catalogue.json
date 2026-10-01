@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "81",
-  "sourceModelSha256": "59d3a4c6a23f3fb27b3708a30018efa28729b92a876c755740724aa0040a19d9",
+  "version": "82",
+  "sourceModelSha256": "ab430b568608c083dab31f3405a019c6ac4a02dc4fcea67ab639f3b8b3b1f76b",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2891,8 +2891,8 @@
       "bounds": {
         "min": [
           -84.64329528808594,
-          -0.054999999701976776,
-          -37.45360565185547
+          -0.09226448833942413,
+          -37.072296142578125
         ],
         "max": [
           -46.9441032409668,
@@ -2907,9 +2907,9 @@
         -0.16823700070381165
       ],
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
-        "newComponents": 990,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Four timber curtain-wall fields with individual clipped glazing panes, Jatoba-coloured mullions, timber transoms and continuous heads following the folded brick boundaries",
+        "newComponents": 20,
+        "scope": "GEM Joinery confirms Jatoba curtain walling; completion photographs guide the fixed framing. Precise capture dates and 2026 condition unverified. Existing footprint, brick-fold silhouette and section levels retained; joinery sizes, spacing and colour estimated. Brick-screen layout, roof silhouette and full current interiors still require review."
       },
       "latestReview": {
         "version": 43,
@@ -2929,15 +2929,15 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-22179f05cc82.glb",
-        "bytes": 9677716,
-        "triangles": 1047480,
-        "sha256": "22179f05cc82cb72707de987345f1933008e31366e1bb891552c351b7dc495de",
+        "url": "/models/details/saw-exterior-ef419d01859d.glb",
+        "bytes": 9921864,
+        "triangles": 1063946,
+        "sha256": "ef419d01859d871548037ba81d63c7f0a0b17ee0c08f4afc729f5cd0e2305c13",
         "bounds": {
           "min": [
             -84.64329528808594,
-            -0.054999999701976776,
-            -37.45181655883789
+            -0.0874767005443573,
+            -37.072296142578125
           ],
           "max": [
             -46.94651794433594,
