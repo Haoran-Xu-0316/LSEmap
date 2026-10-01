@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "86",
-  "sourceModelSha256": "352eb8425ece665dd55927d9166f6246261addc8ca7c3779a334d8ab3fce665d",
+  "version": "87",
+  "sourceModelSha256": "12d7a94c4021bf65a6282e4dae2fb3c7f01b8b305efce662dc80f6b87f6594e5",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Photo-estimated neutral warm limestone with matte finish and fine procedural grain across Houghton and Clare Market; four-column casements and six-figure Final Sale plastic-mesh installation retained",
-        "newComponents": 0,
-        "scope": "User entrance photographs and Damian Griffiths completed-project photographs guide reduced yellow cast and surface character. Capture dates and calibrated colours unverified. Procedural finish parameters are shared by overview and detailed assets; browser grain is an approximation, not a Blender bake or photo texture. All geometry and interiors retained. Other elevations and roof massing still require review."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained",
+        "newComponents": 2,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Frith figurative panels, roof massing, unseen elevations and full interiors still require review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-af1858620db5.glb",
-        "bytes": 18837608,
-        "triangles": 1718043,
-        "sha256": "af1858620db5bfaa0fc81edc76bc3001d0138993a828847cc5c8d75336adcf96",
+        "url": "/models/details/old-exterior-c96435e3bb19.glb",
+        "bytes": 18780072,
+        "triangles": 1713531,
+        "sha256": "c96435e3bb1908cb5f795a0e4ed764bad8434ccd389067306fa03f2299ebc108",
         "bounds": {
           "min": [
             -39.15880584716797,
