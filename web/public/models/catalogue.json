@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "76",
-  "sourceModelSha256": "ebd96fd059e814ad9be6a7b3d29f06291447b826bce43ca154d9a6e9ea9ecaee",
+  "version": "77",
+  "sourceModelSha256": "da08639267bce97a08d9bb2c5ee4a360517b11919af2bff283f3420224cbe0e0",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Stone shield with two closed books, left-facing beaver relief and hatched field; five-figure drapery, radial arch, motto and four-leaf entry retained",
-        "newComponents": 3,
-        "scope": "Heraldic layout guided by the LSE History official stone close photograph and latest user entrance photograph. Capture dates unknown; carving profiles and dimensions estimated, not an exact scan. Other elevations, roof and complete interiors remain under review."
+        "description": "Fifteen stone roundel panels, six profiled fluted consoles, four arched parapet iron screens and five blue diamond-pattern upper grilles, ten opened dark-brick mansard apertures and three-column attic sashes; entrance relief and heraldry retained",
+        "newComponents": 13,
+        "scope": "Houghton entablature guided by the Damian Griffiths photograph published by Webb Yates for the completed 2024 refurbishment. Exact capture date unknown; carved profiles and dimensions estimated. Previous walls, window centres and heights retained. Unseen roof, other elevations and complete interiors remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-44869d463f16.glb",
-        "bytes": 16494152,
-        "triangles": 1305579,
-        "sha256": "44869d463f16d741c21c8549ec422b2cb4f9ce538c3107c11dcb90a442f278a5",
+        "url": "/models/details/old-exterior-5d4d1f7a15b1.glb",
+        "bytes": 16839028,
+        "triangles": 1324131,
+        "sha256": "5d4d1f7a15b1daeed86cb48134491e261761089cfe4b553a5372f208f526fb19",
         "bounds": {
           "min": [
             -39.15880584716797,
