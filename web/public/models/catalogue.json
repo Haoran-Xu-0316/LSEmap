@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "93",
-  "sourceModelSha256": "6db1b8d340df5c05bccbf75ebbcbc564d5ffec7e72af17c0edd142d9093c94b1",
+  "version": "96",
+  "sourceModelSha256": "05d5f814bcad45b3194b2735e10d182ff83fb0291c9709b3c8b865967ad6648f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1717,7 +1717,7 @@
         "min": [
           -74.71239471435547,
           0.0,
-          -58.58088684082031
+          -59.06828689575195
         ],
         "max": [
           -56.368648529052734,
@@ -1733,9 +1733,9 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Three-bay Lincoln frontage with finer upper sashes, three ground arches, right timber entry and a dark front roof band with three pale pedimented dormers and slim edge rail",
-        "newComponents": 6,
-        "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; rear roof layout and photographed rounded corner remain unverified."
+        "description": "Three-bay Lincoln frontage with finer upper sashes, three ground arches, right timber entry and a dark front roof band with three pale pedimented dormers, slim edge rail and continuously curved corner masonry and window framing",
+        "newComponents": 37,
+        "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1758,15 +1758,15 @@
       },
       "closeupImage": "51l-entrance",
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-a6a4fbc71ac1.glb",
-        "bytes": 2441940,
-        "triangles": 189203,
-        "sha256": "a6a4fbc71ac132e3ed41ff854dcc429ac347de569eff52922ac67ee8802dd3be",
+        "url": "/models/details/51l-exterior-3ada32cd9fe8.glb",
+        "bytes": 2800660,
+        "triangles": 217227,
+        "sha256": "3ada32cd9fe81249979c9563cbd589f3ceefba60201c6f961708bdab96e0dfda",
         "bounds": {
           "min": [
             -74.71239471435547,
             0.0,
-            -58.57686233520508
+            -59.06828689575195
           ],
           "max": [
             -56.373260498046875,
