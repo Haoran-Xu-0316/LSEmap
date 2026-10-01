@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v96.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v97.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -55,8 +55,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage96/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage96/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage97/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage97/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -83,6 +83,9 @@ for code in ['PAN', 'FAW']:
 FINISH_RECORDS['OLD']['newComponents'] = 5
 FINISH_RECORDS['OLD']['description'] += '; five Clare Market reclining figure relief profiles and distinct flowing backgrounds'
 FINISH_RECORDS['OLD']['scope'] = FINISH_RECORDS['OLD']['scope'].replace('Frith figurative panels, roof massing, unseen elevations and full interiors still require review.', 'Roof massing, unseen elevations and full interiors still require review.') + ' Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported.'
+FINISH_RECORDS['OLD']['description'] += '; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing'
+FINISH_RECORDS['OLD']['newComponents'] += 9
+FINISH_RECORDS['OLD']['scope'] += ' User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved.'
 FINISH_RECORDS['PAN'] = {'description': 'Independent automatic entrance leaf with 980mm clear width, low push pad and fixed side glazing; dark revolving-door metal distinct from pale upper aluminium joinery', 'newComponents': 11, 'scope': 'Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review.'}
 FINISH_RECORDS['LAK'] = {'description': 'Three-column sashes with six-row first-storey and four-row upper windows, pale joinery and warm red brick', 'newComponents': 140, 'scope': 'Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified.'}
 FINISH_RECORDS['LRB'] = {'description': 'Perimeter mansard, estimated dormers, connected lightwell deck and triangular skylight framing', 'newComponents': 24, 'scope': 'Perimeter roof character guided by structural-engineer project imagery completed in 2001. Roof rise, setback and dormer counts estimated; not a survey. Present roof plant, other facade details and complete interiors remain unverified.'}
@@ -508,7 +511,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '96', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '97', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
