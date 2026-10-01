@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "79",
-  "sourceModelSha256": "598c1f2c99a91c2a5514e786671de859263b68660d5ce50201c07a1c4001133a",
+  "version": "80",
+  "sourceModelSha256": "668edd6c32a760499454a3e2083230f498c310df1b42f055983162057448d355",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -306,9 +306,9 @@
         "fov": 38
       },
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 2784,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Glazed rooftop meeting pavilion with pale V braces, dark metal joinery, fourteen silver sun-shading louvres and a low terrace parapet, replacing the previous opaque rooftop block",
+        "newComponents": 13,
+        "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
         "version": 43,
@@ -341,10 +341,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-dfb4006cd556.glb",
-        "bytes": 2681600,
-        "triangles": 233288,
-        "sha256": "dfb4006cd556cbdea452eedec518be2b37c767c6eeb3778f19c6bd588a574c06",
+        "url": "/models/details/ckk-exterior-29a046770e32.glb",
+        "bytes": 2701292,
+        "triangles": 234416,
+        "sha256": "29a046770e32e680ad9061d02a2043b41116ce9ffef173d1acabd9ccff2adb22",
         "bounds": {
           "min": [
             -138.37171936035156,
