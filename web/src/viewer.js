@@ -422,6 +422,8 @@ export class CampusViewer {
     this.showCampus();
     this.highlight(building.code);
     this.toggleContext(false);
+    // Sidebar changes can precede ResizeObserver; fit using the current canvas size.
+    this.resize();
     if (building.bounds)
       this.fit(
         building.bounds,
