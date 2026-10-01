@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v86.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v87.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage86/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage86/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage87/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage87/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -73,7 +73,7 @@ FINISH_RECORDS['MAR'] = {'description': 'Five academic-wing elevations with larg
 FINISH_RECORDS['SAW'] = {'description': 'Two roof terraces, lower green roof, timber curtain glazing, fixed guardrails, fitted photovoltaic modules and twin high brick flues; four clipped Jatoba curtain-wall fields retained', 'newComponents': 38, 'scope': 'LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review.'}
 FINISH_RECORDS['OCS'] = {'description': 'Restored cream lime render and cornice, near-black deep-green shopfront, ochre upper sash surrounds and red-brown upper sash details', 'newComponents': 0, 'scope': 'Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review.'}
 FINISH_RECORDS['CKK'] = {'description': 'Glazed rooftop meeting pavilion with pale V braces, dark metal joinery, fourteen silver sun-shading louvres and a low terrace parapet, replacing the previous opaque rooftop block', 'newComponents': 13, 'scope': 'Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review.'}
-FINISH_RECORDS['OLD'] = {'description': 'Photo-estimated neutral warm limestone with matte finish and fine procedural grain across Houghton and Clare Market; four-column casements and six-figure Final Sale plastic-mesh installation retained', 'newComponents': 0, 'scope': 'User entrance photographs and Damian Griffiths completed-project photographs guide reduced yellow cast and surface character. Capture dates and calibrated colours unverified. Procedural finish parameters are shared by overview and detailed assets; browser grain is an approximation, not a Blender bake or photo texture. All geometry and interiors retained. Other elevations and roof massing still require review.'}
+FINISH_RECORDS['OLD'] = {'description': 'Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained', 'newComponents': 2, 'scope': 'Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Frith figurative panels, roof massing, unseen elevations and full interiors still require review.'}
 FINISH_RECORDS['KSW'] = {'description': 'Curved central oriel sills, bowed glazing and pale stone upper surrounds', 'newComponents': 60, 'scope': 'Central street oriel guided by an undated estate photograph; radius and dimensions estimated. Roof and unseen elevations remain unverified; interiors unchanged.'}
 FINISH_RECORDS['5LF'] = {'description': 'Three shallow segmental ground openings and yellow stock-brick facade', 'newComponents': 3, 'scope': 'Street frontage guided by undated estate imagery; arch shape and vertical dimensions estimated. Steps and railings retained. Roof and unseen elevations remain unverified; interiors unchanged.'}
 FINISH_RECORDS['51L'] = {'description': 'Filled segmental corner pediment, entrance board and three-column first upper sash with stone surround', 'newComponents': 3, 'scope': 'Tree-obscured estate photograph guides the GIS chamfer entrance; dimensions and decorative profiles estimated. Upper quoins, unseen elevations, roof and interior remain unverified.'}
@@ -490,7 +490,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '86', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '87', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
