@@ -41,6 +41,24 @@
   },
   {
     "code": "COL",
+    "name": "col-garrick-entrance",
+    "label": "Garrick街角入口",
+    "view": {
+      "position": [
+        -0.10679555,
+        4.2,
+        134.7701295
+      ],
+      "target": [
+        6.93853474,
+        2.65,
+        126.32244873
+      ],
+      "fov": 34
+    }
+  },
+  {
+    "code": "COL",
     "name": "col-entrance",
     "label": "木门、铭牌与石门廊"
   },
