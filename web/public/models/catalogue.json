@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "82",
-  "sourceModelSha256": "ab430b568608c083dab31f3405a019c6ac4a02dc4fcea67ab639f3b8b3b1f76b",
+  "version": "83",
+  "sourceModelSha256": "c56af36fca675519e0e511d25f0f0b07bf76b2d24a556bb11ff6bac112d51429",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2896,7 +2896,7 @@
         ],
         "max": [
           -46.9441032409668,
-          27.954999923706055,
+          28.950000762939453,
           16.283767700195312
         ]
       },
@@ -2907,9 +2907,9 @@
         -0.16823700070381165
       ],
       "localRefinement": {
-        "description": "Four timber curtain-wall fields with individual clipped glazing panes, Jatoba-coloured mullions, timber transoms and continuous heads following the folded brick boundaries",
-        "newComponents": 20,
-        "scope": "GEM Joinery confirms Jatoba curtain walling; completion photographs guide the fixed framing. Precise capture dates and 2026 condition unverified. Existing footprint, brick-fold silhouette and section levels retained; joinery sizes, spacing and colour estimated. Brick-screen layout, roof silhouette and full current interiors still require review."
+        "description": "Two roof terraces, lower green roof, timber curtain glazing, fixed guardrails, fitted photovoltaic modules and twin high brick flues; four clipped Jatoba curtain-wall fields retained",
+        "newComponents": 38,
+        "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -2929,10 +2929,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-ef419d01859d.glb",
-        "bytes": 9921864,
-        "triangles": 1063946,
-        "sha256": "ef419d01859d871548037ba81d63c7f0a0b17ee0c08f4afc729f5cd0e2305c13",
+        "url": "/models/details/saw-exterior-39751eba2502.glb",
+        "bytes": 10076824,
+        "triangles": 1077058,
+        "sha256": "39751eba250269dd4631b06ae84e1349d013d58649989df91dbda1852fe9342c",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -2941,7 +2941,7 @@
           ],
           "max": [
             -46.94651794433594,
-            27.954999923706055,
+            28.950000762939453,
             16.283767700195312
           ]
         }
