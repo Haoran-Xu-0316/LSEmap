@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "85",
-  "sourceModelSha256": "02f00bde948ac544c1f9fed4a7ddbfaf4a56a7cf665ea5e49c2129ed8e1975b2",
+  "version": "86",
+  "sourceModelSha256": "352eb8425ece665dd55927d9166f6246261addc8ca7c3779a334d8ab3fce665d",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Twenty-four four-column Houghton casements: fourteen main-wall windows with raised transoms, five lower mansard windows with central transoms and five upper mansard windows with five rows; six-figure Final Sale plastic-mesh installation retained",
-        "newComponents": 3,
-        "scope": "Complete Damian Griffiths project photograph confirms four-column casements and differing horizontal subdivisions. Refurbishment completed in 2024, image published in a 2025 upload path; precise capture date and 2026 condition unverified. Original openings, centres, frames and stonework retained; bar thicknesses and dimensions estimated. Other elevations, roof massing and full interiors still require review."
+        "description": "Photo-estimated neutral warm limestone with matte finish and fine procedural grain across Houghton and Clare Market; four-column casements and six-figure Final Sale plastic-mesh installation retained",
+        "newComponents": 0,
+        "scope": "User entrance photographs and Damian Griffiths completed-project photographs guide reduced yellow cast and surface character. Capture dates and calibrated colours unverified. Procedural finish parameters are shared by overview and detailed assets; browser grain is an approximation, not a Blender bake or photo texture. All geometry and interiors retained. Other elevations and roof massing still require review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-410ee76f7d3f.glb",
-        "bytes": 18829556,
+        "url": "/models/details/old-exterior-af1858620db5.glb",
+        "bytes": 18837608,
         "triangles": 1718043,
-        "sha256": "410ee76f7d3f9bce85a12db1b4e1c90f4fabe21b5083d6144034f8be0872bf41",
+        "sha256": "af1858620db5bfaa0fc81edc76bc3001d0138993a828847cc5c8d75336adcf96",
         "bounds": {
           "min": [
             -39.15880584716797,
