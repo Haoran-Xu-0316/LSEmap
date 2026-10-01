@@ -183,9 +183,9 @@ export const buildingDetails = {
   },
   CKK: {
     description:
-      "面向Lincoln’s Inn Fields的石材立面以中央拱形门厅、两侧窄窗组和双排老虎窗坡顶组成。内部设木饰面公共中庭与玻璃天窗。",
+      "面向Lincoln’s Inn Fields的石材立面以中央拱形门厅、两侧窄窗组和双排老虎窗坡顶组成。屋顶设玻璃会议亭和遮阳露台，内部设木饰面公共中庭。",
     note: "屋顶及中庭尺寸依据照片估计。2025/26计划中的Cafe54改造后布局尚未核实。",
-    images: [["ckk-exterior", "Cheng Kin Ku正立面与坡屋顶"], ["ckk-entrance", "中央拱形采光窗与柱式门厅"], ["ckk-interior", "Cheng Kin Ku公共中庭"]],
+    images: [["ckk-exterior", "Cheng Kin Ku正立面与坡屋顶"], ["ckk-entrance", "中央拱形采光窗与柱式门厅"], ["ckk-roof-pavilion", "玻璃会议亭与遮阳露台"], ["ckk-interior", "Cheng Kin Ku公共中庭"]],
   },
   OLD: {
     description:
