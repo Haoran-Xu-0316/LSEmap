@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "99",
-  "sourceModelSha256": "d0cfcf58d4712d828b39a73c1f11bd0071d7f0596a51d657ac14c4d391be19c3",
+  "version": "100",
+  "sourceModelSha256": "03ce20c23c6542b32485d7abda444bf9457faa1c5f317e705aa0a3b5b36411dd",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -563,9 +563,9 @@
         0.6652591228485107
       ],
       "localRefinement": {
-        "description": "Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet; independent Garrick corner glazing, dark metal joinery, paired pull handles and a mounted red LSE badge beside lowercase lettering",
-        "newComponents": 14,
-        "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published."
+        "description": "Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet; independent Garrick corner glazing, dark metal joinery, paired pull handles and a mounted red LSE badge beside lowercase lettering; existing LSE vector mark replaces generic plaque lettering",
+        "newComponents": 15,
+        "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
         "version": 43,
@@ -612,10 +612,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-c43ad174d81a.glb",
-        "bytes": 980280,
-        "triangles": 78552,
-        "sha256": "c43ad174d81a1cde4d05272291ec067807a078f7b3c698e0b492da42f23f5a36",
+        "url": "/models/details/col-exterior-19292a882beb.glb",
+        "bytes": 986820,
+        "triangles": 78964,
+        "sha256": "19292a882beb1d99127a3d9dc97cf04fd2be4893f843d6adddd1de38a87032fa",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing",
-        "newComponents": 14,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; existing LSE vector mark replaces generic plaque lettering",
+        "newComponents": 16,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-2a4be70f208f.glb",
-        "bytes": 18926112,
-        "triangles": 1722019,
-        "sha256": "2a4be70f208f1bb510ec37c72889bb3074598f15b2e62e17038ea8dd6b12cf09",
+        "url": "/models/details/old-exterior-629a778f2696.glb",
+        "bytes": 18936232,
+        "triangles": 1722843,
+        "sha256": "629a778f269695124aaad300a779689b19b2d841e451e5fbb6ce69d2c6614e17",
         "bounds": {
           "min": [
             -39.15880584716797,
