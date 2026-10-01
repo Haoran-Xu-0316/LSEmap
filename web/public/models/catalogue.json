@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "91",
-  "sourceModelSha256": "aeb7a2023a3738ab180191971eae7ae762c1e51c0590ca639138887e3dcec7ce",
+  "version": "92",
+  "sourceModelSha256": "c6ea6fb7d46b4582364eae11b8d9397273aed6ddd7cfbec8d7cee48c343a9155",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1715,7 +1715,7 @@
       "status": "facade",
       "bounds": {
         "min": [
-          -74.75822448730469,
+          -74.71239471435547,
           0.0,
           -58.58088684082031
         ],
@@ -1727,15 +1727,15 @@
       },
       "interior": false,
       "exteriorDirection": [
-        0.2224913213734008,
-        0.00587605328513892,
-        -0.9749169625723559
+        -0.4030294120311737,
+        0.09950371831655502,
+        -0.9097616076469421
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Filled segmental corner pediment, entrance board and three-column first upper sash with stone surround",
-        "newComponents": 3,
-        "scope": "Tree-obscured estate photograph guides the GIS chamfer entrance; dimensions and decorative profiles estimated. Upper quoins, unseen elevations, roof and interior remain unverified."
+        "description": "Three-bay Lincoln frontage with fifteen finer upper sashes, three ground arches, right timber entry, keyed stone heads and projecting courses",
+        "newComponents": 7,
+        "scope": "LSE Global School of Sustainability image published 31 July 2025 confirms three frontage bays. Capture date unknown; heights, window dimensions and grille details estimated. Owned mesh copies retain all other components and all original objects. Photographed roof dormers and slopes are not yet represented; corner curvature, unseen elevations and interiors remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1758,13 +1758,13 @@
       },
       "closeupImage": "51l-entrance",
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-f70de6a73c30.glb",
-        "bytes": 3226660,
-        "triangles": 247479,
-        "sha256": "f70de6a73c305418c2808e27de7a3838c9bc152a239106c50affb6eed5965325",
+        "url": "/models/details/51l-exterior-53ad72880360.glb",
+        "bytes": 2416120,
+        "triangles": 187659,
+        "sha256": "53ad7288036068ee35f685f7a7eb51d9e87fd0424aeba9f790f9d1b3716ed95a",
         "bounds": {
           "min": [
-            -74.75358581542969,
+            -74.71239471435547,
             0.0,
             -58.57686233520508
           ],
