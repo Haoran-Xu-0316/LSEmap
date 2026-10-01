@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "88",
-  "sourceModelSha256": "127b8962bf069320ff809490820fbafe232899ca7fc165ba1db178ed663ec0c8",
+  "version": "89",
+  "sourceModelSha256": "2bf763ee70c52b7a41d3cef11a83b0ac3d5a4c05b662b2784dc3e2304f161a6c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained",
-        "newComponents": 2,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Frith figurative panels, roof massing, unseen elevations and full interiors still require review."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds",
+        "newComponents": 5,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-c96435e3bb19.glb",
-        "bytes": 18780072,
-        "triangles": 1713531,
-        "sha256": "c96435e3bb1908cb5f795a0e4ed764bad8434ccd389067306fa03f2299ebc108",
+        "url": "/models/details/old-exterior-e3dea2074ea3.glb",
+        "bytes": 18922980,
+        "triangles": 1721995,
+        "sha256": "e3dea2074ea31091b96e7f8604e7ed5658eab839a2d9a5f88afef25f21655a82",
         "bounds": {
           "min": [
             -39.15880584716797,
