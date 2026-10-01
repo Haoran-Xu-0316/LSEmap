@@ -110,6 +110,11 @@
   },
   {
     "code": "FAW",
+    "name": "faw-exterior",
+    "label": "Fawcett House外观"
+  },
+  {
+    "code": "FAW",
     "name": "faw-interior",
     "label": "FAW.1.01小组教室"
   },
