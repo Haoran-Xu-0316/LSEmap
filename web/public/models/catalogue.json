@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "70",
-  "sourceModelSha256": "ea849b831cfcd30ca36b594cd49064fdd5903a6d67421a9c6af21838d55378c5",
+  "version": "71",
+  "sourceModelSha256": "5f8b42cb5de17a36a3eae7f614c2e0ab6b930775bafb4b09c19f2905e21ce63c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Radial Houghton arch masonry and carved shield surround with motto scroll; four-leaf entry, straight stone stairs, five-figure relief and blue Clare Market joinery retained",
+        "description": "Five-figure relief with fuller folded robes, profiled heads, blended elbows and taller carved book spines; radial stone arch and four-leaf entry retained",
         "newComponents": 4,
-        "scope": "User photographs guide radial stone joints and shield surround; dimensions and ornamental profiles estimated. Central heraldic device unresolved and not invented. Figure relief remains an authored interpretation, not an exact carving reproduction. Upper elevations, roof and complete interiors remain unresolved."
+        "scope": "User entrance photograph guides shallow sculptural silhouettes and drapery; capture date and dimensions unknown. Authored interpretation, not an exact carving or scan. Central heraldic device, other elevations, roof and complete interiors remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-ec2f397647cb.glb",
-        "bytes": 15819008,
-        "triangles": 1274172,
-        "sha256": "ec2f397647cbf95671c747fdd9079f9e4736ebbc9d90f84581b8272a710cb96e",
+        "url": "/models/details/old-exterior-d2d39e39ce94.glb",
+        "bytes": 16060292,
+        "triangles": 1287312,
+        "sha256": "d2d39e39ce943808009bf564443d2f294d1840100db128c65680cd3ff7a86514",
         "bounds": {
           "min": [
             -39.15880584716797,
