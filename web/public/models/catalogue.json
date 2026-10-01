@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "75",
-  "sourceModelSha256": "2877cd880224058496548b3454d8f5d9df4a3f31668f66a05c6904cf56bac5e5",
+  "version": "76",
+  "sourceModelSha256": "ebd96fd059e814ad9be6a7b3d29f06291447b826bce43ca154d9a6e9ea9ecaee",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -806,9 +806,9 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 990,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish",
+        "newComponents": 4,
+        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -841,10 +841,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-52510930330a.glb",
-        "bytes": 3474892,
-        "triangles": 275239,
-        "sha256": "52510930330af8ca84feb4b5c393a5cd2b53d060567849d885d34e1ee35474e3",
+        "url": "/models/details/cow-exterior-a1af7e4d9367.glb",
+        "bytes": 3323348,
+        "triangles": 262795,
+        "sha256": "a1af7e4d9367f1662884d1a1688e647ebad437fc64d0beffa0b103e41ccd0c7c",
         "bounds": {
           "min": [
             -6.504848003387451,
