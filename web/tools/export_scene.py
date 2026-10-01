@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v68.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v69.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage68/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage68/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage69/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage69/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -64,7 +64,7 @@ old_houghton = json.loads((ROOT / 'result/blender/stage52/old-houghton-audit.jso
 FINISH_RECORDS['CON'] = {'description': 'Open street portal with warm recessed vestibule, inner glazed doors and split granite-limestone casing', 'newComponents': 8, 'scope': 'Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved.'}
 FINISH_RECORDS['COL'] = {'description': 'Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet', 'newComponents': 5, 'scope': 'Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved.'}
 FINISH_RECORDS['PAR'] = {'description': 'Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps', 'newComponents': 15, 'scope': 'Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved.'}
-FINISH_RECORDS['OLD'] = {'description': 'Four-leaf Houghton entry with narrow transom, rectangular stone approach and divided steel rails; recessed arch, five-figure relief and blue Clare Market joinery retained', 'newComponents': 5, 'scope': 'User photographs guide Houghton joinery and rectangular stair approach; dimensions and terrace extent estimated. Sculptural relief remains an authored interpretation, not a scan or exact carving reproduction. Heraldic carving, upper elevations, roof and complete interiors remain unresolved.'}
+FINISH_RECORDS['OLD'] = {'description': 'Radial Houghton arch masonry and carved shield surround with motto scroll; four-leaf entry, straight stone stairs, five-figure relief and blue Clare Market joinery retained', 'newComponents': 4, 'scope': 'User photographs guide radial stone joints and shield surround; dimensions and ornamental profiles estimated. Central heraldic device unresolved and not invented. Figure relief remains an authored interpretation, not an exact carving reproduction. Upper elevations, roof and complete interiors remain unresolved.'}
 FINISH_RECORDS['KSW'] = {'description': 'Curved central oriel sills, bowed glazing and pale stone upper surrounds', 'newComponents': 60, 'scope': 'Central street oriel guided by an undated estate photograph; radius and dimensions estimated. Roof and unseen elevations remain unverified; interiors unchanged.'}
 FINISH_RECORDS['5LF'] = {'description': 'Three shallow segmental ground openings and yellow stock-brick facade', 'newComponents': 3, 'scope': 'Street frontage guided by undated estate imagery; arch shape and vertical dimensions estimated. Steps and railings retained. Roof and unseen elevations remain unverified; interiors unchanged.'}
 FINISH_RECORDS['51L'] = {'description': 'Filled segmental corner pediment, entrance board and three-column first upper sash with stone surround', 'newComponents': 3, 'scope': 'Tree-obscured estate photograph guides the GIS chamfer entrance; dimensions and decorative profiles estimated. Upper quoins, unseen elevations, roof and interior remain unverified.'}
@@ -481,7 +481,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '68', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '69', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
