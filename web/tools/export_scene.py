@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v99.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v100.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -55,8 +55,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage99/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage99/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage100/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage100/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -71,6 +71,8 @@ FINISH_RECORDS['COL'] = {'description': 'Dark brown paired door leaves with four
 FINISH_RECORDS['COL']['description'] += '; independent Garrick corner glazing, dark metal joinery, paired pull handles and a mounted red LSE badge beside lowercase lettering'
 FINISH_RECORDS['COL']['newComponents'] += 9
 FINISH_RECORDS['COL']['scope'] += ' Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published.'
+
+
 FINISH_RECORDS['PAR'] = {'description': 'Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps', 'newComponents': 15, 'scope': 'Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved.'}
 FINISH_RECORDS['COW'] = {'description': 'Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides', 'newComponents': 6, 'scope': 'Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review.'}
 FINISH_RECORDS['MAR'] = {'description': 'Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish', 'newComponents': 3, 'scope': 'Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review.'}
@@ -95,6 +97,10 @@ FINISH_RECORDS['LRB'] = {'description': 'Perimeter mansard, estimated dormers, c
 FINISH_RECORDS['PEL'] = {'description': 'Projecting silver entrance fascia, yellow reveals, first-floor window box and revolving glazing', 'newComponents': 20, 'scope': 'Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified.'}
 FINISH_RECORDS['PEA'] = {'description': 'Lower blue-black podium with brass starbursts, three-column upper wing, exposed brick side and right roof louvres', 'newComponents': 19, 'scope': 'Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained.'}
 FINISH_RECORDS['61A'] = {'description': 'Continuous three-storey stone piers and dark metal window belts, with chamfered roof pavilion', 'newComponents': 8, 'scope': 'Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved.'}
+for code, count in [('OLD', 2), ('COL', 1)]:
+    FINISH_RECORDS[code]['description'] += '; existing LSE vector mark replaces generic plaque lettering'
+    FINISH_RECORDS[code]['newComponents'] += count
+    FINISH_RECORDS[code]['scope'] += ' Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged.'
 material_cache = {}
 
 
@@ -514,7 +520,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '99', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '100', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
