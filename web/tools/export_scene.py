@@ -14,7 +14,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v81.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v82.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -54,8 +54,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage81/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage81/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage82/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage82/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -70,6 +70,7 @@ FINISH_RECORDS['COL'] = {'description': 'Dark brown paired door leaves with four
 FINISH_RECORDS['PAR'] = {'description': 'Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps', 'newComponents': 15, 'scope': 'Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved.'}
 FINISH_RECORDS['COW'] = {'description': 'Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish', 'newComponents': 4, 'scope': 'Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review.'}
 FINISH_RECORDS['MAR'] = {'description': 'Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish', 'newComponents': 3, 'scope': 'Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review.'}
+FINISH_RECORDS['SAW'] = {'description': 'Four timber curtain-wall fields with individual clipped glazing panes, Jatoba-coloured mullions, timber transoms and continuous heads following the folded brick boundaries', 'newComponents': 20, 'scope': 'GEM Joinery confirms Jatoba curtain walling; completion photographs guide the fixed framing. Precise capture dates and 2026 condition unverified. Existing footprint, brick-fold silhouette and section levels retained; joinery sizes, spacing and colour estimated. Brick-screen layout, roof silhouette and full current interiors still require review.'}
 FINISH_RECORDS['OCS'] = {'description': 'Restored cream lime render and cornice, near-black deep-green shopfront, ochre upper sash surrounds and red-brown upper sash details', 'newComponents': 0, 'scope': 'Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review.'}
 FINISH_RECORDS['CKK'] = {'description': 'Glazed rooftop meeting pavilion with pale V braces, dark metal joinery, fourteen silver sun-shading louvres and a low terrace parapet, replacing the previous opaque rooftop block', 'newComponents': 13, 'scope': 'Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review.'}
 FINISH_RECORDS['OLD'] = {'description': 'Four distinct ground-floor windows around the Houghton portal: two narrow inner blue windows and two restored outer three-column windows; both street wings now have coursed Portland stone with all 48 existing openings retained', 'newComponents': 14, 'scope': 'Complete Damian Griffiths project photo confirms independent outer and inner windows; corrects their mistaken removal in edition 78. User street photo guides wing masonry. All dimensions and courses remain estimates. Upper window geometry, roof, other buildings and interiors retained. Whole massing, unseen elevations and complete interiors still require review.'}
@@ -489,7 +490,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '81', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '82', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
