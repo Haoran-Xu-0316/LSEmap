@@ -196,13 +196,13 @@ export const buildingDetails = {
     description:
       "面向Lincoln’s Inn Fields的Sir Arthur Lewis Building，以砖石立面、连续窗列和底部入口呈现历史街区尺度。",
     note: "立面主要尺度依据照片估计，未见背面仍简化。",
-    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"]],
+    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-oriels", "凸窗侧窗与蓝色窗框"]],
   },
   CLM: {
     description:
       "面向Aldwych的凸弧石材立面，配以柱列门廊、檐口和带老虎窗的阁楼屋顶。",
     note: "门廊雕饰、后侧与屋顶仍有简化。内部新增CLM.1.01小组教室，三角桌、木墙裙和窗户依据历史资料研究，尺寸估算。",
-    images: [["clm-exterior", "Clement House的Aldwych立面"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
+    images: [["clm-exterior", "Clement House的Aldwych立面"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
   },
   KSW: {
     description:
