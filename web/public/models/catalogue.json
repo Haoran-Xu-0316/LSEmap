@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "97",
-  "sourceModelSha256": "d16f47b9fb9105d4ded83d54a1b782d3643c4bed193d397fccae7ad04ec59e87",
+  "version": "98",
+  "sourceModelSha256": "424d4d2eadf8dbfef21b40f1950ef8bebcf032fcd4a8dbe98cd054333f6341ac",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -806,9 +806,9 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish",
-        "newComponents": 4,
-        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review."
+        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides",
+        "newComponents": 6,
+        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -841,10 +841,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-a1af7e4d9367.glb",
-        "bytes": 3323348,
-        "triangles": 262795,
-        "sha256": "a1af7e4d9367f1662884d1a1688e647ebad437fc64d0beffa0b103e41ccd0c7c",
+        "url": "/models/details/cow-exterior-231f7fc81bda.glb",
+        "bytes": 3300524,
+        "triangles": 260947,
+        "sha256": "231f7fc81bda87260a1f4596610437d61ebfe8ee53d204a4687d8f0196f92e86",
         "bounds": {
           "min": [
             -6.504848003387451,
