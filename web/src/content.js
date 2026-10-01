@@ -148,6 +148,7 @@ export const buildingDetails = {
     note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
     images: [
       ["mar-exterior", "Marshall Building北立面"],
+      ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
       ["mar-entrance", "斜向入口、露台玻璃与前场灯柱"],
       ["mar-hall", "Grand Hall公共大厅"],
