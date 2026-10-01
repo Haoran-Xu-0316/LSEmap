@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "90",
-  "sourceModelSha256": "f50f30a5d770f99865cc3d092e2b3b7986f82f69b018da8dafce082ccffbbd63",
+  "version": "91",
+  "sourceModelSha256": "aeb7a2023a3738ab180191971eae7ae762c1e51c0590ca639138887e3dcec7ce",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1414,9 +1414,9 @@
         "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
       },
       "exteriorDirection": [
-        0.2915275990962982,
-        0.5144957900047302,
-        0.8064153790473938
+        0.4290930077994338,
+        0.008769146891963566,
+        0.9032177438029118
       ],
       "facadeScope": "Official LSE address-map point is inside the attributed OSM polygon. Front facade follows archived estate imagery; heights and rear geometry remain estimated.",
       "footprintSource": {
@@ -1429,9 +1429,9 @@
         "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
       },
       "localRefinement": {
-        "description": "Three shallow segmental ground openings and yellow stock-brick facade",
+        "description": "Yellow stock-brick frontage, shallow segmental ground openings, darker weathered chimney stacks and two black facade-edge rainwater pipes",
         "newComponents": 3,
-        "scope": "Street frontage guided by undated estate imagery; arch shape and vertical dimensions estimated. Steps and railings retained. Roof and unseen elevations remain unverified; interiors unchanged."
+        "scope": "Undated LSE Estate photo guides contrasting dark chimney brick and two edge rainwater pipes. Color, pipe diameter and offsets estimated; original main wall, glazing, openings, terracotta pots, roof and interiors preserved. Source photograph is not proof of 2026 condition. Unseen elevations and roof layout remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1464,10 +1464,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/5lf-exterior-726713c0dac4.glb",
-        "bytes": 305956,
-        "triangles": 20984,
-        "sha256": "726713c0dac4fe407fc2f08472ae6f6995d9eaa8ec4e88e10e57da60b9e6d4bb",
+        "url": "/models/details/5lf-exterior-46e3e4588d5d.glb",
+        "bytes": 309388,
+        "triangles": 21168,
+        "sha256": "46e3e4588d5ddbc890048171209a32b66ddd21c6584b7ce3daa09d28f870fa82",
         "bounds": {
           "min": [
             -112.59539794921875,
@@ -1727,9 +1727,9 @@
       },
       "interior": false,
       "exteriorDirection": [
-        -0.33960288763046265,
-        0.5449883937835693,
-        -0.7665883302688599
+        0.2224913213734008,
+        0.00587605328513892,
+        -0.9749169625723559
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
