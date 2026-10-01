@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "74",
-  "sourceModelSha256": "effaf0a907f23e4eceddf7ff9d465864e57fa28a951b362b374f33292a8f8b41",
+  "version": "75",
+  "sourceModelSha256": "2877cd880224058496548b3454d8f5d9df4a3f31668f66a05c6904cf56bac5e5",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1928,7 +1928,7 @@
           -80.22682189941406
         ],
         "max": [
-          23.157800674438477,
+          23.357261657714844,
           42.79999923706055,
           -24.454532623291016
         ]
@@ -1955,9 +1955,9 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
-        "newComponents": 4291,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish",
+        "newComponents": 3,
+        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -1990,10 +1990,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-415a2e78d74c.glb",
-        "bytes": 8837716,
-        "triangles": 824936,
-        "sha256": "415a2e78d74c851d2c5fa1e8af2569770974aef4eb39a9c11dd7474181c9667d",
+        "url": "/models/details/mar-exterior-beba29e970f7.glb",
+        "bytes": 7935500,
+        "triangles": 726926,
+        "sha256": "beba29e970f7af257290b566165e5deb69a6082e5942fd160093688bfeee375f",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -2001,7 +2001,7 @@
             -80.22334289550781
           ],
           "max": [
-            23.157800674438477,
+            23.357261657714844,
             42.79999923706055,
             -24.454532623291016
           ]
