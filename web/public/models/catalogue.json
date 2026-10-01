@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "92",
-  "sourceModelSha256": "c6ea6fb7d46b4582364eae11b8d9397273aed6ddd7cfbec8d7cee48c343a9155",
+  "version": "93",
+  "sourceModelSha256": "6db1b8d340df5c05bccbf75ebbcbc564d5ffec7e72af17c0edd142d9093c94b1",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1721,7 +1721,7 @@
         ],
         "max": [
           -56.368648529052734,
-          20.950000762939453,
+          22.825000762939453,
           -36.1026496887207
         ]
       },
@@ -1733,9 +1733,9 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Three-bay Lincoln frontage with fifteen finer upper sashes, three ground arches, right timber entry, keyed stone heads and projecting courses",
-        "newComponents": 7,
-        "scope": "LSE Global School of Sustainability image published 31 July 2025 confirms three frontage bays. Capture date unknown; heights, window dimensions and grille details estimated. Owned mesh copies retain all other components and all original objects. Photographed roof dormers and slopes are not yet represented; corner curvature, unseen elevations and interiors remain unverified."
+        "description": "Three-bay Lincoln frontage with finer upper sashes, three ground arches, right timber entry and a dark front roof band with three pale pedimented dormers and slim edge rail",
+        "newComponents": 6,
+        "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; rear roof layout and photographed rounded corner remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1758,10 +1758,10 @@
       },
       "closeupImage": "51l-entrance",
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-53ad72880360.glb",
-        "bytes": 2416120,
-        "triangles": 187659,
-        "sha256": "53ad7288036068ee35f685f7a7eb51d9e87fd0424aeba9f790f9d1b3716ed95a",
+        "url": "/models/details/51l-exterior-a6a4fbc71ac1.glb",
+        "bytes": 2441940,
+        "triangles": 189203,
+        "sha256": "a6a4fbc71ac132e3ed41ff854dcc429ac347de569eff52922ac67ee8802dd3be",
         "bounds": {
           "min": [
             -74.71239471435547,
@@ -1770,7 +1770,7 @@
           ],
           "max": [
             -56.373260498046875,
-            20.950000762939453,
+            22.825000762939453,
             -36.107147216796875
           ]
         }
