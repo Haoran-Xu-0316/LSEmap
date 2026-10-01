@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "72",
-  "sourceModelSha256": "4a28495b975cb888fe90cd20ced1458e37923b5d2d7c16c07f2e60d930eeabb5",
+  "version": "73",
+  "sourceModelSha256": "77e18b83ecfde500f362493747e9620e220d7822c041fee1bfd23937d596dc61",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -447,7 +447,7 @@
         ],
         "max": [
           132.280029296875,
-          29.149999618530273,
+          28.760000228881836,
           155.53152465820312
         ]
       },
@@ -463,9 +463,9 @@
         0.7838334441184998
       ],
       "localRefinement": {
-        "description": "Eight curled stone capital details on the paired street columns, with bronze glazing and curved entablature retained",
-        "newComponents": 1,
-        "scope": "LSE property handbook street photo guides the small capital scrolls; ornamental profiles and all dimensions estimated. Upper elevations, mansard roof, rear and complete interior still require review."
+        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained",
+        "newComponents": 12,
+        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -498,10 +498,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-dfc1c27a79c7.glb",
-        "bytes": 917220,
-        "triangles": 80160,
-        "sha256": "dfc1c27a79c7722d51c74e39a49bdf77537942dd7468da470204cd0cce69c912",
+        "url": "/models/details/clm-exterior-aa475c98a88a.glb",
+        "bytes": 865312,
+        "triangles": 76888,
+        "sha256": "aa475c98a88a4cefe2c1dfc99926b4fa8b7d1267b17bfe51358101369a4493cd",
         "bounds": {
           "min": [
             99.23820495605469,
@@ -510,7 +510,7 @@
           ],
           "max": [
             132.280029296875,
-            29.149999618530273,
+            28.760000228881836,
             155.53152465820312
           ]
         }
