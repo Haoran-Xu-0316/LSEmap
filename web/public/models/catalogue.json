@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "87",
-  "sourceModelSha256": "12d7a94c4021bf65a6282e4dae2fb3c7f01b8b305efce662dc80f6b87f6594e5",
+  "version": "88",
+  "sourceModelSha256": "127b8962bf069320ff809490820fbafe232899ca7fc165ba1db178ed663ec0c8",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2312,9 +2312,9 @@
         -0.6428813338279724
       ],
       "localRefinement": {
-        "description": "Warm aggregate bands, pale aluminium joinery, reflective glazing and matte interior curtains",
-        "newComponents": 0,
-        "scope": "Shared facade finish guided by an undated PAN entrance photograph; color is estimated, not calibrated. Independent FAW elevations, upper massing, roof and full interiors remain unverified."
+        "description": "Independent automatic entrance leaf with 980mm clear width, low push pad and fixed side glazing; dark revolving-door metal distinct from pale upper aluminium joinery",
+        "newComponents": 11,
+        "scope": "Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -2347,10 +2347,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-c98b0ebe485c.glb",
-        "bytes": 1284196,
-        "triangles": 111005,
-        "sha256": "c98b0ebe485c5bbc0b2e814b180ce94a71d76324434ef519c854dc40aea6c024",
+        "url": "/models/details/pan-exterior-25a9b6d3df45.glb",
+        "bytes": 1295580,
+        "triangles": 111121,
+        "sha256": "25a9b6d3df45d5501ba87090f08818630efcd7f26a0ab2df27c6983fded104b8",
         "bounds": {
           "min": [
             53.72006607055664,
