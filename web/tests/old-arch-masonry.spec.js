@@ -19,7 +19,7 @@ test('OLD overview and close models share radial stone and shield materials',asy
   const names=doc.meshes[node.mesh].primitives.map(p=>doc.materials[p.material].name);
   for(const key of ['stone','recess','joint','letter'])expect(names.some(n=>n.endsWith('OLD_V69_'+key))).toBeTruthy();
   expect(names.some(n=>n.endsWith('OLD_V65_glass'))).toBeTruthy();
-  expect(names.some(n=>n.endsWith('OLD_V56_stone'))).toBeTruthy();
+  expect(names.some(n=>n.endsWith('OLD_V71_stone'))).toBeTruthy();
  }
 });
 
