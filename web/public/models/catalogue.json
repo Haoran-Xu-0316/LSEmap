@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "78",
-  "sourceModelSha256": "edbbc0fb20315ad0ebcf45d307c649ec632a0e8c14abfd5ef58e08a66dad2d56",
+  "version": "79",
+  "sourceModelSha256": "598c1f2c99a91c2a5514e786671de859263b68660d5ce50201c07a1c4001133a",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Two narrow two-column blue windows recessed inside the Houghton entrance shoulders, former outer ground-floor apertures infilled with coursed stone; previous entablature, attic, radial arch, relief and heraldry retained",
-        "newComponents": 6,
-        "scope": "Portal side-window placement and proportions guided by the user entrance photograph and Shadowssettle photograph dated 4 April 2020. Dimensions and stone courses estimated, not surveyed. Upper window axes and all other buildings and interiors retained. Whole wings, unseen elevations and complete interiors remain under review."
+        "description": "Four distinct ground-floor windows around the Houghton portal: two narrow inner blue windows and two restored outer three-column windows; both street wings now have coursed Portland stone with all 48 existing openings retained",
+        "newComponents": 14,
+        "scope": "Complete Damian Griffiths project photo confirms independent outer and inner windows; corrects their mistaken removal in edition 78. User street photo guides wing masonry. All dimensions and courses remain estimates. Upper window geometry, roof, other buildings and interiors retained. Whole massing, unseen elevations and complete interiors still require review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-65b54ce551e3.glb",
-        "bytes": 16813752,
-        "triangles": 1321779,
-        "sha256": "65b54ce551e31296a6f39397fdc74d8bd4cf3ceffaf6c2450956152f93ad683e",
+        "url": "/models/details/old-exterior-7464b6969cf8.glb",
+        "bytes": 16693204,
+        "triangles": 1312635,
+        "sha256": "7464b6969cf814aeb9de7cbf68acafc8dcb00605fa6a48a06950c1699fa61745",
         "bounds": {
           "min": [
             -39.15880584716797,
