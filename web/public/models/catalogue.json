@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "89",
-  "sourceModelSha256": "2bf763ee70c52b7a41d3cef11a83b0ac3d5a4c05b662b2784dc3e2304f161a6c",
+  "version": "90",
+  "sourceModelSha256": "f50f30a5d770f99865cc3d092e2b3b7986f82f69b018da8dafce082ccffbbd63",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1116,14 +1116,14 @@
         "scope": "历史资料支持的局部室内样本，非整栋完整内部。历史平面为5组桌；每组6席按图建立，尺寸、颜色具体分布为照片近似。"
       },
       "exteriorDirection": [
-        -0.7772495150566101,
-        0.48201504349708557,
-        0.4044066071510315
+        -0.8248389959335327,
+        0.035504549741744995,
+        0.564251720905304
       ],
       "localRefinement": {
-        "description": "Curved central oriel sills, bowed glazing and pale stone upper surrounds",
-        "newComponents": 60,
-        "scope": "Central street oriel guided by an undated estate photograph; radius and dimensions estimated. Roof and unseen elevations remain unverified; interiors unchanged."
+        "description": "Lower red block faces with seven true shallow horizontal recesses; retained curved central oriel, upper fine brick and pale surrounds",
+        "newComponents": 4,
+        "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -1171,10 +1171,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-101d59126042.glb",
-        "bytes": 581192,
-        "triangles": 77344,
-        "sha256": "101d59126042d5222a124a737d7ebbb8777cf5350754519d81e395dff316433e",
+        "url": "/models/details/ksw-exterior-191708db093b.glb",
+        "bytes": 619284,
+        "triangles": 79968,
+        "sha256": "191708db093b94054dadd9abd58cf52baf16490dbb9ab7785629de39256561da",
         "bounds": {
           "min": [
             -81.10916900634766,
