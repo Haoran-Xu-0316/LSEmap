@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v89.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v90.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -55,8 +55,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage89/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage89/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage90/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage90/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
 FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
@@ -75,7 +75,7 @@ FINISH_RECORDS['SAW'] = {'description': 'Two roof terraces, lower green roof, ti
 FINISH_RECORDS['OCS'] = {'description': 'Restored cream lime render and cornice, near-black deep-green shopfront, ochre upper sash surrounds and red-brown upper sash details', 'newComponents': 0, 'scope': 'Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review.'}
 FINISH_RECORDS['CKK'] = {'description': 'Glazed rooftop meeting pavilion with pale V braces, dark metal joinery, fourteen silver sun-shading louvres and a low terrace parapet, replacing the previous opaque rooftop block', 'newComponents': 13, 'scope': 'Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review.'}
 FINISH_RECORDS['OLD'] = {'description': 'Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained', 'newComponents': 2, 'scope': 'Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Frith figurative panels, roof massing, unseen elevations and full interiors still require review.'}
-FINISH_RECORDS['KSW'] = {'description': 'Curved central oriel sills, bowed glazing and pale stone upper surrounds', 'newComponents': 60, 'scope': 'Central street oriel guided by an undated estate photograph; radius and dimensions estimated. Roof and unseen elevations remain unverified; interiors unchanged.'}
+FINISH_RECORDS['KSW'] = {'description': 'Lower red block faces with seven true shallow horizontal recesses; retained curved central oriel, upper fine brick and pale surrounds', 'newComponents': 4, 'scope': 'LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified.'}
 FINISH_RECORDS['5LF'] = {'description': 'Three shallow segmental ground openings and yellow stock-brick facade', 'newComponents': 3, 'scope': 'Street frontage guided by undated estate imagery; arch shape and vertical dimensions estimated. Steps and railings retained. Roof and unseen elevations remain unverified; interiors unchanged.'}
 FINISH_RECORDS['51L'] = {'description': 'Filled segmental corner pediment, entrance board and three-column first upper sash with stone surround', 'newComponents': 3, 'scope': 'Tree-obscured estate photograph guides the GIS chamfer entrance; dimensions and decorative profiles estimated. Upper quoins, unseen elevations, roof and interior remain unverified.'}
 for code in ['PAN', 'FAW']:
@@ -305,6 +305,9 @@ for record in metadata:
         outward = camera.matrix_world.to_quaternion() @ Vector((0, 0, 1))
         direction = Vector((outward.x, max(0.55, outward.z), -outward.y)).normalized()
         record['exteriorDirection'] = list(direction)
+        if record['code'] == 'KSW':
+            # Present the photographed street facade instead of the unverified roof.
+            record['exteriorDirection'] = list(Vector((-23.23192499745369, 1.0, 15.89237744683553)).normalized())
 
 for record in metadata:
     if record['code'] in FACADE_RECORDS:
@@ -494,7 +497,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '89', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '90', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
