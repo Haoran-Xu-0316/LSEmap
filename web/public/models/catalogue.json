@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "96",
-  "sourceModelSha256": "05d5f814bcad45b3194b2735e10d182ff83fb0291c9709b3c8b865967ad6648f",
+  "version": "97",
+  "sourceModelSha256": "d16f47b9fb9105d4ded83d54a1b782d3643c4bed193d397fccae7ad04ec59e87",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds",
-        "newComponents": 5,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing",
+        "newComponents": 14,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-e3dea2074ea3.glb",
-        "bytes": 18922980,
-        "triangles": 1721995,
-        "sha256": "e3dea2074ea31091b96e7f8604e7ed5658eab839a2d9a5f88afef25f21655a82",
+        "url": "/models/details/old-exterior-2a4be70f208f.glb",
+        "bytes": 18926112,
+        "triangles": 1722019,
+        "sha256": "2a4be70f208f1bb510ec37c72889bb3074598f15b2e62e17038ea8dd6b12cf09",
         "bounds": {
           "min": [
             -39.15880584716797,
