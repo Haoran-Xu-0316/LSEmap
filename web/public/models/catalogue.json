@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "84",
-  "sourceModelSha256": "8e23f6aaa4066133a89b143eac1133e56f228e509f55ee0cde6e4cdc7835a775",
+  "version": "85",
+  "sourceModelSha256": "02f00bde948ac544c1f9fed4a7ddbfaf4a56a7cf665ea5e49c2129ed8e1975b2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Final Sale by Recycle Group: six overlapping plastic-mesh figures, a left shopping trolley, two held baskets and supermarket bottle and packet silhouettes against rear glazing; corrected portal windows and coursed street wings retained",
-        "newComponents": 5,
-        "scope": "Artist front and side photographs and the user entrance photo guide artwork relationships. Gazelli Art House identifies the 2014 work as plastic mesh, catalogue dimensions 330 by 480 by 30 centimetres. Capture dates and exact current installation dimensions unverified. Figure anatomy, mesh spacing, product silhouettes and alignment estimated, not an exact scan. Stone arch, heraldry, upper massing, unseen elevations and complete interiors still require review."
+        "description": "Twenty-four four-column Houghton casements: fourteen main-wall windows with raised transoms, five lower mansard windows with central transoms and five upper mansard windows with five rows; six-figure Final Sale plastic-mesh installation retained",
+        "newComponents": 3,
+        "scope": "Complete Damian Griffiths project photograph confirms four-column casements and differing horizontal subdivisions. Refurbishment completed in 2024, image published in a 2025 upload path; precise capture date and 2026 condition unverified. Original openings, centres, frames and stonework retained; bar thicknesses and dimensions estimated. Other elevations, roof massing and full interiors still require review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-f60d80456923.glb",
-        "bytes": 18933300,
-        "triangles": 1726335,
-        "sha256": "f60d80456923308c103923bfc90d01fb8fe195373e3c01098e7c84bb560a5f55",
+        "url": "/models/details/old-exterior-410ee76f7d3f.glb",
+        "bytes": 18829556,
+        "triangles": 1718043,
+        "sha256": "410ee76f7d3f9bce85a12db1b4e1c90f4fabe21b5083d6144034f8be0872bf41",
         "bounds": {
           "min": [
             -39.15880584716797,
