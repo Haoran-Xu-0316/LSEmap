@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "68",
-  "sourceModelSha256": "a289286b286c157df4fd8097d33f329b5aae705cdcfc89fe04615a88913f9b93",
+  "version": "69",
+  "sourceModelSha256": "75a5459dbd8744002cf0af74240d03027ca15e925de0b35642915db149bb3749",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Four-leaf Houghton entry with narrow transom, rectangular stone approach and divided steel rails; recessed arch, five-figure relief and blue Clare Market joinery retained",
-        "newComponents": 5,
-        "scope": "User photographs guide Houghton joinery and rectangular stair approach; dimensions and terrace extent estimated. Sculptural relief remains an authored interpretation, not a scan or exact carving reproduction. Heraldic carving, upper elevations, roof and complete interiors remain unresolved."
+        "description": "Radial Houghton arch masonry and carved shield surround with motto scroll; four-leaf entry, straight stone stairs, five-figure relief and blue Clare Market joinery retained",
+        "newComponents": 4,
+        "scope": "User photographs guide radial stone joints and shield surround; dimensions and ornamental profiles estimated. Central heraldic device unresolved and not invented. Figure relief remains an authored interpretation, not an exact carving reproduction. Upper elevations, roof and complete interiors remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-2bb8b8255528.glb",
-        "bytes": 15567032,
-        "triangles": 1252997,
-        "sha256": "2bb8b8255528c38eb0c5ec30d285e94dde654dc989bf4078dea3bb535939cd8c",
+        "url": "/models/details/old-exterior-ec2f397647cb.glb",
+        "bytes": 15819008,
+        "triangles": 1274172,
+        "sha256": "ec2f397647cbf95671c747fdd9079f9e4736ebbc9d90f84581b8272a710cb96e",
         "bounds": {
           "min": [
             -39.15880584716797,
