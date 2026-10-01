@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "69",
-  "sourceModelSha256": "75a5459dbd8744002cf0af74240d03027ca15e925de0b35642915db149bb3749",
+  "version": "70",
+  "sourceModelSha256": "ea849b831cfcd30ca36b594cd49064fdd5903a6d67421a9c6af21838d55378c5",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -448,7 +448,7 @@
         "max": [
           132.280029296875,
           29.149999618530273,
-          155.49176025390625
+          155.53152465820312
         ]
       },
       "interior": true,
@@ -463,9 +463,9 @@
         0.7838334441184998
       ],
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 424,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Eight curled stone capital details on the paired street columns, with bronze glazing and curved entablature retained",
+        "newComponents": 1,
+        "scope": "LSE property handbook street photo guides the small capital scrolls; ornamental profiles and all dimensions estimated. Upper elevations, mansard roof, rear and complete interior still require review."
       },
       "latestReview": {
         "version": 43,
@@ -498,10 +498,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-b84eeafceedd.glb",
-        "bytes": 823348,
-        "triangles": 71968,
-        "sha256": "b84eeafceeddac435542a4580e2c128adc70dc4c16f9ac489c213ec85fa62193",
+        "url": "/models/details/clm-exterior-dfc1c27a79c7.glb",
+        "bytes": 917220,
+        "triangles": 80160,
+        "sha256": "dfc1c27a79c7722d51c74e39a49bdf77537942dd7468da470204cd0cce69c912",
         "bounds": {
           "min": [
             99.23820495605469,
@@ -511,7 +511,7 @@
           "max": [
             132.280029296875,
             29.149999618530273,
-            155.49176025390625
+            155.53152465820312
           ]
         }
       },
@@ -3143,7 +3143,7 @@
         ],
         "max": [
           159.88121032714844,
-          38.20000076293945,
+          33.85000228881836,
           -76.38041687011719
         ]
       },
@@ -3159,9 +3159,9 @@
         -0.5797110795974731
       ],
       "localRefinement": {
-        "description": "stepped jamb 0; stepped jamb 1; lintel inner soffit; sill bearing; sill shadow rebate",
-        "newComponents": 2008,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Four-storey main window body, blue painted sashes and eighteen glazed oblique oriel side panes",
+        "newComponents": 3,
+        "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified."
       },
       "latestReview": {
         "version": 43,
@@ -3194,10 +3194,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-3dc371649297.glb",
-        "bytes": 10845352,
-        "triangles": 902128,
-        "sha256": "3dc37164929798a8d7c58bf560153a0f44389e9bd21f8fc9add2708082380014",
+        "url": "/models/details/sal-exterior-62f56b7113c3.glb",
+        "bytes": 9217496,
+        "triangles": 766596,
+        "sha256": "62f56b7113c32e1c673a1d57023459f93358997ddf6b332ad0f7ba1e58fb1f36",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -3205,9 +3205,9 @@
             -137.53207397460938
           ],
           "max": [
-            159.8742218017578,
-            38.20000076293945,
-            -76.38739013671875
+            159.88121032714844,
+            33.85000228881836,
+            -76.38041687011719
           ]
         }
       },
