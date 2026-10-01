@@ -130,6 +130,7 @@ export const buildingDetails = {
     note: "已深化街面及木门入口；窗列节奏、屋顶和未见背面为估计，未建立完整内部。",
     images: [
       ["col-exterior", "Columbia House沿街石材立面"],
+      ["col-garrick-entrance", "Garrick街角入口"],
       ["col-entrance", "木门、铭牌与石门廊"],
     ],
   },
