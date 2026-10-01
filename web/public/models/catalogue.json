@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "73",
-  "sourceModelSha256": "77e18b83ecfde500f362493747e9620e220d7822c041fee1bfd23937d596dc61",
+  "version": "74",
+  "sourceModelSha256": "effaf0a907f23e4eceddf7ff9d465864e57fa28a951b362b374f33292a8f8b41",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Five-figure relief with fuller folded robes, profiled heads, blended elbows and taller carved book spines; radial stone arch and four-leaf entry retained",
-        "newComponents": 4,
-        "scope": "User entrance photograph guides shallow sculptural silhouettes and drapery; capture date and dimensions unknown. Authored interpretation, not an exact carving or scan. Central heraldic device, other elevations, roof and complete interiors remain unresolved."
+        "description": "Stone shield with two closed books, left-facing beaver relief and hatched field; five-figure drapery, radial arch, motto and four-leaf entry retained",
+        "newComponents": 3,
+        "scope": "Heraldic layout guided by the LSE History official stone close photograph and latest user entrance photograph. Capture dates unknown; carving profiles and dimensions estimated, not an exact scan. Other elevations, roof and complete interiors remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,10 +2147,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-d2d39e39ce94.glb",
-        "bytes": 16060292,
-        "triangles": 1287312,
-        "sha256": "d2d39e39ce943808009bf564443d2f294d1840100db128c65680cd3ff7a86514",
+        "url": "/models/details/old-exterior-44869d463f16.glb",
+        "bytes": 16494152,
+        "triangles": 1305579,
+        "sha256": "44869d463f16d741c21c8549ec422b2cb4f9ce538c3107c11dcb90a442f278a5",
         "bounds": {
           "min": [
             -39.15880584716797,
