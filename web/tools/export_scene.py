@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v110.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v111.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -55,8 +55,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage110/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage110/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage111-old/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage111-old/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['MAR']['exteriorDirection'] = [-.37460657954216003, .02, -.9271838665008545]
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
@@ -92,6 +92,9 @@ FINISH_RECORDS['OLD']['scope'] = FINISH_RECORDS['OLD']['scope'].replace('Frith f
 FINISH_RECORDS['OLD']['description'] += '; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing'
 FINISH_RECORDS['OLD']['newComponents'] += 9
 FINISH_RECORDS['OLD']['scope'] += ' User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved.'
+FINISH_RECORDS['OLD']['description'] += '; denser open plastic strands in the Houghton entrance artwork'
+FINISH_RECORDS['OLD']['newComponents'] += 2
+FINISH_RECORDS['OLD']['scope'] += ' User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification.'
 FINISH_RECORDS['PAN'] = {'description': 'Independent automatic entrance leaf with 980mm clear width, low push pad and fixed side glazing; dark revolving-door metal distinct from pale upper aluminium joinery', 'newComponents': 11, 'scope': 'Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review.'}
 FINISH_RECORDS['LAK'] = {'description': 'Three-column sashes with six-row first-storey and four-row upper windows, pale joinery and warm red brick', 'newComponents': 140, 'scope': 'Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified.'}
 FINISH_RECORDS['LRB'] = {'description': 'Portugal Street three historic window storeys, seven triple-light bays, distinct ground entrances, eighteen mansard dormers and terrace balustrade; stepped roof and surveyed skylight retained', 'newComponents': 9, 'scope': 'April 2025 Fulkers Bailey Russell existing northwest elevation 4556-FBR-LR-ZZ-DR-A-114 P01 guides the window rhythm and labelled cornice/mansard heights. Existing GIS street length retained with proportional drawing registration; unlabelled window edges, dormer depth, ornament sizes and colour are estimates. Archived originals retained. The northeast rounded corner, other historical elevations, complete interior floor levels and remaining plant details still require reconstruction.'}
@@ -537,7 +540,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '110', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '111', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
