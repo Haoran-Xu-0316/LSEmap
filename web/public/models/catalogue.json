@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "100",
-  "sourceModelSha256": "03ce20c23c6542b32485d7abda444bf9457faa1c5f317e705aa0a3b5b36411dd",
+  "version": "101",
+  "sourceModelSha256": "051cd04fb6e957a274376f3dfc7cab0a02855556bb61210c372c382ff0727983",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3159,9 +3159,9 @@
         -0.5797110795974731
       ],
       "localRefinement": {
-        "description": "Four-storey main window body, blue painted sashes and eighteen glazed oblique oriel side panes",
-        "newComponents": 3,
-        "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified."
+        "description": "Four-storey main window body, blue painted sashes and eighteen glazed oblique oriel side panes; bell-curved front tower roofs, arched lantern glazing and layered dark cornices",
+        "newComponents": 6,
+        "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -3194,10 +3194,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-62f56b7113c3.glb",
-        "bytes": 9217496,
-        "triangles": 766596,
-        "sha256": "62f56b7113c32e1c673a1d57023459f93358997ddf6b332ad0f7ba1e58fb1f36",
+        "url": "/models/details/sal-exterior-b7daa6d86dfb.glb",
+        "bytes": 9246248,
+        "triangles": 768716,
+        "sha256": "b7daa6d86dfbf66b0013a4428f1e388d96716c8bf475401425011fe4575356f8",
         "bounds": {
           "min": [
             91.77310180664062,
