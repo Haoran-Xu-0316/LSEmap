@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "113",
-  "sourceModelSha256": "5c1109366492f1d3a9828e10c6bbdcfa4e3bf3eb17ba86ee9199722af24562a8",
+  "version": "114",
+  "sourceModelSha256": "520c678ac626bcab4cca1976664de8021d5e29102556f483aae9b000d4c05e52",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -441,14 +441,14 @@
       "status": "detailed",
       "bounds": {
         "min": [
-          99.23820495605469,
+          99.0441665649414,
           -0.03500000014901161,
           121.30353546142578
         ],
         "max": [
           132.280029296875,
           28.760000228881836,
-          155.53152465820312
+          155.89503479003906
         ]
       },
       "interior": true,
@@ -463,14 +463,14 @@
         0.7838334441184998
       ],
       "localRefinement": {
-        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained",
-        "newComponents": 12,
-        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified."
+        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained; seven uninterrupted tall middle windows and shallow bronze balcony rail",
+        "newComponents": 22,
+        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 43,
+        "version": 114,
         "status": "reviewed-no-change",
-        "addedObjects": 0
+        "addedObjects": 30
       },
       "interiorView": {
         "position": [
@@ -498,20 +498,20 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-aa475c98a88a.glb",
-        "bytes": 865312,
-        "triangles": 76888,
-        "sha256": "aa475c98a88a4cefe2c1dfc99926b4fa8b7d1267b17bfe51358101369a4493cd",
+        "url": "/models/details/clm-exterior-67920be3722d.glb",
+        "bytes": 729852,
+        "triangles": 64712,
+        "sha256": "67920be3722d5a309469358fcc257f4c9e92eda78ad6e755d172d9df9946b740",
         "bounds": {
           "min": [
-            99.23820495605469,
+            99.0441665649414,
             -0.03500000014901161,
             121.30353546142578
           ],
           "max": [
             132.280029296875,
             28.760000228881836,
-            155.53152465820312
+            155.89503479003906
           ]
         }
       },
@@ -1955,14 +1955,14 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish; three north podium windows with a clear single glass column and one central transom",
-        "newComponents": 10,
-        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved."
+        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish; three north podium windows with a clear single glass column and one central transom; thirty-eight thin north upper fins with inward hammerhead returns",
+        "newComponents": 12,
+        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved."
       },
       "latestReview": {
-        "version": 43,
+        "version": 114,
         "status": "reviewed-no-change",
-        "addedObjects": 0
+        "addedObjects": 2
       },
       "interiorView": {
         "position": [
@@ -1990,10 +1990,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-d5625a9ce981.glb",
-        "bytes": 7764612,
-        "triangles": 713366,
-        "sha256": "d5625a9ce98105466c18540587b8eb7b3c3eb97818d426a773270f4ea1232fd3",
+        "url": "/models/details/mar-exterior-a72ba4931527.glb",
+        "bytes": 7720392,
+        "triangles": 709634,
+        "sha256": "a72ba49315271c4987144fee3b9b6650767927b0211226f3517a27963fc4a96a",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -2114,7 +2114,7 @@
       "localRefinement": {
         "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures",
         "newComponents": 60,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Rear roof, other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review."
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review."
       },
       "latestReview": {
         "version": 113,
