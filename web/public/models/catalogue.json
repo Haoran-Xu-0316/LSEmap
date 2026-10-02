@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "101",
-  "sourceModelSha256": "051cd04fb6e957a274376f3dfc7cab0a02855556bb61210c372c382ff0727983",
+  "version": "102",
+  "sourceModelSha256": "6e69a88c970d557bd44da1ce3fb9f0bbaa7f578a529500b56df3434d036431da",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2797,9 +2797,9 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 702,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut; dressed upper window surrounds, segmental hoods, school-name fascia, four-column three-row first-floor sashes and local red-brick finish",
+        "newComponents": 712,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes. Undated LSE Estate photograph and archived 2018 street photograph guide stonework and fascia. Three central upper rows receive estimated surrounds; tree-obscured bays repeat the visible profile, so exact hood order and fine carving are unresolved. Existing opening vertices, footprint, floor count, roof and all interiors retained; red-brick colour is a photographic estimate."
       },
       "latestReview": {
         "version": 43,
@@ -2847,10 +2847,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-94fe96144ea0.glb",
-        "bytes": 2247212,
-        "triangles": 175691,
-        "sha256": "94fe96144ea089c8e7e0b3d90a3016a33ce261598906abde68aa4c3670c31c1f",
+        "url": "/models/details/sar-exterior-a7c422fcb6b9.glb",
+        "bytes": 2598240,
+        "triangles": 205851,
+        "sha256": "a7c422fcb6b9220c2c9850006e51b439afe49d5da6c8c6805df85aef5a78f942",
         "bounds": {
           "min": [
             -92.74727630615234,
