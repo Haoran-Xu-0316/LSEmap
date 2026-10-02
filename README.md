@@ -44,6 +44,22 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 117 library street facade
+
+Carey Street now has five semicircular glazed heads, three storeys of projecting
+triple-light oriels, distinct ground-floor service and glazed openings, and a
+continuous curved entrance corner. Stone cornices, aperture reveals and the
+corner balcony follow the April 2025 As Existing elevation. Portugal Street and
+the raised roof, skylight and PV geometry are retained. Street registration,
+unlabelled dimensions, colour and corner controls remain estimates; this does
+not complete the other elevations or the library's full interior layouts.
+
+The saved current Blender scene passes 74 aperture probes. Rebuilding from that
+scene restores the original visibility checkpoint and reproduces all 64 visible
+library meshes, materials and UVs without requiring an old full model. Runtime
+exports use the current scene plus the compact authoring metadata. Carey Street
+and the corner entrance have dedicated views rendered by the production viewer.
+
 ## Edition 46 street details
 
 The five pedestrian areas gain bevelled stone courses, individually jointed edge
