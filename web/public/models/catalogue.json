@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "116",
-  "sourceModelSha256": "e5e865b653abcc10ce53484f1c07c676061c189e10a6f401cb9f33c3aac669fd",
+  "version": "117",
+  "sourceModelSha256": "180559ce324e4cc78777bdb302bffa09edcd2ad84934e12598c554e3abdd7782",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1789,14 +1789,14 @@
         0.6670500040054321
       ],
       "localRefinement": {
-        "description": "Portugal Street three historic window storeys, seven triple-light bays, distinct ground entrances, eighteen mansard dormers and terrace balustrade; stepped roof and surveyed skylight retained",
-        "newComponents": 9,
-        "scope": "April 2025 Fulkers Bailey Russell existing northwest elevation 4556-FBR-LR-ZZ-DR-A-114 P01 guides the window rhythm and labelled cornice/mansard heights. Existing GIS street length retained with proportional drawing registration; unlabelled window edges, dormer depth, ornament sizes and colour are estimates. Archived originals retained. The northeast rounded corner, other historical elevations, complete interior floor levels and remaining plant details still require reconstruction."
+        "description": "Portugal Street historic triple lights and mansard; Carey Street five glazed semicircular heads, three-storey projecting oriels, distinct ground glazing and curved corner entrance; retained stepped roof and skylight",
+        "newComponents": 6,
+        "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 117,
+        "status": "carey-frontage-reconstructed",
+        "addedObjects": 6
       },
       "interiorSections": [
         {
@@ -1860,7 +1860,7 @@
         "min": [
           24.830078125,
           -0.25999999046325684,
-          -41.347412109375
+          -43.38092041015625
         ],
         "max": [
           114.51506042480469,
@@ -1872,7 +1872,7 @@
         "min": [
           25.21265411376953,
           -4.019999980926514,
-          -41.22615432739258
+          -42.206268310546875
         ],
         "max": [
           114.29000091552734,
@@ -1881,15 +1881,15 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-82ad54717d20.glb",
-        "bytes": 5951664,
-        "triangles": 674764,
-        "sha256": "82ad54717d20869c9586648184e8036ac8e36cd41994faded87ee870dd5859bf",
+        "url": "/models/details/lrb-exterior-8522caf5d4af.glb",
+        "bytes": 6070452,
+        "triangles": 680893,
+        "sha256": "8522caf5d4af851bcecf4ccd3ef5f42d2143990960de7920d4f42a85206cef5c",
         "bounds": {
           "min": [
             24.830078125,
             -0.25999999046325684,
-            -41.347412109375
+            -43.38092041015625
           ],
           "max": [
             114.51506042480469,
@@ -1899,15 +1899,15 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-3be9fa95da46.glb",
-        "bytes": 4663376,
-        "triangles": 579924,
-        "sha256": "3be9fa95da4625f65fd4a3b45cbc6ffaf075f495bc0a3c0c11dba214ad39b60d",
+        "url": "/models/details/lrb-interior-846421d6dadf.glb",
+        "bytes": 4664320,
+        "triangles": 579968,
+        "sha256": "846421d6dadfa56880ec6aaef19683d0b23499d7e3d93ad0aeec36b4e4941448",
         "bounds": {
           "min": [
             25.21265411376953,
             -4.019999980926514,
-            -41.22615432739258
+            -42.206268310546875
           ],
           "max": [
             114.29000091552734,
