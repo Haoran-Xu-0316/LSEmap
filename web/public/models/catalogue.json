@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "109",
-  "sourceModelSha256": "94ecd1bdb7c40373bd876ba5388da43ccf74914e5cee5fb23558d350a661bc4d",
+  "version": "110",
+  "sourceModelSha256": "30b293e9f50a24856907b4e4c577c67b5b853217b58317aaa2d679bdffbebaa0",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1784,8 +1784,8 @@
       "bounds": {
         "min": [
           24.830078125,
-          0.0,
-          -41.29721450805664
+          -0.25999999046325684,
+          -41.347412109375
         ],
         "max": [
           114.51506042480469,
@@ -1800,9 +1800,9 @@
         0.6670500040054321
       ],
       "localRefinement": {
-        "description": "Separate lower roof terrace and raised setback office roof, corrected skylight datum, existing plant room, three air-source heat pumps and retained PV arrays",
-        "newComponents": 8,
-        "scope": "April and May 2025 Fulkers Bailey Russell roof survey, southwest elevation and approved proposal guide ground datum 19.76m, lower roof 40.0m and upper deck 43.75m; the 6.89m cap retains its centre. Original generic perimeter mansard archived. Metric roof registration has about 1-2m residual; boundary clipped to retained GIS. Office window rhythm, plant details and PV array extent estimated; proposal is not an as-built survey. Historical corner storeys and mansard, other elevations, other plant room, remaining AHUs and complete interior levels/layouts still require reconstruction."
+        "description": "Portugal Street three historic window storeys, seven triple-light bays, distinct ground entrances, eighteen mansard dormers and terrace balustrade; stepped roof and surveyed skylight retained",
+        "newComponents": 9,
+        "scope": "April 2025 Fulkers Bailey Russell existing northwest elevation 4556-FBR-LR-ZZ-DR-A-114 P01 guides the window rhythm and labelled cornice/mansard heights. Existing GIS street length retained with proportional drawing registration; unlabelled window edges, dormer depth, ornament sizes and colour are estimates. Archived originals retained. The northeast rounded corner, other historical elevations, complete interior floor levels and remaining plant details still require reconstruction."
       },
       "latestReview": {
         "version": 43,
@@ -1871,7 +1871,7 @@
         "min": [
           25.21265411376953,
           -4.019999980926514,
-          -41.15494155883789
+          -41.22615432739258
         ],
         "max": [
           114.29000091552734,
@@ -1880,15 +1880,15 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-7cab0ea8bb3e.glb",
-        "bytes": 6293132,
-        "triangles": 702904,
-        "sha256": "7cab0ea8bb3e75a090ee6491a0aa27bd5dc1019bb8341c6d6dd0fd8541e5921c",
+        "url": "/models/details/lrb-exterior-82ad54717d20.glb",
+        "bytes": 5951664,
+        "triangles": 674764,
+        "sha256": "82ad54717d20869c9586648184e8036ac8e36cd41994faded87ee870dd5859bf",
         "bounds": {
           "min": [
             24.830078125,
-            -1.4901161193847656e-08,
-            -41.29721450805664
+            -0.25999999046325684,
+            -41.347412109375
           ],
           "max": [
             114.51506042480469,
@@ -1898,15 +1898,15 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-b124b81db855.glb",
-        "bytes": 4614504,
-        "triangles": 575842,
-        "sha256": "b124b81db85553e71583c373f1fce2c0f5bca1668fe15b4f52f2acbc952d873a",
+        "url": "/models/details/lrb-interior-3be9fa95da46.glb",
+        "bytes": 4663376,
+        "triangles": 579924,
+        "sha256": "3be9fa95da4625f65fd4a3b45cbc6ffaf075f495bc0a3c0c11dba214ad39b60d",
         "bounds": {
           "min": [
             25.21265411376953,
             -4.019999980926514,
-            -41.15494155883789
+            -41.22615432739258
           ],
           "max": [
             114.29000091552734,
