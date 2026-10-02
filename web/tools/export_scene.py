@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v114.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v116.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -41,103 +41,13 @@ for original in source_scene.objects:
         original.data.resolution_u = min(original.data.resolution_u, 4)
 bpy.context.view_layer.update()
 depsgraph = bpy.context.evaluated_depsgraph_get()
-records = json.loads((ROOT / 'data/buildings.json').read_text())['buildings']
-DETAIL_CODES = {'MAR', 'SAW', 'CBG', 'LRB', 'CKK', 'OLD', 'SAL', 'CLM', 'KSW', 'OCS', 'PAN', 'FAW', 'COL', 'CON'}
-FACADE_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage05/infill-manifest.json').read_text())['buildings']}
-FACADE_RECORDS['5LF'] = json.loads((ROOT / 'result/blender/stage06/attribution.json').read_text())
-FACADE_RECORDS['61A'] = json.loads((ROOT / 'result/blender/stage07/aldwych-manifest.json').read_text())
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage08/coopers-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage09/heritage/heritage-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage10/parish/parish-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage11/stc/stc-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage12/lincoln/lincoln-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage13/lakatos/lakatos-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
-FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
-FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage114/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage114/building-review.json').read_text())['buildings']}
-FACADE_RECORDS['MAR']['exteriorDirection'] = [-.37460657954216003, .02, -.9271838665008545]
-FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
-FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
-FINISH_RECORDS['POR'] = {'description': 'Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks', 'newComponents': FACADE_RECORDS['POR']['components'], 'scope': FACADE_RECORDS['POR']['scope']}
-FINISH_RECORDS['SHF'] = {'description': 'Four-bay stock-brick facade, pale base, white joinery and four roof dormers', 'newComponents': FACADE_RECORDS['SHF']['components'], 'scope': FACADE_RECORDS['SHF']['scope']}
-old_houghton = json.loads((ROOT / 'result/blender/stage52/old-houghton-audit.json').read_text())
-fifty_portal = json.loads((ROOT / 'result/blender/stage72/fifty-lincoln-portal-audit.json').read_text())
-FINISH_RECORDS['50L'] = {'description': 'Broad panelled sandstone portal, dark unbarred semicircular fanlight, six timber panels, distinct door knobs, letterbox and two low metal-nosed steps', 'newComponents': len(fifty_portal['addedObjects']), 'scope': 'No.50 entrance guided by the LSE 2025/26 property handbook photograph. Neighboring round windows excluded; dimensions and carved profiles estimated, capture date unknown. Upper elevations, roof and complete interior still require review.'}
-FINISH_RECORDS['SAL'] = {'description': 'Four-storey main window body, blue painted sashes and eighteen glazed oblique oriel side panes', 'newComponents': 3, 'scope': 'September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified.'}
-FINISH_RECORDS['CLM'] = {'description': 'Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained', 'newComponents': 12, 'scope': 'Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified.'}
-FINISH_RECORDS['CON'] = {'description': 'Open street portal with warm recessed vestibule, inner glazed doors and split granite-limestone casing', 'newComponents': 8, 'scope': 'Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved.'}
-FINISH_RECORDS['COL'] = {'description': 'Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet', 'newComponents': 5, 'scope': 'Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved.'}
-FINISH_RECORDS['COL']['description'] += '; independent Garrick corner glazing, dark metal joinery, paired pull handles and a mounted red LSE badge beside lowercase lettering'
-FINISH_RECORDS['COL']['newComponents'] += 9
-FINISH_RECORDS['COL']['scope'] += ' Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published.'
-
-
-FINISH_RECORDS['PAR'] = {'description': 'Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps', 'newComponents': 15, 'scope': 'Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved.'}
-FINISH_RECORDS['COW'] = {'description': 'Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides', 'newComponents': 6, 'scope': 'Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review.'}
-FINISH_RECORDS['MAR'] = {'description': 'Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish', 'newComponents': 3, 'scope': 'Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review.'}
-FINISH_RECORDS['SAW'] = {'description': 'Two roof terraces, lower green roof, timber curtain glazing, fixed guardrails, fitted photovoltaic modules and twin high brick flues; four clipped Jatoba curtain-wall fields retained', 'newComponents': 38, 'scope': 'LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review.'}
-FINISH_RECORDS['OCS'] = {'description': 'Restored cream lime render and cornice, near-black deep-green shopfront, ochre upper sash surrounds and red-brown upper sash details', 'newComponents': 0, 'scope': 'Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review.'}
-FINISH_RECORDS['CKK'] = {'description': 'Glazed rooftop meeting pavilion with pale V braces, dark metal joinery, fourteen silver sun-shading louvres and a low terrace parapet, replacing the previous opaque rooftop block', 'newComponents': 13, 'scope': 'Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review.'}
-FINISH_RECORDS['OLD'] = {'description': 'Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained', 'newComponents': 2, 'scope': 'Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Frith figurative panels, roof massing, unseen elevations and full interiors still require review.'}
-FINISH_RECORDS['KSW'] = {'description': 'Lower red block faces with seven true shallow horizontal recesses; retained curved central oriel, upper fine brick and pale surrounds', 'newComponents': 4, 'scope': 'LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified.'}
-FINISH_RECORDS['5LF'] = {'description': 'Yellow stock-brick frontage, shallow segmental ground openings, darker weathered chimney stacks and two black facade-edge rainwater pipes', 'newComponents': 3, 'scope': 'Undated LSE Estate photo guides contrasting dark chimney brick and two edge rainwater pipes. Color, pipe diameter and offsets estimated; original main wall, glazing, openings, terracotta pots, roof and interiors preserved. Source photograph is not proof of 2026 condition. Unseen elevations and roof layout remain unverified.'}
-FINISH_RECORDS['51L'] = {'description': 'Three-bay Lincoln frontage with finer upper sashes, three ground arches, right timber entry and a dark front roof band with three pale pedimented dormers, slim edge rail and continuously curved corner masonry and window framing', 'newComponents': 37, 'scope': 'LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified.'}
-for code in ['PAN', 'FAW']:
-    FINISH_RECORDS[code] = {'description': 'Warm aggregate bands, pale aluminium joinery, reflective glazing and matte interior curtains', 'newComponents': 0, 'scope': 'Shared facade finish guided by an undated PAN entrance photograph; color is estimated, not calibrated. Independent FAW elevations, upper massing, roof and full interiors remain unverified.'}
-FINISH_RECORDS['OLD']['newComponents'] = 5
-FINISH_RECORDS['OLD']['description'] += '; five Clare Market reclining figure relief profiles and distinct flowing backgrounds'
-FINISH_RECORDS['OLD']['scope'] = FINISH_RECORDS['OLD']['scope'].replace('Frith figurative panels, roof massing, unseen elevations and full interiors still require review.', 'Roof massing, unseen elevations and full interiors still require review.') + ' Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported.'
-FINISH_RECORDS['OLD']['description'] += '; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing'
-FINISH_RECORDS['OLD']['newComponents'] += 9
-FINISH_RECORDS['OLD']['scope'] += ' User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved.'
-FINISH_RECORDS['OLD']['description'] += '; denser open plastic strands in the Houghton entrance artwork'
-FINISH_RECORDS['OLD']['newComponents'] += 2
-FINISH_RECORDS['OLD']['scope'] += ' User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification.'
-FINISH_RECORDS['PAN'] = {'description': 'Independent automatic entrance leaf with 980mm clear width, low push pad and fixed side glazing; dark revolving-door metal distinct from pale upper aluminium joinery', 'newComponents': 11, 'scope': 'Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review.'}
-FINISH_RECORDS['LAK'] = {'description': 'Three-column sashes with six-row first-storey and four-row upper windows, pale joinery and warm red brick', 'newComponents': 140, 'scope': 'Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified.'}
-FINISH_RECORDS['LRB'] = {'description': 'Portugal Street three historic window storeys, seven triple-light bays, distinct ground entrances, eighteen mansard dormers and terrace balustrade; stepped roof and surveyed skylight retained', 'newComponents': 9, 'scope': 'April 2025 Fulkers Bailey Russell existing northwest elevation 4556-FBR-LR-ZZ-DR-A-114 P01 guides the window rhythm and labelled cornice/mansard heights. Existing GIS street length retained with proportional drawing registration; unlabelled window edges, dormer depth, ornament sizes and colour are estimates. Archived originals retained. The northeast rounded corner, other historical elevations, complete interior floor levels and remaining plant details still require reconstruction.'}
-FINISH_RECORDS['PEL'] = {'description': 'Projecting silver entrance fascia, yellow reveals, first-floor window box and revolving glazing', 'newComponents': 20, 'scope': 'Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified.'}
-FINISH_RECORDS['PEA'] = {'description': 'Lower blue-black podium with brass starbursts, three-column upper wing, exposed brick side and right roof louvres', 'newComponents': 19, 'scope': 'Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained.'}
-FINISH_RECORDS['61A'] = {'description': 'Continuous three-storey stone piers and dark metal window belts, with chamfered roof pavilion', 'newComponents': 8, 'scope': 'Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved.'}
-FINISH_RECORDS['OLD']['description'] += '; finer open plastic figure lattice with continuous pose-specific robe silhouettes'
-FINISH_RECORDS['OLD']['newComponents'] += 1
-FINISH_RECORDS['OLD']['scope'] += ' Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates.'
-
-for code, count in [('OLD', 2), ('COL', 1)]:
-    FINISH_RECORDS[code]['description'] += '; existing LSE vector mark replaces generic plaque lettering'
-    FINISH_RECORDS[code]['newComponents'] += count
-    FINISH_RECORDS[code]['scope'] += ' Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged.'
-FINISH_RECORDS['SAL']['description'] += '; bell-curved front tower roofs, arched lantern glazing and layered dark cornices'
-FINISH_RECORDS['SAL']['newComponents'] += 3
-FINISH_RECORDS['SAL']['scope'] += ' Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved.'
-FINISH_RECORDS['SAR']['description'] += '; dressed upper window surrounds, segmental hoods, school-name fascia, four-column three-row first-floor sashes and local red-brick finish'
-FINISH_RECORDS['SAR']['newComponents'] += 10
-FINISH_RECORDS['SAR']['scope'] += ' Undated LSE Estate photograph and archived 2018 street photograph guide stonework and fascia. Three central upper rows receive estimated surrounds; tree-obscured bays repeat the visible profile, so exact hood order and fine carving are unresolved. Existing opening vertices, footprint, floor count, roof and all interiors retained; red-brick colour is a photographic estimate.'
-FINISH_RECORDS['OLD']['description'] += '; continuously shaded curved entry reveal with five restrained limestone tones'
-FINISH_RECORDS['OLD']['newComponents'] += 1
-FINISH_RECORDS['OLD']['scope'] += ' October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved.'
-FINISH_RECORDS['MAR']['description'] += '; three north podium windows with a clear single glass column and one central transom'
-FINISH_RECORDS['MAR']['newComponents'] += 7
-FINISH_RECORDS['MAR']['scope'] += ' Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved.'
-FINISH_RECORDS['OLD']['description'] += '; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments'
-FINISH_RECORDS['OLD']['newComponents'] += 17
-FINISH_RECORDS['OLD']['scope'] += ' July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review.'
-old_roof = json.loads((ROOT / 'result/blender/stage113/old-roof-survey-audit.json').read_text())
-FINISH_RECORDS['OLD']['description'] += '; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures'
-FINISH_RECORDS['OLD']['newComponents'] += len(old_roof['addedObjects'])
-FINISH_RECORDS['OLD']['scope'] += ' July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review.'
-REVIEW_RECORDS['OLD'].update({'version': 113, 'addedObjects': old_roof['addedObjects'], 'replacedObjects': old_roof['archived']})
-integrated = json.loads((ROOT / 'result/blender/stage114/integration-audit.json').read_text())
-FINISH_RECORDS['MAR']['description'] += '; thirty-eight thin north upper fins with inward hammerhead returns'
-FINISH_RECORDS['MAR']['newComponents'] += 2
-FINISH_RECORDS['MAR']['scope'] += ' ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved.'
-FINISH_RECORDS['CLM']['description'] += '; seven uninterrupted tall middle windows and shallow bronze balcony rail'
-FINISH_RECORDS['CLM']['newComponents'] += 10
-FINISH_RECORDS['CLM']['scope'] += ' Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete.'
-for code, prefix in [('MAR', 'MAR_'), ('CLM', 'CLM_')]:
-    REVIEW_RECORDS[code].update({'version': 114, 'addedObjects': [name for name in integrated['addedObjects'] if name.startswith(prefix)]})
+# Camera presets and evidence are authored inputs, separate from generated assets.
+# A single snapshot replaces the old chain of historical stage manifests.
+AUTHORING = json.loads((ROOT / 'web/tools/building-metadata.json').read_text())
+records = AUTHORING['buildings']
+ROOM_SPACES = AUTHORING['spaces']
+assert len(records) == 31 and len({r['code'] for r in records}) == 31
+assert len(ROOM_SPACES) == 5
 material_cache = {}
 
 
@@ -327,116 +237,55 @@ for record in records:
     root_collection = next(c for c in campus_root.children if c.name.startswith(code + '_'))
     exterior = [o for c in root_collection.children if 'INTERIOR' not in c.name and 'UNRESOLVED' not in c.name for o in c.all_objects]
     obj, bounds = clone_group(exterior, code, campus_scene)
-    state = 'detailed' if code in DETAIL_CODES else 'facade' if code in FACADE_RECORDS else 'massing'
-    if code == '61A':
-        state = 'provisional'
-    elif code == '35L':
-        state = 'construction'
     interior = bpy.data.collections.get(code + '_PUBLIC_INTERIOR_study')
     has_interior = bool(interior and any(o.type == 'MESH' for o in interior.all_objects))
-    metadata.append({'code': code, 'name': record['name'], 'address': record['address'], 'status': state, 'bounds': bounds, 'interior': has_interior})
-    if has_interior and interior.get('roomSample'):
-        metadata[-1]['interiorStudy'] = {'kind': 'room-sample', 'label': interior['roomLabel'], 'scope': ROOM_RECORDS[code]['scope']}
-
-# Street-facing orientation from the reviewed Blender cameras; preserve an elevated
-# orbit angle so roofs and the selected facade remain visible together.
-exterior_cameras = {
-    'MAR': '02_MAR_Lincolns_Inn_Fields', 'SAW': 'SAW_folded_facade_detail',
-    'CBG': 'CBG_QA_01_facade', 'OLD': 'OLD_DETAIL_Houghton_entry',
-    'SAL': 'SAL_DETAIL_north_facade', 'CLM': 'CLM_D3_front_camera',
-    'KSW': 'KSW_D3_front_camera', 'OCS': 'OCS_D3_front_street_camera',
-    'COL': 'COL_D4_facade', 'CON': 'CON_D4_facade',
-    'PAN': 'PAN_FAW_D3_frontage', 'FAW': 'PAN_FAW_D3_frontage',
-}
-for record in metadata:
-    if record['code'] in exterior_cameras:
-        camera = bpy.data.objects[exterior_cameras[record['code']]]
-        outward = camera.matrix_world.to_quaternion() @ Vector((0, 0, 1))
-        direction = Vector((outward.x, max(0.55, outward.z), -outward.y)).normalized()
-        record['exteriorDirection'] = list(direction)
-        if record['code'] == 'KSW':
-            # Present the photographed street facade instead of the unverified roof.
-            record['exteriorDirection'] = list(Vector((-23.23192499745369, 1.0, 15.89237744683553)).normalized())
-
-for record in metadata:
-    if record['code'] in FACADE_RECORDS:
-        study = FACADE_RECORDS[record['code']]
-        record['exteriorDirection'] = list(Vector(study['exteriorDirection']).normalized())
-        record['facadeScope'] = study['scope']
-        if 'detailView' in study:
-            view = study['detailView']
-            record['detailView'] = {**view, **{key: [view[key][0], view[key][2], -view[key][1]] for key in ['position', 'target']}}
-        if 'sourceDrawing' in study:
-            record['footprintSource'] = {'drawing': study['sourceDrawing'], 'sourcePage': study['sourcePage'], 'registration': 'Approximate registration to five OCS outline corners; not surveyed coordinates'}
-        if 'sourcePoint' in study:
-            record['footprintSource'] = {key: study[key] for key in ['osmId', 'sourcePoint', 'sourcePage', 'sourceMap']}
-
-for record in metadata:
-    if record['code'] == 'CKK':
-        record['exteriorDirection'] = list(Vector((0.927, 0.65, -0.375)).normalized())
-        record['detailView'] = {'label': '入口细节', 'position': [-73, 8, -93], 'target': [-89, 4, -86], 'fov': 38}
-
-for record in metadata:
-    if record['code'] == 'LRB':
-        record['exteriorDirection'] = list(Vector((-0.648, 0.55, 0.761)).normalized())
-
-for record in metadata:
-    finish = FINISH_RECORDS[record['code']]
-    record['localRefinement'] = {key: finish[key] for key in ['description', 'newComponents', 'scope']}
-    review = REVIEW_RECORDS[record['code']]
-    record['latestReview'] = {'version': review.get('version', 43), 'status': review['status'], 'addedObjects': len(review['addedObjects'])}
-    for key in ['interiorSections', 'interiorSectionScope']:
-        if key in review:
-            record[key] = [{field: section[field] for field in ['id', 'label', 'minHeight', 'maxHeight', 'scope']} for section in review[key]] if key == 'interiorSections' else review[key]
-    if review.get('detailView'):
-        view = review['detailView']
-        record['detailView'] = {**view, **{key: [view[key][0], view[key][2], -view[key][1]] for key in ['position', 'target']}}
-        record['closeupImage'] = record['code'].lower() + ('-windows' if '窗' in view['label'] else '-entrance')
-
-# Entrance presets use the reviewed cameras and their street plane as orbit targets.
-# Intersect the optical axis with the facade instead of orbiting around a guessed depth.
-site_records = {b['code']: b for b in json.loads((ROOT / 'result/blender/site_geometry.json').read_text())['buildings'] if b['code']}
-for record in metadata:
-    code = record['code']
-    if code not in {'COL', 'CON'}:
-        continue
-    camera = bpy.data.objects[code + '_D4_entrance']
-    ring = site_records[code]['rings'][0]
-    edge = 10 if code == 'COL' else 4
-    p, q = Vector((*ring[edge], 0)), Vector((*ring[edge + 1], 0))
-    normal = Vector((q.y - p.y, p.x - q.x, 0)).normalized()
-    position = camera.matrix_world.translation
-    direction = camera.matrix_world.to_quaternion() @ Vector((0, 0, -1))
-    distance = (p - position).dot(normal) / direction.dot(normal)
-    assert 0 < distance < 30, f'Invalid entrance camera for {code}'
-    target = position + direction * distance
-    record['detailView'] = {
-        'label': '入口细节',
-        'position': [position.x, position.z, -position.y],
-        'target': [target.x, target.z, -target.y],
-        'fov': 46,
-    }
-
-# These photographed street-facing directions also drive gallery bounds fitting.
-lincolns_front_directions = {'5LF': [0.4290930077994338, 0.008769146891963566, 0.9032177438029118], '51L': [0.2224913213734008, 0.00587605328513892, -0.9749169625723559]}
-for record in metadata:
-    if record['code'] in lincolns_front_directions:
-        record['exteriorDirection'] = lincolns_front_directions[record['code']]
-
-# The newly reviewed three-bay frontage is the primary 51L exterior view.
-for record in metadata:
-    if record['code'] == '51L':
-        record['exteriorDirection'] = list(Vector((-.4050395844, .10, -.9142991497)).normalized())
+    assert has_interior == record['interior'], f'Interior collection missing: {code}'
+    metadata.append({key: value for key, value in record.items() if key != 'exportExterior'})
+    metadata[-1].update(bounds=bounds, interior=has_interior)
 
 for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_heights', 'CONTEXT'), ('03_PUBLIC_REALM', 'LANDSCAPE')]:
     collection = bpy.data.collections.get(collection_name)
     if collection:
         clone_group(collection.all_objects, name, campus_scene)
+generated_textures = []
+for material in bpy.data.materials:
+    if not material.get('globeMap'):
+        continue
+    if not any(not obj.hide_render and obj.type == 'MESH' and material.name in obj.data.materials
+               for obj in bpy.data.collections['00_SITE'].all_objects):
+        continue
+    node = next(n for n in material.node_tree.nodes if n.type == 'TEX_IMAGE')
+    assert node.image.packed_file, 'Globe cartography must be packed in the native model'
+    generated_textures.append({'name': node.image.name,
+        'sha256': hashlib.sha256(bytes(node.image.packed_file.data)).hexdigest(),
+        'source': 'Natural Earth public-domain cartography',
+        'scope': 'Authored political map with photo-estimated Australia fill; no source photograph'})
+assert len(generated_textures) == 1, 'Expected one visible authored globe map'
 export_scene(campus_scene, 'campus.glb')
-for room in json.loads((ROOT / 'result/blender/stage51/room-spaces.json').read_text())['spaces']:
-    source_scene.collection.children.link(bpy.data.collections[room['collection']])
-for code in ROOM_RECORDS:
-    source_scene.collection.children.link(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'])
+# glTF names an image by its file basename, which can differ from Blender's ID.
+# Match the embedded bytes to the approved packed map before recording that name.
+campus_bytes = (OUTPUT / 'campus.glb').read_bytes()
+json_length = struct.unpack_from('<I', campus_bytes, 12)[0]
+campus_document = json.loads(campus_bytes[20:20+json_length])
+embedded_images = campus_document.get('images', [])
+assert len(embedded_images) == len(generated_textures) == 1
+image = embedded_images[0]
+assert 'bufferView' in image and not image.get('uri')
+view = campus_document['bufferViews'][image['bufferView']]
+start = 28 + json_length + view.get('byteOffset', 0)
+image_sha256 = hashlib.sha256(campus_bytes[start:start+view['byteLength']]).hexdigest()
+assert image_sha256 == generated_textures[0]['sha256'], 'Export changed authored globe map'
+generated_textures[0]['nativeImage'] = generated_textures[0]['name']
+generated_textures[0]['name'] = image['name']
+for room in ROOM_SPACES:
+    collection = bpy.data.collections[room['collection']]
+    if collection.name not in source_scene.collection.children:
+        source_scene.collection.children.link(collection)
+for record in records:
+    if record['interior']:
+        collection = bpy.data.collections[record['code'] + '_PUBLIC_INTERIOR_study']
+        if collection.name not in source_scene.collection.children:
+            source_scene.collection.children.link(collection)
 bpy.context.window.scene = source_scene
 bpy.context.view_layer.update()
 depsgraph = bpy.context.evaluated_depsgraph_get()
@@ -457,22 +306,7 @@ for record in metadata:
         interior_objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
     _, bounds = clone_group(interior_objects, code + '_INTERIOR', interior_scene)
     assert bounds, f'No public-interior geometry exported for {code}'
-    camera_names = {'MAR': 'MAR_D3_hall', 'LRB': 'ATRIA_LRB_spiral_and_lifts', 'CKK': 'ATRIA_CKK_timber_landscape', 'CBG': 'CBG_QA_03_academic_stair'}
-    if code in ROOM_RECORDS:
-        room = ROOM_RECORDS[code]
-        record['interiorView'] = {'position': [room['camera'][0], room['camera'][2], -room['camera'][1]],
-                                  'target': [room['target'][0], room['target'][2], -room['target'][1]],
-                                  'fov': room.get('fov', 50)}
-    elif code in camera_names:
-        camera = bpy.data.objects[camera_names[code]]
-        position = camera.matrix_world.translation
-        direction = camera.matrix_world.to_quaternion() @ Vector((0, 0, -1))
-        target = position + direction * 20
-        record['interiorView'] = {
-            'position': [position.x, position.z, -position.y],
-            'target': [target.x, target.z, -target.y],
-            'fov': 65,
-        }
+    # Preserve approved presets; rooms without one use the viewer's bounds fit.
     record['interiorBounds'] = bounds
     export_scene(interior_scene, code.lower() + '-interior.glb')
 
@@ -517,7 +351,7 @@ def export_detail(objects, code, kind):
 
 for record in metadata:
     code = record['code']
-    if code not in DETAIL_CODES and code not in FACADE_RECORDS:
+    if not next(r['exportExterior'] for r in records if r['code'] == code):
         continue
     objects = list(bpy.data.collections[code + '_EXTERIOR'].all_objects)
     if record['interior'] and not record.get('interiorStudy'):
@@ -538,26 +372,22 @@ for record in metadata:
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
 # Additional rooms retain their own identity instead of replacing the building's hall.
-for room in json.loads((ROOT / 'result/blender/stage51/room-spaces.json').read_text())['spaces']:
+for room in ROOM_SPACES:
     record = next(item for item in metadata if item['code'] == room['code'])
     descriptor = export_detail(list(bpy.data.collections[room['collection']].all_objects), room['id'], 'interior')
-    study = {'kind':'room-sample', 'label':room['label'], 'scope':room['scope']}
     record.setdefault('interiorSpaces', []).append({
-        'id':room['id'], 'label':room['label'], 'scope':room['scope'],
-        'interiorAsset':descriptor['url'], 'detailedInterior':descriptor,
-        'interiorStudy':study, 'interiorBounds':descriptor['bounds'],
-        'interiorView':{'position':[room['camera'][0],room['camera'][2],-room['camera'][1]],
-                        'target':[room['target'][0],room['target'][2],-room['target'][1]], 'fov':50},
-        'gallery':room['id']+'-interior',
-    })
+        key: room[key] for key in ['id', 'label', 'scope', 'interiorStudy', 'interiorView', 'gallery']
+    } | {'interiorAsset': descriptor['url'], 'detailedInterior': descriptor,
+         'interiorBounds': descriptor['bounds']})
+
 
 report_path = ROOT / 'result/web/all-buildings/export-manifest.json'
 report_path.parent.mkdir(parents=True, exist_ok=True)
 report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
-    'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '114', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'generatedTextures': generated_textures,
+    'version': '116', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
