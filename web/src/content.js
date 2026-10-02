@@ -203,7 +203,7 @@ export const buildingDetails = {
   },
   CLM: {
     description:
-      "面向Aldwych的凸弧石材立面，配以柱列门廊、檐口和带老虎窗的阁楼屋顶。",
+      "面向Aldwych的凸弧石材立面，中部跨层高窗配窄阳台，下方为柱列门廊，上方为带老虎窗的阁楼屋顶。",
     note: "门廊雕饰、后侧与屋顶仍有简化。内部新增CLM.1.01小组教室，三角桌、木墙裙和窗户依据历史资料研究，尺寸估算。",
     images: [["clm-exterior", "Clement House的Aldwych立面"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
   },
