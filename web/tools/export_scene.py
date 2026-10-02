@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v113.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v114.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -55,8 +55,8 @@ FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage15/mar/mar-manifest.json').read_text())['buildings']})
 FACADE_RECORDS.update({b['code']: b for b in json.loads((ROOT / 'result/blender/stage16/portsmouth/portsmouth-manifest.json').read_text())['buildings']})
 FINISH_RECORDS = {b['code']: b for b in json.loads((ROOT / 'result/blender/stage17/all-buildings-manifest.json').read_text())['buildings']}
-ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage113/room-studies.json').read_text())['buildings']}
-REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage113/building-review.json').read_text())['buildings']}
+ROOM_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage114/room-studies.json').read_text())['buildings']}
+REVIEW_RECORDS = {r['code']: r for r in json.loads((ROOT / 'result/blender/stage114/building-review.json').read_text())['buildings']}
 FACADE_RECORDS['MAR']['exteriorDirection'] = [-.37460657954216003, .02, -.9271838665008545]
 FACADE_RECORDS['SHF'] = json.loads((ROOT / 'result/blender/stage50/shf-manifest.json').read_text())
 FACADE_RECORDS['POR'] = json.loads((ROOT / 'result/blender/stage51/por-manifest.json').read_text())
@@ -123,12 +123,21 @@ FINISH_RECORDS['MAR']['newComponents'] += 7
 FINISH_RECORDS['MAR']['scope'] += ' Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved.'
 FINISH_RECORDS['OLD']['description'] += '; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments'
 FINISH_RECORDS['OLD']['newComponents'] += 17
-FINISH_RECORDS['OLD']['scope'] += ' July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Rear roof, other elevations and full interior levels remain under review.'
+FINISH_RECORDS['OLD']['scope'] += ' July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review.'
 old_roof = json.loads((ROOT / 'result/blender/stage113/old-roof-survey-audit.json').read_text())
 FINISH_RECORDS['OLD']['description'] += '; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures'
 FINISH_RECORDS['OLD']['newComponents'] += len(old_roof['addedObjects'])
 FINISH_RECORDS['OLD']['scope'] += ' July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review.'
 REVIEW_RECORDS['OLD'].update({'version': 113, 'addedObjects': old_roof['addedObjects'], 'replacedObjects': old_roof['archived']})
+integrated = json.loads((ROOT / 'result/blender/stage114/integration-audit.json').read_text())
+FINISH_RECORDS['MAR']['description'] += '; thirty-eight thin north upper fins with inward hammerhead returns'
+FINISH_RECORDS['MAR']['newComponents'] += 2
+FINISH_RECORDS['MAR']['scope'] += ' ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved.'
+FINISH_RECORDS['CLM']['description'] += '; seven uninterrupted tall middle windows and shallow bronze balcony rail'
+FINISH_RECORDS['CLM']['newComponents'] += 10
+FINISH_RECORDS['CLM']['scope'] += ' Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete.'
+for code, prefix in [('MAR', 'MAR_'), ('CLM', 'CLM_')]:
+    REVIEW_RECORDS[code].update({'version': 114, 'addedObjects': [name for name in integrated['addedObjects'] if name.startswith(prefix)]})
 material_cache = {}
 
 
@@ -548,7 +557,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': [{'name': 'globe-map', 'sha256': hashlib.sha256((ROOT / 'result/blender/stage48/globe-map.png').read_bytes()).hexdigest(), 'source': 'Natural Earth public-domain cartography', 'scope': 'Original reconstructed map, not a source photograph'}],
-    'version': '113', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '114', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
