@@ -5,6 +5,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 import { ModelCache } from "./model-cache.js";
+import { loadModelInStages } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
@@ -26,6 +27,7 @@ export class CampusViewer {
     this.detailRequest = 0;
     this.activeDetail = null;
     this.disposed = false;
+    this.loadController = new AbortController();
     this.groups = new Map();
     this.interiors = new Map();
     this.interiorLoads = new Map();
@@ -177,20 +179,21 @@ export class CampusViewer {
     if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
       url += `?v=${encodeURIComponent(this.modelRevision)}`;
     }
-    let timer;
-    try {
-      return await Promise.race([
-        this.loader.loadAsync(url, onProgress),
-        new Promise((_, reject) => {
-          timer = setTimeout(
-            () => reject(new Error("Model loading timed out")),
-            45000,
-          );
-        }),
-      ]);
-    } finally {
-      clearTimeout(timer);
-    }
+    // One manager per transfer lets a failed background model cancel only itself.
+    const transfer = new THREE.FileLoader(new THREE.LoadingManager());
+    transfer.setResponseType("arraybuffer");
+    transfer.setRequestHeader(this.loader.requestHeader);
+    transfer.setWithCredentials(this.loader.withCredentials);
+    return loadModelInStages(
+      progress => transfer.loadAsync(url, progress),
+      bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
+      {
+        signal: this.loadController.signal,
+        onProgress,
+        cancelDownload: () => transfer.abort(),
+        discardModel: model => disposeModel(model.scene),
+      },
+    );
   }
 
   async load(onProgress) {
@@ -928,6 +931,7 @@ export class CampusViewer {
 
   dispose() {
     this.disposed = true;
+    this.loadController.abort();
     this.detailRequest += 1;
     this.detailCache.dispose();
     for (const group of this.exteriors.values()) disposeModel(group);
