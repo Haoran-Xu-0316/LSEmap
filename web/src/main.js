@@ -381,6 +381,7 @@ async function start() {
   $("#fallback").hidden = true;
   viewer?.dispose();
   viewer = null;
+  let candidate;
   try {
     if (!buildings.length) {
       const response = await fetch("/models/catalogue.json", { cache: "no-cache" });
@@ -412,17 +413,21 @@ async function start() {
     }
     const { CampusViewer } = await import("./viewer.js");
     if (attempt !== loadAttempt) return;
-    viewer = new CampusViewer(
+    candidate = new CampusViewer(
       $("#canvas-container"),
       $("#labels"),
       buildings,
       selectBuilding,
-      () =>
-        showFailure("浏览器暂停了3D显示。可以重新加载，或继续查看建筑细节图。"),
+      () => {
+        if (attempt === loadAttempt)
+          showFailure("浏览器暂停了3D显示。可以重新加载，或继续查看建筑细节图。");
+      },
       updateDetailQuality,
       modelAssetRevision || modelRevision,
     );
-    await viewer.load((event) => {
+    viewer = candidate;
+    await candidate.load((event) => {
+      if (attempt !== loadAttempt) return;
       $("#loading-copy").textContent = event.total
         ? event.loaded >= event.total
           ? "正在整理建筑几何…"
@@ -447,6 +452,10 @@ async function start() {
     );
     if (current) selectBuilding(current.code, false);
   } catch (error) {
+    // An abandoned attempt must never overwrite a successful retry.
+    if (attempt !== loadAttempt) return;
+    candidate?.dispose();
+    viewer = null;
     console.error("Campus viewer could not load:", error);
     showFailure(
       buildings.length
