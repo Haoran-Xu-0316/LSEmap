@@ -795,14 +795,14 @@
         0.6670500040054321
       ],
       "localRefinement": {
-        "description": "Portugal Street three historic window storeys, seven triple-light bays, distinct ground entrances, eighteen mansard dormers and terrace balustrade; stepped roof and surveyed skylight retained",
-        "newComponents": 9,
-        "scope": "April 2025 Fulkers Bailey Russell existing northwest elevation 4556-FBR-LR-ZZ-DR-A-114 P01 guides the window rhythm and labelled cornice/mansard heights. Existing GIS street length retained with proportional drawing registration; unlabelled window edges, dormer depth, ornament sizes and colour are estimates. Archived originals retained. The northeast rounded corner, other historical elevations, complete interior floor levels and remaining plant details still require reconstruction."
+        "description": "Portugal Street historic triple lights and mansard; Carey Street five glazed semicircular heads, three-storey projecting oriels, distinct ground glazing and curved corner entrance; retained stepped roof and skylight",
+        "newComponents": 6,
+        "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 117,
+        "status": "carey-frontage-reconstructed",
+        "addedObjects": 6
       },
       "interiorSections": [
         {
