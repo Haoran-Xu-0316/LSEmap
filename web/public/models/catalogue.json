@@ -7,7 +7,7 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "104",
+  "version": "105",
   "sourceModelSha256": "51d623c6c244fdfa5efac919ca149eb5b6440beb269a1c7deb637740193b0c4e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
@@ -1935,9 +1935,9 @@
       },
       "interior": true,
       "exteriorDirection": [
-        -0.3350583016872406,
-        0.4472135901451111,
-        -0.8292984366416931
+        -0.3745316784983303,
+        0.01999600108231301,
+        -0.9269984799027123
       ],
       "facadeScope": "Built-photo refinement of the north middle screen, sloping entrance return, recessed podium glazing, balcony guards, entrance doors and lantern forecourt piers. Existing public hall retained. Positions, heights and profiles remain photo-proportion estimates.",
       "detailView": {
