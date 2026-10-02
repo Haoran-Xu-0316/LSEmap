@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "111",
-  "sourceModelSha256": "355f7a67a4682a8a71e4a17f41ca09ec95da9fbabece13dcc98c5a705c3c0c28",
+  "version": "112",
+  "sourceModelSha256": "f20bad7564b15688d2207e828d75b06230c956988b7a080cf591f2233c2f3164",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2091,12 +2091,12 @@
       "bounds": {
         "min": [
           -39.16532897949219,
-          -1.0728836485895954e-08,
+          -0.10000000149011612,
           26.9625244140625
         ],
         "max": [
-          17.64790153503418,
-          28.375,
+          17.498443603515625,
+          27.224998474121094,
           100.10848236083984
         ]
       },
@@ -2112,9 +2112,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones",
-        "newComponents": 20,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments",
+        "newComponents": 37,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Rear roof, other elevations and full interior levels remain under review."
       },
       "latestReview": {
         "version": 43,
@@ -2147,20 +2147,20 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-8dc55850b771.glb",
-        "bytes": 20862008,
-        "triangles": 1786415,
-        "sha256": "8dc55850b771addaa23b01eadace47a64ad0449e25ca080d63e11994c88bf077",
+        "url": "/models/details/old-exterior-6caf00def343.glb",
+        "bytes": 18495900,
+        "triangles": 1640417,
+        "sha256": "6caf00def343417a7624c98a837e5cd1021b47770a8548a29ace15864f604d78",
         "bounds": {
           "min": [
-            -39.15880584716797,
-            -1.0728836485895954e-08,
-            26.96942710876465
+            -39.1646614074707,
+            -0.10000000149011612,
+            26.963228225708008
           ],
           "max": [
-            17.640804290771484,
-            28.375,
-            100.1051254272461
+            17.498443603515625,
+            27.224998474121094,
+            100.10813903808594
           ]
         }
       },
