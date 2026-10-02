@@ -1,0 +1,1553 @@
+{
+  "scope": "Approved camera presets and architectural evidence from edition114. Geometry and asset descriptors are always regenerated from the current native scene; no historical stage directories are required.",
+  "buildings": [
+    {
+      "code": "61A",
+      "name": "61 Aldwych",
+      "address": "61 Aldwych",
+      "status": "provisional",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "2021历史接待厅",
+        "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。"
+      },
+      "exteriorDirection": [
+        -0.533357560634613,
+        0.4952605664730072,
+        0.6857454180717468
+      ],
+      "facadeScope": "Street elevations follow the archived pre-redevelopment photograph. Footprint attribution remains provisional; heights, bay spacing, roof depths and unseen backs are estimates. No proposed redevelopment interiors are modeled.",
+      "localRefinement": {
+        "description": "Continuous three-storey stone piers and dark metal window belts, with chamfered roof pavilion",
+        "newComponents": 8,
+        "scope": "Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          -14.8,
+          12.1,
+          -18.5
+        ],
+        "target": [
+          0,
+          1.8,
+          0.5
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "CBG",
+      "name": "Centre Building",
+      "address": "2 Houghton Street",
+      "status": "detailed",
+      "interior": true,
+      "exteriorDirection": [
+        0.3290587365627289,
+        0.49755552411079407,
+        0.8025950193405151
+      ],
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
+        "newComponents": 8772,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          43.64379119873047,
+          1.75,
+          57.76911926269531
+        ],
+        "target": [
+          53.48973083496094,
+          9.151405334472656,
+          42.01232147216797
+        ],
+        "fov": 65
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "CKK",
+      "name": "Cheng Kin Ku Building",
+      "address": "54 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "interior": true,
+      "exteriorDirection": [
+        0.7772497534751892,
+        0.5449971556663513,
+        -0.3144214451313019
+      ],
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -73,
+          8,
+          -93
+        ],
+        "target": [
+          -89,
+          4,
+          -86
+        ],
+        "fov": 38
+      },
+      "localRefinement": {
+        "description": "Glazed rooftop meeting pavilion with pale V braces, dark metal joinery, fourteen silver sun-shading louvres and a low terrace parapet, replacing the previous opaque rooftop block",
+        "newComponents": 13,
+        "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          -97.4619140625,
+          4.800000190734863,
+          -68.80329895019531
+        ],
+        "target": [
+          -112.6413803100586,
+          6.388347625732422,
+          -81.728515625
+        ],
+        "fov": 65
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "CLM",
+      "name": "Clement House",
+      "address": "99 Aldwych",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CLM.1.01小组教室",
+        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+      },
+      "exteriorDirection": [
+        -0.3913891613483429,
+        0.48209914565086365,
+        0.7838334441184998
+      ],
+      "localRefinement": {
+        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained; seven uninterrupted tall middle windows and shallow bronze balcony rail",
+        "newComponents": 22,
+        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
+      },
+      "latestReview": {
+        "version": 114,
+        "status": "reviewed-no-change",
+        "addedObjects": 30
+      },
+      "interiorView": {
+        "position": [
+          8,
+          6.8,
+          8
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "COL",
+      "name": "Columbia House",
+      "address": "69 Aldwych",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Garrick咖啡厅用餐区",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。餐饮照片拍摄日期未知；仅可见用餐区，布局深度和后部楼梯关系为照片比例估计。"
+      },
+      "exteriorDirection": [
+        -0.5543825626373291,
+        0.5000902414321899,
+        0.6652591228485107
+      ],
+      "localRefinement": {
+        "description": "Dark brown paired door leaves with four upper rectangular panels, two lower oval mouldings and an inset stone name tablet; independent Garrick corner glazing, dark metal joinery, paired pull handles and a mounted red LSE badge beside lowercase lettering; existing LSE vector mark replaces generic plaque lettering",
+        "newComponents": 15,
+        "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          15.614480018615723,
+          5.0,
+          138.43194580078125
+        ],
+        "target": [
+          16.679906845092773,
+          3.000002861022949,
+          127.4544677734375
+        ],
+        "fov": 46
+      },
+      "interiorView": {
+        "position": [
+          11,
+          11,
+          14
+        ],
+        "target": [
+          0,
+          0.8,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "CON",
+      "name": "Connaught House",
+      "address": "63-65 Aldwych",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CON.7.04会议室",
+        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+      },
+      "exteriorDirection": [
+        -0.13161249458789825,
+        0.5131147503852844,
+        0.8481693863868713
+      ],
+      "localRefinement": {
+        "description": "Open street portal with warm recessed vestibule, inner glazed doors and split granite-limestone casing",
+        "newComponents": 8,
+        "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -15.132238388061523,
+          5.0,
+          141.20135498046875
+        ],
+        "target": [
+          -16.17835807800293,
+          3.0000014305114746,
+          130.22201538085938
+        ],
+        "fov": 46
+      },
+      "interiorView": {
+        "position": [
+          7,
+          5.7,
+          6
+        ],
+        "target": [
+          0,
+          0.75,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "COW",
+      "name": "Cowdray House",
+      "address": "6 Portugal Street",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Cowdray研讨厅局部",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。2019项目照片，无房间号或平面；仅研讨厅可见构件，座椅数量不代表核定容量。"
+      },
+      "exteriorDirection": [
+        -0.8388007283210754,
+        0.5144957900047302,
+        0.17806582152843475
+      ],
+      "facadeScope": "Photographed heritage facade details; footprint retained. Heights, ornamental profiles, roof depth and unseen elevations remain estimates. No surveyed interior claim.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -19.085157206404723,
+          4.4,
+          7.92495901812355
+        ],
+        "target": [
+          -5.390338268892609,
+          3.7,
+          5.017737962070278
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides",
+        "newComponents": 6,
+        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          13,
+          10,
+          13
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "FAW",
+      "name": "Fawcett House",
+      "address": "2 Clement’s Inn",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "FAW.1.01小组教室",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.5941781401634216,
+        0.48337969183921814,
+        -0.6428813338279724
+      ],
+      "localRefinement": {
+        "description": "Warm aggregate bands, pale aluminium joinery, reflective glazing and matte interior curtains",
+        "newComponents": 0,
+        "scope": "Shared facade finish guided by an undated PAN entrance photograph; color is estimated, not calibrated. Independent FAW elevations, upper massing, roof and full interiors remain unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          10,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "KGS",
+      "name": "King’s Chambers",
+      "address": "29-31 Portugal Street",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "KGS.1.02协作教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。官方历史平面标24席；几何尺寸、净高估算，非现状测绘。"
+      },
+      "exteriorDirection": [
+        0.6576157808303833,
+        0.5144957900047302,
+        0.5503050088882446
+      ],
+      "facadeScope": "Photographed heritage facade details; footprint retained. Heights, ornamental profiles, roof depth and unseen elevations remain estimates. No surveyed interior claim.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -6.04868076177555,
+          4.4,
+          8.450577616500295
+        ],
+        "target": [
+          -16.785353392828412,
+          3.7,
+          -0.5340682203482792
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 441,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "refined",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          10,
+          11,
+          13
+        ],
+        "target": [
+          0,
+          0.5,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "KSW",
+      "name": "20 Kingsway",
+      "address": "20 Kingsway",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "KSW.1.01小组教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。历史平面为5组桌；每组6席按图建立，尺寸、颜色具体分布为照片近似。"
+      },
+      "exteriorDirection": [
+        -0.8248389959335327,
+        0.035504549741744995,
+        0.564251720905304
+      ],
+      "localRefinement": {
+        "description": "Lower red block faces with seven true shallow horizontal recesses; retained curved central oriel, upper fine brick and pale surrounds",
+        "newComponents": 4,
+        "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -87.02011211284176,
+          3.6,
+          58.99127611885645
+        ],
+        "target": [
+          -78.58240896084087,
+          2.6,
+          55.81202139328099
+        ],
+        "fov": 50
+      },
+      "closeupImage": "ksw-entrance",
+      "interiorView": {
+        "position": [
+          11,
+          11,
+          13
+        ],
+        "target": [
+          0,
+          0.55,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "LAK",
+      "name": "Lakatos Building",
+      "address": "7 Portugal Street",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Lakatos2012入口楼梯",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。依据2012入口改造照片；只重建楼梯入口片段，不外推整栋40平方米接待区或电梯位置。"
+      },
+      "exteriorDirection": [
+        -0.34407711029052734,
+        0.3713906705379486,
+        -0.8623687624931335
+      ],
+      "facadeScope": "Photograph-informed Portugal Street shopfront and John Watkins Plaza arched windows, sash divisions, quoins, cornice and roof study. Heights, bay counts, dormer positions and roof depth estimated. Historical pediment not assigned without firmer location evidence. No verified interior.",
+      "detailView": {
+        "label": "窗饰细节",
+        "position": [
+          22.02361314676945,
+          5.0,
+          -15.261922606988971
+        ],
+        "target": [
+          15.775301150309488,
+          3.4,
+          -7.454323896928851
+        ],
+        "fov": 45
+      },
+      "localRefinement": {
+        "description": "Three-column sashes with six-row first-storey and four-row upper windows, pale joinery and warm red brick",
+        "newComponents": 140,
+        "scope": "Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          8,
+          7,
+          9
+        ],
+        "target": [
+          0,
+          0.7,
+          -0.6
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "LCH",
+      "name": "Lincoln Chambers",
+      "address": "2-4 Portsmouth Street",
+      "status": "facade",
+      "interior": false,
+      "exteriorDirection": [
+        0.38022950291633606,
+        0.41036465764045715,
+        -0.8288705348968506
+      ],
+      "facadeScope": "Photographed recessed entrance with splayed side arches, timber doors, green name panel and checker floor. Upper envelope retained from the prior approximate study. Dimensions, ornamental profiles and unseen elevations estimated; no verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -17.7,
+          3.9,
+          -31.7
+        ],
+        "target": [
+          -22.4,
+          2.1,
+          -22.1
+        ],
+        "fov": 42
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 153,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "closeupImage": "lch-entrance",
+      "exportExterior": true
+    },
+    {
+      "code": "5LF",
+      "name": "5 Lincoln’s Inn Fields",
+      "address": "5 Lincoln’s Inn Fields",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "教职工公寓双人卧室样本",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.4290930077994338,
+        0.008769146891963566,
+        0.9032177438029118
+      ],
+      "facadeScope": "Official LSE address-map point is inside the attributed OSM polygon. Front facade follows archived estate imagery; heights and rear geometry remain estimated.",
+      "footprintSource": {
+        "osmId": "way/1184094775",
+        "sourcePoint": {
+          "longitude": -0.1182048,
+          "latitude": 51.5168142
+        },
+        "sourcePage": "https://info.lse.ac.uk/staff/services/faculty-accommodation/property-portfolio/five-lincolns-inn-fields",
+        "sourceMap": "https://goo.gl/maps/hm3DbTQC8eH2"
+      },
+      "localRefinement": {
+        "description": "Yellow stock-brick frontage, shallow segmental ground openings, darker weathered chimney stacks and two black facade-edge rainwater pipes",
+        "newComponents": 3,
+        "scope": "Undated LSE Estate photo guides contrasting dark chimney brick and two edge rainwater pipes. Color, pipe diameter and offsets estimated; original main wall, glazing, openings, terracotta pots, roof and interiors preserved. Source photograph is not proof of 2026 condition. Unseen elevations and roof layout remain unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          0,
+          6.5,
+          9
+        ],
+        "target": [
+          0,
+          0.8,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "35L",
+      "name": "35 Lincoln’s Inn Fields",
+      "address": "35 Lincoln’s Inn Fields",
+      "status": "construction",
+      "interior": false,
+      "localRefinement": {
+        "description": "Indicative hoarding post foot plates",
+        "newComponents": 74,
+        "scope": "Schematic construction boundary only, not the current workstage"
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "exportExterior": false
+    },
+    {
+      "code": "49L",
+      "name": "Coopers Restaurant",
+      "address": "49 Lincoln’s Inn Fields",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Coopers餐厅用餐区样本",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        -0.5681107640266418,
+        0.411933571100235,
+        -0.7124330997467041
+      ],
+      "facadeScope": "Block-plan-derived exterior envelope. The 50/50A frontage is a shared physical building, not an assertion of exclusive 50L tenancy. Vertical dimensions and unseen details are estimates.",
+      "footprintSource": {
+        "drawing": "RT22055-RTA-XX-XX-DR-A-00002, PL01, 2022-06-22",
+        "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
+        "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
+      },
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
+        "newComponents": 135,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          9,
+          7,
+          9
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "50L",
+      "name": "50 Lincoln’s Inn Fields",
+      "address": "50 Lincoln’s Inn Fields",
+      "status": "facade",
+      "interior": false,
+      "exteriorDirection": [
+        -0.8848124742507935,
+        0.3618395924568176,
+        0.29356247186660767
+      ],
+      "facadeScope": "Block-plan-derived exterior envelope. The 50/50A frontage is a shared physical building, not an assertion of exclusive 50L tenancy. Vertical dimensions and unseen details are estimates.",
+      "footprintSource": {
+        "drawing": "RT22055-RTA-XX-XX-DR-A-00002, PL01, 2022-06-22",
+        "sourcePage": "https://docs.planning.org.uk/20220826/115/RELXRTRPFZ800/nev73t6wc2rk72nq.pdf",
+        "registration": "Approximate registration to five OCS outline corners; not surveyed coordinates"
+      },
+      "localRefinement": {
+        "description": "Broad panelled sandstone portal, dark unbarred semicircular fanlight, six timber panels, distinct door knobs, letterbox and two low metal-nosed steps",
+        "newComponents": 15,
+        "scope": "No.50 entrance guided by the LSE 2025/26 property handbook photograph. Neighboring round windows excluded; dimensions and carved profiles estimated, capture date unknown. Upper elevations, roof and complete interior still require review."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -57.17638778890998,
+          3.0,
+          -47.71152807880601
+        ],
+        "target": [
+          -50.666497499305315,
+          2.0,
+          -50.3428458194848
+        ],
+        "fov": 50
+      },
+      "closeupImage": "50l-entrance",
+      "exportExterior": true
+    },
+    {
+      "code": "51L",
+      "name": "51 Lincoln’s Inn Fields",
+      "address": "51 Lincoln’s Inn Fields",
+      "status": "facade",
+      "interior": false,
+      "exteriorDirection": [
+        -0.4030294120311737,
+        0.09950371831655502,
+        -0.9097616076469421
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Three-bay Lincoln frontage with finer upper sashes, three ground arches, right timber entry and a dark front roof band with three pale pedimented dormers, slim edge rail and continuously curved corner masonry and window framing",
+        "newComponents": 37,
+        "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -62.12764637114242,
+          3.5,
+          -64.72419142381968
+        ],
+        "target": [
+          -65.16224163712695,
+          2.5,
+          -57.843513048754346
+        ],
+        "fov": 50
+      },
+      "closeupImage": "51l-entrance",
+      "exportExterior": true
+    },
+    {
+      "code": "LRB",
+      "name": "Lionel Robbins Building，Library",
+      "address": "10 Portugal Street",
+      "status": "detailed",
+      "interior": true,
+      "exteriorDirection": [
+        -0.5680005550384521,
+        0.4820992350578308,
+        0.6670500040054321
+      ],
+      "localRefinement": {
+        "description": "Portugal Street three historic window storeys, seven triple-light bays, distinct ground entrances, eighteen mansard dormers and terrace balustrade; stepped roof and surveyed skylight retained",
+        "newComponents": 9,
+        "scope": "April 2025 Fulkers Bailey Russell existing northwest elevation 4556-FBR-LR-ZZ-DR-A-114 P01 guides the window rhythm and labelled cornice/mansard heights. Existing GIS street length retained with proportional drawing registration; unlabelled window edges, dormer depth, ornament sizes and colour are estimates. Archived originals retained. The northeast rounded corner, other historical elevations, complete interior floor levels and remaining plant details still require reconstruction."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorSections": [
+        {
+          "id": "LG",
+          "label": "LG层：电脑与政府出版物",
+          "minHeight": -4.02,
+          "maxHeight": -0.08,
+          "scope": "官方导览图支持电脑、分组学习与政府出版物区域。LG位于G层下方，地下深度按4米层高估算，非测绘标高。"
+        },
+        {
+          "id": "G",
+          "label": "G层：LSE LIFE学习区",
+          "minHeight": -0.02,
+          "maxHeight": 3.92,
+          "scope": "依据官方G层导览图布置LSE LIFE学习区，已移除无依据的通用书架；服务柜台与封闭房间尚未重建。"
+        },
+        {
+          "id": "1",
+          "label": "1层：主要藏书与课程藏书",
+          "minHeight": 3.98,
+          "maxHeight": 7.92,
+          "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
+        },
+        {
+          "id": "2",
+          "label": "2层：经济类藏书与期刊",
+          "minHeight": 7.98,
+          "maxHeight": 11.92,
+          "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
+        },
+        {
+          "id": "3",
+          "label": "3层：社会科学藏书与期刊",
+          "minHeight": 11.98,
+          "maxHeight": 15.92,
+          "scope": "官方导览图支持藏书、期刊与阅览区域；新增可浏览书架和座席，数量与尺寸估算，未构造无依据的封闭房间。"
+        },
+        {
+          "id": "4",
+          "label": "4层：专题阅览与分组学习",
+          "minHeight": 15.98,
+          "maxHeight": 18.9,
+          "scope": "依据官方4层图补充本科生、研究生、Women’s Library阅览与分组学习区域；不推断PhD Academy、保密资料室或5层员工空间。"
+        }
+      ],
+      "interiorSectionScope": "LG、G、1、2、3、4共6层功能分区。G层对齐入口基准，LG位于其下；层高暂按4米估算。中庭已按导览图近似配准；各层开口形状、房间边界及家具尺度仍待校准，非实测布局。",
+      "interiorView": {
+        "position": [
+          75.5933837890625,
+          -2.5,
+          -9.662314414978027
+        ],
+        "target": [
+          75.5933837890625,
+          17.09505844116211,
+          -13.666524887084961
+        ],
+        "fov": 65
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "MAR",
+      "name": "Marshall Building",
+      "address": "44 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "interior": true,
+      "exteriorDirection": [
+        -0.37453165650367737,
+        0.019996000453829765,
+        -0.9269984364509583
+      ],
+      "facadeScope": "Built-photo refinement of the north middle screen, sloping entrance return, recessed podium glazing, balcony guards, entrance doors and lantern forecourt piers. Existing public hall retained. Positions, heights and profiles remain photo-proportion estimates.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -28.22005746732383,
+          5.2,
+          -83.50629934420296
+        ],
+        "target": [
+          -21.02761087373832,
+          4.3,
+          -65.70436933652064
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish; three north podium windows with a clear single glass column and one central transom; thirty-eight thin north upper fins with inward hammerhead returns; open north fissure, two-storey recessed upper windows and twenty angled middle fins",
+        "newComponents": 12,
+        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
+      },
+      "latestReview": {
+        "version": 115,
+        "status": "refined",
+        "addedObjects": 62
+      },
+      "interiorView": {
+        "position": [
+          1.6433366537094116,
+          1.7000000476837158,
+          -66.45145416259766
+        ],
+        "target": [
+          -12.009961128234863,
+          3.3012337684631348,
+          -51.9248046875
+        ],
+        "fov": 65
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "OLD",
+      "name": "Old Building",
+      "address": "Houghton Street",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OLD.4.10阶梯教室",
+        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+      },
+      "exteriorDirection": [
+        0.7883862853050232,
+        0.48807665705680847,
+        0.37447047233581543
+      ],
+      "localRefinement": {
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures; six outward-spreading chamfered entrance treads",
+        "newComponents": 62,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Houghton approach plan follows contractor and user-supplied photographs. Existing six risers and 1.245m landing retained, plan widths and corner cuts estimated; current step count not newly surveyed."
+      },
+      "latestReview": {
+        "version": 116,
+        "status": "refined",
+        "addedObjects": 2
+      },
+      "interiorView": {
+        "position": [
+          17,
+          12,
+          -1
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "OCS",
+      "name": "Old Curiosity Shop",
+      "address": "13-14 Portsmouth Street",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OCS鞋店历史室内样本",
+        "scope": "鞋店历史室内局部样本，拍摄日期未注明；尺寸与陈列位置估算，非整栋内部。"
+      },
+      "exteriorDirection": [
+        -0.23757842183113098,
+        0.4821758270263672,
+        0.8432455658912659
+      ],
+      "localRefinement": {
+        "description": "Restored cream lime render and cornice, near-black deep-green shopfront, ochre upper sash surrounds and red-brown upper sash details",
+        "newComponents": 0,
+        "scope": "Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          7.6,
+          7.0,
+          10.4
+        ],
+        "target": [
+          0,
+          1.05,
+          -0.05
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "PAN",
+      "name": "Pankhurst House",
+      "address": "1 Clement’s Inn",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "PAN.1.01小组教室",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.5941781401634216,
+        0.48337969183921814,
+        -0.6428813338279724
+      ],
+      "localRefinement": {
+        "description": "Independent automatic entrance leaf with 980mm clear width, low push pad and fixed side glazing; dark revolving-door metal distinct from pale upper aluminium joinery",
+        "newComponents": 11,
+        "scope": "Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          10,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "PAR",
+      "name": "Parish Hall",
+      "address": "Sheffield Street",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "PAR.1.02小组教室",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.2203938066959381,
+        0.4472135901451111,
+        -0.8668485879898071
+      ],
+      "facadeScope": "Photo-informed low entrance hall, four-bay street elevation and pitched tile roof. Footprint retained; heights, roof depths, ornamental profiles and unseen elevations estimated. No verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -24.363430536661845,
+          3.8,
+          -7.406429805794218
+        ],
+        "target": [
+          -28.059546969209414,
+          3.1,
+          7.13106348272278
+        ],
+        "fov": 46
+      },
+      "localRefinement": {
+        "description": "Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps",
+        "newComponents": 15,
+        "scope": "Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          15,
+          12,
+          13
+        ],
+        "target": [
+          0,
+          0.7,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "PEA",
+      "name": "Peacock Theatre",
+      "address": "Portugal Street",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Peacock舞台与前排观众席",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。舞台口尺寸来自运营方技术规格，其余估算。"
+      },
+      "exteriorDirection": [
+        0.32542428374290466,
+        0.5449883341789246,
+        0.772713840007782
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Lower blue-black podium with brass starbursts, three-column upper wing, exposed brick side and right roof louvres",
+        "newComponents": 19,
+        "scope": "Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          23,
+          18,
+          -22
+        ],
+        "target": [
+          0,
+          2.6,
+          1
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "PEL",
+      "name": "Pethick-Lawrence House",
+      "address": "3 Clement’s Inn",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Tower3屋顶媒体演播室访谈区",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        0.48151347041130066,
+        0.5449883937835693,
+        -0.6863909959793091
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "Projecting silver entrance fascia, yellow reveals, first-floor window box and revolving glazing",
+        "newComponents": 20,
+        "scope": "Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          8,
+          6,
+          8
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "POR",
+      "name": "1 Portsmouth Street",
+      "address": "1 Portsmouth Street",
+      "status": "facade",
+      "interior": false,
+      "exteriorDirection": [
+        -0.34432581067085266,
+        0.3713906705379486,
+        -0.8622694611549377
+      ],
+      "facadeScope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified.",
+      "detailView": {
+        "label": "转角细节",
+        "position": [
+          -38.240465215674796,
+          3.8,
+          -36.400646925201144
+        ],
+        "target": [
+          -34.53196256541387,
+          2.65,
+          -27.113719940414157
+        ],
+        "fov": 45
+      },
+      "localRefinement": {
+        "description": "Neutral pale joinery, horizontal mixed-brick courses and two photographed chimney stacks",
+        "newComponents": 8,
+        "scope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "SAR",
+      "name": "Sardinia House",
+      "address": "52 Lincoln’s Inn Fields",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "2015改造茶水间样本",
+        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。尺寸和未显示部分均为估算。"
+      },
+      "exteriorDirection": [
+        -0.33349406719207764,
+        0.5449883937835693,
+        -0.7692655324935913
+      ],
+      "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
+      "localRefinement": {
+        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut; dressed upper window surrounds, segmental hoods, school-name fascia, four-column three-row first-floor sashes and local red-brick finish",
+        "newComponents": 712,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes. Undated LSE Estate photograph and archived 2018 street photograph guide stonework and fascia. Three central upper rows receive estimated surrounds; tree-obscured bays repeat the visible profile, so exact hood order and fine carving are unresolved. Existing opening vertices, footprint, floor count, roof and all interiors retained; red-brick colour is a photographic estimate."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "detailView": {
+        "label": "拱窗细节",
+        "position": [
+          -89.95638969694006,
+          3.7,
+          -67.05056656320497
+        ],
+        "target": [
+          -83.49206587100052,
+          2.7,
+          -50.7566465696868
+        ],
+        "fov": 50
+      },
+      "closeupImage": "sar-windows",
+      "interiorView": {
+        "position": [
+          8,
+          6.4,
+          7
+        ],
+        "target": [
+          0,
+          0.9,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "SAW",
+      "name": "Saw Swee Hock Student Centre",
+      "address": "1 Sheffield Street",
+      "status": "detailed",
+      "interior": true,
+      "exteriorDirection": [
+        0.851334273815155,
+        0.4969167709350586,
+        -0.16823700070381165
+      ],
+      "localRefinement": {
+        "description": "Two roof terraces, lower green roof, timber curtain glazing, fixed guardrails, fitted photovoltaic modules and twin high brick flues; four clipped Jatoba curtain-wall fields retained",
+        "newComponents": 38,
+        "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "SHF",
+      "name": "Sheffield Street",
+      "address": "9-10 Sheffield Street",
+      "status": "facade",
+      "interior": false,
+      "exteriorDirection": [
+        -0.7961925268173218,
+        0.5449883341789246,
+        -0.26280227303504944
+      ],
+      "facadeScope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed",
+      "localRefinement": {
+        "description": "Four-bay stock-brick facade, pale base, white joinery and four roof dormers",
+        "newComponents": 658,
+        "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "SAL",
+      "name": "Sir Arthur Lewis Building",
+      "address": "32 Lincoln’s Inn Fields",
+      "status": "detailed",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "SAL.G.01研讨教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
+      },
+      "exteriorDirection": [
+        -0.6556274890899658,
+        0.4838261604309082,
+        -0.5797110795974731
+      ],
+      "localRefinement": {
+        "description": "Four-storey main window body, blue painted sashes and eighteen glazed oblique oriel side panes; bell-curved front tower roofs, arched lantern glazing and layered dark cornices",
+        "newComponents": 6,
+        "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "refined",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          12,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    },
+    {
+      "code": "STC",
+      "name": "St Clement’s",
+      "address": "Clare Market",
+      "status": "facade",
+      "interior": true,
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "STC.S018计算机学习区",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。无可用平面，只有照片中的计算机岛和教学墙；围合边界、席位与尺寸均为示意。"
+      },
+      "exteriorDirection": [
+        -0.9215719103813171,
+        0.3872324824333191,
+        0.027498407289385796
+      ],
+      "facadeScope": "Photo-informed Clare Market window reveals, recessed roof storey, red landing strip, corner panel and recessed entrance. Artwork represented by panel placement only; heights, exact entry bay and unseen surfaces estimated. No verified interior.",
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          -2.481489256186876,
+          3.3,
+          39.05230083951075
+        ],
+        "target": [
+          1.9068203417821792,
+          2.25,
+          27.88347163685877
+        ],
+        "fov": 44
+      },
+      "localRefinement": {
+        "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia",
+        "newComponents": 1288,
+        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
+      "interiorView": {
+        "position": [
+          9,
+          8,
+          10
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "exportExterior": true
+    }
+  ],
+  "spaces": [
+    {
+      "id": "cbg-102",
+      "label": "CBG.1.02分组教室",
+      "scope": "依据LSE官方CBG.1.02平面与同房间照片建立的42座分组教学室历史样本。七组六座沿用平面布局；房间尺度、设备间距及不可见构造为估算，局部墙和吊顶剖开，不代表2026年现状或与中庭的实测连接。",
+      "interiorView": {
+        "position": [
+          14.0,
+          12.5,
+          -16.0
+        ],
+        "target": [
+          0,
+          1.2,
+          -0.2
+        ],
+        "fov": 50
+      },
+      "gallery": "cbg-102-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CBG.1.02分组教室",
+        "scope": "依据LSE官方CBG.1.02平面与同房间照片建立的42座分组教学室历史样本。七组六座沿用平面布局；房间尺度、设备间距及不可见构造为估算，局部墙和吊顶剖开，不代表2026年现状或与中庭的实测连接。"
+      },
+      "code": "CBG",
+      "collection": "CBG_TEACHING_ROOM_study"
+    },
+    {
+      "id": "ckk-104",
+      "label": "CKK.1.04排式教室",
+      "scope": "依据LSE官方CKK.1.04平面与照片制作的独立排式教室历史样本；逐排共80个座椅符号。尺寸、窗高和红黑椅位置估算，未确认高差按平层表达，不代表2026年现状或与中庭的实测连接。",
+      "interiorView": {
+        "position": [
+          -14.5,
+          14.2,
+          -18.5
+        ],
+        "target": [
+          0,
+          0.8,
+          0
+        ],
+        "fov": 50
+      },
+      "gallery": "ckk-104-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CKK.1.04排式教室",
+        "scope": "依据LSE官方CKK.1.04平面与照片制作的独立排式教室历史样本；逐排共80个座椅符号。尺寸、窗高和红黑椅位置估算，未确认高差按平层表达，不代表2026年现状或与中庭的实测连接。"
+      },
+      "code": "CKK",
+      "collection": "CKK_TEACHING_ROOM_study"
+    },
+    {
+      "id": "mar-104",
+      "label": "MAR.1.04阶梯教室",
+      "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。",
+      "interiorView": {
+        "position": [
+          17.8,
+          15.0,
+          -20.8
+        ],
+        "target": [
+          0,
+          1.5,
+          0.2
+        ],
+        "fov": 50
+      },
+      "gallery": "mar-104-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "MAR.1.04阶梯教室",
+        "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。"
+      },
+      "code": "MAR",
+      "collection": "MAR_TEACHING_ROOM_study"
+    },
+    {
+      "id": "saw-denning",
+      "label": "Denning咖啡厅，2014局部",
+      "scope": "依据2014年LSE使用指南中明确标注的Denning Learning Café照片建立的第一层咖啡厅建筑角落。仅复原照片可见的红柱、吸声云、黄色电梯门框、玻璃墙、砖墙及售卖卷帘；尺度、相对位置和不可见构造估算，非全厅或2026年现状。",
+      "interiorView": {
+        "position": [
+          12.2,
+          10.0,
+          16.0
+        ],
+        "target": [
+          0,
+          1.85,
+          -0.7
+        ],
+        "fov": 50
+      },
+      "gallery": "saw-denning-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Denning咖啡厅，2014局部",
+        "scope": "依据2014年LSE使用指南中明确标注的Denning Learning Café照片建立的第一层咖啡厅建筑角落。仅复原照片可见的红柱、吸声云、黄色电梯门框、玻璃墙、砖墙及售卖卷帘；尺度、相对位置和不可见构造估算，非全厅或2026年现状。"
+      },
+      "code": "SAW",
+      "collection": "SAW_DENNING_ROOM_study"
+    },
+    {
+      "id": "saw-three-tuns",
+      "label": "Three Tuns入口与2014平面",
+      "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。",
+      "interiorView": {
+        "position": [
+          1.0,
+          2.799999952316284,
+          12.0
+        ],
+        "target": [
+          0,
+          1.4,
+          7.5
+        ],
+        "fov": 50
+      },
+      "gallery": "saw-three-tuns-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Three Tuns入口与2014平面",
+        "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。"
+      },
+      "code": "SAW",
+      "collection": "SAW_THREE_TUNS_study"
+    }
+  ]
+}
