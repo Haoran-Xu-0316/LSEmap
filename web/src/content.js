@@ -193,7 +193,7 @@ export const buildingDetails = {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室布局。",
-    images: [["old-exterior", "Old Building外观"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
   },
   SAL: {
     description:
