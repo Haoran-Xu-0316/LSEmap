@@ -152,6 +152,7 @@ export const buildingDetails = {
       ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
       ["mar-entrance", "斜向入口、露台玻璃与前场灯柱"],
+      ["mar-podium-windows", "底座高窗"],
       ["mar-hall", "Grand Hall公共大厅"],
       ["mar-stair", "弧形楼梯与平台连接"],
       ["portsmouth-street", "Portsmouth Street铺装"],
