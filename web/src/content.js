@@ -198,7 +198,7 @@ export const buildingDetails = {
     description:
       "面向Lincoln’s Inn Fields的Sir Arthur Lewis Building，以砖石立面、连续窗列和底部入口呈现历史街区尺度。",
     note: "立面主要尺度依据照片估计，未见背面仍简化。",
-    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-oriels", "凸窗侧窗与蓝色窗框"]],
+    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"]],
   },
   CLM: {
     description:
