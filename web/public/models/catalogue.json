@@ -7,8 +7,8 @@
       "scope": "Original reconstructed map, not a source photograph"
     }
   ],
-  "version": "103",
-  "sourceModelSha256": "8d4a1a490db59da07e06fa3ab65aa04e1811828c0b574c261852dcfe3afdd7a5",
+  "version": "104",
+  "sourceModelSha256": "51d623c6c244fdfa5efac919ca149eb5b6440beb269a1c7deb637740193b0c4e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1955,9 +1955,9 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish",
-        "newComponents": 3,
-        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review."
+        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish; three north podium windows with a clear single glass column and one central transom",
+        "newComponents": 10,
+        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved."
       },
       "latestReview": {
         "version": 43,
@@ -1990,10 +1990,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-beba29e970f7.glb",
-        "bytes": 7935500,
-        "triangles": 726926,
-        "sha256": "beba29e970f7af257290b566165e5deb69a6082e5942fd160093688bfeee375f",
+        "url": "/models/details/mar-exterior-d5625a9ce981.glb",
+        "bytes": 7764612,
+        "triangles": 713366,
+        "sha256": "d5625a9ce98105466c18540587b8eb7b3c3eb97818d426a773270f4ea1232fd3",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -2008,10 +2008,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-9d1561f4bddf.glb",
-        "bytes": 453236,
-        "triangles": 46403,
-        "sha256": "9d1561f4bddff952fcbad7aaf5ccba8988fce3a786ad46f62999288ad9ef555f",
+        "url": "/models/details/mar-interior-6dfe7bad00f9.glb",
+        "bytes": 450476,
+        "triangles": 46535,
+        "sha256": "6dfe7bad00f94fe59b6b624c520f4d4a65ca3693d10f5655e320f6c0b16049e0",
         "bounds": {
           "min": [
             -44.53135299682617,
