@@ -1,14 +1,15 @@
 {
   "generatedTextures": [
     {
-      "name": "globe-map",
-      "sha256": "f99b35dc9be0b09e535020be9e04753344c0de2711ff37547471f6684a04c852",
+      "name": "globe-map-australia-yellow",
+      "sha256": "e0d369ffc2d351fd9949ca75b0c1cb3a9f482d6847032bca7424696b4cc36600",
       "source": "Natural Earth public-domain cartography",
-      "scope": "Original reconstructed map, not a source photograph"
+      "scope": "Authored political map with photo-estimated Australia fill; no source photograph",
+      "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "114",
-  "sourceModelSha256": "520c678ac626bcab4cca1976664de8021d5e29102556f483aae9b000d4c05e52",
+  "version": "116",
+  "sourceModelSha256": "e5e865b653abcc10ce53484f1c07c676061c189e10a6f401cb9f33c3aac669fd",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -20,18 +21,6 @@
       "name": "61 Aldwych",
       "address": "61 Aldwych",
       "status": "provisional",
-      "bounds": {
-        "min": [
-          -77.13259887695312,
-          0.0,
-          47.836158752441406
-        ],
-        "max": [
-          -25.881681442260742,
-          38.47999954223633,
-          133.56549072265625
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -66,6 +55,18 @@
           0.5
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -77.13259887695312,
+          0.0,
+          47.836158752441406
+        ],
+        "max": [
+          -25.881681442260742,
+          38.47999954223633,
+          133.56549072265625
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -121,18 +122,6 @@
       "name": "Centre Building",
       "address": "2 Houghton Street",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          2.060716152191162,
-          -0.13249999284744263,
-          31.516820907592773
-        ],
-        "max": [
-          68.16556549072266,
-          53.279998779296875,
-          100.0077896118164
-        ]
-      },
       "interior": true,
       "exteriorDirection": [
         0.3290587365627289,
@@ -161,6 +150,18 @@
           42.01232147216797
         ],
         "fov": 65
+      },
+      "bounds": {
+        "min": [
+          2.060716152191162,
+          -0.13249999284744263,
+          31.516820907592773
+        ],
+        "max": [
+          68.16556549072266,
+          53.279998779296875,
+          100.0077896118164
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -215,6 +216,25 @@
           "id": "cbg-102",
           "label": "CBG.1.02分组教室",
           "scope": "依据LSE官方CBG.1.02平面与同房间照片建立的42座分组教学室历史样本。七组六座沿用平面布局；房间尺度、设备间距及不可见构造为估算，局部墙和吊顶剖开，不代表2026年现状或与中庭的实测连接。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CBG.1.02分组教室",
+            "scope": "依据LSE官方CBG.1.02平面与同房间照片建立的42座分组教学室历史样本。七组六座沿用平面布局；房间尺度、设备间距及不可见构造为估算，局部墙和吊顶剖开，不代表2026年现状或与中庭的实测连接。"
+          },
+          "interiorView": {
+            "position": [
+              14.0,
+              12.5,
+              -16.0
+            ],
+            "target": [
+              0,
+              1.2,
+              -0.2
+            ],
+            "fov": 50
+          },
+          "gallery": "cbg-102-interior",
           "interiorAsset": "/models/details/cbg-102-interior-fd8d36884a1f.glb",
           "detailedInterior": {
             "url": "/models/details/cbg-102-interior-fd8d36884a1f.glb",
@@ -234,11 +254,6 @@
               ]
             }
           },
-          "interiorStudy": {
-            "kind": "room-sample",
-            "label": "CBG.1.02分组教室",
-            "scope": "依据LSE官方CBG.1.02平面与同房间照片建立的42座分组教学室历史样本。七组六座沿用平面布局；房间尺度、设备间距及不可见构造为估算，局部墙和吊顶剖开，不代表2026年现状或与中庭的实测连接。"
-          },
           "interiorBounds": {
             "min": [
               -5.800000190734863,
@@ -250,21 +265,7 @@
               3.9100000858306885,
               5.244999885559082
             ]
-          },
-          "interiorView": {
-            "position": [
-              14.0,
-              12.5,
-              -16.0
-            ],
-            "target": [
-              0,
-              1.2,
-              -0.2
-            ],
-            "fov": 50
-          },
-          "gallery": "cbg-102-interior"
+          }
         }
       ]
     },
@@ -273,18 +274,6 @@
       "name": "Cheng Kin Ku Building",
       "address": "54 Lincoln’s Inn Fields",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -138.37171936035156,
-          0.0,
-          -101.81769561767578
-        ],
-        "max": [
-          -82.27122497558594,
-          32.14500045776367,
-          -53.928897857666016
-        ]
-      },
       "interior": true,
       "exteriorDirection": [
         0.7772497534751892,
@@ -327,6 +316,18 @@
           -81.728515625
         ],
         "fov": 65
+      },
+      "bounds": {
+        "min": [
+          -138.37171936035156,
+          0.0,
+          -101.81769561767578
+        ],
+        "max": [
+          -82.27122497558594,
+          32.14500045776367,
+          -53.928897857666016
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -381,6 +382,25 @@
           "id": "ckk-104",
           "label": "CKK.1.04排式教室",
           "scope": "依据LSE官方CKK.1.04平面与照片制作的独立排式教室历史样本；逐排共80个座椅符号。尺寸、窗高和红黑椅位置估算，未确认高差按平层表达，不代表2026年现状或与中庭的实测连接。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CKK.1.04排式教室",
+            "scope": "依据LSE官方CKK.1.04平面与照片制作的独立排式教室历史样本；逐排共80个座椅符号。尺寸、窗高和红黑椅位置估算，未确认高差按平层表达，不代表2026年现状或与中庭的实测连接。"
+          },
+          "interiorView": {
+            "position": [
+              -14.5,
+              14.2,
+              -18.5
+            ],
+            "target": [
+              0,
+              0.8,
+              0
+            ],
+            "fov": 50
+          },
+          "gallery": "ckk-104-interior",
           "interiorAsset": "/models/details/ckk-104-interior-82d811510e76.glb",
           "detailedInterior": {
             "url": "/models/details/ckk-104-interior-82d811510e76.glb",
@@ -400,11 +420,6 @@
               ]
             }
           },
-          "interiorStudy": {
-            "kind": "room-sample",
-            "label": "CKK.1.04排式教室",
-            "scope": "依据LSE官方CKK.1.04平面与照片制作的独立排式教室历史样本；逐排共80个座椅符号。尺寸、窗高和红黑椅位置估算，未确认高差按平层表达，不代表2026年现状或与中庭的实测连接。"
-          },
           "interiorBounds": {
             "min": [
               -4.210000038146973,
@@ -416,21 +431,7 @@
               3.940000057220459,
               6.659999847412109
             ]
-          },
-          "interiorView": {
-            "position": [
-              -14.5,
-              14.2,
-              -18.5
-            ],
-            "target": [
-              0,
-              0.8,
-              0
-            ],
-            "fov": 50
-          },
-          "gallery": "ckk-104-interior"
+          }
         }
       ]
     },
@@ -439,18 +440,6 @@
       "name": "Clement House",
       "address": "99 Aldwych",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          99.0441665649414,
-          -0.03500000014901161,
-          121.30353546142578
-        ],
-        "max": [
-          132.280029296875,
-          28.760000228881836,
-          155.89503479003906
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -484,6 +473,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          99.0441665649414,
+          -0.03500000014901161,
+          121.30353546142578
+        ],
+        "max": [
+          132.280029296875,
+          28.760000228881836,
+          155.89503479003906
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -539,18 +540,6 @@
       "name": "Columbia House",
       "address": "69 Aldwych",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          2.9004480838775635,
-          -0.20250000059604645,
-          98.30819702148438
-        ],
-        "max": [
-          23.38327980041504,
-          29.0,
-          128.17990112304688
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -598,6 +587,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          2.9004480838775635,
+          -0.20250000059604645,
+          98.30819702148438
+        ],
+        "max": [
+          23.38327980041504,
+          29.0,
+          128.17990112304688
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -653,18 +654,6 @@
       "name": "Connaught House",
       "address": "63-65 Aldwych",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -34.34856414794922,
-          -0.020000001415610313,
-          96.73214721679688
-        ],
-        "max": [
-          -4.919323444366455,
-          29.360000610351562,
-          134.03517150878906
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -712,6 +701,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -34.34856414794922,
+          -0.020000001415610313,
+          96.73214721679688
+        ],
+        "max": [
+          -4.919323444366455,
+          29.360000610351562,
+          134.03517150878906
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -767,18 +768,6 @@
       "name": "Cowdray House",
       "address": "6 Portugal Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -6.507339954376221,
-          0.0,
-          -7.595107555389404
-        ],
-        "max": [
-          31.551820755004883,
-          22.479999542236328,
-          14.707598686218262
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -827,6 +816,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -6.507339954376221,
+          0.0,
+          -7.595107555389404
+        ],
+        "max": [
+          31.551820755004883,
+          22.479999542236328,
+          14.707598686218262
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -882,18 +883,6 @@
       "name": "Fawcett House",
       "address": "2 Clement’s Inn",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          72.36564636230469,
-          0.0,
-          76.17027282714844
-        ],
-        "max": [
-          106.32102966308594,
-          44.22999954223633,
-          97.4258804321289
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -927,6 +916,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          72.36564636230469,
+          0.0,
+          76.17027282714844
+        ],
+        "max": [
+          106.32102966308594,
+          44.22999954223633,
+          97.4258804321289
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -982,18 +983,6 @@
       "name": "King’s Chambers",
       "address": "29-31 Portugal Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -33.602169036865234,
-          0.0,
-          -12.12070083618164
-        ],
-        "max": [
-          -12.460378646850586,
-          18.65999984741211,
-          5.265872955322266
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -1042,6 +1031,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -33.602169036865234,
+          0.0,
+          -12.12070083618164
+        ],
+        "max": [
+          -12.460378646850586,
+          18.65999984741211,
+          5.265872955322266
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -1097,18 +1098,6 @@
       "name": "20 Kingsway",
       "address": "20 Kingsway",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -81.10916900634766,
-          0.0,
-          36.45901870727539
-        ],
-        "max": [
-          -47.3437385559082,
-          20.549999237060547,
-          60.44700622558594
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -1157,6 +1146,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -81.10916900634766,
+          0.0,
+          36.45901870727539
+        ],
+        "max": [
+          -47.3437385559082,
+          20.549999237060547,
+          60.44700622558594
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -1212,18 +1213,6 @@
       "name": "Lakatos Building",
       "address": "7 Portugal Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          2.289186954498291,
-          0.0,
-          -14.035511016845703
-        ],
-        "max": [
-          23.84626007080078,
-          17.549999237060547,
-          6.067502021789551
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -1272,6 +1261,18 @@
           -0.6
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          2.289186954498291,
+          0.0,
+          -14.035511016845703
+        ],
+        "max": [
+          23.84626007080078,
+          17.549999237060547,
+          6.067502021789551
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -1327,18 +1328,6 @@
       "name": "Lincoln Chambers",
       "address": "2-4 Portsmouth Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -34.67495346069336,
-          0.0,
-          -26.038593292236328
-        ],
-        "max": [
-          -15.446763038635254,
-          13.5,
-          -8.325874328613281
-        ]
-      },
       "interior": false,
       "exteriorDirection": [
         0.38022950291633606,
@@ -1371,6 +1360,18 @@
         "addedObjects": 0
       },
       "closeupImage": "lch-entrance",
+      "bounds": {
+        "min": [
+          -34.67495346069336,
+          0.0,
+          -26.038593292236328
+        ],
+        "max": [
+          -15.446763038635254,
+          13.5,
+          -8.325874328613281
+        ]
+      },
       "detailedExterior": {
         "url": "/models/details/lch-exterior-1b4645d9cef7.glb",
         "bytes": 1198732,
@@ -1395,18 +1396,6 @@
       "name": "5 Lincoln’s Inn Fields",
       "address": "5 Lincoln’s Inn Fields",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -112.59539794921875,
-          -2.38418573772492e-09,
-          -264.3106689453125
-        ],
-        "max": [
-          -98.30729675292969,
-          16.240999221801758,
-          -241.37252807617188
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -1450,6 +1439,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -112.59539794921875,
+          -2.38418573772492e-09,
+          -264.3106689453125
+        ],
+        "max": [
+          -98.30729675292969,
+          16.240999221801758,
+          -241.37252807617188
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -1505,6 +1506,17 @@
       "name": "35 Lincoln’s Inn Fields",
       "address": "35 Lincoln’s Inn Fields",
       "status": "construction",
+      "interior": false,
+      "localRefinement": {
+        "description": "Indicative hoarding post foot plates",
+        "newComponents": 74,
+        "scope": "Schematic construction boundary only, not the current workstage"
+      },
+      "latestReview": {
+        "version": 43,
+        "status": "reviewed-no-change",
+        "addedObjects": 0
+      },
       "bounds": {
         "min": [
           57.855247497558594,
@@ -1516,17 +1528,6 @@
           2.7700002193450928,
           -57.32981872558594
         ]
-      },
-      "interior": false,
-      "localRefinement": {
-        "description": "Indicative hoarding post foot plates",
-        "newComponents": 74,
-        "scope": "Schematic construction boundary only, not the current workstage"
-      },
-      "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
       }
     },
     {
@@ -1534,18 +1535,6 @@
       "name": "Coopers Restaurant",
       "address": "49 Lincoln’s Inn Fields",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -56.261409759521484,
-          0.0,
-          -65.79364776611328
-        ],
-        "max": [
-          -43.47058868408203,
-          11.914999961853027,
-          -51.59469985961914
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -1585,6 +1574,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -56.261409759521484,
+          0.0,
+          -65.79364776611328
+        ],
+        "max": [
+          -43.47058868408203,
+          11.914999961853027,
+          -51.59469985961914
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -1640,18 +1641,6 @@
       "name": "50 Lincoln’s Inn Fields",
       "address": "50 Lincoln’s Inn Fields",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -51.667205810546875,
-          -4.76837147544984e-09,
-          -54.27339553833008
-        ],
-        "max": [
-          -40.59330368041992,
-          12.484999656677246,
-          -44.29985427856445
-        ]
-      },
       "interior": false,
       "exteriorDirection": [
         -0.8848124742507935,
@@ -1689,6 +1678,18 @@
         "fov": 50
       },
       "closeupImage": "50l-entrance",
+      "bounds": {
+        "min": [
+          -51.667205810546875,
+          -4.76837147544984e-09,
+          -54.27339553833008
+        ],
+        "max": [
+          -40.59330368041992,
+          12.484999656677246,
+          -44.29985427856445
+        ]
+      },
       "detailedExterior": {
         "url": "/models/details/50l-exterior-c47ad9483e84.glb",
         "bytes": 346456,
@@ -1713,18 +1714,6 @@
       "name": "51 Lincoln’s Inn Fields",
       "address": "51 Lincoln’s Inn Fields",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -74.71239471435547,
-          0.0,
-          -59.06828689575195
-        ],
-        "max": [
-          -56.368648529052734,
-          22.825000762939453,
-          -36.1026496887207
-        ]
-      },
       "interior": false,
       "exteriorDirection": [
         -0.4030294120311737,
@@ -1757,6 +1746,18 @@
         "fov": 50
       },
       "closeupImage": "51l-entrance",
+      "bounds": {
+        "min": [
+          -74.71239471435547,
+          0.0,
+          -59.06828689575195
+        ],
+        "max": [
+          -56.368648529052734,
+          22.825000762939453,
+          -36.1026496887207
+        ]
+      },
       "detailedExterior": {
         "url": "/models/details/51l-exterior-3ada32cd9fe8.glb",
         "bytes": 2800660,
@@ -1781,18 +1782,6 @@
       "name": "Lionel Robbins Building，Library",
       "address": "10 Portugal Street",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          24.830078125,
-          -0.25999999046325684,
-          -41.347412109375
-        ],
-        "max": [
-          114.51506042480469,
-          32.8706169128418,
-          27.600141525268555
-        ]
-      },
       "interior": true,
       "exteriorDirection": [
         -0.5680005550384521,
@@ -1867,6 +1856,18 @@
         ],
         "fov": 65
       },
+      "bounds": {
+        "min": [
+          24.830078125,
+          -0.25999999046325684,
+          -41.347412109375
+        ],
+        "max": [
+          114.51506042480469,
+          32.8706169128418,
+          27.600141525268555
+        ]
+      },
       "interiorBounds": {
         "min": [
           25.21265411376953,
@@ -1921,18 +1922,6 @@
       "name": "Marshall Building",
       "address": "44 Lincoln’s Inn Fields",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -45.36553955078125,
-          0.0,
-          -80.22682189941406
-        ],
-        "max": [
-          23.357261657714844,
-          42.79999923706055,
-          -24.454532623291016
-        ]
-      },
       "interior": true,
       "exteriorDirection": [
         -0.37453165650367737,
@@ -1955,14 +1944,14 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish; three north podium windows with a clear single glass column and one central transom; thirty-eight thin north upper fins with inward hammerhead returns",
+        "description": "Five academic-wing elevations with larger recessed glazed apertures, bronze joinery and projecting concrete window grids; pale warm precast exterior finish; three north podium windows with a clear single glass column and one central transom; thirty-eight thin north upper fins with inward hammerhead returns; open north fissure, two-storey recessed upper windows and twenty angled middle fins",
         "newComponents": 12,
-        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved."
+        "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 114,
-        "status": "reviewed-no-change",
-        "addedObjects": 2
+        "version": 115,
+        "status": "refined",
+        "addedObjects": 62
       },
       "interiorView": {
         "position": [
@@ -1977,6 +1966,18 @@
         ],
         "fov": 65
       },
+      "bounds": {
+        "min": [
+          -45.36553955078125,
+          0.0,
+          -80.22682189941406
+        ],
+        "max": [
+          23.357263565063477,
+          42.80000305175781,
+          -24.454532623291016
+        ]
+      },
       "interiorBounds": {
         "min": [
           -44.53135299682617,
@@ -1990,10 +1991,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-a72ba4931527.glb",
-        "bytes": 7720392,
-        "triangles": 709634,
-        "sha256": "a72ba49315271c4987144fee3b9b6650767927b0211226f3517a27963fc4a96a",
+        "url": "/models/details/mar-exterior-3694fe76f1e7.glb",
+        "bytes": 3670228,
+        "triangles": 344592,
+        "sha256": "3694fe76f1e7471a49eed2ce7fa01e89df53db3fbd483b9933425d1300ff3ed6",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -2001,8 +2002,8 @@
             -80.22334289550781
           ],
           "max": [
-            23.357261657714844,
-            42.79999923706055,
+            23.357263565063477,
+            42.80000305175781,
             -24.454532623291016
           ]
         }
@@ -2030,6 +2031,25 @@
           "id": "mar-104",
           "label": "MAR.1.04阶梯教室",
           "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "MAR.1.04阶梯教室",
+            "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。"
+          },
+          "interiorView": {
+            "position": [
+              17.8,
+              15.0,
+              -20.8
+            ],
+            "target": [
+              0,
+              1.5,
+              0.2
+            ],
+            "fov": 50
+          },
+          "gallery": "mar-104-interior",
           "interiorAsset": "/models/details/mar-104-interior-ef2db3ea7a36.glb",
           "detailedInterior": {
             "url": "/models/details/mar-104-interior-ef2db3ea7a36.glb",
@@ -2049,11 +2069,6 @@
               ]
             }
           },
-          "interiorStudy": {
-            "kind": "room-sample",
-            "label": "MAR.1.04阶梯教室",
-            "scope": "依据LSE官方MAR.1.04平面与同房间照片建立的90座阶梯教学室历史样本。房间尺寸、阶梯标高和具体椅位为估算；独立展示，不代表2026年现状或与大厅的实测连接。"
-          },
           "interiorBounds": {
             "min": [
               -6.960000038146973,
@@ -2065,21 +2080,7 @@
               4.96999979019165,
               8.375
             ]
-          },
-          "interiorView": {
-            "position": [
-              17.8,
-              15.0,
-              -20.8
-            ],
-            "target": [
-              0,
-              1.5,
-              0.2
-            ],
-            "fov": 50
-          },
-          "gallery": "mar-104-interior"
+          }
         }
       ]
     },
@@ -2088,18 +2089,6 @@
       "name": "Old Building",
       "address": "Houghton Street",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -39.16532897949219,
-          -0.10000000149011612,
-          26.9625244140625
-        ],
-        "max": [
-          17.498443603515625,
-          32.04999923706055,
-          100.10848236083984
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2112,14 +2101,14 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures",
-        "newComponents": 60,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures; six outward-spreading chamfered entrance treads",
+        "newComponents": 62,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Houghton approach plan follows contractor and user-supplied photographs. Existing six risers and 1.245m landing retained, plan widths and corner cuts estimated; current step count not newly surveyed."
       },
       "latestReview": {
-        "version": 113,
+        "version": 116,
         "status": "refined",
-        "addedObjects": 23
+        "addedObjects": 2
       },
       "interiorView": {
         "position": [
@@ -2134,6 +2123,18 @@
         ],
         "fov": 50
       },
+      "bounds": {
+        "min": [
+          -39.16532897949219,
+          -0.10000000149011612,
+          26.9625244140625
+        ],
+        "max": [
+          17.498443603515625,
+          32.04999923706055,
+          100.10848236083984
+        ]
+      },
       "interiorBounds": {
         "min": [
           -8.0,
@@ -2147,10 +2148,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-22cab9f796e3.glb",
-        "bytes": 18809044,
-        "triangles": 1669180,
-        "sha256": "22cab9f796e398af98a689eaf65d0ef594057e974795e81fbebe22e66be61696",
+        "url": "/models/details/old-exterior-4010eebe44f3.glb",
+        "bytes": 18810964,
+        "triangles": 1669228,
+        "sha256": "4010eebe44f3d32ea2c7b4e78ea529076b339ba21b68c826f599ec6655c6b301",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -2188,18 +2189,6 @@
       "name": "Old Curiosity Shop",
       "address": "13-14 Portsmouth Street",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -47.91916275024414,
-          0.1379999965429306,
-          -47.04456329345703
-        ],
-        "max": [
-          -38.47317886352539,
-          6.659917831420898,
-          -39.1242561340332
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2233,6 +2222,18 @@
           -0.05
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -47.91916275024414,
+          0.1379999965429306,
+          -47.04456329345703
+        ],
+        "max": [
+          -38.47317886352539,
+          6.659917831420898,
+          -39.1242561340332
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2288,18 +2289,6 @@
       "name": "Pankhurst House",
       "address": "1 Clement’s Inn",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          53.72006607055664,
-          0.0,
-          54.27970504760742
-        ],
-        "max": [
-          80.25440979003906,
-          44.22999954223633,
-          86.5759048461914
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2333,6 +2322,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          53.72006607055664,
+          0.0,
+          54.27970504760742
+        ],
+        "max": [
+          80.25440979003906,
+          44.22999954223633,
+          86.5759048461914
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2388,18 +2389,6 @@
       "name": "Parish Hall",
       "address": "Sheffield Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -49.06182098388672,
-          -0.019999999552965164,
-          1.6842665672302246
-        ],
-        "max": [
-          -25.57349967956543,
-          15.489999771118164,
-          16.611709594726562
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2448,6 +2437,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -49.06182098388672,
+          -0.019999999552965164,
+          1.6842665672302246
+        ],
+        "max": [
+          -25.57349967956543,
+          15.489999771118164,
+          16.611709594726562
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2503,18 +2504,6 @@
       "name": "Peacock Theatre",
       "address": "Portugal Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -74.89566040039062,
-          0.0,
-          12.048809051513672
-        ],
-        "max": [
-          -54.22328186035156,
-          19.530000686645508,
-          31.9190673828125
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2549,6 +2538,18 @@
           1
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -74.89566040039062,
+          0.0,
+          12.048809051513672
+        ],
+        "max": [
+          -54.22328186035156,
+          19.530000686645508,
+          31.9190673828125
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2604,18 +2605,6 @@
       "name": "Pethick-Lawrence House",
       "address": "3 Clement’s Inn",
       "status": "facade",
-      "bounds": {
-        "min": [
-          100.59361267089844,
-          0.0,
-          87.91686248779297
-        ],
-        "max": [
-          125.48580932617188,
-          44.150001525878906,
-          118.8875961303711
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2650,6 +2639,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          100.59361267089844,
+          0.0,
+          87.91686248779297
+        ],
+        "max": [
+          125.48580932617188,
+          44.150001525878906,
+          118.8875961303711
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2705,18 +2706,6 @@
       "name": "1 Portsmouth Street",
       "address": "1 Portsmouth Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -39.28082275390625,
-          0.0,
-          -28.297054290771484
-        ],
-        "max": [
-          -28.910921096801758,
-          17.579999923706055,
-          -15.1935453414917
-        ]
-      },
       "interior": false,
       "exteriorDirection": [
         -0.34432581067085266,
@@ -2748,6 +2737,18 @@
         "status": "reviewed-no-change",
         "addedObjects": 0
       },
+      "bounds": {
+        "min": [
+          -39.28082275390625,
+          0.0,
+          -28.297054290771484
+        ],
+        "max": [
+          -28.910921096801758,
+          17.579999923706055,
+          -15.1935453414917
+        ]
+      },
       "detailedExterior": {
         "url": "/models/details/por-exterior-2b2f5c6285af.glb",
         "bytes": 1078904,
@@ -2772,18 +2773,6 @@
       "name": "Sardinia House",
       "address": "52 Lincoln’s Inn Fields",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -92.75189208984375,
-          0.0,
-          -55.23292541503906
-        ],
-        "max": [
-          -66.10152435302734,
-          23.149999618530273,
-          -28.556074142456055
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -2833,6 +2822,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -92.75189208984375,
+          0.0,
+          -55.23292541503906
+        ],
+        "max": [
+          -66.10152435302734,
+          23.149999618530273,
+          -28.556074142456055
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2888,18 +2889,6 @@
       "name": "Saw Swee Hock Student Centre",
       "address": "1 Sheffield Street",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          -84.64329528808594,
-          -0.09226448833942413,
-          -37.072296142578125
-        ],
-        "max": [
-          -46.9441032409668,
-          28.950000762939453,
-          16.283767700195312
-        ]
-      },
       "interior": true,
       "exteriorDirection": [
         0.851334273815155,
@@ -2915,6 +2904,18 @@
         "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
+      },
+      "bounds": {
+        "min": [
+          -84.64329528808594,
+          -0.09226448833942413,
+          -37.072296142578125
+        ],
+        "max": [
+          -46.9441032409668,
+          28.950000762939453,
+          16.283767700195312
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -2969,6 +2970,25 @@
           "id": "saw-denning",
           "label": "Denning咖啡厅，2014局部",
           "scope": "依据2014年LSE使用指南中明确标注的Denning Learning Café照片建立的第一层咖啡厅建筑角落。仅复原照片可见的红柱、吸声云、黄色电梯门框、玻璃墙、砖墙及售卖卷帘；尺度、相对位置和不可见构造估算，非全厅或2026年现状。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "Denning咖啡厅，2014局部",
+            "scope": "依据2014年LSE使用指南中明确标注的Denning Learning Café照片建立的第一层咖啡厅建筑角落。仅复原照片可见的红柱、吸声云、黄色电梯门框、玻璃墙、砖墙及售卖卷帘；尺度、相对位置和不可见构造估算，非全厅或2026年现状。"
+          },
+          "interiorView": {
+            "position": [
+              12.2,
+              10.0,
+              16.0
+            ],
+            "target": [
+              0,
+              1.85,
+              -0.7
+            ],
+            "fov": 50
+          },
+          "gallery": "saw-denning-interior",
           "interiorAsset": "/models/details/saw-denning-interior-4e2e6d9988ab.glb",
           "detailedInterior": {
             "url": "/models/details/saw-denning-interior-4e2e6d9988ab.glb",
@@ -2988,11 +3008,6 @@
               ]
             }
           },
-          "interiorStudy": {
-            "kind": "room-sample",
-            "label": "Denning咖啡厅，2014局部",
-            "scope": "依据2014年LSE使用指南中明确标注的Denning Learning Café照片建立的第一层咖啡厅建筑角落。仅复原照片可见的红柱、吸声云、黄色电梯门框、玻璃墙、砖墙及售卖卷帘；尺度、相对位置和不可见构造估算，非全厅或2026年现状。"
-          },
           "interiorBounds": {
             "min": [
               -6.199999809265137,
@@ -3004,26 +3019,31 @@
               4.119999885559082,
               4.0
             ]
-          },
-          "interiorView": {
-            "position": [
-              12.2,
-              10.0,
-              16.0
-            ],
-            "target": [
-              0,
-              1.85,
-              -0.7
-            ],
-            "fov": 50
-          },
-          "gallery": "saw-denning-interior"
+          }
         },
         {
           "id": "saw-three-tuns",
           "label": "Three Tuns入口与2014平面",
           "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "Three Tuns入口与2014平面",
+            "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。"
+          },
+          "interiorView": {
+            "position": [
+              1.0,
+              2.799999952316284,
+              12.0
+            ],
+            "target": [
+              0,
+              1.4,
+              7.5
+            ],
+            "fov": 50
+          },
+          "gallery": "saw-three-tuns-interior",
           "interiorAsset": "/models/details/saw-three-tuns-interior-ee4bfd3c3197.glb",
           "detailedInterior": {
             "url": "/models/details/saw-three-tuns-interior-ee4bfd3c3197.glb",
@@ -3043,11 +3063,6 @@
               ]
             }
           },
-          "interiorStudy": {
-            "kind": "room-sample",
-            "label": "Three Tuns入口与2014平面",
-            "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。"
-          },
           "interiorBounds": {
             "min": [
               -5.28000020980835,
@@ -3059,21 +3074,7 @@
               2.8399999141693115,
               7.617499828338623
             ]
-          },
-          "interiorView": {
-            "position": [
-              1.0,
-              2.799999952316284,
-              12.0
-            ],
-            "target": [
-              0,
-              1.4,
-              7.5
-            ],
-            "fov": 50
-          },
-          "gallery": "saw-three-tuns-interior"
+          }
         }
       ]
     },
@@ -3082,18 +3083,6 @@
       "name": "Sheffield Street",
       "address": "9-10 Sheffield Street",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -44.02347946166992,
-          0.0,
-          -17.631128311157227
-        ],
-        "max": [
-          -34.47998046875,
-          18.600000381469727,
-          -1.1029605865478516
-        ]
-      },
       "interior": false,
       "exteriorDirection": [
         -0.7961925268173218,
@@ -3110,6 +3099,18 @@
         "version": 43,
         "status": "reviewed-no-change",
         "addedObjects": 0
+      },
+      "bounds": {
+        "min": [
+          -44.02347946166992,
+          0.0,
+          -17.631128311157227
+        ],
+        "max": [
+          -34.47998046875,
+          18.600000381469727,
+          -1.1029605865478516
+        ]
       },
       "detailedExterior": {
         "url": "/models/details/shf-exterior-0adfffa07720.glb",
@@ -3135,18 +3136,6 @@
       "name": "Sir Arthur Lewis Building",
       "address": "32 Lincoln’s Inn Fields",
       "status": "detailed",
-      "bounds": {
-        "min": [
-          91.76612091064453,
-          -0.03999999910593033,
-          -137.53904724121094
-        ],
-        "max": [
-          159.88121032714844,
-          33.85000228881836,
-          -76.38041687011719
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -3180,6 +3169,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          91.76612091064453,
+          -0.03999999910593033,
+          -137.53904724121094
+        ],
+        "max": [
+          159.88121032714844,
+          33.85000228881836,
+          -76.38041687011719
+        ]
       },
       "interiorBounds": {
         "min": [
@@ -3235,18 +3236,6 @@
       "name": "St Clement’s",
       "address": "Clare Market",
       "status": "facade",
-      "bounds": {
-        "min": [
-          -17.60181427001953,
-          0.0,
-          10.732993125915527
-        ],
-        "max": [
-          28.39092254638672,
-          20.90999984741211,
-          35.9212532043457
-        ]
-      },
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
@@ -3295,6 +3284,18 @@
           0
         ],
         "fov": 50
+      },
+      "bounds": {
+        "min": [
+          -17.60181427001953,
+          0.0,
+          10.732993125915527
+        ],
+        "max": [
+          28.39092254638672,
+          20.90999984741211,
+          35.9212532043457
+        ]
       },
       "interiorBounds": {
         "min": [
