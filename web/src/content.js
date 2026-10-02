@@ -179,9 +179,9 @@ export const buildingDetails = {
   },
   LRB: {
     description:
-      "广场侧立面以宽幅分格窗、砖墙和浅色石带组成。顶部朝北斜切的圆顶为螺旋坡道及玻璃电梯中庭采光。",
-    note: "广场侧参考2008年照片，窗距与层高为估计；2025年计划更换的闸机及新增屋顶设备布局未核实。",
-    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-roof", "斜屋面与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza长椅与铺装"]],
+      "葡萄牙街侧设三层历史三联窗、阁楼窗和浅色石檐；广场侧以宽幅窗格与砖石横带组成。北向采光圆顶下方是螺旋坡道和玻璃电梯。",
+    note: "葡萄牙街侧依据2025年测绘立面重建。GIS配准、未标注尺寸、色彩及室内层高仍需校准。",
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza长椅与铺装"]],
   },
   CKK: {
     description:
