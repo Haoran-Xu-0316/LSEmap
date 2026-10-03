@@ -110,8 +110,8 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 124,
-        "scope": "18 existing dormer apertures opened through mansard roof;36 opaque clearance probes. Roof outline, heights and window positions remain estimates."
+        "version": 126,
+        "scope": "Six central wing windows widened with real masonry openings and matching glass, stone reveals, frames, sills and hoods; twelve flanking windows corrected to single lights across three photographed storeys.36 whole-elevation glass-first probes. Window width1.60m is photo-estimated; lower storeys, top band, curved pediments and current Cafe54 remain unverified."
       },
       "interiorView": {
         "position": [
@@ -126,7 +126,11 @@
         ],
         "fov": 65
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "dormerReview": {
+        "version": 124,
+        "scope": "18 existing dormer apertures opened through mansard roof;36 opaque clearance probes. Roof outline, heights and window positions remain estimates."
+      }
     },
     {
       "code": "CLM",
@@ -916,9 +920,8 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 115,
-        "status": "refined",
-        "addedObjects": 62
+        "version": 126,
+        "scope": "Ten courtyard windows: photo-estimated68% fixed/32% opening division, narrow metal opening guards, removal of ten unsupported high transoms and aperture-local overlapping legacy trim.100 whole-facade first-surface probes and5mm edge scans. Other elevations, exact guard dimensions, inherited face/row registration and full interiors remain unverified."
       },
       "interiorView": {
         "position": [
@@ -933,7 +936,12 @@
         ],
         "fov": 65
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "previousReview": {
+        "version": 115,
+        "status": "refined",
+        "addedObjects": 62
+      }
     },
     {
       "code": "OLD",
