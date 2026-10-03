@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v127.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v128.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -32,7 +32,7 @@ curve_resolutions = []
 full_detail = False
 for original in source_scene.objects:
     for modifier in original.modifiers:
-        if modifier.type == 'BEVEL' and not original.name.startswith(('KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_')):
+        if modifier.type == 'BEVEL' and not original.name.startswith(('KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
             modifier_states.append((modifier, modifier.show_viewport, modifier.show_render))
             modifier.show_viewport = False
             modifier.show_render = False
@@ -150,7 +150,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     points = []
     for original in objects:
         # Sub-centimetre finish belongs to on-demand views, not the initial campus download.
-        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_')):
+        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
             continue
         if original.type not in {'MESH', 'CURVE', 'FONT', 'SURFACE'} or original.hide_render:
             continue
@@ -168,6 +168,19 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # the browser samples UV0. Normalize only these temporary export meshes.
         # Accepted components retain their metric UVs at both viewing scales.
         needs_uv = full_detail or has_brick or '_NEXT_' in original.name or any(m and m.get('globeMap') for m in mesh.materials)
+        # Accepted glass may have no native UVs. Without a canonical layer,
+        # joining it with detailed trim introduces UV0 only in the close-up.
+        # Create the same metric face coordinates in both temporary exports.
+        if original.name.startswith(('CBG_NEXT_', 'OLD_GLAZING_NEXT_')) and not mesh.uv_layers:
+            layer = mesh.uv_layers.new(name='SurfaceUV')
+            for face in mesh.polygons:
+                vertices = [original.matrix_world @ mesh.vertices[index].co for index in face.vertices]
+                origin = vertices[0]
+                horizontal = (vertices[1] - origin).normalized()
+                normal = (vertices[1] - origin).cross(vertices[-1] - origin).normalized()
+                vertical = normal.cross(horizontal)
+                for index, point in zip(face.loop_indices, vertices):
+                    layer.data[index].uv = ((point - origin).dot(horizontal), (point - origin).dot(vertical))
         if not needs_uv:
             for layer in list(mesh.uv_layers):
                 mesh.uv_layers.remove(layer)
@@ -388,7 +401,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '127', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '128', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
