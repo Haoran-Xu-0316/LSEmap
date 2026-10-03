@@ -34,7 +34,7 @@ export const buildingDetails = {
     images: [["cow-exterior", "Cowdray House屋顶窗与砖石转角"], ["cow-entrance", "Cowdray House拱券、柱饰与入口细节"]],
   },
   "KGS": {
-    description: "King’s Chambers的两组石材凸窗向街道展开，铅色弧顶与三角山花构成屋顶轮廓。中央入口保留拱券、卷饰和带金色字样的绿色铭牌。",
+    description: "King’s Chambers的两组石材凸窗向街道展开，绿色陶瓷顶层、铅色弧顶与三角山花构成屋顶轮廓。中央入口保留拱券、卷饰和带金色字样的绿色铭牌。",
     note: "沿街外观与入口根据归档照片继续细化，保留原有地图轮廓。楼高、窗距、装饰截面、屋顶进深与未见背面仍为估计；未建立内部。",
     images: [["kgs-exterior", "King’s Chambers凸窗与弧顶"], ["kgs-entrance", "King’s Chambers石材拱券与绿色入口铭牌"]],
   },
@@ -69,7 +69,7 @@ export const buildingDetails = {
     ]
 },
   "PAR": {
-    description: "Parish Hall的低入口门厅与四组窗列形成高低错落的街面。尖拱砖券、题字横梁和十字饰件标识入口，高窗采用粗中央分隔，红瓦坡屋顶设四座深色屋顶窗、两个通风帽和圆形烟囱筒。",
+    description: "Parish Hall的低入口门厅与四组窗列形成高低错落的街面。分砖尖拱、题字横梁和十字饰件标识入口，淡奶白色窗框保留粗中央分隔，红瓦坡屋顶设四座深色屋顶窗、两个通风帽和圆形烟囱筒。",
     note: "窗列和屋顶构件参考学校2015年改造资料及2025/26版物业手册。照片拍摄日期、尺寸及当前屋顶设备位置未核实；尚未完成整栋内部。",
     images: [["par-exterior", "Parish Hall低门厅与红瓦坡屋顶"], ["par-entrance", "Parish Hall尖拱砖券与题字入口"], ["par-roof", "Parish Hall尖拱窗列与屋顶通风帽"]],
   },
@@ -96,8 +96,8 @@ export const buildingDetails = {
     ]
 },
   "SAR": {
-    "description": "Sardinia House的红砖立面配以浅色窗台、分格窗和入口名称牌，首层上方补充连续檐口与齿饰。",
-    "note": "沿街立面首轮研究，依据归档照片与地图轮廓搭建。楼高、窗距、屋顶进深与未见背面仍为估计；未建立内部。",
+    "description": "Sardinia House沿街立面设五组宽窗，中央石质入口、首层拱形窗框与交替山花窗楣组成红砖立面。",
+    "note": "沿街立面依据2017年、2022年照片与官方手册校正。楼高、窗尺寸、屋顶和未见背面仍为估计；茶水间为历史样本。",
     "images": [
         [
             "sar-exterior",
