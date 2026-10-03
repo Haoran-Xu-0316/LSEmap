@@ -536,9 +536,8 @@
         "scope": "Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 121,
+        "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
       },
       "interiorView": {
         "position": [
@@ -1336,9 +1335,8 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 121,
+        "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
       },
       "exportExterior": true
     },
