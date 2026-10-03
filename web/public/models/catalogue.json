@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "132",
-  "sourceModelSha256": "d3c0f66a72d775b1a9ce2d3822656916994665938cd0f0646dfb480a67fab17c",
+  "version": "133",
+  "sourceModelSha256": "afed12b467c4368c55f51105f44ca7706939ce55799c233b76f33afa288af439",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -722,9 +722,11 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 133,
+        "scope": "The four-light window above the Connaught House portal shortened using the official photograph relative to its two taller neighbors. True upper and lower masonry infill, glass, frames, reveals, sill and head moulding moved together; the short-window horizontal transom corrected to photo-estimated mid-height. All other vertices in seven component families and existing interiors retained. Twelve glass, opaque infill and neighbor first-surface probes pass after component save/reopen.",
+        "reference": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+        "captureDate": "unknown",
+        "estimates": "Source photograph is oblique300x400px. New1.50m opening, sill rise0.50m and head lowering0.35m use estimated ratios from inherited2.35m neighbor height; no claim of measured elevation."
       },
       "detailView": {
         "label": "入口细节",
@@ -764,6 +766,13 @@
         "worksCompleted": "Autumn2025",
         "scope": "Separate cropped photographic samples; estimated dimensions, no complete floor plan or connection. Original CON.7.04 room retained."
       },
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ],
       "bounds": {
         "min": [
           -34.34856414794922,
@@ -789,10 +798,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-42ae2cf080b7.glb",
-        "bytes": 567412,
+        "url": "/models/details/con-exterior-1d8830306845.glb",
+        "bytes": 584016,
         "triangles": 47244,
-        "sha256": "42ae2cf080b78d60ba7542cac0c3a10bc6927c5f692824e9dffb423cf040f040",
+        "sha256": "1d88303068451858e56afe73682d2a867f341e46ce743089e63321625a827e90",
         "bounds": {
           "min": [
             -34.34856414794922,
