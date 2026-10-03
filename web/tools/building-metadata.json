@@ -110,9 +110,8 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 124,
+        "scope": "18 existing dormer apertures opened through mansard roof;36 opaque clearance probes. Roof outline, heights and window positions remain estimates."
       },
       "interiorView": {
         "position": [
@@ -278,7 +277,18 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "defaultInteriorSpace": "con-methodology",
+      "interiorReview": {
+        "version": 124,
+        "spaces": [
+          "con-methodology",
+          "con-tea-point"
+        ],
+        "document": "LSE January2026 capital development newsletter, page2",
+        "worksCompleted": "Autumn2025",
+        "scope": "Separate cropped photographic samples; estimated dimensions, no complete floor plan or connection. Original CON.7.04 room retained."
+      }
     },
     {
       "code": "COW",
@@ -1365,9 +1375,8 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 43,
-        "status": "refined",
-        "addedObjects": 0
+        "version": 124,
+        "scope": "Photographed central historical entrance corrected to semicircular stone arch;30 boundary probes. Columns and palette retained; flank colours and unseen openings unresolved."
       },
       "interiorView": {
         "position": [
@@ -1574,6 +1583,58 @@
       },
       "code": "SAW",
       "collection": "SAW_THREE_TUNS_study"
+    },
+    {
+      "id": "con-methodology",
+      "code": "CON",
+      "collection": "CON_METHOD_ROOM_study",
+      "label": "CON一层学习区2025",
+      "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。",
+      "gallery": "con-methodology-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CON一层学习区2025",
+        "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。"
+      },
+      "interiorView": {
+        "position": [
+          -12.96,
+          9.18,
+          9.5
+        ],
+        "target": [
+          0,
+          1.05,
+          0
+        ],
+        "fov": 48
+      }
+    },
+    {
+      "id": "con-tea-point",
+      "code": "CON",
+      "collection": "CON_TEA_ROOM_study",
+      "label": "CON一层茶水间2025",
+      "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。",
+      "gallery": "con-tea-point-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CON一层茶水间2025",
+        "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。"
+      },
+      "interiorView": {
+        "position": [
+          -4.56,
+          3.23,
+          6.125
+        ],
+        "target": [
+          0,
+          1.05,
+          0
+        ],
+        "fov": 48
+      }
     }
   ]
 }
