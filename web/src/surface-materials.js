@@ -169,12 +169,26 @@ export function applySurfaceDetail(material) {
   material.needsUpdate = true;
 }
 
+// PCF depth shadows treat alpha-blended panes as opaque occluders. Keep their
+// reflections and received shadows, but let daylight reach the room behind.
+// This is an unattenuated daylight approximation, not coloured glass caustics.
+// Opaque, masked and mixed frame/pane meshes keep their structural shadows.
+export function prepareMeshShadows(object) {
+  const materials = Array.isArray(object.material) ? object.material : [object.material];
+  const clearGlazing = materials.length > 0 && materials.every((material) =>
+    material && /glass|glazing/i.test(material.name) &&
+    ((material.transparent && material.opacity < 1) || material.transmission > 0) &&
+    material.alphaTest === 0 && !material.alphaToCoverage
+  );
+  object.castShadow = !clearGlazing;
+  object.receiveShadow = true;
+}
+
 export function prepareDetailedModel(group, environmentMap = null) {
   group.visible = false;
   group.traverse((object) => {
     if (!object.isMesh) return;
-    object.castShadow = true;
-    object.receiveShadow = true;
+    prepareMeshShadows(object);
     for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
       material.side = THREE.DoubleSide;
       refineMaterialFinish(material, environmentMap);
