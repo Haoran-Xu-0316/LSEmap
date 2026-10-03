@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "131",
-  "sourceModelSha256": "21fb93d3299b64a18bd6e63bde35f596dceaf44d5216b4cde0d67dc9a664bef0",
+  "version": "132",
+  "sourceModelSha256": "d3c0f66a72d775b1a9ce2d3822656916994665938cd0f0646dfb480a67fab17c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -351,6 +351,12 @@
         "version": 124,
         "scope": "18 existing dormer apertures opened through mansard roof;36 opaque clearance probes. Roof outline, heights and window positions remain estimates."
       },
+      "reviewHistory": [
+        {
+          "version": 126,
+          "scope": "Six central wing windows widened with real masonry openings and matching glass, stone reveals, frames, sills and hoods; twelve flanking windows corrected to single lights across three photographed storeys.36 whole-elevation glass-first probes. Window width1.60m is photo-estimated; lower storeys, top band, curved pediments and current Cafe54 remain unverified."
+        }
+      ],
       "bounds": {
         "min": [
           -138.37171936035156,
@@ -466,12 +472,6 @@
               6.659999847412109
             ]
           }
-        }
-      ],
-      "reviewHistory": [
-        {
-          "version": 126,
-          "scope": "Six central wing windows widened with real masonry openings and matching glass, stone reveals, frames, sills and hoods; twelve flanking windows corrected to single lights across three photographed storeys.36 whole-elevation glass-first probes. Window width1.60m is photo-estimated; lower storeys, top band, curved pediments and current Cafe54 remain unverified."
         }
       ]
     },
@@ -597,9 +597,13 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 132,
+        "scope": "Single window immediately above Columbia House entrance corrected to three glass columns with two vertical dividers and retained high transom. Remaining4600 vertices in the frame family, all glazing, doors, stone reveals, Garrick corner and existing interiors retained. Eight first-surface probes and save/reopen verified. Equal thirds spacing and retained section dimensions remain estimates.",
+        "references": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+        ],
+        "sourceEdition": "2025/26 property handbook",
+        "captureDate": "unknown"
       },
       "detailView": {
         "label": "入口细节",
@@ -628,6 +632,13 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ],
       "bounds": {
         "min": [
           2.9004480838775635,
@@ -653,10 +664,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-19292a882beb.glb",
-        "bytes": 986820,
-        "triangles": 78964,
-        "sha256": "19292a882beb1d99127a3d9dc97cf04fd2be4893f843d6adddd1de38a87032fa",
+        "url": "/models/details/col-exterior-88a57074e6d9.glb",
+        "bytes": 1000008,
+        "triangles": 78976,
+        "sha256": "88a57074e6d994ab57c40587e3600d0fa8fea9498ca9c6ae70097bf376ceff0a",
         "bounds": {
           "min": [
             2.9004480838775635,
