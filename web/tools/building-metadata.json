@@ -150,11 +150,11 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 135,
-        "status": "photo-informed-central-fanlight-correction",
-        "scope": "Remove5 radial metal spokes unsupported by the archived frontal photograph. Retain the48-part arch rim, spring rail, glass, stone arch and wing pediments; opening dimensions and capture date remain unverified.",
-        "source": "Archived architect/manufacturer photographs and current native pane inspection",
-        "photographDate": "unknown"
+        "version": 139,
+        "status": "photo-informed-broad-wing-attic-windows",
+        "scope": "Both projecting wings now have one broad three-light top-storey opening in place of three separate narrow masonry openings. Walls, glass, frames, reveals, mullions and sills rebuilt together. Other windows, roof, entrance and interiors retained. Width3.65m and divisions are photographic estimates, capture date unknown; unseen elevations and complete interior remain unresolved.",
+        "reference": "data/建筑图片/CKK_Cheng Kin Ku Building/01_建筑实拍/exteriors_ckk_grimshaw_010.jpg",
+        "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
       },
       "interiorView": {
         "position": [
@@ -186,6 +186,13 @@
             "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
           ],
           "captureDate": "unknown"
+        },
+        {
+          "version": 135,
+          "status": "photo-informed-central-fanlight-correction",
+          "scope": "Remove5 radial metal spokes unsupported by the archived frontal photograph. Retain the48-part arch rim, spring rail, glass, stone arch and wing pediments; opening dimensions and capture date remain unverified.",
+          "source": "Archived architect/manufacturer photographs and current native pane inspection",
+          "photographDate": "unknown"
         }
       ]
     },
@@ -1494,17 +1501,24 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 135,
-        "status": "source-family-glazing-assignment-correction",
-        "scope": "Four stage82 curtain pane families use the existing SAW glass palette instead of an opaque shader. Base color, roughness, metallic and native transmission inherited; browser opacity0.78 is an authored approximation bounded after rear-surface inspection, not a measured glass transmittance. Geometry, UV, timber frames, canopy and pierced brick retained. Grouped shading-fin registration remains unresolved.",
-        "source": "Archived architect/manufacturer photographs and current native pane inspection",
-        "photographDate": "unknown"
+        "version": 139,
+        "status": "photo-informed-three-group-timber-shading",
+        "scope": "Three photographed groups of six pale timber shading leaves added in front of the north-fold first-floor glazing. Original glass, timber frame, canopy, pierced brick and interiors retained. Colour, depths and positions are photo estimates,2017 upload path with unknown capture date. Whole folded outline and complete internal enclosure remain unresolved.",
+        "reference": "data/建筑图片/SAW_Saw Swee Hock Student Centre/01_建筑实拍/architecture_round5_SAW_saw_909_01.jpg",
+        "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
       },
       "exportExterior": true,
       "reviewHistory": [
         {
           "version": 125,
           "scope": "Replace continuous misregistered horizontal glass canopy with a sloping canopy confined to the photographed central recess. South/front folded wings remain canopy-free. Pane count, projection, slope and supports are estimated; timber curtain wall, roof and perforated brick screens retained."
+        },
+        {
+          "version": 135,
+          "status": "source-family-glazing-assignment-correction",
+          "scope": "Four stage82 curtain pane families use the existing SAW glass palette instead of an opaque shader. Base color, roughness, metallic and native transmission inherited; browser opacity0.78 is an authored approximation bounded after rear-surface inspection, not a measured glass transmittance. Geometry, UV, timber frames, canopy and pierced brick retained. Grouped shading-fin registration remains unresolved.",
+          "source": "Archived architect/manufacturer photographs and current native pane inspection",
+          "photographDate": "unknown"
         }
       ]
     },
@@ -1553,12 +1567,11 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 130,
-        "status": "photo-registered-middle-wing-sash-colour",
-        "scope": "Side-lane recessed middle wing: seven bays by three upper rows,21 windows use pale neutral sash frames and bars. Six near-wing charcoal windows and main-front blue frames retained.",
-        "source": "Local side-lane photograph and OSM return/entrance registration.",
-        "photographDate": "unknown",
-        "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
+        "version": 139,
+        "status": "photo-informed-four-light-main-window-grid",
+        "scope": "Eighteen broad upper main windows now use four lights with54 stone mullions and18 continuous stone transoms, replacing three-light joinery. Existing glass, surrounding blue frames, oriels, alley colours and ground row retained. Opening width3.42m and cross-section heights are estimates from undated architect built photography; obscured ground, unseen elevations and complete interior unresolved.",
+        "reference": "data/collections/library_round5/photos/SAL_d0d696021ed0.jpg",
+        "source": "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/"
       },
       "interiorView": {
         "position": [
@@ -1591,6 +1604,14 @@
           "source": "Local photographed side lane and OSM frontage/entrance registration.",
           "photographDate": "unknown",
           "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
+        },
+        {
+          "version": 130,
+          "status": "photo-registered-middle-wing-sash-colour",
+          "scope": "Side-lane recessed middle wing: seven bays by three upper rows,21 windows use pale neutral sash frames and bars. Six near-wing charcoal windows and main-front blue frames retained.",
+          "source": "Local side-lane photograph and OSM return/entrance registration.",
+          "photographDate": "unknown",
+          "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
         }
       ]
     },
@@ -1839,7 +1860,7 @@
     }
   ],
   "presentationReview": {
-    "version": 138,
-    "scope": "Glazing explicitly shares the existing PMREM daylight map in campus, detailed exteriors and interiors, allowing the intended1.65 material reflection intensity to reach Three.js instead of the0.35 scene fallback. Native tint and alpha retained; no new reflection captures or texture allocations. Lighting is presentation, not measured campus radiometry."
+    "version": 139,
+    "scope": "Shared environment binding retained from138. Clear alpha-blended glazing no longer casts solid PCF depth shadows; received shadows, source opacity, tint, opaque/masked panes and structural frame shadows retained. Unattenuated daylight is a rendering approximation, not coloured transmittance or caustic simulation. Same mesh preparation applies to overview, exterior and initial/upgraded interior views without added meshes or textures."
   }
 }
