@@ -410,3 +410,5 @@ Production streams the unchanged campus GLB from hash-addressed 16MiB asset segm
 ### Edition124 photographed exterior and refurbished interior studies
 
 CKK retains its roof envelope while opening the solid roof behind 18 existing dormer windows. SAL central historical entrance follows the photographed semicircular stone arch; flank window colours and unseen openings remain unresolved. Two separate CON Methodology studies reflect the autumn 2025 refurbishment shown in the January 2026 LSE newsletter: an open learning zone and a tea point. They retain the earlier CON.7.04 room and do not infer a measured floor layout or physical connection between the samples. Dimensions and furniture placement remain photographic estimates.
+
+Edition125 restores the photographed four-column roof casements to ten Old Building dormers and limits Saw Swee Hock’s sloping glass canopy to its central entrance recess. Existing dimensions, unseen bays and support details remain estimates. The SAL flank audit identifies unresolved block registration and frame-colour differences; it does not claim a corrected complete side elevation. Existing interior assets are retained.
