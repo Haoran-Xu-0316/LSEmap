@@ -23,8 +23,8 @@ test('all gallery views use the current production renderer and source model', a
   }
 });
 
-const exteriorViews = JSON.parse(await readFile('web/tools/gallery-views.json', 'utf8')).filter(view => view.name.endsWith('-exterior'));
-for (const { code, name } of exteriorViews) test(`${code} enlarged image matches the live building canvas`, async ({ page }) => {
+const exteriorViews = JSON.parse(await readFile('web/tools/gallery-views.json', 'utf8')).filter(view => view.name.endsWith('-exterior') || view.spaceId);
+for (const { code, name, spaceId } of exteriorViews) test(`${code}${spaceId ? ' '+spaceId : ''} enlarged image matches the live building canvas`, async ({ page }) => {
   await page.goto(`/#${code}`);
   const canvas = page.locator('canvas');
   await expect(canvas).toHaveAttribute('data-detail-ready', `exterior-${code}`, { timeout: 60000 });
@@ -47,11 +47,21 @@ for (const { code, name } of exteriorViews) test(`${code} enlarged image matches
   expect(Math.abs(settled.width-1400)).toBeLessThan(1);
   expect(Math.abs(settled.height-1120)).toBeLessThan(1);
   await page.locator('#exterior-view').click();
+  if(spaceId){
+    await page.locator('#interior-view').click();
+    await page.locator('#interior-space').selectOption(spaceId);
+    await expect(canvas).toHaveAttribute('data-detail-ready',`interior-${code}:${spaceId}`,{timeout:60000});
+    // Asset readiness can precede the 900 ms camera transition.
+    await page.waitForTimeout(1000);
+  }
   await page.addStyleTag({ content: '#stage > :not(#canvas-container){visibility:hidden!important}' });
   // Background exterior decoding can still replace a transient frame after selection.
   // Compare the settled scene, matching the gallery generator which awaits all assets.
   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(250);
+  const capturedBounds = await canvas.boundingBox();
+  expect(Math.abs(capturedBounds.width-1400)).toBeLessThan(1);
+  expect(Math.abs(capturedBounds.height-1120)).toBeLessThan(1);
   const live = await canvas.screenshot();
   const image = await readFile(`dist/images/${name}.webp`);
   const error = await page.evaluate(async ({ live, image }) => {
