@@ -17,7 +17,7 @@ async function walk(directory) {
 await walk(output);
 for (const file of files) {
   assert(
-    (await stat(file)).size < 25 * 1024 * 1024,
+    relative(output, file) === 'models/campus.glb' || (await stat(file)).size < 25 * 1024 * 1024,
     `${relative(output, file)} exceeds Cloudflare's per-asset limit`,
   );
   assert(
@@ -25,6 +25,22 @@ for (const file of files) {
     `Research-only file in output: ${file}`,
   );
 }
+const transport = JSON.parse(await readFile(join(output, 'models/campus-parts.json'), 'utf8'));
+const chunks = [];
+for (const part of transport.parts) {
+  const bytes = await readFile(join(output, part.path));
+  assert.equal(bytes.length, part.bytes);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), part.sha256);
+  assert(bytes.length < 25 * 1024 * 1024);
+  chunks.push(bytes);
+}
+const assembled = Buffer.concat(chunks);
+assert.equal(assembled.length, transport.bytes);
+assert.equal(createHash('sha256').update(assembled).digest('hex'), transport.sha256);
+assert(assembled.equals(await readFile(join(output, 'models/campus.glb'))));
+const release = JSON.parse(await readFile(join(output, 'release.json'), 'utf8'));
+assert(!release.assets['/models/campus.glb']);
+for (const asset of Object.values(release.assets)) assert(asset.bytes < 25 * 1024 * 1024);
 const catalogue = JSON.parse(
   await readFile(join(output, "models/catalogue.json"), "utf8"),
 );
