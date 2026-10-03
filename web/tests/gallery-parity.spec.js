@@ -28,11 +28,25 @@ for (const { code, name } of exteriorViews) test(`${code} enlarged image matches
   await page.goto(`/#${code}`);
   const canvas = page.locator('canvas');
   await expect(canvas).toHaveAttribute('data-detail-ready', `exterior-${code}`, { timeout: 60000 });
+  await page.evaluate(() => document.fonts.ready);
   const bounds = await canvas.boundingBox();
   const viewport = page.viewportSize();
   await page.setViewportSize({ width: Math.round(viewport.width + 1400 - bounds.width), height: Math.round(viewport.height + 1120 - bounds.height) });
   await page.reload();
   await expect(canvas).toHaveAttribute('data-detail-ready', `exterior-${code}`, { timeout: 60000 });
+  // Sidebar width can change at the enlarged breakpoint. Settle the actual
+  // canvas dimensions before refitting, rather than comparing different framing.
+  for(let attempt=0;attempt<3;attempt++){
+    const current=await canvas.boundingBox();
+    if(Math.abs(current.width-1400)<1&&Math.abs(current.height-1120)<1)break;
+    const viewport=page.viewportSize();
+    await page.setViewportSize({width:Math.round(viewport.width+1400-current.width),height:Math.round(viewport.height+1120-current.height)});
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  }
+  const settled=await canvas.boundingBox();
+  expect(Math.abs(settled.width-1400)).toBeLessThan(1);
+  expect(Math.abs(settled.height-1120)).toBeLessThan(1);
+  await page.locator('#exterior-view').click();
   await page.addStyleTag({ content: '#stage > :not(#canvas-container){visibility:hidden!important}' });
   // Background exterior decoding can still replace a transient frame after selection.
   // Compare the settled scene, matching the gallery generator which awaits all assets.
