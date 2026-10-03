@@ -440,3 +440,5 @@ Edition 127 corrects eight upper windows in the two stone bays beside Portugal S
 The 61A portal gallery view uses the same production model and renderer as the live map. The existing whole-building view remains available to assess the retained, partly unverified roof and side wings.
 
 第138版修正网页玻璃反射强度被场景默认值覆盖的问题：玻璃显式共享现有PMREM，颜色、透明度和原生材质保留，无新增反射采集或纹理分配。MAR北侧上部两排巨窗按实拍改为三排45窗，墙洞、玻璃与窗框同步重建，保留中央深槽、遮阳、退台及内部。OLD入口约4阶实拍与当前6阶模型存在标高注册冲突，CBG高楼窗后楼层与游走楼梯开口仍缺完整平面登记；这些问题没有用假结构掩盖。
+
+Edition139 corrects both CKK broad attic windows, the four-light stone grid across18 SAL main windows, and three six-leaf SAW timber shading groups using archived built photography. Shared production shadow preparation prevents clear glazing from casting opaque PCF shadows while retaining structural frame shadows, source alpha and the existing reflection finish. Daylight through clear panes is unattenuated approximation; dimensions remain photo estimates and whole-building enclosure, unseen elevations, roads and complete room layouts remain unfinished. Native components preserve5600 source objects; overview, detail and gallery use the same integrated geometry and renderer.
