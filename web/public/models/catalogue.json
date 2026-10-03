@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "129",
-  "sourceModelSha256": "2ccb9ea209f15ee9bede404e9407cb34db17763e82dcce2c26b41e68d959749f",
+  "version": "130",
+  "sourceModelSha256": "1ceac704eb674fb3811f0f18a2d045c993515698376f1cb76d69ef1cbcb6971b",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -134,12 +134,13 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 129,
-        "status": "photo-registered-entrance-grid",
-        "scope": "Two complete storeys above the low-wing braced entrance corrected from six to three glass columns; six unsupported vertical bars removed and two high-level silver transoms added. Existing neutral glazing and other faces retained.",
-        "source": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px5.jpg",
+        "version": 130,
+        "status": "reference-guided-office-module-reconstruction",
+        "scope": "Square-facing academic tower glazing reconstructed as98 nominal2m glazed plus1m opaque office modules with closed high-level vents. Existing stair strips, teaching floors, end/back faces, bracing, neutral glazing finish and red/orange shades retained.",
+        "source": "https://rshp.com/projects/education/lse-centre-building/",
+        "photographSource": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px6.jpg",
         "photographDate": "unknown",
-        "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
+        "registration": "Current GIS/photo footprint, levels, stair-strip positions, exact repeat counts and module offsets remain estimates; not a measured or registered as-built elevation."
       },
       "interiorView": {
         "position": [
@@ -167,6 +168,14 @@
           "source": "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf",
           "documentDate": "2023-02-20",
           "photographDate": "unknown"
+        },
+        {
+          "version": 129,
+          "status": "photo-registered-entrance-grid",
+          "scope": "Two complete storeys above the low-wing braced entrance corrected from six to three glass columns; six unsupported vertical bars removed and two high-level silver transoms added. Existing neutral glazing and other faces retained.",
+          "source": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px5.jpg",
+          "photographDate": "unknown",
+          "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
         }
       ],
       "bounds": {
@@ -194,10 +203,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-06656c5da2b1.glb",
-        "bytes": 8841336,
-        "triangles": 833244,
-        "sha256": "06656c5da2b104b0f94965564f734594182a5b24672328ceb05d9512ec07c4f4",
+        "url": "/models/details/cbg-exterior-ecdac52ce5bf.glb",
+        "bytes": 4943776,
+        "triangles": 524612,
+        "sha256": "ecdac52ce5bf9741b142e18c913b69d143d935a57d7e8e5563894e8533dc6299",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -3349,12 +3358,12 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 129,
-        "status": "photo-registered-frame-colour",
-        "scope": "Side-lane near short wing: two bays by three upper rows use charcoal sash frames and bars. Main frontage, middle wing and other rows retained.",
-        "source": "Local photographed side lane and OSM frontage/entrance registration.",
+        "version": 130,
+        "status": "photo-registered-middle-wing-sash-colour",
+        "scope": "Side-lane recessed middle wing: seven bays by three upper rows,21 windows use pale neutral sash frames and bars. Six near-wing charcoal windows and main-front blue frames retained.",
+        "source": "Local side-lane photograph and OSM return/entrance registration.",
         "photographDate": "unknown",
-        "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
+        "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
       },
       "interiorView": {
         "position": [
@@ -3378,6 +3387,14 @@
         {
           "version": 124,
           "scope": "Photographed central historical entrance corrected to semicircular stone arch;30 boundary probes. Columns and palette retained; flank colours and unseen openings unresolved."
+        },
+        {
+          "version": 129,
+          "status": "photo-registered-frame-colour",
+          "scope": "Side-lane near short wing: two bays by three upper rows use charcoal sash frames and bars. Main frontage, middle wing and other rows retained.",
+          "source": "Local photographed side lane and OSM frontage/entrance registration.",
+          "photographDate": "unknown",
+          "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
         }
       ],
       "bounds": {
@@ -3405,10 +3422,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-919180193501.glb",
-        "bytes": 6345944,
+        "url": "/models/details/sal-exterior-c7cf24b903a7.glb",
+        "bytes": 6349444,
         "triangles": 524248,
-        "sha256": "91918019350175d3ca8d1b60e24f80b4a94ba6706a6d719bb1adb5f18b654962",
+        "sha256": "c7cf24b903a784d220b19482766f63dbc4f03c73e6236a5d6ed1af0160e226a1",
         "bounds": {
           "min": [
             91.77310180664062,
