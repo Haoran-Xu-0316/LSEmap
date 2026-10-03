@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "128",
-  "sourceModelSha256": "24dcb5e48a4d34fe436486ff9de3f0d3c8ede9a21083216d7cb798839482941c",
+  "version": "129",
+  "sourceModelSha256": "2ccb9ea209f15ee9bede404e9407cb34db17763e82dcce2c26b41e68d959749f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -134,12 +134,12 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 128,
-        "status": "source-informed-glazing-finish",
-        "scope": "Existing curtain, end and entry panes use a neutral cool tint guided by SOLARWER neutral70/37; source linear luminance, roughness and transparency retained. RGB remains a visual estimate. Red/orange shades retained; office solid opening panels and vents still require registration.",
-        "source": "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf",
-        "documentDate": "2023-02-20",
-        "photographDate": "unknown"
+        "version": 129,
+        "status": "photo-registered-entrance-grid",
+        "scope": "Two complete storeys above the low-wing braced entrance corrected from six to three glass columns; six unsupported vertical bars removed and two high-level silver transoms added. Existing neutral glazing and other faces retained.",
+        "source": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px5.jpg",
+        "photographDate": "unknown",
+        "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
       },
       "interiorView": {
         "position": [
@@ -159,6 +159,14 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 128,
+          "status": "source-informed-glazing-finish",
+          "scope": "Existing curtain, end and entry panes use a neutral cool tint guided by SOLARWER neutral70/37; source linear luminance, roughness and transparency retained. RGB remains a visual estimate. Red/orange shades retained; office solid opening panels and vents still require registration.",
+          "source": "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf",
+          "documentDate": "2023-02-20",
+          "photographDate": "unknown"
         }
       ],
       "bounds": {
@@ -186,10 +194,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-33d4d6fa99da.glb",
-        "bytes": 8837180,
-        "triangles": 833292,
-        "sha256": "33d4d6fa99dabdadf202794d565c71041abb15e5e74bf573412c2b91527e21fe",
+        "url": "/models/details/cbg-exterior-06656c5da2b1.glb",
+        "bytes": 8841336,
+        "triangles": 833244,
+        "sha256": "06656c5da2b104b0f94965564f734594182a5b24672328ceb05d9512ec07c4f4",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -3341,8 +3349,12 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 124,
-        "scope": "Photographed central historical entrance corrected to semicircular stone arch;30 boundary probes. Columns and palette retained; flank colours and unseen openings unresolved."
+        "version": 129,
+        "status": "photo-registered-frame-colour",
+        "scope": "Side-lane near short wing: two bays by three upper rows use charcoal sash frames and bars. Main frontage, middle wing and other rows retained.",
+        "source": "Local photographed side lane and OSM frontage/entrance registration.",
+        "photographDate": "unknown",
+        "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
       },
       "interiorView": {
         "position": [
@@ -3362,6 +3374,12 @@
         "status": "unresolved",
         "scope": "Architect side-alley photo shows near dark-grey frames and taller middle block with lighter frames. Current repeated four-storey blue side elevation lacks corresponding block registration; no arbitrary recolouring applied."
       },
+      "reviewHistory": [
+        {
+          "version": 124,
+          "scope": "Photographed central historical entrance corrected to semicircular stone arch;30 boundary probes. Columns and palette retained; flank colours and unseen openings unresolved."
+        }
+      ],
       "bounds": {
         "min": [
           91.76612091064453,
@@ -3387,10 +3405,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-0bf889fc7182.glb",
-        "bytes": 9258468,
-        "triangles": 769432,
-        "sha256": "0bf889fc71828c11bf194a8ea589cb786466148d0e33d6ef232cd8c1b169b323",
+        "url": "/models/details/sal-exterior-919180193501.glb",
+        "bytes": 6345944,
+        "triangles": 524248,
+        "sha256": "91918019350175d3ca8d1b60e24f80b4a94ba6706a6d719bb1adb5f18b654962",
         "bounds": {
           "min": [
             91.77310180664062,
