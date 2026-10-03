@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v133.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v134.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -273,7 +273,7 @@ for material in bpy.data.materials:
     generated_textures.append({'name': node.image.name,
         'sha256': hashlib.sha256(bytes(node.image.packed_file.data)).hexdigest(),
         'source': 'Natural Earth public-domain cartography',
-        'scope': 'Authored political map with photo-estimated Australia fill; no source photograph'})
+        'scope': 'Authored political map with photo-estimated Australia and India fills; no source photograph'})
 assert len(generated_textures) == 1, 'Expected one visible authored globe map'
 export_scene(campus_scene, 'campus.glb')
 # glTF names an image by its file basename, which can differ from Blender's ID.
@@ -405,7 +405,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '133', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '134', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
