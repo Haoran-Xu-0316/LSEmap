@@ -1,4 +1,4 @@
-"""Merge independently verified audited Lincoln Chambers, St Clements and Pethick components into the current campus.
+"""Merge independently verified audited Cheng Kin Ku, Sir Arthur Lewis and Connaught components into the current campus.
 
 Run in Blender Text Editor. Originals retain their geometry and material slots;
 only the audited exterior display objects are archived. Reopen the saved result
@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage123';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v122.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v123.blend'
-COMPONENTS=[('LCH','lch_next','lincoln-chambers-component.blend'),('STC','stc_next','stc-attic-component.blend'),('PEL','pel_next','pethick-windows-component.blend')]
+OUT=ROOT/'result/blender/stage124';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v123.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v124.blend'
+COMPONENTS=[('CKK','ckk_next','cheng-kin-ku-component.blend'),('SAL','sal_next','sir-arthur-lewis-component.blend'),('CON','con_methodology_next','connaught-methodology-components.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -40,7 +40,7 @@ if rebuilding:
     for name,state in previous['archivedVisibility'].items():
         obj=bpy.data.objects[name];obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
     for mat in list(bpy.data.materials):
-        if mat.name.startswith(('LCH_NEXT_','STC_NEXT_','PEL_NEXT_')) and mat.users==int(mat.use_fake_user):
+        if mat.name.startswith(('CKK_NEXT_','SAL_NEXT_','CON_NEXT_')) and mat.users==int(mat.use_fake_user):
             mat.use_fake_user=False;bpy.data.materials.remove(mat)
 
 for scene in bpy.data.scenes:
@@ -62,9 +62,21 @@ for code,folder,filename in COMPONENTS:
     with bpy.data.libraries.load(str(path),link=False) as (source,target):
         assert set(audit['ownedObjects'])<=set(source.objects)
         target.objects=list(audit['ownedObjects'])
+    destinations={}
+    for record in audit.get('collections',[]):
+        collection=bpy.data.collections.get(record['name'])
+        if not collection:collection=bpy.data.collections.new(record['name'])
+        scene=bpy.data.scenes.get('STUDY_'+record['name'])
+        if not scene:
+            scene=bpy.data.scenes.new('STUDY_'+record['name']);scene.collection.children.link(collection)
+        for name in record['ownedObjects']:destinations[name]=(collection,scene)
     for obj in target.objects:
         assert obj is not None
-        bpy.data.collections[code+'_EXTERIOR'].objects.link(obj)
+        if obj.name in destinations:
+            collection,scene=destinations[obj.name];bpy.context.window.scene=scene
+        else:
+            collection=bpy.data.collections[code+'_EXTERIOR'];bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
+        collection.objects.link(obj)
         obj.hide_render=False;obj.hide_viewport=False;obj.hide_set(False)
     # Restore unchanged component slots to their existing local material IDs.
     for obj in target.objects:
@@ -94,6 +106,7 @@ for code,folder,filename in COMPONENTS:
     components.append({'code':code,'source':str(path.relative_to(ROOT)),'sha256':component_sha,'objects':len(target.objects)})
 for scene in bpy.data.scenes:
     for layer in scene.view_layers:layer.update()
+bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
 mismatches=[n for n,value in original.items() if fingerprint(bpy.data.objects[n])!=value]
 assert not mismatches,mismatches
 assert all([bpy.data.objects[n].hide_render,bpy.data.objects[n].hide_viewport,bpy.data.objects[n].hide_get()]==value for n,value in visibility.items() if n not in archived)
@@ -102,11 +115,12 @@ bpy.ops.wm.save_as_mainfile(filepath=str(CURRENT))
 bpy.ops.wm.open_mainfile(filepath=str(CURRENT))
 for scene in bpy.data.scenes:
     for layer in scene.view_layers:layer.update()
+bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
 mismatches=[n for n,value in original.items() if fingerprint(bpy.data.objects[n])!=value]
 assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':123,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'savedSceneReopened':True}
+proof={'version':124,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
