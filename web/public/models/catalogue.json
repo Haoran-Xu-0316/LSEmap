@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "118",
-  "sourceModelSha256": "a4aa76a4d58b82cf3af5a3706ae910f66e3543547dc886a19809a2b9fb74998f",
+  "version": "120",
+  "sourceModelSha256": "c6310ae26eee27b1ca03e35884fdd90dda5b66e41cab50e50fe57587115312a8",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1015,14 +1015,19 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut",
-        "newComponents": 441,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
+        "description": "Green ceramic attic and lead-coloured cupola seams; original apertures and geometry retained",
+        "newComponents": 4,
+        "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 43,
-        "status": "refined",
-        "addedObjects": 0
+        "version": 120,
+        "status": "exterior-material-and-joint-correction",
+        "addedObjects": 4,
+        "archivedObjects": 4,
+        "sourceUrls": [
+          "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
+        ]
       },
       "interiorView": {
         "position": [
@@ -1062,10 +1067,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-7d82b4dcc22c.glb",
-        "bytes": 1937532,
+        "url": "/models/details/kgs-exterior-fcfbf3a15890.glb",
+        "bytes": 1991432,
         "triangles": 142925,
-        "sha256": "7d82b4dcc22cda27258bb9130c1082b4d834e794d891cbbfae05096b9ece26b3",
+        "sha256": "fcfbf3a15890642304e6340788f87bfb0db16b91449eb55855948af54492207a",
         "bounds": {
           "min": [
             -33.59806823730469,
@@ -2421,14 +2426,19 @@
         "fov": 46
       },
       "localRefinement": {
-        "description": "Pointed blind window heads, hierarchical four-column sashes, twin roof cowls, round chimney pots and slate dormer caps",
+        "description": "Radially jointed pointed brick heads and pale timber joinery; original apertures and roof retained",
         "newComponents": 15,
-        "scope": "Photographed built character corroborated by the LSE 2015 refurbishment and 2025/26 property handbook. Exact capture dates, dimensions and roof equipment positions unverified; unseen elevations and complete interior remain unresolved."
+        "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 120,
+        "status": "exterior-material-and-joint-correction",
+        "addedObjects": 15,
+        "archivedObjects": 15,
+        "sourceUrls": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+        ]
       },
       "interiorView": {
         "position": [
@@ -2468,10 +2478,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-c1407d5c447a.glb",
-        "bytes": 1316968,
-        "triangles": 101160,
-        "sha256": "c1407d5c447a0ea283794c8a96be63ed083c13a91fa9700e481ddf694a94c4f9",
+        "url": "/models/details/par-exterior-715d038f3627.glb",
+        "bytes": 1333416,
+        "triangles": 100680,
+        "sha256": "715d038f3627635fe7c21c7a1d0060dceb351189e7836201d71a0625ce9bccfb",
         "bounds": {
           "min": [
             -49.058448791503906,
@@ -2791,28 +2801,35 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "sash box lining; parting groove; inner sash stop; head lining; sill apron; sill undercut; dressed upper window surrounds, segmental hoods, school-name fascia, four-column three-row first-floor sashes and local red-brick finish",
-        "newComponents": 712,
-        "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes. Undated LSE Estate photograph and archived 2018 street photograph guide stonework and fascia. Three central upper rows receive estimated surrounds; tree-obscured bays repeat the visible profile, so exact hood order and fine carving are unresolved. Existing opening vertices, footprint, floor count, roof and all interiors retained; red-brick colour is a photographic estimate."
+        "description": "Five-bay main street facade with a central stone entrance, glazed curved-head ground windows, pale mezzanine casements, alternating triangular and segmental window pediments, deeply jointed brick piers, brick jack arches and a two-line hanging sign",
+        "newComponents": 7,
+        "scope": "Main street bay count, central entrance and alternating pediment order follow the 22 March 2022 photo and the official property handbook. The adjoining three-bay building is excluded. Mapped footprint, existing 23m height and storey datums retained; dimensions, colour and pane subdivisions estimated. Guide records 120cm door opening and five steps beyond the doors; no five-step exterior staircase invented. Roof, unseen elevations and the full interior remain unresolved. Existing independent 2015 tea-room sample retained."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 119,
+        "status": "five-bay-frontage-reconstructed",
+        "addedObjects": 7,
+        "archivedObjects": 45,
+        "sourceUrls": [
+          "https://commons.wikimedia.org/wiki/File:Sardinia_House,_London,_March_2022.jpg",
+          "https://commons.wikimedia.org/wiki/File:Sardinia_House,_Sardinia_Street_7_Jan_2017_03.jpg",
+          "https://www.accessable.co.uk/london-school-of-economics/access-guides/sardinia-house",
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+        ]
       },
       "detailView": {
-        "label": "拱窗细节",
+        "label": "入口与拱窗",
         "position": [
-          -89.95638969694006,
-          3.7,
-          -67.05056656320497
+          -87.78780499350428,
+          4.0,
+          -60.665560849053996
         ],
         "target": [
-          -83.49206587100052,
-          2.7,
-          -50.7566465696868
+          -83.49206550967097,
+          2.65,
+          -50.75664497171177
         ],
-        "fov": 50
+        "fov": 45
       },
       "closeupImage": "sar-windows",
       "interiorView": {
@@ -2831,7 +2848,7 @@
       "bounds": {
         "min": [
           -92.75189208984375,
-          0.0,
+          -4.7683716530855236e-08,
           -55.23292541503906
         ],
         "max": [
@@ -2853,14 +2870,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-a7c422fcb6b9.glb",
-        "bytes": 2598240,
-        "triangles": 205851,
-        "sha256": "a7c422fcb6b9220c2c9850006e51b439afe49d5da6c8c6805df85aef5a78f942",
+        "url": "/models/details/sar-exterior-a3d1ce36d02c.glb",
+        "bytes": 1403320,
+        "triangles": 111151,
+        "sha256": "a3d1ce36d02c6d0124e90981d96f55da4b454b6af72b0ce71ff7334455f4bc24",
         "bounds": {
           "min": [
             -92.74727630615234,
-            0.0,
+            -4.7683716530855236e-08,
             -55.22830581665039
           ],
           "max": [
