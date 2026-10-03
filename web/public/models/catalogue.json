@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "138",
-  "sourceModelSha256": "6696488952844255f1e38ca718af49bd14f2fb6969d9951a83655c734ef40253",
+  "version": "139",
+  "sourceModelSha256": "f0e9fe3b5be9fa073c10d0a92efc69ca22a5d2689bdfee4519d117e0f90b74ee",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -340,11 +340,11 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 135,
-        "status": "photo-informed-central-fanlight-correction",
-        "scope": "Remove5 radial metal spokes unsupported by the archived frontal photograph. Retain the48-part arch rim, spring rail, glass, stone arch and wing pediments; opening dimensions and capture date remain unverified.",
-        "source": "Archived architect/manufacturer photographs and current native pane inspection",
-        "photographDate": "unknown"
+        "version": 139,
+        "status": "photo-informed-broad-wing-attic-windows",
+        "scope": "Both projecting wings now have one broad three-light top-storey opening in place of three separate narrow masonry openings. Walls, glass, frames, reveals, mullions and sills rebuilt together. Other windows, roof, entrance and interiors retained. Width3.65m and divisions are photographic estimates, capture date unknown; unseen elevations and complete interior remain unresolved.",
+        "reference": "data/建筑图片/CKK_Cheng Kin Ku Building/01_建筑实拍/exteriors_ckk_grimshaw_010.jpg",
+        "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
       },
       "interiorView": {
         "position": [
@@ -375,6 +375,13 @@
             "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
           ],
           "captureDate": "unknown"
+        },
+        {
+          "version": 135,
+          "status": "photo-informed-central-fanlight-correction",
+          "scope": "Remove5 radial metal spokes unsupported by the archived frontal photograph. Retain the48-part arch rim, spring rail, glass, stone arch and wing pediments; opening dimensions and capture date remain unverified.",
+          "source": "Archived architect/manufacturer photographs and current native pane inspection",
+          "photographDate": "unknown"
         }
       ],
       "bounds": {
@@ -402,10 +409,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-2714a9cd2b04.glb",
-        "bytes": 2742020,
-        "triangles": 236018,
-        "sha256": "2714a9cd2b0477dc6d1290436ca06041c5477f5914ad56a80f7db7c9f8183534",
+        "url": "/models/details/ckk-exterior-9f855040af17.glb",
+        "bytes": 2736532,
+        "triangles": 235562,
+        "sha256": "9f855040af17a03c68b46eb5113ae01049f6a7b286acbcb700792b78637aa7a4",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -3217,16 +3224,23 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 135,
-        "status": "source-family-glazing-assignment-correction",
-        "scope": "Four stage82 curtain pane families use the existing SAW glass palette instead of an opaque shader. Base color, roughness, metallic and native transmission inherited; browser opacity0.78 is an authored approximation bounded after rear-surface inspection, not a measured glass transmittance. Geometry, UV, timber frames, canopy and pierced brick retained. Grouped shading-fin registration remains unresolved.",
-        "source": "Archived architect/manufacturer photographs and current native pane inspection",
-        "photographDate": "unknown"
+        "version": 139,
+        "status": "photo-informed-three-group-timber-shading",
+        "scope": "Three photographed groups of six pale timber shading leaves added in front of the north-fold first-floor glazing. Original glass, timber frame, canopy, pierced brick and interiors retained. Colour, depths and positions are photo estimates,2017 upload path with unknown capture date. Whole folded outline and complete internal enclosure remain unresolved.",
+        "reference": "data/建筑图片/SAW_Saw Swee Hock Student Centre/01_建筑实拍/architecture_round5_SAW_saw_909_01.jpg",
+        "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
       },
       "reviewHistory": [
         {
           "version": 125,
           "scope": "Replace continuous misregistered horizontal glass canopy with a sloping canopy confined to the photographed central recess. South/front folded wings remain canopy-free. Pane count, projection, slope and supports are estimated; timber curtain wall, roof and perforated brick screens retained."
+        },
+        {
+          "version": 135,
+          "status": "source-family-glazing-assignment-correction",
+          "scope": "Four stage82 curtain pane families use the existing SAW glass palette instead of an opaque shader. Base color, roughness, metallic and native transmission inherited; browser opacity0.78 is an authored approximation bounded after rear-surface inspection, not a measured glass transmittance. Geometry, UV, timber frames, canopy and pierced brick retained. Grouped shading-fin registration remains unresolved.",
+          "source": "Archived architect/manufacturer photographs and current native pane inspection",
+          "photographDate": "unknown"
         }
       ],
       "bounds": {
@@ -3254,10 +3268,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-ef6538c053da.glb",
-        "bytes": 10029544,
-        "triangles": 1072085,
-        "sha256": "ef6538c053da5ed3bdd2f62cc82e339fb1413ae9615fb046b4a7c363ea35c959",
+        "url": "/models/details/saw-exterior-dfec3656103d.glb",
+        "bytes": 10033168,
+        "triangles": 1072301,
+        "sha256": "dfec3656103d4dddbf9e995c9107a963fef34794d3d8bd5eaf0bb13c960b8d22",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -3476,12 +3490,11 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 130,
-        "status": "photo-registered-middle-wing-sash-colour",
-        "scope": "Side-lane recessed middle wing: seven bays by three upper rows,21 windows use pale neutral sash frames and bars. Six near-wing charcoal windows and main-front blue frames retained.",
-        "source": "Local side-lane photograph and OSM return/entrance registration.",
-        "photographDate": "unknown",
-        "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
+        "version": 139,
+        "status": "photo-informed-four-light-main-window-grid",
+        "scope": "Eighteen broad upper main windows now use four lights with54 stone mullions and18 continuous stone transoms, replacing three-light joinery. Existing glass, surrounding blue frames, oriels, alley colours and ground row retained. Opening width3.42m and cross-section heights are estimates from undated architect built photography; obscured ground, unseen elevations and complete interior unresolved.",
+        "reference": "data/collections/library_round5/photos/SAL_d0d696021ed0.jpg",
+        "source": "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/"
       },
       "interiorView": {
         "position": [
@@ -3513,6 +3526,14 @@
           "source": "Local photographed side lane and OSM frontage/entrance registration.",
           "photographDate": "unknown",
           "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
+        },
+        {
+          "version": 130,
+          "status": "photo-registered-middle-wing-sash-colour",
+          "scope": "Side-lane recessed middle wing: seven bays by three upper rows,21 windows use pale neutral sash frames and bars. Six near-wing charcoal windows and main-front blue frames retained.",
+          "source": "Local side-lane photograph and OSM return/entrance registration.",
+          "photographDate": "unknown",
+          "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
         }
       ],
       "bounds": {
@@ -3540,10 +3561,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-c7cf24b903a7.glb",
-        "bytes": 6349444,
-        "triangles": 524248,
-        "sha256": "c7cf24b903a784d220b19482766f63dbc4f03c73e6236a5d6ed1af0160e226a1",
+        "url": "/models/details/sal-exterior-fd6568cc9580.glb",
+        "bytes": 6069824,
+        "triangles": 502600,
+        "sha256": "fd6568cc9580ad2643943f6cbe8eb31bbb95ae0488a3edcf8002ee43379aee22",
         "bounds": {
           "min": [
             91.77310180664062,
