@@ -1,4 +1,4 @@
-"""Merge independently verified audited CBG entrance and SAL side-lane window components into the current campus.
+"""Merge independently verified audited CBG office and SAL middle-wing window components into the current campus.
 
 Run in Blender Text Editor. Originals retain their geometry and material slots;
 only the audited exterior display objects are archived. Reopen the saved result
@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage129';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v128.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v129.blend'
-COMPONENTS=[('CBG','cbg_frontage_next','cbg-frontage-component.blend'),('SAL','sal_frame_next','sal-frame-component.blend')]
+OUT=ROOT/'result/blender/stage130';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v129.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v130.blend'
+COMPONENTS=[('CBG','cbg_office_next','cbg-office-component.blend'),('SAL','sal_middle_next','sal-middle-component.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -81,9 +81,19 @@ for code,folder,filename in COMPONENTS:
     # Restore unchanged component slots to their existing local material IDs.
     for obj in target.objects:
         for index,mat in enumerate(list(obj.data.materials)):
-            if mat and not mat.name.startswith(code+'_NEXT_'):
+            if mat:
                 existing=bpy.data.materials.get(mat.name.rsplit('.',1)[0]) if mat.name[-4:-3]=='.' else None
-                if existing:obj.data.materials[index]=existing
+                # Previously accepted materials can already carry NEXT prefixes.
+                # Reuse an identical native ID; keep intentionally new finishes.
+                if existing:
+                    def signature(material):
+                        shader=material.node_tree.nodes.get('Principled BSDF') if material.use_nodes else None
+                        values=[]
+                        for key in ('Base Color','Metallic','Roughness','Alpha','IOR','Transmission Weight'):
+                            value=shader.inputs[key].default_value if shader and key in shader.inputs else None
+                            values.append(tuple(value) if hasattr(value,'__len__') else value)
+                        return (tuple(material.diffuse_color),tuple(values),sorted((key,str(value)) for key,value in material.items()))
+                    if signature(mat)==signature(existing):obj.data.materials[index]=existing
     pairs={c['replacement']:c['original'] for c in audit.get('changes',[])}
     pairs.update({'PAR_NEXT_'+name.removeprefix('PAR_'):name for name in audit.get('replacementSlots',{})})
     for name,original_name in pairs.items():
@@ -121,6 +131,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':129,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':130,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
