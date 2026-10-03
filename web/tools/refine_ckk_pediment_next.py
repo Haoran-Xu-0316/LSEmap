@@ -13,20 +13,22 @@ OUT.mkdir(parents=True,exist_ok=True)
 BASE = ROOT/'result/blender/LSE_campus_detailed_v130.blend'
 if not BASE.exists():
     BASE = max((ROOT/'result/blender').glob('LSE_campus_detailed_v[0-9]*.blend'),key=lambda p:int(p.stem.rsplit('v',1)[1]))
-bpy.ops.wm.open_mainfile(filepath=str(BASE))
-bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
-previous=json.loads((OUT/'audit.json').read_text()) if (OUT/'audit.json').exists() else None
-if previous:
-    for name in previous['ownedObjects']:
-        obj=bpy.data.objects.get(name)
-        if obj:
-            mesh=obj.data;bpy.data.objects.remove(obj,do_unlink=True);mesh.use_fake_user=False
-            if not mesh.users:bpy.data.meshes.remove(mesh)
-    for name in previous['archivedObjects']:
-        obj=bpy.data.objects[name];state=previous['originalVisibility'][name]
-        obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
-for scene in bpy.data.scenes:
-    for layer in scene.view_layers:layer.update()
+def open_baseline():
+    bpy.ops.wm.open_mainfile(filepath=str(BASE))
+    bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
+    previous=json.loads((OUT/'audit.json').read_text()) if (OUT/'audit.json').exists() else None
+    if previous:
+        for name in previous['ownedObjects']:
+            obj=bpy.data.objects.get(name)
+            if obj:
+                mesh=obj.data;bpy.data.objects.remove(obj,do_unlink=True);mesh.use_fake_user=False
+                if not mesh.users:bpy.data.meshes.remove(mesh)
+        for name in previous['archivedObjects']:
+            obj=bpy.data.objects[name];state=previous['originalVisibility'][name]
+            obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
+    for scene in bpy.data.scenes:
+        for layer in scene.view_layers:layer.update()
+open_baseline()
 def fingerprint(obj):
     digest=hashlib.sha256(str([list(row) for row in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -106,7 +108,7 @@ component=OUT/'ckk-pediment-component.blend';bpy.data.libraries.write(str(compon
 ref=ROOT/'data/建筑图片/CKK_Cheng Kin Ku Building/01_建筑实拍/exteriors_ckk_grimshaw_010.jpg'
 audit={'baselineSha256':hashlib.sha256(BASE.read_bytes()).hexdigest(),'originalFingerprints':originals,'originalVisibility':visibility,'ownedObjects':owned,'archivedObjects':archived,'replacedUpperCaps':caps,'retainedHoodCuboids':12,'newCurvedPediments':2,'glassFirstBeforeProbes':before,'glassFirstAfterProbes':after,'references':[{'local':str(ref.relative_to(ROOT)),'sha256':hashlib.sha256(ref.read_bytes()).hexdigest(),'url':'https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/','date':'2008 project; photograph capture date unknown'}],'estimatedDimensions':{'baseZ':base,'rise':rise,'mouldingVerticalThickness':thickness,'span':'Inherited widths of removed hood caps','tympanumFrontRecess':.07},'limitations':['Only curved form of two wing principal-storey upper hood caps is photo-confirmed; rise, section, depth and exact curve remain estimates','Plain tympana omit unmeasured decorative carving and vent grilles','Central five straight hoods, all lower bases, existing window widths/mullions, roof apertures, entry and interior unchanged']}
 (OUT/'audit.json').write_text(json.dumps(audit,indent=2)+'\n');print('CKK_PEDIMENT_COMPONENT_SAVED',component.stat().st_size,flush=True)
-bpy.ops.wm.open_mainfile(filepath=str(BASE));scene=bpy.data.scenes['00_CAMPUS_COMPLETE'];bpy.context.window.scene=scene;collection=bpy.data.collections['CKK_EXTERIOR'];source=bpy.data.objects[archived[0]]
+open_baseline();scene=bpy.data.scenes['00_CAMPUS_COMPLETE'];bpy.context.window.scene=scene;collection=bpy.data.collections['CKK_EXTERIOR'];source=bpy.data.objects[archived[0]]
 with bpy.data.libraries.load(str(component),link=False) as (src,dst):dst.objects=owned
 for obj in dst.objects:
  collection.objects.link(obj)
