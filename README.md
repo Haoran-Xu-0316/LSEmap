@@ -8,10 +8,10 @@ an independent Blender architectural study.
 ![Campus architectural model](web/public/images/campus.webp)
 
 Explore the campus by orbiting, panning and zooming. Select a building directly or
-search by its name/code. Detail panels open original model renderings, and twenty-nine
-interior studies load on demand across twenty-five buildings: five public spaces and twenty-four historical room samples. The interface supports mobile screens,
+search by its name/code. Detail panels open renderings from the same production viewer, and thirty-two
+interior studies load on demand across twenty-five buildings: five public spaces and twenty-seven room samples. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
-fallback when WebGL is unavailable. Thirty building models and twenty-nine interior
+fallback when WebGL is unavailable. Thirty building models and thirty-two interior
 views progressively load native bevels and source-derived procedural materials.
 The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
@@ -406,3 +406,7 @@ Edition51 refines POR with neutral pale window joinery, warm brown brick and sub
 LCH retains the timber below its entrance crossrail while exposing the upper glass. STC attic backing now has 35 real openings rather than a continuous wall behind the ribbon windows. PEL replaces the three broad entrance-front window columns with two narrow columns and a solid central panel, following LSE Estates and the 2022 public-realm photographs. The upper repetition beyond photographed floors and existing 44m tower height remain estimates. Original geometry is retained as archived source, and all existing interior studies remain unchanged.
 
 Production streams the unchanged campus GLB from hash-addressed 16MiB asset segments. The build verifies exact byte reconstruction and keeps the full GLB locally for gallery and geometry checks.
+
+### Edition124 photographed exterior and refurbished interior studies
+
+CKK retains its roof envelope while opening the solid roof behind 18 existing dormer windows. SAL central historical entrance follows the photographed semicircular stone arch; flank window colours and unseen openings remain unresolved. Two separate CON Methodology studies reflect the autumn 2025 refurbishment shown in the January 2026 LSE newsletter: an open learning zone and a tea point. They retain the earlier CON.7.04 room and do not infer a measured floor layout or physical connection between the samples. Dimensions and furniture placement remain photographic estimates.
