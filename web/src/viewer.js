@@ -168,7 +168,7 @@ export class CampusViewer {
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
     this.detailCache = new ModelCache(
       async (url) => (await this.loadAsset(url)).scene,
-      (group) => { prepareDetailedModel(group); this.scene.add(group); },
+      (group) => { prepareDetailedModel(group, this.environmentTarget.texture); this.scene.add(group); },
       disposeModel,
       matchMedia("(max-width: 720px)").matches ? 2 : 3,
     );
@@ -244,7 +244,7 @@ export class CampusViewer {
         object.material = materials.map((material) => {
           const copy = material.clone();
           copy.side = THREE.DoubleSide;
-          refineMaterialFinish(copy);
+          refineMaterialFinish(copy, this.environmentTarget.texture);
           applySurfaceDetail(copy);
           return copy;
         });
@@ -298,7 +298,7 @@ export class CampusViewer {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
-      prepareDetailedModel(group);
+      prepareDetailedModel(group, this.environmentTarget.texture);
       group.userData.buildingCode = building.code;
       this.scene.add(group);
       this.exteriors.set(building.code, group);
@@ -572,14 +572,9 @@ export class CampusViewer {
         disposeModel(gltf.scene);
         return null;
       }
-      gltf.scene.visible = false;
-      gltf.scene.traverse((object) => {
-        if (!object.isMesh) return;
-        const materials = Array.isArray(object.material)
-          ? object.material
-          : [object.material];
-        for (const material of materials) material.side = THREE.DoubleSide;
-      });
+      // The initial interior and its upgraded detail use the same finish and
+      // daylight binding, so loading cannot briefly show a different glazing.
+      prepareDetailedModel(gltf.scene, this.environmentTarget.texture);
       this.scene.add(gltf.scene);
       this.interiors.set(key, gltf.scene);
       return gltf.scene;
