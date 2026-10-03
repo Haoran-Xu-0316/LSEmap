@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "122",
-  "sourceModelSha256": "c5092cc500d6b78a91f917f0010cda9859dc7a2c0a6544d15a57b0204d88c363",
+  "version": "123",
+  "sourceModelSha256": "8dc77a1f05b1ba91a4bc958c7db15439e850b7ef975b7130cd4d4d1df9195c96",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1364,9 +1364,12 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 123,
+        "status": "entrance-glazing-corrected",
+        "addedObjects": 1,
+        "clearGlazingProbes": 24,
+        "retainedLowerTimberChecks": 4,
+        "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
       },
       "closeupImage": "lch-entrance",
       "bounds": {
@@ -1382,10 +1385,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-1b4645d9cef7.glb",
-        "bytes": 1198732,
+        "url": "/models/details/lch-exterior-cb56f5a984d0.glb",
+        "bytes": 1200020,
         "triangles": 93164,
-        "sha256": "1b4645d9cef74243ce28679e09bc9bf194b09dba26f13e175ddbc93fe73d097c",
+        "sha256": "cb56f5a984d0197d99c2d323cfdf3dd38ba70373f7c30de2d66f1be4ef4bedb6",
         "bounds": {
           "min": [
             -34.67495346069336,
@@ -2635,9 +2638,12 @@
         "scope": "Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 123,
+        "status": "front-window-pattern-corrected",
+        "addedObjects": 19,
+        "narrowWindows": 22,
+        "glassFirstProbes": 66,
+        "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
       },
       "interiorView": {
         "position": [
@@ -2677,10 +2683,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-df4e1625434b.glb",
-        "bytes": 6295552,
-        "triangles": 522359,
-        "sha256": "df4e1625434be1ded07d8144e6c2cd1462495137d41c04ee50750683ba5b852b",
+        "url": "/models/details/pel-exterior-6fc2f87ed840.glb",
+        "bytes": 6191216,
+        "triangles": 508895,
+        "sha256": "6fc2f87ed840afbc28bc45ed08e0b4df7a27518ddc5e255640d7005f7c06b278",
         "bounds": {
           "min": [
             100.59568786621094,
@@ -3285,9 +3291,12 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 123,
+        "status": "attic-openings-corrected",
+        "addedObjects": 1,
+        "openings": 35,
+        "clearOpaqueProbes": 70,
+        "limitation": "Existing window count, heights and roof remain estimated; dated exterior references do not prove current condition."
       },
       "interiorView": {
         "position": [
@@ -3327,10 +3336,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/stc-exterior-3051ebe8c77e.glb",
-        "bytes": 4227784,
-        "triangles": 351023,
-        "sha256": "3051ebe8c77e30031ef93b7f8e2a35fda41bfb5c7870badbbe628c14a97c3317",
+        "url": "/models/details/stc-exterior-29e6e81e1535.glb",
+        "bytes": 4236088,
+        "triangles": 351611,
+        "sha256": "29e6e81e15359dc76d03011054704adde653307eb5447d86e048d1f6e3ef32cd",
         "bounds": {
           "min": [
             -17.60181427001953,
