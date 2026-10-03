@@ -174,7 +174,7 @@ function renderDetail(building) {
           $("#detail-view")?.setAttribute("aria-pressed", "false");
           $("#scene-kicker").textContent = `${building.code} / ${study ? "ROOM STUDY" : "PUBLIC INTERIOR"}`;
           $("#scene-subtitle").textContent = study
-            ? `${study.label}，历史布局研究，尺寸估算`
+            ? study.label
             : "公共空间研究模型，可旋转观察";
           $("#view-mode").textContent = interiorLabel;
           $("#context-toggle").disabled = true;
@@ -182,7 +182,7 @@ function renderDetail(building) {
           if (spaceControl) {
             $("#interior-spaces").hidden = false;
             spaceControl.value = spaceId || "default";
-            $("#interior-space-scope").textContent = space?.scope || "公共空间与楼梯局部研究，未复原全部楼层。";
+            $("#interior-space-scope").textContent = space?.scope || building.interiorStudy?.scope || "公共空间与楼梯局部研究，未复原全部楼层。";
           }
           if ($("#interior-sections")) {
             $("#interior-sections").hidden = false;
@@ -199,7 +199,7 @@ function renderDetail(building) {
           if (!interior.dataset.failed) interior.textContent = interiorLabel;
         }
       };
-      interior.addEventListener("click", () => openInterior(interior.dataset.failed ? requestedInteriorSpace : null));
+      interior.addEventListener("click", () => openInterior(interior.dataset.failed ? requestedInteriorSpace : building.defaultInteriorSpace ?? null));
       actions.append(interior);
     }
   }
@@ -212,7 +212,7 @@ function renderDetail(building) {
     label.htmlFor = "interior-space";
     const select = element("select", "");
     select.id = "interior-space";
-    for (const space of [{id: "default", label: building.code === "MAR" ? "Grand Hall与公共楼梯" : building.code === "SAW" ? "公共楼梯" : "公共中庭与楼梯"}, ...building.interiorSpaces]) {
+    for (const space of [{id: "default", label: building.interiorStudy?.label || (building.code === "MAR" ? "Grand Hall与公共楼梯" : building.code === "SAW" ? "公共楼梯" : "公共中庭与楼梯")}, ...building.interiorSpaces]) {
       const option = element("option", "", space.label);
       option.value = space.id;
       select.append(option);
