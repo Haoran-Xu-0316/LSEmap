@@ -582,9 +582,18 @@
         "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 140,
+        "scope": "Both street-level storefronts now have separate lower glazing and short upper glazing around an opaque dark infill band. Ground frames and band-edge rails follow the archived official photographs; all upper openings, red brick, stone portal and interiors retained.",
+        "evidence": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/20KSW-web.jpg",
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+        ],
+        "sourcePages": {
+          "handbookPhysicalPage": 24,
+          "handbookPrintedPage": 22
+        },
+        "limitations": "Photo dates unknown. Band limits estimated at70–82% of inherited opening height; column count retained. Whole upper facade, oriel and roof still unverified.",
+        "audit": "result/blender/ksw_envelope_next/audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -614,7 +623,14 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ]
     },
     {
       "code": "LAK",
@@ -1148,9 +1164,12 @@
         }
       ],
       "houghtonAccessReview": {
-        "version": 138,
-        "status": "unresolved-stair-count-and-local-datum",
-        "scope": "Frontal archived and user photographs indicate approximately four entrance steps; retained model has six from a global GL18.100/GF19.345 datum difference. Local street level remains unregistered. Six steps are not photographically verified. Raised route extent, slope and handrail terminations remain unresolved; no guessed access geometry added."
+        "checked": "2026-10-04",
+        "source": "https://www.accessable.co.uk/london-school-of-economics/access-guides/old-building",
+        "retrieval": "Indexed full Entrance (Main Entrance) chapter; direct access403.",
+        "confirmed": "Separate4-step exterior and4-step foyer flights, also visible in the archived WebbYates photograph. Exterior highest16cm; interior highest14cm. Planning south elevation threshold is belowGF.",
+        "modelDiscrepancy": "Existing6 external risers incorrectly allocate the fullGF19.345 minusGL18.100 difference1.245m to the outer flight.",
+        "remaining": "No independently labelled threshold/curb spot heights or entrance section; no exact new dimensions claimed. Correct the entire approach, door threshold and foyer together once registered, rather than creating4 excessive risers."
       }
     },
     {
