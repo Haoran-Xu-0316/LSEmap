@@ -2,13 +2,44 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
-import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
+const DAYLIGHT_DIRECTION = new THREE.Vector3(0.8, 1.6, 1).normalize();
+
+// Static outdoor radiance for glazing: a pale sky, a neutral horizon and stone
+// ground. Generate once; no downloaded panorama or per-frame reflection capture.
+function createDaylightTexture() {
+  const width = 384, height = 192;
+  const pixels = new Float32Array(width * height * 4);
+  const sky = [0.42, 0.53, 0.62], horizon = [0.8, 0.82, 0.84], ground = [0.22, 0.20, 0.18];
+  const sunColor = [1, 0.96, 0.90];
+  for (let row = 0; row < height; row++) {
+    const latitude = (row / (height - 1) - 0.5) * Math.PI;
+    const up = Math.sin(latitude), horizontal = Math.cos(latitude);
+    const blend = Math.pow(Math.abs(up), 0.45);
+    const pole = up >= 0 ? sky : ground;
+    for (let column = 0; column < width; column++) {
+      const longitude = (column / width - 0.5) * Math.PI * 2;
+      const facingSun = horizontal * Math.cos(longitude) * DAYLIGHT_DIRECTION.x +
+        up * DAYLIGHT_DIRECTION.y + horizontal * Math.sin(longitude) * DAYLIGHT_DIRECTION.z;
+      const sun = up > 0 ? 8 * Math.exp((facingSun - 1) * 700) : 0;
+      const offset = (row * width + column) * 4;
+      for (let channel = 0; channel < 3; channel++)
+        pixels[offset + channel] = THREE.MathUtils.lerp(horizon[channel], pole[channel], blend) + sun * sunColor[channel];
+      pixels[offset + 3] = 1;
+    }
+  }
+  const texture = new THREE.DataTexture(pixels, width, height, THREE.RGBAFormat, THREE.FloatType);
+  texture.mapping = THREE.EquirectangularReflectionMapping;
+  texture.colorSpace = THREE.LinearSRGBColorSpace;
+  texture.needsUpdate = true;
+  return texture;
+}
+
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 // Match the CSS bottom-sheet breakpoint, not the canvas narrowed by a desktop sidebar.
 const mobileLayout = matchMedia("(max-width: 700px)");
@@ -99,7 +130,7 @@ export class CampusViewer {
     });
     this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
     const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
-    sun.position.set(-120, 240, 100);
+    sun.position.copy(DAYLIGHT_DIRECTION).multiplyScalar(290);
     sun.castShadow = true;
     sun.shadow.mapSize.set(4096, 4096);
     Object.assign(sun.shadow.camera, {
@@ -122,8 +153,8 @@ export class CampusViewer {
     fill.position.set(100, 70, -130);
     this.scene.add(fill);
     const pmrem = new THREE.PMREMGenerator(this.renderer);
-    const environment = new RoomEnvironment();
-    this.environmentTarget = pmrem.fromScene(environment, 0.04);
+    const environment = createDaylightTexture();
+    this.environmentTarget = pmrem.fromEquirectangular(environment);
     this.scene.environment = this.environmentTarget.texture;
     this.scene.environmentIntensity = 0.35;
     environment.dispose();
@@ -704,7 +735,7 @@ export class CampusViewer {
     const radius = Math.max(12, bounds.getSize(new THREE.Vector3()).length() * 0.65);
     this.sun.target.position.copy(centre);
     this.sun.position.copy(centre).addScaledVector(
-      new THREE.Vector3(0.8, 1.6, 1).normalize(), radius * 3,
+      DAYLIGHT_DIRECTION, radius * 3,
     );
     Object.assign(this.sun.shadow.camera, {
       left: -radius, right: radius, top: radius, bottom: -radius,
