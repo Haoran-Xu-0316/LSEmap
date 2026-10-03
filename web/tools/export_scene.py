@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v123.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v124.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -32,7 +32,7 @@ curve_resolutions = []
 full_detail = False
 for original in source_scene.objects:
     for modifier in original.modifiers:
-        if modifier.type == 'BEVEL' and not original.name.startswith(('KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_')):
+        if modifier.type == 'BEVEL' and not original.name.startswith(('KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_')):
             modifier_states.append((modifier, modifier.show_viewport, modifier.show_render))
             modifier.show_viewport = False
             modifier.show_render = False
@@ -47,7 +47,7 @@ AUTHORING = json.loads((ROOT / 'web/tools/building-metadata.json').read_text())
 records = AUTHORING['buildings']
 ROOM_SPACES = AUTHORING['spaces']
 assert len(records) == 31 and len({r['code'] for r in records}) == 31
-assert len(ROOM_SPACES) == 5
+assert len(ROOM_SPACES) == len({room['id'] for room in ROOM_SPACES}), 'Duplicate room identity'
 material_cache = {}
 
 
@@ -150,7 +150,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     points = []
     for original in objects:
         # Sub-centimetre finish belongs to on-demand views, not the initial campus download.
-        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_')):
+        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_')):
             continue
         if original.type not in {'MESH', 'CURVE', 'FONT', 'SURFACE'} or original.hide_render:
             continue
@@ -387,7 +387,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '123', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '124', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
