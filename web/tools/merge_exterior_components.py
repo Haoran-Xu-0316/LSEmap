@@ -1,4 +1,4 @@
-"""Merge independently verified audited COL portal window divider component into the current campus.
+"""Merge independently verified audited CON compact portal window components into the current campus.
 
 Run in Blender Text Editor. Originals retain their geometry and material slots;
 only the audited exterior display objects are archived. Reopen the saved result
@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage132';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v131.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v132.blend'
-COMPONENTS=[('COL','col_transoms_next','col-three-column-window-component.blend')]
+OUT=ROOT/'result/blender/stage133';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v132.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v133.blend'
+COMPONENTS=[('CON','con_portal_window_next','con-compact-portal-window-component.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -40,7 +40,7 @@ if rebuilding:
     for name,state in previous['archivedVisibility'].items():
         obj=bpy.data.objects[name];obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
     for mat in list(bpy.data.materials):
-        if mat.name.startswith(('COL_NEXT_',)) and mat.users==int(mat.use_fake_user):
+        if mat.name.startswith(('CON_NEXT_',)) and mat.users==int(mat.use_fake_user):
             mat.use_fake_user=False;bpy.data.materials.remove(mat)
 
 for scene in bpy.data.scenes:
@@ -94,7 +94,12 @@ for code,folder,filename in COMPONENTS:
                             values.append(tuple(value) if hasattr(value,'__len__') else value)
                         return (tuple(material.diffuse_color),tuple(values),sorted((key,str(value)) for key,value in material.items()))
                     if signature(mat)==signature(existing):obj.data.materials[index]=existing
-    pairs={c['replacement']:c['original'] for c in audit.get('changes',[])}
+    pairs={}
+    for change in audit.get('changes',[]):
+        replacement=change.get('replacement',change.get('owned'))
+        original_name=change.get('original',change.get('source'))
+        assert replacement and original_name, 'Component change requires source and replacement names'
+        pairs[replacement]=original_name
     pairs.update({'PAR_NEXT_'+name.removeprefix('PAR_'):name for name in audit.get('replacementSlots',{})})
     for name,original_name in pairs.items():
         obj=bpy.data.objects[name];old=bpy.data.objects[original_name]
@@ -131,6 +136,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':132,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':133,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
