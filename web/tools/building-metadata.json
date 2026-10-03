@@ -300,26 +300,31 @@
       "detailView": {
         "label": "入口细节",
         "position": [
-          -19.085157206404723,
-          4.4,
-          7.92495901812355
+          -14.94118948727846,
+          4.0,
+          6.738566194474697
         ],
         "target": [
-          -5.390338268892609,
-          3.7,
-          5.017737962070278
+          -5.39033842086792,
+          2.55,
+          5.017737865447998
         ],
-        "fov": 46
+        "fov": 45
       },
       "localRefinement": {
-        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides",
-        "newComponents": 6,
-        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review."
+        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides; reconstructed corner portal with three steps, glazed paired timber doors, arched transom, reeded pilasters and layered stone frieze",
+        "newComponents": 11,
+        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review. Entrance guide confirms three external steps and a 73cm active opening; total paired width, 15cm risers, treads and ornamental profiles are photo-guided estimates. New entry has genuine glazing apertures. The guide survey and photo capture dates are unverified. Carved mask and scrolls are authored approximations, not scans."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 118,
+        "status": "portal-refined",
+        "addedObjects": 5,
+        "archivedObjects": 20,
+        "sourceUrls": [
+          "https://www.accessable.co.uk/london-school-of-economics/access-guides/cowdray-house",
+          "https://www.russellcawberry.com/projects/cowdray-house"
+        ]
       },
       "interiorView": {
         "position": [
