@@ -112,7 +112,12 @@
           "photographDate": "unknown",
           "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
         }
-      ]
+      ],
+      "wholeFacadeReview": {
+        "version": 138,
+        "status": "retained-with-interior-registration-gap",
+        "scope": "Retained red primary/orange side shades, main curtain and accepted entrance. Real office glass first-surface probes pass. Existing high-wing floor plates stop4.2m behind main glass, in a zone including a wandering stair; horizontal rays find distant opposing glass but cannot establish missing slabs. Office partitions, stair apertures and measured complete floor layouts remain unregistered; no false backplates or speculative filling added."
+      }
     },
     {
       "code": "CKK",
@@ -1034,8 +1039,12 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 126,
-        "scope": "Ten courtyard windows: photo-estimated68% fixed/32% opening division, narrow metal opening guards, removal of ten unsupported high transoms and aperture-local overlapping legacy trim.100 whole-facade first-surface probes and5mm edge scans. Other elevations, exact guard dimensions, inherited face/row registration and full interiors remain unverified."
+        "version": 138,
+        "status": "photo-registered-north-three-row-fenestration",
+        "scope": "Retained5+10 north office bays now have45 windows in three rows, replacing two tall rows. Masonry has real openings and glass/frame overlap. Courtyard returns, screens, roof, other faces, interior and native optical parameters retained; heights and wall depth remain photo estimates.",
+        "source": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
+        "uploadYear": 2022,
+        "photographDate": "unknown"
       },
       "interiorView": {
         "position": [
@@ -1061,7 +1070,13 @@
         "source": "Grafton Architects Level02 drawing via RIBA London Award2023 project gallery",
         "url": "https://www.riba.org/explore/awards/uk-awards/regional-awards/2023/london-award-winners-2023/the-marshall-building-london-school-of-economics-and-political-science/",
         "scope": "Built Level02 changes the2017 west-wing staff-commons inference to classroom and distinguishes north recess/terrace.700px source gives only coarse registration; Level01, local section and opening levels still unresolved. No native room geometry added."
-      }
+      },
+      "reviewHistory": [
+        {
+          "version": 126,
+          "scope": "Ten courtyard windows: photo-estimated68% fixed/32% opening division, narrow metal opening guards, removal of ten unsupported high transoms and aperture-local overlapping legacy trim.100 whole-facade first-surface probes and5mm edge scans. Other elevations, exact guard dimensions, inherited face/row registration and full interiors remain unverified."
+        }
+      ]
     },
     {
       "code": "OLD",
@@ -1126,9 +1141,9 @@
         }
       ],
       "houghtonAccessReview": {
-        "version": 136,
-        "status": "retained-pending-registration",
-        "scope": "User street photograph confirms raised stone edge and long rail, but lacks endpoints and grade registration. Two foreground bollards cannot be uniquely bound to mapped objects; existing access geometry retained."
+        "version": 138,
+        "status": "unresolved-stair-count-and-local-datum",
+        "scope": "Frontal archived and user photographs indicate approximately four entrance steps; retained model has six from a global GL18.100/GF19.345 datum difference. Local street level remains unregistered. Six steps are not photographically verified. Raised route extent, slope and handrail terminations remain unresolved; no guessed access geometry added."
       }
     },
     {
@@ -1822,5 +1837,9 @@
         "fov": 48
       }
     }
-  ]
+  ],
+  "presentationReview": {
+    "version": 138,
+    "scope": "Glazing explicitly shares the existing PMREM daylight map in campus, detailed exteriors and interiors, allowing the intended1.65 material reflection intensity to reach Three.js instead of the0.35 scene fallback. Native tint and alpha retained; no new reflection captures or texture allocations. Lighting is presentation, not measured campus radiometry."
+  }
 }
