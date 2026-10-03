@@ -60,12 +60,13 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 129,
-        "status": "photo-registered-entrance-grid",
-        "scope": "Two complete storeys above the low-wing braced entrance corrected from six to three glass columns; six unsupported vertical bars removed and two high-level silver transoms added. Existing neutral glazing and other faces retained.",
-        "source": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px5.jpg",
+        "version": 130,
+        "status": "reference-guided-office-module-reconstruction",
+        "scope": "Square-facing academic tower glazing reconstructed as98 nominal2m glazed plus1m opaque office modules with closed high-level vents. Existing stair strips, teaching floors, end/back faces, bracing, neutral glazing finish and red/orange shades retained.",
+        "source": "https://rshp.com/projects/education/lse-centre-building/",
+        "photographSource": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px6.jpg",
         "photographDate": "unknown",
-        "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
+        "registration": "Current GIS/photo footprint, levels, stair-strip positions, exact repeat counts and module offsets remain estimates; not a measured or registered as-built elevation."
       },
       "interiorView": {
         "position": [
@@ -94,6 +95,14 @@
           "source": "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf",
           "documentDate": "2023-02-20",
           "photographDate": "unknown"
+        },
+        {
+          "version": 129,
+          "status": "photo-registered-entrance-grid",
+          "scope": "Two complete storeys above the low-wing braced entrance corrected from six to three glass columns; six unsupported vertical bars removed and two high-level silver transoms added. Existing neutral glazing and other faces retained.",
+          "source": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px5.jpg",
+          "photographDate": "unknown",
+          "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
         }
       ]
     },
@@ -1426,12 +1435,12 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 129,
-        "status": "photo-registered-frame-colour",
-        "scope": "Side-lane near short wing: two bays by three upper rows use charcoal sash frames and bars. Main frontage, middle wing and other rows retained.",
-        "source": "Local photographed side lane and OSM frontage/entrance registration.",
+        "version": 130,
+        "status": "photo-registered-middle-wing-sash-colour",
+        "scope": "Side-lane recessed middle wing: seven bays by three upper rows,21 windows use pale neutral sash frames and bars. Six near-wing charcoal windows and main-front blue frames retained.",
+        "source": "Local side-lane photograph and OSM return/entrance registration.",
         "photographDate": "unknown",
-        "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
+        "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
       },
       "interiorView": {
         "position": [
@@ -1456,6 +1465,14 @@
         {
           "version": 124,
           "scope": "Photographed central historical entrance corrected to semicircular stone arch;30 boundary probes. Columns and palette retained; flank colours and unseen openings unresolved."
+        },
+        {
+          "version": 129,
+          "status": "photo-registered-frame-colour",
+          "scope": "Side-lane near short wing: two bays by three upper rows use charcoal sash frames and bars. Main frontage, middle wing and other rows retained.",
+          "source": "Local photographed side lane and OSM frontage/entrance registration.",
+          "photographDate": "unknown",
+          "dimensions": "Wing boundary follows OSM return and entrance anchor; RGB is a visual estimate."
         }
       ]
     },
