@@ -22,11 +22,19 @@ const preparedMaterials = new WeakSet();
 
 // Presentation refinements are deliberately separate from source-model parameters.
 // They describe a material finish, not measured ageing or photographic textures.
-export function refineMaterialFinish(material) {
-  if (preparedMaterials.has(material)) return;
-  preparedMaterials.add(material);
+export function refineMaterialFinish(material, environmentMap = null) {
   const name = material.name.toLowerCase();
   const matches = (pattern) => pattern.test(name);
+  // With a scene-inherited environment, Three.js uses scene intensity instead
+  // of material intensity. Bind the shared PMREM explicitly for glazing so its
+  // selected finish actually reaches the renderer. No additional capture or
+  // texture allocation is needed, and existing authored maps remain intact.
+  if (environmentMap && matches(/glass|glazing/) && !material.envMap) {
+    material.envMap = environmentMap;
+    material.needsUpdate = true;
+  }
+  if (preparedMaterials.has(material)) return;
+  preparedMaterials.add(material);
   if (matches(/glass|glazing/)) {
     // Preserve tinted glazing while reducing the exaggerated cyan in older assets.
     const luminance = material.color.r * .2126 + material.color.g * .7152 + material.color.b * .0722;
@@ -161,7 +169,7 @@ export function applySurfaceDetail(material) {
   material.needsUpdate = true;
 }
 
-export function prepareDetailedModel(group) {
+export function prepareDetailedModel(group, environmentMap = null) {
   group.visible = false;
   group.traverse((object) => {
     if (!object.isMesh) return;
@@ -169,7 +177,7 @@ export function prepareDetailedModel(group) {
     object.receiveShadow = true;
     for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
       material.side = THREE.DoubleSide;
-      refineMaterialFinish(material);
+      refineMaterialFinish(material, environmentMap);
       applySurfaceDetail(material);
     }
   });
