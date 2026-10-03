@@ -44,6 +44,21 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 121 window and roof corrections
+
+Lakatos dormer openings now cut through the sloped roof instead of being sealed
+by it. All24 sampled roof-window rays reach glass; the retained roof outline,
+bay counts and dimensions remain estimates. Sheffield Street's19 street windows
+now use six paired lights, with narrow overlights and three lower rows in tall
+sashes. Its upper timber-door glazing has12 unobstructed aperture samples.
+The official estate photographs support these visible patterns; unseen elevations
+and the existing interior studies have not been reconstructed anew.
+
+Eleven isolated component objects are merged without changing original meshes,
+transforms or material slots. Overview and close-up exports retain the same new
+joinery and roof geometry. Fawcett's independent facade and roof remain unresolved:
+the available official photograph shows the shared Pankhurst entrance.
+
 ## Edition 120 parallel exterior corrections
 
 King’s Chambers now has green ceramic cladding on the street-facing attic and
