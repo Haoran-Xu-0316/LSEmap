@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "124",
-  "sourceModelSha256": "929cfc5d1ea7a542a904c7385d0feff5cb9d86a6a1333cd957e8de52704a950f",
+  "version": "125",
+  "sourceModelSha256": "bbfe57bfa8a75fc30ebbc6034911f04ede38e73caa80eef19ac0264f06a5a3b9",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2238,9 +2238,8 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Houghton approach plan follows contractor and user-supplied photographs. Existing six risers and 1.245m landing retained, plan widths and corner cuts estimated; current step count not newly surveyed."
       },
       "latestReview": {
-        "version": 116,
-        "status": "refined",
-        "addedObjects": 2
+        "version": 125,
+        "scope": "Restore four-column casements on ten photograph-supported Houghton dormers after later roof reconstruction regressed to two columns. Lower row has four horizontal panes; upper has five. Existing openings, heights, roof profile, materials and two far-left unverified windows retained. Twenty whole-elevation rays first meet glass."
       },
       "interiorView": {
         "position": [
@@ -2280,10 +2279,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-4010eebe44f3.glb",
-        "bytes": 18810964,
-        "triangles": 1669228,
-        "sha256": "4010eebe44f3d32ea2c7b4e78ea529076b339ba21b68c826f599ec6655c6b301",
+        "url": "/models/details/old-exterior-8d0623245902.glb",
+        "bytes": 18819040,
+        "triangles": 1669768,
+        "sha256": "8d062324590276e2d49a007648c90fc58a2f0bf9ca17dd16e6d9138a0b66a38c",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -3047,9 +3046,8 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 125,
+        "scope": "Replace continuous misregistered horizontal glass canopy with a sloping canopy confined to the photographed central recess. South/front folded wings remain canopy-free. Pane count, projection, slope and supports are estimated; timber curtain wall, roof and perforated brick screens retained."
       },
       "bounds": {
         "min": [
@@ -3058,7 +3056,7 @@
           -37.072296142578125
         ],
         "max": [
-          -46.9441032409668,
+          -49.78245544433594,
           28.950000762939453,
           16.283767700195312
         ]
@@ -3076,10 +3074,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-39751eba2502.glb",
-        "bytes": 10076824,
-        "triangles": 1077058,
-        "sha256": "39751eba250269dd4631b06ae84e1349d013d58649989df91dbda1852fe9342c",
+        "url": "/models/details/saw-exterior-9e13a370b474.glb",
+        "bytes": 10029460,
+        "triangles": 1072085,
+        "sha256": "9e13a370b47468ad5d480970a776a4d276642a0d0a55f9da232c52a59c93a3cc",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -3087,7 +3085,7 @@
             -37.072296142578125
           ],
           "max": [
-            -46.94651794433594,
+            -49.78245544433594,
             28.950000762939453,
             16.283767700195312
           ]
@@ -3313,6 +3311,11 @@
           0
         ],
         "fov": 50
+      },
+      "flankReview": {
+        "version": 125,
+        "status": "unresolved",
+        "scope": "Architect side-alley photo shows near dark-grey frames and taller middle block with lighter frames. Current repeated four-storey blue side elevation lacks corresponding block registration; no arbitrary recolouring applied."
       },
       "bounds": {
         "min": [
