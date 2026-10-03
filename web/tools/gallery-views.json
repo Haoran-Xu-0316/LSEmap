@@ -1056,5 +1056,17 @@
       ],
       "fov": 43
     }
+  },
+  {
+    "code": "CON",
+    "name": "con-methodology-interior",
+    "spaceId": "con-methodology",
+    "label": "CON一层学习区2025"
+  },
+  {
+    "code": "CON",
+    "name": "con-tea-point-interior",
+    "spaceId": "con-tea-point",
+    "label": "CON一层茶水间2025"
   }
 ]
