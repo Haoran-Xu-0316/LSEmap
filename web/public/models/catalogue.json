@@ -1,15 +1,15 @@
 {
   "generatedTextures": [
     {
-      "name": "globe-map-australia-yellow",
-      "sha256": "e0d369ffc2d351fd9949ca75b0c1cb3a9f482d6847032bca7424696b4cc36600",
+      "name": "globe-map-India-green",
+      "sha256": "19925e6f107d449d8f5175910f437a251d824b74efe66f59cccf475c969d9c49",
       "source": "Natural Earth public-domain cartography",
-      "scope": "Authored political map with photo-estimated Australia fill; no source photograph",
-      "nativeImage": "SITE_V116_globe_map_Australia_yellow"
+      "scope": "Authored political map with photo-estimated Australia and India fills; no source photograph",
+      "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "133",
-  "sourceModelSha256": "afed12b467c4368c55f51105f44ca7706939ce55799c233b76f33afa288af439",
+  "version": "134",
+  "sourceModelSha256": "f6e42bd4e9d7afcb8eee0fb9d72a6de9de54d26e4bd24458f64857c6c31f59fa",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2321,10 +2321,10 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Houghton approach plan follows contractor and user-supplied photographs. Existing six risers and 1.245m landing retained, plan widths and corner cuts estimated; current step count not newly surveyed."
       },
       "latestReview": {
-        "version": 128,
-        "status": "photo-informed-window-correction",
-        "scope": "Clare Market Student Services entrance upper light: one misplaced horizontal blue rail moved to form two columns and two rows. Existing opening, blue finish, other windows, relief and roof retained; exact dimensions estimated.",
-        "source": "User-supplied frontal Student Services Centre photograph",
+        "version": 134,
+        "status": "photo-and-native-opening-clearance-correction",
+        "scope": "Trim the inner edges of12 entrance stone courses to the existing narrow blue frame/reveal boundary. Preserve the windows, arch, crest, signage, steps and other elevations. Left upper-window photograph supports clear glazing; right side is a registered geometry collision correction, not a surveyed photographic reproduction. Clearance and stone edge position are estimates.",
+        "source": "User-supplied Houghton Street entrance photograph and native aperture inspection",
         "photographDate": "unknown"
       },
       "interiorView": {
@@ -2344,6 +2344,13 @@
         {
           "version": 125,
           "scope": "Restore four-column casements on ten photograph-supported Houghton dormers after later roof reconstruction regressed to two columns. Lower row has four horizontal panes; upper has five. Existing openings, heights, roof profile, materials and two far-left unverified windows retained. Twenty whole-elevation rays first meet glass."
+        },
+        {
+          "version": 128,
+          "status": "photo-informed-window-correction",
+          "scope": "Clare Market Student Services entrance upper light: one misplaced horizontal blue rail moved to form two columns and two rows. Existing opening, blue finish, other windows, relief and roof retained; exact dimensions estimated.",
+          "source": "User-supplied frontal Student Services Centre photograph",
+          "photographDate": "unknown"
         }
       ],
       "bounds": {
@@ -2371,10 +2378,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-888cb62f803c.glb",
-        "bytes": 18817764,
+        "url": "/models/details/old-exterior-1a2423a6ca60.glb",
+        "bytes": 18820416,
         "triangles": 1669672,
-        "sha256": "888cb62f803c0781ab1ecacb983b9eea45a3f6914f2ad2b5b341ebd4ddf79e05",
+        "sha256": "1a2423a6ca6017f9536b08dddb7b0535d6402ab2607158453db6c46c4b75d574",
         "bounds": {
           "min": [
             -39.1646614074707,
