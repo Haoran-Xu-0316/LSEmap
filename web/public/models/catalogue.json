@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "120",
-  "sourceModelSha256": "c6310ae26eee27b1ca03e35884fdd90dda5b66e41cab50e50fe57587115312a8",
+  "version": "121",
+  "sourceModelSha256": "58ff3a3bd9e4a909ed97804f1a53a44904a56ad5535771b82417d3586a285e78",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1255,9 +1255,8 @@
         "scope": "Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 121,
+        "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
       },
       "interiorView": {
         "position": [
@@ -1297,10 +1296,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lak-exterior-02e564e67d39.glb",
-        "bytes": 1220044,
-        "triangles": 93720,
-        "sha256": "02e564e67d39d6d727981890b5e94fc9abd8b2e5858c63bc4825e4907266ef1f",
+        "url": "/models/details/lak-exterior-63d4cf1f8485.glb",
+        "bytes": 1219888,
+        "triangles": 93556,
+        "sha256": "63d4cf1f8485752a9e520d109de00bd9f76b3748871096414285d07110ae7965",
         "bounds": {
           "min": [
             2.2941360473632812,
@@ -2456,7 +2455,7 @@
       "bounds": {
         "min": [
           -49.06182098388672,
-          -0.019999999552965164,
+          -0.047499991953372955,
           1.6842665672302246
         ],
         "max": [
@@ -3118,9 +3117,8 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 121,
+        "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
       },
       "bounds": {
         "min": [
@@ -3135,10 +3133,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-0adfffa07720.glb",
-        "bytes": 836728,
-        "triangles": 63803,
-        "sha256": "0adfffa0772011d28e789a31c2a46020f8942f2c7b82ec42e8322be7a699426c",
+        "url": "/models/details/shf-exterior-16b5a0f29d3d.glb",
+        "bytes": 938028,
+        "triangles": 71795,
+        "sha256": "16b5a0f29d3df5ae4e4cc78395cb0564cf91542cc4133b2cf6c2f983a407767a",
         "bounds": {
           "min": [
             -44.019718170166016,
