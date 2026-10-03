@@ -1,5 +1,5 @@
 {
-  "scope": "Approved camera presets and architectural evidence from edition114. Geometry and asset descriptors are always regenerated from the current native scene; no historical stage directories are required.",
+  "scope": "Current camera presets and architectural evidence snapshots. Geometry and asset descriptors are regenerated from the current native scene; historic reviews document scope and uncertainty.",
   "buildings": [
     {
       "code": "61A",
@@ -24,9 +24,10 @@
         "scope": "Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 137,
+        "status": "photo-supported-central-street-corner-reconstruction",
+        "scope": "Replace central two-column repetitive glazing with continuous three-storey recessed portal, projecting stone piers, differentiated side and central lights and upper window rows on retained6.769m segment. Preserve entrance, other street wings, footprint, roof and glass properties.2021 brochure photograph supports composition; footprint allocation, stepped roof/parapet and current conversion still unverified.",
+        "source": "2021 letting brochure day/evening street-corner photographs; image dates unknown"
       },
       "interiorView": {
         "position": [
@@ -41,7 +42,14 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ]
     },
     {
       "code": "CBG",
@@ -198,9 +206,10 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 114,
-        "status": "reviewed-no-change",
-        "addedObjects": 30
+        "version": 137,
+        "status": "photo-supported-tall-window-spandrel-correction",
+        "scope": "Seven continuous tall bays now split into upper/lower glass around warm opaque middle spandrels. Retain42 unaffected rails, stone, doors and roof. Band height0.42m and finish are estimates guided by2018 daylight;2023 photograph has tree/scaffold limitations. Glass remains reflective opaque approximation pending registered window enclosure.",
+        "source": "Archived2018-04-24 photograph and2023-11-15 main-front photograph"
       },
       "interiorView": {
         "position": [
@@ -215,7 +224,14 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 114,
+          "status": "reviewed-no-change",
+          "addedObjects": 30
+        }
+      ]
     },
     {
       "code": "COL",
@@ -239,13 +255,10 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 132,
-        "scope": "Single window immediately above Columbia House entrance corrected to three glass columns with two vertical dividers and retained high transom. Remaining4600 vertices in the frame family, all glazing, doors, stone reveals, Garrick corner and existing interiors retained. Eight first-surface probes and save/reopen verified. Equal thirds spacing and retained section dimensions remain estimates.",
-        "references": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
-        ],
-        "sourceEdition": "2025/26 property handbook",
-        "captureDate": "unknown"
+        "version": 137,
+        "status": "verified-school-name-completion",
+        "scope": "Restore the full school name including and Political Science on retained stone band. Preserve original font,0.25m glyph height, extrusion, material, vertical datum and wall depth without horizontal compression. Right endpoint offset0.20m is photo-estimated. Whole frontage and room enclosure remain pending as separately recorded.",
+        "source": "2025/26 official property handbook entry photograph; capture date unknown"
       },
       "detailView": {
         "label": "入口细节",
@@ -280,8 +293,22 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 132,
+          "scope": "Single window immediately above Columbia House entrance corrected to three glass columns with two vertical dividers and retained high transom. Remaining4600 vertices in the frame family, all glazing, doors, stone reveals, Garrick corner and existing interiors retained. Eight first-surface probes and save/reopen verified. Equal thirds spacing and retained section dimensions remain estimates.",
+          "references": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ],
+          "sourceEdition": "2025/26 property handbook",
+          "captureDate": "unknown"
         }
-      ]
+      ],
+      "wholeFacadeReview": {
+        "version": 137,
+        "status": "retained-pending-upper-elevation-and-enclosure",
+        "scope": "Current low-level photos and2010 entrance feasibility scheme cannot calibrate upper storey count or mansard.26 distinct low panes have only distant3.49–25.03m estimated shells behind them. No speculative transparency, backplate, new storeys or new roof added."
+      }
     },
     {
       "code": "CON",
