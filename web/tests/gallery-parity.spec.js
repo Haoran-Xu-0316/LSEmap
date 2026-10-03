@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
+import { captureSettledCanvas } from './gallery-frame-settle.js';
 import { galleryRendererSignature, galleryModelSignature } from '../tools/gallery_signature.mjs';
 
 // Match the gallery render buffer: CSS-resolution screenshots resample fine windows twice.
@@ -62,7 +63,7 @@ for (const { code, name, spaceId } of exteriorViews) test(`${code}${spaceId ? ' 
   const capturedBounds = await canvas.boundingBox();
   expect(Math.abs(capturedBounds.width-1400)).toBeLessThan(1);
   expect(Math.abs(capturedBounds.height-1120)).toBeLessThan(1);
-  const live = await canvas.screenshot();
+  const live = await captureSettledCanvas(page, canvas);
   const image = await readFile(`dist/images/${name}.webp`);
   const error = await page.evaluate(async ({ live, image }) => {
     const decode = src => new Promise(resolve => { const img = new Image(); img.onload = () => resolve(img); img.src = src; });
