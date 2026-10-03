@@ -968,7 +968,12 @@
           "status": "carey-frontage-reconstructed",
           "addedObjects": 6
         }
-      ]
+      ],
+      "entranceCanopyReview": {
+        "version": 136,
+        "status": "retained-pending-current-evidence",
+        "scope": "2008 daylight reference suggests no separate canopy, but current absence cannot be established by the oblique shadowed2025/26 handbook night view. Existing canopy retained; no accepted geometry or visibility change."
+      }
     },
     {
       "code": "MAR",
@@ -1053,11 +1058,11 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Houghton approach plan follows contractor and user-supplied photographs. Existing six risers and 1.245m landing retained, plan widths and corner cuts estimated; current step count not newly surveyed."
       },
       "latestReview": {
-        "version": 134,
-        "status": "photo-and-native-opening-clearance-correction",
-        "scope": "Trim the inner edges of12 entrance stone courses to the existing narrow blue frame/reveal boundary. Preserve the windows, arch, crest, signage, steps and other elevations. Left upper-window photograph supports clear glazing; right side is a registered geometry collision correction, not a surveyed photographic reproduction. Clearance and stone edge position are estimates.",
-        "source": "User-supplied Houghton Street entrance photograph and native aperture inspection",
-        "photographDate": "unknown"
+        "version": 136,
+        "status": "photo-supported-native-window-head-clearance",
+        "scope": "Close five open strips above the Clare Market upper blue frames by extending existing stone spandrels to the registered frame top. Move only20 lower-edge vertices; retain1068 vertices, topology, UVs, materials and windows. Existing model levels remain estimates.",
+        "source": "Haslam2010 study photograph C; user Student Services Centre reference for frontage registration",
+        "photographDate": "unknown; study published2010"
       },
       "interiorView": {
         "position": [
@@ -1084,8 +1089,20 @@
           "scope": "Clare Market Student Services entrance upper light: one misplaced horizontal blue rail moved to form two columns and two rows. Existing opening, blue finish, other windows, relief and roof retained; exact dimensions estimated.",
           "source": "User-supplied frontal Student Services Centre photograph",
           "photographDate": "unknown"
+        },
+        {
+          "version": 134,
+          "status": "photo-and-native-opening-clearance-correction",
+          "scope": "Trim the inner edges of12 entrance stone courses to the existing narrow blue frame/reveal boundary. Preserve the windows, arch, crest, signage, steps and other elevations. Left upper-window photograph supports clear glazing; right side is a registered geometry collision correction, not a surveyed photographic reproduction. Clearance and stone edge position are estimates.",
+          "source": "User-supplied Houghton Street entrance photograph and native aperture inspection",
+          "photographDate": "unknown"
         }
-      ]
+      ],
+      "houghtonAccessReview": {
+        "version": 136,
+        "status": "retained-pending-registration",
+        "scope": "User street photograph confirms raised stone edge and long rail, but lacks endpoints and grade registration. Two foreground bollards cannot be uniquely bound to mapped objects; existing access geometry retained."
+      }
     },
     {
       "code": "OCS",
