@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v134.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v135.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -171,7 +171,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
-        if original.name.startswith(('CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
+        if original.name.startswith(('CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
             layer = mesh.uv_layers.new(name='SurfaceUV')
             for face in mesh.polygons:
                 vertices = [original.matrix_world @ mesh.vertices[index].co for index in face.vertices]
@@ -405,7 +405,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '134', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '135', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
