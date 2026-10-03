@@ -1,4 +1,4 @@
-"""Merge independently verified audited OLD portal stone edges and SITE globe India components into the current campus.
+"""Merge independently verified audited CKK fanlight and SAW curtain glazing components into the current campus.
 
 Run in Blender Text Editor. Originals retain their geometry and material slots;
 only the audited exterior display objects are archived. Reopen the saved result
@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage134';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v133.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v134.blend'
-COMPONENTS=[('OLD','old_portal_overlap_next','old-portal-stone-clearance-component.blend'),('SITE','globe_india_next','globe-india-component.blend')]
+OUT=ROOT/'result/blender/stage135';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v134.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v135.blend'
+COMPONENTS=[('CKK','ckk_glass_next','ckk-fanlight-component.blend'),('SAW','saw_glazing_next','saw-glazing-component.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -40,7 +40,7 @@ if rebuilding:
     for name,state in previous['archivedVisibility'].items():
         obj=bpy.data.objects[name];obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
     for mat in list(bpy.data.materials):
-        if mat.name.startswith(('OLD_NEXT_', 'SITE_NEXT_')) and mat.users==int(mat.use_fake_user):
+        if mat.name.startswith(('CKK_NEXT_', 'SAW_NEXT_')) and mat.users==int(mat.use_fake_user):
             mat.use_fake_user=False;bpy.data.materials.remove(mat)
 
 for scene in bpy.data.scenes:
@@ -136,6 +136,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':134,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':135,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
