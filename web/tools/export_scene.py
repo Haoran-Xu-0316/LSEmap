@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v128.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v129.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -150,7 +150,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     points = []
     for original in objects:
         # Sub-centimetre finish belongs to on-demand views, not the initial campus download.
-        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
+        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_FRAME_NEXT_')):
             continue
         if original.type not in {'MESH', 'CURVE', 'FONT', 'SURFACE'} or original.hide_render:
             continue
@@ -171,7 +171,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
-        if original.name.startswith(('CBG_NEXT_', 'OLD_GLAZING_NEXT_')) and not mesh.uv_layers:
+        if original.name.startswith(('CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
             layer = mesh.uv_layers.new(name='SurfaceUV')
             for face in mesh.polygons:
                 vertices = [original.matrix_world @ mesh.vertices[index].co for index in face.vertices]
@@ -328,6 +328,10 @@ for record in metadata:
 # The campus overview stays light; high-detail files are loaded only on selection.
 full_detail = True
 for modifier, viewport, render in modifier_states:
+    # Colour-only SAL sash replacements keep the lightweight frame geometry
+    # at both scales. Restoring bevels here would multiply detail vertices ninefold.
+    if modifier.type == 'BEVEL' and modifier.id_data.name.startswith('SAL_FRAME_NEXT_'):
+        continue
     modifier.show_viewport, modifier.show_render = viewport, render
 for curve, resolution in curve_resolutions:
     curve.resolution_u = resolution
@@ -401,7 +405,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '128', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '129', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
