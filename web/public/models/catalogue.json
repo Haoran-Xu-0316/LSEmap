@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "123",
-  "sourceModelSha256": "8dc77a1f05b1ba91a4bc958c7db15439e850b7ef975b7130cd4d4d1df9195c96",
+  "version": "124",
+  "sourceModelSha256": "929cfc5d1ea7a542a904c7385d0feff5cb9d86a6a1333cd957e8de52704a950f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -300,9 +300,8 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 124,
+        "scope": "18 existing dormer apertures opened through mansard roof;36 opaque clearance probes. Roof outline, heights and window positions remain estimates."
       },
       "interiorView": {
         "position": [
@@ -342,10 +341,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-29a046770e32.glb",
-        "bytes": 2701292,
-        "triangles": 234416,
-        "sha256": "29a046770e32e680ad9061d02a2043b41116ce9ffef173d1acabd9ccff2adb22",
+        "url": "/models/details/ckk-exterior-68ef18b85256.glb",
+        "bytes": 2712996,
+        "triangles": 235172,
+        "sha256": "68ef18b852560fe8f3c3a3a13aada7f5216eb841954efb3fc0dcf0c4a6226f2e",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -702,6 +701,17 @@
         ],
         "fov": 50
       },
+      "defaultInteriorSpace": "con-methodology",
+      "interiorReview": {
+        "version": 124,
+        "spaces": [
+          "con-methodology",
+          "con-tea-point"
+        ],
+        "document": "LSE January2026 capital development newsletter, page2",
+        "worksCompleted": "Autumn2025",
+        "scope": "Separate cropped photographic samples; estimated dimensions, no complete floor plan or connection. Original CON.7.04 room retained."
+      },
       "bounds": {
         "min": [
           -34.34856414794922,
@@ -761,7 +771,119 @@
             2.0999999046325684
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "con-methodology",
+          "label": "CON一层学习区2025",
+          "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CON一层学习区2025",
+            "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。"
+          },
+          "interiorView": {
+            "position": [
+              -12.96,
+              9.18,
+              9.5
+            ],
+            "target": [
+              0,
+              1.05,
+              0
+            ],
+            "fov": 48
+          },
+          "gallery": "con-methodology-interior",
+          "interiorAsset": "/models/details/con-methodology-interior-ea8f5af65e14.glb",
+          "detailedInterior": {
+            "url": "/models/details/con-methodology-interior-ea8f5af65e14.glb",
+            "bytes": 575568,
+            "triangles": 43124,
+            "sha256": "ea8f5af65e14252f8064bc9553bb13284b14999fbaa6ef38e2f5feb36968632d",
+            "bounds": {
+              "min": [
+                -5.436797618865967,
+                -0.11999999731779099,
+                -3.830862045288086
+              ],
+              "max": [
+                5.400000095367432,
+                3.126901388168335,
+                3.799999952316284
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -5.436797618865967,
+              -0.11999999731779099,
+              -3.830862045288086
+            ],
+            "max": [
+              5.400000095367432,
+              3.126901388168335,
+              3.799999952316284
+            ]
+          }
+        },
+        {
+          "id": "con-tea-point",
+          "label": "CON一层茶水间2025",
+          "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CON一层茶水间2025",
+            "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。"
+          },
+          "interiorView": {
+            "position": [
+              -4.56,
+              3.23,
+              6.125
+            ],
+            "target": [
+              0,
+              1.05,
+              0
+            ],
+            "fov": 48
+          },
+          "gallery": "con-tea-point-interior",
+          "interiorAsset": "/models/details/con-tea-point-interior-2fb285f0f785.glb",
+          "detailedInterior": {
+            "url": "/models/details/con-tea-point-interior-2fb285f0f785.glb",
+            "bytes": 133592,
+            "triangles": 8420,
+            "sha256": "2fb285f0f7859f8b98911e8c1ac943022b9b0696ca262d662b7f2438de738c9c",
+            "bounds": {
+              "min": [
+                -1.899999976158142,
+                -0.11999999731779099,
+                -2.450000047683716
+              ],
+              "max": [
+                1.899999976158142,
+                2.9000000953674316,
+                2.450000047683716
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -1.899999976158142,
+              -0.11999999731779099,
+              -2.450000047683716
+            ],
+            "max": [
+              1.899999976158142,
+              2.9000000953674316,
+              2.450000047683716
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "COW",
@@ -3176,9 +3298,8 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 43,
-        "status": "refined",
-        "addedObjects": 0
+        "version": 124,
+        "scope": "Photographed central historical entrance corrected to semicircular stone arch;30 boundary probes. Columns and palette retained; flank colours and unseen openings unresolved."
       },
       "interiorView": {
         "position": [
@@ -3218,10 +3339,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-b7daa6d86dfb.glb",
-        "bytes": 9246248,
-        "triangles": 768716,
-        "sha256": "b7daa6d86dfbf66b0013a4428f1e388d96716c8bf475401425011fe4575356f8",
+        "url": "/models/details/sal-exterior-0bf889fc7182.glb",
+        "bytes": 9258468,
+        "triangles": 769432,
+        "sha256": "0bf889fc71828c11bf194a8ea589cb786466148d0e33d6ef232cd8c1b169b323",
         "bounds": {
           "min": [
             91.77310180664062,
