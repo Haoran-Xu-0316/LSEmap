@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "121",
-  "sourceModelSha256": "58ff3a3bd9e4a909ed97804f1a53a44904a56ad5535771b82417d3586a285e78",
+  "version": "122",
+  "sourceModelSha256": "c5092cc500d6b78a91f917f0010cda9859dc7a2c0a6544d15a57b0204d88c363",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1668,9 +1668,8 @@
         "scope": "No.50 entrance guided by the LSE 2025/26 property handbook photograph. Neighboring round windows excluded; dimensions and carved profiles estimated, capture date unknown. Upper elevations, roof and complete interior still require review."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 122,
+        "scope": "Photographed entrance sash corrected to three columns and two rows; curved stone arch returns added, with ten glass-first probes. Overall bay count and unseen elevations remain unresolved."
       },
       "detailView": {
         "label": "入口细节",
@@ -1700,10 +1699,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-c47ad9483e84.glb",
-        "bytes": 346456,
-        "triangles": 23788,
-        "sha256": "c47ad9483e84bac333a47f7c32544a321eac91ff4ef93139a27ad678bdc3edd2",
+        "url": "/models/details/50l-exterior-a53fff48db75.glb",
+        "bytes": 358436,
+        "triangles": 24472,
+        "sha256": "a53fff48db75b79759b27c7d45ce88b6a8024162920f2c8c4e60d52d921e24d8",
         "bounds": {
           "min": [
             -51.667205810546875,
@@ -1736,9 +1735,8 @@
         "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 122,
+        "scope": "Front base corrected to eight ashlar courses and225 recessed-joint pieces; original three arched apertures retained with nine masonry-clearance probes. Dimensions remain photographic estimates."
       },
       "detailView": {
         "label": "入口细节",
@@ -1768,10 +1766,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-3ada32cd9fe8.glb",
-        "bytes": 2800660,
-        "triangles": 217227,
-        "sha256": "3ada32cd9fe81249979c9563cbd589f3ceefba60201c6f961708bdab96e0dfda",
+        "url": "/models/details/51l-exterior-754ecb04109e.glb",
+        "bytes": 2834364,
+        "triangles": 219927,
+        "sha256": "754ecb04109ecae4448e9a0664532ba29349fc268111fbdd7b703f40f5d175b9",
         "bounds": {
           "min": [
             -74.71239471435547,
@@ -2747,9 +2745,8 @@
         "scope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 122,
+        "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
       },
       "bounds": {
         "min": [
@@ -2764,10 +2761,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/por-exterior-2b2f5c6285af.glb",
-        "bytes": 1078904,
-        "triangles": 82663,
-        "sha256": "2b2f5c6285af63dec43f7a37a93806d4f3c0d64f6f0c5310b1fd8a8d68258a97",
+        "url": "/models/details/por-exterior-1f6fdd268985.glb",
+        "bytes": 1089988,
+        "triangles": 82879,
+        "sha256": "1f6fdd26898575578e712d9f805f6c8da440be4b7f798b7703ab470cc6dc7b9c",
         "bounds": {
           "min": [
             -39.27674865722656,
