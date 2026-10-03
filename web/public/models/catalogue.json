@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "126",
-  "sourceModelSha256": "f14ef2c2bd59de5a039a46fe4ebcd713539aeca12361a270294f6d6baa25273a",
+  "version": "127",
+  "sourceModelSha256": "7cf38baaa0c956ee6697921300131a97ca02b8340e829f2d40e8ecaac70529c2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1930,9 +1930,20 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 117,
-        "status": "carey-frontage-reconstructed",
-        "addedObjects": 6
+        "version": 127,
+        "status": "photo-informed-correction",
+        "scope": "John Watkins Plaza near-Portugal stone bays: eight upper openings joined into broad windows; ground entrance, brick bays, measured roofs and other elevations retained. Width, pane count and frame thickness are estimates.",
+        "sources": [
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+            "page": 28,
+            "photographDate": "unknown"
+          },
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+            "photographDate": "unknown"
+          }
+        ]
       },
       "interiorSections": [
         {
@@ -1992,6 +2003,13 @@
         ],
         "fov": 65
       },
+      "reviewHistory": [
+        {
+          "version": 117,
+          "status": "carey-frontage-reconstructed",
+          "addedObjects": 6
+        }
+      ],
       "bounds": {
         "min": [
           24.830078125,
@@ -2017,10 +2035,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-8522caf5d4af.glb",
-        "bytes": 6070452,
-        "triangles": 680893,
-        "sha256": "8522caf5d4af851bcecf4ccd3ef5f42d2143990960de7920d4f42a85206cef5c",
+        "url": "/models/details/lrb-exterior-0c59d4b4faf3.glb",
+        "bytes": 6054216,
+        "triangles": 679385,
+        "sha256": "0c59d4b4faf3978e262d392865ded6743ef6bb4e1309ae790139a7fcc33ccf3c",
         "bounds": {
           "min": [
             24.830078125,
