@@ -44,6 +44,38 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 120 parallel exterior corrections
+
+King’s Chambers now has green ceramic cladding on the street-facing attic and
+lead-coloured cupola seams, supported by the
+[listed-building description](https://historicengland.org.uk/listing/the-list/list-entry/1235528)
+and LSE estate photograph. Parish Hall gains radial brick joints around its four
+pointed window heads and pale timber joinery, following the
+[2015 refurbishment record](https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf).
+Nineteen isolated component objects are merged with the edition119 Sardinia
+frontage. Original objects remain archived without geometry or material-slot
+changes. KGS passes 28 attic-glazing probes; PAR passes 8 before/after aperture
+checks. Exact pigments and brick-joint dimensions remain estimates; this does
+not correct every elevation, roof or complete interior.
+
+## Edition 119 Sardinia street frontage
+
+Sardinia House now has five street bays and a central stone entrance, replacing
+an eight-bay generic frontage. Dark ground-floor joinery, broad pale mezzanine
+windows, alternating triangular and segmental pediments, recessed brick courses,
+jack arches and the hanging name sign follow
+[2017](https://commons.wikimedia.org/wiki/File:Sardinia_House,_Sardinia_Street_7_Jan_2017_03.jpg)
+and [2022 photographs](https://commons.wikimedia.org/wiki/File:Sardinia_House,_London,_March_2022.jpg),
+checked against the official property handbook. The adjoining three-bay property
+is excluded. The [access guide](https://www.accessable.co.uk/london-school-of-economics/access-guides/sardinia-house)
+records a 120cm doorway and five steps beyond the entrance; no external stairs
+have been inferred from that description.
+
+The saved model passes thirty clear-aperture probes. Original geometry and the
+roof remain intact; height, window dimensions, colour and pane subdivisions are
+estimates. These historical photographs do not establish a 2026 survey or full
+interior plan. The separate 2015 tea-room sample remains unchanged.
+
 ## Edition 118 Cowdray corner portal
 
 Cowdray's corner entry now has three steps, paired dark timber doors with actual
