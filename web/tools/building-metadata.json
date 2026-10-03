@@ -586,9 +586,12 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 123,
+        "status": "entrance-glazing-corrected",
+        "addedObjects": 1,
+        "clearGlazingProbes": 24,
+        "retainedLowerTimberChecks": 4,
+        "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
       },
       "closeupImage": "lch-entrance",
       "exportExterior": true
@@ -1171,9 +1174,12 @@
         "scope": "Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 123,
+        "status": "front-window-pattern-corrected",
+        "addedObjects": 19,
+        "narrowWindows": 22,
+        "glassFirstProbes": 66,
+        "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
       },
       "interiorView": {
         "position": [
@@ -1415,9 +1421,12 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 123,
+        "status": "attic-openings-corrected",
+        "addedObjects": 1,
+        "openings": 35,
+        "clearOpaqueProbes": 70,
+        "limitation": "Existing window count, heights and roof remain estimated; dated exterior references do not prove current condition."
       },
       "interiorView": {
         "position": [
