@@ -17,6 +17,8 @@ The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
 returning visitors cannot combine a new catalogue with an older cached model.
 
+Edition 128 refines CBG’s curtain, end and entry glass to a neutral cool tint informed by the facade contractor’s SOLARWER neutral70/37 specification and built photographs. Source luminance, roughness, transparency and the requested red/orange shades are retained; RGB is a visual estimate. The Old Building Student Services entrance upper transom is repositioned to match the photographed two-column, two-row light. CBG office ventilation panels still require registered facade reconstruction.
+
 Edition 08 locates Coopers (49L) and corrects the adjoining 50/50A envelope using
 Rock Townsend’s 2022 block plan. A prior 50L footprint occupied the restaurant
 corner; the two street studies now have separate, non-overlapping envelopes.
