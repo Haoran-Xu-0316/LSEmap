@@ -438,3 +438,5 @@ Edition 127 corrects eight upper windows in the two stone bays beside Portugal S
 第137版修正CLM七组高窗遗漏的不透明褐色中段，并在61A已注册中央街角范围重建三层凹门户、石柱与上下不同窗列；保留未核准屋顶及产权边界。COL补全学校铭文，保持字高且不压缩文字，玻璃与未见立面保留。31条目77种有玻璃标记的材质已做原生/网页只读审计，尚不代表全校光学或完整内部已完成。
 
 The 61A portal gallery view uses the same production model and renderer as the live map. The existing whole-building view remains available to assess the retained, partly unverified roof and side wings.
+
+第138版修正网页玻璃反射强度被场景默认值覆盖的问题：玻璃显式共享现有PMREM，颜色、透明度和原生材质保留，无新增反射采集或纹理分配。MAR北侧上部两排巨窗按实拍改为三排45窗，墙洞、玻璃与窗框同步重建，保留中央深槽、遮阳、退台及内部。OLD入口约4阶实拍与当前6阶模型存在标高注册冲突，CBG高楼窗后楼层与游走楼梯开口仍缺完整平面登记；这些问题没有用假结构掩盖。
