@@ -434,3 +434,7 @@ Edition 127 corrects eight upper windows in the two stone bays beside Portugal S
 第135版移除CKK中央入口半圆玻璃中实拍未见的5条放射扇格，保留圆弧框、底横框、玻璃和两翼山花；SAW四组幕墙改用同楼已有玻璃材质，网页不透明度0.78为反射和远处穿透约束下的估计。两楼接受组件在总览和细节中使用同一几何、UV及材质。RIBA2023建成Level02图修正MAR旧空间推断，但700px资料仍不足以生成精确窗后墙体。
 
 第136版修正OLD的Clare Market上层五个窗头与石材之间的漏缝，仅下移20个石材边沿顶点至现有蓝框外缘，保留分格、玻璃、浮雕及其他立面。图书馆雨棚与Houghton长栏杆核查缺少足够现状或定位证据，保留现有对象，未将待证提案作为已完成模型。
+
+第137版修正CLM七组高窗遗漏的不透明褐色中段，并在61A已注册中央街角范围重建三层凹门户、石柱与上下不同窗列；保留未核准屋顶及产权边界。COL补全学校铭文，保持字高且不压缩文字，玻璃与未见立面保留。31条目77种有玻璃标记的材质已做原生/网页只读审计，尚不代表全校光学或完整内部已完成。
+
+The 61A portal gallery view uses the same production model and renderer as the live map. The existing whole-building view remains available to assess the retained, partly unverified roof and side wings.
