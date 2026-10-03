@@ -424,3 +424,5 @@ Edition126 corrects eighteen photographed Cheng Kin Ku wing windows, including s
 Edition 127 corrects eight upper windows in the two stone bays beside Portugal Street on the Library’s John Watkins Plaza frontage. Thick masonry dividers are replaced by broad openings and slender metal sash grids, following the LSE Property Handbook photograph. Dimensions and pane counts remain estimates; the ground entrance, brick bays, previously surveyed roofs, other elevations and interior assets are retained. CBG glazing has been audited separately; its office ventilation panels still require facade registration before reconstruction.
 
 第131版补齐CKK两处翼楼主层窗上方弧形石山花，保留其余12块帽条构件、窗洞、窗框、玻璃和已有内部。弧形来自实拍，曲率、0.50m起拱及0.08m石线截面为照片估计；素面鼓室未虚构未测装饰。原生重载和12条玻璃首交核查通过，总览与放大模型使用相同接受几何。
+
+第132版按2025/26物业手册照片校正COL入口上方单窗为三列六格，保留高位横档、原玻璃、其他4600个框顶点、门、名牌、Garrick转角和已有内部。竖梃间距为照片估计；6处玻璃与2处竖梃首交在组件重载前后相同。接受窗框的倒角、UV和材质在总览与细节中保持一致。
