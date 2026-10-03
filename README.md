@@ -44,6 +44,20 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 122 Lincoln and Portsmouth street details
+
+No.50's photographed entrance window now has three columns and two rows, and
+its stone arch has a curved internal return. Ten glazing probes remain clear.
+No.51's street base gains eight ashlar courses with225 jointed face pieces while
+retaining its three arches; nine masonry-clearance probes pass. Portsmouth's six
+paired side sashes and two upper chamfer windows follow the estate photograph's
+distinct glazing patterns;32 probes first reach glass.
+
+Ten owned component objects retain the originals and leave all interior studies
+unchanged. Unseen sash patterns, total No.50 bay count, roof dimensions and complete
+interiors remain unresolved. Photographs are historical or undated; this edition
+does not claim a measured current-condition survey.
+
 ## Edition 121 window and roof corrections
 
 Lakatos dormer openings now cut through the sloped roof instead of being sealed
