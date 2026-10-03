@@ -824,9 +824,20 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 117,
-        "status": "carey-frontage-reconstructed",
-        "addedObjects": 6
+        "version": 127,
+        "status": "photo-informed-correction",
+        "scope": "John Watkins Plaza near-Portugal stone bays: eight upper openings joined into broad windows; ground entrance, brick bays, measured roofs and other elevations retained. Width, pane count and frame thickness are estimates.",
+        "sources": [
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+            "page": 28,
+            "photographDate": "unknown"
+          },
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+            "photographDate": "unknown"
+          }
+        ]
       },
       "interiorSections": [
         {
@@ -886,7 +897,14 @@
         ],
         "fov": 65
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 117,
+          "status": "carey-frontage-reconstructed",
+          "addedObjects": 6
+        }
+      ]
     },
     {
       "code": "MAR",
