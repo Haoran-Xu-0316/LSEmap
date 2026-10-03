@@ -4,5 +4,10 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/models/campus.glb"
+    ]
   },
+  "main": "web/worker.js"
 }
