@@ -17,6 +17,8 @@ The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
 returning visitors cannot combine a new catalogue with an older cached model.
 
+Edition 129 corrects two photographed storeys above CBG’s braced entrance to three glass columns and adds high-level horizontal frames. Six SAL side-lane windows in the registered near short wing use charcoal frames; the main frontage and middle wing retain their previous materials. Dimensions and RGB remain photographic/GIS estimates; other exteriors and existing interiors are retained.
+
 Edition 128 refines CBG’s curtain, end and entry glass to a neutral cool tint informed by the facade contractor’s SOLARWER neutral70/37 specification and built photographs. Source luminance, roughness, transparency and the requested red/orange shades are retained; RGB is a visual estimate. The Old Building Student Services entrance upper transom is repositioned to match the photographed two-column, two-row light. CBG office ventilation panels still require registered facade reconstruction.
 
 Edition 08 locates Coopers (49L) and corrects the adjoining 50/50A envelope using
