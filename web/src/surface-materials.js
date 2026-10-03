@@ -38,8 +38,24 @@ export function refineMaterialFinish(material) {
       material.ior = 1.5;
       material.specularIntensity = 1;
     }
-    // Retain the source transparency; an unmodeled interior is not a glass void.
-    if (material.transparent) material.depthWrite = false;
+    // Keep the recorded tint and face-on transparency. At grazing angles the
+    // pane reflects more and reveals less behind it, without a refraction pass.
+    if (material.transparent) {
+      material.depthWrite = false;
+      material.forceSinglePass = true;
+      const previousCompile = material.onBeforeCompile;
+      const previousKey = material.customProgramCacheKey();
+      material.customProgramCacheKey = () => `${previousKey}-lse-glazing-fresnel1`;
+      material.onBeforeCompile = (shader, renderer) => {
+        previousCompile.call(material, shader, renderer);
+        shader.fragmentShader = shader.fragmentShader.replace("#include <opaque_fragment>", `
+          float glazingFacing = clamp(abs(dot(normal, normalize(vViewPosition))), 0.0, 1.0);
+          float glazingGrazing = pow(1.0 - glazingFacing, 5.0);
+          diffuseColor.a += (1.0 - diffuseColor.a) * glazingGrazing;
+          #include <opaque_fragment>
+        `);
+      };
+    }
   } else if (matches(/gold|bronze|brass|copper/)) {
     material.metalness = Math.max(material.metalness, 0.72);
     material.roughness = Math.min(material.roughness, 0.34);
