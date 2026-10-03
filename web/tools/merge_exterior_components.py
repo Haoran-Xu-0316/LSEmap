@@ -1,4 +1,4 @@
-"""Merge independently verified audited OLD Clare Market window head components into the current campus.
+"""Merge independently verified audited street facade components into the current campus.
 
 Run in Blender Text Editor. Originals retain their geometry and material slots;
 only the audited exterior display objects are archived. Reopen the saved result
@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage136';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v135.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v136.blend'
-COMPONENTS=[('OLD','old_facade_next','old-clare-window-head-component.blend')]
+OUT=ROOT/'result/blender/stage137';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v136.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v137.blend'
+COMPONENTS=[('CLM','clement_facade_next','clement-tall-window-spandrel-component.blend'),('61A','aldwych_facade_next','aldwych-facade-component.blend'),('COL','columbia_lettering_next','columbia-lettering-component.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -34,9 +34,13 @@ bpy.ops.wm.open_mainfile(filepath=str(source))
 if rebuilding:
     previous=json.loads((OUT/'saved-verification.json').read_text())
     for name in previous['ownedObjects']:
-        obj=bpy.data.objects[name];data=obj.data;bpy.data.objects.remove(obj,do_unlink=True)
+        obj=bpy.data.objects[name];data=obj.data;kind=obj.type
+        bpy.data.objects.remove(obj,do_unlink=True)
         data.use_fake_user=False
-        if not data.users:bpy.data.meshes.remove(data)
+        if not data.users:
+            if kind=='MESH':bpy.data.meshes.remove(data)
+            elif kind in {'FONT','CURVE','SURFACE'}:bpy.data.curves.remove(data)
+            else:raise TypeError(f'Unsupported component data: {kind}')
     for name,state in previous['archivedVisibility'].items():
         obj=bpy.data.objects[name];obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
     owned_materials={name for names in previous['ownedMaterialNames'].values() for name in names}
@@ -99,8 +103,12 @@ for code,folder,filename in COMPONENTS:
     for change in audit.get('changes',[]):
         replacement=change.get('replacement',change.get('owned'))
         original_name=change.get('original',change.get('source'))
-        assert replacement and original_name, 'Component change requires source and replacement names'
-        pairs[replacement]=original_name
+        assert replacement in audit['ownedObjects'], 'Component change requires an audited owned object'
+        # An addition has no predecessor; keep its authored material instead of
+        # inventing a source slot. Replacements must name an existing object.
+        if original_name is not None:
+            assert original_name in audit['archivedObjects']
+            pairs[replacement]=original_name
     pairs.update({'PAR_NEXT_'+name.removeprefix('PAR_'):name for name in audit.get('replacementSlots',{})})
     for name,original_name in pairs.items():
         obj=bpy.data.objects[name];old=bpy.data.objects[original_name]
@@ -137,6 +145,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':136,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':137,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
