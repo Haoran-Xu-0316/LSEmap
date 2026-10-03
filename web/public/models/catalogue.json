@@ -8,8 +8,8 @@
       "nativeImage": "SITE_V116_globe_map_Australia_yellow"
     }
   ],
-  "version": "117",
-  "sourceModelSha256": "180559ce324e4cc78777bdb302bffa09edcd2ad84934e12598c554e3abdd7782",
+  "version": "118",
+  "sourceModelSha256": "a4aa76a4d58b82cf3af5a3706ae910f66e3543547dc886a19809a2b9fb74998f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -783,26 +783,31 @@
       "detailView": {
         "label": "入口细节",
         "position": [
-          -19.085157206404723,
-          4.4,
-          7.92495901812355
+          -14.94118948727846,
+          4.0,
+          6.738566194474697
         ],
         "target": [
-          -5.390338268892609,
-          3.7,
-          5.017737962070278
+          -5.39033842086792,
+          2.55,
+          5.017737865447998
         ],
-        "fov": 46
+        "fov": 45
       },
       "localRefinement": {
-        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides",
-        "newComponents": 6,
-        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review."
+        "description": "Three-column six-row upper sashes, layered projecting corner-window casing and sill consoles, dark slate roof finish and finer six-row attic sash subdivisions on the photographed street sides; reconstructed corner portal with three steps, glazed paired timber doors, arched transom, reeded pilasters and layered stone frieze",
+        "newComponents": 11,
+        "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review. Entrance guide confirms three external steps and a 73cm active opening; total paired width, 15cm risers, treads and ornamental profiles are photo-guided estimates. New entry has genuine glazing apertures. The guide survey and photo capture dates are unverified. Carved mask and scrolls are authored approximations, not scans."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 118,
+        "status": "portal-refined",
+        "addedObjects": 5,
+        "archivedObjects": 20,
+        "sourceUrls": [
+          "https://www.accessable.co.uk/london-school-of-economics/access-guides/cowdray-house",
+          "https://www.russellcawberry.com/projects/cowdray-house"
+        ]
       },
       "interiorView": {
         "position": [
@@ -819,8 +824,8 @@
       },
       "bounds": {
         "min": [
-          -6.507339954376221,
-          0.0,
+          -6.818561553955078,
+          -5.9604645663569045e-09,
           -7.595107555389404
         ],
         "max": [
@@ -842,14 +847,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-231f7fc81bda.glb",
-        "bytes": 3300524,
-        "triangles": 260947,
-        "sha256": "231f7fc81bda87260a1f4596610437d61ebfe8ee53d204a4687d8f0196f92e86",
+        "url": "/models/details/cow-exterior-a65cbaf80ebb.glb",
+        "bytes": 3207536,
+        "triangles": 252936,
+        "sha256": "a65cbaf80ebbfd8207c236d20c6a0e0d60008fb8b66ed10a6996aceb7bc2feaa",
         "bounds": {
           "min": [
-            -6.504848003387451,
-            0.0,
+            -6.818561553955078,
+            -5.9604645663569045e-09,
             -7.590163707733154
           ],
           "max": [
