@@ -44,6 +44,23 @@ or endorsement implied.
 Columbia and Connaught also include an **入口细节** camera preset for close inspection.
 Isolated views hide other building labels and exclude hidden geometry from selection.
 
+## Edition 118 Cowdray corner portal
+
+Cowdray's corner entry now has three steps, paired dark timber doors with actual
+glazing apertures, an arched transom, reeded pilasters and layered stone cornices.
+The [entrance guide](https://www.accessable.co.uk/london-school-of-economics/access-guides/cowdray-house)
+records three external steps and a 73cm active opening; the nominal paired width,
+15cm risers, treads and carved profiles remain photo-guided estimates.
+[Contractor photographs](https://www.russellcawberry.com/projects/cowdray-house)
+refer to a 2019 project with an unverified capture date. Relief details are authored
+approximations, not scans. Roof geometry, upper-window joinery and the independent
+historic seminar-room sample are retained; this does not establish a full interior.
+
+The saved scene passes seven clear-glazing probes and all three step-height probes.
+Rebuilding from the current file reproduces 47 visible Cowdray meshes, materials
+and UVs. The overview, selected building and entrance gallery use the same portal;
+the close-up now includes the complete entry and stairs.
+
 ## Edition 117 library street facade
 
 Carey Street now has five semicircular glazed heads, three storeys of projecting
