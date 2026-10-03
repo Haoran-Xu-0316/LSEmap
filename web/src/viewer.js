@@ -5,7 +5,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages } from "./model-loading.js";
-import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish } from "./surface-materials.js";
+import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const DAYLIGHT_DIRECTION = new THREE.Vector3(0.8, 1.6, 1).normalize();
@@ -236,8 +236,7 @@ export class CampusViewer {
       const code = object.userData.buildingCode;
       if (code) this.groups.set(code, object);
       if (object.isMesh) {
-        object.castShadow = true;
-        object.receiveShadow = true;
+        prepareMeshShadows(object);
         const materials = Array.isArray(object.material)
           ? object.material
           : [object.material];
