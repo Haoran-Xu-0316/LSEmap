@@ -48,6 +48,8 @@ def local(p):
  d=p-origin;return Vector((d.dot(axis),d.dot(normal),p.z))
 def world(x,d,z):return origin+axis*x+normal*d+Vector((0,0,z))
 old_sill,old_head,new_sill,new_head=5.6,7.95,6.1,7.6
+old_transom=old_sill+(old_head-old_sill)*.69
+new_transom=(new_sill+new_head)/2
 parts=['stone_spandrels','window_reveals','recessed_glass','window_frames','projecting_sills','sill_drip_edges','lintel_mouldings']
 owned=[];sources=[];changes=[]
 for part_name in parts:
@@ -77,7 +79,9 @@ for part_name in parts:
   for v,p in zip(chunk,pts):
    if mode=='lower_wall':z=new_sill if abs(p.z-old_sill)<.01 else p.z
    elif mode=='upper_wall':z=new_head if abs(p.z-old_head)<.01 else p.z
-   elif mode=='window':z=new_sill+(p.z-old_sill)*(new_head-new_sill)/(old_head-old_sill)
+   elif mode=='window':
+    if p.z<=old_transom:z=new_sill+(p.z-old_sill)*(new_transom-new_sill)/(old_transom-old_sill)
+    else:z=new_transom+(p.z-old_transom)*(new_head-new_transom)/(old_head-old_transom)
    elif mode=='sill':z=p.z+new_sill-old_sill
    else:z=p.z+new_head-old_head
    v.co+=obj.matrix_world.inverted().to_3x3()@Vector((0,0,z-p.z))
@@ -109,7 +113,7 @@ assert [p["firstObject"].replace("CON_NEXT_PORTAL_WINDOW_","CON_D4_") for p in a
 assert all(fingerprint(bpy.data.objects[n])==v for n,v in originals.items())
 component=OUT/'con-compact-portal-window-component.blend';bpy.data.libraries.write(str(component),set(owned),fake_user=True,compress=True)
 ref=ROOT/'data/建筑图片/CON_Connaught House/01_建筑实拍/exteriors_lse_estate_005.jpg'
-audit={'baselineSha256':hashlib.sha256(BASE.read_bytes()).hexdigest(),'originalFingerprints':originals,'originalVisibility':visibility,'ownedObjects':[o.name for o in owned],'archivedObjects':[o.name for o in sources],'changes':changes,'windowRegistration':{'origin':list(origin),'right':list(axis),'outward':list(normal),'oldSill':old_sill,'oldHead':old_head,'newSill':new_sill,'newHead':new_head,'oldHeight':2.35,'newHeight':1.5,'heightRatio':1.5/2.35,'widthUnchanged':1.88,'fourLightTransomFractionUnchanged':.69},'beforeProbes':before,'afterProbes':after,'references':[{'local':str(ref.relative_to(ROOT)),'sha256':hashlib.sha256(ref.read_bytes()).hexdigest(),'url':'https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate','date':'Photograph capture date unknown','pixelRegistration':{'centerBounds':[113,55,179,94],'leftVisibleBounds':[0,49,60,109],'rightVisibleBounds':[238,44,300,101],'neighborHeightAtCenterApprox':60,'centerHeightApprox':39,'relativeHeightApprox':.65},'observation':'The compact portal window head lies below adjacent heads and its sill above adjacent sills. Window-to-window ratios are used, not an assumed common head.'}],'limitations':['Metre dimensions, head shift0.35m and sill shift0.50m are photo-guided estimates from the inherited2.35m neighboring opening, not survey measurements.','Photo is300x400px and oblique; approximate bounds carry several-pixel uncertainty. Side window extents partly meet image boundary.','Nominal width, four-light transom proportion, depths, sections, color and materials retained.','Only one center first-upper-storey opening changes; neighboring windows, entrance, crest and other elevations are preserved.','No claim of full-building exterior or interior completion.']}
+audit={'baselineSha256':hashlib.sha256(BASE.read_bytes()).hexdigest(),'originalFingerprints':originals,'originalVisibility':visibility,'ownedObjects':[o.name for o in owned],'archivedObjects':[o.name for o in sources],'changes':changes,'windowRegistration':{'origin':list(origin),'right':list(axis),'outward':list(normal),'oldSill':old_sill,'oldHead':old_head,'newSill':new_sill,'newHead':new_head,'oldHeight':2.35,'newHeight':1.5,'heightRatio':1.5/2.35,'widthUnchanged':1.88,'oldTransomFraction':.69,'newTransomFraction':.5},'beforeProbes':before,'afterProbes':after,'references':[{'local':str(ref.relative_to(ROOT)),'sha256':hashlib.sha256(ref.read_bytes()).hexdigest(),'url':'https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate','date':'Photograph capture date unknown','pixelRegistration':{'centerBounds':[113,55,179,94],'leftVisibleBounds':[0,49,60,109],'rightVisibleBounds':[238,44,300,101],'neighborHeightAtCenterApprox':60,'centerHeightApprox':39,'centerHorizontalTransomYApprox':75,'transomFractionFromSillApprox':.5,'relativeHeightApprox':.65},'observation':'The compact portal window head lies below adjacent heads and its sill above adjacent sills. Window-to-window ratios are used, not an assumed common head.'}],'limitations':['Metre dimensions, head shift0.35m and sill shift0.50m are photo-guided estimates from the inherited2.35m neighboring opening, not survey measurements.','Photo is300x400px and oblique; approximate bounds carry several-pixel uncertainty. Side window extents partly meet image boundary.','Nominal width, depths, color and materials retained; horizontal transom moved to photo-estimated mid-height. Vertical frame sections follow the two-part height mapping and are not surveyed dimensions.','Only one center first-upper-storey opening changes; neighboring windows, entrance, crest and other elevations are preserved.','No claim of full-building exterior or interior completion.']}
 (OUT/'audit.json').write_text(json.dumps(audit,indent=2)+'\n');print('CON_COMPACT_WINDOW_COMPONENT_SAVED',flush=True)
 open_baseline();collection=bpy.data.collections['CON_EXTERIOR']
 with bpy.data.libraries.load(str(component),link=False) as (src,dst):dst.objects=audit['ownedObjects']
