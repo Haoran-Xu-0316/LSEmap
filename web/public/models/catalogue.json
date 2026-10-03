@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "134",
-  "sourceModelSha256": "f6e42bd4e9d7afcb8eee0fb9d72a6de9de54d26e4bd24458f64857c6c31f59fa",
+  "version": "135",
+  "sourceModelSha256": "e4ccdad0d838cbfc508ab786628f0b0dccbed5354cce6f05d1e33cd3f0b60906",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -327,12 +327,11 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 131,
-        "scope": "Two photographed wing principal-storey upper hood caps replaced with curved stone pediments; twelve other hood cuboids, all glazing, masonry openings and existing interiors retained. Photo confirms curved form; rise0.50m, moulding thickness0.08m and recessed plain tympana are estimates.12 whole-wing glass-first probes unchanged after component save/reopen. Other unphotographed elevations and complete interiors remain unverified.",
-        "references": [
-          "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
-        ],
-        "captureDate": "unknown"
+        "version": 135,
+        "status": "photo-informed-central-fanlight-correction",
+        "scope": "Remove5 radial metal spokes unsupported by the archived frontal photograph. Retain the48-part arch rim, spring rail, glass, stone arch and wing pediments; opening dimensions and capture date remain unverified.",
+        "source": "Archived architect/manufacturer photographs and current native pane inspection",
+        "photographDate": "unknown"
       },
       "interiorView": {
         "position": [
@@ -355,6 +354,14 @@
         {
           "version": 126,
           "scope": "Six central wing windows widened with real masonry openings and matching glass, stone reveals, frames, sills and hoods; twelve flanking windows corrected to single lights across three photographed storeys.36 whole-elevation glass-first probes. Window width1.60m is photo-estimated; lower storeys, top band, curved pediments and current Cafe54 remain unverified."
+        },
+        {
+          "version": 131,
+          "scope": "Two photographed wing principal-storey upper hood caps replaced with curved stone pediments; twelve other hood cuboids, all glazing, masonry openings and existing interiors retained. Photo confirms curved form; rise0.50m, moulding thickness0.08m and recessed plain tympana are estimates.12 whole-wing glass-first probes unchanged after component save/reopen. Other unphotographed elevations and complete interiors remain unverified.",
+          "references": [
+            "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
+          ],
+          "captureDate": "unknown"
         }
       ],
       "bounds": {
@@ -382,10 +389,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-2925fde26df0.glb",
-        "bytes": 2728368,
-        "triangles": 236028,
-        "sha256": "2925fde26df003e4138f2e432299c98f466c5afb3c3297730843b3fd2c0198a2",
+        "url": "/models/details/ckk-exterior-2714a9cd2b04.glb",
+        "bytes": 2742020,
+        "triangles": 236018,
+        "sha256": "2714a9cd2b0477dc6d1290436ca06041c5477f5914ad56a80f7db7c9f8183534",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -2181,6 +2188,12 @@
         "status": "refined",
         "addedObjects": 62
       },
+      "structureRegistrationReview": {
+        "edition": 135,
+        "source": "Grafton Architects Level02 drawing via RIBA London Award2023 project gallery",
+        "url": "https://www.riba.org/explore/awards/uk-awards/regional-awards/2023/london-award-winners-2023/the-marshall-building-london-school-of-economics-and-political-science/",
+        "scope": "Built Level02 changes the2017 west-wing staff-commons inference to classroom and distinguishes north recess/terrace.700px source gives only coarse registration; Level01, local section and opening levels still unresolved. No native room geometry added."
+      },
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -3145,9 +3158,18 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 125,
-        "scope": "Replace continuous misregistered horizontal glass canopy with a sloping canopy confined to the photographed central recess. South/front folded wings remain canopy-free. Pane count, projection, slope and supports are estimated; timber curtain wall, roof and perforated brick screens retained."
+        "version": 135,
+        "status": "source-family-glazing-assignment-correction",
+        "scope": "Four stage82 curtain pane families use the existing SAW glass palette instead of an opaque shader. Base color, roughness, metallic and native transmission inherited; browser opacity0.78 is an authored approximation bounded after rear-surface inspection, not a measured glass transmittance. Geometry, UV, timber frames, canopy and pierced brick retained. Grouped shading-fin registration remains unresolved.",
+        "source": "Archived architect/manufacturer photographs and current native pane inspection",
+        "photographDate": "unknown"
       },
+      "reviewHistory": [
+        {
+          "version": 125,
+          "scope": "Replace continuous misregistered horizontal glass canopy with a sloping canopy confined to the photographed central recess. South/front folded wings remain canopy-free. Pane count, projection, slope and supports are estimated; timber curtain wall, roof and perforated brick screens retained."
+        }
+      ],
       "bounds": {
         "min": [
           -84.64329528808594,
@@ -3173,10 +3195,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-9e13a370b474.glb",
-        "bytes": 10029460,
+        "url": "/models/details/saw-exterior-ef6538c053da.glb",
+        "bytes": 10029544,
         "triangles": 1072085,
-        "sha256": "9e13a370b47468ad5d480970a776a4d276642a0d0a55f9da232c52a59c93a3cc",
+        "sha256": "ef6538c053da5ed3bdd2f62cc82e339fb1413ae9615fb046b4a7c363ea35c959",
         "bounds": {
           "min": [
             -84.64329528808594,
