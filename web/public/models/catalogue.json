@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "139",
-  "sourceModelSha256": "f0e9fe3b5be9fa073c10d0a92efc69ca22a5d2689bdfee4519d117e0f90b74ee",
+  "version": "140",
+  "sourceModelSha256": "08ec52560290c5969deeda40eb760db0f2c33c7c0674833273e95085892a0ea2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1354,9 +1354,18 @@
         "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 140,
+        "scope": "Both street-level storefronts now have separate lower glazing and short upper glazing around an opaque dark infill band. Ground frames and band-edge rails follow the archived official photographs; all upper openings, red brick, stone portal and interiors retained.",
+        "evidence": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/20KSW-web.jpg",
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+        ],
+        "sourcePages": {
+          "handbookPhysicalPage": 24,
+          "handbookPrintedPage": 22
+        },
+        "limitations": "Photo dates unknown. Band limits estimated at70–82% of inherited opening height; column count retained. Whole upper facade, oriel and roof still unverified.",
+        "audit": "result/blender/ksw_envelope_next/audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -1386,6 +1395,13 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ],
       "bounds": {
         "min": [
           -81.10916900634766,
@@ -1411,10 +1427,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-191708db093b.glb",
-        "bytes": 619284,
-        "triangles": 79968,
-        "sha256": "191708db093b94054dadd9abd58cf52baf16490dbb9ab7785629de39256561da",
+        "url": "/models/details/ksw-exterior-62d878be4fde.glb",
+        "bytes": 777036,
+        "triangles": 80016,
+        "sha256": "62d878be4fdee15f2cc97d341cb12ab5a88c91bf58a75a95e21bc6c5783f4abf",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -2428,9 +2444,12 @@
         }
       ],
       "houghtonAccessReview": {
-        "version": 138,
-        "status": "unresolved-stair-count-and-local-datum",
-        "scope": "Frontal archived and user photographs indicate approximately four entrance steps; retained model has six from a global GL18.100/GF19.345 datum difference. Local street level remains unregistered. Six steps are not photographically verified. Raised route extent, slope and handrail terminations remain unresolved; no guessed access geometry added."
+        "checked": "2026-10-04",
+        "source": "https://www.accessable.co.uk/london-school-of-economics/access-guides/old-building",
+        "retrieval": "Indexed full Entrance (Main Entrance) chapter; direct access403.",
+        "confirmed": "Separate4-step exterior and4-step foyer flights, also visible in the archived WebbYates photograph. Exterior highest16cm; interior highest14cm. Planning south elevation threshold is belowGF.",
+        "modelDiscrepancy": "Existing6 external risers incorrectly allocate the fullGF19.345 minusGL18.100 difference1.245m to the outer flight.",
+        "remaining": "No independently labelled threshold/curb spot heights or entrance section; no exact new dimensions claimed. Correct the entire approach, door threshold and foyer together once registered, rather than creating4 excessive risers."
       },
       "bounds": {
         "min": [
