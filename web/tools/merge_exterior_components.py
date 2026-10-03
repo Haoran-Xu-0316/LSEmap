@@ -1,4 +1,4 @@
-"""Merge independently verified KGS and PAR components into the SAR campus.
+"""Merge independently verified audited Lakatos and Sheffield components into the current campus.
 
 Run in Blender Text Editor. Originals retain their geometry and material slots;
 only the audited exterior display objects are archived. Reopen the saved result
@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage120';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v119.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v120.blend'
-COMPONENTS=[('KGS','kgs_next','kings-chambers-component.blend'),('PAR','par_next','parish-exterior-component.blend')]
+OUT=ROOT/'result/blender/stage121';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v120.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v121.blend'
+COMPONENTS=[('LAK','lak_next','lakatos-roof-component.blend'),('SHF','shf_next','sheffield-windows-component.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -40,7 +40,7 @@ if rebuilding:
     for name,state in previous['archivedVisibility'].items():
         obj=bpy.data.objects[name];obj.hide_render,obj.hide_viewport=state[:2];obj.hide_set(state[2])
     for mat in list(bpy.data.materials):
-        if mat.name.startswith(('KGS_NEXT_','PAR_NEXT_')) and mat.users==int(mat.use_fake_user):
+        if mat.name.startswith(('LAK_NEXT_','SHF_NEXT_')) and mat.users==int(mat.use_fake_user):
             mat.use_fake_user=False;bpy.data.materials.remove(mat)
 
 for scene in bpy.data.scenes:
@@ -67,6 +67,11 @@ for code,folder,filename in COMPONENTS:
         bpy.data.collections[code+'_EXTERIOR'].objects.link(obj)
         obj.hide_render=False;obj.hide_viewport=False;obj.hide_set(False)
     # Restore unchanged component slots to their existing local material IDs.
+    for obj in target.objects:
+        for index,mat in enumerate(list(obj.data.materials)):
+            if mat and not mat.name.startswith(code+'_NEXT_'):
+                existing=bpy.data.materials.get(mat.name.rsplit('.',1)[0]) if mat.name[-4:-3]=='.' else None
+                if existing:obj.data.materials[index]=existing
     pairs={c['replacement']:c['original'] for c in audit.get('changes',[])}
     pairs.update({'PAR_NEXT_'+name.removeprefix('PAR_'):name for name in audit.get('replacementSlots',{})})
     for name,original_name in pairs.items():
@@ -74,6 +79,15 @@ for code,folder,filename in COMPONENTS:
         for index,mat in enumerate(list(obj.data.materials)):
             if mat and not mat.name.startswith(code+'_NEXT_') and index<len(old.data.materials):
                 obj.data.materials[index]=old.data.materials[index]
+    # Separate audited component families for exact browser-scale parity checks.
+    component_materials={}
+    for obj in target.objects:
+        for index,mat in enumerate(list(obj.data.materials)):
+            if mat:
+                if mat.name not in component_materials:
+                    copied=mat.copy();copied.name=code+'_NEXT_'+mat.name
+                    component_materials[mat.name]=copied
+                obj.data.materials[index]=component_materials[mat.name]
     for name in audit['archivedObjects']:
         bpy.data.objects[name].hide_render=True;bpy.data.objects[name].hide_set(True)
     archived.extend(audit['archivedObjects']);owned.extend(audit['ownedObjects'])
@@ -93,6 +107,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':120,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'savedSceneReopened':True}
+proof={'version':121,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
