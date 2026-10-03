@@ -30,6 +30,21 @@ for (const name of images) {
   const bytes = await readFile(join(root, `images/${name}.webp`));
   if (createHash('sha256').update(bytes).digest('hex') !== record.sha256) throw new Error(`Stale gallery render: ${name}`);
 }
+// Preserve the GLB byte-for-byte while fitting the static asset size limit.
+const campus = await readFile(join(root, 'models/campus.glb'));
+const campusHash = createHash('sha256').update(campus).digest('hex');
+const parts = [];
+for (let offset = 0; offset < campus.length; offset += 16 * 1024 * 1024) {
+  const bytes = campus.subarray(offset, offset + 16 * 1024 * 1024);
+  const hash = createHash('sha256').update(bytes).digest('hex');
+  const path = `models/campus-${parts.length}-${hash.slice(0,12)}.bin`;
+  await writeFile(join(root, path), bytes);
+  parts.push({path:'/'+path, bytes:bytes.length, sha256:hash});
+  models.add(path.replace('models/',''));
+}
+const campusTransport = {bytes:campus.length, sha256:campusHash, parts};
+await writeFile(join(root, 'models/campus-parts.json'), JSON.stringify(campusTransport)+'\n');
+models.delete('campus.glb');models.add('campus-parts.json');
 const paths = [...models].map(name => `models/${name}`).concat([...images].map(name => `images/${name}.webp`));
 // These public files are loaded at runtime rather than imported by Vite.
 // Keep them in the same verified upload set as the model and application.
@@ -46,5 +61,5 @@ for (const path of paths) {
   const data = await readFile(join(root, path));
   assets[`/${path}`] = { bytes: data.length, sha256: createHash('sha256').update(data).digest('hex') };
 }
-await writeFile(join(root, 'release.json'), JSON.stringify({ version: catalogue.version, sourceModelSha256: catalogue.sourceModelSha256, modelAssetsSha256, rendererSha256, entryScript, assets }, null, 2)+'\n');
+await writeFile(join(root, 'release.json'), JSON.stringify({ version: catalogue.version, sourceModelSha256: catalogue.sourceModelSha256, modelAssetsSha256, rendererSha256, entryScript, campusTransport, assets }, null, 2)+'\n');
 console.log(`Prepared edition ${catalogue.version}: ${models.size} model files and ${images.size} gallery images.`);
