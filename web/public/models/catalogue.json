@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "136",
-  "sourceModelSha256": "654a807709adeb52dfa7b7a654c2f47e85c31bc4e64d7e409a3748dcd710ad63",
+  "version": "137",
+  "sourceModelSha256": "868b9ef1f8d4d2b0680752a90e96a80a575ffb0c1b54b0013cd2995c51cc7d7f",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -39,9 +39,10 @@
         "scope": "Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 137,
+        "status": "photo-supported-central-street-corner-reconstruction",
+        "scope": "Replace central two-column repetitive glazing with continuous three-storey recessed portal, projecting stone piers, differentiated side and central lights and upper window rows on retained6.769m segment. Preserve entrance, other street wings, footprint, roof and glass properties.2021 brochure photograph supports composition; footprint allocation, stepped roof/parapet and current conversion still unverified.",
+        "source": "2021 letting brochure day/evening street-corner photographs; image dates unknown"
       },
       "interiorView": {
         "position": [
@@ -56,6 +57,13 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ],
       "bounds": {
         "min": [
           -77.13259887695312,
@@ -81,10 +89,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-a65595f12597.glb",
-        "bytes": 3893108,
-        "triangles": 328369,
-        "sha256": "a65595f12597774536a882b142b78efe1e984121628211615e15a9b221a70812",
+        "url": "/models/details/61a-exterior-f58add946270.glb",
+        "bytes": 1037688,
+        "triangles": 95565,
+        "sha256": "f58add9462708703039f5556a50e43467402275d51e05c2ce1e7883b74b2ec96",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -504,9 +512,10 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 114,
-        "status": "reviewed-no-change",
-        "addedObjects": 30
+        "version": 137,
+        "status": "photo-supported-tall-window-spandrel-correction",
+        "scope": "Seven continuous tall bays now split into upper/lower glass around warm opaque middle spandrels. Retain42 unaffected rails, stone, doors and roof. Band height0.42m and finish are estimates guided by2018 daylight;2023 photograph has tree/scaffold limitations. Glass remains reflective opaque approximation pending registered window enclosure.",
+        "source": "Archived2018-04-24 photograph and2023-11-15 main-front photograph"
       },
       "interiorView": {
         "position": [
@@ -521,6 +530,13 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 114,
+          "status": "reviewed-no-change",
+          "addedObjects": 30
+        }
+      ],
       "bounds": {
         "min": [
           99.0441665649414,
@@ -546,10 +562,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-67920be3722d.glb",
-        "bytes": 729852,
-        "triangles": 64712,
-        "sha256": "67920be3722d5a309469358fcc257f4c9e92eda78ad6e755d172d9df9946b740",
+        "url": "/models/details/clm-exterior-553be7c2131a.glb",
+        "bytes": 735576,
+        "triangles": 64964,
+        "sha256": "553be7c2131a07eff1706fd16ca27d2424f61ae1d04b4b638e1401155f3e8c34",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -604,13 +620,10 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 132,
-        "scope": "Single window immediately above Columbia House entrance corrected to three glass columns with two vertical dividers and retained high transom. Remaining4600 vertices in the frame family, all glazing, doors, stone reveals, Garrick corner and existing interiors retained. Eight first-surface probes and save/reopen verified. Equal thirds spacing and retained section dimensions remain estimates.",
-        "references": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
-        ],
-        "sourceEdition": "2025/26 property handbook",
-        "captureDate": "unknown"
+        "version": 137,
+        "status": "verified-school-name-completion",
+        "scope": "Restore the full school name including and Political Science on retained stone band. Preserve original font,0.25m glyph height, extrusion, material, vertical datum and wall depth without horizontal compression. Right endpoint offset0.20m is photo-estimated. Whole frontage and room enclosure remain pending as separately recorded.",
+        "source": "2025/26 official property handbook entry photograph; capture date unknown"
       },
       "detailView": {
         "label": "入口细节",
@@ -644,8 +657,22 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 132,
+          "scope": "Single window immediately above Columbia House entrance corrected to three glass columns with two vertical dividers and retained high transom. Remaining4600 vertices in the frame family, all glazing, doors, stone reveals, Garrick corner and existing interiors retained. Eight first-surface probes and save/reopen verified. Equal thirds spacing and retained section dimensions remain estimates.",
+          "references": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ],
+          "sourceEdition": "2025/26 property handbook",
+          "captureDate": "unknown"
         }
       ],
+      "wholeFacadeReview": {
+        "version": 137,
+        "status": "retained-pending-upper-elevation-and-enclosure",
+        "scope": "Current low-level photos and2010 entrance feasibility scheme cannot calibrate upper storey count or mansard.26 distinct low panes have only distant3.49–25.03m estimated shells behind them. No speculative transparency, backplate, new storeys or new roof added."
+      },
       "bounds": {
         "min": [
           2.9004480838775635,
@@ -671,10 +698,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-88a57074e6d9.glb",
-        "bytes": 1000008,
-        "triangles": 78976,
-        "sha256": "88a57074e6d994ab57c40587e3600d0fa8fea9498ca9c6ae70097bf376ceff0a",
+        "url": "/models/details/col-exterior-7ed307480442.glb",
+        "bytes": 1024904,
+        "triangles": 80708,
+        "sha256": "7ed307480442e4df1d1cd0a1cbeff63b70007ddeb512d18de806d33f31cfe299",
         "bounds": {
           "min": [
             2.9004480838775635,
