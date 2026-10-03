@@ -878,6 +878,24 @@
     }
   },
   {
+    "code": "61A",
+    "name": "61a-portal",
+    "caption": "街角三层石柱门户",
+    "view": {
+      "position": [
+        -56.61,
+        19,
+        166.05
+      ],
+      "target": [
+        -40.8329,
+        15,
+        129.2929
+      ],
+      "fov": 44
+    }
+  },
+  {
     "code": "PAR",
     "name": "par-roof",
     "label": "Parish Hall尖拱窗列与屋顶通风帽",
