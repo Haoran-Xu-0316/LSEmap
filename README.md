@@ -19,6 +19,16 @@ returning visitors cannot combine a new catalogue with an older cached model.
 
 ## Latest exterior refinement
 
+Edition151 separates stone aperture returns from the black frames of the three
+entrance-side No.51 arched windows, correcting oblique-view overlap while keeping
+the seven windows corrected in150. Connaught House gains a true fanlight opening
+and loses a fictitious shallow vestibule backplate; eight documented panes retain
+their tint and geometry with finite transparency. Clement House gains seven attic
+and four dormer glazed lights and four openings through roof caps inside existing
+window-cheek volumes. Its fifth dormer at the curved junction remains unresolved;
+opaque brown spandrels and closed timber doors are retained. Glass parameters and
+clearances remain visual estimates. Existing separate room assets are retained.
+
 Edition150 clears the seven No.51 Lincoln’s Inn Fields black arched frames
 by adjusting only the inner edge of their stone voussoirs. Glass, stone outer
 edges, UVs and original apertures remain unchanged.
