@@ -30,8 +30,10 @@ interior studies load on demand. The catalogue contains31 map-code records;
 
 Overview and close-up models use matching accepted geometry, metric UVs and PBR
 finishes. Gallery images use the same production CampusViewer. Desktop distant
-movement uses depth-reprojected antialiasing; settled frames return to the spatial
-output. Interiors and narrow-screen views retain their separate rendering path.
+movement uses depth-reprojected antialiasing with one scene sample per frame.
+After drag and damping finish, one four-sample frame restores the sharp desktop
+still and demand rendering stops. Canvas resolution remains fixed through gestures;
+interiors use the same motion budget and narrow-screen views retain one sample.
 
 ## Run and build
 
