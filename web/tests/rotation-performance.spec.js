@@ -20,6 +20,7 @@ test('rotation reduces measured scene work and restores sharp idle rendering',as
  const proof=await page.evaluate(async()=>{
   const {renderer,camera,renderPipeline:pipeline}=viewer;const gl=renderer.getContext();
   const records=[];let sceneDraws=0;const render=renderer.render.bind(renderer);
+  window.rotationSceneDraws=()=>sceneDraws;
   renderer.render=(scene,camera)=>{if(scene===viewer.scene)sceneDraws++;return render(scene,camera);};
   const median=a=>a.slice().sort((x,y)=>x-y)[Math.floor(a.length/2)];
   for(const code of ['CAMPUS','CBG']){
@@ -40,9 +41,12 @@ test('rotation reduces measured scene work and restores sharp idle rendering',as
  await mkdir('result/web/rotation-performance',{recursive:true});await writeFile('result/web/rotation-performance/measurement.json',JSON.stringify(proof,null,2));
  for(const record of proof){expect(record.sceneDraws.idle).toBe(4);expect(record.sceneDraws.motion).toBe(1);expect(record.motionMs).toBeLessThan(record.idleMs*.9);expect(record.idleSamples).toBe(4);expect(record.settled).toBe(true);expect(record.cameraUnchanged).toBe(true);}
  const canvas=page.locator('canvas'),box=await canvas.boundingBox();
- await page.mouse.move(box.x+500,box.y+300);await page.mouse.down();await page.mouse.move(box.x+660,box.y+340,{steps:16});
+ await page.mouse.move(box.x+500,box.y+300);await page.mouse.down();
+ await page.waitForTimeout(250);const held=await page.evaluate(()=>window.rotationSceneDraws());
+ await page.waitForTimeout(150);expect(await page.evaluate(()=>window.rotationSceneDraws())).toBe(held);
+ await page.mouse.move(box.x+660,box.y+340,{steps:16});
  expect(await page.evaluate(()=>viewer.renderPipeline.scenePass.sampleLevel)).toBe(0);
- await page.mouse.up();await page.waitForFunction(()=>!viewer.needsRender&&!viewer.renderPipeline.needsSettle);
+ await page.mouse.up();await page.waitForFunction(()=>!viewer.interacting&&!viewer.needsRender&&!viewer.renderPipeline.needsSettle&&viewer.renderPipeline.scenePass.sampleLevel===2);
  expect(await page.evaluate(()=>viewer.renderPipeline.scenePass.sampleLevel)).toBe(2);
  const idle=await page.evaluate(()=>viewer.renderPipeline.temporalPass.frame);await page.waitForTimeout(300);expect(await page.evaluate(()=>viewer.renderPipeline.temporalPass.frame)).toBe(idle);
  await canvas.screenshot({path:'result/web/rotation-performance/restored.png'});expect(errors).toEqual([]);
