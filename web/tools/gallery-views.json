@@ -1086,5 +1086,59 @@
     "name": "con-tea-point-interior",
     "spaceId": "con-tea-point",
     "label": "CON一层茶水间2025"
+  },
+  {
+    "code": "OLD",
+    "name": "old-side-approach",
+    "label": "Houghton Street侧坡道与入口",
+    "view": {
+      "position": [
+        28.6722,
+        5.5,
+        102.785
+      ],
+      "target": [
+        -2.4876,
+        2.2,
+        86.846
+      ],
+      "fov": 36
+    }
+  },
+  {
+    "code": "STC",
+    "name": "stc-artwork",
+    "label": "Thames与银色艺术轮廓",
+    "view": {
+      "position": [
+        -41.93,
+        13.1,
+        27.0
+      ],
+      "target": [
+        -16.95449,
+        11.1,
+        19.1088
+      ],
+      "fov": 34
+    }
+  },
+  {
+    "code": "MAR",
+    "name": "mar-rear-wall",
+    "label": "Marshall西侧石墙与相邻窗列",
+    "view": {
+      "position": [
+        -45.41037491865108,
+        65,
+        73.35536896874913
+      ],
+      "target": [
+        -11.103270865183738,
+        22,
+        -47.280540326388056
+      ],
+      "fov": 34
+    }
   }
 ]
