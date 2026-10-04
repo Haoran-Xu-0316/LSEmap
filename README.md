@@ -19,6 +19,22 @@ returning visitors cannot combine a new catalogue with an older cached model.
 
 ## Latest exterior refinement
 
+Distant desktop overview movement uses depth-reprojected frame history with
+local color clipping to reduce subpixel facade shimmer. Camera cuts invalidate
+history; settled frames return to the unchanged four-sample spatial output.
+Close-up, interior and narrow-screen views keep their existing rendering path.
+Idle controls stop requesting new frames.
+
+Edition154 corrects three photo-supported exterior features. Cheng Kin Ku's
+semicircular fanlight now sits directly above the portico, without an extra
+rectangular glass skirt. Marshall's highest wing gains a closed roof slab inside
+its existing walltop ring; courtyard and lower terraces remain open. Old
+Building's Houghton entrance receives a lower door header and a taller existing
+relief field, while its stone arch, blue windows and building outline stay fixed.
+Roof dimensions and entrance proportions remain photographic estimates, not
+surveyed construction dimensions. LRB transparency changes were rejected after
+whole-building and close-up production comparisons exposed rear-shell silhouettes.
+
 Edition153 opens the two registered Kings Chambers entrance panes through the
 solid timber leaf and the immediate recess cap, retaining the surrounding door
 frame, pane geometry, UVs and tint. Thirty-two pane probes and nine frame checks
