@@ -933,9 +933,9 @@ export class CampusViewer {
       this.needsRender = true;
       if (progress === 1) this.transition = null;
     }
-    this.controls.update();
+    const cameraChanged = this.controls.update();
     if (this.needsRender || this.renderPipeline.needsSettle) {
-      this.renderPipeline.render();
+      this.renderPipeline.render({ moving: cameraChanged || Boolean(this.transition), time });
       this.updateLabels();
       this.needsRender = false;
     }
