@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v141.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v142.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -32,7 +32,7 @@ curve_resolutions = []
 full_detail = False
 for original in source_scene.objects:
     for modifier in original.modifiers:
-        if modifier.type == 'BEVEL' and not original.name.startswith(('KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
+        if modifier.type == 'BEVEL' and not original.name.startswith(('PAN_NEXT_', 'STC_NEXT_ENVELOPE_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
             modifier_states.append((modifier, modifier.show_viewport, modifier.show_render))
             modifier.show_viewport = False
             modifier.show_render = False
@@ -156,7 +156,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     points = []
     for original in objects:
         # Sub-centimetre finish belongs to on-demand views, not the initial campus download.
-        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_FRAME_NEXT_')):
+        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', 'PAN_NEXT_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_FRAME_NEXT_')):
             continue
         if original.type not in {'MESH', 'CURVE', 'FONT', 'SURFACE'} or original.hide_render:
             continue
@@ -177,7 +177,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
-        if original.name.startswith(('KSW_NEXT_', 'MAR_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'OLD_NEXT_CLARE_sealed_', 'OLD_NEXT_ACCESS_', 'LRB_NEXT_ENVELOPE_', 'CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
+        if original.name.startswith(('PAN_NEXT_', 'STC_NEXT_ENVELOPE_', 'KSW_NEXT_', 'MAR_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'OLD_NEXT_CLARE_sealed_', 'OLD_NEXT_ACCESS_', 'LRB_NEXT_ENVELOPE_', 'CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
             layer = mesh.uv_layers.new(name='SurfaceUV')
             for face in mesh.polygons:
                 vertices = [original.matrix_world @ mesh.vertices[index].co for index in face.vertices]
@@ -234,6 +234,46 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     return joined, {'min': [lo[0], lo[2], -hi[1]], 'max': [hi[0], hi[2], -lo[1]]}
 
 
+def exterior_framing_corners(mesh):
+    """Bound the evaluated shell in its tightest horizontal rectangle.
+
+    Camera metadata only: mesh geometry and its ordinary world AABB stay intact.
+    Eight corners avoid scanning thousands of vertices on each browser selection.
+    """
+    positions = [vertex.co for vertex in mesh.vertices]
+    points = sorted({(float(p.x), float(p.y)) for p in positions})
+    def cross(origin, a, b):
+        return (a[0]-origin[0])*(b[1]-origin[1])-(a[1]-origin[1])*(b[0]-origin[0])
+    lower, upper = [], []
+    for point in points:
+        while len(lower)>1 and cross(lower[-2],lower[-1],point)<=0:
+            lower.pop()
+        lower.append(point)
+    for point in reversed(points):
+        while len(upper)>1 and cross(upper[-2],upper[-1],point)<=0:
+            upper.pop()
+        upper.append(point)
+    hull = lower[:-1]+upper[:-1]
+    assert len(hull)>=3, 'Exterior requires a nondegenerate plan'
+    best = None
+    for first, second in zip(hull,hull[1:]+hull[:1]):
+        dx,dy = second[0]-first[0],second[1]-first[1]
+        length = (dx*dx+dy*dy)**.5
+        ux,uy = dx/length,dy/length
+        vx,vy = -uy,ux
+        a = [x*ux+y*uy for x,y in hull]
+        b = [x*vx+y*vy for x,y in hull]
+        bounds = (min(a),max(a),min(b),max(b))
+        area = (bounds[1]-bounds[0])*(bounds[3]-bounds[2])
+        if best is None or area<best[0]:
+            best = (area,ux,uy,vx,vy,bounds)
+    _,ux,uy,vx,vy,(amin,amax,bmin,bmax) = best
+    zmin,zmax = min(p.z for p in positions),max(p.z for p in positions)
+    # Match Blender Z-up to the web's Y-up axes.
+    return [[ux*a+vx*b,z,-(uy*a+vy*b)]
+            for a in (amin,amax) for z in (zmin,zmax) for b in (bmin,bmax)]
+
+
 def export_scene(scene, filename):
     bpy.context.window.scene = scene
     bpy.ops.object.select_all(action='SELECT')
@@ -262,6 +302,7 @@ for record in records:
     assert has_interior == record['interior'], f'Interior collection missing: {code}'
     metadata.append({key: value for key, value in record.items() if key != 'exportExterior'})
     metadata[-1].update(bounds=bounds, interior=has_interior)
+    metadata[-1]['exteriorFramingCorners'] = exterior_framing_corners(obj.data)
 
 for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_heights', 'CONTEXT'), ('03_PUBLIC_REALM', 'LANDSCAPE')]:
     collection = bpy.data.collections.get(collection_name)
@@ -411,7 +452,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '141', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '142', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
