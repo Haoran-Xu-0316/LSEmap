@@ -10,14 +10,22 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage154';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v153.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v154.blend'
+OUT=ROOT/'result/blender/stage155';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v154.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v155.blend'
 COMPONENTS=[
-    ('CKK','ckk_frontage154','cheng-kin-ku-frontage-component.blend'),
-    ('MAR','mar_roof154','marshall-highwing-roof154-component.blend'),
-    ('OLD','old_exterior154','old-houghton-portal-component.blend'),
+    ('SAW','saw_exterior155','saw-exterior155-component.blend'),
+    ('LRB','lrb_plaza155','lrb-plaza155-component.blend'),
+    ('CBG','cbg_facade155','cbg-facade155-component.blend'),
 ]
+
+# Only this map-registered detached café may replace non-building context.
+# The complete explicit object list prevents a component hiding adjacent blocks.
+PLAZA_CONTEXT_OBJECTS={
+    *(f'Context_way/310159572_wall_0_{index}' for index in range(9)),
+    'Context_way/310159572_roof',
+}
+
 
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
@@ -69,7 +77,13 @@ for code,folder,filename,*evidence_names in COMPONENTS:
     component_sha=hashlib.sha256(path.read_bytes()).hexdigest()
     assert component_sha==proof['componentSha256']
     assert all(name.startswith((code+'_NEXT_', code+'_GLAZING_NEXT_', code+'_FRAME_NEXT_')) for name in audit['ownedObjects'])
-    assert all(name.startswith(code+'_') for name in audit['archivedObjects'])
+    if code=='LRB' and folder=='lrb_plaza155':
+        assert set(audit['archivedObjects'])==PLAZA_CONTEXT_OBJECTS
+        footprint=audit['sourceFootprint']
+        assert footprint['id']=='way/310159572'
+        assert footprint['properties']['name']=='Plaza Café'
+    else:
+        assert all(name.startswith(code+'_') for name in audit['archivedObjects'])
     assert not set(audit['ownedObjects'])&set(bpy.data.objects.keys())
     assert not set(audit['archivedObjects'])&set(archived), 'Two components replace the same source object'
     assert proof['savedComponentReopened'] and proof.get('originalGeometryPreserved', proof.get('originalGeometryMaterialColorUVPreserved', False)) and proof['unrelatedVisibilityPreserved']
@@ -110,14 +124,22 @@ for code,folder,filename,*evidence_names in COMPONENTS:
                     if signature(mat)==signature(existing):obj.data.materials[index]=existing
     pairs={}
     for change in audit.get('changes',[]):
+        # Some builders record human-readable change notes separately from
+        # object mappings. Ownership is verified by the explicit object arrays.
+        if isinstance(change,str):
+            continue
         replacement=change.get('replacement',change.get('owned'))
+        replacements=replacement if isinstance(replacement,list) else [replacement]
+        assert set(replacements)<=set(audit['ownedObjects'])
         original_name=change.get('original',change.get('source'))
-        assert replacement in audit['ownedObjects'], 'Component change requires an audited owned object'
-        # An addition has no predecessor; keep its authored material instead of
-        # inventing a source slot. Replacements must name an existing object.
         if original_name is not None:
-            assert original_name in audit['archivedObjects']
-            pairs[replacement]=original_name
+            assert original_name in original, 'Component references an unknown source'
+            if 'original' in change:
+                assert original_name in audit['archivedObjects']
+            # A source may also be an unchanged layout/material reference for
+            # an addition. Only archived predecessors restore replacement slots.
+            if original_name in audit['archivedObjects']:
+                for name in replacements:pairs[name]=original_name
     pairs.update({'PAR_NEXT_'+name.removeprefix('PAR_'):name for name in audit.get('replacementSlots',{})})
     for name,original_name in pairs.items():
         obj=bpy.data.objects[name];old=bpy.data.objects[original_name]
@@ -158,7 +180,7 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':154,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':155,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
 proof['ownedUsedMaterialNames']={code:sorted({obj.data.materials[poly.material_index].name for name in owned if name.startswith(code+'_') for obj in [bpy.data.objects[name]] for poly in obj.data.polygons if poly.material_index<len(obj.data.materials) and obj.data.materials[poly.material_index]}) for code,*_ in COMPONENTS}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
