@@ -96,7 +96,7 @@ export function applySurfaceDetail(material) {
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-finish3-${brick ? "brick" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish4-${brick ? "brick" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -136,7 +136,10 @@ export function applySurfaceDetail(material) {
       float surfaceHeight = face * surfaceBump * tileVisibility;
     ` : `
       vec3 surfacePoint = vec3(vSurfacePosition.x, -vSurfacePosition.z, vSurfacePosition.y) * surfaceScale;
-      float grain = surfaceNoise(surfacePoint) * .75 + surfaceNoise(surfacePoint * 2.0) * .25;
+      float noiseVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(surfacePoint)));
+      float grain = mix(0.5,
+        surfaceNoise(surfacePoint) * .75 + surfaceNoise(surfacePoint * 2.0) * .25,
+        noiseVisibility);
       // Keep the source palette midpoint without oversized concrete blotches.
       vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * 0.32);
       float surfaceHeight = grain * surfaceBump;
