@@ -19,6 +19,10 @@ returning visitors cannot combine a new catalogue with an older cached model.
 
 ## Latest exterior refinement
 
+Edition150 clears the seven No.51 Lincoln’s Inn Fields black arched frames
+by adjusting only the inner edge of their stone voussoirs. Glass, stone outer
+edges, UVs and original apertures remain unchanged.
+
 Edition149 improves the documented glazing of Lincoln Chambers, Sheffield Street
 and Sardinia House. Original glass geometry, UVs and colors are retained. Three
 photographed Sheffield dormers and six Sardinia gable windows gain real apertures
