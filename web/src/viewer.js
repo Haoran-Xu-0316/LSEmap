@@ -124,13 +124,16 @@ export class CampusViewer {
       this.needsRender = true;
     });
     this.interacting = false;
+    this.lastNavigationAt = 0;
     this.controls.addEventListener("start", () => {
       this.transition = null;
       this.interacting = true;
+      this.lastNavigationAt = performance.now();
       this.needsRender = true;
     });
     this.controls.addEventListener("end", () => {
       this.interacting = false;
+      this.lastNavigationAt = performance.now();
       this.needsRender = true;
     });
     this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
@@ -293,12 +296,16 @@ export class CampusViewer {
   }
 
   // Exterior geometry belongs to the campus, not to a temporary selection.
-  async loadExterior(building) {
+  async loadExterior(building, background = false) {
     if (this.exteriors.has(building.code)) return this.exteriors.get(building.code);
     if (this.exteriorLoads.has(building.code)) return this.exteriorLoads.get(building.code);
     const pending = (async () => {
       const { scene: group } = await this.loadAsset(building.detailedExterior.url);
       if (this.disposed) {
+        disposeModel(group);
+        throw new Error("Viewer disposed");
+      }
+      if (background && !await this.waitForBackgroundFrame()) {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
@@ -314,13 +321,45 @@ export class CampusViewer {
     finally { this.exteriorLoads.delete(building.code); }
   }
 
+  // Never attach another background model or invalidate shadows mid-gesture.
+  // Decoding stays in the loader's worker; selected buildings bypass this queue.
+  waitForBackgroundFrame() {
+    return new Promise((resolve) => {
+      const signal = this.loadController.signal;
+      let timer = null, idle = null;
+      const finish = (ready) => {
+        clearTimeout(timer);
+        if (idle !== null) cancelIdleCallback(idle);
+        signal.removeEventListener("abort", aborted);
+        resolve(ready);
+      };
+      const aborted = () => finish(false);
+      const check = () => {
+        if (signal.aborted || this.disposed) return finish(false);
+        if (document.hidden || this.interacting || this.transition ||
+            performance.now() - this.lastNavigationAt < 150) {
+          timer = setTimeout(check, 50);
+          return;
+        }
+        if (typeof requestIdleCallback === "function") {
+          idle = requestIdleCallback(() => {
+            idle = null;
+            if (this.interacting || this.transition) check();
+            else finish(true);
+          }, { timeout: 100 });
+        } else timer = setTimeout(() => this.interacting ? check() : finish(true), 0);
+      };
+      signal.addEventListener("abort", aborted, { once: true });
+      check();
+    });
+  }
+
   async loadCampusExteriors() {
     const buildings = this.buildings.filter((building) => building.detailedExterior);
-    // Marshall first; sequential background decoding keeps initial navigation usable.
     buildings.sort((a, b) => Number(b.code === "MAR") - Number(a.code === "MAR"));
     for (const building of buildings) {
-      if (this.disposed) return;
-      try { await this.loadExterior(building); }
+      if (!await this.waitForBackgroundFrame()) return;
+      try { await this.loadExterior(building, true); }
       catch (error) {
         if (!this.disposed) console.warn(`Exterior unavailable: ${building.code}`, error);
       }
@@ -941,7 +980,7 @@ export class CampusViewer {
       if (progress === 1) this.transition = null;
     }
     const cameraChanged = this.controls.update();
-    if (this.needsRender || this.renderPipeline.needsSettle) {
+    if (this.needsRender || (this.renderPipeline.needsSettle && !this.interacting)) {
       this.renderPipeline.render({ moving: this.interacting || cameraChanged || Boolean(this.transition), time });
       this.updateLabels();
       this.needsRender = false;
