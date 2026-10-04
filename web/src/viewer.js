@@ -522,6 +522,8 @@ export class CampusViewer {
           ? object.material
           : [object.material];
         for (const material of materials) {
+          // Authored light artwork keeps its emission across selection changes.
+          if (material.userData.webEmission) continue;
           material.emissive?.set(name === code ? 0x521011 : 0x000000);
           material.emissiveIntensity = name === code ? 0.2 : 0;
         }
