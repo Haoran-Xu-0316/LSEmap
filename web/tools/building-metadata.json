@@ -757,15 +757,22 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 123,
-        "status": "entrance-glazing-corrected",
-        "addedObjects": 1,
-        "clearGlazingProbes": 24,
-        "retainedLowerTimberChecks": 4,
-        "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
+        "version": 148,
+        "status": "shopfront-current-photo-corrected",
+        "scope": "Official May2025 street photograph replaces the historical left lower shopfront glazing with continuous white paneling. Both shop overlights gain the photographed2-row4-column grids, and two fictitious large-pane middle rails are removed. Obscured right basement, original large glass, timber entry and other upper/roof geometry remain unchanged. Dimensions and optical finishes are estimates; no complete interior claimed."
       },
       "closeupImage": "lch-entrance",
-      "exportExterior": true
+      "exportExterior": true,
+      "previousReviews": [
+        {
+          "version": 123,
+          "status": "entrance-glazing-corrected",
+          "addedObjects": 1,
+          "clearGlazingProbes": 24,
+          "retainedLowerTimberChecks": 4,
+          "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
+        }
+      ]
     },
     {
       "code": "5LF",
@@ -985,8 +992,9 @@
         "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
       },
       "latestReview": {
-        "version": 122,
-        "scope": "Front base corrected to eight ashlar courses and225 recessed-joint pieces; original three arched apertures retained with nine masonry-clearance probes. Dimensions remain photographic estimates."
+        "version": 148,
+        "status": "entry-glass-apertures-opened",
+        "scope": "Two photographed entrance panes retain original geometry and neutral color with explicit browser opacity0.82. Only the timber door leaf and metal recess faces behind those panes receive actual mesh apertures. Surrounding door, frame and all other windows/roof remain unchanged. Dimensions and optics estimated; no complete interior claimed."
       },
       "detailView": {
         "label": "入口细节",
@@ -1003,7 +1011,13 @@
         "fov": 50
       },
       "closeupImage": "51l-entrance",
-      "exportExterior": true
+      "exportExterior": true,
+      "previousReviews": [
+        {
+          "version": 122,
+          "scope": "Front base corrected to eight ashlar courses and225 recessed-joint pieces; original three arched apertures retained with nine masonry-clearance probes. Dimensions remain photographic estimates."
+        }
+      ]
     },
     {
       "code": "LRB",
@@ -1598,10 +1612,17 @@
         "scope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified."
       },
       "latestReview": {
-        "version": 122,
-        "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
+        "version": 148,
+        "status": "retained-street-glazing-transparent",
+        "scope": "Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated."
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "previousReviews": [
+        {
+          "version": 122,
+          "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
+        }
+      ]
     },
     {
       "code": "SAR",
@@ -1723,10 +1744,17 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 121,
-        "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
+        "version": 148,
+        "status": "photo-covered-dormer-grid-corrected",
+        "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "previousReviews": [
+        {
+          "version": 121,
+          "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
+        }
+      ]
     },
     {
       "code": "SAL",
