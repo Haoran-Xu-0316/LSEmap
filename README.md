@@ -8,10 +8,10 @@ an independent Blender architectural study.
 ![Campus architectural model](web/public/images/campus.webp)
 
 Explore the campus by orbiting, panning and zooming. Select a building directly or
-search by its name/code. Detail panels open renderings from the same production viewer, and thirty-two
-interior studies load on demand across twenty-five buildings: five public spaces and twenty-seven room samples. The interface supports mobile screens,
+search by its name/code. Detail panels open renderings from the same production viewer, and thirty-three
+interior studies load on demand across twenty-five buildings: five public spaces and twenty-eight room samples. The interface supports mobile screens,
 keyboard navigation, reduced motion, shareable building links and a gallery
-fallback when WebGL is unavailable. Thirty building models and thirty-two interior
+fallback when WebGL is unavailable. Thirty building models and thirty-three interior
 views progressively load native bevels and source-derived procedural materials.
 The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
@@ -450,3 +450,5 @@ Edition141 connects OLD’s four external and four foyer steps through a lowered
 Edition142 corrects the five wide modules in PAN’s lowest five entrance-side window rows, keeping independent glass, perimeter frames and aligned spandrel joints. STC’s Warren Wilson corner panel and frame now use the documented38ft by7ft6in proportion; the mosaic and aluminium artwork remain placeholders. FAW’s288 glass first-hit probes found no supported correction. Whole-building views use an oriented exterior envelope, including both PAN and FAW at their shared entrance, without scanning mesh vertices on browser selections. Interior assets and other exterior geometry are retained.
 
 Edition143 connects OLD’s estimated continuous Houghton side approach to the existing threshold and street, closes a missing stone return, and retains the two four-step flights. MAR’s photo-registered right academic wing gains its continuous blank west wall and real shallow panel joints, removing35 fictitious windows while preserving the adjacent40-window end face. STC’s documented panel proportions now carry a blue Thames curve and six coarse silver artwork profiles; fine mosaic and relief dimensions remain approximate. Three new gallery views use the production viewer. All unrelated exterior assets and separate interiors are retained. This release does not complete every campus facade or interior.
+
+Edition144 corrects the reversed lower two-storey CBG low-wing skins: stone and physical joints face Houghton Street; red/orange shades face the square, retaining real glazing and the98 tower office modules. OLD's Clare Market planter gains bounded broad-leaf foliage and yellow flowers, while a separate Student Services Centre reception study adds the photographed red wall, long perforated counter, metal stairs and mezzanine. Portsmouth gains seven tree pools registered from the completed2021 scheme using four plan anchors, with maximum0.56m residual. Tree-pool dimensions and room layout are estimates; MAR's left-wing registration and complete campus interiors remain unresolved. Existing separate interiors and all unrelated exterior assets are retained.
