@@ -158,6 +158,7 @@ export const buildingDetails = {
       ["mar-hall", "Grand Hall公共大厅"],
       ["mar-stair", "弧形楼梯与平台连接"],
       ["portsmouth-street", "Portsmouth Street铺装"],
+      ["portsmouth-tree-pools", "Portsmouth Street树池与步行街"],
       ["portsmouth-bench", "街道长椅与铺装"],
       ["portsmouth-drainage", "石材接缝与排水篦子"],
     ],
@@ -177,7 +178,7 @@ export const buildingDetails = {
     description:
       "Centre Building以红色为主、橙色侧面的遮阳构件组织立面，配合灰白框架与玻璃幕墙。面向Houghton Street形成开放的首层空间。",
     note: "已深化遮阳构件与局部公共内部，尺寸和室内位置仍含估计。",
-    images: [["cbg-exterior", "Centre Building遮阳构件"]],
+    images: [["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"]],
   },
   LRB: {
     description:
@@ -194,8 +195,8 @@ export const buildingDetails = {
   OLD: {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
-    note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室布局。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "入口侧坡道与银色扶手"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
+    note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室，SSC展示照片可见接待区与夹层。",
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "入口侧坡道与银色扶手"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-ssc-interior", "Student Services Centre接待区"]],
   },
   SAL: {
     description:
