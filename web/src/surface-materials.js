@@ -19,6 +19,7 @@ float surfaceNoise(vec3 p) {
 `;
 
 const preparedMaterials = new WeakSet();
+const detailedMaterials = new WeakSet();
 
 // Presentation refinements are deliberately separate from source-model parameters.
 // They describe a material finish, not measured ageing or photographic textures.
@@ -77,7 +78,20 @@ export function refineMaterialFinish(material, environmentMap = null) {
 }
 
 export function applySurfaceDetail(material) {
+  if (detailedMaterials.has(material)) return;
+  const outdoor = /SITE_V47_(?:slab|yorkstone|edge|soil|wood)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt|Lincoln Inn Fields grass|London plane foliage/i.test(material.name);
+  const timber = /SITE_V47_wood/i.test(material.name);
   let detail = material.userData.surfaceDetail;
+  if (!detail && outdoor) {
+    // Preserve mapped geometry and palette; resolve aggregate and foliage tones
+    // in the shared renderer rather than adding subpixel blades or leaf meshes.
+    detail = {
+      kind: "noise", scale: /foliage|grass/.test(material.name) ? 1.8 : 9,
+      bump: /asphalt|soil/.test(material.name) ? 0.0006 : 0.00025,
+      colorA: material.color.clone().multiplyScalar(0.82).toArray(),
+      colorB: material.color.clone().multiplyScalar(1.10).toArray(),
+    };
+  }
   if (!detail && /stone|concrete|limestone|sandstone|render|stucco/i.test(material.name)) {
     detail = {
       kind: "noise", scale: 3, bump: 0.00035,
@@ -86,6 +100,7 @@ export function applySurfaceDetail(material) {
     };
   }
   if (!detail || !["noise", "brick"].includes(detail.kind)) return;
+  detailedMaterials.add(material);
   const brick = detail.kind === "brick";
   const color = (value) => value ? new THREE.Color(...value) : material.color.clone();
   const uniforms = {
@@ -96,7 +111,7 @@ export function applySurfaceDetail(material) {
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-finish4-${brick ? "brick" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish5-${brick ? "brick" : timber ? "timber" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -136,12 +151,13 @@ export function applySurfaceDetail(material) {
       float surfaceHeight = face * surfaceBump * tileVisibility;
     ` : `
       vec3 surfacePoint = vec3(vSurfacePosition.x, -vSurfacePosition.z, vSurfacePosition.y) * surfaceScale;
+      ${timber ? "surfacePoint *= vec3(0.12, 2.5, 1.0);" : ""}
       float noiseVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(surfacePoint)));
       float grain = mix(0.5,
-        surfaceNoise(surfacePoint) * .75 + surfaceNoise(surfacePoint * 2.0) * .25,
+        ${outdoor ? "surfaceNoise(surfacePoint) * .55 + surfaceNoise(surfacePoint * .16) * .45" : "surfaceNoise(surfacePoint) * .75 + surfaceNoise(surfacePoint * 2.0) * .25"},
         noiseVisibility);
       // Keep the source palette midpoint without oversized concrete blotches.
-      vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * 0.32);
+      vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * ${outdoor ? "1.2" : "0.32"});
       float surfaceHeight = grain * surfaceBump;
     `;
     shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", `
