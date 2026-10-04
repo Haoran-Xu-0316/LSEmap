@@ -17,9 +17,9 @@ export function stablePixelRatio(width, height) {
 class ColorManagedRenderPass extends SSAARenderPass {
   constructor(scene, camera) {
     super(scene, camera, new THREE.Color(0xe9e8e3), 1);
-    // Two fixed subpixel samples resolve geometric frames before edge smoothing.
+    // Four fixed subpixel samples cover horizontal and vertical facade edges.
     // No frame history means no ghost trails, and demand rendering stays idle.
-    this.sampleLevel = 1;
+    this.sampleLevel = 2;
     this.clearColorScratch = new THREE.Color();
   }
 
@@ -48,8 +48,8 @@ export function createRenderPipeline(renderer, scene, camera) {
     antialiasPass,
     scenePass,
     resize(width, height) {
-      // Avoid doubling geometry submission on narrow, typically mobile views.
-      scenePass.sampleLevel = width <= 640 ? 0 : 1;
+      // Keep narrow views on their existing light sampling budget.
+      scenePass.sampleLevel = width <= 640 ? 0 : 2;
       composer.setPixelRatio(renderer.getPixelRatio());
       composer.setSize(width, height);
       renderer.getDrawingBufferSize(bufferSize);
