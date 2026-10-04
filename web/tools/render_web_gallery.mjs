@@ -45,6 +45,7 @@ window.renderGalleryView=async(job)=>{
  viewer.camera.updateMatrixWorld();
  viewer.renderer.shadowMap.needsUpdate=true;
  // Capture the same color-managed and antialiased output as the live map.
+ viewer.renderPipeline.resetHistory();
  viewer.renderPipeline.render();
  const view={position:viewer.camera.position.toArray(),target:viewer.controls.target.toArray(),fov:viewer.camera.fov};
  return {image:viewer.canvas.toDataURL('image/webp',0.95).split(',')[1],view,
