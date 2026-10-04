@@ -236,10 +236,10 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 137,
-        "status": "photo-supported-tall-window-spandrel-correction",
-        "scope": "Seven continuous tall bays now split into upper/lower glass around warm opaque middle spandrels. Retain42 unaffected rails, stone, doors and roof. Band height0.42m and finish are estimates guided by2018 daylight;2023 photograph has tree/scaffold limitations. Glass remains reflective opaque approximation pending registered window enclosure.",
-        "source": "Archived2018-04-24 photograph and2023-11-15 main-front photograph"
+        "version": 145,
+        "status": "registered-street-window-reveals-opened",
+        "scope": "Remove50 closed caps from25 window liners while retaining100 original perimeter faces. Preserve39 registered glass geometries and original neutral colour; bounded webOpacity0.82, transmission0.22 and roughness0.26 are visual estimates. Seven tall bays, opaque spandrels, roof and doors retained. Remote original rear shell16–32m away is not an accurate room enclosure. Complete rooms and unseen rear faces remain unresolved.",
+        "source": "Dated2018-04-24 and2023-11-15 built photographs, archived LSE Estates003; exact current2026 condition unverified"
       },
       "interiorView": {
         "position": [
@@ -260,6 +260,12 @@
           "version": 114,
           "status": "reviewed-no-change",
           "addedObjects": 30
+        },
+        {
+          "version": 137,
+          "status": "photo-supported-tall-window-spandrel-correction",
+          "scope": "Seven continuous tall bays now split into upper/lower glass around warm opaque middle spandrels. Retain42 unaffected rails, stone, doors and roof. Band height0.42m and finish are estimates guided by2018 daylight;2023 photograph has tree/scaffold limitations. Glass remains reflective opaque approximation pending registered window enclosure.",
+          "source": "Archived2018-04-24 photograph and2023-11-15 main-front photograph"
         }
       ]
     },
@@ -285,10 +291,10 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 137,
-        "status": "verified-school-name-completion",
-        "scope": "Restore the full school name including and Political Science on retained stone band. Preserve original font,0.25m glyph height, extrusion, material, vertical datum and wall depth without horizontal compression. Right endpoint offset0.20m is photo-estimated. Whole frontage and room enclosure remain pending as separately recorded.",
-        "source": "2025/26 official property handbook entry photograph; capture date unknown"
+        "version": 145,
+        "status": "whole-envelope-reviewed-no-change",
+        "scope": "97 actual glass first contacts verified. Handbook supports entrance and two lower street levels; oblique300x376 Estates image crops roof. Tree-covered lower stone joints do not justify removing all rustication. Existing upper windows, roof and unseen walls remain dimensional estimates; no speculative replacement.",
+        "source": "Archived LSE Property Handbook and LSE Estates004; AccessAble additional source returned403"
       },
       "detailView": {
         "label": "入口细节",
@@ -332,6 +338,12 @@
           ],
           "sourceEdition": "2025/26 property handbook",
           "captureDate": "unknown"
+        },
+        {
+          "version": 137,
+          "status": "verified-school-name-completion",
+          "scope": "Restore the full school name including and Political Science on retained stone band. Preserve original font,0.25m glyph height, extrusion, material, vertical datum and wall depth without horizontal compression. Right endpoint offset0.20m is photo-estimated. Whole frontage and room enclosure remain pending as separately recorded.",
+          "source": "2025/26 official property handbook entry photograph; capture date unknown"
         }
       ],
       "wholeFacadeReview": {
@@ -452,14 +464,10 @@
         "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review. Entrance guide confirms three external steps and a 73cm active opening; total paired width, 15cm risers, treads and ornamental profiles are photo-guided estimates. New entry has genuine glazing apertures. The guide survey and photo capture dates are unverified. Carved mask and scrolls are authored approximations, not scans."
       },
       "latestReview": {
-        "version": 118,
-        "status": "portal-refined",
-        "addedObjects": 5,
-        "archivedObjects": 20,
-        "sourceUrls": [
-          "https://www.accessable.co.uk/london-school-of-economics/access-guides/cowdray-house",
-          "https://www.russellcawberry.com/projects/cowdray-house"
-        ]
+        "version": 145,
+        "status": "photo-supported-short-side-ground-brick",
+        "scope": "Correct only existing short-side lower masonry to inherited red brick. Retain long-side stone and chamfer entrance, all apertures, coordinates, topology, UV, glass and roof. Short-side window dimensions, roof slopes, unseen walls and full interiors remain unmeasured.",
+        "source": "Completed contractor project2019 photograph05 and archived LSE Estates006; capture dates unknown"
       },
       "interiorView": {
         "position": [
@@ -474,7 +482,19 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 118,
+          "status": "portal-refined",
+          "addedObjects": 5,
+          "archivedObjects": 20,
+          "sourceUrls": [
+            "https://www.accessable.co.uk/london-school-of-economics/access-guides/cowdray-house",
+            "https://www.russellcawberry.com/projects/cowdray-house"
+          ]
+        }
+      ]
     },
     {
       "code": "FAW",
@@ -1257,9 +1277,10 @@
         "scope": "Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 145,
+        "status": "restored-shopfront-reviewed-no-change",
+        "scope": "Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.",
+        "source": "Sykes works-completeMay2023 and Ayesa restoration photographs published2024; image capture dates unknown"
       },
       "interiorView": {
         "position": [
@@ -1274,7 +1295,14 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ]
     },
     {
       "code": "PAN",
