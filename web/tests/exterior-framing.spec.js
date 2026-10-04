@@ -29,7 +29,7 @@ test('every exterior and the shared PAN FAW frontage fit desktop and phone',asyn
   for(const width of [1440,390]){
    await page.setViewportSize({width,height:1000});await page.emulateMedia({reducedMotion:'reduce'});
    await page.goto(`http://127.0.0.1:${server.httpServer.address().port}/__frame-check`);await page.waitForFunction(()=>window.ready,null,{timeout:90000});
-   const result=await page.evaluate(()=>window.inspectExteriors());expect(result.version).toBe('144');expect(result.records).toHaveLength(30);
+   const result=await page.evaluate(()=>window.inspectExteriors());expect(result.version).toBe('145');expect(result.records).toHaveLength(30);
    for(const record of result.records){const p=record.fitted;expect(record.corners,record.code).toBe(8);expect(p.vertices,record.code).toBeGreaterThan(0);
     expect(Math.max(Math.abs(p.xmin),Math.abs(p.xmax)),record.code+' horizontal '+width).toBeLessThan(.95);
     expect(Math.max(Math.abs(p.ymin),Math.abs(p.ymax)),record.code+' vertical '+width).toBeLessThan(.95);expect(p.zmax,record.code).toBeLessThan(1);
@@ -38,6 +38,6 @@ test('every exterior and the shared PAN FAW frontage fit desktop and phone',asyn
   }
   expect(errors).toEqual([]);
   for(const code of ['OLD','61A','LRB']){const record=proof[0].records.find(r=>r.code===code);expect(record.fitted.area,code+' reduced empty space').toBeGreaterThan(record.former.area);}
-  await writeFile('result/blender/stage144/camera-framing-verification.json',JSON.stringify({proof,errors},null,2)+'\n');
+  await writeFile('result/blender/stage145/camera-framing-verification.json',JSON.stringify({proof,errors},null,2)+'\n');
  }finally{await server.close();}
 });
