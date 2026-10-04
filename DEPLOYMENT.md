@@ -13,7 +13,13 @@ For an already verified build, `node web/tools/deploy_release.mjs` checks each
 file against `dist/release.json` before uploading. The Worker streams the unchanged
 campus GLB from bounded static segments; other runtime assets are served directly.
 
-Push and production are separate deliverables. Verify the GitHub branch SHA and
+Cloudflare Workers Builds is connected to `Haoran-Xu-0316/LSEmap`, branch `main`.
+A push triggers `npm run build`, followed by `npx wrangler deploy`. The public
+`.assetsignore` excludes the oversized complete campus GLB; its verified bounded
+segments are uploaded and served by the Worker. Keep all25 default interior
+models required by the build and viewer fallback, alongside detailed assets.
+
+A successful push does not guarantee a successful build. Verify the GitHub branch SHA and
 the online `/release.json`, then compare changed asset checksums and open the
 updated buildings on desktop and mobile before reporting release completion.
 Keep the existing Worker name, URL and self-hosted runtime dependencies.
