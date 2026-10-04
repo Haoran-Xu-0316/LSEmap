@@ -25,15 +25,16 @@ history; settled frames return to the unchanged four-sample spatial output.
 Close-up, interior and narrow-screen views keep their existing rendering path.
 Idle controls stop requesting new frames.
 
-Edition154 corrects three photo-supported exterior features. Cheng Kin Ku's
-semicircular fanlight now sits directly above the portico, without an extra
-rectangular glass skirt. Marshall's highest wing gains a closed roof slab inside
-its existing walltop ring; courtyard and lower terraces remain open. Old
-Building's Houghton entrance receives a lower door header and a taller existing
-relief field, while its stone arch, blue windows and building outline stay fixed.
-Roof dimensions and entrance proportions remain photographic estimates, not
-surveyed construction dimensions. LRB transparency changes were rejected after
-whole-building and close-up production comparisons exposed rear-shell silhouettes.
+Edition155 corrects SAW's three main pierced-brick window bands with real wall
+openings, matching brick screens, glass and frames. CBG end louvres move to the
+rear service zone, keeping its front circulation glazing open; photographed
+floor-edge bands and vision transoms are updated. Its red/orange shade palette
+remains an explicit design preference rather than a measured photo colour.
+The mapped Plaza Café grey context block becomes a separate black steel/glass
+pavilion with a timber soffit, green roof and visible seating. Pavilion dimensions,
+window-band proportions and joinery remain photographic estimates. The previous
+CKK, MAR and OLD corrections remain included. Overview/detail geometry, UVs and
+PBR finishes are checked together; existing interior assets remain unchanged.
 
 Edition153 opens the two registered Kings Chambers entrance panes through the
 solid timber leaf and the immediate recess cap, retaining the surrounding door
