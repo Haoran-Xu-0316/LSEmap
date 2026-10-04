@@ -3,6 +3,8 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
+import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
+
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows } from "./surface-materials.js";
@@ -76,15 +78,12 @@ export class CampusViewer {
     this.viewRequest = 0;
     this.needsRender = true;
     this.renderer = new THREE.WebGLRenderer({
-      // Multisample clipping left ghost fragments on Metal; downsample instead.
+      // Keep Metal clipping stable; the output pipeline smooths edges without MSAA.
       antialias: false,
       logarithmicDepthBuffer: true,
       powerPreference: "high-performance",
     });
-    this.restPixelRatio = Math.min(Math.max(devicePixelRatio, 1.5), 1.75);
-    this.interacting = false;
-    this.qualityRestoreAt = 0;
-    this.renderer.setPixelRatio(this.restPixelRatio);
+    this.renderer.setPixelRatio(stablePixelRatio(container.clientWidth, container.clientHeight));
     this.renderer.setClearColor(0xe9e8e3);
     this.renderer.toneMapping = THREE.NeutralToneMapping;
     this.renderer.toneMappingExposure = 0.9;
@@ -108,6 +107,7 @@ export class CampusViewer {
     this.scene.add(this.detailGround);
     this.camera = new THREE.PerspectiveCamera(38, 1, 0.02, 6000);
     this.camera.position.set(-280, 330, 370);
+    this.renderPipeline = createRenderPipeline(this.renderer, this.scene, this.camera);
     this.controls = new OrbitControls(this.camera, this.canvas);
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.08;
@@ -123,11 +123,6 @@ export class CampusViewer {
     });
     this.controls.addEventListener("start", () => {
       this.transition = null;
-      this.interacting = true;
-    });
-    this.controls.addEventListener("end", () => {
-      this.interacting = false;
-      this.qualityRestoreAt = performance.now() + 250;
     });
     this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
     const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
@@ -346,7 +341,9 @@ export class CampusViewer {
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     if (!width || !height) return;
+    this.renderer.setPixelRatio(stablePixelRatio(width, height));
     this.renderer.setSize(width, height);
+    this.renderPipeline.resize(width, height);
     this.camera.aspect = width / height;
     this.updateCameraProjection();
     this.needsRender = true;
@@ -921,14 +918,6 @@ export class CampusViewer {
   tick(time) {
     this.frame = requestAnimationFrame(this.tick);
     if (document.hidden) return;
-    // Keep full geometry, reducing only raster resolution while the user moves.
-    // Restore the original sharp presentation once the gesture settles.
-    const pixelRatio = this.interacting || time < this.qualityRestoreAt
-      ? 1 : this.restPixelRatio;
-    if (this.renderer.getPixelRatio() !== pixelRatio) {
-      this.renderer.setPixelRatio(pixelRatio);
-      this.needsRender = true;
-    }
     if (this.transition) {
       const state = this.transition;
       const progress = Math.min(1, (time - state.start) / state.duration);
@@ -944,7 +933,7 @@ export class CampusViewer {
     }
     this.controls.update();
     if (this.needsRender) {
-      this.renderer.render(this.scene, this.camera);
+      this.renderPipeline.render();
       this.updateLabels();
       this.needsRender = false;
     }
@@ -961,6 +950,7 @@ export class CampusViewer {
     this.resizeObserver.disconnect();
     this.controls.dispose();
     this.draco.dispose();
+    this.renderPipeline.dispose();
     this.environmentTarget.dispose();
     this.scene.traverse((object) => {
       object.geometry?.dispose();
