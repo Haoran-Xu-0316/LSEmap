@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "153",
-  "sourceModelSha256": "1c042804b6fda74a7148309f934f7213647a4201953f92e170c2aeabff6305a1",
+  "version": "154",
+  "sourceModelSha256": "2dbec0ee001ba3347de9de9ee50ed9e974401e301f4d4159a65b84b5c771f02c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -553,10 +553,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-9f855040af17.glb",
-        "bytes": 2736532,
-        "triangles": 235562,
-        "sha256": "9f855040af17a03c68b46eb5113ae01049f6a7b286acbcb700792b78637aa7a4",
+        "url": "/models/details/ckk-exterior-9d69c2e0583e.glb",
+        "bytes": 2740556,
+        "triangles": 235638,
+        "sha256": "9d69c2e0583e38b2bf25ffabe3e714c4711aef5b29470012c94d3f77ea640fb3",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -3216,10 +3216,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-ca21f4068a77.glb",
-        "bytes": 3565980,
-        "triangles": 335964,
-        "sha256": "ca21f4068a77a00b997dda0414d568a9c9f873fa298ced82a8ec8de1c649ea5b",
+        "url": "/models/details/mar-exterior-724f711293f9.glb",
+        "bytes": 3567328,
+        "triangles": 335984,
+        "sha256": "724f711293f94d14b1970b5f1683142e5f78cf5bb884e842905f89e45a6026c1",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -3468,10 +3468,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-7e91db22f98c.glb",
-        "bytes": 18803180,
+        "url": "/models/details/old-exterior-005354f3c9ae.glb",
+        "bytes": 20129004,
         "triangles": 1667976,
-        "sha256": "7e91db22f98c3c11f64b2b6dc3e7186abff71cee89a946d73511d5449a789f53",
+        "sha256": "005354f3c9aedaa66b6945ccbbd615303a8b8f927d61245854c2e95a64394a87",
         "bounds": {
           "min": [
             -39.1646614074707,
