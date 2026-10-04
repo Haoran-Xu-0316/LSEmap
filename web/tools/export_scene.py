@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v140.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v141.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -99,6 +99,7 @@ def web_material(source):
     node = material.node_tree.nodes.get('Principled BSDF')
     color = tuple(source.diffuse_color) if source else (0.6, 0.6, 0.6, 1)
     roughness, metallic, transmission = 0.7, 0.0, 0.0
+    principled = None
     if source and source.use_nodes:
         principled = next((n for n in source.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)
         if principled:
@@ -110,6 +111,11 @@ def web_material(source):
     node.inputs['Base Color'].default_value = color[:3] + (1,)
     node.inputs['Roughness'].default_value = max(0.12, roughness)
     node.inputs['Metallic'].default_value = min(1.0, metallic)
+    # Only explicitly authored artwork emits light; ordinary finishes remain unchanged.
+    if source and source.get('webEmission') and principled:
+        node.inputs['Emission Color'].default_value = principled.inputs['Emission Color'].default_value
+        node.inputs['Emission Strength'].default_value = principled.inputs['Emission Strength'].default_value
+        material['webEmission'] = True
     if transmission > 0.1:
         node.inputs['Alpha'].default_value = float(source.get('webOpacity', 0.30))
         material.surface_render_method = 'DITHERED'
@@ -171,7 +177,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
-        if original.name.startswith(('KSW_NEXT_', 'MAR_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'OLD_NEXT_CLARE_sealed_', 'CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
+        if original.name.startswith(('KSW_NEXT_', 'MAR_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'OLD_NEXT_CLARE_sealed_', 'OLD_NEXT_ACCESS_', 'LRB_NEXT_ENVELOPE_', 'CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
             layer = mesh.uv_layers.new(name='SurfaceUV')
             for face in mesh.polygons:
                 vertices = [original.matrix_world @ mesh.vertices[index].co for index in face.vertices]
@@ -405,7 +411,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '140', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '141', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
