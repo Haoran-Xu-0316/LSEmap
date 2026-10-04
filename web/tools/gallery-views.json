@@ -264,6 +264,24 @@
   },
   {
     "code": "LRB",
+    "name": "lrb-plaza-cafe",
+    "label": "Plaza Café玻璃亭与木条檐底",
+    "view": {
+      "position": [
+        39,
+        7,
+        40
+      ],
+      "target": [
+        56,
+        1.8,
+        20
+      ],
+      "fov": 42
+    }
+  },
+  {
+    "code": "LRB",
     "name": "lrb-portugal-street",
     "label": "葡萄牙街三联窗与阁楼窗",
     "view": {
