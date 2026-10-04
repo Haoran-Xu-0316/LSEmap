@@ -116,3 +116,11 @@ Original research photographs are not included in the browser assets.
 Edition 16 release: interactive details and all gallery images use the same
 version-16 native model. Runtime AgX tone mapping is aligned with the renders;
 real-time shading and Cycles illumination are still different renderers.
+
+Edition141 references:
+Old Building entrance: Webb Yates, https://webbyates.com/projects/the-old-building/
+Observed stair counts: AccessAble, https://www.accessable.co.uk/london-school-of-economics/access-guides/old-building
+61 Aldwych dormers: archived Walsh survey photograph; capture date unknown.
+Blue Rain by Michael Brown: https://blogs.lse.ac.uk/lsehistory/2018/03/07/shimmering-cascades-of-light-blue-rain-by-michael-brown/
+The LRB artwork is an estimated static bright-point study from an archived estate photograph,
+not all23520 physical LEDs or the live library-driven display. Artwork credit: Michael Brown.
