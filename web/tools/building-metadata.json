@@ -75,13 +75,15 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 130,
-        "status": "reference-guided-office-module-reconstruction",
-        "scope": "Square-facing academic tower glazing reconstructed as98 nominal2m glazed plus1m opaque office modules with closed high-level vents. Existing stair strips, teaching floors, end/back faces, bracing, neutral glazing finish and red/orange shades retained.",
+        "version": 144,
+        "status": "geographically-corrected-low-wing-street-and-square-skins",
+        "scope": "Low-wing lower two storeys now place eight stone panels and physical shadow joints on the Houghton Street side, and52 shade modules on the square side. Nine audited component families replace the reversed registration. Actual curtain glass, entrance end,98 tower office modules and other levels retain their geometry and finishes. Orientation is checked against GIS and built photographs; inherited dimensions and unseen faces remain estimated.",
         "source": "https://rshp.com/projects/education/lse-centre-building/",
-        "photographSource": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px6.jpg",
-        "photographDate": "unknown",
-        "registration": "Current GIS/photo footprint, levels, stair-strip positions, exact repeat counts and module offsets remain estimates; not a measured or registered as-built elevation."
+        "photographs": [
+          "RSHP020 square face",
+          "RSHP026 Houghton Street face"
+        ],
+        "photographDate": "unknown"
       },
       "interiorView": {
         "position": [
@@ -118,6 +120,15 @@
           "source": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px5.jpg",
           "photographDate": "unknown",
           "dimensions": "GIS wing registration and frame/transom dimensions remain estimates."
+        },
+        {
+          "version": 130,
+          "status": "reference-guided-office-module-reconstruction",
+          "scope": "Square-facing academic tower glazing reconstructed as98 nominal2m glazed plus1m opaque office modules with closed high-level vents. Existing stair strips, teaching floors, end/back faces, bracing, neutral glazing finish and red/orange shades retained.",
+          "source": "https://rshp.com/projects/education/lse-centre-building/",
+          "photographSource": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px6.jpg",
+          "photographDate": "unknown",
+          "registration": "Current GIS/photo footprint, levels, stair-strip positions, exact repeat counts and module offsets remain estimates; not a measured or registered as-built elevation."
         }
       ],
       "wholeFacadeReview": {
@@ -1120,6 +1131,13 @@
         {
           "version": 126,
           "scope": "Ten courtyard windows: photo-estimated68% fixed/32% opening division, narrow metal opening guards, removal of ten unsupported high transoms and aperture-local overlapping legacy trim.100 whole-facade first-surface probes and5mm edge scans. Other elevations, exact guard dimensions, inherited face/row registration and full interiors remain unverified."
+        },
+        {
+          "version": 144,
+          "status": "left-wing-reviewed-no-geometry-change",
+          "scope": "Built photographs and level02 plan do not uniquely register the left tower to retained543_3/4/5 masses. Existing height cut and finned face remain unresolved; no guessed facade or upper floor has been added.",
+          "source": "Archived Nick Kane photographs and RIBA level02 plan",
+          "readOnly": true
         }
       ]
     },
@@ -1145,11 +1163,12 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 143,
-        "status": "connected-side-approach-and-closed-stone-junction",
-        "scope": "Existing south approach registered to the third middle low-window station: continuous estimated11.87m ramp, tapered stone sidewall and silver rails join the entrance threshold and street. A missing L-shaped stone return closes the existing recessed shell junction. Two four-step flights, windows, portal, attic and cornice contacts retained. Ramp widths, linear slope, post intervals and inherited1.79m setback are estimates; platform lift and unseen facade/interior areas remain unresolved.",
-        "source": "Archived existing south elevation080201P1 and supplied Houghton photographs; saved native junction and first-surface registration",
-        "photographDate": "unknown"
+        "version": 144,
+        "status": "student-services-frontage-and-independent-reception-study",
+        "scope": "Clare Market planter retains the blue windows, relief panels, steps and red-white vector sculpture while gaining bounded broad leaves, taller foliage groups and yellow flowers. Adds an independent SSC reception cutaway with the photographed red wall, long counter, metal stairs and mezzanine; room dimensions, station and riser counts are estimates. The previous coordinated Houghton approach is retained. Complete ground-floor registration, unseen offices and survey dimensions remain unresolved.",
+        "source": "Supplied OLD entrance photographs and official LSE Student Services reception image",
+        "photographDate": "unknown",
+        "interiorSource": "https://www.lse.ac.uk/marshall-institute/emsbe/emsbe-2026-offer-holder-hub"
       },
       "interiorView": {
         "position": [
@@ -1197,6 +1216,13 @@
           "scope": "Close five open strips above the Clare Market upper blue frames by extending existing stone spandrels to the registered frame top. Move only20 lower-edge vertices; retain1068 vertices, topology, UVs, materials and windows. Existing model levels remain estimates.",
           "source": "Haslam2010 study photograph C; user Student Services Centre reference for frontage registration",
           "photographDate": "unknown; study published2010"
+        },
+        {
+          "version": 143,
+          "status": "connected-side-approach-and-closed-stone-junction",
+          "scope": "Existing south approach registered to the third middle low-window station: continuous estimated11.87m ramp, tapered stone sidewall and silver rails join the entrance threshold and street. A missing L-shaped stone return closes the existing recessed shell junction. Two four-step flights, windows, portal, attic and cornice contacts retained. Ramp widths, linear slope, post intervals and inherited1.79m setback are estimates; platform lift and unseen facade/interior areas remain unresolved.",
+          "source": "Archived existing south elevation080201P1 and supplied Houghton photographs; saved native junction and first-surface registration",
+          "photographDate": "unknown"
         }
       ],
       "houghtonAccessReview": {
@@ -1938,6 +1964,32 @@
         ],
         "fov": 48
       }
+    },
+    {
+      "id": "old-ssc",
+      "code": "OLD",
+      "collection": "OLD_SSC_ROOM_study",
+      "label": "Student Services Centre接待区",
+      "scope": "依据用户照片与LSE官方接待区照片建立的独立局部空间。红墙、接待柜台、两段金属楼梯和夹层可见；尺寸、家具及踏步数量为估计，未连接为完整楼层。",
+      "gallery": "old-ssc-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "Student Services Centre接待区",
+        "scope": "照片可见的接待与夹层局部，尺寸与配置估计，不代表整栋OLD内部。"
+      },
+      "interiorView": {
+        "position": [
+          11.5,
+          5.4,
+          14.5
+        ],
+        "target": [
+          0,
+          1.4,
+          -1.1
+        ],
+        "fov": 42
+      }
     }
   ],
   "presentationReview": {
@@ -1949,5 +2001,47 @@
     "source": "https://www.lse.ac.uk/lse-information/campus-map",
     "scope": "Current online campus directory confirms the existing map-code names, FAW entry through PAN and35L under construction. Page displays March2025 map; no2026as-built survey claimed.",
     "codeRecords": 31
+  },
+  "publicRealmReview": {
+    "version": 144,
+    "checked": "2026-10-04",
+    "scope": "Seven tree pools registered from completed Portsmouth2021approved scheme, with deliberately estimated container and vegetation dimensions. No benches,cycle stands or gully changes.",
+    "source": [
+      {
+        "local": "portsmouth-approved-plan-2021.pdf",
+        "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Marshall-Building/Newsletters/Plan-Update-redline-FINAL-May-2021.pdf",
+        "date": "May2021",
+        "supports": "Registered intended seven-tree positions and approximate circular green footprints"
+      },
+      {
+        "url": "https://www.westminstertransportationservices.co.uk/projects/project_details.php?id=541",
+        "supports": "Project completed; seven trees in planters; Yorkstone shared surface"
+      }
+    ],
+    "registration": {
+      "model": "Similarity with image-Y reflection; not unrestricted affine",
+      "anchors": 4,
+      "maximumResidualMetres": 0.556451891647599
+    },
+    "dimensionsEstimated": {
+      "poolOuterDiameter": 1.44,
+      "poolInnerDiameter": 1.22,
+      "poolRimAbovePaving": 0.2,
+      "treeHeightRange": [
+        6.3,
+        6.4
+      ],
+      "canopyDiameterRange": [
+        3.5,
+        4.08
+      ],
+      "trunkDiameter": 0.2
+    },
+    "limitations": [
+      "Official completed scheme registration, not a2026condition survey. Positions carry drawing-to-native residual and later installation uncertainty.",
+      "Four noncollinear corner anchors cover OCS and MAR; native source GIS and raster drawing are approximate.",
+      "Planter circular geometry,0.20m rim and planting heights/leaf volume are conservative modelling estimates, not observed installed container detail.",
+      "Two benches/three stands not positioned because their installed placement is unconfirmed. Five illustrative gullies left untouched."
+    ]
   }
 }
