@@ -19,6 +19,13 @@ returning visitors cannot combine a new catalogue with an older cached model.
 
 ## Latest exterior refinement
 
+Edition153 opens the two registered Kings Chambers entrance panes through the
+solid timber leaf and the immediate recess cap, retaining the surrounding door
+frame, pane geometry, UVs and tint. Thirty-two pane probes and nine frame checks
+pass after reopening. The red RAG storefront proposal remains unbuilt in the
+available evidence and is not substituted for the photographed frontage.
+MAR high-wing and SAW street-corner registrations remain incomplete.
+
 Edition152 completes the fifth Clement dormer opening using the actual glass
 corners and both differently oriented window cheeks. The four earlier openings
 and deeper roof surfaces remain intact. Old Building's ten Clare Market blue-frame
