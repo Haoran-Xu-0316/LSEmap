@@ -62,7 +62,13 @@ estimate, not a measured specification or an invented interior.
 
 The overview, closeups and all119 gallery images use the same production viewer,
 model assets and glass parameters. Desktop thin frames use four fixed subpixel
-samples before FXAA; narrow views retain single-sample rendering. Colors use
+samples before FXAA. Desktop overview motion now reprojects depth-validated frame
+history with cubic sampling and local color clipping, reducing measured pan/orbit/
+zoom aliasing by at least10% in the recorded32-sample comparisons, without deleting geometry.
+Camera jumps and scene changes discard history; one clean frame restores the
+original crisp image after motion, then rendering idles. Closeups, interiors and
+narrow views keep their existing rendering. Narrow views retain single-sample
+rendering. Colors use
 Neutral tone mapping. The release manifest identifies the published native source
 and renderer separately; historical edition notes below are not current-state
 acceptance of every elevation or room.
