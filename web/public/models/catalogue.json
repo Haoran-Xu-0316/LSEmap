@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "151",
-  "sourceModelSha256": "39376c7060856dd05b42596414e74a47d18a60828aba92a45f78c3d6fd842e19",
+  "version": "152",
+  "sourceModelSha256": "639440608dd8f7db604c126141c45c4a55076cf33dcae4f57af5b649238544a3",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -766,10 +766,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-90a465387077.glb",
-        "bytes": 738832,
-        "triangles": 64898,
-        "sha256": "90a465387077c781bff0caec9045718265f33e7de9a13fbadc750818e1044f4d",
+        "url": "/models/details/clm-exterior-7a60ac2b63b9.glb",
+        "bytes": 738000,
+        "triangles": 64906,
+        "sha256": "7a60ac2b63b982078e3ba3a93597b84dc2ddafa4238bd40e3e18c2c015c4c10b",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -3468,10 +3468,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-bc5f6d4ea15d.glb",
-        "bytes": 18803112,
+        "url": "/models/details/old-exterior-7e91db22f98c.glb",
+        "bytes": 18803180,
         "triangles": 1667976,
-        "sha256": "bc5f6d4ea15db6767ad62dc69e454d5095f8923bf5003ff8bc8ddf7d9a502f84",
+        "sha256": "7e91db22f98c3c11f64b2b6dc3e7186abff71cee89a946d73511d5449a789f53",
         "bounds": {
           "min": [
             -39.1646614074707,
