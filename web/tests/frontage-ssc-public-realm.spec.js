@@ -105,6 +105,7 @@ for(const width of [1440,390])test(`stage144 OLD SSC production space loads and 
  const errors=[];page.on('pageerror',error=>errors.push(error.message));
  await page.setViewportSize({width,height:width===390?844:1000});await page.goto('/#OLD');
  await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-OLD',{timeout:60000});await expect(page.locator('#fallback')).toBeHidden();
+ await expect(page.locator('.detail-gallery img[src*="old-ssc-interior"]')).toHaveCount(1);
  await expect(page.locator('#interior-view')).toBeEnabled();await page.locator('#interior-view').click();
  await expect(page.locator('#interior-space option[value="old-ssc"]')).toHaveCount(1);
  await page.locator('#interior-space').selectOption('old-ssc');
