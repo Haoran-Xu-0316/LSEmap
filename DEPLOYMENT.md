@@ -1,10 +1,19 @@
 # Production deployment
 
-The existing Cloudflare Worker `lsemap` is connected to `Haoran-Xu-0316/LSEmap`, production branch `main`, with repository root `/`.
+Production Worker: `lsemap`
+URL: https://lsemap.xhr0316.workers.dev/
+GitHub: `Haoran-Xu-0316/LSEmap`, branch `main`
 
-- Build command: `npm run build`
-- Deploy command: `npx wrangler deploy`
-- Assets: `dist/`, as configured in `wrangler.jsonc`
-- Production URL: https://lsemap.xhr0316.workers.dev
+Run `npm run deploy` from the repository root with an authenticated Wrangler
+session. It builds the website, verifies gallery/model signatures, validates the
+runtime asset set and uploads only the checked files through an isolated temporary
+directory. That temporary directory is removed after deployment.
 
-Push changes to `main` to trigger Cloudflare Workers Builds. Keep the Worker name and production URL unchanged. The build generates release metadata and validates the asset set before deployment.
+For an already verified build, `node web/tools/deploy_release.mjs` checks each
+file against `dist/release.json` before uploading. The Worker streams the unchanged
+campus GLB from bounded static segments; other runtime assets are served directly.
+
+Push and production are separate deliverables. Verify the GitHub branch SHA and
+the online `/release.json`, then compare changed asset checksums and open the
+updated buildings on desktop and mobile before reporting release completion.
+Keep the existing Worker name, URL and self-hosted runtime dependencies.
