@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "147",
-  "sourceModelSha256": "02607a215a50db6fb0807091000c271e93a1686d035e9512fe565acd1de30e6a",
+  "version": "148",
+  "sourceModelSha256": "536b63660f8542ecae569523ef8beb2c45013068487f2aaa160820225e7076f2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2109,14 +2109,21 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 123,
-        "status": "entrance-glazing-corrected",
-        "addedObjects": 1,
-        "clearGlazingProbes": 24,
-        "retainedLowerTimberChecks": 4,
-        "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
+        "version": 148,
+        "status": "shopfront-current-photo-corrected",
+        "scope": "Official May2025 street photograph replaces the historical left lower shopfront glazing with continuous white paneling. Both shop overlights gain the photographed2-row4-column grids, and two fictitious large-pane middle rails are removed. Obscured right basement, original large glass, timber entry and other upper/roof geometry remain unchanged. Dimensions and optical finishes are estimates; no complete interior claimed."
       },
       "closeupImage": "lch-entrance",
+      "previousReviews": [
+        {
+          "version": 123,
+          "status": "entrance-glazing-corrected",
+          "addedObjects": 1,
+          "clearGlazingProbes": 24,
+          "retainedLowerTimberChecks": 4,
+          "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
+        }
+      ],
       "bounds": {
         "min": [
           -34.67495346069336,
@@ -2172,10 +2179,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-cb56f5a984d0.glb",
-        "bytes": 1200020,
-        "triangles": 93164,
-        "sha256": "cb56f5a984d0197d99c2d323cfdf3dd38ba70373f7c30de2d66f1be4ef4bedb6",
+        "url": "/models/details/lch-exterior-687766add536.glb",
+        "bytes": 1168108,
+        "triangles": 90536,
+        "sha256": "687766add536c8d10c8e814939646d803b9fbc316a4e14afbdb2df1622fb6064",
         "bounds": {
           "min": [
             -34.67495346069336,
@@ -2734,8 +2741,9 @@
         "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
       },
       "latestReview": {
-        "version": 122,
-        "scope": "Front base corrected to eight ashlar courses and225 recessed-joint pieces; original three arched apertures retained with nine masonry-clearance probes. Dimensions remain photographic estimates."
+        "version": 148,
+        "status": "entry-glass-apertures-opened",
+        "scope": "Two photographed entrance panes retain original geometry and neutral color with explicit browser opacity0.82. Only the timber door leaf and metal recess faces behind those panes receive actual mesh apertures. Surrounding door, frame and all other windows/roof remain unchanged. Dimensions and optics estimated; no complete interior claimed."
       },
       "detailView": {
         "label": "入口细节",
@@ -2752,6 +2760,12 @@
         "fov": 50
       },
       "closeupImage": "51l-entrance",
+      "previousReviews": [
+        {
+          "version": 122,
+          "scope": "Front base corrected to eight ashlar courses and225 recessed-joint pieces; original three arched apertures retained with nine masonry-clearance probes. Dimensions remain photographic estimates."
+        }
+      ],
       "bounds": {
         "min": [
           -74.71239471435547,
@@ -2807,10 +2821,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-754ecb04109e.glb",
-        "bytes": 2834364,
-        "triangles": 219927,
-        "sha256": "754ecb04109ecae4448e9a0664532ba29349fc268111fbdd7b703f40f5d175b9",
+        "url": "/models/details/51l-exterior-515b5e168be6.glb",
+        "bytes": 2834584,
+        "triangles": 219719,
+        "sha256": "515b5e168be699c6aeaae92035b4b7c535e1a10d5e6923c6a9f28c486d8b82e6",
         "bounds": {
           "min": [
             -74.71239471435547,
@@ -4340,9 +4354,16 @@
         "scope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified."
       },
       "latestReview": {
-        "version": 122,
-        "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
+        "version": 148,
+        "status": "retained-street-glazing-transparent",
+        "scope": "Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated."
       },
+      "previousReviews": [
+        {
+          "version": 122,
+          "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
+        }
+      ],
       "bounds": {
         "min": [
           -39.28082275390625,
@@ -4398,10 +4419,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/por-exterior-1f6fdd268985.glb",
-        "bytes": 1089988,
+        "url": "/models/details/por-exterior-5b9f5c0a1a79.glb",
+        "bytes": 1090088,
         "triangles": 82879,
-        "sha256": "1f6fdd26898575578e712d9f805f6c8da440be4b7f798b7703ab470cc6dc7b9c",
+        "sha256": "5b9f5c0a1a795e176568e233b666e70bcc20d6ce524879fde9939a154479ee40",
         "bounds": {
           "min": [
             -39.27674865722656,
@@ -4850,9 +4871,16 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 121,
-        "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
+        "version": 148,
+        "status": "photo-covered-dormer-grid-corrected",
+        "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
       },
+      "previousReviews": [
+        {
+          "version": 121,
+          "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
+        }
+      ],
       "bounds": {
         "min": [
           -44.02347946166992,
@@ -4908,10 +4936,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-16b5a0f29d3d.glb",
-        "bytes": 938028,
-        "triangles": 71795,
-        "sha256": "16b5a0f29d3df5ae4e4cc78395cb0564cf91542cc4133b2cf6c2f983a407767a",
+        "url": "/models/details/shf-exterior-11b577edc5df.glb",
+        "bytes": 924688,
+        "triangles": 70715,
+        "sha256": "11b577edc5df13cde14b87acf54e727b51e969839464a48829c89216704666c6",
         "bounds": {
           "min": [
             -44.019718170166016,
