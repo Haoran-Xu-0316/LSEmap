@@ -229,7 +229,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition 51. Check the live `/release.json`
+The current local source and build target is edition143. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
@@ -448,3 +448,5 @@ Edition140 separates the two KSW storefronts into short upper lights and lower g
 Edition141 connects OLD’s four external and four foyer steps through a lowered threshold, coordinated glass/frame clearance and matching handrails. Native street/GF levels anchor the route; dimensions remain estimates and the side ramp/platform lift remain unfinished. The24 street-wing61A dormers now have dark open cheeks and shallow pitched caps, retaining the two stone corner dormers. LRB’s photographed Blue Rain brick corner replaces four fictitious generic windows;1011 bright photo samples form one static mesh with preserved emission, not a model of all23520 physical LEDs or live library activity. Accepted geometry, UV, PBR and artwork emission are shared by overview, detail and gallery. Other exterior assets and all separate interiors are retained.
 
 Edition142 corrects the five wide modules in PAN’s lowest five entrance-side window rows, keeping independent glass, perimeter frames and aligned spandrel joints. STC’s Warren Wilson corner panel and frame now use the documented38ft by7ft6in proportion; the mosaic and aluminium artwork remain placeholders. FAW’s288 glass first-hit probes found no supported correction. Whole-building views use an oriented exterior envelope, including both PAN and FAW at their shared entrance, without scanning mesh vertices on browser selections. Interior assets and other exterior geometry are retained.
+
+Edition143 connects OLD’s estimated continuous Houghton side approach to the existing threshold and street, closes a missing stone return, and retains the two four-step flights. MAR’s photo-registered right academic wing gains its continuous blank west wall and real shallow panel joints, removing35 fictitious windows while preserving the adjacent40-window end face. STC’s documented panel proportions now carry a blue Thames curve and six coarse silver artwork profiles; fine mosaic and relief dimensions remain approximate. Three new gallery views use the production viewer. All unrelated exterior assets and separate interiors are retained. This release does not complete every campus facade or interior.
