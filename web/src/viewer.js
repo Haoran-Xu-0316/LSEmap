@@ -123,8 +123,15 @@ export class CampusViewer {
     this.controls.addEventListener("change", () => {
       this.needsRender = true;
     });
+    this.interacting = false;
     this.controls.addEventListener("start", () => {
       this.transition = null;
+      this.interacting = true;
+      this.needsRender = true;
+    });
+    this.controls.addEventListener("end", () => {
+      this.interacting = false;
+      this.needsRender = true;
     });
     this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
     const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
@@ -144,7 +151,7 @@ export class CampusViewer {
     this.sun = sun;
     this.scene.add(sun.target);
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.shadowMap.autoUpdate = false;
     this.scene.add(sun);
     const fill = new THREE.DirectionalLight(0xe7edff, 0.25);
@@ -935,7 +942,7 @@ export class CampusViewer {
     }
     const cameraChanged = this.controls.update();
     if (this.needsRender || this.renderPipeline.needsSettle) {
-      this.renderPipeline.render({ moving: cameraChanged || Boolean(this.transition), time });
+      this.renderPipeline.render({ moving: this.interacting || cameraChanged || Boolean(this.transition), time });
       this.updateLabels();
       this.needsRender = false;
     }
