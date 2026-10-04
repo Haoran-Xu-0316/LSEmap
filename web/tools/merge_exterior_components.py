@@ -10,13 +10,11 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage155';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v154.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v155.blend'
+OUT=ROOT/'result/blender/stage156';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v155.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v156.blend'
 COMPONENTS=[
-    ('SAW','saw_exterior155','saw-exterior155-component.blend'),
-    ('LRB','lrb_plaza155','lrb-plaza155-component.blend'),
-    ('CBG','cbg_facade155','cbg-facade155-component.blend'),
+    ('OLD','old_exterior156','old-exterior156-component.blend'),
 ]
 
 # Only this map-registered detached café may replace non-building context.
@@ -180,7 +178,7 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':155,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':156,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
 proof['ownedUsedMaterialNames']={code:sorted({obj.data.materials[poly.material_index].name for name in owned if name.startswith(code+'_') for obj in [bpy.data.objects[name]] for poly in obj.data.polygons if poly.material_index<len(obj.data.materials) and obj.data.materials[poly.material_index]}) for code,*_ in COMPONENTS}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
