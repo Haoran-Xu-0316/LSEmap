@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "150",
-  "sourceModelSha256": "d365166d2cc3011cfab00365593400aa56bd8aab1252ce974a7dabeb4af97147",
+  "version": "151",
+  "sourceModelSha256": "39376c7060856dd05b42596414e74a47d18a60828aba92a45f78c3d6fd842e19",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -766,10 +766,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-84687dd21b5e.glb",
-        "bytes": 735908,
-        "triangles": 64864,
-        "sha256": "84687dd21b5e1a231947b90e84541118089272d5d55f275d864d73ccc0970e9a",
+        "url": "/models/details/clm-exterior-90a465387077.glb",
+        "bytes": 738832,
+        "triangles": 64898,
+        "sha256": "90a465387077c781bff0caec9045718265f33e7de9a13fbadc750818e1044f4d",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -1126,10 +1126,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-1d8830306845.glb",
-        "bytes": 584016,
-        "triangles": 47244,
-        "sha256": "1d88303068451858e56afe73682d2a867f341e46ce743089e63321625a827e90",
+        "url": "/models/details/con-exterior-b50f694cdd34.glb",
+        "bytes": 586512,
+        "triangles": 47252,
+        "sha256": "b50f694cdd34231a0783160470be506b3ff8fbe10e8de30d0fe16bbf8a580191",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -2821,10 +2821,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-42055d359ac4.glb",
-        "bytes": 2845360,
+        "url": "/models/details/51l-exterior-f3faaddf932a.glb",
+        "bytes": 2846920,
         "triangles": 219719,
-        "sha256": "42055d359ac45ca25d414c6beae038ee2286c5caad75946708d839760661bfa9",
+        "sha256": "f3faaddf932ab6474f2db630be4d74a74218dc1457832c5c5f772b92cc70e071",
         "bounds": {
           "min": [
             -74.71239471435547,
