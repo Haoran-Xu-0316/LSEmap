@@ -10,10 +10,15 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage147';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v146.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v147.blend'
-COMPONENTS=[('5LF','five_lincolns_glazing_next','five-lincolns-glazing-component.blend'),('49L','coopers_glazing_next','coopers-glazing-component.blend'),('50L','fifty_lincoln_glazing_next','fifty-lincoln-glazing-component.blend'),('49L','fifty_lincoln_glazing_next','coopers-shared-upper-component.blend','shared-upper-audit.json','shared-upper-verification.json')]
+OUT=ROOT/'result/blender/stage148';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v147.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v148.blend'
+COMPONENTS=[
+    ('LCH','lch_exterior148','lincoln-chambers-exterior148-component.blend'),
+    ('SHF','shf_exterior148','sheffield-dormer-component.blend'),
+    ('POR','por_exterior148','portsmouth-exterior-component.blend'),
+    ('51L','por_exterior148','lincoln51-doors-component.blend','lincoln51-audit.json','lincoln51-verification.json'),
+]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -153,6 +158,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':147,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':148,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
