@@ -8,6 +8,7 @@ import { loadModelInStages } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
+const COMPANION_CODES = {PAN: "FAW", FAW: "PAN"};
 const DAYLIGHT_DIRECTION = new THREE.Vector3(0.8, 1.6, 1).normalize();
 
 // Static outdoor radiance for glazing: a pale sky, a neutral horizon and stone
@@ -362,39 +363,31 @@ export class CampusViewer {
     this.camera.updateProjectionMatrix();
   }
 
-  fit(bounds, animate = true, direction = HOME_DIRECTION) {
+  fit(bounds, animate = true, direction = HOME_DIRECTION, framingCorners = null) {
     const box = bounds instanceof THREE.Box3 ? bounds : boxFromData(bounds);
-    const center = box.getCenter(new THREE.Vector3());
+    const corners = framingCorners
+      ? framingCorners.map(point => new THREE.Vector3(...point))
+      : [box.min.x, box.max.x].flatMap(x => [box.min.y, box.max.y].flatMap(y =>
+          [box.min.z, box.max.z].map(z => new THREE.Vector3(x, y, z))));
+    const center = framingCorners
+      ? corners.reduce((sum, point) => sum.add(point), new THREE.Vector3()).divideScalar(corners.length)
+      : box.getCenter(new THREE.Vector3());
     const mobileDetail = mobileLayout.matches && this.activeCode;
     const up = new THREE.Vector3(0, 1, 0);
     const right = new THREE.Vector3().crossVectors(up, direction);
     // An exactly vertical view still needs a horizontal frame for fitting bounds.
-    // A zero cross product otherwise collapses both projected extents to zero.
     if (right.lengthSq() < 1e-8) right.set(1, 0, 0);
     else right.normalize();
-    const cameraUp = new THREE.Vector3()
-      .crossVectors(direction, right)
-      .normalize();
+    const cameraUp = new THREE.Vector3().crossVectors(direction, right).normalize();
     const tangent = Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2));
     let distance = 14;
-    for (const x of [box.min.x, box.max.x]) {
-      for (const y of [box.min.y, box.max.y]) {
-        for (const z of [box.min.z, box.max.z]) {
-          const corner = new THREE.Vector3(x, y, z).sub(center);
-          const horizontal =
-            Math.abs(corner.dot(right)) / (tangent * this.camera.aspect);
-          const vertical =
-            Math.abs(corner.dot(cameraUp)) /
-            (tangent * (mobileDetail ? 0.44 : 0.8));
-          distance = Math.max(
-            distance,
-            corner.dot(direction) + Math.max(horizontal, vertical) * 1.2,
-          );
-        }
-      }
+    for (const point of corners) {
+      const corner = point.clone().sub(center);
+      const horizontal = Math.abs(corner.dot(right)) / (tangent * this.camera.aspect);
+      const vertical = Math.abs(corner.dot(cameraUp)) / (tangent * (mobileDetail ? 0.44 : 0.8));
+      distance = Math.max(distance, corner.dot(direction) + Math.max(horizontal, vertical) * 1.2);
     }
-    if (mobileDetail)
-      center.addScaledVector(cameraUp, -distance * tangent * 0.44);
+    if (mobileDetail) center.addScaledVector(cameraUp, -distance * tangent * 0.44);
     const position = center.clone().addScaledVector(direction, distance);
     this.moveCamera(position, center, animate);
   }
@@ -457,6 +450,11 @@ export class CampusViewer {
     this.toggleContext(false);
     // Sidebar changes can precede ResizeObserver; fit using the current canvas size.
     this.resize();
+    // Fit the actual shell orientation, including the visible adjoining tower.
+    const companion = this.buildings.find(b => b.code === COMPANION_CODES[building.code]);
+    const framingCorners = building.exteriorFramingCorners
+      ? [...building.exteriorFramingCorners, ...(companion?.exteriorFramingCorners ?? [])]
+      : null;
     if (building.bounds)
       this.fit(
         building.bounds,
@@ -464,6 +462,7 @@ export class CampusViewer {
         building.exteriorDirection
           ? new THREE.Vector3(...building.exteriorDirection)
           : HOME_DIRECTION,
+        framingCorners,
       );
     if (building.bounds) this.fitSunShadow(boxFromData(building.bounds));
     this.upgradeModel(building, "exterior");
@@ -686,12 +685,7 @@ export class CampusViewer {
   toggleContext(visible) {
     this.contextVisible = visible;
     this.detailGround.visible = this.mode !== "interior" && Boolean(this.activeCode) && !visible;
-    const companion =
-      this.activeCode === "PAN"
-        ? "FAW"
-        : this.activeCode === "FAW"
-          ? "PAN"
-          : null;
+    const companion = COMPANION_CODES[this.activeCode] ?? null;
     for (const [name, group] of this.groups) {
       if (name === "SITE") {
         group.visible = visible || !this.activeCode;
