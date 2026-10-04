@@ -75,14 +75,10 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 144,
-        "status": "geographically-corrected-low-wing-street-and-square-skins",
-        "scope": "Low-wing lower two storeys now place eight stone panels and physical shadow joints on the Houghton Street side, and52 shade modules on the square side. Nine audited component families replace the reversed registration. Actual curtain glass, entrance end,98 tower office modules and other levels retain their geometry and finishes. Orientation is checked against GIS and built photographs; inherited dimensions and unseen faces remain estimated.",
+        "version": 155,
+        "status": "photo-informed-end-louvre-registration-and-window-transoms",
+        "scope": "East tower louvres registered to rear service zone; west rear open louvre screen added behindXbrace. Front circulation glazing remains open. Vision crossbars and40shallow charcoal floor-edge bands follow built photographs. Retained neutral70/37 glass and red-front/orange-return shades. Red dominance follows user preference rather than measured photographic colour. Dimensions remain estimated.",
         "source": "https://rshp.com/projects/education/lse-centre-building/",
-        "photographs": [
-          "RSHP020 square face",
-          "RSHP026 Houghton Street face"
-        ],
         "photographDate": "unknown"
       },
       "interiorView": {
@@ -129,6 +125,17 @@
           "photographSource": "https://www.dobler-metallbau.com/wp-content/uploads/2020/11/55_LSE_1174x684px6.jpg",
           "photographDate": "unknown",
           "registration": "Current GIS/photo footprint, levels, stair-strip positions, exact repeat counts and module offsets remain estimates; not a measured or registered as-built elevation."
+        },
+        {
+          "version": 144,
+          "status": "geographically-corrected-low-wing-street-and-square-skins",
+          "scope": "Low-wing lower two storeys now place eight stone panels and physical shadow joints on the Houghton Street side, and52 shade modules on the square side. Nine audited component families replace the reversed registration. Actual curtain glass, entrance end,98 tower office modules and other levels retain their geometry and finishes. Orientation is checked against GIS and built photographs; inherited dimensions and unseen faces remain estimated.",
+          "source": "https://rshp.com/projects/education/lse-centre-building/",
+          "photographs": [
+            "RSHP020 square face",
+            "RSHP026 Houghton Street face"
+          ],
+          "photographDate": "unknown"
         }
       ],
       "wholeFacadeReview": {
@@ -1036,11 +1043,16 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 141,
-        "status": "continuous-brick-artwork-corner-static-blue-rain",
-        "scope": "Four fictitious corner windows replaced by continuous brick and1011 historical photograph light samples in one static emissive mesh. Not a reconstruction of23520 physical LEDs or a live display.",
-        "source": "LSE historical Blue Rain photograph and artwork documentation",
-        "photographDate": "historical; current condition unverified"
+        "version": 155,
+        "status": "map-registered-detached-plaza-cafe-pavilion",
+        "scope": "Mapped way/310159572 grey context walls and roof replaced by independent black steel/glass Plaza Café pavilion with timber soffit, green roof and shallow visible seating. Existing library elevations, glazing, roofs and interiors retained. Nine-edge footprint preserved;3.49mheight,0.65meaves, joinery and seating estimates. No complete measured café interior claimed.",
+        "sources": [
+          "https://food.lse.ac.uk/story/35941950/head-to-plaza-cafe",
+          "https://info.lse.ac.uk/current-students/estates-division/facilities-guide/social-and-green-space",
+          "https://www.openstreetmap.org/way/310159572"
+        ],
+        "photographDate": "unknown",
+        "footprintRecordDate": "2025-05-15"
       },
       "interiorSections": [
         {
@@ -1122,6 +1134,13 @@
               "photographDate": "unknown"
             }
           ]
+        },
+        {
+          "version": 141,
+          "status": "continuous-brick-artwork-corner-static-blue-rain",
+          "scope": "Four fictitious corner windows replaced by continuous brick and1011 historical photograph light samples in one static emissive mesh. Not a reconstruction of23520 physical LEDs or a live display.",
+          "source": "LSE historical Blue Rain photograph and artwork documentation",
+          "photographDate": "historical; current condition unverified"
         }
       ],
       "entranceCanopyReview": {
@@ -1705,11 +1724,11 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 139,
-        "status": "photo-informed-three-group-timber-shading",
-        "scope": "Three photographed groups of six pale timber shading leaves added in front of the north-fold first-floor glazing. Original glass, timber frame, canopy, pierced brick and interiors retained. Colour, depths and positions are photo estimates,2017 upload path with unknown capture date. Whole folded outline and complete internal enclosure remain unresolved.",
-        "reference": "data/建筑图片/SAW_Saw Swee Hock Student Centre/01_建筑实拍/architecture_round5_SAW_saw_909_01.jpg",
-        "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
+        "version": 155,
+        "status": "photo-informed-main-pierced-window-bands",
+        "scope": "North folded wall three real window openings, physical brick screens, back glazing, frames and supports corrected together from66.9to112.54square metres. Other faces, highest point, footprint, roofs and interiors retained. Widths, vertical intervals and heights are photographic estimates.",
+        "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery",
+        "photographDate": "unknown"
       },
       "exportExterior": true,
       "reviewHistory": [
@@ -1723,6 +1742,13 @@
           "scope": "Four stage82 curtain pane families use the existing SAW glass palette instead of an opaque shader. Base color, roughness, metallic and native transmission inherited; browser opacity0.78 is an authored approximation bounded after rear-surface inspection, not a measured glass transmittance. Geometry, UV, timber frames, canopy and pierced brick retained. Grouped shading-fin registration remains unresolved.",
           "source": "Archived architect/manufacturer photographs and current native pane inspection",
           "photographDate": "unknown"
+        },
+        {
+          "version": 139,
+          "status": "photo-informed-three-group-timber-shading",
+          "scope": "Three photographed groups of six pale timber shading leaves added in front of the north-fold first-floor glazing. Original glass, timber frame, canopy, pierced brick and interiors retained. Colour, depths and positions are photo estimates,2017 upload path with unknown capture date. Whole folded outline and complete internal enclosure remain unresolved.",
+          "reference": "data/建筑图片/SAW_Saw Swee Hock Student Centre/01_建筑实拍/architecture_round5_SAW_saw_909_01.jpg",
+          "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
         }
       ]
     },
