@@ -71,8 +71,10 @@ export function createRenderPipeline(renderer, scene, camera, allowTemporal = ()
       renderer.getDrawingBufferSize(bufferSize);
       antialiasPass.uniforms.resolution.value.set(1 / bufferSize.x, 1 / bufferSize.y);
     },
-    render({ stabilize = true } = {}) {
+    render({ stabilize = true, moving, time } = {}) {
       temporalPass.enabled = stabilize && wideViewport && camera.isPerspectiveCamera && allowTemporal();
+      temporalPass.motion = moving;
+      temporalPass.frameTime = time;
       scenePass.captureDepth = temporalPass.enabled;
       if (!temporalPass.enabled || renderer.shadowMap.needsUpdate) temporalPass.reset();
       composer.render();
