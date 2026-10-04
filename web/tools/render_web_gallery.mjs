@@ -44,7 +44,8 @@ window.renderGalleryView=async(job)=>{
  viewer.controls.update();
  viewer.camera.updateMatrixWorld();
  viewer.renderer.shadowMap.needsUpdate=true;
- viewer.renderer.render(viewer.scene,viewer.camera);
+ // Capture the same color-managed and antialiased output as the live map.
+ viewer.renderPipeline.render();
  const view={position:viewer.camera.position.toArray(),target:viewer.controls.target.toArray(),fov:viewer.camera.fov};
  return {image:viewer.canvas.toDataURL('image/webp',0.95).split(',')[1],view,
   mode:interior?'interior':job.code==='CAMPUS'?'campus':'exterior',
