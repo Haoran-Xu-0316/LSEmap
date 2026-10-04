@@ -229,7 +229,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition145. Check the live `/release.json`
+The current local source and build target is edition146. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
@@ -454,3 +454,5 @@ Edition143 connects OLD’s estimated continuous Houghton side approach to the e
 Edition144 corrects the reversed lower two-storey CBG low-wing skins: stone and physical joints face Houghton Street; red/orange shades face the square, retaining real glazing and the98 tower office modules. OLD's Clare Market planter gains bounded broad-leaf foliage and yellow flowers, while a separate Student Services Centre reception study adds the photographed red wall, long perforated counter, metal stairs and mezzanine. Portsmouth gains seven tree pools registered from the completed2021 scheme using four plan anchors, with maximum0.56m residual. Tree-pool dimensions and room layout are estimates; MAR's left-wing registration and complete campus interiors remain unresolved. Existing separate interiors and all unrelated exterior assets are retained.
 
 Edition145 corrects Cowdray's short-side ground-storey masonry to the existing red brick while retaining the long-side stone frontage, corner portal and all window apertures. Clement House's25 closed reveal boxes become four-sided open recesses;39 street glass elements retain their geometry and neutral colour with explicit bounded browser opacity0.82. Whole-envelope checks for Columbia House and the restored Old Curiosity Shop support no additional reconstruction in this round. Native geometry, UVs and original material slots are preserved, with six audited replacements; unchanged exterior assets and all separate interiors are retained. Roof dimensions, unseen elevations and complete room layouts remain unverified.
+
+Edition146 cuts real Peacock entrance and ticket-window openings behind retained glazing, with explicit browser opacity0.82. The49L Portsmouth bay nearest50 now has its photograph-supported fire door and true circular window; adjacent50L, other49L windows and all original interiors remain intact. A whole-frontage5LF audit found no window backing obstruction. Newly archived2022 Marshall third-floor plans and section improve reference coverage but do not yet uniquely register the unresolved high left-wing wall.30 audited components retain all5754 original objects. This is a scoped exterior correction, not a complete campus or room survey.
