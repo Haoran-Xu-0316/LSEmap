@@ -34,6 +34,10 @@ movement uses depth-reprojected antialiasing with one scene sample per frame.
 After drag and damping finish, one four-sample frame restores the sharp desktop
 still and demand rendering stops. Canvas resolution remains fixed through gestures;
 interiors use the same motion budget and narrow-screen views retain one sample.
+Background exterior attachment waits for a quiet navigation frame, and holding
+the pointer still does not keep redrawing the scene. Mapped paving, foliage,
+asphalt and bench timber use filtered procedural finishes without extra meshes;
+their original positions, colours and source geometry remain unchanged.
 
 ## Run and build
 
