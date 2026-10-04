@@ -107,7 +107,9 @@ export class CampusViewer {
     this.scene.add(this.detailGround);
     this.camera = new THREE.PerspectiveCamera(38, 1, 0.02, 6000);
     this.camera.position.set(-280, 330, 370);
-    this.renderPipeline = createRenderPipeline(this.renderer, this.scene, this.camera);
+    this.renderPipeline = createRenderPipeline(this.renderer, this.scene, this.camera,
+      () => this.mode === "campus" && !this.activeCode &&
+        this.camera.position.distanceTo(this.controls?.target ?? this.camera.position) > 130);
     this.controls = new OrbitControls(this.camera, this.canvas);
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.08;
@@ -932,7 +934,7 @@ export class CampusViewer {
       if (progress === 1) this.transition = null;
     }
     this.controls.update();
-    if (this.needsRender) {
+    if (this.needsRender || this.renderPipeline.needsSettle) {
       this.renderPipeline.render();
       this.updateLabels();
       this.needsRender = false;
