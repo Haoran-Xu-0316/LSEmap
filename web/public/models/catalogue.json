@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "148",
-  "sourceModelSha256": "536b63660f8542ecae569523ef8beb2c45013068487f2aaa160820225e7076f2",
+  "version": "149",
+  "sourceModelSha256": "9057f87e47163c1d900d1365ce08315e24193f7443fbe915b9e43833eb05704e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2179,10 +2179,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-687766add536.glb",
-        "bytes": 1168108,
+        "url": "/models/details/lch-exterior-acc94c5751f3.glb",
+        "bytes": 1168336,
         "triangles": 90536,
-        "sha256": "687766add536c8d10c8e814939646d803b9fbc316a4e14afbdb2df1622fb6064",
+        "sha256": "acc94c5751f3858ce0832ad830b3888e1b96ebeea861ebda8ab3dc68535a864c",
         "bounds": {
           "min": [
             -34.67495346069336,
@@ -4936,10 +4936,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-11b577edc5df.glb",
-        "bytes": 924688,
-        "triangles": 70715,
-        "sha256": "11b577edc5df13cde14b87acf54e727b51e969839464a48829c89216704666c6",
+        "url": "/models/details/shf-exterior-ed51ff352772.glb",
+        "bytes": 930640,
+        "triangles": 70736,
+        "sha256": "ed51ff352772808f541c860bb55e62b51e1e66e9740775dab1fb94c32cc19723",
         "bounds": {
           "min": [
             -44.019718170166016,
@@ -5089,10 +5089,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-fd6568cc9580.glb",
-        "bytes": 6069824,
-        "triangles": 502600,
-        "sha256": "fd6568cc9580ad2643943f6cbe8eb31bbb95ae0488a3edcf8002ee43379aee22",
+        "url": "/models/details/sal-exterior-fcccdb91ee1d.glb",
+        "bytes": 5797140,
+        "triangles": 479402,
+        "sha256": "fcccdb91ee1da2bbf31321ea5e50450060a1ecd441c6310df39a14ad77b95d52",
         "bounds": {
           "min": [
             91.77310180664062,
