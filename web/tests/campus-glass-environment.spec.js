@@ -4,6 +4,7 @@ import {writeFile,readFile} from 'node:fs/promises';
 
 test('production overview every exterior and three interiors share the intended glazing environment',async({page})=>{
  test.setTimeout(120000);
+ const catalogue=JSON.parse(await readFile('web/public/models/catalogue.json','utf8'));
  const html=`<!doctype html><style>body{margin:0}#canvas{width:960px;height:768px}#labels{display:none}</style><div id="canvas"></div><div id="labels"></div><script type="module">
  import {CampusViewer} from '/src/viewer.js';
  const catalogue=await(await fetch('/models/catalogue.json')).json();
@@ -25,15 +26,14 @@ test('production overview every exterior and three interiors share the intended 
  try{
   await server.listen();await page.goto(`http://127.0.0.1:${server.httpServer.address().port}/__campus-glazing-check`);
   await page.waitForFunction(()=>window.proof,null,{timeout:100000});const proof=await page.evaluate(()=>window.proof);
-  expect(errors).toEqual([]);expect(proof.version).toBe('147');
+  expect(errors).toEqual([]);expect(proof.version).toBe(catalogue.version);expect(proof.sourceModelSha256).toBe(catalogue.sourceModelSha256);
   expect(proof.artSelected).toEqual(proof.artBefore);expect(proof.artCleared).toEqual(proof.artBefore);
   for(const records of Object.values(proof.artBefore)){expect(records.length).toBeGreaterThan(0);for(const m of records){expect(m.strength).toBeGreaterThan(0);expect(m.color[0]*m.strength).toBeCloseTo(.012,5);expect(m.color[1]*m.strength).toBeCloseTo(.108,5);expect(m.color[2]*m.strength).toBeCloseTo(1.14,5);}}
   expect(proof.overview.glass).toBeGreaterThan(0);expect(proof.overview.bound).toBe(proof.overview.glass);expect(proof.overview.clearPaneMeshes).toBeGreaterThan(0);expect(proof.overview.opaquePaneShadowErrors).toEqual([]);
-  const catalogue=JSON.parse(await readFile('web/public/models/catalogue.json','utf8'));
-  expect(proof.exteriors.map(b=>b.code)).toEqual(catalogue.buildings.filter(b=>b.detailedExterior).map(b=>b.code));
+   expect(proof.exteriors.map(b=>b.code)).toEqual(catalogue.buildings.filter(b=>b.detailedExterior).map(b=>b.code));
   for(const b of proof.exteriors){expect(b.bound,b.code).toBe(b.glass);expect(b.opaquePaneShadowErrors,b.code).toEqual([]);}
   for(const b of proof.interiors){expect(b.ready).toBe('interior-'+b.code);for(const path of ['base','detailed']){expect(b[path].bound,b.code+' '+path).toBe(b[path].glass);expect(b[path].opaquePaneShadowErrors,b.code+' '+path).toEqual([]);}}
-  await writeFile('result/blender/stage147/production-glass-verification.json',JSON.stringify(proof,null,2)+'\n');
+  await writeFile(`result/blender/stage${catalogue.version}/production-glass-verification.json`,JSON.stringify(proof,null,2)+'\n');
  }finally{await server.close();}
 });
 
