@@ -21,13 +21,13 @@ export class TemporalAntialiasingPass extends Pass {
     this.history = null;
     this.previousView = new THREE.Matrix4();
     this.previousProjection = new THREE.Matrix4();
-    this.previousWorld = new THREE.Matrix4();
     this.previousPosition = new THREE.Vector3();
     this.previousRotation = new THREE.Quaternion();
     this.position = new THREE.Vector3();
     this.rotation = new THREE.Quaternion();
     this.lastTime = 0;
     this.moving = false;
+    this.motion = undefined;
     this.uniforms = {
       currentColor: { value: null }, currentDepth: { value: null },
       previousColor: { value: null }, pixelSize: { value: new THREE.Vector2() },
@@ -130,13 +130,15 @@ export class TemporalAntialiasingPass extends Pass {
         type: THREE.HalfFloatType, depthBuffer: false,
       }));
     const camera = this.camera;
-    const now = performance.now();
+    const now = this.frameTime ?? performance.now();
     camera.getWorldPosition(this.position);
     camera.getWorldQuaternion(this.rotation);
     const angle = this.rotation.angleTo(this.previousRotation);
     const distance = this.position.distanceTo(this.previousPosition);
-    this.moving = !camera.matrixWorld.equals(this.previousWorld);
-    const reusable = this.valid && this.moving && now - this.lastTime < 200 &&
+    // Follow OrbitControls' change decision when supplied. Floating-point
+    // residuals after damping must not keep the overview rendering forever.
+    this.moving = this.motion ?? (distance > 0.001 || angle > 0.001);
+    const reusable = this.valid && this.moving && now >= this.lastTime && now - this.lastTime < 200 &&
       camera.projectionMatrix.equals(this.previousProjection) && angle < 0.08 &&
       distance < Math.max(2, this.position.length() * 0.05);
     const uniforms = this.uniforms;
@@ -156,7 +158,6 @@ export class TemporalAntialiasingPass extends Pass {
     this.copyQuad.render(renderer);
     this.previousView.copy(camera.matrixWorldInverse);
     this.previousProjection.copy(camera.projectionMatrix);
-    this.previousWorld.copy(camera.matrixWorld);
     this.previousPosition.copy(this.position);
     this.previousRotation.copy(this.rotation);
     this.lastTime = now;
