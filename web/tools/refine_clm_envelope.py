@@ -417,7 +417,7 @@ audit["nearApertureVerification"] = {
 open_baseline()
 collection = bpy.data.collections["CLM_EXTERIOR"]
 with bpy.data.libraries.load(str(COMPONENT), link=False) as (src, dst):
-    dst.objects = audit["ownedObjects"]
+    dst.objects = list(audit["ownedObjects"])
 for o in dst.objects:
     collection.objects.link(o)
 for name in SOURCES:
