@@ -10,14 +10,14 @@ test('map heading and toolbar buttons remain separated on phone and desktop',asy
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  }
 });
-test('drag reduces pixel work and restores full resolution after release',async({page})=>{
+test('drag keeps the display resolution stable and preserves the loaded model',async({page})=>{
  await page.goto('/#CBG');const canvas=page.locator('canvas');
  await expect(canvas).toHaveAttribute('data-detail-ready','exterior-CBG',{timeout:60000});
  const pixels=()=>canvas.evaluate(el=>el.width*el.height);
  const before=await pixels();const box=await canvas.boundingBox();
  await page.mouse.move(box.x+box.width*.65,box.y+box.height*.6);await page.mouse.down();
  await page.mouse.move(box.x+box.width*.7,box.y+box.height*.65,{steps:8});
- await expect.poll(pixels).toBeLessThan(before*.55);
+ await expect.poll(pixels).toBe(before);
  await page.mouse.up();await expect.poll(pixels).toBe(before);
  await expect(canvas).toHaveAttribute('data-detail-ready','exterior-CBG');
  await page.screenshot({path:'result/web/navigation-polish/restored.png'});
