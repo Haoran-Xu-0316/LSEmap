@@ -799,9 +799,9 @@
         "scope": "Undated LSE Estate photo guides contrasting dark chimney brick and two edge rainwater pipes. Color, pipe diameter and offsets estimated; original main wall, glazing, openings, terracotta pots, roof and interiors preserved. Source photograph is not proof of 2026 condition. Unseen elevations and roof layout remain unverified."
       },
       "latestReview": {
-        "version": 146,
-        "status": "whole-frontage-reviewed-no-reconstruction",
-        "scope": "Official exterior012 supports existing3x3 upper sash grid, left entrance, two shallow arched ground windows and pale-ground/yellow-brick split.44 glass first hits and44 two-metre behind-glass checks passed. Right chimney photo has two pots versus one modeled; rear roof unverified. No material or mesh change.",
+        "version": 147,
+        "status": "retained-window-glazing-and-right-double-pots",
+        "scope": "11 existing panes retain mesh, UV and original neutral color; finite transmission with explicit browser opacity0.78. Right chimney now carries photograph-supported twin pots across frontage.44 front and44 two-metre behind-glass checks plus two pot first hits passed after reopening. Pot offsets and optical parameters estimated; unseen roof and complete interiors unverified.",
         "source": "LSE Estates archived exterior012 photograph",
         "photographDate": "unknown"
       },
@@ -824,6 +824,13 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 146,
+          "status": "whole-frontage-reviewed-no-reconstruction",
+          "scope": "Official exterior012 supports existing3x3 upper sash grid, left entrance, two shallow arched ground windows and pale-ground/yellow-brick split.44 glass first hits and44 two-metre behind-glass checks passed. Right chimney photo has two pots versus one modeled; rear roof unverified. No material or mesh change.",
+          "source": "LSE Estates archived exterior012 photograph",
+          "photographDate": "unknown"
         }
       ]
     },
@@ -873,11 +880,11 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 146,
-        "status": "registered-portsmouth-fire-exit-and-round-window",
-        "scope": "Replace nearest50 Portsmouth ground window bay with photograph-supported black fire exit, round glazing and narrow pale portal strip. Other two ground windows, main street, upper windows, corner round light and50L retained. Dimensions estimated.2022 planning existing-condition photos; proposed louvre not adopted. Roof and upper ownership boundaries remain unverified.",
-        "source": "2022 Westminster planning existing-condition block plan and frontage photographs",
-        "photographDate": "2022 planning attachment; capture date unknown"
+        "version": 147,
+        "status": "retained-glazing-corner-aperture-and-published-fireexit-louvre",
+        "scope": "Retained street and corner glazing keeps original mesh, UV and color with explicit browser opacity0.84. Corner round window backing43mm behind glass is locally opened. Latest published2025/26 LSE handbook shows the fire-exit round feature as an opaque horizontal ventilation louvre, replacing its historical glass interpretation. A separate shared upper-wall component trims only proven interference with the widened No50 window; other upper areas retained. Dimensions and optics estimated; capture dates unknown.",
+        "source": "2022 planning existing-condition frontage photographs and LSE property handbook",
+        "photographDate": "capture dates unknown"
       },
       "interiorView": {
         "position": [
@@ -898,6 +905,13 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 146,
+          "status": "registered-portsmouth-fire-exit-and-round-window",
+          "scope": "Replace nearest50 Portsmouth ground window bay with photograph-supported black fire exit, round glazing and narrow pale portal strip. Other two ground windows, main street, upper windows, corner round light and50L retained. Dimensions estimated.2022 planning existing-condition photos; proposed louvre not adopted. Roof and upper ownership boundaries remain unverified.",
+          "source": "2022 Westminster planning existing-condition block plan and frontage photographs",
+          "photographDate": "2022 planning attachment; capture date unknown"
         }
       ]
     },
@@ -924,8 +938,11 @@
         "scope": "No.50 entrance guided by the LSE 2025/26 property handbook photograph. Neighboring round windows excluded; dimensions and carved profiles estimated, capture date unknown. Upper elevations, roof and complete interior still require review."
       },
       "latestReview": {
-        "version": 122,
-        "scope": "Photographed entrance sash corrected to three columns and two rows; curved stone arch returns added, with ten glass-first probes. Overall bay count and unseen elevations remain unresolved."
+        "version": 147,
+        "status": "published-blue-50A-entry-and-no50-upper-window-width",
+        "scope": "50A entry and opaque external round lamp are located between upper window axes using the2022 planning photograph; frame and lower panel adopt deep blue shown in latest published2025/26 LSE handbook. No50 tripartite upper window widened with true wall clearance, while its inherited4.30–6.32m vertical datum remains estimated because photo top is cropped and reference door height is not surveyed. Other upper windows and original wooden No50 portal retained. Glass browser opacity0.82; no invented complete interior. Shared49L interference is archived and replaced in49L own exterior collection.",
+        "source": "2022 planning existing-condition frontage photograph and2025/26 LSE property handbook",
+        "photographDate": "capture dates unknown"
       },
       "detailView": {
         "label": "入口细节",
@@ -942,7 +959,13 @@
         "fov": 50
       },
       "closeupImage": "50l-entrance",
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 122,
+          "scope": "Photographed entrance sash corrected to three columns and two rows; curved stone arch returns added, with ten glass-first probes. Overall bay count and unseen elevations remain unresolved."
+        }
+      ]
     },
     {
       "code": "51L",
@@ -1125,9 +1148,9 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 146,
-        "status": "new-built-third-floor-plan-reviewed-awaiting-registration",
-        "scope": "Architect-authored2022 published ground, second and third floor plans plus sectionAA newly archived and visually reviewed. Left-wing high-level wall faces not yet uniquely registered. Existing accepted right-wall correction retained; no speculative mesh change.",
+        "version": 147,
+        "status": "published-third-floor-coarse-outline-registration",
+        "scope": "Three corners of architect-authored2022 third-floor plan register to retained footprint within0.267m, but two independent diagonal checks differ by up to2.852m. Plan right edge corresponds to north frontage after rotation. High-wing correspondence remains unaccepted; retained MAR geometry unchanged. Approximate raster picks are not surveyed coordinates.",
         "source": "https://cdn.ca.emap.com/wp-content/uploads/sites/12/2022/04/grafton-architects-architectural-review.pdf",
         "photographDate": "2022 published built drawings"
       },
@@ -1183,6 +1206,13 @@
           "source": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
           "uploadYear": 2022,
           "photographDate": "unknown"
+        },
+        {
+          "version": 146,
+          "status": "new-built-third-floor-plan-reviewed-awaiting-registration",
+          "scope": "Architect-authored2022 published ground, second and third floor plans plus sectionAA newly archived and visually reviewed. Left-wing high-level wall faces not yet uniquely registered. Existing accepted right-wall correction retained; no speculative mesh change.",
+          "source": "https://cdn.ca.emap.com/wp-content/uploads/sites/12/2022/04/grafton-architects-architectural-review.pdf",
+          "photographDate": "2022 published built drawings"
         }
       ]
     },
