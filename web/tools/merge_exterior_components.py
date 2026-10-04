@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage146';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v145.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v146.blend'
-COMPONENTS=[('PEA','peacock_envelope_next','peacock-envelope-component.blend'),('49L','coopers_envelope_next','coopers-envelope-component.blend')]
+OUT=ROOT/'result/blender/stage147';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v146.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v147.blend'
+COMPONENTS=[('5LF','five_lincolns_glazing_next','five-lincolns-glazing-component.blend'),('49L','coopers_glazing_next','coopers-glazing-component.blend'),('50L','fifty_lincoln_glazing_next','fifty-lincoln-glazing-component.blend'),('49L','fifty_lincoln_glazing_next','coopers-shared-upper-component.blend','shared-upper-audit.json','shared-upper-verification.json')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -53,10 +53,12 @@ for scene in bpy.data.scenes:
 original={o.name:fingerprint(o) for o in bpy.data.objects}
 visibility={o.name:[o.hide_render,o.hide_viewport,o.hide_get()] for o in bpy.data.objects}
 archived=[];owned=[];components=[]
-for code,folder,filename in COMPONENTS:
+for code,folder,filename,*evidence_names in COMPONENTS:
     directory=ROOT/'result/blender'/folder
-    audit=json.loads((directory/'audit.json').read_text())
-    proof=json.loads((directory/'verification.json').read_text())
+    audit_name,proof_name=evidence_names if evidence_names else ('audit.json','verification.json')
+    audit_path=directory/audit_name;proof_path=directory/proof_name
+    audit=json.loads(audit_path.read_text())
+    proof=json.loads(proof_path.read_text())
     assert rebuilding or audit['baselineSha256']==base_sha
     path=directory/filename
     component_sha=hashlib.sha256(path.read_bytes()).hexdigest()
@@ -64,6 +66,8 @@ for code,folder,filename in COMPONENTS:
     assert all(name.startswith((code+'_NEXT_', code+'_GLAZING_NEXT_', code+'_FRAME_NEXT_')) for name in audit['ownedObjects'])
     assert all(name.startswith(code+'_') for name in audit['archivedObjects'])
     assert not set(audit['ownedObjects'])&set(bpy.data.objects.keys())
+    assert not set(audit['archivedObjects'])&set(archived), 'Two components replace the same source object'
+    assert proof['savedComponentReopened'] and proof['originalGeometryPreserved'] and proof['unrelatedVisibilityPreserved']
     with bpy.data.libraries.load(str(path),link=False) as (source,target):
         assert set(audit['ownedObjects'])<=set(source.objects)
         target.objects=list(audit['ownedObjects'])
@@ -131,7 +135,7 @@ for code,folder,filename in COMPONENTS:
     for name in audit['archivedObjects']:
         bpy.data.objects[name].hide_render=True;bpy.data.objects[name].hide_set(True)
     archived.extend(audit['archivedObjects']);owned.extend(audit['ownedObjects'])
-    components.append({'code':code,'source':str(path.relative_to(ROOT)),'sha256':component_sha,'objects':len(target.objects)})
+    components.append({'code':code,'source':str(path.relative_to(ROOT)),'audit':str(audit_path.relative_to(ROOT)),'verification':str(proof_path.relative_to(ROOT)),'sha256':component_sha,'objects':len(target.objects)})
 for scene in bpy.data.scenes:
     for layer in scene.view_layers:layer.update()
 bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
@@ -149,6 +153,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':146,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':147,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
