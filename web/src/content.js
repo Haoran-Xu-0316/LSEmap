@@ -117,11 +117,12 @@ export const buildingDetails = {
     ]
 },
   STC: {
-    description: "St Clement’s的Clare Market长立面以凹入窗列展开，退后的顶层与转角红色平台形成高低层次。入口保留红色门侧、灰色招牌、玻璃门与花槽。",
-    note: "依据归档照片深化外观。壁画仅保留面板位置；楼高、窗距、入口具体开间与未见背面仍为估计，未建立内部。",
+    description: "St Clement’s的Clare Market长立面以凹入窗列展开，退后的顶层与转角红色平台形成高低层次。入口保留红色门侧、灰色招牌、玻璃门与花槽，转角艺术面板以蓝色Thames曲线串联银色轮廓。",
+    note: "面板主要轮廓依据历史实拍，细小马赛克和浮雕厚度为近似。未见立面与完整内部仍待补齐。",
     images: [
       ["stc-exterior", "St Clement’s窗列与转角平台"],
       ["stc-entrance", "红色门侧、招牌与凹入入口"],
+      ["stc-artwork", "Thames与银色艺术轮廓"],
     ],
   },
   COL: {
@@ -149,6 +150,7 @@ export const buildingDetails = {
     note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
     images: [
       ["mar-exterior", "Marshall Building北立面"],
+      ["mar-rear-wall", "西侧石墙、板缝与相邻窗列"],
       ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
       ["mar-entrance", "斜向入口、露台玻璃与前场灯柱"],
@@ -193,7 +195,7 @@ export const buildingDetails = {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室布局。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "入口侧坡道与银色扶手"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
   },
   SAL: {
     description:
