@@ -6,8 +6,8 @@ import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
 import { TemporalAntialiasingPass } from "./temporal-antialiasing.js";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
 
-// Fix the sample grid for the viewport instead of switching it on every gesture.
-// Cap the stable grid at three million pixels; sampling never switches on a gesture.
+// Keep canvas resolution stable; only scene sampling changes during interaction.
+// Four samples refine the final still without drawing the whole campus four times per drag frame.
 export function stablePixelRatio(width, height) {
   const area = Math.max(1, width * height);
   return Math.max(1, Math.min(1.5, Math.sqrt(3_000_000 / area)));
@@ -72,15 +72,16 @@ export function createRenderPipeline(renderer, scene, camera, allowTemporal = ()
       antialiasPass.uniforms.resolution.value.set(1 / bufferSize.x, 1 / bufferSize.y);
     },
     render({ stabilize = true, moving, time } = {}) {
+      if (moving !== undefined) scenePass.sampleLevel = moving ? 0 : (wideViewport ? 2 : 0);
       temporalPass.enabled = stabilize && wideViewport && camera.isPerspectiveCamera && allowTemporal();
       temporalPass.motion = moving;
       temporalPass.frameTime = time;
       scenePass.captureDepth = temporalPass.enabled;
       if (!temporalPass.enabled || renderer.shadowMap.needsUpdate) temporalPass.reset();
       composer.render();
-      // One clean frame after motion restores the original crisp still and then
-      // demand rendering stops. No continuous history accumulation while idle.
-      needsSettle = temporalPass.enabled && temporalPass.moving;
+      // Always refine the final still, including close-up views without temporal AA.
+      // Damping remains on the light budget; the final four-sample frame then stops.
+      needsSettle = moving === true || (temporalPass.enabled && temporalPass.moving);
     },
     dispose() {
       scenePass.dispose();
