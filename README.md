@@ -31,7 +31,7 @@ unverified Sheffield left dormer remain intact. Glass opacity is a presentation
 estimate, not a measured specification or an invented interior.
 
 The overview, closeups and all119 gallery images use the same production viewer,
-model assets and glass parameters. Desktop thin frames use two fixed subpixel
+model assets and glass parameters. Desktop thin frames use four fixed subpixel
 samples before FXAA; narrow views retain single-sample rendering. Colors use
 Neutral tone mapping. The release manifest identifies the published native source
 and renderer separately; historical edition notes below are not current-state
