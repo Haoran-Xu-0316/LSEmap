@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "140",
-  "sourceModelSha256": "08ec52560290c5969deeda40eb760db0f2c33c7c0674833273e95085892a0ea2",
+  "version": "141",
+  "sourceModelSha256": "2da4d8e7b6aefbeae2f5c92c72881bb361eb876208b6684f0c26a5491a30f462",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -89,10 +89,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-f58add946270.glb",
-        "bytes": 1037688,
-        "triangles": 95565,
-        "sha256": "f58add9462708703039f5556a50e43467402275d51e05c2ce1e7883b74b2ec96",
+        "url": "/models/details/61a-exterior-9076b3c0c065.glb",
+        "bytes": 1031484,
+        "triangles": 94989,
+        "sha256": "9076b3c0c06565fc6d088cc7577539a208b20a0631a0fe7439f915a7d69c2e78",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -2159,10 +2159,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-0c59d4b4faf3.glb",
-        "bytes": 6054216,
-        "triangles": 679385,
-        "sha256": "0c59d4b4faf3978e262d392865ded6743ef6bb4e1309ae790139a7fcc33ccf3c",
+        "url": "/models/details/lrb-exterior-3a86d57b9937.glb",
+        "bytes": 6070088,
+        "triangles": 679039,
+        "sha256": "3a86d57b99373607607bf9c8d60bde802646c9c6eddecbd48f83d822c75e1ca6",
         "bounds": {
           "min": [
             24.830078125,
@@ -2476,10 +2476,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-2c8b6eff5bce.glb",
-        "bytes": 18820460,
-        "triangles": 1669672,
-        "sha256": "2c8b6eff5bce47d8833e33b8459b97f77cdfd51a167a37eebe49ec98b35b0267",
+        "url": "/models/details/old-exterior-0cc6e0e6b9f1.glb",
+        "bytes": 18829428,
+        "triangles": 1670264,
+        "sha256": "0cc6e0e6b9f1b8254b7f40492748885fff1067a838555b07b39e059d48d3987f",
         "bounds": {
           "min": [
             -39.1646614074707,
