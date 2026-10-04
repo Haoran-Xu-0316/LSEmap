@@ -10,10 +10,10 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage140';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v139.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v140.blend'
-COMPONENTS=[('KSW','ksw_envelope_next','kingsway-envelope-component.blend')]
+OUT=ROOT/'result/blender/stage141';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v140.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v141.blend'
+COMPONENTS=[('61A','aldwych_envelope_next','aldwych-envelope-component.blend'),('LRB','lrb_envelope_next','library-envelope-component.blend'),('OLD','old_access_next','old-access-component.blend')]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
     if obj.type=='MESH':
@@ -94,7 +94,7 @@ for code,folder,filename in COMPONENTS:
                     def signature(material):
                         shader=material.node_tree.nodes.get('Principled BSDF') if material.use_nodes else None
                         values=[]
-                        for key in ('Base Color','Metallic','Roughness','Alpha','IOR','Transmission Weight'):
+                        for key in ('Base Color','Metallic','Roughness','Alpha','IOR','Transmission Weight','Emission Color','Emission Strength'):
                             value=shader.inputs[key].default_value if shader and key in shader.inputs else None
                             values.append(tuple(value) if hasattr(value,'__len__') else value)
                         return (tuple(material.diffuse_color),tuple(values),sorted((key,str(value)) for key,value in material.items()))
@@ -113,8 +113,12 @@ for code,folder,filename in COMPONENTS:
     for name,original_name in pairs.items():
         obj=bpy.data.objects[name];old=bpy.data.objects[original_name]
         for index,mat in enumerate(list(obj.data.materials)):
-            if mat and not mat.name.startswith(code+'_NEXT_') and index<len(old.data.materials):
-                obj.data.materials[index]=old.data.materials[index]
+            # Reuse the source ID only for the same inherited material.
+            # A replacement may intentionally use a different existing finish.
+            if mat and index<len(old.data.materials) and old.data.materials[index]:
+                inherited=old.data.materials[index]
+                if mat.name==inherited.name:
+                    obj.data.materials[index]=inherited
     # Separate audited component families for exact browser-scale parity checks.
     component_materials={}
     for obj in target.objects:
@@ -145,6 +149,6 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':140,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':141,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,_,_ in COMPONENTS},'savedSceneReopened':True}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
