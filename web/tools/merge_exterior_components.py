@@ -10,11 +10,13 @@ import hashlib
 import json
 import bpy
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'result/blender/stage150';OUT.mkdir(parents=True,exist_ok=True)
-BASE=ROOT/'result/blender/LSE_campus_detailed_v149.blend'
-CURRENT=ROOT/'result/blender/LSE_campus_detailed_v150.blend'
+OUT=ROOT/'result/blender/stage151';OUT.mkdir(parents=True,exist_ok=True)
+BASE=ROOT/'result/blender/LSE_campus_detailed_v150.blend'
+CURRENT=ROOT/'result/blender/LSE_campus_detailed_v151.blend'
 COMPONENTS=[
-    ('51L','lincoln51_arch_next','lincoln51-arch-clearance-component.blend'),
+    ('51L','lincoln51_oblique151','lincoln51-oblique-clearance-component.blend'),
+    ('CON','con_glazing151','connaught-glazing-component.blend'),
+    ('CLM','clm_glazing151','clement-glazing-component.blend'),
 ]
 def fingerprint(obj):
     h=hashlib.sha256(str([list(r) for r in obj.matrix_world]).encode())
@@ -155,6 +157,7 @@ assert not mismatches,mismatches
 assert all(bpy.data.objects[n].hide_render for n in archived)
 assert all(not bpy.data.objects[n].hide_render for n in owned)
 assert rebuilding or hashlib.sha256(BASE.read_bytes()).hexdigest()==base_sha
-proof={'version':150,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
+proof={'version':151,'sourceModelSha256':hashlib.sha256(CURRENT.read_bytes()).hexdigest(),'baselineSha256':base_sha,'originalGeometryRetained':True,'unrelatedVisibilityPreserved':True,'retainedOriginalObjects':len(original),'archivedObjects':archived,'archivedVisibility':{n:visibility[n] for n in archived},'ownedObjects':owned,'components':components,'ownedMaterialNames':{code:sorted({mat.name for name in owned if name.startswith(code+'_') for mat in bpy.data.objects[name].data.materials if mat}) for code,*_ in COMPONENTS},'savedSceneReopened':True}
+proof['ownedUsedMaterialNames']={code:sorted({obj.data.materials[poly.material_index].name for name in owned if name.startswith(code+'_') for obj in [bpy.data.objects[name]] for poly in obj.data.polygons if poly.material_index<len(obj.data.materials) and obj.data.materials[poly.material_index]}) for code,*_ in COMPONENTS}
 (OUT/'saved-verification.json').write_text(json.dumps(proof,indent=2)+'\n')
 print('EXTERIOR_COMPONENTS_SAVED_AND_REOPENED',len(original),len(owned),flush=True)
