@@ -229,7 +229,7 @@ lighting have matching render fingerprints; both the rendered source edition and
 verified current model are recorded. UV values are compared to one-millionth-unit
 precision to avoid insignificant reload noise; geometry and normals remain byte-exact.
 Changed views are rendered again.
-The current local source and build target is edition146. Check the live `/release.json`
+The current local source and build target is edition147. Check the live `/release.json`
 manifest to verify the deployed version and native source fingerprint.
 
 ## Edition 16
@@ -456,3 +456,5 @@ Edition144 corrects the reversed lower two-storey CBG low-wing skins: stone and 
 Edition145 corrects Cowdray's short-side ground-storey masonry to the existing red brick while retaining the long-side stone frontage, corner portal and all window apertures. Clement House's25 closed reveal boxes become four-sided open recesses;39 street glass elements retain their geometry and neutral colour with explicit bounded browser opacity0.82. Whole-envelope checks for Columbia House and the restored Old Curiosity Shop support no additional reconstruction in this round. Native geometry, UVs and original material slots are preserved, with six audited replacements; unchanged exterior assets and all separate interiors are retained. Roof dimensions, unseen elevations and complete room layouts remain unverified.
 
 Edition146 cuts real Peacock entrance and ticket-window openings behind retained glazing, with explicit browser opacity0.82. The49L Portsmouth bay nearest50 now has its photograph-supported fire door and true circular window; adjacent50L, other49L windows and all original interiors remain intact. A whole-frontage5LF audit found no window backing obstruction. Newly archived2022 Marshall third-floor plans and section improve reference coverage but do not yet uniquely register the unresolved high left-wing wall.30 audited components retain all5754 original objects. This is a scoped exterior correction, not a complete campus or room survey.
+
+Edition147 refines5LF,49L and50L glazing using the same geometry and finish in the campus, close-up and production gallery.5LF gains the photographed twin right chimney pots.49L has true corner-window clearance and the latest published handbook-supported opaque fire-exit ventilation louvre.50A gains a deep blue glazed entry and opaque external lamp; the No50 tripartite window is widened and neighboring shared-wall obstructions are removed. Its vertical datum remains inherited and estimated because the source photo is cropped. MAR third-floor corner registration is now documented, while independent diagonal differences prevent unsupported high-wing reconstruction. Original source objects and existing interiors remain retained.
