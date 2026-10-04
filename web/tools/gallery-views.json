@@ -1140,5 +1140,47 @@
       ],
       "fov": 34
     }
+  },
+  {
+    "code": "OLD",
+    "name": "old-ssc-interior",
+    "spaceId": "old-ssc",
+    "label": "Student Services Centre接待区"
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-square-registration",
+    "label": "Centre Building广场侧玻璃与遮阳",
+    "view": {
+      "position": [
+        97.401886,
+        61,
+        230.268127
+      ],
+      "target": [
+        33.57497,
+        25,
+        70.108444
+      ],
+      "fov": 34
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "portsmouth-tree-pools",
+    "label": "Portsmouth Street七处树池",
+    "view": {
+      "position": [
+        -33,
+        86,
+        -40
+      ],
+      "target": [
+        -33,
+        0,
+        -40
+      ],
+      "fov": 48
+    }
   }
 ]
