@@ -24,10 +24,11 @@
         "scope": "Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved."
       },
       "latestReview": {
-        "version": 137,
-        "status": "photo-supported-central-street-corner-reconstruction",
-        "scope": "Replace central two-column repetitive glazing with continuous three-storey recessed portal, projecting stone piers, differentiated side and central lights and upper window rows on retained6.769m segment. Preserve entrance, other street wings, footprint, roof and glass properties.2021 brochure photograph supports composition; footprint allocation, stepped roof/parapet and current conversion still unverified.",
-        "source": "2021 letting brochure day/evening street-corner photographs; image dates unknown"
+        "version": 141,
+        "status": "street-wing-dark-open-dormers",
+        "scope": "24 street-wing dormers use dark open cheeks and shallow pitched caps. Two stone corner dormers retained. Main roof massing and unseen elevations remain unresolved.",
+        "source": "Archived whole-building street photograph and retained source slate material",
+        "photographDate": "unknown"
       },
       "interiorView": {
         "position": [
@@ -48,6 +49,12 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 137,
+          "status": "photo-supported-central-street-corner-reconstruction",
+          "scope": "Replace central two-column repetitive glazing with continuous three-storey recessed portal, projecting stone piers, differentiated side and central lights and upper window rows on retained6.769m segment. Preserve entrance, other street wings, footprint, roof and glass properties.2021 brochure photograph supports composition; footprint allocation, stepped roof/parapet and current conversion still unverified.",
+          "source": "2021 letting brochure day/evening street-corner photographs; image dates unknown"
         }
       ]
     },
@@ -943,20 +950,11 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 127,
-        "status": "photo-informed-correction",
-        "scope": "John Watkins Plaza near-Portugal stone bays: eight upper openings joined into broad windows; ground entrance, brick bays, measured roofs and other elevations retained. Width, pane count and frame thickness are estimates.",
-        "sources": [
-          {
-            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
-            "page": 28,
-            "photographDate": "unknown"
-          },
-          {
-            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
-            "photographDate": "unknown"
-          }
-        ]
+        "version": 141,
+        "status": "continuous-brick-artwork-corner-static-blue-rain",
+        "scope": "Four fictitious corner windows replaced by continuous brick and1011 historical photograph light samples in one static emissive mesh. Not a reconstruction of23520 physical LEDs or a live display.",
+        "source": "LSE historical Blue Rain photograph and artwork documentation",
+        "photographDate": "historical; current condition unverified"
       },
       "interiorSections": [
         {
@@ -1022,6 +1020,22 @@
           "version": 117,
           "status": "carey-frontage-reconstructed",
           "addedObjects": 6
+        },
+        {
+          "version": 127,
+          "status": "photo-informed-correction",
+          "scope": "John Watkins Plaza near-Portugal stone bays: eight upper openings joined into broad windows; ground entrance, brick bays, measured roofs and other elevations retained. Width, pane count and frame thickness are estimates.",
+          "sources": [
+            {
+              "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+              "page": 28,
+              "photographDate": "unknown"
+            },
+            {
+              "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+              "photographDate": "unknown"
+            }
+          ]
         }
       ],
       "entranceCanopyReview": {
@@ -1062,9 +1076,9 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 138,
-        "status": "photo-registered-north-three-row-fenestration",
-        "scope": "Retained5+10 north office bays now have45 windows in three rows, replacing two tall rows. Masonry has real openings and glass/frame overlap. Courtyard returns, screens, roof, other faces, interior and native optical parameters retained; heights and wall depth remain photo estimates.",
+        "version": 143,
+        "status": "registered-blank-west-wall-with-real-panel-joints",
+        "scope": "Photo-registered right academic wing8546_0 is reconstructed as a continuous blank west wall, removing35 fictitious windows and their frames/guards. Physical shallow panel joints cut the actual outward surface using the tower-local normal. Adjacent8546_5 five-column40-window face and retained source faces/UV/material slots remain intact. Joint dimensions and positions are photo estimates; the left tower blank face cannot be uniquely registered and remains unresolved.",
         "source": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
         "uploadYear": 2022,
         "photographDate": "unknown"
@@ -1096,6 +1110,14 @@
       },
       "reviewHistory": [
         {
+          "version": 138,
+          "status": "photo-registered-north-three-row-fenestration",
+          "scope": "Retained5+10 north office bays now have45 windows in three rows, replacing two tall rows. Masonry has real openings and glass/frame overlap. Courtyard returns, screens, roof, other faces, interior and native optical parameters retained; heights and wall depth remain photo estimates.",
+          "source": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
+          "uploadYear": 2022,
+          "photographDate": "unknown"
+        },
+        {
           "version": 126,
           "scope": "Ten courtyard windows: photo-estimated68% fixed/32% opening division, narrow metal opening guards, removal of ten unsupported high transoms and aperture-local overlapping legacy trim.100 whole-facade first-surface probes and5mm edge scans. Other elevations, exact guard dimensions, inherited face/row registration and full interiors remain unverified."
         }
@@ -1118,16 +1140,16 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures; six outward-spreading chamfered entrance treads",
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures; four external steps, a lowered shared threshold and four separate foyer steps",
         "newComponents": 62,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Houghton approach plan follows contractor and user-supplied photographs. Existing six risers and 1.245m landing retained, plan widths and corner cuts estimated; current step count not newly surveyed."
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 136,
-        "status": "photo-supported-native-window-head-clearance",
-        "scope": "Close five open strips above the Clare Market upper blue frames by extending existing stone spandrels to the registered frame top. Move only20 lower-edge vertices; retain1068 vertices, topology, UVs, materials and windows. Existing model levels remain estimates.",
-        "source": "Haslam2010 study photograph C; user Student Services Centre reference for frontage registration",
-        "photographDate": "unknown; study published2010"
+        "version": 143,
+        "status": "connected-side-approach-and-closed-stone-junction",
+        "scope": "Existing south approach registered to the third middle low-window station: continuous estimated11.87m ramp, tapered stone sidewall and silver rails join the entrance threshold and street. A missing L-shaped stone return closes the existing recessed shell junction. Two four-step flights, windows, portal, attic and cornice contacts retained. Ramp widths, linear slope, post intervals and inherited1.79m setback are estimates; platform lift and unseen facade/interior areas remain unresolved.",
+        "source": "Archived existing south elevation080201P1 and supplied Houghton photographs; saved native junction and first-surface registration",
+        "photographDate": "unknown"
       },
       "interiorView": {
         "position": [
@@ -1145,6 +1167,13 @@
       "exportExterior": true,
       "reviewHistory": [
         {
+          "version": 141,
+          "status": "coordinated-four-exterior-and-four-foyer-steps",
+          "scope": "Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved.",
+          "source": "Archived WebbYates and supplied entrance photographs; AccessAble main entrance chapter; existing native level registration",
+          "photographDate": "unknown"
+        },
+        {
           "version": 125,
           "scope": "Restore four-column casements on ten photograph-supported Houghton dormers after later roof reconstruction regressed to two columns. Lower row has four horizontal panes; upper has five. Existing openings, heights, roof profile, materials and two far-left unverified windows retained. Twenty whole-elevation rays first meet glass."
         },
@@ -1161,6 +1190,13 @@
           "scope": "Trim the inner edges of12 entrance stone courses to the existing narrow blue frame/reveal boundary. Preserve the windows, arch, crest, signage, steps and other elevations. Left upper-window photograph supports clear glazing; right side is a registered geometry collision correction, not a surveyed photographic reproduction. Clearance and stone edge position are estimates.",
           "source": "User-supplied Houghton Street entrance photograph and native aperture inspection",
           "photographDate": "unknown"
+        },
+        {
+          "version": 136,
+          "status": "photo-supported-native-window-head-clearance",
+          "scope": "Close five open strips above the Clare Market upper blue frames by extending existing stone spandrels to the registered frame top. Move only20 lower-edge vertices; retain1068 vertices, topology, UVs, materials and windows. Existing model levels remain estimates.",
+          "source": "Haslam2010 study photograph C; user Student Services Centre reference for frontage registration",
+          "photographDate": "unknown; study published2010"
         }
       ],
       "houghtonAccessReview": {
@@ -1168,8 +1204,9 @@
         "source": "https://www.accessable.co.uk/london-school-of-economics/access-guides/old-building",
         "retrieval": "Indexed full Entrance (Main Entrance) chapter; direct access403.",
         "confirmed": "Separate4-step exterior and4-step foyer flights, also visible in the archived WebbYates photograph. Exterior highest16cm; interior highest14cm. Planning south elevation threshold is belowGF.",
-        "modelDiscrepancy": "Existing6 external risers incorrectly allocate the fullGF19.345 minusGL18.100 difference1.245m to the outer flight.",
-        "remaining": "No independently labelled threshold/curb spot heights or entrance section; no exact new dimensions claimed. Correct the entire approach, door threshold and foyer together once registered, rather than creating4 excessive risers."
+        "remaining": "Absolute dimensions remain estimates. Continuous side approach, terminal registration and platform lift remain under review.",
+        "modelStatus": "Resolved in edition141: exterior4-step and foyer4-step flights coordinated through threshold0.69m; street0.05m and GF1.245m retained.",
+        "remainingScope": "Side approach modeled from existing south plan with estimated width/slope/rails; platform lift and full measured access certification unresolved."
       }
     },
     {
@@ -1235,9 +1272,11 @@
         "scope": "Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review."
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 142,
+        "status": "five-wide-modules-in-five-entrance-side-rows",
+        "scope": "25 independent panes replace eight narrow modules in the lowest five main entrance-side rows; perimeter frames and spandrel joints align. Upper seven rows, angled return, roof and entrance retained. Elevations remain estimates.",
+        "source": "Archived entrance photograph tower_photos_round4_tower_round4_tour_p16_0.png and LSE Estate007 photograph",
+        "photographDate": "unknown"
       },
       "interiorView": {
         "position": [
@@ -1252,7 +1291,14 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ]
     },
     {
       "code": "PAR",
@@ -1671,12 +1717,11 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 123,
-        "status": "attic-openings-corrected",
-        "addedObjects": 1,
-        "openings": 35,
-        "clearOpaqueProbes": 70,
-        "limitation": "Existing window count, heights and roof remain estimated; dated exterior references do not prove current condition."
+        "version": 143,
+        "status": "photo-registered-thames-and-silver-artwork-profiles",
+        "scope": "Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.",
+        "source": "LSE History2015 and2017 Warren Wilson panel photographs and descriptions",
+        "photographDate": "historical; precise image capture dates unresolved"
       },
       "interiorView": {
         "position": [
@@ -1691,7 +1736,24 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 142,
+          "status": "documented-corner-artwork-panel-proportions",
+          "scope": "Warren Wilson corner panel corrected to published38ft by7ft6in dimensions, retaining existing centre and estimated frame border. Mosaic pattern and projecting aluminium figures remain placeholders. Existing windows and roof retained.",
+          "source": "LSE History2015 and2017 accounts; archived2022 street photograph",
+          "photographDate": "2022-06-01 street reference; archive artwork images historical"
+        },
+        {
+          "version": 123,
+          "status": "attic-openings-corrected",
+          "addedObjects": 1,
+          "openings": 35,
+          "clearOpaqueProbes": 70,
+          "limitation": "Existing window count, heights and roof remain estimated; dated exterior references do not prove current condition."
+        }
+      ]
     }
   ],
   "spaces": [
@@ -1881,5 +1943,11 @@
   "presentationReview": {
     "version": 139,
     "scope": "Shared environment binding retained from138. Clear alpha-blended glazing no longer casts solid PCF depth shadows; received shadows, source opacity, tint, opaque/masked panes and structural frame shadows retained. Unattenuated daylight is a rendering approximation, not coloured transmittance or caustic simulation. Same mesh preparation applies to overview, exterior and initial/upgraded interior views without added meshes or textures."
+  },
+  "currentOfficialMapReview": {
+    "checked": "2026-10-04",
+    "source": "https://www.lse.ac.uk/lse-information/campus-map",
+    "scope": "Current online campus directory confirms the existing map-code names, FAW entry through PAN and35L under construction. Page displays March2025 map; no2026as-built survey claimed.",
+    "codeRecords": 31
   }
 }
