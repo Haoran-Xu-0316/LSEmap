@@ -17,6 +17,22 @@ The lightweight campus remains available while these assets download.
 Fixed-name campus and interior downloads carry the catalogue source revision, so
 returning visitors cannot combine a new catalogue with an older cached model.
 
+## Latest exterior refinement
+
+Edition149 improves the documented glazing of Lincoln Chambers, Sheffield Street
+and Sardinia House. Original glass geometry, UVs and colors are retained. Three
+photographed Sheffield dormers and six Sardinia gable windows gain real apertures
+through existing facade or roof caps; actual deeper roof surfaces and the
+unverified Sheffield left dormer remain intact. Glass opacity is a presentation
+estimate, not a measured specification or an invented interior.
+
+The overview, closeups and all119 gallery images use the same production viewer,
+model assets and glass parameters. Desktop thin frames use two fixed subpixel
+samples before FXAA; narrow views retain single-sample rendering. Colors use
+Neutral tone mapping. The release manifest identifies the published native source
+and renderer separately; historical edition notes below are not current-state
+acceptance of every elevation or room.
+
 Edition 130 reconstructs the square-facing academic tower facade as 98 nominal 2m glazed plus 1m opaque office modules with high-level vents, following the architect’s specification and contractor photographs. Existing estimated footprint, levels and stair strips guide placement; exact offsets and office counts are an architectural reconstruction, not a registered as-built elevation. SAL’s recessed side-lane middle wing gains pale frames across 21 photographed windows, retaining the near-wing charcoal windows and principal blue frontage.
 
 Edition 129 corrects two photographed storeys above CBG’s braced entrance to three glass columns and adds high-level horizontal frames. Six SAL side-lane windows in the registered near short wing use charcoal frames; the main frontage and middle wing retain their previous materials. Dimensions and RGB remain photographic/GIS estimates; other exteriors and existing interiors are retained.
@@ -346,7 +362,7 @@ thirty available exteriors with the same detailed geometry used in building view
 Those exterior models remain resident across selection changes; public interior
 studies retain a bounded cache. Metric UVs preserve brick and slate courses;
 browser procedural shading approximates the source materials. Gallery images
-use Cycles. The OLD photographic relief reference is excluded from public assets.
+use the production CampusViewer rendering pipeline. The OLD photographic relief reference is excluded from public assets.
 
 Footprints: ©[OpenStreetMap contributors](https://www.openstreetmap.org/copyright),
 ODbL 1.0. See [asset credits](web/public/credits.txt) for source institutions,
@@ -369,10 +385,10 @@ indicative hoarding seams and cap rails only. Public interiors are unchanged.
 The local research workspace retains per-building geometry audit records.
 The published `release.json` and `gallery-manifest.json` identify current assets.
 
-## Edition 16 release alignment
+## Historical edition 16 release alignment
 
 The interactive detailed assets and every gallery rendering derive from the same
-version-16 native source. The viewer uses AgX tone mapping; real-time procedural
+version-16 native source. That historical viewer used AgX tone mapping; real-time procedural
 shading remains an approximation of the Cycles renders. Gallery URLs include the
 model revision, and the release manifest records file hashes. The deployment
 package includes only currently referenced model variants; local archives remain
