@@ -19,6 +19,19 @@ returning visitors cannot combine a new catalogue with an older cached model.
 
 ## Latest exterior refinement
 
+Edition152 completes the fifth Clement dormer opening using the actual glass
+corners and both differently oriented window cheeks. The four earlier openings
+and deeper roof surfaces remain intact. Old Building's ten Clare Market blue-frame
+glass faces gain finite transparency while preserving their geometry, UVs, tint,
+frames and relief bands. MAR transparency trials were rejected after full-view
+comparison exposed distant-shell artefacts or insufficient improvement; its
+accepted model is retained. These corrections do not reconstruct unknown rooms.
+
+The [July2026 LSE Estates update](https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2026-July-CD-Newsletter-V5.pdf)
+is archived for future interior and public-realm work. Proposed Food Hall,
+common-room and Portugal Street designs are distinguished from built photographs;
+planned dates alone are not evidence of completed construction.
+
 Edition151 separates stone aperture returns from the black frames of the three
 entrance-side No.51 arched windows, correcting oblique-view overlap while keeping
 the seven windows corrected in150. Connaught House gains a true fanlight opening
