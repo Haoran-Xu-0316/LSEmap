@@ -145,11 +145,8 @@ box('front_wall','plaster',(0,-7.92,2.40),(10.65,.16,4.8))
 box('left_wall','plaster',(-6.10,-2.1,2.4),(.16,11.70,4.8))
 box('back_cutaway_edge','concrete',(0,7.11,.12),(13.60,.15,.24))
 box('right_cutaway_edge','concrete',(7.01,-.65,.12),(.15,15.45,.24))
-# Front wall acoustic timber, projection field and flanking confidence displays.
-for i in range(95):
-    x=-5.15+i*.11
-    if -2.10<x<2.10:continue
-    box('front_acoustic_slats','oak',(x,-7.79,2.35),(.045,.095,4.55))
+# The matching MAR.1.04 photograph shows a continuous pale front wall.
+# Timber slats belong to the side wall and ceiling only.
 box('projection_frame','dark',(0,-7.74,2.55),(3.8,.12,2.35))
 box('projection_surface','whiteboard',(0,-7.664,2.55),(3.66,.025,2.20))
 for x in [-3.0,3.0]:
