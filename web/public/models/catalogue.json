@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "160",
-  "sourceModelSha256": "82c2d0d899928d0279ac937a131a2f673dafb49927b6b5ce969ed5b7010c225c",
+  "version": "161",
+  "sourceModelSha256": "7e4eb1cb3ee6966362e472f05b98afc032514b049c9b5b4b61ea196ba48804b1",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1224,15 +1224,15 @@
         {
           "id": "con-methodology",
           "label": "CON一层学习区2025",
-          "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。",
+          "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。吸音板拼缝与折线纹样按照片估算，不代表实测板块尺寸。",
           "interiorStudy": {
             "kind": "room-sample",
             "label": "CON一层学习区2025",
-            "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。"
+            "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。吸音板拼缝与折线纹样按照片估算，不代表实测板块尺寸。"
           },
           "interiorView": {
             "position": [
-              -12.96,
+              12.96,
               9.18,
               9.5
             ],
@@ -1244,12 +1244,12 @@
             "fov": 48
           },
           "gallery": "con-methodology-interior",
-          "interiorAsset": "/models/details/con-methodology-interior-ea8f5af65e14.glb",
+          "interiorAsset": "/models/details/con-methodology-interior-ded31586335a.glb",
           "detailedInterior": {
-            "url": "/models/details/con-methodology-interior-ea8f5af65e14.glb",
-            "bytes": 575568,
-            "triangles": 43124,
-            "sha256": "ea8f5af65e14252f8064bc9553bb13284b14999fbaa6ef38e2f5feb36968632d",
+            "url": "/models/details/con-methodology-interior-ded31586335a.glb",
+            "bytes": 596240,
+            "triangles": 45284,
+            "sha256": "ded31586335a187b3f559b876c9343a51234cffbe7bceb6daf1a173b796082dc",
             "bounds": {
               "min": [
                 -5.436797618865967,
@@ -1279,32 +1279,32 @@
         {
           "id": "con-tea-point",
           "label": "CON一层茶水间2025",
-          "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。",
+          "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。吸音板拼缝与折线纹样按照片估算，不代表实测板块尺寸。",
           "interiorStudy": {
             "kind": "room-sample",
             "label": "CON一层茶水间2025",
-            "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。"
+            "scope": "依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。吸音板拼缝与折线纹样按照片估算，不代表实测板块尺寸。"
           },
           "interiorView": {
             "position": [
-              -4.56,
-              3.23,
-              6.125
+              0.4,
+              3.4,
+              6.8
             ],
             "target": [
               0,
-              1.05,
+              1.1,
               0
             ],
-            "fov": 48
+            "fov": 50
           },
           "gallery": "con-tea-point-interior",
-          "interiorAsset": "/models/details/con-tea-point-interior-2fb285f0f785.glb",
+          "interiorAsset": "/models/details/con-tea-point-interior-57d83aa2bafb.glb",
           "detailedInterior": {
-            "url": "/models/details/con-tea-point-interior-2fb285f0f785.glb",
-            "bytes": 133592,
-            "triangles": 8420,
-            "sha256": "2fb285f0f7859f8b98911e8c1ac943022b9b0696ca262d662b7f2438de738c9c",
+            "url": "/models/details/con-tea-point-interior-57d83aa2bafb.glb",
+            "bytes": 136024,
+            "triangles": 8540,
+            "sha256": "57d83aa2bafba586b5ff7612c7f60f5bc63f2ffa86a38b1219723ff8a71ce654",
             "bounds": {
               "min": [
                 -1.899999976158142,
