@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition161 corrects the two CON2025 sample camera directions and adds
+photograph-informed diagonal acoustic-wall joints and mustard-panel chevrons.
+Only these two independent room assets change; existing furniture and campus
+geometry remain intact. Joint paths and dimensions are estimates.
+
 Edition160 refines surrounding paving, asphalt, planting soil and timber finishes
 with independently filtered coarse and fine detail. No extra landscape meshes or
 render passes are added. COL chair apertures, CON.7.04 window-wall alignment and
@@ -95,11 +100,11 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v160.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v161.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
-current detail acceptance is `web/tests/interior-details160.spec.js` and
+current detail acceptance is `web/tests/connaught-acoustics.spec.js` and
 `web/tests/verify_building_details_blender.py`.
 The accepted building corrections retain their edition156 evidence.
 Obsolete backups, private previews and render caches are deleted after verification.
