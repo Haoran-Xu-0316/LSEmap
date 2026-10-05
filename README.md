@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition159 adds photographed CKK frontage downpipes, replaces SAW stair
+anti-slip rods with flat black strips, and corrects three LRB top-rail finishes
+to independently bound silver metal. Other geometry and room studies are retained;
+component sizes and optical properties remain photographic estimates.
+
 Edition158 adds an independent42-seat CBG.1.03 study from its matching official
 plan and photograph, corrects MAR.1.04’s plain projection wall, and refines
 OLD.4.10’s dark door frame and wine-coloured vision insert. These archived
@@ -85,12 +90,12 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v158.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v159.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
-current room acceptance is `web/tests/rooms158.spec.js` and
-`web/tests/verify_rooms_blender.py`.
+current detail acceptance is `web/tests/building-details159.spec.js` and
+`web/tests/verify_building_details_blender.py`.
 The accepted building corrections retain their edition156 evidence.
 Obsolete backups, private previews and render caches are deleted after verification.
 
