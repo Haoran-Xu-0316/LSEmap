@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "162",
-  "sourceModelSha256": "b9d7be995af801b221f9a39fef26024799f45c61c388f919c48376c118804516",
+  "version": "163",
+  "sourceModelSha256": "18307e19390c8897ad716931ede10cfea4e64f161585ef6dbf8c4bf8d95021fd",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3418,9 +3418,8 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 156,
-        "status": "built-photo-horizontal-blue-mansard-window-caps",
-        "scope": "Five registered lower mansard window crowns corrected from triangular proposal stone pediments to photographed horizontal blue caps with two supports each. Sixth obscured left window retained. Existing glass, frames, stone envelope, roof, entrance, relief, ramp and planting preserved. Projection, supports and cap dimensions remain photograph estimates.",
+        "version": 163,
+        "scope": "One left Houghton Street wall lantern added from the engineer completed-project photograph. Registered plate backs meet the retained native wall plane; inverted opal shade, blue mount and rim are approximate. No right-hand duplicate or emissive night lighting inferred. All existing facade and room geometry retained.",
         "source": "https://webbyates.com/projects/the-old-building/",
         "projectCompletionYear": 2024,
         "photographDate": "unknown"
@@ -3485,6 +3484,14 @@
           "source": "Supplied OLD entrance photographs and official LSE Student Services reception image",
           "photographDate": "unknown",
           "interiorSource": "https://www.lse.ac.uk/marshall-institute/emsbe/emsbe-2026-offer-holder-hub"
+        },
+        {
+          "version": 156,
+          "status": "built-photo-horizontal-blue-mansard-window-caps",
+          "scope": "Five registered lower mansard window crowns corrected from triangular proposal stone pediments to photographed horizontal blue caps with two supports each. Sixth obscured left window retained. Existing glass, frames, stone envelope, roof, entrance, relief, ramp and planting preserved. Projection, supports and cap dimensions remain photograph estimates.",
+          "source": "https://webbyates.com/projects/the-old-building/",
+          "projectCompletionYear": 2024,
+          "photographDate": "unknown"
         }
       ],
       "houghtonAccessReview": {
@@ -3563,10 +3570,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-488fcdd85f7f.glb",
-        "bytes": 20150924,
-        "triangles": 1669556,
-        "sha256": "488fcdd85f7f159781ecd9b5509abefbc0986695aea4874f4b16526d24dea8bd",
+        "url": "/models/details/old-exterior-07d5d0039f9d.glb",
+        "bytes": 20165584,
+        "triangles": 1670516,
+        "sha256": "07d5d0039f9d3654b5c2af8678e06a23f05a2bd0dff5bbcdc35457f79d2fcf91",
         "bounds": {
           "min": [
             -39.1646614074707,
