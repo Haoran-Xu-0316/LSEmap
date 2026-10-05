@@ -36,7 +36,7 @@ if previous:
             assert not collection.objects,'Do not delete a collection containing unrelated objects'
             bpy.data.collections.remove(collection)
     for mat in list(bpy.data.materials):
-        if mat.name.startswith(('CON_NEXT_', 'CON_ACOUSTICS161_')) and mat.users==int(mat.use_fake_user):
+        if mat.name.startswith(('CON_NEXT_', 'CON_ACOUSTICS161_', 'CON_GLAZING162_')) and mat.users==int(mat.use_fake_user):
             mat.use_fake_user=False;bpy.data.materials.remove(mat)
 for scene in bpy.data.scenes:
     for layer in scene.view_layers:layer.update()
@@ -198,6 +198,8 @@ for y in [-.78,.05]:
 finish_room(scene,'methodology-tea')
 from refine_connaught_acoustics import apply_connaught_acoustics
 apply_connaught_acoustics()
+from refine_connaught_room_glazing import apply_connaught_room_glazing
+apply_connaught_room_glazing()
 owned.append(bpy.data.objects['CON_ACOUSTICS161_tea_panel_joints'])
 assert all(fingerprint(bpy.data.objects[name])==value for name,value in original.items())
 component=OUT/'connaught-methodology-components.blend'
