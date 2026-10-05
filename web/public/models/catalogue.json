@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "157",
-  "sourceModelSha256": "8312450fb294cc9ed70d1775210c6da19cae34a9580c935a31b79d9de9472229",
+  "version": "158",
+  "sourceModelSha256": "65ef663394d4334b3c4197a8a223abcc34db9589cfa0cff2097b52744401e441",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -413,6 +413,61 @@
               5.78000020980835,
               3.9100000858306885,
               5.244999885559082
+            ]
+          }
+        },
+        {
+          "id": "cbg-103",
+          "label": "CBG.1.03分组教室",
+          "scope": "依据LSE官方CBG.1.03平面与同房间照片建立42座历史教学室样本。七组六座按平面中心和方向描摹；米制尺度、不可见门构造和服务高度为估算。后侧与侧墙及部分吊顶为观察剖开，不推测与中庭或其他房间连接，不代表2026年布置。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CBG.1.03分组教室",
+            "scope": "依据LSE官方CBG.1.03平面与同房间照片建立42座历史教学室样本。七组六座按平面中心和方向描摹；米制尺度、不可见门构造和服务高度为估算。后侧与侧墙及部分吊顶为观察剖开，不推测与中庭或其他房间连接，不代表2026年布置。"
+          },
+          "interiorView": {
+            "position": [
+              14,
+              12.5,
+              -16
+            ],
+            "target": [
+              0,
+              1.2,
+              -0.2
+            ],
+            "fov": 50
+          },
+          "gallery": "cbg-103-interior",
+          "interiorAsset": "/models/details/cbg-103-interior-7c43caf689a7.glb",
+          "detailedInterior": {
+            "url": "/models/details/cbg-103-interior-7c43caf689a7.glb",
+            "bytes": 293380,
+            "triangles": 24668,
+            "sha256": "7c43caf689a7c72d64201256e0ef83059dba5daadc4632413153bd680d7fa980",
+            "bounds": {
+              "min": [
+                -5.98199987411499,
+                -0.18000000715255737,
+                -5.682515621185303
+              ],
+              "max": [
+                5.947999954223633,
+                4.019999980926514,
+                5.769999980926514
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -5.98199987411499,
+              -0.18000000715255737,
+              -5.682515621185303
+            ],
+            "max": [
+              5.947999954223633,
+              4.019999980926514,
+              5.769999980926514
             ]
           }
         }
@@ -3313,12 +3368,12 @@
             "fov": 50
           },
           "gallery": "mar-104-interior",
-          "interiorAsset": "/models/details/mar-104-interior-ef2db3ea7a36.glb",
+          "interiorAsset": "/models/details/mar-104-interior-ab26ea5e7cb1.glb",
           "detailedInterior": {
-            "url": "/models/details/mar-104-interior-ef2db3ea7a36.glb",
-            "bytes": 656868,
-            "triangles": 59272,
-            "sha256": "ef2db3ea7a361c5f6ad8e59aa53056b5f3708d4619a593435bcc3a40b33e9b79",
+            "url": "/models/details/mar-104-interior-ab26ea5e7cb1.glb",
+            "bytes": 649060,
+            "triangles": 58588,
+            "sha256": "ab26ea5e7cb18e32e6f30d86c6626a7caf3c3bed63495397790bbb4d9df9c063",
             "bounds": {
               "min": [
                 -6.960000038146973,
@@ -3532,10 +3587,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/old-interior-f9864ce7fc08.glb",
-        "bytes": 1351476,
-        "triangles": 113028,
-        "sha256": "f9864ce7fc08b0fa5fc7f38d6dab47c7e5d6ba3be16960f0ae6abe8c229710df",
+        "url": "/models/details/old-interior-db7fa8b91920.glb",
+        "bytes": 1354656,
+        "triangles": 113064,
+        "sha256": "db7fa8b91920816bdd147aaf9d68260088b8d30d484423ac9dca8513aeaa86ad",
         "bounds": {
           "min": [
             -8.0,
