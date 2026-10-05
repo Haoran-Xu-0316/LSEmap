@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition158 adds an independent42-seat CBG.1.03 study from its matching official
+plan and photograph, corrects MAR.1.04’s plain projection wall, and refines
+OLD.4.10’s dark door frame and wine-coloured vision insert. These archived
+room references do not establish2026 layouts; metric dimensions remain estimated.
+
 Edition157 smooths only the existing plane-tree crowns in Blender, preserves
 all mesh positions and topology, and refines matte public-realm finishes.
 Context walls and slate roofs retain their separate authored colour roles.
@@ -27,7 +32,7 @@ is not a measured full-campus or complete room-by-room reconstruction.
 
 Orbit, pan and zoom freely. Select a building on the map or search its name/code.
 Shareable building links, keyboard controls, mobile layouts, reduced motion and
-an image-gallery fallback are included. Thirty exterior assets and thirty-three
+an image-gallery fallback are included. Thirty exterior assets and thirty-four
 interior studies load on demand. The catalogue contains31 map-code records;
 35L is represented as a construction site and61A attribution remains provisional.
 
@@ -80,11 +85,12 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v157.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v158.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
-current environment source acceptance is `web/tests/environment157.spec.js`.
+current room acceptance is `web/tests/rooms158.spec.js` and
+`web/tests/verify_rooms_blender.py`.
 The accepted building corrections retain their edition156 evidence.
 Obsolete backups, private previews and render caches are deleted after verification.
 
