@@ -300,10 +300,8 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 145,
-        "status": "whole-envelope-reviewed-no-change",
-        "scope": "97 actual glass first contacts verified. Handbook supports entrance and two lower street levels; oblique300x376 Estates image crops roof. Tree-covered lower stone joints do not justify removing all rustication. Existing upper windows, roof and unseen walls remain dimensional estimates; no speculative replacement.",
-        "source": "Archived LSE Property Handbook and LSE Estates004; AccessAble additional source returned403"
+        "edition": 160,
+        "scope": "Garrick photographed wooden chair backs now have three true square apertures; model seat count is not cafe capacity. Archived photograph date unknown."
       },
       "detailView": {
         "label": "入口细节",
@@ -383,11 +381,8 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 133,
-        "scope": "The four-light window above the Connaught House portal shortened using the official photograph relative to its two taller neighbors. True upper and lower masonry infill, glass, frames, reveals, sill and head moulding moved together; the short-window horizontal transom corrected to photo-estimated mid-height. All other vertices in seven component families and existing interiors retained. Twelve glass, opaque infill and neighbor first-surface probes pass after component save/reopen.",
-        "reference": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
-        "captureDate": "unknown",
-        "estimates": "Source photograph is oblique300x400px. New1.50m opening, sill rise0.50m and head lowering0.35m use estimated ratios from inherited2.35m neighbor height; no claim of measured elevation."
+        "edition": 160,
+        "scope": "CON.7.04 window and AV now on table-axis end wall, matching its archived plan/photo; former window side becomes panelled timber. Historic references, estimated dimensions."
       },
       "detailView": {
         "label": "入口细节",
@@ -405,7 +400,7 @@
       },
       "interiorView": {
         "position": [
-          7,
+          -7,
           5.7,
           6
         ],
@@ -1832,11 +1827,8 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 139,
-        "status": "photo-informed-four-light-main-window-grid",
-        "scope": "Eighteen broad upper main windows now use four lights with54 stone mullions and18 continuous stone transoms, replacing three-light joinery. Existing glass, surrounding blue frames, oriels, alley colours and ground row retained. Opening width3.42m and cross-section heights are estimates from undated architect built photography; obscured ground, unseen elevations and complete interior unresolved.",
-        "reference": "data/collections/library_round5/photos/SAL_d0d696021ed0.jpg",
-        "source": "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/"
+        "edition": 160,
+        "scope": "SAL.G.01 projector uses independent charcoal finish and ceiling-post study; wall-top mounting datum is estimated, not a surveyed ceiling."
       },
       "interiorView": {
         "position": [
