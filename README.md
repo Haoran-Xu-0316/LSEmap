@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition163 adds the photograph-visible blue wall lantern to the left of
+the Old Building Houghton entrance. Its plate meets the registered wall plane;
+shade, rim and support dimensions remain estimates. No second lamp or nighttime
+glow is inferred. All existing mesh geometry and room studies are preserved.
+
 Edition162 opens the real wall apertures behind both CON2025 glazed studies
 and replaces their opaque boxes with independently bound thin clear panes.
 Frame positions, furniture and outer wall bounds are preserved. Window sizes
@@ -105,11 +110,11 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v162.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v163.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
-current detail acceptance is `web/tests/connaught-room-details.spec.js` and
+current detail acceptance is `web/tests/old-wall-lantern.spec.js` and
 `web/tests/verify_building_details_blender.py`.
 The accepted building corrections retain their edition156 evidence.
 Obsolete backups, private previews and render caches are deleted after verification.
