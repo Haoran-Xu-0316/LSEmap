@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "159",
-  "sourceModelSha256": "81d8725988c789322a6128e8e9e70237e38c18927a7e633803be472526467b97",
+  "version": "160",
+  "sourceModelSha256": "82c2d0d899928d0279ac937a131a2f673dafb49927b6b5ce969ed5b7010c225c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -888,10 +888,8 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 145,
-        "status": "whole-envelope-reviewed-no-change",
-        "scope": "97 actual glass first contacts verified. Handbook supports entrance and two lower street levels; oblique300x376 Estates image crops roof. Tree-covered lower stone joints do not justify removing all rustication. Existing upper windows, roof and unseen walls remain dimensional estimates; no speculative replacement.",
-        "source": "Archived LSE Property Handbook and LSE Estates004; AccessAble additional source returned403"
+        "edition": 160,
+        "scope": "Garrick photographed wooden chair backs now have three true square apertures; model seat count is not cafe capacity. Archived photograph date unknown."
       },
       "detailView": {
         "label": "入口细节",
@@ -1032,10 +1030,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/col-interior-5317388f80f6.glb",
-        "bytes": 724616,
-        "triangles": 63648,
-        "sha256": "5317388f80f6dc50bb354fb30abcf1c30235278f71f26aca797b4af2014787a6",
+        "url": "/models/details/col-interior-cbc80d702467.glb",
+        "bytes": 829908,
+        "triangles": 76608,
+        "sha256": "cbc80d702467402bd7b9e7e083b08431bb3829a0055d2e9fd06d6a87e085e062",
         "bounds": {
           "min": [
             -3.880000114440918,
@@ -1072,11 +1070,8 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 133,
-        "scope": "The four-light window above the Connaught House portal shortened using the official photograph relative to its two taller neighbors. True upper and lower masonry infill, glass, frames, reveals, sill and head moulding moved together; the short-window horizontal transom corrected to photo-estimated mid-height. All other vertices in seven component families and existing interiors retained. Twelve glass, opaque infill and neighbor first-surface probes pass after component save/reopen.",
-        "reference": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
-        "captureDate": "unknown",
-        "estimates": "Source photograph is oblique300x400px. New1.50m opening, sill rise0.50m and head lowering0.35m use estimated ratios from inherited2.35m neighbor height; no claim of measured elevation."
+        "edition": 160,
+        "scope": "CON.7.04 window and AV now on table-axis end wall, matching its archived plan/photo; former window side becomes panelled timber. Historic references, estimated dimensions."
       },
       "detailView": {
         "label": "入口细节",
@@ -1094,7 +1089,7 @@
       },
       "interiorView": {
         "position": [
-          7,
+          -7,
           5.7,
           6
         ],
@@ -1208,10 +1203,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/con-interior-0ebf0d1c23a5.glb",
-        "bytes": 299704,
-        "triangles": 22396,
-        "sha256": "0ebf0d1c23a57b877f1319850727fbd07f2bf95c067e46fd2f1dac151682d209",
+        "url": "/models/details/con-interior-bd4d067de12b.glb",
+        "bytes": 302712,
+        "triangles": 22552,
+        "sha256": "bd4d067de12bf3174ee279a5298c85d4e948dd2aa73992bc4200dd263b1bbb19",
         "bounds": {
           "min": [
             -3.2799999713897705,
@@ -5085,11 +5080,8 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 139,
-        "status": "photo-informed-four-light-main-window-grid",
-        "scope": "Eighteen broad upper main windows now use four lights with54 stone mullions and18 continuous stone transoms, replacing three-light joinery. Existing glass, surrounding blue frames, oriels, alley colours and ground row retained. Opening width3.42m and cross-section heights are estimates from undated architect built photography; obscured ground, unseen elevations and complete interior unresolved.",
-        "reference": "data/collections/library_round5/photos/SAL_d0d696021ed0.jpg",
-        "source": "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/"
+        "edition": 160,
+        "scope": "SAL.G.01 projector uses independent charcoal finish and ceiling-post study; wall-top mounting datum is estimated, not a surveyed ceiling."
       },
       "interiorView": {
         "position": [
@@ -5216,10 +5208,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/sal-interior-c5767d839d56.glb",
-        "bytes": 526224,
-        "triangles": 42972,
-        "sha256": "c5767d839d56d922817107aae80529281e7ae3e2fd8635650d6a7dc67fd15a28",
+        "url": "/models/details/sal-interior-fae684dd8df4.glb",
+        "bytes": 527924,
+        "triangles": 42996,
+        "sha256": "fae684dd8df4788513577a4b7096408031c65cee02d4afe0ed6a387d303927ff",
         "bounds": {
           "min": [
             -5.079999923706055,
