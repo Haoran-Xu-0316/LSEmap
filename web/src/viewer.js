@@ -243,6 +243,12 @@ export class CampusViewer {
     this.campus.traverse((object) => {
       const code = object.userData.buildingCode;
       if (code) this.groups.set(code, object);
+    });
+    const contextMeshes = new Set();
+    this.groups.get("CONTEXT")?.traverse((object) => {
+      if (object.isMesh) contextMeshes.add(object);
+    });
+    this.campus.traverse((object) => {
       if (object.isMesh) {
         prepareMeshShadows(object);
         const materials = Array.isArray(object.material)
@@ -252,6 +258,14 @@ export class CampusViewer {
           const copy = material.clone();
           copy.side = THREE.DoubleSide;
           refineMaterialFinish(copy, this.environmentTarget.texture);
+          if (contextMeshes.has(object)) {
+            // Retain authored wall/roof colour roles before shader uniforms exist.
+            const luminance = copy.color.r * .2126 + copy.color.g * .7152 + copy.color.b * .0722;
+            copy.color.lerp(new THREE.Color(luminance, luminance, luminance), .14);
+            const roof = /lead|slate/i.test(copy.name);
+            copy.roughness = roof ? .82 : .94;
+            copy.metalness = roof ? .2 : 0;
+          }
           applySurfaceDetail(copy);
           return copy;
         });
@@ -261,19 +275,7 @@ export class CampusViewer {
     this.groups.get("SITE")?.traverse((object) => {
       if (object.isMesh) object.castShadow = false;
     });
-    const context = this.groups.get("CONTEXT");
-    context?.traverse((object) => {
-      if (!object.isMesh) return;
-      object.castShadow = false;
-      const materials = Array.isArray(object.material)
-        ? object.material
-        : [object.material];
-      for (const material of materials) {
-        material.color.set(0xc5cdd2);
-        material.roughness = 1;
-        material.metalness = 0;
-      }
-    });
+    for (const object of contextMeshes) object.castShadow = false;
     this.pickable = [...this.groups]
       .filter(([code]) => codes.has(code))
       .map(([, object]) => object);
