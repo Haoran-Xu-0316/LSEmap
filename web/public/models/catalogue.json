@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "158",
-  "sourceModelSha256": "65ef663394d4334b3c4197a8a223abcc34db9589cfa0cff2097b52744401e441",
+  "version": "159",
+  "sourceModelSha256": "81d8725988c789322a6128e8e9e70237e38c18927a7e633803be472526467b97",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -504,11 +504,13 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 139,
-        "status": "photo-informed-broad-wing-attic-windows",
-        "scope": "Both projecting wings now have one broad three-light top-storey opening in place of three separate narrow masonry openings. Walls, glass, frames, reveals, mullions and sills rebuilt together. Other windows, roof, entrance and interiors retained. Width3.65m and divisions are photographic estimates, capture date unknown; unseen elevations and complete interior remain unresolved.",
-        "reference": "data/建筑图片/CKK_Cheng Kin Ku Building/01_建筑实拍/exteriors_ckk_grimshaw_010.jpg",
-        "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
+        "version": 159,
+        "status": "photographed-frontage-rainwater-fittings",
+        "scope": "Add two photographed dark downpipes with visible upper offsets, two hoppers and eight clamps. Registration uses retained native front wall planes; diameters, offsets and heights are photographic estimates. Existing stone, glazing and interiors retained; unseen roof and underground drainage routes not modeled.",
+        "sources": [
+          "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
+        ],
+        "photographDate": "Unknown; not a verified2026 condition survey"
       },
       "interiorView": {
         "position": [
@@ -615,10 +617,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-9d69c2e0583e.glb",
-        "bytes": 2740556,
-        "triangles": 235638,
-        "sha256": "9d69c2e0583e38b2bf25ffabe3e714c4711aef5b29470012c94d3f77ea640fb3",
+        "url": "/models/details/ckk-exterior-c47828e97b9d.glb",
+        "bytes": 2746520,
+        "triangles": 236494,
+        "sha256": "c47828e97b9d4a25d9757e235621ca4e361149a922f5bdc85a3b4611b9d2aaf6",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -2927,16 +2929,13 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 155,
-        "status": "map-registered-detached-plaza-cafe-pavilion",
-        "scope": "Mapped way/310159572 grey context walls and roof replaced by independent black steel/glass Plaza Café pavilion with timber soffit, green roof and shallow visible seating. Existing library elevations, glazing, roofs and interiors retained. Nine-edge footprint preserved;3.49mheight,0.65meaves, joinery and seating estimates. No complete measured café interior claimed.",
+        "version": 159,
+        "status": "photo-supported-silver-top-handrails",
+        "scope": "Replace only three atrium, spiral and landing top-rail material bindings with an independent silver metal visual estimate. All geometry, white balusters and shared materials on other objects retained. No measured optical properties or complete current interior reconstruction claimed.",
         "sources": [
-          "https://food.lse.ac.uk/story/35941950/head-to-plaza-cafe",
-          "https://info.lse.ac.uk/current-students/estates-division/facilities-guide/social-and-green-space",
-          "https://www.openstreetmap.org/way/310159572"
+          "https://rainbowdesign.co.uk/project/london-school-of-economics/"
         ],
-        "photographDate": "unknown",
-        "footprintRecordDate": "2025-05-15"
+        "photographDate": "Unknown;2021 upload path does not establish current condition"
       },
       "interiorSections": [
         {
@@ -3098,10 +3097,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-674f39b4f713.glb",
-        "bytes": 6124700,
+        "url": "/models/details/lrb-exterior-9c8daed6923f.glb",
+        "bytes": 6124704,
         "triangles": 683027,
-        "sha256": "674f39b4f7132ee55f08121ff9b5121dcd128055f63de53e98a8697f77abefdf",
+        "sha256": "9c8daed6923f7c4b92b3ddebd8edacc3372b22ce1b44cffb73aba18ce321b5c4",
         "bounds": {
           "min": [
             24.830078125,
@@ -3116,10 +3115,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-846421d6dadf.glb",
+        "url": "/models/details/lrb-interior-694edc536a1d.glb",
         "bytes": 4664320,
         "triangles": 579968,
-        "sha256": "846421d6dadfa56880ec6aaef19683d0b23499d7e3d93ad0aeec36b4e4941448",
+        "sha256": "694edc536a1d6a7f5b1428613864c2826e4cb0200b3bfd1d1625768c0c5aefb2",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -4720,11 +4719,13 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 155,
-        "status": "photo-informed-main-pierced-window-bands",
-        "scope": "North folded wall three real window openings, physical brick screens, back glazing, frames and supports corrected together from66.9to112.54square metres. Other faces, highest point, footprint, roofs and interiors retained. Widths, vertical intervals and heights are photographic estimates.",
-        "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery",
-        "photographDate": "unknown"
+        "version": 159,
+        "status": "photographed-flat-stair-anti-slip-strips",
+        "scope": "Replace round anti-slip rods with128 thin flat black strips using actual retained tread top planes. Strip width55mm, setback60mm and thickness2mm are photographic estimates. All treads, guards, handrails, floors and separate room studies retained.",
+        "sources": [
+          "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
+        ],
+        "photographDate": "Unknown;2017 upload path does not establish current condition"
       },
       "reviewHistory": [
         {
@@ -4813,10 +4814,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-e25b740e06e4.glb",
-        "bytes": 12423160,
-        "triangles": 1265575,
-        "sha256": "e25b740e06e4f2604163ff8cac3a2b89aa9889cb23020e7c4a16388fc1463dd6",
+        "url": "/models/details/saw-exterior-f9a7b6e5df03.glb",
+        "bytes": 12421240,
+        "triangles": 1264551,
+        "sha256": "f9a7b6e5df03f95e63704473024b6b32c216011586de2bf89179abdb810c9c17",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -4831,10 +4832,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-ca16e957f1cd.glb",
-        "bytes": 287484,
-        "triangles": 27792,
-        "sha256": "ca16e957f1cd29ff885c04cc7d27a7da7abdf018ecef29bfe8048a21561e46e8",
+        "url": "/models/details/saw-interior-9f652360125f.glb",
+        "bytes": 285564,
+        "triangles": 26768,
+        "sha256": "9f652360125fa5a5c1c9af42da17417449d7e03041528ffa719d565094546163",
         "bounds": {
           "min": [
             -64.70494079589844,
