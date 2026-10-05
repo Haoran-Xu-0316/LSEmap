@@ -175,11 +175,13 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 139,
-        "status": "photo-informed-broad-wing-attic-windows",
-        "scope": "Both projecting wings now have one broad three-light top-storey opening in place of three separate narrow masonry openings. Walls, glass, frames, reveals, mullions and sills rebuilt together. Other windows, roof, entrance and interiors retained. Width3.65m and divisions are photographic estimates, capture date unknown; unseen elevations and complete interior remain unresolved.",
-        "reference": "data/建筑图片/CKK_Cheng Kin Ku Building/01_建筑实拍/exteriors_ckk_grimshaw_010.jpg",
-        "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
+        "version": 159,
+        "status": "photographed-frontage-rainwater-fittings",
+        "scope": "Add two photographed dark downpipes with visible upper offsets, two hoppers and eight clamps. Registration uses retained native front wall planes; diameters, offsets and heights are photographic estimates. Existing stone, glazing and interiors retained; unseen roof and underground drainage routes not modeled.",
+        "sources": [
+          "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
+        ],
+        "photographDate": "Unknown; not a verified2026 condition survey"
       },
       "interiorView": {
         "position": [
@@ -1052,16 +1054,13 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 155,
-        "status": "map-registered-detached-plaza-cafe-pavilion",
-        "scope": "Mapped way/310159572 grey context walls and roof replaced by independent black steel/glass Plaza Café pavilion with timber soffit, green roof and shallow visible seating. Existing library elevations, glazing, roofs and interiors retained. Nine-edge footprint preserved;3.49mheight,0.65meaves, joinery and seating estimates. No complete measured café interior claimed.",
+        "version": 159,
+        "status": "photo-supported-silver-top-handrails",
+        "scope": "Replace only three atrium, spiral and landing top-rail material bindings with an independent silver metal visual estimate. All geometry, white balusters and shared materials on other objects retained. No measured optical properties or complete current interior reconstruction claimed.",
         "sources": [
-          "https://food.lse.ac.uk/story/35941950/head-to-plaza-cafe",
-          "https://info.lse.ac.uk/current-students/estates-division/facilities-guide/social-and-green-space",
-          "https://www.openstreetmap.org/way/310159572"
+          "https://rainbowdesign.co.uk/project/london-school-of-economics/"
         ],
-        "photographDate": "unknown",
-        "footprintRecordDate": "2025-05-15"
+        "photographDate": "Unknown;2021 upload path does not establish current condition"
       },
       "interiorSections": [
         {
@@ -1751,11 +1750,13 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 155,
-        "status": "photo-informed-main-pierced-window-bands",
-        "scope": "North folded wall three real window openings, physical brick screens, back glazing, frames and supports corrected together from66.9to112.54square metres. Other faces, highest point, footprint, roofs and interiors retained. Widths, vertical intervals and heights are photographic estimates.",
-        "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery",
-        "photographDate": "unknown"
+        "version": 159,
+        "status": "photographed-flat-stair-anti-slip-strips",
+        "scope": "Replace round anti-slip rods with128 thin flat black strips using actual retained tread top planes. Strip width55mm, setback60mm and thickness2mm are photographic estimates. All treads, guards, handrails, floors and separate room studies retained.",
+        "sources": [
+          "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
+        ],
+        "photographDate": "Unknown;2017 upload path does not establish current condition"
       },
       "exportExterior": true,
       "reviewHistory": [
