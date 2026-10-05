@@ -8,7 +8,10 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition156 is the final snapshot for this refinement round. Five Old Building
+Edition157 smooths only the existing plane-tree crowns in Blender, preserves
+all mesh positions and topology, and refines matte public-realm finishes.
+Context walls and slate roofs retain their separate authored colour roles.
+Five Old Building
 lower mansard window crowns now follow the engineer’s built photograph:
 horizontal blue caps and paired supports replace proposal-derived triangular
 stone pediments. The obscured sixth crown, glazing, roof and existing entrance
@@ -77,11 +80,12 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v156.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v157.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
-current local source acceptance is `web/tests/exterior-alignment156.spec.js`.
+current environment source acceptance is `web/tests/environment157.spec.js`.
+The accepted building corrections retain their edition156 evidence.
 Obsolete backups, private previews and render caches are deleted after verification.
 
 ## Attribution
