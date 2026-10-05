@@ -83,6 +83,9 @@ export function refineMaterialFinish(material, environmentMap = null) {
   } else if (matches(/SITE_V47_(?:slab|yorkstone|edge|grout)|campus paving|MAR25_paving|CKK_V80_paving/i)) {
     material.metalness = 0;
     material.roughness = 0.9;
+  } else if (matches(/foliage|Lincoln Inn Fields grass|(?:^|_)soil$|(?:^|_)bark$/i)) {
+    material.metalness = 0;
+    material.roughness = matches(/foliage/) ? 0.88 : 0.96;
   } else if (matches(/Road asphalt/i)) {
     material.metalness = 0;
     material.roughness = 0.97;
@@ -100,7 +103,10 @@ export function refineMaterialFinish(material, environmentMap = null) {
 
 export function applySurfaceDetail(material) {
   if (detailedMaterials.has(material)) return;
-  const outdoor = /SITE_V47_(?:slab|yorkstone|edge|soil|wood)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt|Lincoln Inn Fields grass|London plane foliage/i.test(material.name);
+  const landscape = /(?:^|_)(?:soil|bark)$|London plane foliage|Lincoln Inn Fields grass/i.test(material.name);
+  const asphalt = /Road asphalt/i.test(material.name);
+  const bark = /(?:^|_)bark$/i.test(material.name);
+  const outdoor = landscape || /SITE_V47_(?:slab|yorkstone|edge|soil|wood)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt|Lincoln Inn Fields grass|London plane foliage/i.test(material.name);
   const timber = /SITE_V47_wood/i.test(material.name);
   const paving = /SITE_V47_(?:slab|yorkstone|edge)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt/i.test(material.name);
   let detail = material.userData.surfaceDetail;
@@ -108,8 +114,8 @@ export function applySurfaceDetail(material) {
     // Preserve mapped geometry and palette; resolve aggregate and foliage tones
     // in the shared renderer rather than adding subpixel blades or leaf meshes.
     detail = {
-      kind: "noise", scale: /foliage|grass/.test(material.name) ? 1.8 : 9,
-      bump: /asphalt|soil/.test(material.name) ? 0.0006 : 0.00025,
+      kind: "noise", scale: /foliage|grass/.test(material.name) ? 1.8 : bark ? 5 : asphalt ? 22 : 9,
+      bump: /foliage|grass/.test(material.name) ? 0 : bark ? 0.0012 : /asphalt|soil/.test(material.name) ? 0.0008 : 0.00035,
       colorA: material.color.clone().multiplyScalar(0.82).toArray(),
       colorB: material.color.clone().multiplyScalar(1.10).toArray(),
     };
@@ -133,7 +139,7 @@ export function applySurfaceDetail(material) {
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-finish6-${brick ? "brick" : timber ? "timber" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish7-${brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -173,14 +179,17 @@ export function applySurfaceDetail(material) {
       float surfaceHeight = face * surfaceBump * tileVisibility;
     ` : `
       vec3 surfacePoint = vec3(vSurfacePosition.x, -vSurfacePosition.z, vSurfacePosition.y) * surfaceScale;
-      ${timber ? "surfacePoint *= vec3(0.12, 2.5, 1.0);" : ""}
+      ${timber ? "surfacePoint *= vec3(0.12, 2.5, 1.0);" : bark ? "surfacePoint *= vec3(2.4, 2.4, 0.16);" : ""}
       float noiseVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(surfacePoint)));
-      float grain = mix(0.5,
-        ${outdoor ? "surfaceNoise(surfacePoint) * .55 + surfaceNoise(surfacePoint * .16) * .45" : "surfaceNoise(surfacePoint) * .75 + surfaceNoise(surfacePoint * 2.0) * .25"},
-        noiseVisibility);
+      // Filter coarse variation independently, keeping broad landscape tones
+      // readable while aggregate and wood grain disappear into distant pixels.
+      float coarseVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(surfacePoint * .16)));
+      float coarseGrain = coarseVisibility > .001 ? mix(.5, surfaceNoise(surfacePoint * .16), coarseVisibility) : .5;
+      float resolvedGrain = noiseVisibility > .001 ? mix(.5, surfaceNoise(surfacePoint), noiseVisibility) : .5;
+      float grain = ${outdoor ? "resolvedGrain * .55 + coarseGrain * .45" : "resolvedGrain"};
       // Keep the source palette midpoint without oversized concrete blotches.
       vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * ${outdoor ? "1.2" : "0.32"});
-      float surfaceHeight = grain * surfaceBump;
+      float surfaceHeight = resolvedGrain * surfaceBump * noiseVisibility;
     `;
     shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", `
       #include <color_fragment>
@@ -188,7 +197,7 @@ export function applySurfaceDetail(material) {
       // Fade fine grain before it becomes a subpixel pattern at campus scale.
       vec3 finePoint = vSurfacePosition * 85.0;
       float grainVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(finePoint)));
-      float fineGrain = (surfaceNoise(finePoint) - 0.5) * grainVisibility;
+      float fineGrain = grainVisibility > .001 ? (surfaceNoise(finePoint) - 0.5) * grainVisibility : 0.0;
       diffuseColor.rgb = surfaceColor * (1.0 + fineGrain * 0.08);
       surfaceHeight += fineGrain * 0.00018;
     `);
