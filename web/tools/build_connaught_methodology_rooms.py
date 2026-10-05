@@ -16,6 +16,14 @@ if not BASE.exists():
 bpy.ops.wm.open_mainfile(filepath=str(BASE))
 # Rebuild only this builder's samples when old full snapshots have been removed.
 previous=json.loads((OUT/'audit.json').read_text()) if (OUT/'audit.json').exists() else None
+# A legacy component audit may predate the separately added acoustic mesh.
+# Remove this builder-owned addition before rebuilding both room collections.
+acoustic = bpy.data.objects.get('CON_ACOUSTICS161_tea_panel_joints')
+if acoustic:
+    assert all(c.name == 'CON_TEA_ROOM_study' for c in acoustic.users_collection)
+    mesh = acoustic.data
+    bpy.data.objects.remove(acoustic, do_unlink=True)
+    if not mesh.users: bpy.data.meshes.remove(mesh)
 if previous:
     for name in previous['ownedObjects']:
         obj=bpy.data.objects.get(name)
@@ -28,7 +36,7 @@ if previous:
             assert not collection.objects,'Do not delete a collection containing unrelated objects'
             bpy.data.collections.remove(collection)
     for mat in list(bpy.data.materials):
-        if mat.name.startswith('CON_NEXT_') and mat.users==int(mat.use_fake_user):
+        if mat.name.startswith(('CON_NEXT_', 'CON_ACOUSTICS161_')) and mat.users==int(mat.use_fake_user):
             mat.use_fake_user=False;bpy.data.materials.remove(mat)
 for scene in bpy.data.scenes:
     for layer in scene.view_layers:layer.update()
@@ -68,7 +76,7 @@ def start_room(identifier,collection_name,label,width,depth):
     scope='依据LSE2026年1月简报中2025年秋翻新空间照片建立的局部样本。尺寸、家具位置和不可见构造估算，未连接为完整楼层。'
     room_records.append({'id':identifier,'code':'CON','collection':collection_name,'label':label,'scope':scope,
       'gallery':identifier+'-interior','interiorStudy':{'kind':'room-sample','label':label,'scope':scope},
-      'interiorView':{'position':[-width*1.2,width*.85,depth*1.25],'target':[0,1.05,0],'fov':48}})
+      'interiorView':{'position':([width*1.2,width*.85,depth*1.25] if identifier=='con-methodology' else [.4,3.4,6.8]),'target':([0,1.05,0] if identifier=='con-methodology' else [0,1.10,0]),'fov':(48 if identifier=='con-methodology' else 50)}})
     return scene
 
 def group(family,material):
@@ -188,6 +196,9 @@ for y in [-.78,.05]:
     for family in ['seat','seat_back']:
         geometry=groups[(family,'orange')];geometry.material=materials['yellow']
 finish_room(scene,'methodology-tea')
+from refine_connaught_acoustics import apply_connaught_acoustics
+apply_connaught_acoustics()
+owned.append(bpy.data.objects['CON_ACOUSTICS161_tea_panel_joints'])
 assert all(fingerprint(bpy.data.objects[name])==value for name,value in original.items())
 component=OUT/'connaught-methodology-components.blend'
 bpy.data.libraries.write(str(component),set(collections),fake_user=True)
