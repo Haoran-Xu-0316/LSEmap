@@ -65,6 +65,27 @@ export function refineMaterialFinish(material, environmentMap = null) {
         `);
       };
     }
+  } else if (matches(/SITE_V47_iron$/i)) {
+    // Bollards, bench supports and tree grates are painted iron: the coating
+    // reflects as a dielectric, rather than dark polished bare metal.
+    material.metalness = 0;
+    material.roughness = 0.72;
+  } else if (matches(/SITE_V47_steel$/i)) {
+    // Reuse the existing sky capture for exposed cycle hoops and bench fixings.
+    // This separates their soft metallic highlight from painted street furniture.
+    material.metalness = 0.9;
+    material.roughness = 0.43;
+    material.envMapIntensity = 0.7;
+    if (environmentMap && !material.envMap) material.envMap = environmentMap;
+  } else if (matches(/SITE_V47_wood/i)) {
+    material.metalness = 0;
+    material.roughness = 0.76;
+  } else if (matches(/SITE_V47_(?:slab|yorkstone|edge|grout)|campus paving|MAR25_paving|CKK_V80_paving/i)) {
+    material.metalness = 0;
+    material.roughness = 0.9;
+  } else if (matches(/Road asphalt/i)) {
+    material.metalness = 0;
+    material.roughness = 0.97;
   } else if (matches(/gold|bronze|brass|copper/)) {
     material.metalness = Math.max(material.metalness, 0.72);
     material.roughness = Math.min(material.roughness, 0.34);
@@ -81,6 +102,7 @@ export function applySurfaceDetail(material) {
   if (detailedMaterials.has(material)) return;
   const outdoor = /SITE_V47_(?:slab|yorkstone|edge|soil|wood)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt|Lincoln Inn Fields grass|London plane foliage/i.test(material.name);
   const timber = /SITE_V47_wood/i.test(material.name);
+  const paving = /SITE_V47_(?:slab|yorkstone|edge)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt/i.test(material.name);
   let detail = material.userData.surfaceDetail;
   if (!detail && outdoor) {
     // Preserve mapped geometry and palette; resolve aggregate and foliage tones
@@ -111,7 +133,7 @@ export function applySurfaceDetail(material) {
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-finish5-${brick ? "brick" : timber ? "timber" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish6-${brick ? "brick" : timber ? "timber" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -172,7 +194,10 @@ export function applySurfaceDetail(material) {
     `);
     shader.fragmentShader = shader.fragmentShader.replace("#include <roughnessmap_fragment>", `
       #include <roughnessmap_fragment>
-      roughnessFactor = clamp(roughnessFactor + fineGrain * 0.12, 0.04, 1.0);
+      // Reuse the resolved grain. No additional noise evaluations are needed
+      // for the worn satin wood and dry stone microfacet variation.
+      roughnessFactor = clamp(roughnessFactor + fineGrain * ${timber ? "0.22" : paving ? "0.18" : "0.12"}
+        ${!brick && (timber || paving) ? "+ (grain - 0.5) * 0.08" : ""}, 0.04, 1.0);
     `);
     shader.fragmentShader = shader.fragmentShader.replace("#include <normal_fragment_maps>", `
       #include <normal_fragment_maps>
