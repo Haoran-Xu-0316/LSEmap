@@ -8,7 +8,7 @@ test('background attachment waits for navigation, cancels cleanly, and keeps aut
   const result=await page.evaluate(async()=>{
    const {CampusViewer}=await import('/src/viewer.js');
    const THREE=await import('/@id/three');
-   const {applySurfaceDetail}=await import('/src/surface-materials.js');
+   const {applySurfaceDetail,refineMaterialFinish}=await import('/src/surface-materials.js');
    const host={loadController:new AbortController(),disposed:false,interacting:true,transition:null,lastNavigationAt:0};
    let resolved=false;
    const pending=CampusViewer.prototype.waitForBackgroundFrame.call(host).then(value=>{resolved=true;return value;});
@@ -28,10 +28,15 @@ test('background attachment waits for navigation, cancels cleanly, and keeps aut
     m.onBeforeCompile(shader);
     finishes.push({name,palettePreserved:JSON.stringify(initial)===JSON.stringify(m.color.toArray()),idempotent:hook===m.onBeforeCompile,filtered:shader.fragmentShader.includes('noiseVisibility'),timber:shader.fragmentShader.includes('surfacePoint *= vec3(0.12, 2.5, 1.0)')});
    }
-   return{paused,quiet,resumed,aborted,finishes};
+   const environment=new THREE.Texture();
+   const iron=new THREE.MeshStandardMaterial({metalness:.32});iron.name='WEB_SITE_V47_iron';
+   const steel=new THREE.MeshStandardMaterial();steel.name='WEB_SITE_V47_steel';
+   refineMaterialFinish(iron,environment);refineMaterialFinish(steel,environment);
+   return{paused,quiet,resumed,aborted,finishes,streetMetal:{coatingIsDielectric:iron.metalness===0,exposedMetalIsReflective:steel.metalness>iron.metalness,sharedReflection:steel.envMap===environment,opaque:!iron.transparent&&!steel.transparent}};
   });
   expect(result.paused).toBe(true);expect(result.quiet).toBe(true);expect(result.resumed).toBe(true);expect(result.aborted).toBe(false);
   for(const finish of result.finishes){expect(finish.palettePreserved).toBe(true);expect(finish.idempotent).toBe(true);expect(finish.filtered).toBe(true);}
   expect(result.finishes[2].timber).toBe(true);
+  for(const property of Object.values(result.streetMetal))expect(property).toBe(true);
  }finally{await server.close();}
 });
