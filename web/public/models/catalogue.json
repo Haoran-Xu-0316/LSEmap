@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "174",
-  "sourceModelSha256": "0c897ac49b29f25e2cdd7fb55fd1f7b105241f50599199824a66b89362477a11",
+  "version": "175",
+  "sourceModelSha256": "835529d5f383c9f752ac14e7fa44eb1ca9834b7c71e5496a95468d7fc2fe5371",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -918,13 +918,15 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct the retained native fifth-dormer legacy glass material slot to dielectric0. Current evaluated web primitives use the existing independent glazing finish, so both CLM web assets remain unchanged. Other native geometry, UVs and finishes retained.",
-        "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
-        ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "version": 175,
+        "scope": "按官方物业手册照片补全首层两侧低护栏，曲线位置沿现有Aldwych窗列注册；中央及侧门通路保留。照片日期未知，跨度、高度和杆件尺寸估算；既有玻璃、窗格和上部模型保留。",
+        "source": [
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+            "page": 18,
+            "supports": "Both lower street-window guard banks; photograph capture date unknown"
+          }
+        ]
       },
       "interiorView": {
         "position": [
@@ -956,12 +958,21 @@
           "status": "registered-street-window-reveals-opened",
           "scope": "Remove50 closed caps from25 window liners while retaining100 original perimeter faces. Preserve39 registered glass geometries and original neutral colour; bounded webOpacity0.82, transmission0.22 and roughness0.26 are visual estimates. Seven tall bays, opaque spandrels, roof and doors retained. Remote original rear shell16–32m away is not an accurate room enclosure. Complete rooms and unseen rear faces remain unresolved.",
           "source": "Dated2018-04-24 and2023-11-15 built photographs, archived LSE Estates003; exact current2026 condition unverified"
+        },
+        {
+          "version": 166,
+          "scope": "Correct the retained native fifth-dormer legacy glass material slot to dielectric0. Current evaluated web primitives use the existing independent glazing finish, so both CLM web assets remain unchanged. Other native geometry, UVs and finishes retained.",
+          "evidence": [
+            "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          ],
+          "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+          "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
       "bounds": {
         "min": [
           99.0441665649414,
-          -0.03500000014901161,
+          -0.04699990153312683,
           121.30353546142578
         ],
         "max": [
@@ -973,12 +984,12 @@
       "exteriorFramingCorners": [
         [
           110.04426449891284,
-          -0.03500000014901161,
+          -0.04699990153312683,
           118.29800268473942
         ],
         [
           139.41389204752136,
-          -0.03500000014901161,
+          -0.04699990153312683,
           128.8399541364858
         ],
         [
@@ -993,12 +1004,12 @@
         ],
         [
           98.82883050804273,
-          -0.03500000014901161,
+          -0.04699990153312683,
           149.5439366672272
         ],
         [
           128.19845805665125,
-          -0.03500000014901161,
+          -0.04699990153312683,
           160.08588811897357
         ],
         [
@@ -1025,14 +1036,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-7a60ac2b63b9.glb",
-        "bytes": 738000,
-        "triangles": 64906,
-        "sha256": "7a60ac2b63b982078e3ba3a93597b84dc2ddafa4238bd40e3e18c2c015c4c10b",
+        "url": "/models/details/clm-exterior-6a5083b1137e.glb",
+        "bytes": 757148,
+        "triangles": 66538,
+        "sha256": "6a5083b1137e0b32835e8549b31e10059fa3efdb5878314688f3120af4113d0d",
         "bounds": {
           "min": [
             99.0441665649414,
-            -0.03500000014901161,
+            -0.04699990153312683,
             121.30353546142578
           ],
           "max": [
@@ -1083,13 +1094,14 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 167,
-        "scope": "Restore three-column frames in the Garrick corner and four nearest Houghton first-floor windows. Retain top lights, glass, stone, apertures, roof and all interiors.",
-        "source": "https://www.lse.ac.uk/Mathematics/assets/documents/PUBLIC-AthSw-For-Website.pdf",
-        "sourcePage": 6,
-        "photographDate": "unknown",
-        "limitations": "April2020 application; PDF created2022. Spacing and aperture dimensions estimated. No current full-facade or roof survey.",
-        "audit": "result/blender/col_detail167/audit.json"
+        "version": 175,
+        "scope": "下部两条临街立面的普通石柱移除217组错误横缝，保留街角块石，主入口旁3根一层石柱建立浅竖槽。照片拍摄日期未知，浅槽尺度估算；上层窗列和屋顶仍未完整证实。",
+        "source": [
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+            "supports": "Ordinary smooth street piers and incised Aldwych pier bands;2025/26publication, capture date unknown"
+          }
+        ]
       },
       "detailView": {
         "label": "入口细节",
@@ -1151,6 +1163,15 @@
           ],
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
+        },
+        {
+          "version": 167,
+          "scope": "Restore three-column frames in the Garrick corner and four nearest Houghton first-floor windows. Retain top lights, glass, stone, apertures, roof and all interiors.",
+          "source": "https://www.lse.ac.uk/Mathematics/assets/documents/PUBLIC-AthSw-For-Website.pdf",
+          "sourcePage": 6,
+          "photographDate": "unknown",
+          "limitations": "April2020 application; PDF created2022. Spacing and aperture dimensions estimated. No current full-facade or roof survey.",
+          "audit": "result/blender/col_detail167/audit.json"
         }
       ],
       "wholeFacadeReview": {
@@ -1225,10 +1246,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-1c05ae69f7e4.glb",
-        "bytes": 1025612,
-        "triangles": 80768,
-        "sha256": "1c05ae69f7e4203ef930c63b73b2ea0df59678421121c2ad30347d4038ef5bdf",
+        "url": "/models/details/col-exterior-d711fecca4d6.glb",
+        "bytes": 1030600,
+        "triangles": 81320,
+        "sha256": "d711fecca4d6d195d9fce4009e6c73eedc23fdfc813f3a443dbe712f892ce38d",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -1283,13 +1304,15 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
-        "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
-        ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "version": 175,
+        "auditOnly": true,
+        "scope": "资料归属复核无模型改动。2018/2023整栋跨层窗带照片属于CLM，不属于CON；CON上层窗列、侧面和屋顶仍未证实。",
+        "source": [
+          {
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+            "supports": "CON entrance crop only, no complete facade registration"
+          }
+        ]
       },
       "detailView": {
         "label": "入口细节",
@@ -1338,6 +1361,15 @@
         {
           "edition": 160,
           "scope": "CON.7.04 window and AV now on table-axis end wall, matching its archived plan/photo; former window side becomes panelled timber. Historic references, estimated dimensions."
+        },
+        {
+          "version": 166,
+          "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+          "evidence": [
+            "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          ],
+          "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+          "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
       "bounds": {
@@ -3875,10 +3907,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-42ef87aaa2ae.glb",
-        "bytes": 20170128,
-        "triangles": 1670080,
-        "sha256": "42ef87aaa2ae53a0a35be9411772ed0e1ba21272d973262a54ea321b0466a83e",
+        "url": "/models/details/old-exterior-bcf4799b461e.glb",
+        "bytes": 20175744,
+        "triangles": 1670364,
+        "sha256": "bcf4799b461eabc1a21d6f07ca33eee632d71d10c62cce15a0ff7f8382bf5901",
         "bounds": {
           "min": [
             -39.1646614074707,
