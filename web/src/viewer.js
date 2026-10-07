@@ -6,7 +6,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
 
 import { ModelCache } from "./model-cache.js";
-import { loadModelInStages } from "./model-loading.js";
+import { loadModelInStages, downloadVerifiedModel } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
@@ -218,18 +218,17 @@ export class CampusViewer {
     if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
       url += `?v=${encodeURIComponent(this.modelRevision)}`;
     }
-    // One manager per transfer lets a failed background model cancel only itself.
-    const transfer = new THREE.FileLoader(new THREE.LoadingManager());
-    transfer.setResponseType("arraybuffer");
-    transfer.setRequestHeader(this.loader.requestHeader);
-    transfer.setWithCredentials(this.loader.withCredentials);
+    const transferController = new AbortController();
+    const assets = this.buildings.flatMap(building => [building.detailedExterior,
+      building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)]);
+    const expectedSha256 = assets.find(asset => asset?.url === url)?.sha256;
     return loadModelInStages(
-      progress => transfer.loadAsync(url, progress),
+      progress => downloadVerifiedModel(url, {signal: transferController.signal, onProgress: progress, expectedSha256}),
       bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
       {
         signal: this.loadController.signal,
         onProgress,
-        cancelDownload: () => transfer.abort(),
+        cancelDownload: () => transferController.abort(),
         discardModel: model => disposeModel(model.scene),
       },
     );
