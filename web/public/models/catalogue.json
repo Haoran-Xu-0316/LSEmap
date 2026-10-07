@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "165",
-  "sourceModelSha256": "fd5315824e714fd15898a51008c58309f89756d81b2fd8b84a73bb04ed7b0fa1",
+  "version": "166",
+  "sourceModelSha256": "7927846f89a2119f1d6cb17df4800832cef300feedcc2829c85aa5f56f5eac14",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -191,11 +191,13 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 155,
-        "status": "photo-informed-end-louvre-registration-and-window-transoms",
-        "scope": "East tower louvres registered to rear service zone; west rear open louvre screen added behindXbrace. Front circulation glazing remains open. Vision crossbars and40shallow charcoal floor-edge bands follow built photographs. Retained neutral70/37 glass and red-front/orange-return shades. Red dominance follows user preference rather than measured photographic colour. Dimensions remain estimated.",
-        "source": "https://rshp.com/projects/education/lse-centre-building/",
-        "photographDate": "unknown"
+        "version": 166,
+        "scope": "Eight entrance leaves now have one thin pane each, with matching apertures through the overlapping curtain panes. User red/orange shades and optical parameters retained.",
+        "evidence": [
+          "data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_02.jpg"
+        ],
+        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
+        "audit": "result/blender/cbg_detail166/audit.json"
       },
       "interiorView": {
         "position": [
@@ -250,6 +252,13 @@
             "RSHP020 square face",
             "RSHP026 Houghton Street face"
           ],
+          "photographDate": "unknown"
+        },
+        {
+          "version": 155,
+          "status": "photo-informed-end-louvre-registration-and-window-transoms",
+          "scope": "East tower louvres registered to rear service zone; west rear open louvre screen added behindXbrace. Front circulation glazing remains open. Vision crossbars and40shallow charcoal floor-edge bands follow built photographs. Retained neutral70/37 glass and red-front/orange-return shades. Red dominance follows user preference rather than measured photographic colour. Dimensions remain estimated.",
+          "source": "https://rshp.com/projects/education/lse-centre-building/",
           "photographDate": "unknown"
         }
       ],
@@ -325,10 +334,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-b20324ff078d.glb",
-        "bytes": 5251592,
-        "triangles": 527996,
-        "sha256": "b20324ff078d569dd7af20addf6df7622ac148afa30d3e051197e7c0415c8ae3",
+        "url": "/models/details/cbg-exterior-8b096a72ff3e.glb",
+        "bytes": 5251572,
+        "triangles": 527960,
+        "sha256": "8b096a72ff3e83230ede561318a2853b8ce18c67cfa579b006043d750f567927",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -738,10 +747,13 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 145,
-        "status": "registered-street-window-reveals-opened",
-        "scope": "Remove50 closed caps from25 window liners while retaining100 original perimeter faces. Preserve39 registered glass geometries and original neutral colour; bounded webOpacity0.82, transmission0.22 and roughness0.26 are visual estimates. Seven tall bays, opaque spandrels, roof and doors retained. Remote original rear shell16–32m away is not an accurate room enclosure. Complete rooms and unseen rear faces remain unresolved.",
-        "source": "Dated2018-04-24 and2023-11-15 built photographs, archived LSE Estates003; exact current2026 condition unverified"
+        "version": 166,
+        "scope": "Correct the retained native fifth-dormer legacy glass material slot to dielectric0. Current evaluated web primitives use the existing independent glazing finish, so both CLM web assets remain unchanged. Other native geometry, UVs and finishes retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "interiorView": {
         "position": [
@@ -767,6 +779,12 @@
           "status": "photo-supported-tall-window-spandrel-correction",
           "scope": "Seven continuous tall bays now split into upper/lower glass around warm opaque middle spandrels. Retain42 unaffected rails, stone, doors and roof. Band height0.42m and finish are estimates guided by2018 daylight;2023 photograph has tree/scaffold limitations. Glass remains reflective opaque approximation pending registered window enclosure.",
           "source": "Archived2018-04-24 photograph and2023-11-15 main-front photograph"
+        },
+        {
+          "version": 145,
+          "status": "registered-street-window-reveals-opened",
+          "scope": "Remove50 closed caps from25 window liners while retaining100 original perimeter faces. Preserve39 registered glass geometries and original neutral colour; bounded webOpacity0.82, transmission0.22 and roughness0.26 are visual estimates. Seven tall bays, opaque spandrels, roof and doors retained. Remote original rear shell16–32m away is not an accurate room enclosure. Complete rooms and unseen rear faces remain unresolved.",
+          "source": "Dated2018-04-24 and2023-11-15 built photographs, archived LSE Estates003; exact current2026 condition unverified"
         }
       ],
       "bounds": {
@@ -894,8 +912,13 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "edition": 160,
-        "scope": "Garrick photographed wooden chair backs now have three true square apertures; model seat count is not cafe capacity. Archived photograph date unknown."
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -944,6 +967,10 @@
           "status": "verified-school-name-completion",
           "scope": "Restore the full school name including and Political Science on retained stone band. Preserve original font,0.25m glyph height, extrusion, material, vertical datum and wall depth without horizontal compression. Right endpoint offset0.20m is photo-estimated. Whole frontage and room enclosure remain pending as separately recorded.",
           "source": "2025/26 official property handbook entry photograph; capture date unknown"
+        },
+        {
+          "edition": 160,
+          "scope": "Garrick photographed wooden chair backs now have three true square apertures; model seat count is not cafe capacity. Archived photograph date unknown."
         }
       ],
       "wholeFacadeReview": {
@@ -1018,10 +1045,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-7ed307480442.glb",
-        "bytes": 1024904,
+        "url": "/models/details/col-exterior-de2709e71f99.glb",
+        "bytes": 1024912,
         "triangles": 80708,
-        "sha256": "7ed307480442e4df1d1cd0a1cbeff63b70007ddeb512d18de806d33f31cfe299",
+        "sha256": "de2709e71f992dbe00f3bb3119b15a7b4346c31bb096a853977f0ca086962e07",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -1076,8 +1103,13 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "edition": 160,
-        "scope": "CON.7.04 window and AV now on table-axis end wall, matching its archived plan/photo; former window side becomes panelled timber. Historic references, estimated dimensions."
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -1122,6 +1154,10 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "edition": 160,
+          "scope": "CON.7.04 window and AV now on table-axis end wall, matching its archived plan/photo; former window side becomes panelled timber. Historic references, estimated dimensions."
         }
       ],
       "bounds": {
@@ -1191,10 +1227,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-b50f694cdd34.glb",
-        "bytes": 586512,
+        "url": "/models/details/con-exterior-f2dc23459663.glb",
+        "bytes": 586544,
         "triangles": 47252,
-        "sha256": "b50f694cdd34231a0783160470be506b3ff8fbe10e8de30d0fe16bbf8a580191",
+        "sha256": "f2dc234596634de5f79ac81c85b411e6bc4c4b1fc9cf9ec1dc29697864eace14",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -1844,18 +1880,13 @@
         "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified."
       },
       "latestReview": {
-        "version": 140,
-        "scope": "Both street-level storefronts now have separate lower glazing and short upper glazing around an opaque dark infill band. Ground frames and band-edge rails follow the archived official photographs; all upper openings, red brick, stone portal and interiors retained.",
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
         "evidence": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/20KSW-web.jpg",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
         ],
-        "sourcePages": {
-          "handbookPhysicalPage": 24,
-          "handbookPrintedPage": 22
-        },
-        "limitations": "Photo dates unknown. Band limits estimated at70–82% of inherited opening height; column count retained. Whole upper facade, oriel and roof still unverified.",
-        "audit": "result/blender/ksw_envelope_next/audit.json"
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -1890,6 +1921,20 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 140,
+          "scope": "Both street-level storefronts now have separate lower glazing and short upper glazing around an opaque dark infill band. Ground frames and band-edge rails follow the archived official photographs; all upper openings, red brick, stone portal and interiors retained.",
+          "evidence": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/20KSW-web.jpg",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ],
+          "sourcePages": {
+            "handbookPhysicalPage": 24,
+            "handbookPrintedPage": 22
+          },
+          "limitations": "Photo dates unknown. Band limits estimated at70–82% of inherited opening height; column count retained. Whole upper facade, oriel and roof still unverified.",
+          "audit": "result/blender/ksw_envelope_next/audit.json"
         }
       ],
       "bounds": {
@@ -1959,10 +2004,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-62d878be4fde.glb",
+        "url": "/models/details/ksw-exterior-250b8f43cc5e.glb",
         "bytes": 777036,
         "triangles": 80016,
-        "sha256": "62d878be4fdee15f2cc97d341cb12ab5a88c91bf58a75a95e21bc6c5783f4abf",
+        "sha256": "250b8f43cc5eecf3c43aeab5e8eaf7264c432ab2440992a742c6ecee730460f3",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -2815,9 +2860,13 @@
         "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
       },
       "latestReview": {
-        "version": 148,
-        "status": "entry-glass-apertures-opened",
-        "scope": "Two photographed entrance panes retain original geometry and neutral color with explicit browser opacity0.82. Only the timber door leaf and metal recess faces behind those panes receive actual mesh apertures. Surrounding door, frame and all other windows/roof remain unchanged. Dimensions and optics estimated; no complete interior claimed."
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -2838,6 +2887,13 @@
         {
           "version": 122,
           "scope": "Front base corrected to eight ashlar courses and225 recessed-joint pieces; original three arched apertures retained with nine masonry-clearance probes. Dimensions remain photographic estimates."
+        }
+      ],
+      "reviewHistory": [
+        {
+          "version": 148,
+          "status": "entry-glass-apertures-opened",
+          "scope": "Two photographed entrance panes retain original geometry and neutral color with explicit browser opacity0.82. Only the timber door leaf and metal recess faces behind those panes receive actual mesh apertures. Surrounding door, frame and all other windows/roof remain unchanged. Dimensions and optics estimated; no complete interior claimed."
         }
       ],
       "bounds": {
@@ -2895,10 +2951,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-f3faaddf932a.glb",
-        "bytes": 2846920,
+        "url": "/models/details/51l-exterior-45b3e612e08b.glb",
+        "bytes": 2846916,
         "triangles": 219719,
-        "sha256": "f3faaddf932ab6474f2db630be4d74a74218dc1457832c5c5f772b92cc70e071",
+        "sha256": "45b3e612e08b2f5ec5a2bd57140516b064cb2b5b730b08be74d54b02588b1263",
         "bounds": {
           "min": [
             -74.71239471435547,
@@ -3439,13 +3495,13 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 165,
-        "scope": "Replace raised planter seam strips with closed stone panels, shallow recessed joints and an independent coping; retain planter bounds, planting and other facade geometry.",
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
         "evidence": [
-          "data/collections/public-realm-2026/user-references/reference-04.png"
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
         ],
-        "limitations": "Photo-guided dimensions and material appearance are estimates. Capture dates unknown; no complete current survey claim.",
-        "audit": "result/blender/old_detail165/audit.json"
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "interiorView": {
         "position": [
@@ -3522,6 +3578,15 @@
           "source": "https://webbyates.com/projects/the-old-building/",
           "projectCompletionYear": 2024,
           "photographDate": "unknown"
+        },
+        {
+          "version": 165,
+          "scope": "Replace raised planter seam strips with closed stone panels, shallow recessed joints and an independent coping; retain planter bounds, planting and other facade geometry.",
+          "evidence": [
+            "data/collections/public-realm-2026/user-references/reference-04.png"
+          ],
+          "limitations": "Photo-guided dimensions and material appearance are estimates. Capture dates unknown; no complete current survey claim.",
+          "audit": "result/blender/old_detail165/audit.json"
         }
       ],
       "houghtonAccessReview": {
@@ -3600,10 +3665,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-815cda51a3a7.glb",
-        "bytes": 20154944,
+        "url": "/models/details/old-exterior-e31421882362.glb",
+        "bytes": 20154968,
         "triangles": 1669604,
-        "sha256": "815cda51a3a7ad03b030212292e140043044fc9cd3619b670a3cfd2523ffdead",
+        "sha256": "e3142188236298d83c9753e5a6ee917b5974d93f9cbb36b5b43dc8b20413ef2b",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -3865,11 +3930,13 @@
         "scope": "Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review."
       },
       "latestReview": {
-        "version": 142,
-        "status": "five-wide-modules-in-five-entrance-side-rows",
-        "scope": "25 independent panes replace eight narrow modules in the lowest five main entrance-side rows; perimeter frames and spandrel joints align. Upper seven rows, angled return, roof and entrance retained. Elevations remain estimates.",
-        "source": "Archived entrance photograph tower_photos_round4_tower_round4_tour_p16_0.png and LSE Estate007 photograph",
-        "photographDate": "unknown"
+        "version": 166,
+        "scope": "Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.",
+        "evidence": [
+          "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers"
+        ],
+        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
+        "audit": "result/blender/pan_faw_detail166/audit.json"
       },
       "interiorView": {
         "position": [
@@ -3889,6 +3956,13 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 142,
+          "status": "five-wide-modules-in-five-entrance-side-rows",
+          "scope": "25 independent panes replace eight narrow modules in the lowest five main entrance-side rows; perimeter frames and spandrel joints align. Upper seven rows, angled return, roof and entrance retained. Elevations remain estimates.",
+          "source": "Archived entrance photograph tower_photos_round4_tower_round4_tour_p16_0.png and LSE Estate007 photograph",
+          "photographDate": "unknown"
         }
       ],
       "bounds": {
@@ -3958,10 +4032,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-ecac6e0c08a2.glb",
-        "bytes": 1328104,
+        "url": "/models/details/pan-exterior-5dd19da30697.glb",
+        "bytes": 1327152,
         "triangles": 111961,
-        "sha256": "ecac6e0c08a22fe4056d98fb64090b1480b259f4d1315959906dd886fcc38960",
+        "sha256": "5dd19da306970331a10c378dfc2b92081038f9516f210db8ebbe2c165fa99532",
         "bounds": {
           "min": [
             53.72006607055664,
@@ -4331,12 +4405,13 @@
         "scope": "Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified."
       },
       "latestReview": {
-        "version": 123,
-        "status": "front-window-pattern-corrected",
-        "addedObjects": 19,
-        "narrowWindows": 22,
-        "glassFirstProbes": 66,
-        "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "interiorView": {
         "position": [
@@ -4351,6 +4426,16 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 123,
+          "status": "front-window-pattern-corrected",
+          "addedObjects": 19,
+          "narrowWindows": 22,
+          "glassFirstProbes": 66,
+          "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
+        }
+      ],
       "bounds": {
         "min": [
           100.59361267089844,
@@ -4418,10 +4503,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-6fc2f87ed840.glb",
+        "url": "/models/details/pel-exterior-afac3cc9d89a.glb",
         "bytes": 6191216,
         "triangles": 508895,
-        "sha256": "6fc2f87ed840afbc28bc45ed08e0b4df7a27518ddc5e255640d7005f7c06b278",
+        "sha256": "afac3cc9d89a6d226f0867af9324c4168cfcf3603b2a3b16e5ab23a73ae8af7d",
         "bounds": {
           "min": [
             100.59568786621094,
@@ -4592,16 +4677,13 @@
         "scope": "Main street bay count, central entrance and alternating pediment order follow the 22 March 2022 photo and the official property handbook. The adjoining three-bay building is excluded. Mapped footprint, existing 23m height and storey datums retained; dimensions, colour and pane subdivisions estimated. Guide records 120cm door opening and five steps beyond the doors; no five-step exterior staircase invented. Roof, unseen elevations and the full interior remain unresolved. Existing independent 2015 tea-room sample retained."
       },
       "latestReview": {
-        "version": 119,
-        "status": "five-bay-frontage-reconstructed",
-        "addedObjects": 7,
-        "archivedObjects": 45,
-        "sourceUrls": [
-          "https://commons.wikimedia.org/wiki/File:Sardinia_House,_London,_March_2022.jpg",
-          "https://commons.wikimedia.org/wiki/File:Sardinia_House,_Sardinia_Street_7_Jan_2017_03.jpg",
-          "https://www.accessable.co.uk/london-school-of-economics/access-guides/sardinia-house",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
-        ]
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "detailView": {
         "label": "入口与拱窗",
@@ -4631,6 +4713,20 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 119,
+          "status": "five-bay-frontage-reconstructed",
+          "addedObjects": 7,
+          "archivedObjects": 45,
+          "sourceUrls": [
+            "https://commons.wikimedia.org/wiki/File:Sardinia_House,_London,_March_2022.jpg",
+            "https://commons.wikimedia.org/wiki/File:Sardinia_House,_Sardinia_Street_7_Jan_2017_03.jpg",
+            "https://www.accessable.co.uk/london-school-of-economics/access-guides/sardinia-house",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ]
+        }
+      ],
       "bounds": {
         "min": [
           -92.75189208984375,
@@ -4698,10 +4794,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-a3d1ce36d02c.glb",
-        "bytes": 1403320,
+        "url": "/models/details/sar-exterior-db0342066019.glb",
+        "bytes": 1403316,
         "triangles": 111151,
-        "sha256": "a3d1ce36d02c6d0124e90981d96f55da4b454b6af72b0ce71ff7334455f4bc24",
+        "sha256": "db0342066019c08dd8a96601e1e1bf57b4bbdb97102687e70f4e9561411ae983",
         "bounds": {
           "min": [
             -92.74727630615234,
@@ -4751,13 +4847,13 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 159,
-        "status": "photographed-flat-stair-anti-slip-strips",
-        "scope": "Replace round anti-slip rods with128 thin flat black strips using actual retained tread top planes. Strip width55mm, setback60mm and thickness2mm are photographic estimates. All treads, guards, handrails, floors and separate room studies retained.",
-        "sources": [
+        "version": 166,
+        "scope": "125 photographed timber-curtain lights use their original outward face and UV, removing duplicated transparent-box backs and edges. Existing stair, timber frames, brick and all room studies retained.",
+        "evidence": [
           "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
         ],
-        "photographDate": "Unknown;2017 upload path does not establish current condition"
+        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
+        "audit": "result/blender/saw_detail166/audit.json"
       },
       "reviewHistory": [
         {
@@ -4777,6 +4873,15 @@
           "scope": "Three photographed groups of six pale timber shading leaves added in front of the north-fold first-floor glazing. Original glass, timber frame, canopy, pierced brick and interiors retained. Colour, depths and positions are photo estimates,2017 upload path with unknown capture date. Whole folded outline and complete internal enclosure remain unresolved.",
           "reference": "data/建筑图片/SAW_Saw Swee Hock Student Centre/01_建筑实拍/architecture_round5_SAW_saw_909_01.jpg",
           "source": "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
+        },
+        {
+          "version": 159,
+          "status": "photographed-flat-stair-anti-slip-strips",
+          "scope": "Replace round anti-slip rods with128 thin flat black strips using actual retained tread top planes. Strip width55mm, setback60mm and thickness2mm are photographic estimates. All treads, guards, handrails, floors and separate room studies retained.",
+          "sources": [
+            "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
+          ],
+          "photographDate": "Unknown;2017 upload path does not establish current condition"
         }
       ],
       "bounds": {
@@ -4846,10 +4951,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-f9a7b6e5df03.glb",
-        "bytes": 12421240,
-        "triangles": 1264551,
-        "sha256": "f9a7b6e5df03f95e63704473024b6b32c216011586de2bf89179abdb810c9c17",
+        "url": "/models/details/saw-exterior-b77bedf41e82.glb",
+        "bytes": 12252620,
+        "triangles": 1251371,
+        "sha256": "b77bedf41e82746405e8ade16d30e98bf317296106e5c5a8324fdfb2352ccff1",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -5117,8 +5222,13 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "edition": 160,
-        "scope": "SAL.G.01 projector uses independent charcoal finish and ceiling-post study; wall-top mounting datum is estimated, not a surveyed ceiling."
+        "version": 166,
+        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "evidence": [
+          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        ],
+        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+        "audit": "result/blender/stage166/dielectric-audit.json"
       },
       "interiorView": {
         "position": [
@@ -5158,6 +5268,10 @@
           "source": "Local side-lane photograph and OSM return/entrance registration.",
           "photographDate": "unknown",
           "registration": "Middle-wing position follows registered OSM return; dimensions and RGB remain photographic estimates."
+        },
+        {
+          "edition": 160,
+          "scope": "SAL.G.01 projector uses independent charcoal finish and ceiling-post study; wall-top mounting datum is estimated, not a surveyed ceiling."
         }
       ],
       "bounds": {
@@ -5227,10 +5341,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-fcccdb91ee1d.glb",
-        "bytes": 5797140,
+        "url": "/models/details/sal-exterior-7c23336e4d49.glb",
+        "bytes": 5797176,
         "triangles": 479402,
-        "sha256": "fcccdb91ee1da2bbf31321ea5e50450060a1ecd441c6310df39a14ad77b95d52",
+        "sha256": "7c23336e4d49647e7e66f76de024e239793fd02990b7fe5eaf3c908a879603f4",
         "bounds": {
           "min": [
             91.77310180664062,
