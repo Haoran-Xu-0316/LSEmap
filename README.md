@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition183 corrects SAL principal-elevation stock brick to an estimated warm
+orange/buff finish from two built photographs. Six registered batches retain
+their geometry, UVs, brick scale and mortar. Unphotographed proxies are retained.
+
+
 Edition182 corrects the historical OLD foyer bench to its photographed stone
 plinth, retaining the registered seat, floor and doorway. Dimensions are estimates.
 
