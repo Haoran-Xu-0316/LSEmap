@@ -8,13 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition179 fixes outward normals and duplicate transparent layers at three
-photographed Sheffield Street dormers, retaining the original tint, UVs and
-unseen left window. Six existing trees at John Watkins Plaza and Houghton Street
-receive restrained irregular crown contours and opaque leaf tones within their
-registered envelopes. Only12of522crown masses gain subdivision. LAK received a
-read-only exterior review. Photographic dimensions and leaf appearance remain
-estimates; complete current interiors and unseen elevations remain unfinished.
+Edition180 removes duplicate optical surfaces from eight registered Connaught
+House entrance panes. Two supported vestibule doors use a clearer estimated
+dielectric finish; other entrance tint and opacity are retained. Parish Hall's
+photographed street glazing receives outward winding and nonmetallic glass
+without exposing undocumented interiors. All original shapes and UVs are
+retained in the editable source. Whole upper/rear elevations and full current
+interiors remain unfinished.
 
 
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
