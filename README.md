@@ -8,6 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition172 removes duplicate entrance-pane surfaces on OLD and unifies
+remaining OLD/LRB glass as dielectric materials. SAW now has a historical
+fourth-to-fifth connection joining the previous upper flight. Houghton small
+pavers and John Watkins larger slabs have separate source-guided grey palettes.
+Original objects, optical tint, furniture and unrelated street materials remain
+retained; dimensions, optical values and historical stair geometry are estimates.
+
 Edition171 adds an independent42-seat CBG.2.05 Wolfson Seminar Room from its
 paired official historical plan and photograph, a fifth-to-sixth curved SAW
 stair connection, and darker black paint on the two Houghton bollards.
@@ -160,7 +167,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v171.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v172.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
