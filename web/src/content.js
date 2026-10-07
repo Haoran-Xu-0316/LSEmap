@@ -184,7 +184,7 @@ export const buildingDetails = {
     description:
       "葡萄牙街侧设历史三联窗和阁楼窗，Carey Street侧为五组大拱窗、三层凸窗与圆角入口。北向采光圆顶下方是螺旋坡道和玻璃电梯。",
     note: "两段街道立面依据2025年现状图纸重建。配准、未标尺寸、色彩及室内层高仍含估算。",
-    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-plaza-cafe", "Plaza Café玻璃亭"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-carey-street", "Carey Street拱窗与凸窗"], ["lrb-corner-entrance", "图书馆圆角入口"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza长椅与铺装"]],
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-plaza-cafe", "Plaza Café玻璃亭"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-carey-street", "Carey Street拱窗与凸窗"], ["lrb-corner-entrance", "图书馆圆角入口"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["watkins-plaza", "John Watkins Plaza木桌、树池与铺装"]],
   },
   CKK: {
     description:
