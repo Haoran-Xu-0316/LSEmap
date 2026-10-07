@@ -12,12 +12,12 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
-from refine_col_exterior167 import apply_col_exterior167
-from refine_streets167 import apply_streets167
-from build_room_samples167 import apply_room_samples167
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v166.blend'
-TARGET = ROOT / 'result/blender/LSE_campus_detailed_v167.blend'
-REPORT = ROOT / 'result/blender/stage167'
+from refine_street_details169 import apply_street_details169
+from refine_clm_exterior169 import apply_clm_exterior169
+from refine_ckk_exterior169 import apply_ckk_exterior169
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v168.blend'
+TARGET = ROOT / 'result/blender/LSE_campus_detailed_v169.blend'
+REPORT = ROOT / 'result/blender/stage169'
 
 
 def refine_building_details():
@@ -25,17 +25,21 @@ def refine_building_details():
     if TARGET.exists() and report_path.exists():
         proof = json.loads(report_path.read_text())
         assert hashlib.sha256(TARGET.read_bytes()).hexdigest() == proof['sourceModelSha256']
-        print('BUILDINGS167_ALREADY_CURRENT')
+        print('BUILDINGS169_ALREADY_CURRENT')
         return
     REPORT.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.open_mainfile(filepath=str(BASE))
     for scene in bpy.data.scenes:
         for layer in scene.view_layers:
             layer.update()
+    before_objects = set(bpy.data.objects.keys())
     before = geometry_signatures()
     shapes = {o.name:shape_signature(o) for o in bpy.data.objects if o.type=='MESH'}
     visibility = {o.name: o.hide_render for o in bpy.data.objects}
-    changes = [apply_col_exterior167(), apply_streets167(), apply_room_samples167()]
+    changes = [apply_street_details169(), apply_clm_exterior169(), apply_ckk_exterior169()]
+    for scene in bpy.data.scenes:
+        for layer in scene.view_layers:
+            layer.update()
     archived = {name for record in changes for name in record.get('archivedObjects', [])}
     assert all(o.hide_render == visibility[o.name] for o in bpy.data.objects if o.name in visibility and o.name not in archived)
     assert all(bpy.data.objects[name].hide_render for name in archived)
@@ -43,20 +47,20 @@ def refine_building_details():
     after = geometry_signatures()
     assert all(shape_signature(bpy.data.objects[name])==digest for name,digest in shapes.items())
     assert all(after.get(name) == digest for name, digest in before.items() if name not in allowed)
-    added = set(after) - set(before)
+    added = set(bpy.data.objects.keys()) - before_objects
     assert added == {name for record in changes for name in record.get('addedObjects', [])}
     assert not bpy.data.libraries
     assert not any(image.source == 'FILE' and not image.packed_file for image in bpy.data.images)
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(TARGET))
-    proof = {'version': 167, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
+    proof = {'version': 169, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
              'sourceModelSha256': hashlib.sha256(TARGET.read_bytes()).hexdigest(),
              'allUnrelatedMeshesPreserved': True, 'changes': changes,
              'objects': len(bpy.data.objects), 'geometrySignatures': after, 'originalShapesAndUVs': shapes, 'archivedObjects': sorted(archived),
              'visibility': {o.name:o.hide_render for o in bpy.data.objects}}
     report_path.write_text(json.dumps(proof, indent=2) + '\n')
-    print('BUILDINGS167_SAVED', len(bpy.data.objects), len(added))
+    print('BUILDINGS169_SAVED', len(bpy.data.objects), len(added))
 
 
 if __name__ == '__main__':
