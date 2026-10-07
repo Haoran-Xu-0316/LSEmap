@@ -8,6 +8,15 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition166 removes duplicated glass surfaces from125 SAW curtain lights and
+8 CBG entrance leaves, opening their overlapping curtain panes. PAN's shared
+entrance and25 registered front windows receive independent clearer finishes;
+existing blinds and FAW's unverified full elevations remain intact. Explicit
+legacy glass finishes change metallic response to nonmetallic, updating8 other
+building exports while retaining their other optical values. All existing shapes,
+UVs, room studies and CBG red/orange shades remain; optics and dimensions are
+estimates. Full current-condition interiors are not established.
+
 Edition165 corrects the photographed north-left MAR ground-floor glazed bay to
 solid concrete and adds the two-line building name. OLD Clare Market's planter
 receives an independent stone coping and real shallow joints. The existing
@@ -123,7 +132,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v165.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v166.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
