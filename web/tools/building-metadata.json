@@ -324,13 +324,13 @@
         "scope": "Entrance joinery guided by the 2025/26 LSE property handbook photograph. Exact capture date, dimensions and ornamental profiles unverified; upper elevations, roof, unseen sides and complete interior remain unresolved. Garrick corner character guided by undated official LSE Estate photograph, currently attributed to Columbia House in the official campus directory. Original aperture vertices and every other window preserved through owned component copies. Existing native LSE lettering reused. Dimensions, handle form and optical finish estimated; no photo textures or reconstructed cafe interior published. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
-        "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
-        ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "version": 167,
+        "scope": "Restore three-column frames in the Garrick corner and four nearest Houghton first-floor windows. Retain top lights, glass, stone, apertures, roof and all interiors.",
+        "source": "https://www.lse.ac.uk/Mathematics/assets/documents/PUBLIC-AthSw-For-Website.pdf",
+        "sourcePage": 6,
+        "photographDate": "unknown",
+        "limitations": "April2020 application; PDF created2022. Spacing and aperture dimensions estimated. No current full-facade or roof survey.",
+        "audit": "result/blender/col_detail167/audit.json"
       },
       "detailView": {
         "label": "入口细节",
@@ -384,6 +384,15 @@
         {
           "edition": 160,
           "scope": "Garrick photographed wooden chair backs now have three true square apertures; model seat count is not cafe capacity. Archived photograph date unknown."
+        },
+        {
+          "version": 166,
+          "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+          "evidence": [
+            "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          ],
+          "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+          "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
       "wholeFacadeReview": {
@@ -2333,6 +2342,58 @@
       },
       "code": "CBG",
       "collection": "CBG103_TEACHING_ROOM_study"
+    },
+    {
+      "id": "cbg-104",
+      "label": "CBG.1.04分组教室",
+      "code": "CBG",
+      "collection": "CBG104_ROOM167_study",
+      "scope": "依据LSE官方同房号平面与照片建立42座历史教学室样本。桌椅位置按平面描摹，颜色与可见设备按照片估算；米制尺度、层高及不可见构造未测量。侧后墙和部分顶面剖开，不推测楼内连通，不代表2026年布置。",
+      "gallery": "cbg-104-interior",
+      "interiorView": {
+        "position": [
+          14,
+          12,
+          -15
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CBG.1.04分组教室",
+        "scope": "依据LSE官方同房号平面与照片建立42座历史教学室样本。桌椅位置按平面描摹，颜色与可见设备按照片估算；米制尺度、层高及不可见构造未测量。侧后墙和部分顶面剖开，不推测楼内连通，不代表2026年布置。"
+      }
+    },
+    {
+      "id": "ckk-107",
+      "label": "CKK.1.07排式教室",
+      "code": "CKK",
+      "collection": "CKK107_ROOM167_study",
+      "scope": "依据LSE官方同房号平面与照片建立50座历史教学室样本。桌椅位置按平面描摹，颜色与可见设备按照片估算；米制尺度、层高及不可见构造未测量。侧后墙和部分顶面剖开，不推测楼内连通，不代表2026年布置。历史页面使用旧名NAB.1.07，同号CKK资产用于房间样本。",
+      "gallery": "ckk-107-interior",
+      "interiorView": {
+        "position": [
+          14,
+          12,
+          -15
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CKK.1.07排式教室",
+        "scope": "依据LSE官方同房号平面与照片建立50座历史教学室样本。桌椅位置按平面描摹，颜色与可见设备按照片估算；米制尺度、层高及不可见构造未测量。侧后墙和部分顶面剖开，不推测楼内连通，不代表2026年布置。历史页面使用旧名NAB.1.07，同号CKK资产用于房间样本。"
+      }
     }
   ],
   "presentationReview": {
