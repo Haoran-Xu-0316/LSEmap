@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "167",
-  "sourceModelSha256": "6a6d2c94d126b41abbb65ec9db0120166819c848a45bfc5b1be0f53e9836b79b",
+  "version": "169",
+  "sourceModelSha256": "c08398bc5370600347cbd6d4ac0cf83f861b200d10b7dc139aeaf34c821a741e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3212,6 +3212,7 @@
         "status": "retained-pending-current-evidence",
         "scope": "2008 daylight reference suggests no separate canopy, but current absence cannot be established by the oblique shadowed2025/26 handbook night view. Existing canopy retained; no accepted geometry or visibility change."
       },
+      "interiorCollection": "LRB_PUBLIC_INTERIOR168_study",
       "bounds": {
         "min": [
           24.830078125,
@@ -3297,10 +3298,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-694edc536a1d.glb",
-        "bytes": 4664320,
-        "triangles": 579968,
-        "sha256": "694edc536a1d6a7f5b1428613864c2826e4cb0200b3bfd1d1625768c0c5aefb2",
+        "url": "/models/details/lrb-interior-e310c6de5aee.glb",
+        "bytes": 4669308,
+        "triangles": 580348,
+        "sha256": "e310c6de5aee8b0c9baf2431aad213ba76c4173a0e351db4a4f4b4d8e275fea5",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -3499,10 +3500,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-121554faaadb.glb",
-        "bytes": 3632228,
-        "triangles": 339020,
-        "sha256": "121554faaadb03569ac8ba973aef0ceda9537f2f8910c4a95502c5b2b9ead9be",
+        "url": "/models/details/mar-exterior-4ebc73f9312f.glb",
+        "bytes": 3633852,
+        "triangles": 339000,
+        "sha256": "4ebc73f9312f9734129c3929758321302699a35b8b370a7ae627955b3dc52b55",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -3784,10 +3785,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-e31421882362.glb",
-        "bytes": 20154968,
+        "url": "/models/details/old-exterior-31fbac2a76db.glb",
+        "bytes": 20156252,
         "triangles": 1669604,
-        "sha256": "e3142188236298d83c9753e5a6ee917b5974d93f9cbb36b5b43dc8b20413ef2b",
+        "sha256": "31fbac2a76db4d0227a13420d1f60094171affc2e23ec7dbc050c59116b57480",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -3991,10 +3992,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ocs-exterior-52facd2b4fd4.glb",
-        "bytes": 1349636,
-        "triangles": 115932,
-        "sha256": "52facd2b4fd4fdd4dc42b70a89b939b428c01ad21436b193bdd9748d5f67a558",
+        "url": "/models/details/ocs-exterior-5238b9b726ae.glb",
+        "bytes": 1348640,
+        "triangles": 115852,
+        "sha256": "5238b9b726ae25c564b7691b7d268ea0d0ea358203be267f2aea9354d4fdfbb6",
         "bounds": {
           "min": [
             -47.91916275024414,
