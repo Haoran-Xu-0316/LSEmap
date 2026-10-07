@@ -6,11 +6,11 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
-from refine_street_details169 import apply_street_details169
-from refine_clm_exterior169 import apply_clm_exterior169
-from refine_ckk_exterior169 import apply_ckk_exterior169
-REPORT = ROOT / 'result/blender/stage169'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v169.blend'
+from refine_pan_exterior170 import apply_pan_exterior170
+from refine_cbg_structure170 import apply_cbg_structure170
+from refine_public_realm170 import apply_public_realm170
+REPORT = ROOT / 'result/blender/stage170'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v170.blend'
 proof = json.loads((REPORT / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -18,7 +18,7 @@ for scene in bpy.data.scenes:
     for layer in scene.view_layers:
         layer.update()
 assert geometry_signatures() == proof['geometrySignatures']
-for refiner in (apply_street_details169, apply_clm_exterior169, apply_ckk_exterior169):
+for refiner in (apply_pan_exterior170, apply_cbg_structure170):
     assert refiner()['alreadyApplied']
 assert geometry_signatures() == proof['geometrySignatures']
 assert {o.name:o.hide_render for o in bpy.data.objects} == proof['visibility']
@@ -30,10 +30,10 @@ assert room.all_objects and all(obj.name not in campus for obj in room.all_objec
 assert len(room.all_objects) == 109
 assert not bpy.data.libraries
 assert not any(i.source == 'FILE' and not i.packed_file for i in bpy.data.images)
-result = dict(version=169, sourceModelSha256=proof['sourceModelSha256'],
+result = dict(version=170, sourceModelSha256=proof['sourceModelSha256'],
               savedSceneReopened=True, allMeshSignaturesVerified=True,
               allOriginalShapesAndUVsPreserved=True, idempotent=True,
               roomsOutsideCampus=True, externalDependencies=False,
               archivedObjects=proof['archivedObjects'])
 (REPORT / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-print('BUILDINGS169_REOPENED_VERIFIED')
+print('BUILDINGS170_REOPENED_VERIFIED')
