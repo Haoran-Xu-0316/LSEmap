@@ -6,11 +6,11 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
-from refine_pan_exterior170 import apply_pan_exterior170
-from refine_cbg_structure170 import apply_cbg_structure170
-from refine_public_realm170 import apply_public_realm170
-REPORT = ROOT / 'result/blender/stage170'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v170.blend'
+from refine_saw_structure171 import apply_saw_structure171
+from build_cbg205_room171 import apply_cbg205_room171
+from refine_street_material171 import apply_street_material171
+REPORT = ROOT / 'result/blender/stage171'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v171.blend'
 proof = json.loads((REPORT / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -18,7 +18,7 @@ for scene in bpy.data.scenes:
     for layer in scene.view_layers:
         layer.update()
 assert geometry_signatures() == proof['geometrySignatures']
-for refiner in (apply_pan_exterior170, apply_cbg_structure170):
+for refiner in (apply_saw_structure171, apply_cbg205_room171, apply_street_material171):
     assert refiner()['alreadyApplied']
 assert geometry_signatures() == proof['geometrySignatures']
 assert {o.name:o.hide_render for o in bpy.data.objects} == proof['visibility']
@@ -28,12 +28,16 @@ campus = set(bpy.data.scenes['00_CAMPUS_COMPLETE'].objects.keys())
 room = bpy.data.collections['LRB_PUBLIC_INTERIOR168_study']
 assert room.all_objects and all(obj.name not in campus for obj in room.all_objects)
 assert len(room.all_objects) == 109
+room171 = bpy.data.collections['CBG205_ROOM171_study']
+assert room171['studentSeatCount'] == 42
+assert all(o.name not in campus for o in room171.all_objects)
+assert len(room171.all_objects) == 24
 assert not bpy.data.libraries
 assert not any(i.source == 'FILE' and not i.packed_file for i in bpy.data.images)
-result = dict(version=170, sourceModelSha256=proof['sourceModelSha256'],
+result = dict(version=171, sourceModelSha256=proof['sourceModelSha256'],
               savedSceneReopened=True, allMeshSignaturesVerified=True,
               allOriginalShapesAndUVsPreserved=True, idempotent=True,
               roomsOutsideCampus=True, externalDependencies=False,
               archivedObjects=proof['archivedObjects'])
 (REPORT / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-print('BUILDINGS170_REOPENED_VERIFIED')
+print('BUILDINGS171_REOPENED_VERIFIED')
