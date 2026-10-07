@@ -24,11 +24,133 @@
         "scope": "Undated built photography guides middle-storey window belts and roof pavilion; bay counts, dimensions and pavilion position remain estimates. Corner portal, dormers, unseen elevations and current LSE interior conversion remain unresolved."
       },
       "latestReview": {
-        "version": 141,
-        "status": "street-wing-dark-open-dormers",
-        "scope": "24 street-wing dormers use dark open cheeks and shallow pitched caps. Two stone corner dormers retained. Main roof massing and unseen elevations remain unresolved.",
-        "source": "Archived whole-building street photograph and retained source slate material",
-        "photographDate": "unknown"
+        "version": 177,
+        "status": "registered-kingsway-street-roof-strip",
+        "scope": "Replace the inward-facing uncut slate apron behind ten retained near-corner Kingsway dormers; remove overlapping original roof surfaces locally. Preserve original dormers and unregistered roof areas. Photographic dimensions are estimates; full current roof and interiors remain unverified.",
+        "addedObjects": 3,
+        "archivedObjects": 2,
+        "sourceUrls": [
+          "https://www.walshandassociates.co.uk/projects"
+        ],
+        "registration": {
+          "origin": [
+            -50.75784683227539,
+            -119.07737731933594,
+            30.700002670288086
+          ],
+          "axis": [
+            -0.37494388222694397,
+            0.9270475506782532,
+            0.0
+          ],
+          "outward": [
+            -0.9270475506782532,
+            -0.37494388222694397,
+            0.0
+          ],
+          "stripBounds": [
+            -1.25,
+            31.424776077270508,
+            -1.05,
+            1.35
+          ],
+          "dormerIndices": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "dormerStations": [
+            0.0,
+            3.3527527153491974,
+            6.705506861209869,
+            10.05825388431549,
+            13.411007523536682,
+            16.763753175735474,
+            20.11650776863098,
+            23.469260931015015,
+            26.822030305862427,
+            30.174776077270508
+          ],
+          "holeBounds": [
+            [
+              -0.977,
+              0.977,
+              -0.677,
+              0.81
+            ],
+            [
+              2.3757527153491975,
+              4.329752715349198,
+              -0.677,
+              0.81
+            ],
+            [
+              5.728506861209869,
+              7.68250686120987,
+              -0.677,
+              0.81
+            ],
+            [
+              9.08125388431549,
+              11.035253884315491,
+              -0.677,
+              0.81
+            ],
+            [
+              12.434007523536682,
+              14.388007523536682,
+              -0.677,
+              0.81
+            ],
+            [
+              15.786753175735473,
+              17.740753175735474,
+              -0.677,
+              0.81
+            ],
+            [
+              19.13950776863098,
+              21.09350776863098,
+              -0.677,
+              0.81
+            ],
+            [
+              22.492260931015014,
+              24.446260931015015,
+              -0.677,
+              0.81
+            ],
+            [
+              25.845030305862426,
+              27.799030305862427,
+              -0.677,
+              0.81
+            ],
+            [
+              29.197776077270507,
+              31.151776077270508,
+              -0.677,
+              0.81
+            ]
+          ],
+          "eaveZ": 29.55,
+          "innerRidgeZ": 32.1,
+          "method": "Retained native wall/dormer coordinates; Retained legacy photograph-estimated2.4m slope depth and2.55m rise; replace backwards uncropped apron with outward closed roof and true dormer openings",
+          "photographDate": "unknown"
+        },
+        "limitations": [
+          "Historical pre-redevelopment photograph, not2026survey",
+          "Rear roof and far street continuation retained provisional",
+          "Portal and all26dormer shapes/UV/materials untouched; only10near-corner dormers register this slope"
+        ],
+        "audit": "result/blender/61a_exterior177/audit.json"
       },
       "interiorView": {
         "position": [
@@ -55,6 +177,13 @@
           "status": "photo-supported-central-street-corner-reconstruction",
           "scope": "Replace central two-column repetitive glazing with continuous three-storey recessed portal, projecting stone piers, differentiated side and central lights and upper window rows on retained6.769m segment. Preserve entrance, other street wings, footprint, roof and glass properties.2021 brochure photograph supports composition; footprint allocation, stepped roof/parapet and current conversion still unverified.",
           "source": "2021 letting brochure day/evening street-corner photographs; image dates unknown"
+        },
+        {
+          "version": 141,
+          "status": "street-wing-dark-open-dormers",
+          "scope": "24 street-wing dormers use dark open cheeks and shallow pitched caps. Two stone corner dormers retained. Main roof massing and unseen elevations remain unresolved.",
+          "source": "Archived whole-building street photograph and retained source slate material",
+          "photographDate": "unknown"
         }
       ]
     },
@@ -557,10 +686,24 @@
         "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review. Entrance guide confirms three external steps and a 73cm active opening; total paired width, 15cm risers, treads and ornamental profiles are photo-guided estimates. New entry has genuine glazing apertures. The guide survey and photo capture dates are unverified. Carved mask and scrolls are authored approximations, not scans."
       },
       "latestReview": {
-        "version": 145,
-        "status": "photo-supported-short-side-ground-brick",
-        "scope": "Correct only existing short-side lower masonry to inherited red brick. Retain long-side stone and chamfer entrance, all apertures, coordinates, topology, UV, glass and roof. Short-side window dimensions, roof slopes, unseen walls and full interiors remain unmeasured.",
-        "source": "Completed contractor project2019 photograph05 and archived LSE Estates006; capture dates unknown"
+        "version": 177,
+        "status": "street-glass-normals-and-roof-cap-seating",
+        "scope": "Outward normals of all110glass boxes and seated solid roof sheets on11photographed street dormers. No facade-layout, window-count, material-opacity or fullroof-layout change.",
+        "addedObjects": 3,
+        "archivedObjects": 3,
+        "sourceUrls": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Cowdray-web.jpg",
+          "https://www.russellcawberry.com/projects/cowdray-house",
+          "https://www.russellcawberry.com/files/projects/Cowdray%2520House/056_cowdray_house_MR.jpg"
+        ],
+        "photographDate": "unknown",
+        "limitations": [
+          "Existing110pane positions, widths, subdivisions and optical material retained.",
+          "Four unphotographed cap pairs and their cheeks remain untouched; roof layout and measured rear elevations unresolved.",
+          "Cap0.06m effective assembly depth and matching raised cheek tops are estimates; no lead-sheet thickness or2026survey claim.",
+          "Glass stays reflective opaque in actual canonical GLB; no unverified room transparency."
+        ],
+        "audit": "result/blender/cow_exterior177/verification.json"
       },
       "interiorView": {
         "position": [
@@ -586,6 +729,12 @@
             "https://www.accessable.co.uk/london-school-of-economics/access-guides/cowdray-house",
             "https://www.russellcawberry.com/projects/cowdray-house"
           ]
+        },
+        {
+          "version": 145,
+          "status": "photo-supported-short-side-ground-brick",
+          "scope": "Correct only existing short-side lower masonry to inherited red brick. Retain long-side stone and chamfer entrance, all apertures, coordinates, topology, UV, glass and roof. Short-side window dimensions, roof slopes, unseen walls and full interiors remain unmeasured.",
+          "source": "Completed contractor project2019 photograph05 and archived LSE Estates006; capture dates unknown"
         }
       ]
     },
@@ -1367,14 +1516,21 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 174,
-        "scope": "North podium overlapping wall tiles replaced; left upper loggia reopened and false punched-window attachments removed. Existing heights, northern165solid bay and interior retained; plan scale,0.2m sill and aperture widths are photograph estimates, capture date unknown.",
-        "source": [
-          {
-            "url": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
-            "supports": "Built north podium and open upper-left loggia photograph02"
-          }
-        ]
+        "version": 177,
+        "status": "great-hall-and-mezzanine-single-surface-glazing",
+        "scope": "107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.",
+        "addedObjects": 2,
+        "archivedObjects": 2,
+        "sourceUrls": [
+          "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
+        ],
+        "photographDate": "unknown",
+        "limitations": [
+          "Photograph capture date unknown. Existing pane locations, hall geometry and floor layout retained; opacity and neutral tint estimated.",
+          "The original untextured glass has no UV layers; replacement zero UVs do not represent a measured texture mapping.",
+          "Glass alpha0.30 and0.22, neutral tint and roughness0.13 are display estimates; complete hall/floor registration remains unfinished."
+        ],
+        "audit": "result/blender/mar_interior177/verification.json"
       },
       "interiorView": {
         "position": [
@@ -1461,6 +1617,16 @@
           ],
           "limitations": "Photo-guided dimensions and material appearance are estimates. Capture dates unknown; no complete current survey claim.",
           "audit": "result/blender/mar_detail165/audit.json"
+        },
+        {
+          "version": 174,
+          "scope": "North podium overlapping wall tiles replaced; left upper loggia reopened and false punched-window attachments removed. Existing heights, northern165solid bay and interior retained; plan scale,0.2m sill and aperture widths are photograph estimates, capture date unknown.",
+          "source": [
+            {
+              "url": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
+              "supports": "Built north podium and open upper-left loggia photograph02"
+            }
+          ]
         }
       ]
     },
@@ -2693,6 +2859,13 @@
         "photographDate": "unknown",
         "limitations": "Stations, quantities, widths and height estimated from photograph, not current street inventory. Existing road surface supports retained.",
         "audit": "result/blender/portugal_environment176/audit.json"
+      },
+      {
+        "version": 177,
+        "status": "review-only-no-change",
+        "scope": "John Watkins Plaza four registered road sections:1321non-building sample points all hit existing pavement. Furniture and material geometry retained; low boundary endpoints and drain openings not confirmed.",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/2022-LSE-Public-Realm-Strategy.pdf",
+        "audit": "result/blender/library_environment177/surface-continuity-audit.json"
       }
     ]
   }
