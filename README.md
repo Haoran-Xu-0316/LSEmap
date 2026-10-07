@@ -8,13 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition175 corrects the lower COL street piers: ordinary stone is smooth,
-Garrick corner rustication remains, and three Aldwych piers have recessed reeds.
-CLM receives two continuous low guards along its curved street-window frontage,
-with the central and side entrances clear. Two photographed ventilation grilles
-now occupy actual openings in the OLD Houghton approach wall. All three scopes
-share geometry between the overview and building views. Photo dimensions remain
-estimates; CON's upper facade and complete present-day interiors are unfinished.
+Edition176 corrects the complete photographed Portugal Street attic of King's
+Chambers: three central windows and two canted end bays replace the repeated flat
+window row. Five black bollards and double yellow lines enrich the Peacock
+Theatre frontage in the shared campus scene. Positions and dimensions remain
+photo estimates. FAW, SAL and PAR were reviewed without unsupported changes;
+35L's May2026 construction newsletter does not establish the current full envelope.
+Unseen elevations and complete present-day interiors remain unfinished.
 
 
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
