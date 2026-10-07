@@ -185,7 +185,14 @@
           "source": "Archived whole-building street photograph and retained source slate material",
           "photographDate": "unknown"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 253,
+        "reversedShells": 253,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "CBG",
@@ -280,6 +287,13 @@
         "version": 138,
         "status": "retained-with-interior-registration-gap",
         "scope": "Retained red primary/orange side shades, main curtain and accepted entrance. Real office glass first-surface probes pass. Existing high-wing floor plates stop4.2m behind main glass, in a zone including a wandering stair; horizontal rays find distant opposing glass but cannot establish missing slabs. Office partitions, stair apertures and measured complete floor layouts remain unregistered; no false backplates or speculative filling added."
+      },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 136,
+        "reversedShells": 136,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       }
     },
     {
@@ -383,7 +397,14 @@
           "limitations": "Optical properties are estimates; no new unseen pavilion room layout or measured2026 condition claim.",
           "audit": "result/blender/ckk_glass173/audit.json"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 349,
+        "reversedShells": 264,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "CLM",
@@ -458,7 +479,14 @@
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 51,
+        "reversedShells": 0,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "COL",
@@ -567,6 +595,13 @@
         "version": 137,
         "status": "retained-pending-upper-elevation-and-enclosure",
         "scope": "Current low-level photos and2010 entrance feasibility scheme cannot calibrate upper storey count or mansard.26 distinct low panes have only distant3.49–25.03m estimated shells behind them. No speculative transparency, backplate, new storeys or new roof added."
+      },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 97,
+        "reversedShells": 97,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       }
     },
     {
@@ -666,7 +701,14 @@
             }
           ]
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 316,
+        "reversedShells": 316,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "COW",
@@ -755,7 +797,14 @@
           "scope": "Correct only existing short-side lower masonry to inherited red brick. Retain long-side stone and chamfer entrance, all apertures, coordinates, topology, UV, glass and roof. Short-side window dimensions, roof slopes, unseen walls and full interiors remain unmeasured.",
           "source": "Completed contractor project2019 photograph05 and archived LSE Estates006; capture dates unknown"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 2,
+        "reversedShells": 2,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "FAW",
@@ -823,7 +872,14 @@
           "source": "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers",
           "photographDate": "unknown"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 156,
+        "reversedShells": 0,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "KGS",
@@ -903,7 +959,14 @@
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
           ]
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 2,
+        "reversedShells": 2,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "KSW",
@@ -984,7 +1047,14 @@
           "limitations": "Photo dates unknown. Band limits estimated at70–82% of inherited opening height; column count retained. Whole upper facade, oriel and roof still unverified.",
           "audit": "result/blender/ksw_envelope_next/audit.json"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 22,
+        "reversedShells": 22,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "LAK",
@@ -1047,7 +1117,14 @@
           "version": 121,
           "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 46,
+        "reversedShells": 46,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "LCH",
@@ -1096,7 +1173,14 @@
           "retainedLowerTimberChecks": 4,
           "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 26,
+        "reversedShells": 26,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "5LF",
@@ -1163,7 +1247,14 @@
           "source": "LSE Estates archived exterior012 photograph",
           "photographDate": "unknown"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 11,
+        "reversedShells": 11,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "35L",
@@ -1265,7 +1356,14 @@
           "source": "2022 Westminster planning existing-condition block plan and frontage photographs",
           "photographDate": "2022 planning attachment; capture date unknown"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 14,
+        "reversedShells": 14,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "50L",
@@ -1317,7 +1415,14 @@
           "version": 122,
           "scope": "Photographed entrance sash corrected to three columns and two rows; curved stone arch returns added, with ten glass-first probes. Overall bay count and unseen elevations remain unresolved."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 13,
+        "reversedShells": 4,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "51L",
@@ -1373,7 +1478,14 @@
           "status": "entry-glass-apertures-opened",
           "scope": "Two photographed entrance panes retain original geometry and neutral color with explicit browser opacity0.82. Only the timber door leaf and metal recess faces behind those panes receive actual mesh apertures. Surrounding door, frame and all other windows/roof remain unchanged. Dimensions and optics estimated; no complete interior claimed."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 94,
+        "reversedShells": 73,
+        "batchCount": 5,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "LRB",
@@ -1518,7 +1630,14 @@
         "status": "retained-pending-current-evidence",
         "scope": "2008 daylight reference suggests no separate canopy, but current absence cannot be established by the oblique shadowed2025/26 handbook night view. Existing canopy retained; no accepted geometry or visibility change."
       },
-      "interiorCollection": "LRB_PUBLIC_INTERIOR168_study"
+      "interiorCollection": "LRB_PUBLIC_INTERIOR168_study",
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 578,
+        "reversedShells": 578,
+        "batchCount": 7,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "MAR",
@@ -1809,6 +1928,13 @@
         "remaining": "Absolute dimensions remain estimates. Continuous side approach, terminal registration and platform lift remain under review.",
         "modelStatus": "Resolved in edition141: exterior4-step and foyer4-step flights coordinated through threshold0.69m; street0.05m and GF1.245m retained.",
         "remainingScope": "Side approach modeled from existing south plan with estimated width/slope/rails; platform lift and full measured access certification unresolved."
+      },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 590,
+        "reversedShells": 531,
+        "batchCount": 11,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       }
     },
     {
@@ -1917,7 +2043,14 @@
           "source": "Archived entrance photograph tower_photos_round4_tower_round4_tour_p16_0.png and LSE Estate007 photograph",
           "photographDate": "unknown"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 190,
+        "reversedShells": 73,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "PAR",
@@ -2005,7 +2138,14 @@
           "changedObjects": 0,
           "audit": "result/blender/par_exterior176/audit.json"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 53,
+        "reversedShells": 33,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "PEA",
@@ -2056,7 +2196,14 @@
           "status": "reviewed-no-change",
           "addedObjects": 0
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 11,
+        "reversedShells": 11,
+        "batchCount": 3,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "PEL",
@@ -2112,7 +2259,14 @@
           "glassFirstProbes": 66,
           "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 310,
+        "reversedShells": 310,
+        "batchCount": 5,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "POR",
@@ -2156,7 +2310,14 @@
           "version": 122,
           "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 23,
+        "reversedShells": 23,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "SAR",
@@ -2231,7 +2392,14 @@
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
           ]
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 62,
+        "reversedShells": 30,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "SAW",
@@ -2294,6 +2462,13 @@
         "source": "2014 official occupants guide pages26–32",
         "sourceURL": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
         "limitations": "Affine registration, flight centerlines, counts, heights and guards are estimates. Full room layouts, side escape cores, lifts and basement/Venue circulation remain incomplete; not a current2026 as-built model."
+      },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 0,
+        "reversedShells": 0,
+        "batchCount": 3,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       }
     },
     {
@@ -2332,7 +2507,14 @@
           "status": "photo-covered-dormer-grid-corrected",
           "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 33,
+        "reversedShells": 33,
+        "batchCount": 5,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "SAL",
@@ -2427,7 +2609,14 @@
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 233,
+        "reversedShells": 158,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     },
     {
       "code": "STC",
@@ -2502,7 +2691,14 @@
           "clearOpaqueProbes": 70,
           "limitation": "Existing window count, heights and roof remain estimated; dated exterior references do not prove current condition."
         }
-      ]
+      ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 192,
+        "reversedShells": 192,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      }
     }
   ],
   "spaces": [
@@ -2933,5 +3129,46 @@
     "scope": "Four existing John Watkins trees and two Houghton planter trees retain their positions, heights and crown envelopes; estimated irregular contours and two opaque leaf finishes. Only12of522campus crown masses subdivided.",
     "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/2022-LSE-Public-Realm-Strategy.pdf",
     "limitations": "Estimated presentation, not measured botanical geometry or a2026survey."
+  },
+  "glazingReview": {
+    "version": 181,
+    "scope": "Physical glass orientation and nonmetal finish across existing exterior components; colours, opacity, vertices and per-corner UV retained. No facade reconstruction or full interior claim.",
+    "closedShells": 3863,
+    "reversedShells": 3238,
+    "changedBuildings": [
+      "49L",
+      "50L",
+      "51L",
+      "5LF",
+      "61A",
+      "CBG",
+      "CKK",
+      "CLM",
+      "COL",
+      "CON",
+      "COW",
+      "FAW",
+      "KGS",
+      "KSW",
+      "LAK",
+      "LCH",
+      "LRB",
+      "OLD",
+      "PAN",
+      "PAR",
+      "PEA",
+      "PEL",
+      "POR",
+      "SAL",
+      "SAR",
+      "SAW",
+      "SHF",
+      "STC"
+    ],
+    "sources": [
+      "https://threejs.org/docs/pages/Material.html",
+      "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+    ],
+    "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   }
 }
