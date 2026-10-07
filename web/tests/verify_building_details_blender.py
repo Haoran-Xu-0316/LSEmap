@@ -6,17 +6,22 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import apply_architectural_glass,shape_signature,LEGACY,ATRIA
-REPORT=ROOT/'result/blender/stage164'
-MODEL=ROOT/'result/blender/LSE_campus_detailed_v164.blend'
+from refine_houghton_bollard import apply_houghton_bollard
+from refine_old_planter_coping import apply_old_planter_coping
+from refine_mar_building_lettering import apply_mar_building_lettering
+REPORT=ROOT/'result/blender/stage165'
+MODEL=ROOT/'result/blender/LSE_campus_detailed_v165.blend'
 proof=json.loads((REPORT/'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest()==proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
 for scene in bpy.data.scenes:
  for layer in scene.view_layers:layer.update()
 assert geometry_signatures()==proof['geometrySignatures']
-assert apply_architectural_glass()['alreadyApplied']
+for refiner in (apply_houghton_bollard,apply_old_planter_coping,apply_mar_building_lettering):
+ assert refiner()['alreadyApplied']
 assert geometry_signatures()==proof['geometrySignatures']
-change=proof['changes'][0]
+assert {o.name:o.hide_render for o in bpy.data.objects}==proof['visibility']
+change=json.loads((ROOT/'result/blender/stage164/building-refinement.json').read_text())['changes'][0]
 for binding in change['bindings']:
  obj=bpy.data.objects[binding['object']];assert shape_signature(obj)==binding['shapeSignature']
  assert obj.data.materials[0].name==binding['material']
@@ -45,5 +50,5 @@ for name,state in change['originalSourceMaterials'].items():
  assert source.get('webOpacity')==state['webOpacity']
 assert not bpy.data.libraries
 assert not any(i.source=='FILE'and not i.packed_file for i in bpy.data.images)
-(REPORT/'reopened-verification.json').write_text(json.dumps({'version':164,'sourceModelSha256':proof['sourceModelSha256'],'savedSceneReopened':True,'allMeshSignaturesVerified':True,'allShapesAndUVsPreserved':True,'originalSharedMaterialsPreserved':True,'bindingsVerified':len(change['bindings']),'externalDependencies':False,'discardedUnreferencedSourceMaterials':unused_sources},indent=2)+'\n')
-print('BUILDINGS164_REOPENED_VERIFIED')
+(REPORT/'reopened-verification.json').write_text(json.dumps({'version':165,'sourceModelSha256':proof['sourceModelSha256'],'savedSceneReopened':True,'allMeshSignaturesVerified':True,'idempotent':True,'originalSharedMaterialsPreserved':True,'glassBindingsVerified':len(change['bindings']),'externalDependencies':False,'archivedObjects':proof['archivedObjects']},indent=2)+'\n')
+print('BUILDINGS165_REOPENED_VERIFIED')
