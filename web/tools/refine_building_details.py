@@ -11,10 +11,10 @@ import bpy
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
-from refine_old_wall_lantern import apply_old_wall_lantern
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v162.blend'
-TARGET = ROOT / 'result/blender/LSE_campus_detailed_v163.blend'
-REPORT = ROOT / 'result/blender/stage163'
+from refine_architectural_glass import apply_architectural_glass
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v163.blend'
+TARGET = ROOT / 'result/blender/LSE_campus_detailed_v164.blend'
+REPORT = ROOT / 'result/blender/stage164'
 
 
 def refine_building_details():
@@ -22,16 +22,16 @@ def refine_building_details():
     if TARGET.exists() and report_path.exists():
         proof = json.loads(report_path.read_text())
         assert hashlib.sha256(TARGET.read_bytes()).hexdigest() == proof['sourceModelSha256']
-        print('BUILDINGS163_ALREADY_CURRENT')
+        print('BUILDINGS164_ALREADY_CURRENT')
         return
     bpy.ops.wm.open_mainfile(filepath=str(BASE))
     for scene in bpy.data.scenes:
         for layer in scene.view_layers:
             layer.update()
     before = geometry_signatures()
-    changes = [apply_old_wall_lantern()]
+    changes = [apply_architectural_glass()]
     allowed = {name for record in changes for name in record.get('changedObjects', [])}
-    assert not allowed
+    assert len(allowed)==8
     after = geometry_signatures()
     assert all(after.get(name) == digest for name, digest in before.items() if name not in allowed)
     added = set(after) - set(before)
@@ -41,12 +41,12 @@ def refine_building_details():
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(TARGET))
-    proof = {'version': 163, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
+    proof = {'version': 164, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
              'sourceModelSha256': hashlib.sha256(TARGET.read_bytes()).hexdigest(),
              'allUnrelatedMeshesPreserved': True, 'changes': changes,
              'objects': len(bpy.data.objects), 'geometrySignatures': after}
     report_path.write_text(json.dumps(proof, indent=2) + '\n')
-    print('BUILDINGS163_SAVED', len(bpy.data.objects), len(added))
+    print('BUILDINGS164_SAVED', len(bpy.data.objects), len(added))
 
 
 if __name__ == '__main__':
