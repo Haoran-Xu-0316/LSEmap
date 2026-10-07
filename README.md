@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition170 corrects the photographed yellow underside of the PAN entrance
+canopy. Downloads validate GLB length and available SHA256 digests before
+decoding, with one retry for transport interruptions or corrupt transfers.
+CBG tower openings and the existing public realm were audited without
+unsupported reconstruction; plaza boundaries and complete current rooms remain unresolved.
+
 Edition169 corrects ten blue lower-dormer jambs on OLD, aligns MAR glass
 with the existing public hall, removes duplicate OCS shop-window surfaces,
 supplies an independent LRB lower-ground atrium floor, and adds the
@@ -148,7 +154,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v169.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v170.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
