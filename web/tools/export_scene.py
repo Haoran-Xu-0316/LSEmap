@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v180.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v181.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -27,12 +27,18 @@ source_scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
 bpy.context.window.scene = source_scene
 # Small bevels multiply the triangle count without changing the campus silhouette.
 # Keep the archival model intact on disk; the browser uses a lighter derivative.
+def source_geometry_name(obj):
+    # A physical glazing replacement retains its source geometry policy.
+    # Replacement naming must not change bevel/UV detail between views.
+    return obj.name.removeprefix('GLASS181_')
+
+
 modifier_states = []
 curve_resolutions = []
 full_detail = False
 for original in source_scene.objects:
     for modifier in original.modifiers:
-        if modifier.type == 'BEVEL' and not original.name.startswith(('5LF_NEXT_', 'PEA_NEXT_', '49L_NEXT_', 'COW_NEXT_', 'PAN_NEXT_', 'STC_NEXT_ENVELOPE_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
+        if modifier.type == 'BEVEL' and not source_geometry_name(original).startswith(('5LF_NEXT_', 'PEA_NEXT_', '49L_NEXT_', 'COW_NEXT_', 'PAN_NEXT_', 'STC_NEXT_ENVELOPE_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_')):
             modifier_states.append((modifier, modifier.show_viewport, modifier.show_render))
             modifier.show_viewport = False
             modifier.show_render = False
@@ -119,6 +125,8 @@ def web_material(source):
     if transmission > 0.1:
         node.inputs['Alpha'].default_value = float(source.get('webOpacity', 0.30))
         material.surface_render_method = 'DITHERED'
+    if source and source.get('webClosedGlazing'):
+        material['webClosedGlazing'] = True
     material.diffuse_color = color
     descriptor = surface_descriptor(source)
     if descriptor:
@@ -156,7 +164,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     points = []
     for original in objects:
         # Sub-centimetre finish belongs to on-demand views, not the initial campus download.
-        if not full_detail and any(tag in original.name for tag in ['_V16_', '_V17_']) and not original.name.startswith(('35L_', '5LF_NEXT_', 'PEA_NEXT_', '49L_NEXT_', 'COW_NEXT_', 'PAN_NEXT_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_FRAME_NEXT_')):
+        if not full_detail and any(tag in source_geometry_name(original) for tag in ['_V16_', '_V17_']) and not source_geometry_name(original).startswith(('35L_', '5LF_NEXT_', 'PEA_NEXT_', '49L_NEXT_', 'COW_NEXT_', 'PAN_NEXT_', 'KSW_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'KGS_NEXT_', 'PAR_NEXT_', 'LAK_NEXT_', 'SHF_NEXT_', '50L_NEXT_', '51L_NEXT_', 'POR_NEXT_', 'LCH_NEXT_', 'STC_NEXT_', 'PEL_NEXT_', 'CKK_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'SAL_NEXT_', 'OLD_NEXT_', 'SAW_NEXT_', 'MAR_NEXT_', 'LRB_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_FRAME_NEXT_')):
             continue
         if original.type not in {'MESH', 'CURVE', 'FONT', 'SURFACE'} or original.hide_render:
             continue
@@ -173,11 +181,11 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Joining differently named UV layers would put some facades in UV1 while
         # the browser samples UV0. Normalize only these temporary export meshes.
         # Accepted components retain their metric UVs at both viewing scales.
-        needs_uv = full_detail or has_brick or '_NEXT_' in original.name or any(m and m.get('globeMap') for m in mesh.materials)
+        needs_uv = full_detail or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and m.get('globeMap') for m in mesh.materials)
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
-        if original.name.startswith(('5LF_NEXT_', '50L_NEXT_', 'PEA_NEXT_', '49L_NEXT_', 'COW_NEXT_', 'PAN_NEXT_', 'STC_NEXT_ENVELOPE_', 'STC_NEXT_ARTWORK_', 'OLD_NEXT_APPROACH_', 'OLD_NEXT_EXTERIOR154_', 'OLD_NEXT_EXTERIOR156_', 'OLD_NEXT_STUDENT_', 'OLD_NEXT_SSC_', 'SITE_NEXT_PORTSMOUTH_', 'KSW_NEXT_', 'MAR_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'OLD_NEXT_CLARE_sealed_', 'OLD_NEXT_ACCESS_', 'OLD_NEXT_GLAZING', 'LRB_NEXT_', 'CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
+        if source_geometry_name(original).startswith(('5LF_NEXT_', '50L_NEXT_', 'PEA_NEXT_', '49L_NEXT_', 'COW_NEXT_', 'PAN_NEXT_', 'STC_NEXT_ENVELOPE_', 'STC_NEXT_ARTWORK_', 'OLD_NEXT_APPROACH_', 'OLD_NEXT_EXTERIOR154_', 'OLD_NEXT_EXTERIOR156_', 'OLD_NEXT_STUDENT_', 'OLD_NEXT_SSC_', 'SITE_NEXT_PORTSMOUTH_', 'KSW_NEXT_', 'MAR_NEXT_', 'CLM_NEXT_', '61A_NEXT_', 'OLD_NEXT_CLARE_sealed_', 'OLD_NEXT_ACCESS_', 'OLD_NEXT_GLAZING', 'LRB_NEXT_', 'CKK_NEXT_', 'SAW_NEXT_', 'CON_NEXT_', 'COL_NEXT_', 'CBG_NEXT_', 'OLD_GLAZING_NEXT_', 'SAL_NEXT_', 'SAL_FRAME_NEXT_')) and not mesh.uv_layers:
             layer = mesh.uv_layers.new(name='SurfaceUV')
             for face in mesh.polygons:
                 vertices = [original.matrix_world @ mesh.vertices[index].co for index in face.vertices]
@@ -377,7 +385,7 @@ full_detail = True
 for modifier, viewport, render in modifier_states:
     # Colour-only SAL sash replacements keep the lightweight frame geometry
     # at both scales. Restoring bevels here would multiply detail vertices ninefold.
-    if modifier.type == 'BEVEL' and modifier.id_data.name.startswith('SAL_FRAME_NEXT_'):
+    if modifier.type == 'BEVEL' and source_geometry_name(modifier.id_data).startswith('SAL_FRAME_NEXT_'):
         continue
     modifier.show_viewport, modifier.show_render = viewport, render
 for curve, resolution in curve_resolutions:
@@ -452,7 +460,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '180', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '181', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
