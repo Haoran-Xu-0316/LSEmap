@@ -1016,8 +1016,10 @@
         "scope": "Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified."
       },
       "latestReview": {
-        "version": 121,
-        "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
+        "version": 179,
+        "scope": "Read-only review retains photo-supported sash windows and dormer apertures; no evidence-supported new geometry correction. Undated official imagery is not a current measured survey.",
+        "reviewOnly": true,
+        "audit": "result/blender/lak_exterior179/"
       },
       "interiorView": {
         "position": [
@@ -1032,7 +1034,13 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 121,
+          "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
+        }
+      ]
     },
     {
       "code": "LCH",
@@ -2292,15 +2300,23 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 148,
-        "status": "photo-covered-dormer-grid-corrected",
-        "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
+        "version": 179,
+        "scope": "Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.",
+        "reviewOnly": false,
+        "audit": "result/blender/shf_exterior179/"
       },
       "exportExterior": true,
       "previousReviews": [
         {
           "version": 121,
           "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
+        }
+      ],
+      "reviewHistory": [
+        {
+          "version": 148,
+          "status": "photo-covered-dormer-grid-corrected",
+          "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
         }
       ]
     },
@@ -2897,5 +2913,11 @@
         "audit": "result/blender/library_environment177/surface-continuity-audit.json"
       }
     ]
+  },
+  "environmentReview": {
+    "version": 179,
+    "scope": "Four existing John Watkins trees and two Houghton planter trees retain their positions, heights and crown envelopes; estimated irregular contours and two opaque leaf finishes. Only12of522campus crown masses subdivided.",
+    "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/2022-LSE-Public-Realm-Strategy.pdf",
+    "limitations": "Estimated presentation, not measured botanical geometry or a2026survey."
   }
 }
