@@ -27,7 +27,7 @@
   {
     "code": "CLM",
     "name": "clm-exterior",
-    "label": "Clement House的Aldwych立面"
+    "label": "Clement House曲面立面与临街护栏"
   },
   {
     "code": "CLM",
@@ -37,7 +37,7 @@
   {
     "code": "COL",
     "name": "col-exterior",
-    "label": "Columbia House沿街石材立面"
+    "label": "Columbia House光整石柱与街角块石"
   },
   {
     "code": "COL",
@@ -1115,19 +1115,19 @@
   {
     "code": "OLD",
     "name": "old-side-approach",
-    "label": "Houghton Street侧坡道与入口",
+    "label": "Houghton Street坡道扶手与通风格栅",
     "view": {
       "position": [
-        28.6722,
-        5.5,
-        102.785
+        2.321834087371826,
+        1.5,
+        86.66716003417969
       ],
       "target": [
-        -2.4876,
-        2.2,
-        86.846
+        -1.2392829656600952,
+        0.4000000059604645,
+        84.84550476074219
       ],
-      "fov": 36
+      "fov": 44.49804731442473
     }
   },
   {
