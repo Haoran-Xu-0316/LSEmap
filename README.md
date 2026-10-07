@@ -8,6 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition165 corrects the photographed north-left MAR ground-floor glazed bay to
+solid concrete and adds the two-line building name. OLD Clare Market's planter
+receives an independent stone coping and real shallow joints. The existing
+Houghton post keeps its mapped location with a black cast-iron profile.
+Other bays, planting, glass finishes and room studies are retained; dimensions
+and materials are photographic estimates, not a current measured survey.
+
 Edition164 corrects legacy CKK and LRB glazing from metallic0.6 to dielectric0,
 retaining their colour, roughness and opacity. Six CKK public-atrium glazing
 objects receive an independent, less green clear finish informed by the
@@ -116,7 +123,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v164.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v165.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
