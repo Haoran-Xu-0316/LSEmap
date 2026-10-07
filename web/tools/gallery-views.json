@@ -1206,5 +1206,17 @@
       ],
       "fov": 48
     }
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-104-interior",
+    "label": "CBG.1.04分组教室",
+    "spaceId": "cbg-104"
+  },
+  {
+    "code": "CKK",
+    "name": "ckk-107-interior",
+    "label": "CKK.1.07排式教室",
+    "spaceId": "ckk-107"
   }
 ]
