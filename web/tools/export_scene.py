@@ -362,7 +362,7 @@ for record in metadata:
         interior_objects = [o for o in interior_objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
         interior_objects += [o for o in bpy.data.collections['MAR_EXTERIOR'].all_objects if 'ground_glass_panes' in o.name]
     if code == 'SAW':
-        interior_objects = [o for o in interior_objects if '_floor_' not in o.name]
+        interior_objects = [o for o in interior_objects if '_floor_' not in o.name or 'landing' in o.name]
     if code == 'LRB':
         interior_objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
     _, bounds = clone_group(interior_objects, code + '_INTERIOR', interior_scene)
@@ -431,7 +431,7 @@ for record in metadata:
             objects = [o for o in objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
             objects += [o for o in bpy.data.collections['MAR_EXTERIOR'].all_objects if 'ground_glass_panes' in o.name]
         elif code == 'SAW':
-            objects = [o for o in objects if '_floor_' not in o.name]
+            objects = [o for o in objects if '_floor_' not in o.name or 'landing' in o.name]
         elif code == 'LRB':
             objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
         record['detailedInterior'] = export_detail(objects, code, 'interior')
