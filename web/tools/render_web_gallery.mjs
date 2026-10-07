@@ -33,6 +33,7 @@ window.renderGalleryView=async(job)=>{
   }else if(/-(entrance|windows)$/.test(job.name)&&building.detailView) {
    viewer.showDetail(building); await viewer.upgradeModel(building,'exterior');
   }
+  if(!interior && job.context) viewer.toggleContext(true);
   const expected=(interior?'interior-':'exterior-')+job.code+(job.spaceId?':'+job.spaceId:'');
   if(viewer.canvas.dataset.detailReady!==expected) throw Error('Detail unavailable: '+job.name);
  }
