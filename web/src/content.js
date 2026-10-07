@@ -19,9 +19,9 @@ export const buildingDetails = {
     images: [["49l-exterior", "Coopers转角门面与蓝色底层"]],
   },
   "61A": {
-    description: "61 Aldwych保留石材街角立面，中部三层窗带采用连续石柱与深色金属窗间板，屋顶角亭改为切角轮廓、下层分格窗、环绕玻璃窗带和八面斜屋顶。",
+    description: "61 Aldwych保留石材街角立面，中部三层窗带采用连续石柱与深色金属窗间板，屋顶角亭保留切角轮廓、分格窗和八面斜屋顶；Kingsway街翼的天窗列与连续坡屋面相接。",
     note: "沿街外观依据改造前归档照片深化。61A已确认为LSE物业，模型占地边界及与邻楼衔接仍待校准，楼高、窗距、屋顶进深和未见背面仍为估计；未将未来改造方案或内部效果图作为现状建模。",
-    images: [["61a-portal", "街角三层石柱门户"], ["61a-belts", "三层连续石柱与金属窗间板"], ["61a-pavilion", "切角屋顶角亭与环绕窗带"], ["61a-exterior", "61 Aldwych转角入口与石材立面"]],
+    images: [["61a-portal", "街角三层石柱门户"], ["61a-belts", "三层连续石柱与金属窗间板"], ["61a-pavilion", "Kingsway天窗与坡屋面"], ["61a-exterior", "61 Aldwych转角入口与石材立面"]],
   },
   "5LF": {
     description: "Lincoln’s Inn Fields北侧的四层排屋，以黄褐色砖墙、三列白色推拉窗和浅色底层构成立面。入口台阶、黑色栏杆与两侧烟囱已加入模型。",
