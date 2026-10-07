@@ -7,13 +7,12 @@ sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
 from refine_old_foyer174 import apply_old_foyer174, COLLECTION
-from refine_col_exterior175 import apply_col_exterior175
-from refine_clm_exterior175 import apply_clm_exterior175
-from refine_street_environment175 import apply_street_environment175
+from refine_kgs_exterior176 import apply_kgs_exterior176
+from refine_portugal_environment176 import apply_portugal_environment176
 from refine_saw_lower_structure173 import OLD_STAIR_NAMES, OLD_FLOORS, FLOOR_NAMES
 from refine_street_fixtures173 import OWNED
-REPORT = ROOT / 'result/blender/stage175'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v175.blend'
+REPORT = ROOT / 'result/blender/stage176'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v176.blend'
 proof = json.loads((REPORT / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -21,12 +20,18 @@ for scene in bpy.data.scenes:
     for layer in scene.view_layers:
         layer.update()
 assert geometry_signatures() == proof['geometrySignatures']
-for refiner in (apply_col_exterior175, apply_clm_exterior175, apply_street_environment175):
+for refiner in (apply_kgs_exterior176, apply_portugal_environment176):
     assert refiner()['alreadyApplied']
 assert geometry_signatures() == proof['geometrySignatures']
 assert {o.name:o.hide_render for o in bpy.data.objects} == proof['visibility']
 for name, digest in proof['originalShapesAndUVs'].items():
     assert shape_signature(bpy.data.objects[name]) == digest
+attic = bpy.data.collections['KGS176_PORTUGAL_ATTIC']
+assert attic['windowAxes'] == 5 and attic['paneFacets'] == 9
+assert len(bpy.data.objects['KGS176_attic_single_glass'].data.polygons) == 9
+assert all(len(o.users_collection) == 1 and o.users_collection[0].name == '00_SITE'
+           for o in (bpy.data.objects['SITE176_PEA_Portugal_frontage_bollards'],
+                     bpy.data.objects['SITE176_PEA_Portugal_double_yellow_lines']))
 campus = set(bpy.data.scenes['00_CAMPUS_COMPLETE'].objects.keys())
 room = bpy.data.collections['LRB_PUBLIC_INTERIOR168_study']
 assert room.all_objects and all(obj.name not in campus for obj in room.all_objects)
@@ -53,10 +58,10 @@ assert all(o.name in campus for o in foyer.all_objects)
 assert all(bpy.data.objects[n].hide_render for n in proof['archivedObjects'])
 assert not bpy.data.libraries
 assert not any(i.source == 'FILE' and not i.packed_file for i in bpy.data.images)
-result = dict(version=175, sourceModelSha256=proof['sourceModelSha256'],
-              savedSceneReopened=True, allMeshSignaturesVerified=True,
+result = dict(version=176, sourceModelSha256=proof['sourceModelSha256'],
+              savedSceneReopened=True, atticWindowAxes=5, atticPaneFacets=9, streetMeshesSingleSiteMembership=True, allMeshSignaturesVerified=True,
               allOriginalShapesAndUVsPreserved=True, idempotent=True,
               independentRoomsOutsideCampus=True, entranceFoyerRegisteredToCampus=True, externalDependencies=False,
               archivedObjects=proof['archivedObjects'])
 (REPORT / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-print('BUILDINGS175_REOPENED_VERIFIED')
+print('BUILDINGS176_REOPENED_VERIFIED')
