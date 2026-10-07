@@ -1224,5 +1224,29 @@
     "name": "cbg-205-interior",
     "label": "CBG.2.05 Wolfson Seminar Room",
     "spaceId": "cbg-205"
+  },
+  {
+    "code": "OLD",
+    "name": "old-foyer-interior",
+    "spaceId": "old-foyer",
+    "label": "Old Building主入口分层门厅"
+  },
+  {
+    "code": "CAMPUS",
+    "name": "john-watkins-seating",
+    "label": "John Watkins Plaza木质野餐桌",
+    "view": {
+      "position": [
+        19,
+        3.1,
+        -14
+      ],
+      "target": [
+        46,
+        1.2,
+        10
+      ],
+      "fov": 61
+    }
   }
 ]
