@@ -12,11 +12,11 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
-from refine_shf_exterior179 import apply_shf_exterior179
-from refine_landscape179 import apply_landscape179
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v178.blend'
-TARGET = ROOT / 'result/blender/LSE_campus_detailed_v179.blend'
-REPORT = ROOT / 'result/blender/stage179'
+from refine_con_exterior180 import apply_con_exterior180
+from refine_par_exterior180 import apply_par_exterior180
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v179.blend'
+TARGET = ROOT / 'result/blender/LSE_campus_detailed_v180.blend'
+REPORT = ROOT / 'result/blender/stage180'
 
 
 def refine_building_details():
@@ -24,7 +24,7 @@ def refine_building_details():
     if TARGET.exists() and report_path.exists():
         proof = json.loads(report_path.read_text())
         assert hashlib.sha256(TARGET.read_bytes()).hexdigest() == proof['sourceModelSha256']
-        print('BUILDINGS179_ALREADY_CURRENT')
+        print('BUILDINGS180_ALREADY_CURRENT')
         return
     REPORT.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.open_mainfile(filepath=str(BASE))
@@ -36,7 +36,7 @@ def refine_building_details():
     shapes = {o.name:shape_signature(o) for o in bpy.data.objects if o.type=='MESH'}
     visibility = {o.name: o.hide_render for o in bpy.data.objects}
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
-    changes = [apply_shf_exterior179(), apply_landscape179()]
+    changes = [apply_con_exterior180(), apply_par_exterior180()]
     for scene in bpy.data.scenes:
         for layer in scene.view_layers:
             layer.update()
@@ -54,13 +54,13 @@ def refine_building_details():
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(TARGET))
-    proof = {'version': 179, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
+    proof = {'version': 180, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
              'sourceModelSha256': hashlib.sha256(TARGET.read_bytes()).hexdigest(),
              'allUnrelatedMeshesPreserved': True, 'changes': changes,
              'objects': len(bpy.data.objects), 'geometrySignatures': after, 'originalShapesAndUVs': shapes, 'archivedObjects': sorted(archived),
              'visibility': {o.name:o.hide_render for o in bpy.data.objects}}
     report_path.write_text(json.dumps(proof, indent=2) + '\n')
-    print('BUILDINGS179_SAVED', len(bpy.data.objects), len(added))
+    print('BUILDINGS180_SAVED', len(bpy.data.objects), len(added))
 
 
 if __name__ == '__main__':
