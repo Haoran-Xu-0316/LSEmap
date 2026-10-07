@@ -8,6 +8,15 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition175 corrects the lower COL street piers: ordinary stone is smooth,
+Garrick corner rustication remains, and three Aldwych piers have recessed reeds.
+CLM receives two continuous low guards along its curved street-window frontage,
+with the central and side entrances clear. Two photographed ventilation grilles
+now occupy actual openings in the OLD Houghton approach wall. All three scopes
+share geometry between the overview and building views. Photo dimensions remain
+estimates; CON's upper facade and complete present-day interiors are unfinished.
+
+
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
 wall tiles. LRB's complete north skylight aperture now faces outward. Four merged
 A-frame picnic tables enrich John Watkins Plaza from a2021photograph. OLD's
@@ -185,7 +194,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v174.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v175.blend`.
 Edition174 small components cover the OLD entrance foyer, MAR north loggia,
 LRB north aperture and John Watkins seating. Accepted earlier facade components
 remain as source evidence within the integrated model.
