@@ -8,13 +8,14 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition176 corrects the complete photographed Portugal Street attic of King's
-Chambers: three central windows and two canted end bays replace the repeated flat
-window row. Five black bollards and double yellow lines enrich the Peacock
-Theatre frontage in the shared campus scene. Positions and dimensions remain
-photo estimates. FAW, SAL and PAR were reviewed without unsupported changes;
-35L's May2026 construction newsletter does not establish the current full envelope.
-Unseen elevations and complete present-day interiors remain unfinished.
+Edition177 corrects the outward normals of Cowdray's110glass boxes and seats
+closed roof-cap assemblies on11photographed street dormers. A narrow Kingsway
+roof slope now runs behind ten retained61A dormers with registered cutouts;
+unseen roof continuations remain provisional. MAR's107Great Hall panes and54
+mezzanine guards now use single surfaces and a lighter neutral glass finish.
+Glass display values and photo dimensions remain estimates. John Watkins Plaza
+was checked for continuous paving without adding guessed drains or furniture.
+Complete current interiors and unseen elevations remain unfinished.
 
 
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
