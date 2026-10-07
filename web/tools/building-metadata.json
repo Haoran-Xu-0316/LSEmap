@@ -1925,7 +1925,12 @@
           ],
           "photographDate": "Unknown;2017 upload path does not establish current condition"
         }
-      ]
+      ],
+      "latestInteriorReview": {
+        "version": 171,
+        "scope": "Historical fifth-to-sixth curved stair connection registered to retained central opening;26 treads, radius and angles estimated. Original floors and lower stairs preserved. Fourth-to-fifth and side cores remain incomplete.",
+        "source": "2014 official occupants guide pages26/27"
+      }
     },
     {
       "code": "SHF",
@@ -2394,6 +2399,32 @@
         "kind": "room-sample",
         "label": "CKK.1.07排式教室",
         "scope": "依据LSE官方同房号平面与照片建立50座历史教学室样本。桌椅位置按平面描摹，颜色与可见设备按照片估算；米制尺度、层高及不可见构造未测量。侧后墙和部分顶面剖开，不推测楼内连通，不代表2026年布置。历史页面使用旧名NAB.1.07，同号CKK资产用于房间样本。"
+      }
+    },
+    {
+      "id": "cbg-205",
+      "label": "CBG.2.05 Wolfson Seminar Room",
+      "code": "CBG",
+      "collection": "CBG205_ROOM171_study",
+      "scope": "依据同房号LSE官方历史平面与照片建立42座Wolfson Seminar Room样本。7组六座曲线桌按平面注册，可见白色椅、蓝色圆形吸声板、明装风管与投影墙按照片近似。尺度、层高、不可见构造与顶面完整布置均为估算，未与整栋楼层测绘配准，不代表2026年布置。",
+      "gallery": "cbg-205-interior",
+      "interiorView": {
+        "position": [
+          -13,
+          11,
+          -14
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CBG.2.05 Wolfson Seminar Room",
+        "scope": "依据同房号LSE官方历史平面与照片建立42座Wolfson Seminar Room样本。7组六座曲线桌按平面注册，可见白色椅、蓝色圆形吸声板、明装风管与投影墙按照片近似。尺度、层高、不可见构造与顶面完整布置均为估算，未与整栋楼层测绘配准，不代表2026年布置。"
       }
     }
   ],
