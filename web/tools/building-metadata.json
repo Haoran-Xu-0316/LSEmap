@@ -1227,7 +1227,8 @@
         "version": 136,
         "status": "retained-pending-current-evidence",
         "scope": "2008 daylight reference suggests no separate canopy, but current absence cannot be established by the oblique shadowed2025/26 handbook night view. Existing canopy retained; no accepted geometry or visibility change."
-      }
+      },
+      "interiorCollection": "LRB_PUBLIC_INTERIOR168_study"
     },
     {
       "code": "MAR",
