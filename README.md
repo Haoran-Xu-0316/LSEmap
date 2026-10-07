@@ -8,6 +8,14 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition167 corrects five photograph-supported COL window frames and adds two
+independent teaching-room studies: CBG.1.04 with42 seats around seven group tables
+and CKK.1.07 with50 red seats in six rows. Historical plans and matching room
+photographs guide the layouts; current published capacities agree, but do not
+establish current room arrangements. Houghton street refinements follow the
+archived street photograph, using two utility covers and two dark raised tree
+boxes in four merged meshes. Dimensions and unobserved construction remain estimates.
+
 Edition166 removes duplicated glass surfaces from125 SAW curtain lights and
 8 CBG entrance leaves, opening their overlapping curtain panes. PAN's shared
 entrance and25 registered front windows receive independent clearer finishes;
@@ -132,7 +140,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v166.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v167.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
