@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "172",
-  "sourceModelSha256": "79cc84e8e1c39917ac583f92a8c4f2543682f191e436b5b79d1d3ba9e0829fed",
+  "version": "173",
+  "sourceModelSha256": "8e74d3bd26336e39ae555ab6492a766948a80b0d9938c1f9ac6c1304b900226c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -623,10 +623,10 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 164,
-        "scope": "Legacy glazing metalness0.6 corrected to dielectric0 with colour, roughness and opacity retained. Geometry, openings and frames unchanged. Six public-atrium glazing objects receive independently bound neutral-clear finish with estimated webOpacity0.16; original shared glass material retained for other buildings.",
-        "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/",
-        "photographDate": "unknown"
+        "version": 173,
+        "scope": "Eighteen roof-pavilion thin glass boxes replaced by eighteen outward single faces with original face UV; dielectric metallic0, estimated roughness0.16, transmission0.12 and retained webOpacity0.55. Original frame, floor and archived glazing retained.",
+        "limitations": "Optical properties are estimates; no new unseen pavilion room layout or measured2026 condition claim.",
+        "audit": "result/blender/ckk_glass173/audit.json"
       },
       "interiorView": {
         "position": [
@@ -673,6 +673,12 @@
             "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/"
           ],
           "photographDate": "Unknown; not a verified2026 condition survey"
+        },
+        {
+          "version": 164,
+          "scope": "Legacy glazing metalness0.6 corrected to dielectric0 with colour, roughness and opacity retained. Geometry, openings and frames unchanged. Six public-atrium glazing objects receive independently bound neutral-clear finish with estimated webOpacity0.16; original shared glass material retained for other buildings.",
+          "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/",
+          "photographDate": "unknown"
         }
       ],
       "bounds": {
@@ -742,10 +748,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-a5834c794aca.glb",
-        "bytes": 2746512,
-        "triangles": 236494,
-        "sha256": "a5834c794acaab2c58a0d52935460bd271a3159153ea266d6354590b21b6b2e3",
+        "url": "/models/details/ckk-exterior-732f38c33ae2.glb",
+        "bytes": 2744168,
+        "triangles": 236314,
+        "sha256": "732f38c33ae26b127dfcc97499408dd374f3fdee8614230f0910d58485baa2f2",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -5058,10 +5064,11 @@
         }
       ],
       "latestInteriorReview": {
-        "version": 172,
-        "scope": "Fourth-to-fifth curved stair joins the retained fourth floor and edition171 fifth landing; fifth-to-sixth connection retained. Historical2014 topology and estimated dimensions, not exact current reconstruction.",
-        "source": "2014 official occupants guide pages27/28",
-        "limitations": "Side cores, basement circulation and individual rooms remain incomplete."
+        "version": 173,
+        "scope": "Main circulation re-registered from the historical whole-floor diagrams; six changing folded flights, shared landings and six floor apertures replace the misplaced continuous helix and171/172 extensions.146 estimated full riser treads; one intersecting independent anti-slip strip omitted.",
+        "source": "2014 official occupants guide pages26–32",
+        "sourceURL": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
+        "limitations": "Affine registration, flight centerlines, counts, heights and guards are estimates. Full room layouts, side escape cores, lifts and basement/Venue circulation remain incomplete; not a current2026 as-built model."
       },
       "bounds": {
         "min": [
@@ -5119,21 +5126,21 @@
       ],
       "interiorBounds": {
         "min": [
-          -64.70494079589844,
-          0.20000000298023224,
-          -17.2246036529541
+          -73.09536743164062,
+          0.0020000000949949026,
+          -11.890684127807617
         ],
         "max": [
-          -58.644962310791016,
-          22.950000762939453,
-          -9.540386199951172
+          -64.98460388183594,
+          22.469806671142578,
+          -1.8765137195587158
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-fc688d62cc9d.glb",
-        "bytes": 12287448,
-        "triangles": 1253363,
-        "sha256": "fc688d62cc9d0263adcad9597f47e64eb621b8464d1c03a011e72ce0885d574f",
+        "url": "/models/details/saw-exterior-40c01725008d.glb",
+        "bytes": 12142236,
+        "triangles": 1236799,
+        "sha256": "40c01725008d6cba9d61f68c6a4763de99adfca888ffe51967452a048bcc9e26",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -5148,20 +5155,20 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-8fa2b0db9bd4.glb",
-        "bytes": 317456,
-        "triangles": 28512,
-        "sha256": "8fa2b0db9bd473926328c68153cbd69fd35497e8d40b9ddf0f7e8fc4ff4b0a69",
+        "url": "/models/details/saw-interior-e94f880221a9.glb",
+        "bytes": 140776,
+        "triangles": 10548,
+        "sha256": "e94f880221a9efc788737656c18be7a14253d8e305c00f4d51294269668e4109",
         "bounds": {
           "min": [
-            -64.70494079589844,
-            0.20000000298023224,
-            -17.2246036529541
+            -73.09536743164062,
+            0.0020000000949949026,
+            -11.890684127807617
           ],
           "max": [
-            -58.644962310791016,
-            22.950000762939453,
-            -9.540386199951172
+            -64.98460388183594,
+            22.469806671142578,
+            -1.8765137195587158
           ]
         }
       },
