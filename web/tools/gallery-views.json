@@ -139,7 +139,7 @@
   {
     "code": "KGS",
     "name": "kgs-exterior",
-    "label": "King’s Chambers凸窗与弧顶"
+    "label": "King’s Chambers顶部凸窗与绿色陶砖"
   },
   {
     "code": "KGS",
@@ -831,21 +831,21 @@
     }
   },
   {
-    "code": "PEA",
+    "code": "CAMPUS",
     "name": "pea-frontage",
-    "caption": "剧院立面",
+    "caption": "剧院入口、路桩与双黄线",
     "view": {
       "position": [
-        -54.297,
-        12.8,
-        52.26
+        -63,
+        9,
+        38
       ],
       "target": [
-        -64.386,
-        8.8,
-        28.298
+        -61.8,
+        1.8,
+        28.8
       ],
-      "fov": 48
+      "fov": 70
     }
   },
   {
