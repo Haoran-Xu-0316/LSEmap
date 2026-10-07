@@ -7,7 +7,7 @@ import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
 
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages, downloadVerifiedModel } from "./model-loading.js";
-import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows } from "./surface-materials.js";
+import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const COMPANION_CODES = {PAN: "FAW", FAW: "PAN"};
@@ -255,7 +255,7 @@ export class CampusViewer {
           : [object.material];
         object.material = materials.map((material) => {
           const copy = material.clone();
-          copy.side = THREE.DoubleSide;
+          prepareGlazingSides(copy);
           refineMaterialFinish(copy, this.environmentTarget.texture);
           if (contextMeshes.has(object)) {
             // Retain authored wall/roof colour roles before shader uniforms exist.
