@@ -36,7 +36,7 @@ export const buildingDetails = {
   "KGS": {
     description: "King’s Chambers的两组石材凸窗向街道展开，绿色陶瓷顶层、铅色弧顶与三角山花构成屋顶轮廓。中央入口保留拱券、卷饰和带金色字样的绿色铭牌。",
     note: "沿街外观与入口根据归档照片继续细化，保留原有地图轮廓。楼高、窗距、装饰截面、屋顶进深与未见背面仍为估计；未建立内部。",
-    images: [["kgs-exterior", "King’s Chambers凸窗与弧顶"], ["kgs-entrance", "King’s Chambers石材拱券与绿色入口铭牌"]],
+    images: [["kgs-exterior", "King’s Chambers顶部凸窗与绿色陶砖"], ["kgs-entrance", "King’s Chambers石材拱券与绿色入口铭牌"]],
   },
   LAK: {
     description: "Lakatos Building的两侧街面分别采用大幅店面玻璃和拱形底层窗，上层保留细格推拉窗、石材窗楣、转角石带与齿饰檐口。",
@@ -76,7 +76,7 @@ export const buildingDetails = {
   "PEA": {
     "description": "Peacock Theatre入口为蓝黑色门面、黄铜星形装饰和暖色雨棚灯。上部为三列窗的浅色体量，右侧较低并设屋顶百叶，侧面保留深色砖墙。",
     "note": "依据场馆现行页面实拍建模，图片上传路径为2023年，准确拍摄日期未核实。楼高、体量分界与未见立面为估算，内部保留既有模型。",
-    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-frontage", "入口、星形装饰与高低体量"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "剧院内部"]]
+    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-frontage", "剧院入口、路桩与双黄线"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "剧院内部"]]
 },
   "PEL": {
     "description": "Pethick-Lawrence House入口采用外挑银色金属门楣、黄色侧边、首层窗盒和旋转玻璃门。",
