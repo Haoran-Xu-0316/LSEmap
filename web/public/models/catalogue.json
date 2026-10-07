@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "171",
-  "sourceModelSha256": "d35af64836657328bafdfe92c0bb9f0f8fe106a1869aa75d0320f0be01306e71",
+  "version": "172",
+  "sourceModelSha256": "79cc84e8e1c39917ac583f92a8c4f2543682f191e436b5b79d1d3ba9e0829fed",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3160,10 +3160,9 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 164,
-        "scope": "Legacy glazing metalness0.6 corrected to dielectric0 with colour, roughness and opacity retained. Geometry, openings and frames unchanged. Existing photographed metal atrium rails and lift glazing retained.",
-        "source": "Native material audit; dielectric correction only, no new colour or transmission inference.",
-        "photographDate": "unknown"
+        "version": 172,
+        "scope": "Four glass batches on Portugal, Carey and roof window belts cloned with metallic0, roughness0.22 and IOR1.5. Source tint and opaque/transparent status retained. Existing plaza clear glass and roof aperture preserved.",
+        "limitations": "Optics are estimated; opaque proxies remain where no registered interior exists."
       },
       "interiorSections": [
         {
@@ -3335,10 +3334,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-cdd01310f002.glb",
-        "bytes": 6124672,
+        "url": "/models/details/lrb-exterior-36b8a3c8aa03.glb",
+        "bytes": 6124660,
         "triangles": 683027,
-        "sha256": "cdd01310f0028a7b186e9e1ebed2debef3a3a6b35ff5339da23b95d6ce1acebe",
+        "sha256": "36b8a3c8aa033e8814e7302d691081a3ab148e72113936a6e6dd9baa7c1efe91",
         "bounds": {
           "min": [
             24.830078125,
@@ -3353,10 +3352,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-e310c6de5aee.glb",
-        "bytes": 4669308,
+        "url": "/models/details/lrb-interior-6800e5869e83.glb",
+        "bytes": 4669300,
         "triangles": 580348,
-        "sha256": "e310c6de5aee8b0c9baf2431aad213ba76c4173a0e351db4a4f4b4d8e275fea5",
+        "sha256": "6800e5869e8367995712cba2b79bf361c498c98bfa5aa789be72e93342379ed7",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -3670,13 +3669,12 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "version": 172,
+        "scope": "Eight entrance panes use one outward surface each instead of two closed glass faces; existing tint and alpha retained. Remaining explicitly identified glass batches use dielectric metallic0. Frames, stone, openings, roof shape and interiors preserved.",
         "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          "data/collections/old-user-reference/houghton-entrance.png"
         ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "limitations": "Optical parameters estimated. No new unseen interior or surveyed facade claim."
       },
       "interiorView": {
         "position": [
@@ -3840,10 +3838,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-31fbac2a76db.glb",
-        "bytes": 20156252,
-        "triangles": 1669604,
-        "sha256": "31fbac2a76db4d0227a13420d1f60094171affc2e23ec7dbc050c59116b57480",
+        "url": "/models/details/old-exterior-ede225beb74d.glb",
+        "bytes": 20155252,
+        "triangles": 1669524,
+        "sha256": "ede225beb74d819b983eb8718cf88095d816e691750f474333ed085f8699d947",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -5060,9 +5058,10 @@
         }
       ],
       "latestInteriorReview": {
-        "version": 171,
-        "scope": "Historical fifth-to-sixth curved stair connection registered to retained central opening;26 treads, radius and angles estimated. Original floors and lower stairs preserved. Fourth-to-fifth and side cores remain incomplete.",
-        "source": "2014 official occupants guide pages26/27"
+        "version": 172,
+        "scope": "Fourth-to-fifth curved stair joins the retained fourth floor and edition171 fifth landing; fifth-to-sixth connection retained. Historical2014 topology and estimated dimensions, not exact current reconstruction.",
+        "source": "2014 official occupants guide pages27/28",
+        "limitations": "Side cores, basement circulation and individual rooms remain incomplete."
       },
       "bounds": {
         "min": [
@@ -5131,10 +5130,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-6985d85b8887.glb",
-        "bytes": 12271316,
-        "triangles": 1252491,
-        "sha256": "6985d85b888783b103ba846e514f5c1ad53e9e8dffa0a384921b01374649eadd",
+        "url": "/models/details/saw-exterior-fc688d62cc9d.glb",
+        "bytes": 12287448,
+        "triangles": 1253363,
+        "sha256": "fc688d62cc9d0263adcad9597f47e64eb621b8464d1c03a011e72ce0885d574f",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -5149,10 +5148,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-3c09f7dfe12e.glb",
-        "bytes": 304244,
-        "triangles": 27888,
-        "sha256": "3c09f7dfe12e8938208d5bc46805be3763b86b5375553aa54cc3e0e39ade374c",
+        "url": "/models/details/saw-interior-8fa2b0db9bd4.glb",
+        "bytes": 317456,
+        "triangles": 28512,
+        "sha256": "8fa2b0db9bd473926328c68153cbd69fd35497e8d40b9ddf0f7e8fc4ff4b0a69",
         "bounds": {
           "min": [
             -64.70494079589844,
