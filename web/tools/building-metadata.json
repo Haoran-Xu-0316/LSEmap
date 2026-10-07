@@ -591,15 +591,11 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 175,
-        "auditOnly": true,
-        "scope": "资料归属复核无模型改动。2018/2023整栋跨层窗带照片属于CLM，不属于CON；CON上层窗列、侧面和屋顶仍未证实。",
-        "source": [
-          {
-            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
-            "supports": "CON entrance crop only, no complete facade registration"
-          }
-        ]
+        "version": 180,
+        "scope": "Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.",
+        "photographDate": "unknown",
+        "opticalValues": "estimated, not measured",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate"
       },
       "detailView": {
         "label": "入口细节",
@@ -658,6 +654,17 @@
           ],
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
+        },
+        {
+          "version": 175,
+          "auditOnly": true,
+          "scope": "资料归属复核无模型改动。2018/2023整栋跨层窗带照片属于CLM，不属于CON；CON上层窗列、侧面和屋顶仍未证实。",
+          "source": [
+            {
+              "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+              "supports": "CON entrance crop only, no complete facade registration"
+            }
+          ]
         }
       ]
     },
@@ -1949,22 +1956,11 @@
         "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 176,
-        "status": "reviewed-no-change",
-        "scope": "对照官方整楼实拍核对街立面4组上窗、4组砖拱、4个天窗、2个风帽及双门入口；保留66和120版外观，本轮无改动。",
-        "limitations": [
-          "2015项目档案及2025/26手册不等于2026现状测绘，照片拍摄日期未知。",
-          "后屋顶、远侧及背立面窗列尚未完整核实；尺寸、砖石颜色和窗框细节仍为估算。"
-        ],
-        "sourceUrls": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
-        ],
+        "version": 180,
+        "scope": "Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.",
         "photographDate": "unknown",
-        "addedObjects": 0,
-        "archivedObjects": 0,
-        "changedObjects": 0,
-        "audit": "result/blender/par_exterior176/audit.json"
+        "opticalValues": "estimated, not measured",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf"
       },
       "interiorView": {
         "position": [
@@ -1990,6 +1986,24 @@
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
           ]
+        },
+        {
+          "version": 176,
+          "status": "reviewed-no-change",
+          "scope": "对照官方整楼实拍核对街立面4组上窗、4组砖拱、4个天窗、2个风帽及双门入口；保留66和120版外观，本轮无改动。",
+          "limitations": [
+            "2015项目档案及2025/26手册不等于2026现状测绘，照片拍摄日期未知。",
+            "后屋顶、远侧及背立面窗列尚未完整核实；尺寸、砖石颜色和窗框细节仍为估算。"
+          ],
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ],
+          "photographDate": "unknown",
+          "addedObjects": 0,
+          "archivedObjects": 0,
+          "changedObjects": 0,
+          "audit": "result/blender/par_exterior176/audit.json"
         }
       ]
     },
