@@ -130,7 +130,7 @@ export const buildingDetails = {
       "Columbia House以浅色石材立面沿Aldwych与Houghton Street转角展开。凹入窗洞、石材分缝、连续檐口与Garrick转角店面构成沿街层次。",
     note: "已深化街面及木门入口；窗列节奏、屋顶和未见背面为估计，未建立完整内部。",
     images: [
-      ["col-exterior", "Columbia House沿街石材立面"],
+      ["col-exterior", "Columbia House光整石柱与街角块石"],
       ["col-garrick-entrance", "Garrick街角入口"],
       ["col-entrance", "木门、铭牌与石门廊"],
     ],
@@ -196,7 +196,7 @@ export const buildingDetails = {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室，SSC展示照片可见接待区与夹层。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "入口侧坡道与银色扶手"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
   },
   SAL: {
     description:
@@ -208,7 +208,7 @@ export const buildingDetails = {
     description:
       "面向Aldwych的凸弧石材立面，中部跨层高窗配窄阳台，下方为柱列门廊，上方为带老虎窗的阁楼屋顶。",
     note: "门廊雕饰、后侧与屋顶仍有简化。内部新增CLM.1.01小组教室，三角桌、木墙裙和窗户依据历史资料研究，尺寸估算。",
-    images: [["clm-exterior", "Clement House的Aldwych立面"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
+    images: [["clm-exterior", "Clement House曲面立面与临街护栏"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
   },
   KSW: {
     description:
