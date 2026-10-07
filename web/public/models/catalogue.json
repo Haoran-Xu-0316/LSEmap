@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "177",
-  "sourceModelSha256": "942931576b9694f02d38264089079459ced5c100ba0985c479bc570dfd8805bc",
+  "version": "178",
+  "sourceModelSha256": "ea8b0e003cf01112bb75b004a5ac764d305aedd90fde6e138fa290987a140dde",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -752,10 +752,16 @@
         "scope": "Fixed roof architecture guided by Grimshaw and Jens Willebrand project photographs. Precise capture date and 2026 furniture arrangement unverified. Pavilion footprint, placement and height retained as estimates; terrace depth photo-estimated. Historic frontage, mansard, atrium and all other buildings retained. Full meeting-room interiors and remaining elevations require review."
       },
       "latestReview": {
-        "version": 173,
-        "scope": "Eighteen roof-pavilion thin glass boxes replaced by eighteen outward single faces with original face UV; dielectric metallic0, estimated roughness0.16, transmission0.12 and retained webOpacity0.55. Original frame, floor and archived glazing retained.",
-        "limitations": "Optical properties are estimates; no new unseen pavilion room layout or measured2026 condition claim.",
-        "audit": "result/blender/ckk_glass173/audit.json"
+        "version": 178,
+        "scope": "Read-only review of principal elevation, entrance columns, fanlight, window groups and cornices against archived Grimshaw and Willebrand built photographs. Retained164/173 glazing corrections; no reliable additional geometry correction established.",
+        "sourceURLs": [
+          "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/",
+          "https://www.willebrand.com/en/projects/lse-london-school-of-economics-grimshaw-architects.398"
+        ],
+        "limitations": "Photograph dates unknown; no measured current colour target or complete rear-elevation registration. Fine column grooves unresolved.",
+        "audit": "result/blender/ckk_exterior178/audit.json",
+        "addedObjects": 0,
+        "archivedObjects": 0
       },
       "interiorView": {
         "position": [
@@ -808,6 +814,12 @@
           "scope": "Legacy glazing metalness0.6 corrected to dielectric0 with colour, roughness and opacity retained. Geometry, openings and frames unchanged. Six public-atrium glazing objects receive independently bound neutral-clear finish with estimated webOpacity0.16; original shared glass material retained for other buildings.",
           "source": "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/",
           "photographDate": "unknown"
+        },
+        {
+          "version": 173,
+          "scope": "Eighteen roof-pavilion thin glass boxes replaced by eighteen outward single faces with original face UV; dielectric metallic0, estimated roughness0.16, transmission0.12 and retained webOpacity0.55. Original frame, floor and archived glazing retained.",
+          "limitations": "Optical properties are estimates; no new unseen pavilion room layout or measured2026 condition claim.",
+          "audit": "result/blender/ckk_glass173/audit.json"
         }
       ],
       "bounds": {
@@ -3405,14 +3417,13 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 174,
-        "scope": "Complete north skylight aperture:178 reversed faces corrected over64.83m². Original vertices, outline, per-corner UVs, alpha0.58, triangular frame and other facades retained. Project photographs date unknown; not a2026survey.",
-        "source": [
-          {
-            "url": "https://tyrensakt.com/projects/lse-library/",
-            "supports": "Dome north-cut skylight and retained triangular metal frame"
-          }
-        ]
+        "version": 178,
+        "scope": "Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.",
+        "source": "https://food.lse.ac.uk/outlets",
+        "photographDate": "unknown",
+        "audit": "result/blender/lrb_exterior178/audit.json",
+        "addedObjects": 1,
+        "archivedObjects": 1
       },
       "interiorSections": [
         {
@@ -3514,6 +3525,16 @@
           "version": 172,
           "scope": "Four glass batches on Portugal, Carey and roof window belts cloned with metallic0, roughness0.22 and IOR1.5. Source tint and opaque/transparent status retained. Existing plaza clear glass and roof aperture preserved.",
           "limitations": "Optics are estimated; opaque proxies remain where no registered interior exists."
+        },
+        {
+          "version": 174,
+          "scope": "Complete north skylight aperture:178 reversed faces corrected over64.83m². Original vertices, outline, per-corner UVs, alpha0.58, triangular frame and other facades retained. Project photographs date unknown; not a2026survey.",
+          "source": [
+            {
+              "url": "https://tyrensakt.com/projects/lse-library/",
+              "supports": "Dome north-cut skylight and retained triangular metal frame"
+            }
+          ]
         }
       ],
       "entranceCanopyReview": {
@@ -3589,10 +3610,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-f9bd854d9861.glb",
-        "bytes": 6124728,
-        "triangles": 683027,
-        "sha256": "f9bd854d98617ce8eba61621400d18f29cb01b4eb722278c538226826e428ecf",
+        "url": "/models/details/lrb-exterior-86a7fdf7f5d2.glb",
+        "bytes": 6116760,
+        "triangles": 682367,
+        "sha256": "86a7fdf7f5d2a9a236decbfa1e331172d5ac16c5bfaa9bff870025920de69283",
         "bounds": {
           "min": [
             24.830078125,
@@ -3951,15 +3972,12 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 174,
-        "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和走廊拱口可见；尺度、家具和高度为估计，未建立侧向电梯及相邻房间，也不证明当前布置。",
-        "source": [
-          {
-            "url": "https://www.designengine.co.uk/projects/reception-london-school-of-economics/",
-            "period": "Completed2011",
-            "supports": "Built split-level foyer photographs and architect entrance plan"
-          }
-        ]
+        "version": 178,
+        "scope": "Eight registered Houghton Street ramp posts now use independent black coating while the continuous handrail stays silver. Shapes, matrices and UVs retained; original object archived. Photo capture date unknown and coating values estimated. Whole-building interior layouts remain unfinished.",
+        "source": "data/collections/public-realm-2026/user-references/reference-09.png",
+        "audit": "result/blender/houghton_environment178/audit.json",
+        "addedObjects": 1,
+        "archivedObjects": 1
       },
       "interiorView": {
         "position": [
@@ -4053,6 +4071,17 @@
             "data/collections/old-user-reference/houghton-entrance.png"
           ],
           "limitations": "Optical parameters estimated. No new unseen interior or surveyed facade claim."
+        },
+        {
+          "version": 174,
+          "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和走廊拱口可见；尺度、家具和高度为估计，未建立侧向电梯及相邻房间，也不证明当前布置。",
+          "source": [
+            {
+              "url": "https://www.designengine.co.uk/projects/reception-london-school-of-economics/",
+              "period": "Completed2011",
+              "supports": "Built split-level foyer photographs and architect entrance plan"
+            }
+          ]
         }
       ],
       "houghtonAccessReview": {
@@ -4131,10 +4160,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-bcf4799b461e.glb",
-        "bytes": 20175744,
+        "url": "/models/details/old-exterior-0924a7d26151.glb",
+        "bytes": 20176732,
         "triangles": 1670364,
-        "sha256": "bcf4799b461eabc1a21d6f07ca33eee632d71d10c62cce15a0ff7f8382bf5901",
+        "sha256": "0924a7d26151b9dec35a21267869ae5902896628b57adb92034d80ac4f695d73",
         "bounds": {
           "min": [
             -39.1646614074707,
