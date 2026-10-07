@@ -1196,14 +1196,13 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 156,
-        "status": "reviewed-retained-unregistered-rear-wing-and-topband",
-        "scope": "Whole, rear and academic-wing production views reviewed against built Kane photographs. Rear-left massing and vertical fins, and highest-wing western topband, still lack unique elevation registration. Preserve the accepted model rather than fill or stretch unregistered surfaces. No geometry, material or interior change.",
-        "sources": [
-          "Archived built Kane03 and Kane05 photographs",
-          "Existing independently registered plan residual2.852m"
+        "version": 165,
+        "scope": "Correct the photographed north-left ground-floor bay to solid concrete, remove that bay glazing and joinery in retained copies, and add the two-line dark building name. All other window bays and interior studies retained.",
+        "evidence": [
+          "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
         ],
-        "photographDate": "unknown"
+        "limitations": "Photo-guided dimensions and material appearance are estimates. Capture dates unknown; no complete current survey claim.",
+        "audit": "result/blender/mar_detail165/audit.json"
       },
       "interiorView": {
         "position": [
@@ -1271,6 +1270,16 @@
           "scope": "Three corners of architect-authored2022 third-floor plan register to retained footprint within0.267m, but two independent diagonal checks differ by up to2.852m. Plan right edge corresponds to north frontage after rotation. High-wing correspondence remains unaccepted; retained MAR geometry unchanged. Approximate raster picks are not surveyed coordinates.",
           "source": "https://cdn.ca.emap.com/wp-content/uploads/sites/12/2022/04/grafton-architects-architectural-review.pdf",
           "photographDate": "2022 published built drawings"
+        },
+        {
+          "version": 156,
+          "status": "reviewed-retained-unregistered-rear-wing-and-topband",
+          "scope": "Whole, rear and academic-wing production views reviewed against built Kane photographs. Rear-left massing and vertical fins, and highest-wing western topband, still lack unique elevation registration. Preserve the accepted model rather than fill or stretch unregistered surfaces. No geometry, material or interior change.",
+          "sources": [
+            "Archived built Kane03 and Kane05 photographs",
+            "Existing independently registered plan residual2.852m"
+          ],
+          "photographDate": "unknown"
         }
       ]
     },
@@ -1296,11 +1305,13 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 163,
-        "scope": "One left Houghton Street wall lantern added from the engineer completed-project photograph. Registered plate backs meet the retained native wall plane; inverted opal shade, blue mount and rim are approximate. No right-hand duplicate or emissive night lighting inferred. All existing facade and room geometry retained.",
-        "source": "https://webbyates.com/projects/the-old-building/",
-        "projectCompletionYear": 2024,
-        "photographDate": "unknown"
+        "version": 165,
+        "scope": "Replace raised planter seam strips with closed stone panels, shallow recessed joints and an independent coping; retain planter bounds, planting and other facade geometry.",
+        "evidence": [
+          "data/collections/public-realm-2026/user-references/reference-04.png"
+        ],
+        "limitations": "Photo-guided dimensions and material appearance are estimates. Capture dates unknown; no complete current survey claim.",
+        "audit": "result/blender/old_detail165/audit.json"
       },
       "interiorView": {
         "position": [
@@ -1368,6 +1379,13 @@
           "version": 156,
           "status": "built-photo-horizontal-blue-mansard-window-caps",
           "scope": "Five registered lower mansard window crowns corrected from triangular proposal stone pediments to photographed horizontal blue caps with two supports each. Sixth obscured left window retained. Existing glass, frames, stone envelope, roof, entrance, relief, ramp and planting preserved. Projection, supports and cap dimensions remain photograph estimates.",
+          "source": "https://webbyates.com/projects/the-old-building/",
+          "projectCompletionYear": 2024,
+          "photographDate": "unknown"
+        },
+        {
+          "version": 163,
+          "scope": "One left Houghton Street wall lantern added from the engineer completed-project photograph. Registered plate backs meet the retained native wall plane; inverted opal shade, blue mount and rim are approximate. No right-hand duplicate or emissive night lighting inferred. All existing facade and room geometry retained.",
           "source": "https://webbyates.com/projects/the-old-building/",
           "projectCompletionYear": 2024,
           "photographDate": "unknown"
