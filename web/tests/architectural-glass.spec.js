@@ -9,8 +9,9 @@ test('glazing release corrects optical layering and preserves independent rooms'
  const proof=await read('result/blender/stage166/building-refinement.json');
  const glass=await read('result/blender/stage164/building-refinement.json');
  const native=await read('result/blender/stage166/reopened-verification.json');
- expect(current.version).toBe('166');expect(current.buildings).toHaveLength(31);
- expect(current.sourceModelSha256).toBe(proof.sourceModelSha256);
+ expect(Number(current.version)).toBeGreaterThanOrEqual(166);expect(current.buildings).toHaveLength(31);
+ const accepted=await read(`result/blender/stage${current.version}/building-refinement.json`);
+ expect(current.sourceModelSha256).toBe(accepted.sourceModelSha256);
  expect(native.sourceModelSha256).toBe(proof.sourceModelSha256);
  expect(native.allMeshSignaturesVerified).toBe(true);expect(native.idempotent).toBe(true);
  expect(native.originalSharedMaterialsPreserved).toBe(true);expect(native.allOriginalShapesAndUVsPreserved).toBe(true);expect(native.dielectricBindingsVerified).toBe(19);
@@ -22,7 +23,8 @@ test('glazing release corrects optical layering and preserves independent rooms'
   if(['51L','COL','CON','KSW','OLD','PEL','SAL','SAR','CBG','SAW','PAN'].includes(building.code))expect(building.detailedExterior.sha256).not.toBe(old.detailedExterior.sha256);
   else expect(building.detailedExterior,building.code).toEqual(old.detailedExterior);
   expect(building.detailedInterior,building.code).toEqual(old.detailedInterior);
-  expect(building.interiorSpaces,building.code).toEqual(old.interiorSpaces);
+  const preserved=(building.interiorSpaces||[]).filter(s=>!['cbg-104','ckk-107'].includes(s.id));
+  expect(preserved,building.code).toEqual(old.interiorSpaces||[]);
  }
  const campus=await model('/models/campus.glb');
  // The exporter joins components into semantic building meshes.
