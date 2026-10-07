@@ -691,17 +691,18 @@
     "name": "watkins-plaza",
     "view": {
       "position": [
-        45,
-        25,
-        8.2
+        19,
+        3.1,
+        -14
       ],
       "target": [
-        45,
-        0.3,
-        8
+        46,
+        1.2,
+        10
       ],
-      "fov": 35
-    }
+      "fov": 61
+    },
+    "label": "John Watkins Plaza木桌、树池与铺装"
   },
   {
     "code": "CAMPUS",
@@ -1230,23 +1231,5 @@
     "name": "old-foyer-interior",
     "spaceId": "old-foyer",
     "label": "Old Building主入口分层门厅"
-  },
-  {
-    "code": "CAMPUS",
-    "name": "john-watkins-seating",
-    "label": "John Watkins Plaza木质野餐桌",
-    "view": {
-      "position": [
-        19,
-        3.1,
-        -14
-      ],
-      "target": [
-        46,
-        1.2,
-        10
-      ],
-      "fov": 61
-    }
   }
 ]
