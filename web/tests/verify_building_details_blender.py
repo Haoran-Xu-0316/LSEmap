@@ -1,5 +1,7 @@
 """Reopen the integrated scene and verify scoped geometry, room separation and idempotence."""
 from pathlib import Path
+import runpy
+runpy.run_path(str(Path(__file__).with_name("verify_old_bench182_blender.py")),run_name="__main__")
 import hashlib, json, sys
 import bpy
 ROOT = Path(__file__).resolve().parents[2]
@@ -17,8 +19,8 @@ import bmesh
 from refine_par_exterior180 import apply_par_exterior180
 from refine_saw_lower_structure173 import OLD_STAIR_NAMES, OLD_FLOORS, FLOOR_NAMES
 from refine_street_fixtures173 import OWNED
-REPORT = ROOT / 'result/blender/stage181'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v181.blend'
+REPORT = ROOT / 'result/blender/stage182'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v182.blend'
 proof = json.loads((REPORT / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -36,7 +38,8 @@ assert len(bpy.data.objects['SHF_NEXT_EXTERIOR179_three_dormer_panes'].data.poly
 for name in ('LANDSCAPE179_Watkins_registered_crowns','LANDSCAPE179_Houghton_planter_crowns'):
     assert name in bpy.data.scenes['00_CAMPUS_COMPLETE'].objects
 
-for record in proof['changes'][0]['records']:
+glass_proof=json.loads((ROOT/'result/blender/stage181/building-refinement.json').read_text())
+for record in glass_proof['changes'][0]['records']:
     original=bpy.data.objects[record['source']];replacement=bpy.data.objects[record['target']]
     assert len(original.data.polygons)==len(replacement.data.polygons)
     assert [tuple(v.co) for v in original.data.vertices]==[tuple(v.co) for v in replacement.data.vertices]
@@ -101,13 +104,14 @@ assert all(o.name in campus for o in foyer.all_objects)
 assert all(bpy.data.objects[n].hide_render for n in proof['archivedObjects'])
 assert not bpy.data.libraries
 assert not any(i.source == 'FILE' and not i.packed_file for i in bpy.data.images)
-result = dict(version=181, sourceModelSha256=proof['sourceModelSha256'],
+result = dict(version=182, sourceModelSha256=proof['sourceModelSha256'],
               savedSceneReopened=True, atticWindowAxes=5, atticPaneFacets=9, streetMeshesSingleSiteMembership=True, marGroundSinglePanes=107, marGuardSinglePanes=54, allMeshSignaturesVerified=True,
               allOriginalShapesAndUVsPreserved=True, idempotent=True,
               independentRoomsOutsideCampus=True, entranceFoyerRegisteredToCampus=True, externalDependencies=False,
               archivedObjects=proof['archivedObjects'])
 result['glassSurfacePolicyVerified']=True
-result['closedShells']=proof['changes'][0]['closedShells']
-result['reversedShells']=proof['changes'][0]['reversedShells']
+result['closedShells']=glass_proof['changes'][0]['closedShells']
+result['reversedShells']=glass_proof['changes'][0]['reversedShells']
+result['benchSeatAndFloorTouching']=True
 (REPORT / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-print('BUILDINGS181_REOPENED_VERIFIED')
+print('BUILDINGS182_REOPENED_VERIFIED')
