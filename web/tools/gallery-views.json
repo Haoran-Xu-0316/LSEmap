@@ -1218,5 +1218,11 @@
     "name": "ckk-107-interior",
     "label": "CKK.1.07排式教室",
     "spaceId": "ckk-107"
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-205-interior",
+    "label": "CBG.2.05 Wolfson Seminar Room",
+    "spaceId": "cbg-205"
   }
 ]
