@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "181",
-  "sourceModelSha256": "bfcbe75e064636b372d1a10cf06a41f59985daf6b4745dbf53269a8f611e5517",
+  "version": "182",
+  "sourceModelSha256": "431deecd02b2a82d4d0784c85d4f047335cd1806e874ae2c0baeeba91dc99c44",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4301,10 +4301,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-a93951e5c360.glb",
-        "bytes": 20181580,
-        "triangles": 1670364,
-        "sha256": "a93951e5c360c5988a555c433732d4e950318bff5456b3c946dcb3be4bd026ed",
+        "url": "/models/details/old-exterior-2593eeee81fb.glb",
+        "bytes": 20181440,
+        "triangles": 1670352,
+        "sha256": "2593eeee81fb64e06bfdccc94d96077beedd2bd02ae64a08c8afedc6cc0aa4d8",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -4415,12 +4415,12 @@
             "fov": 48
           },
           "gallery": "old-foyer-interior",
-          "interiorAsset": "/models/details/old-foyer-interior-fbeca382a32a.glb",
+          "interiorAsset": "/models/details/old-foyer-interior-8e8b27745960.glb",
           "detailedInterior": {
-            "url": "/models/details/old-foyer-interior-fbeca382a32a.glb",
-            "bytes": 19756,
-            "triangles": 976,
-            "sha256": "fbeca382a32a744349ff83754cea8066be00d6f887db6f2d9068e61ca39f0cb3",
+            "url": "/models/details/old-foyer-interior-8e8b27745960.glb",
+            "bytes": 19612,
+            "triangles": 964,
+            "sha256": "8e8b27745960a435a973d337d2f88bbe63c5162e000843f80f0bc7808c884a2f",
             "bounds": {
               "min": [
                 -21.745058059692383,
