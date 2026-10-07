@@ -16,6 +16,10 @@ test('edition173 replaces misregistered stairs and duplicate panes without alter
   else expect(building.detailedExterior,building.code).toEqual(old.detailedExterior);
   expect(building.interiorSpaces,building.code).toEqual(old.interiorSpaces);
  }
+ const platform=await read('result/blender/stage173/platform-export-proof.json');
+ expect(platform.platformIncluded).toBe(true);
+ expect(platform.newTriangles-platform.oldTriangles).toBe(platform.sourcePlatformTriangles);
+ expect(current.buildings.find(b=>b.code==='SAW').detailedInterior.triangles).toBe(platform.newTriangles);
  const stair=proof.changes.find(c=>c.flights);
  expect(stair.flights).toHaveLength(6);
  expect(stair.archivedObjects).toContain("SAW_spiral_stair_treads");
