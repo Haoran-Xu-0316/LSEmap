@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "180",
-  "sourceModelSha256": "2251929109bc4dcd7e2e4224c807fb564cdc4af81381dcd7a38573229c8e7232",
+  "version": "181",
+  "sourceModelSha256": "bfcbe75e064636b372d1a10cf06a41f59985daf6b4745dbf53269a8f611e5517",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -200,6 +200,13 @@
           "photographDate": "unknown"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 253,
+        "reversedShells": 253,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -77.13259887695312,
@@ -267,10 +274,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-3564eef3c69d.glb",
-        "bytes": 1035356,
+        "url": "/models/details/61a-exterior-115a0c99dfb3.glb",
+        "bytes": 1038420,
         "triangles": 95255,
-        "sha256": "3564eef3c69d8b0efeb884c3febacc8a6ba8cfc5485f0c3f1b8f476391995223",
+        "sha256": "115a0c99dfb3acca5591a2d553534de883f49e3b5f0076e5237e70454e3d45f2",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -396,6 +403,13 @@
         "status": "retained-with-interior-registration-gap",
         "scope": "Retained red primary/orange side shades, main curtain and accepted entrance. Real office glass first-surface probes pass. Existing high-wing floor plates stop4.2m behind main glass, in a zone including a wandering stair; horizontal rays find distant opposing glass but cannot establish missing slabs. Office partitions, stair apertures and measured complete floor layouts remain unregistered; no false backplates or speculative filling added."
       },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 136,
+        "reversedShells": 136,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           2.060716152191162,
@@ -463,10 +477,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-8b096a72ff3e.glb",
-        "bytes": 5251572,
+        "url": "/models/details/cbg-exterior-b85b1994f668.glb",
+        "bytes": 5255684,
         "triangles": 527960,
-        "sha256": "8b096a72ff3e83230ede561318a2853b8ce18c67cfa579b006043d750f567927",
+        "sha256": "b85b1994f66888d449b5304b9b307775519721d5c9d1d233f34cc103ff799ff1",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -822,6 +836,13 @@
           "audit": "result/blender/ckk_glass173/audit.json"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 349,
+        "reversedShells": 264,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -138.37171936035156,
@@ -889,10 +910,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-732f38c33ae2.glb",
-        "bytes": 2744168,
+        "url": "/models/details/ckk-exterior-42147f15931a.glb",
+        "bytes": 2749512,
         "triangles": 236314,
-        "sha256": "732f38c33ae26b127dfcc97499408dd374f3fdee8614230f0910d58485baa2f2",
+        "sha256": "42147f15931ac775612730045947e27bf8ace055e1b068bc4da769d508cebdb2",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -1110,6 +1131,13 @@
           "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 51,
+        "reversedShells": 0,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           99.0441665649414,
@@ -1177,10 +1205,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-6a5083b1137e.glb",
-        "bytes": 757148,
+        "url": "/models/details/clm-exterior-0b20a6b23c1d.glb",
+        "bytes": 757244,
         "triangles": 66538,
-        "sha256": "6a5083b1137e0b32835e8549b31e10059fa3efdb5878314688f3120af4113d0d",
+        "sha256": "0b20a6b23c1dafc7e87f0d29e1923997804261eb276730d34db8e452627692e7",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -1320,6 +1348,13 @@
         "status": "retained-pending-upper-elevation-and-enclosure",
         "scope": "Current low-level photos and2010 entrance feasibility scheme cannot calibrate upper storey count or mansard.26 distinct low panes have only distant3.49–25.03m estimated shells behind them. No speculative transparency, backplate, new storeys or new roof added."
       },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 97,
+        "reversedShells": 97,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           2.9004480838775635,
@@ -1387,10 +1422,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-d711fecca4d6.glb",
-        "bytes": 1030600,
+        "url": "/models/details/col-exterior-3c1ec6fc4d4b.glb",
+        "bytes": 1031936,
         "triangles": 81320,
-        "sha256": "d711fecca4d6d195d9fce4009e6c73eedc23fdfc813f3a443dbe712f892ce38d",
+        "sha256": "3c1ec6fc4d4bc92774820bb5382fffa04ab9f49908a4bc092312080d9adb4622",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -1520,6 +1555,13 @@
           ]
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 316,
+        "reversedShells": 316,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -34.34856414794922,
@@ -1587,10 +1629,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-e62f77a9df21.glb",
-        "bytes": 584788,
+        "url": "/models/details/con-exterior-43c0ad50e106.glb",
+        "bytes": 588896,
         "triangles": 47172,
-        "sha256": "e62f77a9df21450b4315346e814443e8e0c85704a274983f6a8ed07b1bd532b8",
+        "sha256": "43c0ad50e106e21597c829f76c9a574300c96391a4698bf61ce8657628bdcfa9",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -1822,6 +1864,13 @@
           "source": "Completed contractor project2019 photograph05 and archived LSE Estates006; capture dates unknown"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 2,
+        "reversedShells": 2,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -6.818561553955078,
@@ -1889,10 +1938,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-babf789a9def.glb",
-        "bytes": 3242244,
+        "url": "/models/details/cow-exterior-9f1962e8cc79.glb",
+        "bytes": 3243220,
         "triangles": 255268,
-        "sha256": "babf789a9def7503c3a4483bc45dcf9cc13e2bb512744a6c534c8370f354175c",
+        "sha256": "9f1962e8cc79d126f3e037dac95172937dde470decfbb7f92aa566dc507fc5bc",
         "bounds": {
           "min": [
             -6.818561553955078,
@@ -1991,6 +2040,13 @@
           "photographDate": "unknown"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 156,
+        "reversedShells": 0,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           72.36564636230469,
@@ -2058,10 +2114,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/faw-exterior-701d95f220cd.glb",
-        "bytes": 1213024,
+        "url": "/models/details/faw-exterior-6586126a9bd0.glb",
+        "bytes": 1213128,
         "triangles": 99577,
-        "sha256": "701d95f220cdfd1ff85f76d72dcddcdc4e82f670d45286debfdf69f60bcc313f",
+        "sha256": "6586126a9bd0c5c112113d3a17a2fde3509504fbbc27c79b37e59bfef3d36cdc",
         "bounds": {
           "min": [
             72.36564636230469,
@@ -2172,6 +2228,13 @@
           ]
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 2,
+        "reversedShells": 2,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -33.602169036865234,
@@ -2239,10 +2302,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-658d212ec134.glb",
-        "bytes": 1818808,
+        "url": "/models/details/kgs-exterior-5e7179ef700f.glb",
+        "bytes": 1818888,
         "triangles": 128851,
-        "sha256": "658d212ec1348e30cba1a6ba7d22fccfb51f46628d33d476e069179d3f4ba106",
+        "sha256": "5e7179ef700f0764f100098858176d7660c48c0a193c3b9afc790ba0c482c78b",
         "bounds": {
           "min": [
             -33.59806823730469,
@@ -2354,6 +2417,13 @@
           "audit": "result/blender/ksw_envelope_next/audit.json"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 22,
+        "reversedShells": 22,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -81.10916900634766,
@@ -2421,10 +2491,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-250b8f43cc5e.glb",
-        "bytes": 777036,
+        "url": "/models/details/ksw-exterior-28d00a059343.glb",
+        "bytes": 777380,
         "triangles": 80016,
-        "sha256": "250b8f43cc5eecf3c43aeab5e8eaf7264c432ab2440992a742c6ecee730460f3",
+        "sha256": "28d00a059343046553138e44ef2d3248480b80f7a338a0e6f80d13d2c386daf7",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -2518,6 +2588,13 @@
           "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 46,
+        "reversedShells": 46,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           2.289186954498291,
@@ -2585,10 +2662,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lak-exterior-63d4cf1f8485.glb",
-        "bytes": 1219888,
+        "url": "/models/details/lak-exterior-636fae0d5f38.glb",
+        "bytes": 1221148,
         "triangles": 93556,
-        "sha256": "63d4cf1f8485752a9e520d109de00bd9f76b3748871096414285d07110ae7965",
+        "sha256": "636fae0d5f3859369bb5dd24a492b230205375bfe2474fe8decaa6e711168536",
         "bounds": {
           "min": [
             2.2941360473632812,
@@ -2668,6 +2745,13 @@
           "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 26,
+        "reversedShells": 26,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -34.67495346069336,
@@ -2723,10 +2807,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-acc94c5751f3.glb",
-        "bytes": 1168336,
+        "url": "/models/details/lch-exterior-bb40ea2ca544.glb",
+        "bytes": 1170848,
         "triangles": 90536,
-        "sha256": "acc94c5751f3858ce0832ad830b3888e1b96ebeea861ebda8ab3dc68535a864c",
+        "sha256": "bb40ea2ca5449b74f8f9cd1b10b90b3457ea1af9da632d2bb27804e8cc34de78",
         "bounds": {
           "min": [
             -34.67495346069336,
@@ -2806,6 +2890,13 @@
           "photographDate": "unknown"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 11,
+        "reversedShells": 11,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -112.59539794921875,
@@ -2873,10 +2964,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/5lf-exterior-98f9e5eac66f.glb",
-        "bytes": 315828,
+        "url": "/models/details/5lf-exterior-5d562bf07031.glb",
+        "bytes": 315884,
         "triangles": 21600,
-        "sha256": "98f9e5eac66fdbfa912b8e4a7607e472a47598fb5c07df547bae1b1c1e284d4d",
+        "sha256": "5d562bf070314b5a37322468016c9351a79afb5afde0525a94c78b7c225e75a3",
         "bounds": {
           "min": [
             -112.59539794921875,
@@ -3062,6 +3153,13 @@
           "photographDate": "2022 planning attachment; capture date unknown"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 14,
+        "reversedShells": 14,
+        "batchCount": 1,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -56.261409759521484,
@@ -3129,10 +3227,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/49l-exterior-e8523f34f43d.glb",
-        "bytes": 251540,
+        "url": "/models/details/49l-exterior-465921dd5e6a.glb",
+        "bytes": 251776,
         "triangles": 18237,
-        "sha256": "e8523f34f43dbed17fbcf6d51e6edd76efd5ad6e462459b68e794e56870d3126",
+        "sha256": "465921dd5e6af9200b90fe45020df6927646c89f3a8cec7c6c7e03cccee5dd47",
         "bounds": {
           "min": [
             -56.261409759521484,
@@ -3215,6 +3313,13 @@
           "scope": "Photographed entrance sash corrected to three columns and two rows; curved stone arch returns added, with ten glass-first probes. Overall bay count and unseen elevations remain unresolved."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 13,
+        "reversedShells": 4,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -51.667205810546875,
@@ -3270,10 +3375,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-23815fb31fcf.glb",
-        "bytes": 237616,
+        "url": "/models/details/50l-exterior-145a2f12fc15.glb",
+        "bytes": 237692,
         "triangles": 15078,
-        "sha256": "23815fb31fcf1a95b2f4f33e5ca6cd07385126c0e66e16f743407ba9353c6ed4",
+        "sha256": "145a2f12fc15cb28d436ec3f13ebcb524f901137c58719972e79de7148252540",
         "bounds": {
           "min": [
             -51.667205810546875,
@@ -3342,6 +3447,13 @@
           "scope": "Two photographed entrance panes retain original geometry and neutral color with explicit browser opacity0.82. Only the timber door leaf and metal recess faces behind those panes receive actual mesh apertures. Surrounding door, frame and all other windows/roof remain unchanged. Dimensions and optics estimated; no complete interior claimed."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 94,
+        "reversedShells": 73,
+        "batchCount": 5,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -74.71239471435547,
@@ -3397,10 +3509,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-45b3e612e08b.glb",
-        "bytes": 2846916,
+        "url": "/models/details/51l-exterior-3bdce163f803.glb",
+        "bytes": 2848156,
         "triangles": 219719,
-        "sha256": "45b3e612e08b2f5ec5a2bd57140516b064cb2b5b730b08be74d54b02588b1263",
+        "sha256": "3bdce163f80389d3b411690d76630fa2d0a60c5026fcd67499dc063961d73e9b",
         "bounds": {
           "min": [
             -74.71239471435547,
@@ -3558,6 +3670,13 @@
         "scope": "2008 daylight reference suggests no separate canopy, but current absence cannot be established by the oblique shadowed2025/26 handbook night view. Existing canopy retained; no accepted geometry or visibility change."
       },
       "interiorCollection": "LRB_PUBLIC_INTERIOR168_study",
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 578,
+        "reversedShells": 578,
+        "batchCount": 7,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           24.830078125,
@@ -3625,10 +3744,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-86a7fdf7f5d2.glb",
-        "bytes": 6116760,
+        "url": "/models/details/lrb-exterior-ea687b3ff414.glb",
+        "bytes": 6123216,
         "triangles": 682367,
-        "sha256": "86a7fdf7f5d2a9a236decbfa1e331172d5ac16c5bfaa9bff870025920de69283",
+        "sha256": "ea687b3ff414e2e8c39859a683acfd810cf3f2f2fee6241c6e4785254a86886d",
         "bounds": {
           "min": [
             24.830078125,
@@ -3643,10 +3762,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-1abc59a9a984.glb",
-        "bytes": 4669364,
+        "url": "/models/details/lrb-interior-1f57457f73e9.glb",
+        "bytes": 4670552,
         "triangles": 580348,
-        "sha256": "1abc59a9a984a6ef643635579b20ef188b2915e0b851725fb9b8ac59de3342a1",
+        "sha256": "1f57457f73e923f31d79bc4916dee31e0af68b6b9c974bb1001c0185f1049a46",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -4108,6 +4227,13 @@
         "modelStatus": "Resolved in edition141: exterior4-step and foyer4-step flights coordinated through threshold0.69m; street0.05m and GF1.245m retained.",
         "remainingScope": "Side approach modeled from existing south plan with estimated width/slope/rails; platform lift and full measured access certification unresolved."
       },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 590,
+        "reversedShells": 531,
+        "batchCount": 11,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -4175,10 +4301,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-0924a7d26151.glb",
-        "bytes": 20176732,
+        "url": "/models/details/old-exterior-a93951e5c360.glb",
+        "bytes": 20181580,
         "triangles": 1670364,
-        "sha256": "0924a7d26151b9dec35a21267869ae5902896628b57adb92034d80ac4f695d73",
+        "sha256": "a93951e5c360c5988a555c433732d4e950318bff5456b3c946dcb3be4bd026ed",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -4530,6 +4656,13 @@
           "photographDate": "unknown"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 190,
+        "reversedShells": 73,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           53.72006607055664,
@@ -4597,10 +4730,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-e89ea4b201b9.glb",
-        "bytes": 1328100,
+        "url": "/models/details/pan-exterior-1ff6da64ea4c.glb",
+        "bytes": 1330204,
         "triangles": 111961,
-        "sha256": "e89ea4b201b91e09a79d723f31814640f188497970c44569cac1081cc7f319a4",
+        "sha256": "1ff6da64ea4c01cd8d728d284c406e26b80e0d65c295405747ad0d67bbe18944",
         "bounds": {
           "min": [
             53.72006607055664,
@@ -4719,6 +4852,13 @@
           "audit": "result/blender/par_exterior176/audit.json"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 53,
+        "reversedShells": 33,
+        "batchCount": 4,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -49.06182098388672,
@@ -4786,10 +4926,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-eee0cdfec85c.glb",
-        "bytes": 1334624,
+        "url": "/models/details/par-exterior-08652c778d3c.glb",
+        "bytes": 1335100,
         "triangles": 100680,
-        "sha256": "eee0cdfec85c42ad5661f302f225531f3ebaaeb88757e50c4d19a9dc5b4a2ebb",
+        "sha256": "08652c778d3c8a280c1d9e3e099de3b86a40d891a36f582d240ce85c4e1778d7",
         "bounds": {
           "min": [
             -49.058448791503906,
@@ -4871,6 +5011,13 @@
           "addedObjects": 0
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 11,
+        "reversedShells": 11,
+        "batchCount": 3,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -74.89566040039062,
@@ -4938,10 +5085,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pea-exterior-d26840f1f7b7.glb",
-        "bytes": 114276,
+        "url": "/models/details/pea-exterior-ebfe052afe6d.glb",
+        "bytes": 114448,
         "triangles": 8617,
-        "sha256": "d26840f1f7b7fa045c322c852b1e01ca7f005f647b54ed62d78b9a226b56b7cf",
+        "sha256": "ebfe052afe6d7ac4795a622afadab59632066d8d0db5fca141021470d35f4857",
         "bounds": {
           "min": [
             -74.89566040039062,
@@ -5028,6 +5175,13 @@
           "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 310,
+        "reversedShells": 310,
+        "batchCount": 5,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           100.59361267089844,
@@ -5095,10 +5249,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-afac3cc9d89a.glb",
-        "bytes": 6191216,
+        "url": "/models/details/pel-exterior-306a544c045e.glb",
+        "bytes": 6195960,
         "triangles": 508895,
-        "sha256": "afac3cc9d89a6d226f0867af9324c4168cfcf3603b2a3b16e5ab23a73ae8af7d",
+        "sha256": "306a544c045ea0aa73fbd823b8478846765f5235c82e85ac0b54144d94d533bf",
         "bounds": {
           "min": [
             100.59568786621094,
@@ -5173,6 +5327,13 @@
           "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 23,
+        "reversedShells": 23,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -39.28082275390625,
@@ -5228,10 +5389,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/por-exterior-5b9f5c0a1a79.glb",
-        "bytes": 1090088,
+        "url": "/models/details/por-exterior-273ea1b3958f.glb",
+        "bytes": 1090412,
         "triangles": 82879,
-        "sha256": "5b9f5c0a1a795e176568e233b666e70bcc20d6ce524879fde9939a154479ee40",
+        "sha256": "273ea1b3958f6fc5b7de0cd9d2b045954ca22544d10baefb5f956f9e6afbe69c",
         "bounds": {
           "min": [
             -39.27674865722656,
@@ -5319,6 +5480,13 @@
           ]
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 62,
+        "reversedShells": 30,
+        "batchCount": 2,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -92.75189208984375,
@@ -5386,10 +5554,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-db0342066019.glb",
-        "bytes": 1403316,
+        "url": "/models/details/sar-exterior-cf39f0dc668e.glb",
+        "bytes": 1403776,
         "triangles": 111151,
-        "sha256": "db0342066019c08dd8a96601e1e1bf57b4bbdb97102687e70f4e9561411ae983",
+        "sha256": "cf39f0dc668e5e48b81eba193c8dd7e1637ca47d4ecd61e62784d8a5fb22d50c",
         "bounds": {
           "min": [
             -92.74727630615234,
@@ -5483,6 +5651,13 @@
         "sourceURL": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
         "limitations": "Affine registration, flight centerlines, counts, heights and guards are estimates. Full room layouts, side escape cores, lifts and basement/Venue circulation remain incomplete; not a current2026 as-built model."
       },
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 0,
+        "reversedShells": 0,
+        "batchCount": 3,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -84.64329528808594,
@@ -5550,10 +5725,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-40c01725008d.glb",
-        "bytes": 12142236,
+        "url": "/models/details/saw-exterior-954253ac45bd.glb",
+        "bytes": 12142232,
         "triangles": 1236799,
-        "sha256": "40c01725008d6cba9d61f68c6a4763de99adfca888ffe51967452a048bcc9e26",
+        "sha256": "954253ac45bdc3bac2a6a67fc87420daaf98279ae9fb61806374eac5b16c41d5",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -5734,6 +5909,13 @@
           "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 33,
+        "reversedShells": 33,
+        "batchCount": 5,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -44.02347946166992,
@@ -5789,10 +5971,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-0029007b45e7.glb",
-        "bytes": 930168,
+        "url": "/models/details/shf-exterior-cd1983d68b35.glb",
+        "bytes": 930820,
         "triangles": 70706,
-        "sha256": "0029007b45e78e67bba4c23101adde828e075806c677e5ed3058825574ae3493",
+        "sha256": "cd1983d68b3546d25de78690ae07de3f3312c34b1a72829d9a81db3708664882",
         "bounds": {
           "min": [
             -44.019718170166016,
@@ -5900,6 +6082,13 @@
           "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 233,
+        "reversedShells": 158,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           91.76612091064453,
@@ -5967,10 +6156,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-7c23336e4d49.glb",
-        "bytes": 5797176,
+        "url": "/models/details/sal-exterior-4fdc230476e0.glb",
+        "bytes": 5797504,
         "triangles": 479402,
-        "sha256": "7c23336e4d49647e7e66f76de024e239793fd02990b7fe5eaf3c908a879603f4",
+        "sha256": "4fdc230476e0d922e2978d8c94bfbb977e0fef3af6561cf99f82db6af2075ef2",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -6076,6 +6265,13 @@
           "limitation": "Existing window count, heights and roof remain estimated; dated exterior references do not prove current condition."
         }
       ],
+      "glazingReview": {
+        "version": 181,
+        "closedShells": 192,
+        "reversedShells": 192,
+        "batchCount": 6,
+        "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
       "bounds": {
         "min": [
           -17.60181427001953,
@@ -6143,10 +6339,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/stc-exterior-0384a0212ffe.glb",
-        "bytes": 4268828,
+        "url": "/models/details/stc-exterior-d24f22436c46.glb",
+        "bytes": 4271124,
         "triangles": 352727,
-        "sha256": "0384a0212ffea2ba675e89c5c62ea37a3c06b1b2b3cd2f17935843ac87eaf153",
+        "sha256": "d24f22436c467072de5e22a44c7a02733bf457eb8d6437ea4029321706d9f8d1",
         "bounds": {
           "min": [
             -17.60181427001953,
