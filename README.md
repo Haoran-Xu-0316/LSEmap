@@ -8,6 +8,16 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition174 reopens MAR's photographed north podium loggia and removes overlapping
+wall tiles. LRB's complete north skylight aperture now faces outward. Four merged
+A-frame picnic tables enrich John Watkins Plaza from a2021photograph. OLD's
+entrance foyer is registered to its existing door, with split levels, four risers,
+reception desk, waiting bench, red display glazing and upper corridor arch from
+[Design Engine's2011refurbishment](https://www.designengine.co.uk/projects/reception-london-school-of-economics/).
+The foyer is available as a separate room and shares its geometry with the campus
+and building exterior. Dimensions and furniture remain estimates; lift pockets,
+adjoining rooms and complete present-day interiors are unfinished.
+
 Edition173 re-registers SAW's main stair and six upper-floor openings against
 its2014 floor diagrams, replacing the misplaced continuous helix with changing
 folded flights. CKK's18 roof-pavilion panes now have one outward glass surface
@@ -175,7 +185,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v173.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v174.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
