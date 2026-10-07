@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition171 adds an independent42-seat CBG.2.05 Wolfson Seminar Room from its
+paired official historical plan and photograph, a fifth-to-sixth curved SAW
+stair connection, and darker black paint on the two Houghton bollards.
+Room dimensions and stair registration are estimates; SAW lower connections
+and complete current interiors remain unfinished.
+
 Edition170 corrects the photographed yellow underside of the PAN entrance
 canopy. Downloads validate GLB length and available SHA256 digests before
 decoding, with one retry for transport interruptions or corrupt transfers.
@@ -154,7 +160,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v170.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v171.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
