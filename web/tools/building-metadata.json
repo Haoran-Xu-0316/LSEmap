@@ -611,11 +611,22 @@
         "scope": "Shared facade finish guided by an undated PAN entrance photograph; color is estimated, not calibrated. Independent FAW elevations, upper massing, roof and full interiors remain unverified."
       },
       "latestReview": {
-        "version": 156,
+        "version": 176,
         "status": "reviewed-retained-independent-full-elevation-unverified",
-        "scope": "Checked current native24visible exterior meshes and144window-band cells. ArchitecturePLB completed2018Towers images show shared entrance or reception, not independent upper Fawcett facades or roof. Full tower height, colours, per-face rhythms and roof remain unverified; no geometry, material or interior change.",
-        "source": "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers",
-        "photographDate": "unknown"
+        "scope": "核对FAW整栋模型、曲折窗带和PAN共用入口归属；未发现照片可证的整片修正，本轮无模型改动。",
+        "limitations": [
+          "ArchitecturePLB照片覆盖共用入口及室内，不能注册FAW独立全高立面或屋顶。",
+          "2018年8月是项目完成时间，照片拍摄日期未知；当前尺寸、窗列及色值仍为估算，非2026现状测绘。",
+          "FAW与PAN无完全相同世界顶点网格，不代表所有相邻面布局已验证。"
+        ],
+        "sourceUrls": [
+          "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers"
+        ],
+        "photographDate": "unknown",
+        "addedObjects": 0,
+        "archivedObjects": 0,
+        "changedObjects": 0,
+        "audit": "result/blender/faw_exterior176/audit.json"
       },
       "interiorView": {
         "position": [
@@ -636,6 +647,13 @@
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 156,
+          "status": "reviewed-retained-independent-full-elevation-unverified",
+          "scope": "Checked current native24visible exterior meshes and144window-band cells. ArchitecturePLB completed2018Towers images show shared entrance or reception, not independent upper Fawcett facades or roof. Full tower height, colours, per-face rhythms and roof remain unverified; no geometry, material or interior change.",
+          "source": "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers",
+          "photographDate": "unknown"
         }
       ]
     },
@@ -676,14 +694,21 @@
         "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 120,
-        "status": "exterior-material-and-joint-correction",
-        "addedObjects": 4,
-        "archivedObjects": 4,
+        "version": 176,
+        "status": "photo-supported-portugal-attic-correction",
+        "scope": "Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.",
+        "addedObjects": 23,
+        "archivedObjects": 19,
         "sourceUrls": [
           "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
           "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
-        ]
+        ],
+        "photographDate": "unknown",
+        "limitations": [
+          "Position, heights and widths remain photographic estimates, not a2026survey.",
+          "Complete St Clement’s window count and unseen elevations remain unresolved."
+        ],
+        "audit": "result/blender/kgs_exterior176/verification.json"
       },
       "interiorView": {
         "position": [
@@ -698,7 +723,19 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 120,
+          "status": "exterior-material-and-joint-correction",
+          "addedObjects": 4,
+          "archivedObjects": 4,
+          "sourceUrls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
+          ]
+        }
+      ]
     },
     {
       "code": "KSW",
@@ -964,11 +1001,32 @@
         "scope": "Schematic construction boundary only, not the current workstage"
       },
       "latestReview": {
-        "version": 43,
-        "status": "reviewed-no-change",
-        "addedObjects": 0
+        "version": 176,
+        "status": "construction-reference-review-only",
+        "scope": "核对2026年5月官方施工通讯的2页及4张局部施工照片；记录入口切割、窗洞扩大与结构施工阶段，保留示意围挡。",
+        "limitations": [
+          "2026年5月是通讯出版日期，4张照片具体拍摄日期未知。",
+          "局部施工图像不足以注册2026年10月完整现场轮廓、围挡和测量尺寸。",
+          "不得用未来2027效果图替代建成或当前施工几何，不标为完整实景模型。"
+        ],
+        "sourceUrls": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/35L/Newsletters/NewsLetter-Firoz-Lalji-Global-Hub-May-2026.pdf"
+        ],
+        "publicationDate": "May2026",
+        "photographDate": "unknown",
+        "addedObjects": 0,
+        "archivedObjects": 0,
+        "changedObjects": 0,
+        "audit": "result/blender/35l_reference176/source-review.json"
       },
-      "exportExterior": false
+      "exportExterior": false,
+      "reviewHistory": [
+        {
+          "version": 43,
+          "status": "reviewed-no-change",
+          "addedObjects": 0
+        }
+      ]
     },
     {
       "code": "49L",
@@ -1688,14 +1746,22 @@
         "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 120,
-        "status": "exterior-material-and-joint-correction",
-        "addedObjects": 15,
-        "archivedObjects": 15,
+        "version": 176,
+        "status": "reviewed-no-change",
+        "scope": "对照官方整楼实拍核对街立面4组上窗、4组砖拱、4个天窗、2个风帽及双门入口；保留66和120版外观，本轮无改动。",
+        "limitations": [
+          "2015项目档案及2025/26手册不等于2026现状测绘，照片拍摄日期未知。",
+          "后屋顶、远侧及背立面窗列尚未完整核实；尺寸、砖石颜色和窗框细节仍为估算。"
+        ],
         "sourceUrls": [
           "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
           "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
-        ]
+        ],
+        "photographDate": "unknown",
+        "addedObjects": 0,
+        "archivedObjects": 0,
+        "changedObjects": 0,
+        "audit": "result/blender/par_exterior176/audit.json"
       },
       "interiorView": {
         "position": [
@@ -1710,7 +1776,19 @@
         ],
         "fov": 50
       },
-      "exportExterior": true
+      "exportExterior": true,
+      "reviewHistory": [
+        {
+          "version": 120,
+          "status": "exterior-material-and-joint-correction",
+          "addedObjects": 15,
+          "archivedObjects": 15,
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ]
+        }
+      ]
     },
     {
       "code": "PEA",
@@ -2053,13 +2131,23 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
-        "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        "version": 176,
+        "status": "reviewed-no-change",
+        "scope": "核对主街立面的砖石分区、18组四联主窗、6组双联山花窗、凸窗、前侧双塔屋顶和历史中央入口；现有窗格保留，本轮无改动。",
+        "limitations": [
+          "官方及建筑师照片拍摄日期未明确，2012项目年份和2025/26手册版次不代表当前测绘。",
+          "立面比例与材料仍为照片估算；未见背面、完整侧巷窗列和精细浮雕仍未验证。"
         ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "sourceUrls": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/32L-300x400.jpg",
+          "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
+          "https://www.jesticowhiles.com/wp-content/uploads/2024/01/Lincolns-Inn-Fields-LSE-Project-Images-008-2048x1768.jpg"
+        ],
+        "photographDate": "unspecified",
+        "addedObjects": 0,
+        "archivedObjects": 0,
+        "changedObjects": 0,
+        "audit": "result/blender/sal_exterior176/verification.json"
       },
       "interiorView": {
         "position": [
@@ -2104,6 +2192,15 @@
         {
           "edition": 160,
           "scope": "SAL.G.01 projector uses independent charcoal finish and ceiling-post study; wall-top mounting datum is estimated, not a surveyed ceiling."
+        },
+        {
+          "version": 166,
+          "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+          "evidence": [
+            "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          ],
+          "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+          "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ]
     },
@@ -2586,6 +2683,16 @@
         "scope": "Houghton Street Old Building坡道侧墙依据用户实拍补两处矩形开口和暗色百叶格栅，原墙、坡道顶面和扶手保留。照片日期未知，开口位置、尺寸与5排百叶为估算。",
         "source": "User supplied Houghton Street reference photograph09",
         "localReference": "data/collections/public-realm-2026/user-references/reference-09.png"
+      },
+      {
+        "version": 176,
+        "scope": "Peacock Theatre Portugal Street frontage: five black cast-iron bollards and two100mm yellow lines over about15.1m. Two merged meshes in00_SITE; same geometry visible in campus and frontage gallery.",
+        "source": "https://www.sadlerswells.com/your-visit/peacock-theatre/",
+        "photo": "https://images.sadlerswells.com/uploads/2023/09/peacock-theatre-scaled.jpeg?resize=1584%2C990&gravity",
+        "uploadYear": 2023,
+        "photographDate": "unknown",
+        "limitations": "Stations, quantities, widths and height estimated from photograph, not current street inventory. Existing road surface supports retained.",
+        "audit": "result/blender/portugal_environment176/audit.json"
       }
     ]
   }
