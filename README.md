@@ -8,14 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition178 corrects eight registered Houghton Street ramp posts to a dark
-coating while preserving the silver continuous handrail. Plaza Café's66 glass
-boxes now use single outward optical surfaces with the original tint and
-opacity, removing duplicate alpha blending. Both corrections are shared by the
-campus and detailed views. Coating and glazing values remain visual estimates;
-photograph capture dates are unknown. CKK's photographed principal elevation
-was reviewed without unsupported changes. Complete current interiors and
-unseen elevations remain unfinished.
+Edition179 fixes outward normals and duplicate transparent layers at three
+photographed Sheffield Street dormers, retaining the original tint, UVs and
+unseen left window. Six existing trees at John Watkins Plaza and Houghton Street
+receive restrained irregular crown contours and opaque leaf tones within their
+registered envelopes. Only12of522crown masses gain subdivision. LAK received a
+read-only exterior review. Photographic dimensions and leaf appearance remain
+estimates; complete current interiors and unseen elevations remain unfinished.
 
 
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
