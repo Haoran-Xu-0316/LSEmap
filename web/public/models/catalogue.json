@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "178",
-  "sourceModelSha256": "ea8b0e003cf01112bb75b004a5ac764d305aedd90fde6e138fa290987a140dde",
+  "version": "179",
+  "sourceModelSha256": "2a27524a97dd15535dfe1fe35cc010d2aaa1a6adb1ad8266daa72e6fb14671e9",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2487,8 +2487,10 @@
         "scope": "Window subdivisions and palette guided by undated estate photographs. Existing bay positions, roof, dormers and historical pediment assignment remain estimates; complete interiors unverified."
       },
       "latestReview": {
-        "version": 121,
-        "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
+        "version": 179,
+        "scope": "Read-only review retains photo-supported sash windows and dormer apertures; no evidence-supported new geometry correction. Undated official imagery is not a current measured survey.",
+        "reviewOnly": true,
+        "audit": "result/blender/lak_exterior179/"
       },
       "interiorView": {
         "position": [
@@ -2503,6 +2505,12 @@
         ],
         "fov": 50
       },
+      "reviewHistory": [
+        {
+          "version": 121,
+          "scope": "Dormer roof apertures corrected; 24 glass-first probes verified. Existing roof outline and bay counts remain estimates."
+        }
+      ],
       "bounds": {
         "min": [
           2.289186954498291,
@@ -5694,14 +5702,22 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 148,
-        "status": "photo-covered-dormer-grid-corrected",
-        "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
+        "version": 179,
+        "scope": "Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.",
+        "reviewOnly": false,
+        "audit": "result/blender/shf_exterior179/"
       },
       "previousReviews": [
         {
           "version": 121,
           "scope": "Street windows corrected to six paired lights with narrow overlights; glazed timber doors have 12 clear aperture probes. Dimensions, dormers and unseen elevations remain estimates."
+        }
+      ],
+      "reviewHistory": [
+        {
+          "version": 148,
+          "status": "photo-covered-dormer-grid-corrected",
+          "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
         }
       ],
       "bounds": {
@@ -5759,10 +5775,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-ed51ff352772.glb",
-        "bytes": 930640,
-        "triangles": 70736,
-        "sha256": "ed51ff352772808f541c860bb55e62b51e1e66e9740775dab1fb94c32cc19723",
+        "url": "/models/details/shf-exterior-0029007b45e7.glb",
+        "bytes": 930168,
+        "triangles": 70706,
+        "sha256": "0029007b45e78e67bba4c23101adde828e075806c677e5ed3058825574ae3493",
         "bounds": {
           "min": [
             -44.019718170166016,
