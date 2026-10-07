@@ -8,14 +8,14 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition177 corrects the outward normals of Cowdray's110glass boxes and seats
-closed roof-cap assemblies on11photographed street dormers. A narrow Kingsway
-roof slope now runs behind ten retained61A dormers with registered cutouts;
-unseen roof continuations remain provisional. MAR's107Great Hall panes and54
-mezzanine guards now use single surfaces and a lighter neutral glass finish.
-Glass display values and photo dimensions remain estimates. John Watkins Plaza
-was checked for continuous paving without adding guessed drains or furniture.
-Complete current interiors and unseen elevations remain unfinished.
+Edition178 corrects eight registered Houghton Street ramp posts to a dark
+coating while preserving the silver continuous handrail. Plaza Café's66 glass
+boxes now use single outward optical surfaces with the original tint and
+opacity, removing duplicate alpha blending. Both corrections are shared by the
+campus and detailed views. Coating and glazing values remain visual estimates;
+photograph capture dates are unknown. CKK's photographed principal elevation
+was reviewed without unsupported changes. Complete current interiors and
+unseen elevations remain unfinished.
 
 
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
