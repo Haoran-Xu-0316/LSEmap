@@ -6,38 +6,36 @@ const glb = async path => {
  return JSON.parse(bytes.toString('utf8',20,20+bytes.readUInt32LE(12)));
 };
 
-test('edition182 shares the OLD stone bench support and preserves unrelated assets',async()=>{
- const before=await read('result/blender/stage182/catalogue-before.json');
+test('edition183 isolates SAL brick colour and preserves all unrelated models',async()=>{
+ const before=await read('result/blender/stage183/catalogue-before.json');
  const current=await read('dist/models/catalogue.json');
- const proof=await read('result/blender/stage182/building-refinement.json');
- const native=await read('result/blender/stage182/reopened-verification.json');
- expect(current.version).toBe('182');
+ const proof=await read('result/blender/stage183/building-refinement.json');
+ const native=await read('result/blender/stage183/reopened-verification.json');
+ expect(current.version).toBe('183');
  expect(current.sourceModelSha256).toBe(proof.sourceModelSha256);
- expect(native.savedSceneReopened&&native.idempotent&&native.benchSeatAndFloorTouching).toBe(true);
+ expect(native.savedSceneReopened&&native.idempotent&&native.independentSALBrickMaterials).toBe(true);
+ expect(native.brickScaleAndMortarRetained).toBe(true);
  for(const building of current.buildings){
   const old=before.buildings.find(item=>item.code===building.code);
-  if(building.code==='OLD') expect(building.detailedExterior.sha256).not.toBe(old.detailedExterior.sha256);
-  else expect(building.detailedExterior,building.code).toEqual(old.detailedExterior);
+  if(building.code==='SAL') {
+   expect(building.detailedExterior.sha256).not.toBe(old.detailedExterior.sha256);
+   expect(building.detailedExterior.triangles).toBe(old.detailedExterior.triangles);
+   const document=await glb('dist'+building.detailedExterior.url);
+   const materials=document.materials.filter(m=>m.name?.includes('SAL183_'));
+   expect(materials.length).toBe(2);
+   for(const material of materials){
+    const colour=material.pbrMetallicRoughness.baseColorFactor;
+    expect(colour[0]).toBeCloseTo(.53,5);expect(colour[1]).toBeCloseTo(.285,5);expect(colour[2]).toBeCloseTo(.14,5);
+   }
+  } else expect(building.detailedExterior,building.code).toEqual(old.detailedExterior);
   expect(building.detailedInterior,building.code).toEqual(old.detailedInterior);
-  for(const space of building.interiorSpaces??[]){
-   const previous=old.interiorSpaces.find(item=>item.id===space.id);
-   if(space.id==='old-foyer')expect(space.detailedInterior.sha256).not.toBe(previous.detailedInterior.sha256);
-   else expect(space,space.id).toEqual(previous);
-  }
+  expect(building.interiorSpaces,building.code).toEqual(old.interiorSpaces);
  }
- const old=current.buildings.find(item=>item.code==='OLD');
- const previous=before.buildings.find(item=>item.code==='OLD');
- const foyer=old.interiorSpaces.find(s=>s.id==='old-foyer');
- const oldFoyer=previous.interiorSpaces.find(s=>s.id==='old-foyer');
- // Export merges object names. The two twelve-triangle feet are replaced by
- // one twelve-triangle plinth in both independently generated assets.
- expect(old.detailedExterior.triangles).toBe(previous.detailedExterior.triangles-12);
- expect(foyer.detailedInterior.triangles).toBe(oldFoyer.detailedInterior.triangles-12);
-
+ expect(proof.changes[0].records).toHaveLength(6);
 });
 
-for(const width of [1440,390]) for(const code of ['CKK','LRB','CBG','OLD']){
- test(`${code} edition182 loads at${width}px`,async({page})=>{
+for(const width of [1440,390]) for(const code of ['SAL','OLD','CBG','CKK']){
+ test(`${code} edition183 loads at${width}px`,async({page})=>{
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.setViewportSize({width,height:1000});await page.goto('/#'+code);
   await page.waitForFunction(code=>document.querySelector('canvas')?.dataset.detailReady==='exterior-'+code,code);
