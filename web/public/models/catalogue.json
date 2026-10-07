@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "170",
-  "sourceModelSha256": "67a046c2e587768db66a7a0832866de254282561810d555b08b3ceb8c513db18",
+  "version": "171",
+  "sourceModelSha256": "d35af64836657328bafdfe92c0bb9f0f8fe106a1869aa75d0320f0be01306e71",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -532,6 +532,61 @@
               5.763999938964844,
               3.880000114440918,
               5.558000087738037
+            ]
+          }
+        },
+        {
+          "id": "cbg-205",
+          "label": "CBG.2.05 Wolfson Seminar Room",
+          "scope": "依据同房号LSE官方历史平面与照片建立42座Wolfson Seminar Room样本。7组六座曲线桌按平面注册，可见白色椅、蓝色圆形吸声板、明装风管与投影墙按照片近似。尺度、层高、不可见构造与顶面完整布置均为估算，未与整栋楼层测绘配准，不代表2026年布置。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CBG.2.05 Wolfson Seminar Room",
+            "scope": "依据同房号LSE官方历史平面与照片建立42座Wolfson Seminar Room样本。7组六座曲线桌按平面注册，可见白色椅、蓝色圆形吸声板、明装风管与投影墙按照片近似。尺度、层高、不可见构造与顶面完整布置均为估算，未与整栋楼层测绘配准，不代表2026年布置。"
+          },
+          "interiorView": {
+            "position": [
+              -13,
+              11,
+              -14
+            ],
+            "target": [
+              0,
+              1,
+              0
+            ],
+            "fov": 50
+          },
+          "gallery": "cbg-205-interior",
+          "interiorAsset": "/models/details/cbg-205-interior-a7db797ef048.glb",
+          "detailedInterior": {
+            "url": "/models/details/cbg-205-interior-a7db797ef048.glb",
+            "bytes": 217680,
+            "triangles": 17840,
+            "sha256": "a7db797ef0483d4e11007ff71098702ab799d9a49df918d0ad1800c5133764b2",
+            "bounds": {
+              "min": [
+                -6.118000030517578,
+                -0.1599999964237213,
+                -6.322000026702881
+              ],
+              "max": [
+                6.138000011444092,
+                3.6600000858306885,
+                6.671999931335449
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -6.118000030517578,
+              -0.1599999964237213,
+              -6.322000026702881
+            ],
+            "max": [
+              6.138000011444092,
+              3.6600000858306885,
+              6.671999931335449
             ]
           }
         }
@@ -5004,6 +5059,11 @@
           "photographDate": "Unknown;2017 upload path does not establish current condition"
         }
       ],
+      "latestInteriorReview": {
+        "version": 171,
+        "scope": "Historical fifth-to-sixth curved stair connection registered to retained central opening;26 treads, radius and angles estimated. Original floors and lower stairs preserved. Fourth-to-fifth and side cores remain incomplete.",
+        "source": "2014 official occupants guide pages26/27"
+      },
       "bounds": {
         "min": [
           -84.64329528808594,
@@ -5062,19 +5122,19 @@
         "min": [
           -64.70494079589844,
           0.20000000298023224,
-          -16.36056900024414
+          -17.2246036529541
         ],
         "max": [
           -58.644962310791016,
-          15.309844017028809,
-          -10.300589561462402
+          22.950000762939453,
+          -9.540386199951172
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-b77bedf41e82.glb",
-        "bytes": 12252620,
-        "triangles": 1251371,
-        "sha256": "b77bedf41e82746405e8ade16d30e98bf317296106e5c5a8324fdfb2352ccff1",
+        "url": "/models/details/saw-exterior-6985d85b8887.glb",
+        "bytes": 12271316,
+        "triangles": 1252491,
+        "sha256": "6985d85b888783b103ba846e514f5c1ad53e9e8dffa0a384921b01374649eadd",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -5089,20 +5149,20 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-9f652360125f.glb",
-        "bytes": 285564,
-        "triangles": 26768,
-        "sha256": "9f652360125fa5a5c1c9af42da17417449d7e03041528ffa719d565094546163",
+        "url": "/models/details/saw-interior-3c09f7dfe12e.glb",
+        "bytes": 304244,
+        "triangles": 27888,
+        "sha256": "3c09f7dfe12e8938208d5bc46805be3763b86b5375553aa54cc3e0e39ade374c",
         "bounds": {
           "min": [
             -64.70494079589844,
             0.20000000298023224,
-            -16.36056900024414
+            -17.2246036529541
           ],
           "max": [
             -58.644962310791016,
-            15.309844017028809,
-            -10.300589561462402
+            22.950000762939453,
+            -9.540386199951172
           ]
         }
       },
