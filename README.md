@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition164 corrects legacy CKK and LRB glazing from metallic0.6 to dielectric0,
+retaining their colour, roughness and opacity. Six CKK public-atrium glazing
+objects receive an independent, less green clear finish informed by the
+architect's photographs. Geometry, UVs, openings, frames and separate room
+studies remain unchanged; colour and optical values are estimates.
+
 Edition163 adds the photograph-visible blue wall lantern to the left of
 the Old Building Houghton entrance. Its plate meets the registered wall plane;
 shade, rim and support dimensions remain estimates. No second lamp or nighttime
@@ -110,11 +116,11 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v163.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v164.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
-current detail acceptance is `web/tests/old-wall-lantern.spec.js` and
+current detail acceptance is `web/tests/architectural-glass.spec.js` and
 `web/tests/verify_building_details_blender.py`.
 The accepted building corrections retain their edition156 evidence.
 Obsolete backups, private previews and render caches are deleted after verification.
