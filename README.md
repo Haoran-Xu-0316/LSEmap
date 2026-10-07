@@ -186,7 +186,9 @@ See [deployment instructions](DEPLOYMENT.md).
 - `result/`: private latest native model, required component and verification records.
 
 The local editable source is `result/blender/LSE_campus_detailed_v174.blend`.
-The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
+Edition174 small components cover the OLD entrance foyer, MAR north loggia,
+LRB north aperture and John Watkins seating. Accepted earlier facade components
+remain as source evidence within the integrated model.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
 current detail acceptance is `web/tests/architectural-glass.spec.js` and
