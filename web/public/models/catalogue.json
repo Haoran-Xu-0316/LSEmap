@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "179",
-  "sourceModelSha256": "2a27524a97dd15535dfe1fe35cc010d2aaa1a6adb1ad8266daa72e6fb14671e9",
+  "version": "180",
+  "sourceModelSha256": "2251929109bc4dcd7e2e4224c807fb564cdc4af81381dcd7a38573229c8e7232",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1445,15 +1445,11 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 175,
-        "auditOnly": true,
-        "scope": "资料归属复核无模型改动。2018/2023整栋跨层窗带照片属于CLM，不属于CON；CON上层窗列、侧面和屋顶仍未证实。",
-        "source": [
-          {
-            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
-            "supports": "CON entrance crop only, no complete facade registration"
-          }
-        ]
+        "version": 180,
+        "scope": "Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.",
+        "photographDate": "unknown",
+        "opticalValues": "estimated, not measured",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate"
       },
       "detailView": {
         "label": "入口细节",
@@ -1511,6 +1507,17 @@
           ],
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
+        },
+        {
+          "version": 175,
+          "auditOnly": true,
+          "scope": "资料归属复核无模型改动。2018/2023整栋跨层窗带照片属于CLM，不属于CON；CON上层窗列、侧面和屋顶仍未证实。",
+          "source": [
+            {
+              "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+              "supports": "CON entrance crop only, no complete facade registration"
+            }
+          ]
         }
       ],
       "bounds": {
@@ -1580,10 +1587,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-f2dc23459663.glb",
-        "bytes": 586544,
-        "triangles": 47252,
-        "sha256": "f2dc234596634de5f79ac81c85b411e6bc4c4b1fc9cf9ec1dc29697864eace14",
+        "url": "/models/details/con-exterior-e62f77a9df21.glb",
+        "bytes": 584788,
+        "triangles": 47172,
+        "sha256": "e62f77a9df21450b4315346e814443e8e0c85704a274983f6a8ed07b1bd532b8",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -4663,22 +4670,11 @@
         "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 176,
-        "status": "reviewed-no-change",
-        "scope": "对照官方整楼实拍核对街立面4组上窗、4组砖拱、4个天窗、2个风帽及双门入口；保留66和120版外观，本轮无改动。",
-        "limitations": [
-          "2015项目档案及2025/26手册不等于2026现状测绘，照片拍摄日期未知。",
-          "后屋顶、远侧及背立面窗列尚未完整核实；尺寸、砖石颜色和窗框细节仍为估算。"
-        ],
-        "sourceUrls": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
-        ],
+        "version": 180,
+        "scope": "Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.",
         "photographDate": "unknown",
-        "addedObjects": 0,
-        "archivedObjects": 0,
-        "changedObjects": 0,
-        "audit": "result/blender/par_exterior176/audit.json"
+        "opticalValues": "estimated, not measured",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf"
       },
       "interiorView": {
         "position": [
@@ -4703,6 +4699,24 @@
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
           ]
+        },
+        {
+          "version": 176,
+          "status": "reviewed-no-change",
+          "scope": "对照官方整楼实拍核对街立面4组上窗、4组砖拱、4个天窗、2个风帽及双门入口；保留66和120版外观，本轮无改动。",
+          "limitations": [
+            "2015项目档案及2025/26手册不等于2026现状测绘，照片拍摄日期未知。",
+            "后屋顶、远侧及背立面窗列尚未完整核实；尺寸、砖石颜色和窗框细节仍为估算。"
+          ],
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2015-Parish-Hall.pdf",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
+          ],
+          "photographDate": "unknown",
+          "addedObjects": 0,
+          "archivedObjects": 0,
+          "changedObjects": 0,
+          "audit": "result/blender/par_exterior176/audit.json"
         }
       ],
       "bounds": {
@@ -4772,10 +4786,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-715d038f3627.glb",
-        "bytes": 1333416,
+        "url": "/models/details/par-exterior-eee0cdfec85c.glb",
+        "bytes": 1334624,
         "triangles": 100680,
-        "sha256": "715d038f3627635fe7c21c7a1d0060dceb351189e7836201d71a0625ce9bccfb",
+        "sha256": "eee0cdfec85c42ad5661f302f225531f3ebaaeb88757e50c4d19a9dc5b4a2ebb",
         "bounds": {
           "min": [
             -49.058448791503906,
