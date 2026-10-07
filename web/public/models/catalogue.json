@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "182",
-  "sourceModelSha256": "431deecd02b2a82d4d0784c85d4f047335cd1806e874ae2c0baeeba91dc99c44",
+  "version": "183",
+  "sourceModelSha256": "d9b6aee501e3b12f521c7430730b6a747e88c498eaa43c02d8c2bf17fe415c1a",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -6011,23 +6011,22 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 176,
-        "status": "reviewed-no-change",
-        "scope": "核对主街立面的砖石分区、18组四联主窗、6组双联山花窗、凸窗、前侧双塔屋顶和历史中央入口；现有窗格保留，本轮无改动。",
+        "version": 183,
+        "status": "principal-brick-colour-review",
+        "scope": "6组主立面砖材改为实拍支持的暖橙褐色；原几何、UV、砖尺度、砖缝、石材及玻璃保留。未拍摄背面和侧面代理保留。",
         "limitations": [
-          "官方及建筑师照片拍摄日期未明确，2012项目年份和2025/26手册版次不代表当前测绘。",
-          "立面比例与材料仍为照片估算；未见背面、完整侧巷窗列和精细浮雕仍未验证。"
+          "色值为照片估计，非校准反射率。",
+          "两张已建照片拍摄日期未知，2024文件路径不代表拍摄时间。",
+          "完整现状外观与内部仍未核验。"
         ],
         "sourceUrls": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/32L-300x400.jpg",
           "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
-          "https://www.jesticowhiles.com/wp-content/uploads/2024/01/Lincolns-Inn-Fields-LSE-Project-Images-008-2048x1768.jpg"
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/32L-300x400.jpg"
         ],
-        "photographDate": "unspecified",
-        "addedObjects": 0,
-        "archivedObjects": 0,
+        "addedObjects": 6,
+        "archivedObjects": 6,
         "changedObjects": 0,
-        "audit": "result/blender/sal_exterior176/verification.json"
+        "audit": "result/blender/stage183/building-refinement.json"
       },
       "interiorView": {
         "position": [
@@ -6080,6 +6079,25 @@
           ],
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
+        },
+        {
+          "version": 176,
+          "status": "reviewed-no-change",
+          "scope": "核对主街立面的砖石分区、18组四联主窗、6组双联山花窗、凸窗、前侧双塔屋顶和历史中央入口；现有窗格保留，本轮无改动。",
+          "limitations": [
+            "官方及建筑师照片拍摄日期未明确，2012项目年份和2025/26手册版次不代表当前测绘。",
+            "立面比例与材料仍为照片估算；未见背面、完整侧巷窗列和精细浮雕仍未验证。"
+          ],
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/32L-300x400.jpg",
+            "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
+            "https://www.jesticowhiles.com/wp-content/uploads/2024/01/Lincolns-Inn-Fields-LSE-Project-Images-008-2048x1768.jpg"
+          ],
+          "photographDate": "unspecified",
+          "addedObjects": 0,
+          "archivedObjects": 0,
+          "changedObjects": 0,
+          "audit": "result/blender/sal_exterior176/verification.json"
         }
       ],
       "glazingReview": {
@@ -6156,10 +6174,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-4fdc230476e0.glb",
-        "bytes": 5797504,
+        "url": "/models/details/sal-exterior-9d2e9be2fc2c.glb",
+        "bytes": 5801084,
         "triangles": 479402,
-        "sha256": "4fdc230476e0d922e2978d8c94bfbb977e0fef3af6561cf99f82db6af2075ef2",
+        "sha256": "9d2e9be2fc2c23a39c467d28966131943522027e8b4d73abb20f77a3d63ccb57",
         "bounds": {
           "min": [
             91.77310180664062,
