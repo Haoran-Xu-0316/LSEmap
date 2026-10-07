@@ -8,6 +8,14 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition173 re-registers SAW's main stair and six upper-floor openings against
+its2014 floor diagrams, replacing the misplaced continuous helix with changing
+folded flights. CKK's18 roof-pavilion panes now have one outward glass surface
+and dielectric materials. A10.143m² mapped Houghton/New Inn paving gap is filled
+at the neighbouring walkway level, using the existing brick-course orientation.
+Historical topology, dimensions and optical values remain estimates. Complete
+current floor layouts and all rooms are still unfinished.
+
 Edition172 removes duplicate entrance-pane surfaces on OLD and unifies
 remaining OLD/LRB glass as dielectric materials. SAW now has a historical
 fourth-to-fifth connection joining the previous upper flight. Houghton small
@@ -167,7 +175,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v172.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v173.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
