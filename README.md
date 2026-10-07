@@ -8,13 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
-Edition180 removes duplicate optical surfaces from eight registered Connaught
-House entrance panes. Two supported vestibule doors use a clearer estimated
-dielectric finish; other entrance tint and opacity are retained. Parish Hall's
-photographed street glazing receives outward winding and nonmetallic glass
-without exposing undocumented interiors. All original shapes and UVs are
-retained in the editable source. Whole upper/rear elevations and full current
-interiors remain unfinished.
+Edition181 corrects glass surface policy across28existing building exteriors.
+3238inward closed components receive outward winding;3863closed components are
+certified for front-face rendering, avoiding duplicate front/back alpha layers.
+Open sheets retain reverse-side visibility. Remaining legacy glass finishes use
+dielectric metal0. Original vertices, corner UVs, tint and opacity are retained.
+This is a physical rendering correction, not a new photographic facade survey.
+Complete current interiors and undocumented elevations remain unfinished.
 
 
 Edition174 reopens MAR's photographed north podium loggia and removes overlapping
