@@ -237,13 +237,21 @@ export function prepareMeshShadows(object) {
   object.receiveShadow = true;
 }
 
+// A certified closed shell contributes only its near outward surface. Flat
+// panes need both viewing directions, but never a second transparency draw.
+export function prepareGlazingSides(material) {
+  const side = material.userData.webClosedGlazing === true ? THREE.FrontSide : THREE.DoubleSide;
+  if (material.side !== side) { material.side = side; material.needsUpdate = true; }
+  if (material.transparent && /glass|glazing|optics/i.test(material.name)) material.forceSinglePass = true;
+}
+
 export function prepareDetailedModel(group, environmentMap = null) {
   group.visible = false;
   group.traverse((object) => {
     if (!object.isMesh) return;
     prepareMeshShadows(object);
     for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
-      material.side = THREE.DoubleSide;
+      prepareGlazingSides(material);
       refineMaterialFinish(material, environmentMap);
       applySurfaceDetail(material);
     }
