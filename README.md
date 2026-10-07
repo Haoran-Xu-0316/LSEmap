@@ -8,6 +8,10 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition182 corrects the historical OLD foyer bench to its photographed stone
+plinth, retaining the registered seat, floor and doorway. Dimensions are estimates.
+
+
 Edition181 corrects glass surface policy across28existing building exteriors.
 3238inward closed components receive outward winding;3863closed components are
 certified for front-face rendering, avoiding duplicate front/back alpha layers.
