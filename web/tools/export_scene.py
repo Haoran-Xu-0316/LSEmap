@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v167.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v169.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -297,7 +297,7 @@ for record in records:
     root_collection = next(c for c in campus_root.children if c.name.startswith(code + '_'))
     exterior = [o for c in root_collection.children if 'INTERIOR' not in c.name and 'UNRESOLVED' not in c.name for o in c.all_objects]
     obj, bounds = clone_group(exterior, code, campus_scene)
-    interior = bpy.data.collections.get(code + '_PUBLIC_INTERIOR_study')
+    interior = bpy.data.collections.get(record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study'))
     has_interior = bool(interior and any(o.type == 'MESH' for o in interior.all_objects))
     assert has_interior == record['interior'], f'Interior collection missing: {code}'
     metadata.append({key: value for key, value in record.items() if key != 'exportExterior'})
@@ -344,7 +344,7 @@ for room in ROOM_SPACES:
         source_scene.collection.children.link(collection)
 for record in records:
     if record['interior']:
-        collection = bpy.data.collections[record['code'] + '_PUBLIC_INTERIOR_study']
+        collection = bpy.data.collections[record.get('interiorCollection', record['code'] + '_PUBLIC_INTERIOR_study')]
         if collection.name not in source_scene.collection.children:
             source_scene.collection.children.link(collection)
 bpy.context.window.scene = source_scene
@@ -356,7 +356,7 @@ for record in metadata:
         continue
     code = record['code']
     interior_scene = bpy.data.scenes.new('WEB_INTERIOR_' + code)
-    collection = bpy.data.collections[code + '_PUBLIC_INTERIOR_study']
+    collection = bpy.data.collections[record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study')]
     interior_objects = list(collection.all_objects)
     if code == 'MAR':
         interior_objects = [o for o in interior_objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
@@ -426,7 +426,7 @@ for record in metadata:
     objects = list(dict.fromkeys(objects))
     record['detailedExterior'] = export_detail(objects, code, 'exterior')
     if record['interior']:
-        objects = list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
+        objects = list(bpy.data.collections[record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study')].all_objects)
         if code == 'MAR':
             objects = [o for o in objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
             objects += [o for o in bpy.data.collections['MAR_EXTERIOR'].all_objects if 'ground_glass_panes' in o.name]
@@ -452,7 +452,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '167', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '169', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
