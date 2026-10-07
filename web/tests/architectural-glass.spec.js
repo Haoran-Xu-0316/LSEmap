@@ -3,33 +3,38 @@ import {readFile} from 'node:fs/promises';
 const read=async path=>JSON.parse(await readFile(path,'utf8'));
 async function model(url){const b=await readFile('dist'+url);return JSON.parse(b.subarray(20,20+b.readUInt32LE(12)));}
 
-test('architectural glass preserves shapes, shared materials and independent rooms',async()=>{
- const before=await read('result/blender/stage164/catalogue-before.json');
+test('facade and street release preserves glass and independent rooms',async()=>{
+ const before=await read('result/blender/stage165/catalogue-before.json');
  const current=await read('dist/models/catalogue.json');
- const proof=await read('result/blender/stage164/building-refinement.json');
- const native=await read('result/blender/stage164/reopened-verification.json');
- expect(current.version).toBe('164');expect(current.buildings).toHaveLength(31);
+ const proof=await read('result/blender/stage165/building-refinement.json');
+ const glass=await read('result/blender/stage164/building-refinement.json');
+ const native=await read('result/blender/stage165/reopened-verification.json');
+ expect(current.version).toBe('165');expect(current.buildings).toHaveLength(31);
  expect(current.sourceModelSha256).toBe(proof.sourceModelSha256);
  expect(native.sourceModelSha256).toBe(proof.sourceModelSha256);
- expect(native.allShapesAndUVsPreserved).toBe(true);
+ expect(native.allMeshSignaturesVerified).toBe(true);expect(native.idempotent).toBe(true);
  expect(native.originalSharedMaterialsPreserved).toBe(true);
- expect(native.bindingsVerified).toBe(8);expect(native.externalDependencies).toBe(false);
- expect(proof.objects).toBe(5966);expect(proof.allUnrelatedMeshesPreserved).toBe(true);
- expect(proof.changes[0].changedObjects).toHaveLength(8);expect(proof.changes[0].addedObjects).toEqual([]);
+ expect(native.glassBindingsVerified).toBe(8);expect(native.externalDependencies).toBe(false);
+ expect(proof.objects).toBe(5985);expect(proof.allUnrelatedMeshesPreserved).toBe(true);
+ expect(proof.changes).toHaveLength(3);expect(proof.archivedObjects).toHaveLength(15);
  for(const building of current.buildings){
   const old=before.buildings.find(b=>b.code===building.code);
-  if(['CKK','LRB'].includes(building.code))expect(building.detailedExterior.sha256).not.toBe(old.detailedExterior.sha256);
+  if(['MAR','OLD'].includes(building.code))expect(building.detailedExterior.sha256).not.toBe(old.detailedExterior.sha256);
   else expect(building.detailedExterior,building.code).toEqual(old.detailedExterior);
-  if(building.code==='CKK')expect(building.detailedInterior.sha256).not.toBe(old.detailedInterior.sha256);
-  else expect(building.detailedInterior,building.code).toEqual(old.detailedInterior);
+  expect(building.detailedInterior,building.code).toEqual(old.detailedInterior);
   expect(building.interiorSpaces,building.code).toEqual(old.interiorSpaces);
  }
  const campus=await model('/models/campus.glb');
+ // The exporter joins components into semantic building meshes.
+ expect(campus.materials.some(m=>m.name.endsWith('SITE165_Houghton_black_cast_iron'))).toBe(true);
+ const mar=await model(current.buildings.find(b=>b.code==='MAR').detailedExterior.url);
+ for(const doc of [campus,mar])expect(doc.materials.some(m=>m.name.endsWith('MAR_LETTER165_dark_bronze'))).toBe(true);
+ expect(native.archivedObjects).toEqual(proof.archivedObjects);
  for(const code of ['CKK','LRB']){
   const building=current.buildings.find(b=>b.code===code);
   const detail=await model(building.detailedExterior.url);
   const name=code+'_GLASS164_legacy_dielectric';
-  const source=proof.changes[0].originalSourceMaterials[proof.changes[0].bindings.find(b=>b.material===name).sourceMaterial];
+  const source=glass.changes[0].originalSourceMaterials[glass.changes[0].bindings.find(b=>b.material===name).sourceMaterial];
   for(const doc of [detail,campus]){
    const material=doc.materials.find(m=>m.name.endsWith(name));expect(material).toBeTruthy();
    expect(material.pbrMetallicRoughness.metallicFactor??0).toBe(0);
@@ -48,9 +53,9 @@ test('architectural glass preserves shapes, shared materials and independent roo
  }
 });
 
-for(const width of [1440,390])test(`CKK and LRB navigation remains usable at ${width}px`,async({page})=>{
+for(const width of [1440,390])test(`MAR and OLD navigation remains usable at ${width}px`,async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.setViewportSize({width,height:1000});
- for(const code of ['CKK','LRB']){
+ for(const code of ['MAR','OLD']){
   await page.goto('/#'+code);await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-'+code,{timeout:60000});
   await page.locator('.detail-gallery img[src*="'+code.toLowerCase()+'-exterior"]').click();
   await page.waitForFunction(()=>{const i=document.querySelector('#gallery-image');return i?.complete&&i.naturalWidth>0});
