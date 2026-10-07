@@ -14,7 +14,9 @@ file against `dist/release.json` before uploading. The Worker streams the unchan
 campus GLB from bounded static segments; other runtime assets are served directly.
 
 Cloudflare Workers Builds is connected to `Haoran-Xu-0316/LSEmap`, branch `main`.
-A push triggers `npm run build`, followed by `npx wrangler deploy`. The public
+The configured pipeline uses `npm run build`, followed by `npx wrangler deploy`.
+Recent releases required the verified direct deployment command when the connected
+build did not publish the latest source; do not infer publication from a push. The public
 `.assetsignore` excludes the oversized complete campus GLB; its verified bounded
 segments are uploaded and served by the Worker. Keep all25 default interior
 models required by the build and viewer fallback, alongside detailed assets.
