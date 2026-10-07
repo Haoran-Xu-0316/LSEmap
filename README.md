@@ -8,6 +8,14 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition169 corrects ten blue lower-dormer jambs on OLD, aligns MAR glass
+with the existing public hall, removes duplicate OCS shop-window surfaces,
+supplies an independent LRB lower-ground atrium floor, and adds the
+photographed second Houghton entrance bollard at an estimated position. Original objects
+and UVs remain archived. The LRB exterior retains its accepted source shell;
+only the separate interior uses the corrected floor. Photo dates and dimensions
+remain uncertain; this does not establish complete current interiors.
+
 Edition167 corrects five photograph-supported COL window frames and adds two
 independent teaching-room studies: CBG.1.04 with42 seats around seven group tables
 and CKK.1.07 with50 red seats in six rows. Historical plans and matching room
@@ -140,7 +148,7 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v167.blend`.
+The local editable source is `result/blender/LSE_campus_detailed_v169.blend`.
 The latest accepted component is `result/blender/old_exterior156/old-exterior156-component.blend`.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
