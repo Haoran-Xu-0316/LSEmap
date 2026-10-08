@@ -1,7 +1,6 @@
-"""Reopen the isolated MAR candidate and verify upper-recess clearance only.
+"""Reopen the isolated MAR candidate and verify recess, glass and floor coverage.
 
-This is not whole-building or release acceptance. The middle opening, roof
-terraces and registration of higher wings remain outstanding.
+This is not whole-building or release acceptance. Roof terraces and registration of higher wings remain outstanding.
 """
 from pathlib import Path
 import hashlib,json,math,sys
@@ -10,7 +9,7 @@ from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'web/tools'))
-from refine_mar_exterior174 import world,N,local
+from refine_mar_exterior174 import world,N,U,local
 from refine_mar_north188 import NAMES,SOURCES
 from refine_architectural_glass import shape_signature
 OUT=ROOT/'result/blender/mar-north-candidate'
@@ -55,12 +54,12 @@ for obj in visible:
     if any(token in obj.name for token in ['upper_screen_shafts','upper_screen_hammerheads','north115_fin','north_screen_horizontal_edges']):continue
     trees.append((obj.name,BVHTree.FromPolygons([obj.matrix_world@v.co for v in obj.data.vertices],[tuple(f.vertices)for f in obj.data.polygons])))
 front_checks=0;depth_checks=[]
-for z in [25.2,28.1,31.1]:
+for z in [16.2,20.4,25.2,28.1,31.1]:
     for step in range(49):
         x=-4.5+step*.25
         hits=[]
         for name,tree in trees:
-            p,n,index,d=tree.ray_cast(world(x,19,z),-N,.6)
+            p,n,index,d=tree.ray_cast(world(x,19.15,z),-N,.6)
             if p is not None:hits.append(name)
         assert not hits,(x,z,hits)
         front_checks+=1
@@ -70,8 +69,21 @@ for z in [25.2,28.1,31.1]:
             p,n,index,d=tree.ray_cast(world(x,23,z),-N,25)
             if p is not None:hits.append((d,name))
         hit=min(hits)
-        assert hit[1]in NAMES[:3],(x,z,hit)
+        assert hit[1]in NAMES[:3]+NAMES[4:],(x,z,hit)
         depth_checks.append(dict(x=x,z=z,firstHit=hit))
+# Probe the rebuilt front glazing independently of the aperture checks.
+# The retained external fins are intentionally excluded from this wall test.
+window_checks=0
+for probe in proof['windowProbes']:
+    if not probe['wall'].endswith('-front'):continue
+    centre=world(*probe['centre']);normal=U*probe['normal'][0]+N*probe['normal'][1]
+    hits=[]
+    for name,tree in trees:
+        point,_,_,distance=tree.ray_cast(centre+normal*.3,-normal,.6)
+        if point is not None:hits.append((distance,name))
+    expected='MAR188_middle_glass'if probe['wall'].startswith('middle-')else'MAR188_north_glass'
+    assert hits and min(hits)[1]==expected,(probe,min(hits)if hits else None)
+    window_checks+=1
 # Compare restored floor coverage against the original floor footprint, excluding
 # the relocated court. Quarter-metre samples are offset from all cut boundaries.
 floor_checks=0;restored_samples=0
@@ -101,8 +113,8 @@ for record in proof['floorInfillRecords']:
 assert restored_samples>0
 result=dict(candidateReopened=True,originalMeshesAndUVsPreserved=True,finiteCandidateVerticesAndUVs=True,
             clearFrontSamples=front_checks,depthSightlines=depth_checks,sourceModelSha256=proof['sourceModelSha256'],
-            candidateObjects=len(proof['addedObjects']),floorCoverageSamples=floor_checks,restoredFloorSamples=restored_samples,releaseReady=False,
-            remaining=['Middle-storey opening remains in the earlier position.','Roof-terrace continuity and lower-storey floor alignment need verification.','Upper-wing full plan and facade photo alignment remain approximate.'])
+            candidateObjects=len(proof['addedObjects']),frontWindowSightlines=window_checks,floorCoverageSamples=floor_checks,restoredFloorSamples=restored_samples,releaseReady=False,
+            remaining=['Roof-terrace continuity needs verification.','Upper-wing full plan and facade photo alignment remain approximate.','Whole-building and production-render acceptance remain outstanding.'])
 (OUT/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
 assert hashlib.sha256(model.read_bytes()).hexdigest()==proof['sourceModelSha256']
 print('MAR188_CANDIDATE_VERIFIED',front_checks,len(depth_checks),len(proof['addedObjects']),floor_checks,restored_samples)
