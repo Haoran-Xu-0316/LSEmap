@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_sar_glazing186 import SOURCE, TARGET, SHADING, BACKING, facade_registration, apply_sar_glazing186
 from refine_rooms import geometry_signatures
-STAGE = ROOT / 'result/blender/stage186'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v186.blend'
+STAGE = ROOT / 'result/blender/stage187'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v187.blend'
 proof = json.loads((STAGE / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -28,7 +28,7 @@ assert [tuple(v.co) for v in source.data.vertices] == [tuple(v.co) for v in targ
 assert [tuple(p.vertices) for p in source.data.polygons] == [tuple(p.vertices) for p in target.data.polygons]
 for layer in source.data.uv_layers:
     assert [tuple(p.uv) for p in layer.data] == [tuple(p.uv) for p in target.data.uv_layers[layer.name].data]
-change = proof['changes'][0]
+change = json.loads((ROOT / 'result/blender/stage186/building-refinement.json').read_text())['changes'][0]
 selected = set(index for pane in change['selectedPanes'] for index in pane['vertices'])
 changed_faces = 0
 for old, new in zip(source.data.polygons, target.data.polygons):
