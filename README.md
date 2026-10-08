@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition187 restores MAR's missing middle-right two-light podium window and
+concrete surround, using the built north photograph. The outer windows, open
+loggia and all existing interior geometry remain. Registration and dimensions
+are photographic estimates; the whole building massing remains under review.
+
 Edition186 replaces the opaque blue finish on SAR's four ground-floor street
 windows with neutral transmissive glass and photographed pale vertical shading.
 Original pane outlines, UVs and frames remain;80slats sit behind those windows.
