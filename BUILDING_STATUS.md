@@ -26,6 +26,8 @@
 
 下一步须联合核对两侧窗墙、开口侧壁、后方楼翼与退台，不能只平移表面玻璃。当前187版尚未修复此项。复核脚本为web/tools/audit_mar_north_alignment.py，原生射线和照片注册记录在result/blender/mar-north-alignment/alignment.json。核对没有修改模型或线上资产，也未新增整模备份。
 
+MAR188独立上部候选已重建前窗墙、凹入侧壁和顶部楼板，并裁去新开口中的旧墙、玻璃、楼板及窗边构件。27个候选对象保存为约2MB的独立组件，未保存或替换完整校园模型。重开后147个前沿检查点无遮挡、12条纵深视线命中新侧壁或玻璃；原187版网格和UV保留。两层上部楼板从归档原网格恢复4块局部补片，保留材质和插值UV；21888个覆盖采样点通过，778点位于新增补片，未检测到与保留楼板重叠。中段开口仍在旧位置，下部楼板和退台连续性仍需处理，因此候选尚不能发布。代码为web/tools/refine_mar_north188.py，验证为web/tests/verify_mar_north188_blender.py，证据在result/blender/mar-north-candidate/verification.json。
+
 ## 建筑核验记录
 
 下表仅记录最近核验范围。具体证据、历史范围与相机参数见web/tools/building-metadata.json。
