@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "185",
-  "sourceModelSha256": "ddeb6bafd23222c195ef3f3fd4b8a391016e2874bb43b0fe263fc0e978347221",
+  "version": "186",
+  "sourceModelSha256": "259e8ce5fd4bef961968419002151865c0e3efbe50991b2e0023c09ab7c8be49",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5439,13 +5439,24 @@
         "scope": "Main street bay count, central entrance and alternating pediment order follow the 22 March 2022 photo and the official property handbook. The adjoining three-bay building is excluded. Mapped footprint, existing 23m height and storey datums retained; dimensions, colour and pane subdivisions estimated. Guide records 120cm door opening and five steps beyond the doors; no five-step exterior staircase invented. Roof, unseen elevations and the full interior remain unresolved. Existing independent 2015 tea-room sample retained."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
-        "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+        "version": 186,
+        "scope": "Four ground-floor street windows retain their glass geometry, UVs and curved-head frames, with neutral dielectric transmission revealing pale vertical blinds.80slats and four recessed shadow fields express only the photographed window treatment. Door panes and upper/side windows unchanged.",
+        "sources": [
+          {
+            "local": "data/建筑图片/SAR_Sardinia House/01_建筑实拍/exteriors_lse_estate_025.jpg",
+            "url": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate",
+            "captureDate": null
+          },
+          {
+            "local": "data/建筑图片/SAR_Sardinia House/01_建筑实拍/campus_photos_round2_SAR_geograph_5974706_01.jpg",
+            "url": "https://www.geograph.org.uk/photo/5974706",
+            "captureDate": "2018-08-07"
+          }
         ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "limits": "Slat pitch, coverage, setback and glazing optics estimated. No surveyed specification or complete present-day room reconstruction.",
+        "audit": "result/blender/stage186/glazing-verification.json",
+        "addedObjects": 3,
+        "archivedObjects": 1
       },
       "detailView": {
         "label": "入口与拱窗",
@@ -5487,6 +5498,15 @@
             "https://www.accessable.co.uk/london-school-of-economics/access-guides/sardinia-house",
             "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf"
           ]
+        },
+        {
+          "version": 166,
+          "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+          "evidence": [
+            "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          ],
+          "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+          "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
       "glazingReview": {
@@ -5563,10 +5583,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-cf39f0dc668e.glb",
-        "bytes": 1403776,
-        "triangles": 111151,
-        "sha256": "cf39f0dc668e5e48b81eba193c8dd7e1637ca47d4ecd61e62784d8a5fb22d50c",
+        "url": "/models/details/sar-exterior-8ba7357a5276.glb",
+        "bytes": 1416784,
+        "triangles": 112167,
+        "sha256": "8ba7357a5276e8797792631c2e3b82f92a6c36c07f0c2af869f461dfec08c3cb",
         "bounds": {
           "min": [
             -92.74727630615234,
