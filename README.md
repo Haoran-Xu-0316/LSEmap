@@ -8,6 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition184 joins154separate SAL gable coping segments into seven closed mitred
+stone bands, removing294internal cap faces. Seven intersecting gable panes now
+sit behind the stone; the central three-light frame receives its missing masonry
+aperture. Coping anchors, window
+silhouettes, glass finishes and warm brick are retained. Section and rebate depth
+remain modelling estimates; complete current facades and interiors are unfinished.
+
 Edition183 corrects SAL principal-elevation stock brick to an estimated warm
 orange/buff finish from two built photographs. Six registered batches retain
 their geometry, UVs, brick scale and mortar. Unphotographed proxies are retained.
