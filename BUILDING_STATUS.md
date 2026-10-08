@@ -1,8 +1,10 @@
 # LSEmap模型状态
 
-当前本地完整模型为185版：result/blender/LSE_campus_detailed_v185.blend。已保存并重开验证，6433个对象。
+当前本地完整模型为186版：result/blender/LSE_campus_detailed_v186.blend。已保存并重开验证，6436个对象。
 
-原生SHA256：ddeb6bafd23222c195ef3f3fd4b8a391016e2874bb43b0fe263fc0e978347221。
+原生SHA256：259e8ce5fd4bef961968419002151865c0e3efbe50991b2e0023c09ab7c8be49。
+
+186版修正SAR的4组首层临街窗：保留玻璃几何、UV与拱形窗框，改为中性透光玻璃，并加入照片可见的浅色竖向百叶。80片百叶及窗后暗面仅表达窗部构造；尺度、覆盖范围和光学参数估算，不代表完整房间。
 
 185版将OLD入口两侧楼名字样及校徽下校训重新注册到现有石墙；楼名按石柱宽度适配，字形背面贴合石材。保留可编辑文字、字体、颜色和全部立面网格，字样尺度及间隙为建模估计。
 
@@ -48,7 +50,7 @@
 |PEA|146|Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.|
 |PEL|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |POR|148|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
-|SAR|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
+|SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
 |SAW|166|125 photographed timber-curtain lights use their original outward face and UV, removing duplicated transparent-box backs and edges. Existing stair, timber frames, brick and all room studies retained.|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
 |SAL|184|7条连续闭合山花压顶取代154段重叠杆件；7组玻璃退入原窗洞，补出中央三联窗后的砖墙开口。原压顶路径、窗洞轮廓、光学材质和暖橙褐砖色保留；截面及退入深度估算，完整现状与内部未完成。|
@@ -56,4 +58,4 @@
 
 ## 保存和发布
 
-185版构建、重开、网页与发布证据记录在result/blender/stage185。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
+186版构建、重开、网页与发布证据记录在result/blender/stage186。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
