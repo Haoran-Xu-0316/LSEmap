@@ -2538,22 +2538,22 @@
         "scope": "September 2023 front photography and architect project photos guide floor count, sash colour and projecting bays. Absolute heights, bay dimensions, roof arrangement, rear elevations, carving and complete interior remain unverified. Jestico + Whiles built-project photograph guides two front tower roof profiles and lantern joinery. Existing tower centers and primary roof endpoints retained; curvature, pane and frame dimensions and optical finish are photo estimates. Original objects archived, other facades and all interiors unchanged; full roof arrangement and rear elevations unresolved."
       },
       "latestReview": {
-        "version": 183,
-        "status": "principal-brick-colour-review",
-        "scope": "6组主立面砖材改为实拍支持的暖橙褐色；原几何、UV、砖尺度、砖缝、石材及玻璃保留。未拍摄背面和侧面代理保留。",
+        "version": 184,
+        "status": "gable-coping-and-rebate-correction",
+        "scope": "154段带重叠端盖的山花压顶重建为7条连续闭合石带；7组交叠玻璃退入原窗洞，并在中央三联窗后补出真实砖墙开口。保留窗框与玻璃轮廓、玻璃UV与材质及183版暖橙褐砖色。",
         "limitations": [
-          "色值为照片估计，非校准反射率。",
-          "两张已建照片拍摄日期未知，2024文件路径不代表拍摄时间。",
-          "完整现状外观与内部仍未核验。"
+          "截面和窗洞退入深度为建模估算，非实测尺寸。",
+          "已建照片拍摄日期未知。",
+          "未见背面、完整当前外观与内部仍未核验。"
         ],
         "sourceUrls": [
           "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
           "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/32L-300x400.jpg"
         ],
-        "addedObjects": 6,
-        "archivedObjects": 6,
+        "addedObjects": 3,
+        "archivedObjects": 3,
         "changedObjects": 0,
-        "audit": "result/blender/stage183/building-refinement.json"
+        "audit": "result/blender/stage184/building-refinement.json"
       },
       "interiorView": {
         "position": [
@@ -2626,6 +2626,24 @@
           "archivedObjects": 0,
           "changedObjects": 0,
           "audit": "result/blender/sal_exterior176/verification.json"
+        },
+        {
+          "version": 183,
+          "status": "principal-brick-colour-review",
+          "scope": "6组主立面砖材改为实拍支持的暖橙褐色；原几何、UV、砖尺度、砖缝、石材及玻璃保留。未拍摄背面和侧面代理保留。",
+          "limitations": [
+            "色值为照片估计，非校准反射率。",
+            "两张已建照片拍摄日期未知，2024文件路径不代表拍摄时间。",
+            "完整现状外观与内部仍未核验。"
+          ],
+          "sourceUrls": [
+            "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/32L-300x400.jpg"
+          ],
+          "addedObjects": 6,
+          "archivedObjects": 6,
+          "changedObjects": 0,
+          "audit": "result/blender/stage183/building-refinement.json"
         }
       ],
       "glazingReview": {
