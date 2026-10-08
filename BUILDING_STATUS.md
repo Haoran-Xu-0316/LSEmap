@@ -1,8 +1,10 @@
 # LSEmap模型状态
 
-当前本地完整模型为183版：result/blender/LSE_campus_detailed_v183.blend。已保存并重开验证，6427个对象。
+当前本地完整模型为184版：result/blender/LSE_campus_detailed_v184.blend。已保存并重开验证，6430个对象。
 
-原生SHA256：d9b6aee501e3b12f521c7430730b6a747e88c498eaa43c02d8c2bf17fe415c1a。
+原生SHA256：b462b2263d8a9185a20e892c7e02ae2b52c9438c6cb45ab1359a51a552f1a714。
+
+184版将SAL的154段独立山花压顶合为7条连续闭合石带，移除294个内部端盖；7组交叠玻璃退入原窗洞，并补出中央三联窗后的真实砖墙开口；压顶路径、窗洞轮廓、玻璃材质及UV保留。截面及退入深度估算，非现状测绘。
 
 183版按两张已建照片修正SAL主立面6组砖材为暖橙褐色，独立材质保留砖缝与尺度，几何、UV、窗框、玻璃和石材不变。色值估计，照片日期未知，未覆盖的背面与侧面代理保留。
 
@@ -47,9 +49,9 @@
 |SAR|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |SAW|166|125 photographed timber-curtain lights use their original outward face and UV, removing duplicated transparent-box backs and edges. Existing stair, timber frames, brick and all room studies retained.|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
-|SAL|183|主立面6组砖材改为实拍支持的暖橙褐色；独立材质保持砖缝、砖尺度、几何、UV及全部玻璃，未覆盖代理保留。色值估计，照片日期未知；完整现状与内部未完成。|
+|SAL|184|7条连续闭合山花压顶取代154段重叠杆件；7组玻璃退入原窗洞，补出中央三联窗后的砖墙开口。原压顶路径、窗洞轮廓、光学材质和暖橙褐砖色保留；截面及退入深度估算，完整现状与内部未完成。|
 |STC|143|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
 
 ## 保存和发布
 
-181版构建、重开、网页与发布证据记录在result/blender/stage181。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
+184版构建、重开、网页与发布证据记录在result/blender/stage184。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
