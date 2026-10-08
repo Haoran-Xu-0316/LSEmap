@@ -1,8 +1,10 @@
 # LSEmap模型状态
 
-当前本地完整模型为184版：result/blender/LSE_campus_detailed_v184.blend。已保存并重开验证，6430个对象。
+当前本地完整模型为185版：result/blender/LSE_campus_detailed_v185.blend。已保存并重开验证，6433个对象。
 
-原生SHA256：b462b2263d8a9185a20e892c7e02ae2b52c9438c6cb45ab1359a51a552f1a714。
+原生SHA256：ddeb6bafd23222c195ef3f3fd4b8a391016e2874bb43b0fe263fc0e978347221。
+
+185版将OLD入口两侧楼名字样及校徽下校训重新注册到现有石墙；楼名按石柱宽度适配，字形背面贴合石材。保留可编辑文字、字体、颜色和全部立面网格，字样尺度及间隙为建模估计。
 
 184版将SAL的154段独立山花压顶合为7条连续闭合石带，移除294个内部端盖；7组交叠玻璃退入原窗洞，并补出中央三联窗后的真实砖墙开口；压顶路径、窗洞轮廓、玻璃材质及UV保留。截面及退入深度估算，非现状测绘。
 
@@ -39,7 +41,7 @@
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|178|Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.|
 |MAR|177|107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.|
-|OLD|178|Eight registered Houghton Street ramp posts now use independent black coating while the continuous handrail stays silver. Shapes, matrices and UVs retained; original object archived. Photo capture date unknown and coating values estimated. Whole-building interior layouts remain unfinished.|
+|OLD|185|入口楼名与校训重新注册并贴合现有石材；楼名适配石柱宽度，保留字体、颜色和全部立面网格。字样尺度及间隙估算，完整外观与内部仍未完成。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
@@ -54,4 +56,4 @@
 
 ## 保存和发布
 
-184版构建、重开、网页与发布证据记录在result/blender/stage184。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
+185版构建、重开、网页与发布证据记录在result/blender/stage185。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
