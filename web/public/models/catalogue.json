@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "184",
-  "sourceModelSha256": "b462b2263d8a9185a20e892c7e02ae2b52c9438c6cb45ab1359a51a552f1a714",
+  "version": "185",
+  "sourceModelSha256": "ddeb6bafd23222c195ef3f3fd4b8a391016e2874bb43b0fe263fc0e978347221",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4106,12 +4106,13 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 178,
-        "scope": "Eight registered Houghton Street ramp posts now use independent black coating while the continuous handrail stays silver. Shapes, matrices and UVs retained; original object archived. Photo capture date unknown and coating values estimated. Whole-building interior layouts remain unfinished.",
-        "source": "data/collections/public-realm-2026/user-references/reference-09.png",
-        "audit": "result/blender/houghton_environment178/audit.json",
-        "addedObjects": 1,
-        "archivedObjects": 1
+        "version": 185,
+        "scope": "Register two Houghton Street building names and the crest motto with their current masonry. Fit names within the existing stone piers and seat editable glyphs against stone; preserve original font, colour and all facade meshes. Lettering scale and clearance are estimates. Complete present-day elevations and interiors remain unfinished.",
+        "source": "data/collections/old-user-reference/houghton-entrance-user-20261002.png",
+        "photographDate": "unknown",
+        "audit": "result/blender/stage185/lettering-verification.json",
+        "addedObjects": 3,
+        "archivedObjects": 3
       },
       "interiorView": {
         "position": [
@@ -4216,6 +4217,14 @@
               "supports": "Built split-level foyer photographs and architect entrance plan"
             }
           ]
+        },
+        {
+          "version": 178,
+          "scope": "Eight registered Houghton Street ramp posts now use independent black coating while the continuous handrail stays silver. Shapes, matrices and UVs retained; original object archived. Photo capture date unknown and coating values estimated. Whole-building interior layouts remain unfinished.",
+          "source": "data/collections/public-realm-2026/user-references/reference-09.png",
+          "audit": "result/blender/houghton_environment178/audit.json",
+          "addedObjects": 1,
+          "archivedObjects": 1
         }
       ],
       "houghtonAccessReview": {
@@ -4301,10 +4310,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-2593eeee81fb.glb",
-        "bytes": 20181440,
+        "url": "/models/details/old-exterior-84bfe9c4ee5d.glb",
+        "bytes": 20183580,
         "triangles": 1670352,
-        "sha256": "2593eeee81fb64e06bfdccc94d96077beedd2bd02ae64a08c8afedc6cc0aa4d8",
+        "sha256": "84bfe9c4ee5dfe42c3267b3d35cc3be8044d5103771e35c19c4f7b5f26c5020f",
         "bounds": {
           "min": [
             -39.1646614074707,
