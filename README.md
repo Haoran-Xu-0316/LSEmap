@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition185 registers OLD's two Houghton Street building names and crest motto
+with the current masonry. Names fit within the existing stone piers; editable
+text is seated against stone without changing the facade meshes, font or colour.
+Lettering scale and clearance remain modelling estimates.
+
 Edition184 joins154separate SAL gable coping segments into seven closed mitred
 stone bands, removing294internal cap faces. Seven intersecting gable panes now
 sit behind the stone; the central three-light frame receives its missing masonry
