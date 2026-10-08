@@ -77,8 +77,8 @@ export function refineMaterialFinish(material, environmentMap = null) {
     // reflects as a dielectric, rather than dark polished bare metal.
     material.metalness = 0;
     material.roughness = 0.72;
-  } else if (matches(/SITE_V47_steel$/i)) {
-    // Reuse the existing sky capture for exposed cycle hoops and bench fixings.
+  } else if (matches(/SITE_V47_steel$|OLD_NEXT_(?:OLD_NEXT_)?(?:ACCESS_steel|APPROACH_silver)$/i)) {
+    // Reuse the shared sky for exposed street steel and photographed OLD silver rails.
     // This separates their soft metallic highlight from painted street furniture.
     material.metalness = 0.9;
     material.roughness = 0.43;
