@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition188 realigns MAR’s north middle and upper recess using the built frontage
+photograph. Coordinated windows, four floor levels, terrace paving and diagonal
+roof closure share the same source. All original meshes and UVs remain archived.
+Opening position and depth are photographic estimates; higher wings and complete
+current interiors remain under review.
+
 Edition187 restores MAR's missing middle-right two-light podium window and
 concrete surround, using the built north photograph. The outer windows, open
 loggia and all existing interior geometry remain. Registration and dimensions
