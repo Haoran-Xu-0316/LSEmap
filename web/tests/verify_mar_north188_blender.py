@@ -12,26 +12,33 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'web/tools')
 from refine_mar_exterior174 import world,N,U,local
 from refine_mar_north188 import NAMES,SOURCES
 from refine_architectural_glass import shape_signature
-OUT=ROOT/'result/blender/mar-north-candidate'
-proof=json.loads((OUT/'candidate.json').read_text())
-model=ROOT/'result/blender/LSE_campus_detailed_v187.blend'
+integrated=globals().get('INTEGRATED_MODEL')
+OUT=ROOT/'result/blender/stage188'if integrated else ROOT/'result/blender/mar-north-candidate'
+if integrated:
+    native=json.loads((OUT/'building-refinement.json').read_text())
+    proof=dict(native['changes'][0],sourceModelSha256=native['sourceModelSha256'])
+    model=Path(integrated)
+else:
+    proof=json.loads((OUT/'candidate.json').read_text())
+    model=ROOT/'result/blender/LSE_campus_detailed_v187.blend'
 assert hashlib.sha256(model.read_bytes()).hexdigest()==proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(model));scene=bpy.data.scenes['00_CAMPUS_COMPLETE'];bpy.context.window.scene=scene
 for layer in scene.view_layers:layer.update()
 before={o.name:shape_signature(o)for o in bpy.data.objects if o.type=='MESH'}
-with bpy.data.libraries.load(str(OUT/'north-envelope-candidate.blend'),link=False)as (available,loaded):
-    assert set(proof['addedObjects'])<=set(available.objects)
-    loaded.objects=list(proof['addedObjects'])
-trim_owners={record['target']:list(bpy.data.objects[record['source']].users_collection)for record in proof['trimRecords']}
-trim_owners.update({record['target']:list(bpy.data.objects[record['ownerSource']].users_collection)for record in proof['floorInfillRecords']})
-for obj in loaded.objects:
-    assert obj is not None
-    owners=trim_owners.get(obj.name,[bpy.data.collections['MAR_EXTERIOR']])
-    for owner in owners:owner.objects.link(obj)
-    obj.hide_render=False;obj.hide_set(False)
-for name in proof['archivedObjects']:
-    bpy.data.objects[name].hide_render=True;bpy.data.objects[name].hide_set(True)
-for layer in scene.view_layers:layer.update()
+if not integrated:
+    with bpy.data.libraries.load(str(OUT/'north-envelope-candidate.blend'),link=False)as (available,loaded):
+        assert set(proof['addedObjects'])<=set(available.objects)
+        loaded.objects=list(proof['addedObjects'])
+    trim_owners={record['target']:list(bpy.data.objects[record['source']].users_collection)for record in proof['trimRecords']}
+    trim_owners.update({record['target']:list(bpy.data.objects[record['ownerSource']].users_collection)for record in proof['floorInfillRecords']})
+    for obj in loaded.objects:
+        assert obj is not None
+        owners=trim_owners.get(obj.name,[bpy.data.collections['MAR_EXTERIOR']])
+        for owner in owners:owner.objects.link(obj)
+        obj.hide_render=False;obj.hide_set(False)
+    for name in proof['archivedObjects']:
+        bpy.data.objects[name].hide_render=True;bpy.data.objects[name].hide_set(True)
+    for layer in scene.view_layers:layer.update()
 assert all(shape_signature(bpy.data.objects[name])==digest for name,digest in before.items())
 for name in proof['addedObjects']:
     obj=bpy.data.objects[name]
@@ -133,6 +140,6 @@ result=dict(candidateReopened=True,originalMeshesAndUVsPreserved=True,finiteCand
             clearFrontSamples=front_checks,depthSightlines=depth_checks,sourceModelSha256=proof['sourceModelSha256'],
             candidateObjects=len(proof['addedObjects']),frontWindowSightlines=window_checks,roofFootprintSamples=roof_checks,clearCourtyardRoofSamples=court_roof_checks,floorCoverageSamples=floor_checks,restoredFloorSamples=restored_samples,releaseReady=False,
             remaining=['Whole-campus integration and overview/detail parity require validation.','Upper-wing full plan and facade photo alignment remain approximate.','Private MAR web preview does not establish complete campus or release acceptance.'])
-(OUT/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
+(OUT/('north-verification.json'if integrated else'verification.json')).write_text(json.dumps(result,indent=2)+'\n')
 assert hashlib.sha256(model.read_bytes()).hexdigest()==proof['sourceModelSha256']
 print('MAR188_CANDIDATE_VERIFIED',front_checks,len(depth_checks),len(proof['addedObjects']),floor_checks,restored_samples)
