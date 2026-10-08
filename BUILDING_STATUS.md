@@ -1,8 +1,8 @@
 # LSEmap模型状态
 
-当前本地完整模型为188版：result/blender/LSE_campus_detailed_v188.blend。6483个对象。原生重开与12项网页检查通过，已部署并核对线上资源及实际页面。
+当前本地完整模型为189版：result/blender/LSE_campus_detailed_v189.blend。6484个对象。与188原生模型逐项对比通过，18226个雕塑采样点验证保护玻璃位于前方。12项网页检查通过，总览与细节玻璃位置及光学参数一致；发布核对进行中。
 
-原生SHA256：d923d7bbccad0fdf8600aaa5240d9b3b02cee403baac9ff2265fd8549579b427。
+原生SHA256：39a5c6d2f11f220e2e7b8157c34caca2f3498325d033d78e72434b2cf77ecae5。
 
 187版按已建正面照片补回MAR底座中间偏右的第三组高窗及混凝土围边，保留两侧原高窗、另一侧开放柱廊及内部几何。照片注册、围边和窗洞尺寸为估算；完整体量仍未核实。
 
@@ -53,7 +53,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|178|Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.|
 |MAR|188|按已建照片对齐北立面中段及上部开口，联动窗墙、四层楼板、铺砖和斜向屋面；保留底座三窗及原始网格。开口尺寸与进深估算，高层体量和完整现状内部未核实。|
-|OLD|185|入口楼名与校训重新注册并贴合现有石材；楼名适配石柱宽度，保留字体、颜色和全部立面网格。字样尺度及间隙估算，完整外观与内部仍未完成。|
+|OLD|189|保护玻璃从网格装置后方移至前方，并降低灰色遮挡；保留原人物、拱门、窗框、入口字样和UV。玻璃安装间隙与光学值估算，完整外观与内部仍未完成。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
@@ -69,3 +69,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 ## 保存和发布
 
 188版构建、重开、网页与发布证据记录在result/blender/stage188。Cloudflare部署ID为b17516dd-1754-4b6e-af2d-212cfd3befc7。清理187版旧整模、候选二进制、废弃辅助脚本和重复展示图，共释放192530059字节。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
+
+## OLD保护玻璃
+
+189版合入已验证的独立组件，替换原后置面，不叠加玻璃层。原人物、石材、窗框、字样及UV保留；安装间隙和透明度为视觉估计。局部候选的对比记录位于result/blender/old-artwork-glazing，整模重开记录位于result/blender/stage189。雕塑人物细节及完整OLD外观、内部继续完善。
