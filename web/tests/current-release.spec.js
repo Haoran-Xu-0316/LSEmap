@@ -6,42 +6,38 @@ const glb = async path => {
  return JSON.parse(bytes.toString('utf8',20,20+bytes.readUInt32LE(12)));
 };
 
-test('edition186 reveals SAR street blinds without changing unrelated models',async()=>{
- const before=await read('result/blender/stage186/catalogue-before.json');
+test('edition187 restores MAR third podium window while preserving other models',async()=>{
+ const before=await read('result/blender/stage187/catalogue-before.json');
  const current=await read('dist/models/catalogue.json');
- const proof=await read('result/blender/stage186/building-refinement.json');
- const native=await read('result/blender/stage186/reopened-verification.json');
- const glazing=await read('result/blender/stage186/glazing-verification.json');
- expect(current.version).toBe('186');
+ const proof=await read('result/blender/stage187/building-refinement.json');
+ const native=await read('result/blender/stage187/reopened-verification.json');
+ const podium=await read('result/blender/stage187/podium-verification.json');
+ expect(current.version).toBe('187');
  expect(current.sourceModelSha256).toBe(proof.sourceModelSha256);
  expect(native.savedSceneReopened&&native.idempotent&&native.allOriginalFontsPreserved).toBe(true);
- expect(glazing.sourceModelSha256).toBe(current.sourceModelSha256);
- expect(glazing.treatedWindows).toBe(4);
- expect(glazing.blindSlats).toBe(80);
- expect(glazing.twoLayerSightlines).toHaveLength(48);
- expect(glazing.originalGlassGeometryAndUVsPreserved&&glazing.otherPaneFinishesPreserved).toBe(true);
+ expect(podium.savedSourceVerified&&podium.allOriginalShapesAndUVsPreserved).toBe(true);
+ expect(podium.newPaneSightlines).toHaveLength(12);
+ expect(podium.retainedWindowChecks).toBe(4);
+ expect(podium.openLoggiaChecks).toBe(2);
  for(const building of current.buildings){
   const old=before.buildings.find(item=>item.code===building.code);
-  if(building.code==='SAR') {
+  if(building.code==='MAR') {
    expect(building.detailedExterior.sha256).not.toBe(old.detailedExterior.sha256);
    const document=await glb('dist'+building.detailedExterior.url);
-   const glass=document.materials.find(material=>material.name.includes('SAR186_clear_street_glass'));
+   const glass=document.materials.find(material=>material.name.includes('MAR187_podium_window_glass'));
    expect(glass).toBeTruthy();
-   expect(glass.alphaMode).toBe('BLEND');
-   expect(glass.pbrMetallicRoughness.baseColorFactor[3]).toBeCloseTo(.38,5);
+   expect(glass.pbrMetallicRoughness.baseColorFactor[3]).toBe(1);
    expect(glass.pbrMetallicRoughness.metallicFactor??1).toBe(0);
-   expect(glass.extras.webClosedGlazing).toBe(true);
-   expect(document.materials.some(material=>material.name.includes('SAR186_pale_blind_fabric'))).toBe(true);
-   expect(building.detailedExterior.triangles-old.detailedExterior.triangles).toBeLessThan(2000);
+   expect(building.detailedExterior.triangles-old.detailedExterior.triangles).toBeLessThan(200);
   } else expect(building.detailedExterior,building.code).toEqual(old.detailedExterior);
   expect(building.detailedInterior,building.code).toEqual(old.detailedInterior);
   expect(building.interiorSpaces,building.code).toEqual(old.interiorSpaces);
  }
- expect(proof.changes[0].selectedPanes).toHaveLength(4);
+ expect(proof.changes[0].addedObjects).toHaveLength(3);
 });
 
-for(const width of [1440,390]) for(const code of ['SAR','OLD','CBG','PEL']){
- test(`${code} edition186 loads at${width}px`,async({page})=>{
+for(const width of [1440,390]) for(const code of ['MAR','SAR','OLD','CBG']){
+ test(`${code} edition187 loads at${width}px`,async({page})=>{
   const errors=[];page.on('pageerror',error=>errors.push(error.message));
   await page.setViewportSize({width,height:1000});await page.goto('/#'+code);
   await page.waitForFunction(code=>document.querySelector('canvas')?.dataset.detailReady==='exterior-'+code,code);
