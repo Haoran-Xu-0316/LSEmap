@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition190 aligns SAW’s openwork bricks with the surrounding masonry and adds
+recessed mortar at actual staggered overlaps. Hidden contact faces are omitted
+to limit mesh cost. Dimensions and registration remain photographic estimates;
+complete interiors and full-campus fidelity are still work in progress.
+
 Edition189 moves OLD’s existing Final Sale protective glazing ahead of the mesh
 artwork and reduces its grey veil. The original pane outline, sculpture,
 limestone arch, windows and editable lettering remain intact. Mounting clearance
