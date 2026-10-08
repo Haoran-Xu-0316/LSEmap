@@ -1671,9 +1671,9 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 187,
-        "scope": "Restore the missing middle-right two-light north podium window and concrete surround. Retain the two existing outer windows and opposite open loggia. Photographic registration and dimensions estimated; full massing and current interiors unverified.",
-        "audit": "result/blender/stage187/podium-verification.json",
+        "version": 188,
+        "scope": "Realign north middle and upper recessed opening against the built frontal photograph. Rebuild coordinated walls and glass, recover four floor levels and terrace paving, and close the diagonal roof wedge. Retain original geometry and finishes as archived sources. Photographic registration, recess depth and higher-wing massing remain estimates.",
+        "audit": "result/blender/stage188/north-verification.json",
         "sourceUrls": [
           "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
         ],
