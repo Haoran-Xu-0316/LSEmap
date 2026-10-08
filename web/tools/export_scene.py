@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v183.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v184.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -30,7 +30,7 @@ bpy.context.window.scene = source_scene
 def source_geometry_name(obj):
     # A physical glazing replacement retains its source geometry policy.
     # Replacement naming must not change bevel/UV detail between views.
-    return obj.name.removeprefix('SAL183_').removeprefix('GLASS181_')
+    return obj.name.removeprefix('SAL184_').removeprefix('SAL183_').removeprefix('GLASS181_')
 
 
 modifier_states = []
@@ -460,7 +460,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '183', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '184', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
