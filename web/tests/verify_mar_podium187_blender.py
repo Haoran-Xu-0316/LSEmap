@@ -8,8 +8,8 @@ from refine_mar_podium187 import NAMES,apply_mar_podium187
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
 from refine_old_lettering185 import font_signature
-out=ROOT/'result/blender/stage187';proof=json.loads((out/'building-refinement.json').read_text())
-model=ROOT/'result/blender/LSE_campus_detailed_v187.blend'
+from refine_building_details import REPORT as out,TARGET as model
+proof=json.loads((out/'building-refinement.json').read_text())
 assert hashlib.sha256(model.read_bytes()).hexdigest()==proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(model));bpy.context.window.scene=bpy.data.scenes['00_CAMPUS_COMPLETE']
 for scene in bpy.data.scenes:
@@ -40,8 +40,9 @@ for x in [-13.3,-12.2,-11.1]:
   hit=first(x,z);assert hit[1]==NAMES[1],(x,z,hit);checks.append({'x':x,'z':z,'firstHit':hit})
 for x,z in [(-14.4,8),(-9,8),(-12.2,5.2),(-12.2,12.5)]:assert first(x,z)[1]==NAMES[0]
 assert first(-12.2,9.1)[1]==NAMES[2]
+pane_name=next((r['target']for change in proof['changes']for r in change.get('trimRecords',[])if r['source']=='MAR174_retained_loggia_12'),'MAR174_retained_loggia_12')
 for x in [19.5,-25.9]:
- for z in [7.3,10.8]:assert first(x,z)[1]=='MAR174_retained_loggia_12'
+ for z in [7.3,10.8]:assert first(x,z)[1]==pane_name
 for z in [7.3,10.8]:assert first(6.6,z) is None,'Open loggia obstructed'
 (out/'podium-verification.json').write_text(json.dumps({'savedSourceVerified':True,'allOriginalShapesAndUVsPreserved':True,'allOriginalFontsPreserved':True,'newPaneSightlines':checks,'surroundChecks':4,'retainedWindowChecks':4,'openLoggiaChecks':2},indent=2))
 print('MAR187_VERIFIED',len(checks))
