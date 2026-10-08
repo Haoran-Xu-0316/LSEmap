@@ -61,7 +61,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 |PEL|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |POR|148|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
-|SAW|166|125 photographed timber-curtain lights use their original outward face and UV, removing duplicated transparent-box backs and edges. Existing stair, timber frames, brick and all room studies retained.|
+|SAW|190|9828块镂空砖与周围墙面齐平，18673处搭接砂浆连接相邻砖层。保留砖块尺寸、UV、颜色及原玻璃和室内；移除砂浆隐藏接触面，安装尺寸仍为照片估计。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
 |SAL|184|7条连续闭合山花压顶取代154段重叠杆件；7组玻璃退入原窗洞，补出中央三联窗后的砖墙开口。原压顶路径、窗洞轮廓、光学材质和暖橙褐砖色保留；截面及退入深度估算，完整现状与内部未完成。|
 |STC|143|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
@@ -73,3 +73,9 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 ## OLD保护玻璃
 
 189版合入已验证的独立组件，替换原后置面，不叠加玻璃层。原人物、石材、窗框、字样及UV保留；安装间隙和透明度为视觉估计。局部候选的对比记录位于result/blender/old-artwork-glazing，整模重开记录位于result/blender/stage189。雕塑人物细节及完整OLD外观、内部继续完善。
+
+## SAW砖屏与灰缝
+
+2026-10-09：对照EH Smith与ArchDaily照片，将9828块既有砖移回已注册墙面，保留原砖尺寸、颜色、UV及117936个三角面。补出18673处实际搭接灰缝，186730次接触检查通过；移除被砖块遮挡的砂浆顶底面后，新增加149384个三角面，比首轮灰缝方案少74692个。整楼网页导出由12142224字节增至13529872字节，仅增加1个渲染primitive。参考图拍摄日期未知，尺寸与安装关系仍为照片估计。
+
+完整190版已保存并重新打开验证，6494个对象；既有几何、UV、字样、材质绑定和其他集合保留。记录见result/blender/stage190及saw-screen-review。已刷新125张展示图，8项网页检查通过，总览与单楼砂浆边界和材质一致，其他楼和房间资源保持不变。提交与上线验收待完成。保留189版至新版本上线验收，已删除本轮临时前后对比GLB。CBG沿用用户指定红色为主、橙色为辅，不作为照片测色结论。
