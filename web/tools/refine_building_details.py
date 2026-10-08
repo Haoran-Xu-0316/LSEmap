@@ -13,10 +13,10 @@ sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
 from refine_old_lettering185 import font_signature
-from refine_sar_glazing186 import apply_sar_glazing186
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v185.blend'
-TARGET = ROOT / 'result/blender/LSE_campus_detailed_v186.blend'
-REPORT = ROOT / 'result/blender/stage186'
+from refine_mar_podium187 import apply_mar_podium187
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v186.blend'
+TARGET = ROOT / 'result/blender/LSE_campus_detailed_v187.blend'
+REPORT = ROOT / 'result/blender/stage187'
 
 
 def refine_building_details():
@@ -24,7 +24,7 @@ def refine_building_details():
     if TARGET.exists() and report_path.exists():
         proof = json.loads(report_path.read_text())
         assert hashlib.sha256(TARGET.read_bytes()).hexdigest() == proof['sourceModelSha256']
-        print('BUILDINGS186_ALREADY_CURRENT')
+        print('BUILDINGS187_ALREADY_CURRENT')
         return
     REPORT.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.open_mainfile(filepath=str(BASE))
@@ -37,7 +37,7 @@ def refine_building_details():
     visibility = {o.name: o.hide_render for o in bpy.data.objects}
     fonts = {o.name: font_signature(o) for o in bpy.data.objects if o.type == 'FONT'}
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
-    changes = [apply_sar_glazing186()]
+    changes = [apply_mar_podium187()]
     for scene in bpy.data.scenes:
         for layer in scene.view_layers:
             layer.update()
@@ -56,14 +56,14 @@ def refine_building_details():
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(TARGET))
-    proof = {'version': 186, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
+    proof = {'version': 187, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
              'sourceModelSha256': hashlib.sha256(TARGET.read_bytes()).hexdigest(),
              'allUnrelatedMeshesPreserved': True, 'changes': changes,
              'originalFonts': fonts, 'fonts': {o.name: font_signature(o) for o in bpy.data.objects if o.type == 'FONT'},
              'objects': len(bpy.data.objects), 'geometrySignatures': after, 'originalShapesAndUVs': shapes, 'archivedObjects': sorted(archived),
              'visibility': {o.name:o.hide_render for o in bpy.data.objects}}
     report_path.write_text(json.dumps(proof, indent=2) + '\n')
-    print('BUILDINGS186_SAVED', len(bpy.data.objects), len(added))
+    print('BUILDINGS187_SAVED', len(bpy.data.objects), len(added))
 
 
 if __name__ == '__main__':
