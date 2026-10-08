@@ -2,8 +2,8 @@
 
 The opening shifts approximately10.25m in the retained local coordinates.
 Front walls, recessed side walls and their roof plates are rebuilt together.
-This component alone is not release-ready: roof terrace continuity and complete
-upper-wing registration still require review. Recess clearance passes
+This component alone is not release-ready: complete upper-wing registration and
+whole-campus integration still require review. Northern roof clearance passes
 the separate saved-component verification.
 No files are opened or saved here. All original meshes remain archived intact.
 """
@@ -33,7 +33,7 @@ def trim_inherited_recess(collection):
     for a,b in zip(outline,outline[1:]+outline[:1]):
         normal=Vector((a[1]-b[1],b[0]-a[0],0))
         planes.append((normal,-normal.dot(Vector((*a,0)))+.06*normal.length))
-    planes.extend([(Vector((0,0,1)),-12.801),(Vector((0,0,-1)),32.851)])
+    planes.extend([(Vector((0,0,1)),-12.801),(Vector((0,0,-1)),33.93)])
 
     # Replace the middle front as a complete wall/window system, including its
     # old glazing and joinery, while keeping the projecting concrete fins.
@@ -128,7 +128,7 @@ def restore_recess_floor_infill():
     """Recover only floor fragments removed by the former court, with original UVs.
 
     The inherited upper-front setback at y18.20 stays open. Four retained floor
-    datums are included; the podium and roof terraces remain separate.
+    datums and original terrace pavers are included; podium floors remain separate.
     """
     def planes(outline):
         result=[]
@@ -148,44 +148,47 @@ def restore_recess_floor_infill():
                 output.append((a[0].lerp(b[0],t),[u.lerp(v,t)for u,v in zip(a[1],b[1])]))
         return output if len(output)>=3 else []
     records=[]
-    for way in ['1376078543','1376078544']:
-        for height in ['17.5','21.9','26.2','30.5']:
-            source=bpy.data.objects[f'MAR_MAR_floor_way/{way}_{height}']
-            retained=bpy.data.objects[f'MAR_V115_retained_MAR_floor_way/{way}_{height}']
-            mesh=source.data;mesh.calc_loop_triangles()
-            vertices=[];faces=[];indices=[];uvs=[[]for layer in mesh.uv_layers]
-            for triangle in mesh.loop_triangles:
-                poly=[(local(source.matrix_world@mesh.vertices[mesh.loops[i].vertex_index].co),
-                       [Vector(layer.data[i].uv)for layer in mesh.uv_layers])for i in triangle.loops]
-                cut_planes=old+([(Vector((0,-1,0)),18.20)]if float(height)>23.399 else [])
-                for plane in cut_planes:
-                    poly=clip(poly,plane)
-                    if not poly:break
-                pieces=[]
-                for plane in new:
-                    if not poly:break
-                    outside=clip(poly,plane,-1)
-                    if outside:pieces.append(outside)
-                    poly=clip(poly,plane)
-                for piece in pieces:
-                    area=sum((piece[i][0]-piece[0][0]).cross(piece[i+1][0]-piece[0][0]).length/2 for i in range(1,len(piece)-1))
-                    if area<1e-8:continue
-                    offset=len(vertices);vertices.extend(world(*v[0])for v in piece)
-                    faces.append(tuple(range(offset,len(vertices))));indices.append(mesh.polygons[triangle.polygon_index].material_index)
-                    for j,values in enumerate(uvs):values.extend(v[1][j]for v in piece)
-            assert faces,source.name
-            name=f'MAR188_floor_infill_{way}_{height}'
-            result=bpy.data.meshes.new(name);result.from_pydata(vertices,[],faces)
-            for material in mesh.materials:result.materials.append(material)
-            for face,index in zip(result.polygons,indices):face.material_index=index
-            for layer,values in zip(mesh.uv_layers,uvs):
-                target=result.uv_layers.new(name=layer.name)
-                for corner,value in zip(target.data,values):corner.uv=value
-                target.active_render=layer.active_render
-            result.update();obj=bpy.data.objects.new(name,result)
-            for owner in retained.users_collection:owner.objects.link(obj)
-            obj['candidateOnly']=True
-            records.append(dict(source=source.name,ownerSource=retained.name,target=obj.name,faces=len(faces)))
+    sources=[(f'MAR_MAR_floor_way/{way}_{height}',f'MAR_V115_retained_MAR_floor_way/{way}_{height}',
+              f'MAR188_floor_infill_{way}_{height}',float(height),0.0)
+             for way in ['1376078543','1376078544']for height in ['17.5','21.9','26.2','30.5']]
+    sources.append(('MAR_D5_V25_terrace_pavers','MAR_V115_retained_D5_V25_terrace_pavers',
+                    'MAR188_terrace_paver_infill',32.88,-1.98))
+    for source_name,retained_name,name,height,displacement in sources:
+        source=bpy.data.objects[source_name]
+        retained=bpy.data.objects[retained_name]
+        mesh=source.data;mesh.calc_loop_triangles()
+        vertices=[];faces=[];indices=[];uvs=[[]for layer in mesh.uv_layers]
+        for triangle in mesh.loop_triangles:
+            poly=[(local(source.matrix_world@mesh.vertices[mesh.loops[i].vertex_index].co+Vector((0,0,displacement))),
+                   [Vector(layer.data[i].uv)for layer in mesh.uv_layers])for i in triangle.loops]
+            cut_planes=old+([(Vector((0,-1,0)),18.20)]if height>23.399 and displacement==0 else [])
+            for plane in cut_planes:
+                poly=clip(poly,plane)
+                if not poly:break
+            pieces=[]
+            for plane in new:
+                if not poly:break
+                outside=clip(poly,plane,-1)
+                if outside:pieces.append(outside)
+                poly=clip(poly,plane)
+            for piece in pieces:
+                area=sum((piece[i][0]-piece[0][0]).cross(piece[i+1][0]-piece[0][0]).length/2 for i in range(1,len(piece)-1))
+                if area<1e-8:continue
+                offset=len(vertices);vertices.extend(world(*v[0])for v in piece)
+                faces.append(tuple(range(offset,len(vertices))));indices.append(mesh.polygons[triangle.polygon_index].material_index)
+                for j,values in enumerate(uvs):values.extend(v[1][j]for v in piece)
+        assert faces,source.name
+        result=bpy.data.meshes.new(name);result.from_pydata(vertices,[],faces)
+        for material in mesh.materials:result.materials.append(material)
+        for face,index in zip(result.polygons,indices):face.material_index=index
+        for layer,values in zip(mesh.uv_layers,uvs):
+            target=result.uv_layers.new(name=layer.name)
+            for corner,value in zip(target.data,values):corner.uv=value
+            target.active_render=layer.active_render
+        result.update();obj=bpy.data.objects.new(name,result)
+        for owner in retained.users_collection:owner.objects.link(obj)
+        obj['candidateOnly']=True
+        records.append(dict(source=source.name,ownerSource=retained.name,target=obj.name,faces=len(faces),sampleHeight=height,sourceDisplacementZ=displacement))
     return records
 
 
@@ -260,8 +263,15 @@ def apply_mar_north188():
     wall((right,18.8),(right,16),1,RETURN_ROWS,'east-return')
     wall((right,16),(1.75,3.5),4,RETURN_ROWS,'diagonal-return')
     wall((1.75,3.5),(left,8.8),3,RETURN_ROWS,'west-diagonal-return')
-    for a,c in [(-30,left),(right,24)]:
-        batches['roof'].extend(box(a,c,8.8,18.8,32.78,32.85))
+    batches['roof'].extend(box(-30,left,8.8,18.8,32.78,32.85))
+    # Cap the east return all the way to its diagonal, avoiding the former
+    # rectangular roof's missing triangular wedge. Footprint remains estimated.
+    diagonal_x=1.75+(right-1.75)*(8.8-3.5)/(16-3.5)
+    ring=[(right,18.8),(right,16),(diagonal_x,8.8),(24,8.8),(24,18.8)]
+    batches['roof'].append([(x,y,32.78)for x,y in reversed(ring)])
+    batches['roof'].append([(x,y,32.85)for x,y in ring])
+    for a,b in zip(ring,ring[1:]+ring[:1]):
+        batches['roof'].append([(*a,32.78),(*b,32.78),(*b,32.85),(*a,32.85)])
 
     middle_rows=[(14.7,17.7),(18.9,21.9)]
     for start,end,columns,label in [
@@ -313,7 +323,7 @@ def apply_mar_north188():
             'Photo registration is approximate; opening edges are not surveyed dimensions.',
             'Previous floor datums, window width and total front column count retained as estimates.',
             'Side-wall depth and diagonal termination inherited then shifted; full upper-wing plan not verified.',
-            'Middle and upper inherited meshes trimmed with corner UV interpolation; roof-terrace continuity still requires review.',
-            'Do not integrate or deploy before roof-terrace continuity and whole-building visual review are resolved.',
+            'Middle and upper inherited meshes trimmed with corner UV interpolation; northern roof and pavers follow the relocated court. Higher-wing roof registration remains approximate.',
+            'Do not deploy before integrated overview/detail validation and whole-campus release checks.',
         ],
     )
