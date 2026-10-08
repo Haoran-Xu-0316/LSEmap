@@ -12,10 +12,10 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_rooms import geometry_signatures
 from refine_architectural_glass import shape_signature
-from refine_sal_coping184 import apply_sal_coping184
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v183.blend'
-TARGET = ROOT / 'result/blender/LSE_campus_detailed_v184.blend'
-REPORT = ROOT / 'result/blender/stage184'
+from refine_old_lettering185 import apply_old_lettering185, font_signature
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v184.blend'
+TARGET = ROOT / 'result/blender/LSE_campus_detailed_v185.blend'
+REPORT = ROOT / 'result/blender/stage185'
 
 
 def refine_building_details():
@@ -23,7 +23,7 @@ def refine_building_details():
     if TARGET.exists() and report_path.exists():
         proof = json.loads(report_path.read_text())
         assert hashlib.sha256(TARGET.read_bytes()).hexdigest() == proof['sourceModelSha256']
-        print('BUILDINGS184_ALREADY_CURRENT')
+        print('BUILDINGS185_ALREADY_CURRENT')
         return
     REPORT.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.open_mainfile(filepath=str(BASE))
@@ -34,8 +34,9 @@ def refine_building_details():
     before = geometry_signatures()
     shapes = {o.name:shape_signature(o) for o in bpy.data.objects if o.type=='MESH'}
     visibility = {o.name: o.hide_render for o in bpy.data.objects}
+    fonts = {o.name: font_signature(o) for o in bpy.data.objects if o.type == 'FONT'}
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
-    changes = [apply_sal_coping184()]
+    changes = [apply_old_lettering185()]
     for scene in bpy.data.scenes:
         for layer in scene.view_layers:
             layer.update()
@@ -48,18 +49,20 @@ def refine_building_details():
     assert all(after.get(name) == digest for name, digest in before.items() if name not in allowed)
     added = set(bpy.data.objects.keys()) - before_objects
     assert added == {name for record in changes for name in record.get('addedObjects', [])}
+    assert all(font_signature(bpy.data.objects[name]) == digest for name, digest in fonts.items())
     assert not bpy.data.libraries
     assert not any(image.source == 'FILE' and not image.packed_file for image in bpy.data.images)
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(TARGET))
-    proof = {'version': 184, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
+    proof = {'version': 185, 'baselineSha256': hashlib.sha256(BASE.read_bytes()).hexdigest(),
              'sourceModelSha256': hashlib.sha256(TARGET.read_bytes()).hexdigest(),
              'allUnrelatedMeshesPreserved': True, 'changes': changes,
+             'originalFonts': fonts, 'fonts': {o.name: font_signature(o) for o in bpy.data.objects if o.type == 'FONT'},
              'objects': len(bpy.data.objects), 'geometrySignatures': after, 'originalShapesAndUVs': shapes, 'archivedObjects': sorted(archived),
              'visibility': {o.name:o.hide_render for o in bpy.data.objects}}
     report_path.write_text(json.dumps(proof, indent=2) + '\n')
-    print('BUILDINGS184_SAVED', len(bpy.data.objects), len(added))
+    print('BUILDINGS185_SAVED', len(bpy.data.objects), len(added))
 
 
 if __name__ == '__main__':
