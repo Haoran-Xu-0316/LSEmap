@@ -1,7 +1,7 @@
 """Reopen the integrated scene and verify scoped geometry, room separation and idempotence."""
 from pathlib import Path
 import runpy
-runpy.run_path(str(Path(__file__).with_name("verify_sal_coping184_blender.py")),run_name="__main__")
+runpy.run_path(str(Path(__file__).with_name("verify_old_lettering185_blender.py")),run_name="__main__")
 import hashlib, json, sys
 import bpy
 ROOT = Path(__file__).resolve().parents[2]
@@ -19,8 +19,8 @@ import bmesh
 from refine_par_exterior180 import apply_par_exterior180
 from refine_saw_lower_structure173 import OLD_STAIR_NAMES, OLD_FLOORS, FLOOR_NAMES
 from refine_street_fixtures173 import OWNED
-REPORT = ROOT / 'result/blender/stage184'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v184.blend'
+REPORT = ROOT / 'result/blender/stage185'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v185.blend'
 proof = json.loads((REPORT / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -104,7 +104,7 @@ assert all(o.name in campus for o in foyer.all_objects)
 assert all(bpy.data.objects[n].hide_render for n in proof['archivedObjects'])
 assert not bpy.data.libraries
 assert not any(i.source == 'FILE' and not i.packed_file for i in bpy.data.images)
-result = dict(version=184, sourceModelSha256=proof['sourceModelSha256'],
+result = dict(version=185, sourceModelSha256=proof['sourceModelSha256'],
               savedSceneReopened=True, atticWindowAxes=5, atticPaneFacets=9, streetMeshesSingleSiteMembership=True, marGroundSinglePanes=107, marGuardSinglePanes=54, allMeshSignaturesVerified=True,
               allOriginalShapesAndUVsPreserved=True, idempotent=True,
               independentRoomsOutsideCampus=True, entranceFoyerRegisteredToCampus=True, externalDependencies=False,
@@ -115,7 +115,12 @@ result['reversedShells']=glass_proof['changes'][0]['reversedShells']
 result['benchSeatAndFloorTouching']=True
 result['independentSALBrickMaterials']=True
 result['brickScaleAndMortarRetained']=True
-result['closedPositiveCopingChains']=7
+prior=json.loads((ROOT/'result/blender/stage184/reopened-verification.json').read_text())
+assert prior['sourceModelSha256']==proof['baselineSha256']
+result['registeredLabels']=3
+result['stoneContactProbes']=27
+result['allOriginalFontsPreserved']=True
+result['closedPositiveCopingChains']=prior['closedPositiveCopingChains']
 result['windowGlassOverlaps']=[]
 result['recessedGablePanes']=7
 result['visibleThroughWindowApertures']=7
@@ -123,4 +128,4 @@ result['paneSilhouettesAndFinishesRetained']=True
 result['registeredAnchorsRetained']=True
 result['internalEndCapsRemoved']=294
 (REPORT / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-print('BUILDINGS184_REOPENED_VERIFIED')
+print('BUILDINGS185_REOPENED_VERIFIED')
