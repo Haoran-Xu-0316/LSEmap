@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition186 replaces the opaque blue finish on SAR's four ground-floor street
+windows with neutral transmissive glass and photographed pale vertical shading.
+Original pane outlines, UVs and frames remain;80slats sit behind those windows.
+Spacing, coverage, setback and optics are estimates; this is a window treatment,
+not a reconstruction of the rooms behind it.
+
 Edition185 registers OLD's two Houghton Street building names and crest motto
 with the current masonry. Names fit within the existing stone piers; editable
 text is seated against stone without changing the facade meshes, font or colour.
