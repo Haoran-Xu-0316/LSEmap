@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition189 moves OLD’s existing Final Sale protective glazing ahead of the mesh
+artwork and reduces its grey veil. The original pane outline, sculpture,
+limestone arch, windows and editable lettering remain intact. Mounting clearance
+and glass opacity are visual estimates from undated entrance photographs.
+
 Edition188 realigns MAR’s north middle and upper recess using the built frontage
 photograph. Coordinated windows, four floor levels, terrace paving and diagonal
 roof closure share the same source. All original meshes and UVs remain archived.
