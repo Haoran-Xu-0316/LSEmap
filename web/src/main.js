@@ -383,13 +383,18 @@ async function start() {
   viewer = null;
   let candidate;
   try {
+    const viewerModule = import("./viewer.js");
+    // Observe an early module failure while the metadata requests are pending.
+    viewerModule.catch(() => {});
     if (!buildings.length) {
-      const response = await fetch("/models/catalogue.json", { cache: "no-cache" });
+      const [response, galleryResponse] = await Promise.all([
+        fetch("/models/catalogue.json", { cache: "no-cache" }),
+        fetch("/gallery-manifest.json", { cache: "no-cache" }),
+      ]);
       if (!response.ok) throw new Error("catalogue");
       const data = await response.json();
       modelRevision = data.sourceModelSha256;
       modelEdition = data.version;
-      const galleryResponse = await fetch("/gallery-manifest.json", { cache: "no-cache" });
       if (!galleryResponse.ok) throw new Error("gallery manifest");
       const galleryManifest = await galleryResponse.json();
       if (galleryManifest.sourceModelSha256 !== modelRevision || galleryManifest.version !== modelEdition)
@@ -411,7 +416,7 @@ async function start() {
       const code = decodeURIComponent(location.hash.slice(1));
       if (code) selectBuilding(code, false);
     }
-    const { CampusViewer } = await import("./viewer.js");
+    const { CampusViewer } = await viewerModule;
     if (attempt !== loadAttempt) return;
     candidate = new CampusViewer(
       $("#canvas-container"),
