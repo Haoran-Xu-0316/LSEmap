@@ -16,8 +16,11 @@ test('MAR legacy pane families receive identical glazing treatment in overview a
   const outcomes = [];
   for (const [index, url] of ['/models/campus.glb', mar.detailedExterior.url].entries()) {
     const document = await modelDocument(url);
-    const panes = document.materials.filter(material => /MAR168_\d\d_\d\d_dielectric$/.test(material.name));
-    expect(panes).toHaveLength(5);
+    const panes = document.materials.filter(material => /MAR168_\d\d_\d\d_dielectric$|MAR188_(middle_)?retained_dielectric_glass$/.test(material.name));
+    expect(panes.map(p=>p.name.replace(/^WEB_(DETAIL_)?/, '')).sort()).toEqual([
+      'MAR168_01_00_dielectric','MAR168_02_00_dielectric','MAR168_02_01_dielectric','MAR168_03_00_dielectric',
+      'MAR188_middle_retained_dielectric_glass','MAR188_retained_dielectric_glass',
+    ].sort());
     const results = [];
     for (const descriptor of panes) {
       const pbr = descriptor.pbrMetallicRoughness;
