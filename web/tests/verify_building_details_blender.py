@@ -2,6 +2,7 @@
 from pathlib import Path
 import runpy
 runpy.run_path(str(Path(__file__).with_name("verify_sar_glazing186_blender.py")),run_name="__main__")
+runpy.run_path(str(Path(__file__).with_name("verify_mar_podium187_blender.py")),run_name="__main__")
 import hashlib, json, sys
 import bpy
 ROOT = Path(__file__).resolve().parents[2]
@@ -20,8 +21,8 @@ import bmesh
 from refine_par_exterior180 import apply_par_exterior180
 from refine_saw_lower_structure173 import OLD_STAIR_NAMES, OLD_FLOORS, FLOOR_NAMES
 from refine_street_fixtures173 import OWNED
-REPORT = ROOT / 'result/blender/stage186'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v186.blend'
+REPORT = ROOT / 'result/blender/stage187'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v187.blend'
 proof = json.loads((REPORT / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -106,7 +107,7 @@ assert all(o.name in campus for o in foyer.all_objects)
 assert all(bpy.data.objects[n].hide_render for n in proof['archivedObjects'])
 assert not bpy.data.libraries
 assert not any(i.source == 'FILE' and not i.packed_file for i in bpy.data.images)
-result = dict(version=186, sourceModelSha256=proof['sourceModelSha256'],
+result = dict(version=proof['version'], sourceModelSha256=proof['sourceModelSha256'],
               savedSceneReopened=True, atticWindowAxes=5, atticPaneFacets=9, streetMeshesSingleSiteMembership=True, marGroundSinglePanes=107, marGuardSinglePanes=54, allMeshSignaturesVerified=True,
               allOriginalShapesAndUVsPreserved=True, idempotent=True,
               independentRoomsOutsideCampus=True, entranceFoyerRegisteredToCampus=True, externalDependencies=False,
@@ -117,7 +118,7 @@ result['reversedShells']=glass_proof['changes'][0]['reversedShells']
 result['benchSeatAndFloorTouching']=True
 result['independentSALBrickMaterials']=True
 result['brickScaleAndMortarRetained']=True
-prior=json.loads((ROOT/'result/blender/stage185/reopened-verification.json').read_text())
+prior=json.loads((ROOT/'result/blender/stage186/reopened-verification.json').read_text())
 assert prior['sourceModelSha256']==proof['baselineSha256']
 result['sarTreatedWindows']=4
 result['sarBlindSlats']=80
@@ -133,4 +134,4 @@ result['paneSilhouettesAndFinishesRetained']=True
 result['registeredAnchorsRetained']=True
 result['internalEndCapsRemoved']=294
 (REPORT / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-print('BUILDINGS186_REOPENED_VERIFIED')
+print('BUILDINGS187_REOPENED_VERIFIED')
