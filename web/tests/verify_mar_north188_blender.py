@@ -1,6 +1,6 @@
 """Reopen the isolated MAR candidate and verify recess, glass and floor coverage.
 
-This is not whole-building or release acceptance. Roof terraces and registration of higher wings remain outstanding.
+This is not whole-building or release acceptance. Whole-campus integration and registration of higher wings remain outstanding.
 """
 from pathlib import Path
 import hashlib,json,math,sys
@@ -91,14 +91,14 @@ outline=[(-4.95,21.16),(-4.95,8.8),(1.75,3.5),(8.25,16),(8.25,21.16)]
 def in_new_court(x,y):
     return all((a[1]-b[1])*(x-a[0])+(b[0]-a[0])*(y-a[1])+.06*math.hypot(a[1]-b[1],b[0]-a[0])>=0
                for a,b in zip(outline,outline[1:]+outline[:1]))
-def tree_for(name):
+def tree_for(name,displacement=0):
     obj=bpy.data.objects[name]
-    return BVHTree.FromPolygons([obj.matrix_world@v.co for v in obj.data.vertices],[tuple(f.vertices)for f in obj.data.polygons])
+    return BVHTree.FromPolygons([obj.matrix_world@v.co+Vector((0,0,displacement))for v in obj.data.vertices],[tuple(f.vertices)for f in obj.data.polygons])
 trim_targets={r['source']:r['target']for r in proof['trimRecords']}
 for record in proof['floorInfillRecords']:
-    original=tree_for(record['source']);infill=tree_for(record['target'])
+    original=tree_for(record['source'],record['sourceDisplacementZ']);infill=tree_for(record['target'])
     retained=tree_for(trim_targets[record['ownerSource']])
-    height=float(record['source'].rsplit('_',1)[1])
+    height=record['sampleHeight']
     for ix in range(96):
         x=-15.3+ix*.25+.037
         for iy in range(57):
@@ -111,10 +111,28 @@ for record in proof['floorInfillRecords']:
             assert not(added_hit and retained_hit),(record['source'],'overlapping floor',x,y)
             floor_checks+=1;restored_samples+=int(added_hit)
 assert restored_samples>0
+roof_checks=0;court_roof_checks=0
+roof=tree_for('MAR188_north_roofs')
+for ix in range(107):
+    x=-29.8+ix*.5
+    for iy in range(19):
+        y=9.1+iy*.5
+        # Exclude a narrow uncertainty strip around the estimated diagonal edge.
+        distances=[((a[1]-b[1])*(x-a[0])+(b[0]-a[0])*(y-a[1]))/math.hypot(a[1]-b[1],b[0]-a[0])
+                   for a,b in zip(outline,outline[1:]+outline[:1])]
+        if min(abs(d)for d in distances)<.1:continue
+        inside=all(d>0 for d in distances)
+        roof_hit=roof.ray_cast(world(x,y,33.1),Vector((0,0,-1)),.5)[0]is not None
+        assert roof_hit!=inside,('roof footprint',x,y,roof_hit,inside)
+        roof_checks+=1
+        if inside:
+            hits=[name for name,tree in trees if tree.ray_cast(world(x,y,33.94),Vector((0,0,-1)),1.2)[0]is not None]
+            assert not hits,('courtyard covered at roof',x,y,hits)
+            court_roof_checks+=1
 result=dict(candidateReopened=True,originalMeshesAndUVsPreserved=True,finiteCandidateVerticesAndUVs=True,
             clearFrontSamples=front_checks,depthSightlines=depth_checks,sourceModelSha256=proof['sourceModelSha256'],
-            candidateObjects=len(proof['addedObjects']),frontWindowSightlines=window_checks,floorCoverageSamples=floor_checks,restoredFloorSamples=restored_samples,releaseReady=False,
-            remaining=['Roof-terrace continuity needs verification.','Upper-wing full plan and facade photo alignment remain approximate.','Whole-building and production-render acceptance remain outstanding.'])
+            candidateObjects=len(proof['addedObjects']),frontWindowSightlines=window_checks,roofFootprintSamples=roof_checks,clearCourtyardRoofSamples=court_roof_checks,floorCoverageSamples=floor_checks,restoredFloorSamples=restored_samples,releaseReady=False,
+            remaining=['Whole-campus integration and overview/detail parity require validation.','Upper-wing full plan and facade photo alignment remain approximate.','Private MAR web preview does not establish complete campus or release acceptance.'])
 (OUT/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
 assert hashlib.sha256(model.read_bytes()).hexdigest()==proof['sourceModelSha256']
 print('MAR188_CANDIDATE_VERIFIED',front_checks,len(depth_checks),len(proof['addedObjects']),floor_checks,restored_samples)
