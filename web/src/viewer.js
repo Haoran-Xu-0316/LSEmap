@@ -6,7 +6,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
 
 import { ModelCache } from "./model-cache.js";
-import { loadModelInStages, downloadVerifiedModel } from "./model-loading.js";
+import { loadModelInStages, downloadVerifiedModel, downloadCampusModel } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
@@ -172,7 +172,8 @@ export class CampusViewer {
         js: "/draco/draco_wasm_wrapper.js",
         wasm: "/draco/draco_decoder.wasm",
       })
-      .setWorkerLimit(2);
+      .setWorkerLimit(Math.min(4, Math.max(2, navigator.hardwareConcurrency || 2)));
+    this.draco.preload();
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
     this.detailCache = new ModelCache(
       async (url) => (await this.loadAsset(url)).scene,
@@ -223,7 +224,7 @@ export class CampusViewer {
       building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)]);
     const expectedSha256 = assets.find(asset => asset?.url === url)?.sha256;
     return loadModelInStages(
-      progress => downloadVerifiedModel(url, {signal: transferController.signal, onProgress: progress, expectedSha256}),
+      progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256}),
       bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
       {
         signal: this.loadController.signal,
