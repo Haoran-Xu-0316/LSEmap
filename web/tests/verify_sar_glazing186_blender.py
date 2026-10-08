@@ -11,8 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'web/tools'))
 from refine_sar_glazing186 import SOURCE, TARGET, SHADING, BACKING, facade_registration, apply_sar_glazing186
 from refine_rooms import geometry_signatures
-STAGE = ROOT / 'result/blender/stage187'
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v187.blend'
+from refine_building_details import REPORT as STAGE, TARGET as MODEL
 proof = json.loads((STAGE / 'building-refinement.json').read_text())
 assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == proof['sourceModelSha256']
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
