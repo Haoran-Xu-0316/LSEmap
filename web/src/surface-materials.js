@@ -18,6 +18,13 @@ float surfaceNoise(vec3 p) {
 }
 `;
 
+// These legacy MAR names lost the word “glass” during Blender material copying.
+// Match only the authored pane family; “dielectric” alone also describes stone.
+export function isGlazingMaterial(material) {
+  return /glass|glazing/i.test(material.name) ||
+    /^(?:WEB_(?:DETAIL_)?)?MAR168_0[0-3]_0[01]_dielectric$/.test(material.name);
+}
+
 const preparedMaterials = new WeakSet();
 const detailedMaterials = new WeakSet();
 
@@ -30,13 +37,13 @@ export function refineMaterialFinish(material, environmentMap = null) {
   // of material intensity. Bind the shared PMREM explicitly for glazing so its
   // selected finish actually reaches the renderer. No additional capture or
   // texture allocation is needed, and existing authored maps remain intact.
-  if (environmentMap && matches(/glass|glazing/) && !material.envMap) {
+  if (environmentMap && isGlazingMaterial(material) && !material.envMap) {
     material.envMap = environmentMap;
     material.needsUpdate = true;
   }
   if (preparedMaterials.has(material)) return;
   preparedMaterials.add(material);
-  if (matches(/glass|glazing/)) {
+  if (isGlazingMaterial(material)) {
     // Preserve tinted glazing while reducing the exaggerated cyan in older assets.
     const luminance = material.color.r * .2126 + material.color.g * .7152 + material.color.b * .0722;
     material.color.lerp(new THREE.Color(luminance, luminance, luminance), .28);
@@ -229,7 +236,7 @@ export function applySurfaceDetail(material) {
 export function prepareMeshShadows(object) {
   const materials = Array.isArray(object.material) ? object.material : [object.material];
   const clearGlazing = materials.length > 0 && materials.every((material) =>
-    material && /glass|glazing/i.test(material.name) &&
+    material && isGlazingMaterial(material) &&
     ((material.transparent && material.opacity < 1) || material.transmission > 0) &&
     material.alphaTest === 0 && !material.alphaToCoverage
   );
@@ -242,7 +249,7 @@ export function prepareMeshShadows(object) {
 export function prepareGlazingSides(material) {
   const side = material.userData.webClosedGlazing === true ? THREE.FrontSide : THREE.DoubleSide;
   if (material.side !== side) { material.side = side; material.needsUpdate = true; }
-  if (material.transparent && /glass|glazing|optics/i.test(material.name)) material.forceSinglePass = true;
+  if (material.transparent && (isGlazingMaterial(material) || /optics/i.test(material.name))) material.forceSinglePass = true;
 }
 
 export function prepareDetailedModel(group, environmentMap = null) {
