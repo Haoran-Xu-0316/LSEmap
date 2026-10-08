@@ -1,8 +1,8 @@
 # LSEmap模型状态
 
-当前本地完整模型为187版：result/blender/LSE_campus_detailed_v187.blend。6439个对象。
+当前本地完整模型为188版：result/blender/LSE_campus_detailed_v188.blend。6483个对象。原生重开与12项网页检查通过，发布资源已生成。
 
-原生SHA256：c451ddd9462be72cc3725aad151cdfe21fd6e1f41b7a6522b62b4189a58fbd94。
+原生SHA256：d923d7bbccad0fdf8600aaa5240d9b3b02cee403baac9ff2265fd8549579b427。
 
 187版按已建正面照片补回MAR底座中间偏右的第三组高窗及混凝土围边，保留两侧原高窗、另一侧开放柱廊及内部几何。照片注册、围边和窗洞尺寸为估算；完整体量仍未核实。
 
@@ -20,13 +20,13 @@
 
 所有建筑完整外观、当前内部结构和每个房间尚未完成。可加载模型、局部修正和核对记录均不代表整栋实测完成。照片拍摄日期未知时不称2026实拍。
 
-## MAR待修的上部开口位置
+## MAR北立面修正依据与范围
 
 187版原生模型核对发现：北立面上部开口横向位置与Nick Kane已建正面照片02不符。以两侧已存在的底座高窗作水平参照，照片开口估算对应局部X为-4.92至8.17；模型在25.2、28.1、31.1三个高度的前窗墙空缺均为-15.00至-2.25，中心约偏移10.25m。该数字依赖当前模型比例及照片取点，含透视和进深视差，不是现场测量。
 
 下一步须联合核对两侧窗墙、开口侧壁、后方楼翼与退台，不能只平移表面玻璃。当前187版尚未修复此项。复核脚本为web/tools/audit_mar_north_alignment.py，原生射线和照片注册记录在result/blender/mar-north-alignment/alignment.json。核对没有修改模型或线上资产，也未新增整模备份。
 
-MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁和顶部楼板，裁去新开口中的旧墙、玻璃、楼板及窗边构件。44个对象保存在独立组件，未替换完整校园模型。四层楼板从归档原网格恢复8块局部补片，保留材质及插值UV。重开后245个前沿检查点无遮挡、20条纵深视线命中新墙或玻璃、75处正面窗视线命中玻璃；49248个楼板及铺砖覆盖采样点通过，1742点位于补片，未检测到重叠。原187版网格和UV保留。北侧铺砖按完整厚度裁切，补回原凹槽铺砖并封闭东侧斜墙屋面楔形缺口；1995个屋面覆盖点和445个屋顶开口检查点通过。生产CampusViewer私有预览完成6个MAR视角，未修改公开资源。高层整体体量仍近似，完整校园集成和总览/细节一致性尚未验收，候选不能据此宣称完整或上线。代码为web/tools/refine_mar_north188.py，验证为web/tests/verify_mar_north188_blender.py，证据在result/blender/mar-north-candidate/verification.json。
+MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁和顶部楼板，裁去新开口中的旧墙、玻璃、楼板及窗边构件。44个对象已并入188版完整校园模型，归档原几何保留。四层楼板从归档原网格恢复8块局部补片，保留材质及插值UV。重开后245个前沿检查点无遮挡、20条纵深视线命中新墙或玻璃、75处正面窗视线命中玻璃；49248个楼板及铺砖覆盖采样点通过，1742点位于补片，未检测到重叠。原187版网格和UV保留。北侧铺砖按完整厚度裁切，补回原凹槽铺砖并封闭东侧斜墙屋面楔形缺口；1995个屋面覆盖点和445个屋顶开口检查点通过。生产CampusViewer私有预览完成6个MAR视角，未修改公开资源。高层整体体量仍近似，完整模型已保存，总览/细节的玻璃几何、UV存在性及材质一致性已通过检查，不能据此宣称建筑完整或上线。代码为web/tools/refine_mar_north188.py，验证为web/tests/verify_mar_north188_blender.py，证据在result/blender/mar-north-candidate/verification.json。
 
 ## 建筑核验记录
 
@@ -52,7 +52,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 |50L|147|50A entry and opaque external round lamp are located between upper window axes using the2022 planning photograph; frame and lower panel adopt deep blue shown in latest published2025/26 LSE handbook. No50 tripartite upper window widened with true wall clearance, while its inherited4.30–6.32m vertical datum remains estimated because photo top is cropped and reference door height is not surveyed. Other upper windows and original wooden No50 portal retained. Glass browser opacity0.82; no invented complete interior. Shared49L interference is archived and replaced in49L own exterior collection.|
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|178|Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.|
-|MAR|187|补回北立面底座第三组双层高窗及混凝土围边；保留原有两窗、开放柱廊和内部几何。位置尺寸依据照片估算，完整体量与现状内部未核实。|
+|MAR|188|按已建照片对齐北立面中段及上部开口，联动窗墙、四层楼板、铺砖和斜向屋面；保留底座三窗及原始网格。开口尺寸与进深估算，高层体量和完整现状内部未核实。|
 |OLD|185|入口楼名与校训重新注册并贴合现有石材；楼名适配石柱宽度，保留字体、颜色和全部立面网格。字样尺度及间隙估算，完整外观与内部仍未完成。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
@@ -68,4 +68,4 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 
 ## 保存和发布
 
-187版构建、重开、网页与发布证据记录在result/blender/stage187。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
+188版构建、重开、网页与发布证据记录在result/blender/stage188。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
