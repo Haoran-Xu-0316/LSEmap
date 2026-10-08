@@ -109,3 +109,51 @@ export async function downloadVerifiedModel(url, {
     }
   }
 }
+
+/** Fetch the published campus segments concurrently into one final buffer. */
+export async function downloadCampusModel(url, options = {}) {
+  const {signal, onProgress, fetchModel = fetch} = options;
+  const query = url.includes('?') ? url.slice(url.indexOf('?')) : '';
+  const response = await fetchModel('/models/campus-parts.json' + query, {signal, cache:'no-cache'});
+  // Development serves the original GLB without the release-only segment index.
+  if (response.status === 404 || response.headers.get('Content-Type')?.includes('text/html')) return downloadVerifiedModel(url, options);
+  if (!response.ok) throw new Error(`Campus index request failed: HTTP${response.status}`);
+  const manifest = await response.json();
+  const validHash = value => /^[a-f0-9]{64}$/.test(value || '');
+  if (!Number.isSafeInteger(manifest.bytes) || manifest.bytes < 20 ||
+      !validHash(manifest.sha256) || !Array.isArray(manifest.parts) || !manifest.parts.length ||
+      manifest.parts.length > 4 || manifest.parts.some(p => !/^\/models\/campus-\d+-[a-f0-9]{12}\.bin$/.test(p.path) || !Number.isSafeInteger(p.bytes) || p.bytes <= 0 || !validHash(p.sha256)) ||
+      manifest.parts.reduce((n,p) => n+p.bytes,0) !== manifest.bytes) throw new Error('Invalid campus segment index');
+  const bytes = new Uint8Array(manifest.bytes);
+  const controller = new AbortController();
+  const abort = () => controller.abort(signal.reason);
+  signal?.throwIfAborted();signal?.addEventListener('abort',abort,{once:true});
+  const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256',data))].map(n=>n.toString(16).padStart(2,'0')).join('');
+  let offset=0,loaded=0;
+  try {
+    const tasks=manifest.parts.map(part=>{
+      const begin=offset;offset+=part.bytes;
+      return (async()=>{
+        const result=await fetchModel(part.path,{signal:controller.signal});
+        if (!result.ok) throw new Error(`Campus segment request failed: HTTP${result.status}`);
+        let received=0;const reader=result.body?.getReader();
+        const append=value=>{
+          if(received+value.byteLength>part.bytes)throw new Error('Campus segment length mismatch');
+          bytes.set(value,begin+received);received+=value.byteLength;loaded+=value.byteLength;
+          onProgress?.({loaded,total:manifest.bytes,lengthComputable:true});
+        };
+        if(reader){
+          try{for(;;){const {done,value}=await reader.read();if(done)break;append(value);}}
+          catch(error){await reader.cancel(error).catch(()=>{});throw error;}
+          finally{reader.releaseLock();}
+        }else append(new Uint8Array(await result.arrayBuffer()));
+        if(received!==part.bytes || await digest(bytes.subarray(begin,begin+received))!==part.sha256)throw new Error('Campus segment integrity mismatch');
+      })();
+    });
+    await Promise.all(tasks);signal?.throwIfAborted();
+    const header=new DataView(bytes.buffer);
+    if(header.getUint32(0,true)!==0x46546c67 || header.getUint32(4,true)!==2 || header.getUint32(8,true)!==bytes.length || await digest(bytes)!==manifest.sha256)throw new Error('Campus model integrity mismatch');
+    return bytes.buffer;
+  }catch(error){controller.abort(error);throw error;}
+  finally{signal?.removeEventListener('abort',abort);}
+}
