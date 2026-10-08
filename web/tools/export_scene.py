@@ -15,7 +15,7 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v187.blend'
+MODEL = ROOT / 'result/blender/LSE_campus_detailed_v188.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -30,7 +30,11 @@ bpy.context.window.scene = source_scene
 def source_geometry_name(obj):
     # A physical glazing replacement retains its source geometry policy.
     # Replacement naming must not change bevel/UV detail between views.
-    return obj.name.removeprefix('SAL184_').removeprefix('SAL183_').removeprefix('GLASS181_')
+    name=obj.name
+    if name.startswith('MAR188_trim_'):
+        name=name.removeprefix('MAR188_trim_')
+        if not name.startswith('MAR'):name='MAR_'+name
+    return name.removeprefix('SAL184_').removeprefix('SAL183_').removeprefix('GLASS181_')
 
 
 modifier_states = []
@@ -181,7 +185,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Joining differently named UV layers would put some facades in UV1 while
         # the browser samples UV0. Normalize only these temporary export meshes.
         # Accepted components retain their metric UVs at both viewing scales.
-        needs_uv = full_detail or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and m.get('globeMap') for m in mesh.materials)
+        needs_uv = full_detail or original.name.startswith('MAR188_') or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and m.get('globeMap') for m in mesh.materials)
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
@@ -460,7 +464,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '187', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': '188', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
