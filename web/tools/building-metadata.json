@@ -1671,21 +1671,13 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 177,
-        "status": "great-hall-and-mezzanine-single-surface-glazing",
-        "scope": "107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.",
-        "addedObjects": 2,
-        "archivedObjects": 2,
+        "version": 187,
+        "scope": "Restore the missing middle-right two-light north podium window and concrete surround. Retain the two existing outer windows and opposite open loggia. Photographic registration and dimensions estimated; full massing and current interiors unverified.",
+        "audit": "result/blender/stage187/podium-verification.json",
         "sourceUrls": [
           "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
         ],
-        "photographDate": "unknown",
-        "limitations": [
-          "Photograph capture date unknown. Existing pane locations, hall geometry and floor layout retained; opacity and neutral tint estimated.",
-          "The original untextured glass has no UV layers; replacement zero UVs do not represent a measured texture mapping.",
-          "Glass alpha0.30 and0.22, neutral tint and roughness0.13 are display estimates; complete hall/floor registration remains unfinished."
-        ],
-        "audit": "result/blender/mar_interior177/verification.json"
+        "photographDate": "Unknown"
       },
       "interiorView": {
         "position": [
@@ -1782,6 +1774,25 @@
               "supports": "Built north podium and open upper-left loggia photograph02"
             }
           ]
+        }
+      ],
+      "previousReviews": [
+        {
+          "version": 177,
+          "status": "great-hall-and-mezzanine-single-surface-glazing",
+          "scope": "107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.",
+          "addedObjects": 2,
+          "archivedObjects": 2,
+          "sourceUrls": [
+            "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
+          ],
+          "photographDate": "unknown",
+          "limitations": [
+            "Photograph capture date unknown. Existing pane locations, hall geometry and floor layout retained; opacity and neutral tint estimated.",
+            "The original untextured glass has no UV layers; replacement zero UVs do not represent a measured texture mapping.",
+            "Glass alpha0.30 and0.22, neutral tint and roughness0.13 are display estimates; complete hall/floor registration remains unfinished."
+          ],
+          "audit": "result/blender/mar_interior177/verification.json"
         }
       ]
     },
