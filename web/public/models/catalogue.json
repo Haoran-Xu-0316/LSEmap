@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "186",
-  "sourceModelSha256": "259e8ce5fd4bef961968419002151865c0e3efbe50991b2e0023c09ab7c8be49",
+  "version": "187",
+  "sourceModelSha256": "c451ddd9462be72cc3725aad151cdfe21fd6e1f41b7a6522b62b4189a58fbd94",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3812,21 +3812,13 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 177,
-        "status": "great-hall-and-mezzanine-single-surface-glazing",
-        "scope": "107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.",
-        "addedObjects": 2,
-        "archivedObjects": 2,
+        "version": 187,
+        "scope": "Restore the missing middle-right two-light north podium window and concrete surround. Retain the two existing outer windows and opposite open loggia. Photographic registration and dimensions estimated; full massing and current interiors unverified.",
+        "audit": "result/blender/stage187/podium-verification.json",
         "sourceUrls": [
           "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
         ],
-        "photographDate": "unknown",
-        "limitations": [
-          "Photograph capture date unknown. Existing pane locations, hall geometry and floor layout retained; opacity and neutral tint estimated.",
-          "The original untextured glass has no UV layers; replacement zero UVs do not represent a measured texture mapping.",
-          "Glass alpha0.30 and0.22, neutral tint and roughness0.13 are display estimates; complete hall/floor registration remains unfinished."
-        ],
-        "audit": "result/blender/mar_interior177/verification.json"
+        "photographDate": "Unknown"
       },
       "interiorView": {
         "position": [
@@ -3924,6 +3916,25 @@
           ]
         }
       ],
+      "previousReviews": [
+        {
+          "version": 177,
+          "status": "great-hall-and-mezzanine-single-surface-glazing",
+          "scope": "107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.",
+          "addedObjects": 2,
+          "archivedObjects": 2,
+          "sourceUrls": [
+            "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
+          ],
+          "photographDate": "unknown",
+          "limitations": [
+            "Photograph capture date unknown. Existing pane locations, hall geometry and floor layout retained; opacity and neutral tint estimated.",
+            "The original untextured glass has no UV layers; replacement zero UVs do not represent a measured texture mapping.",
+            "Glass alpha0.30 and0.22, neutral tint and roughness0.13 are display estimates; complete hall/floor registration remains unfinished."
+          ],
+          "audit": "result/blender/mar_interior177/verification.json"
+        }
+      ],
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -3991,10 +4002,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-e86e112e8571.glb",
-        "bytes": 3614300,
-        "triangles": 337148,
-        "sha256": "e86e112e8571b770d1335b4f416fa067a1e555cc25a2ddb61f788b8b7594c903",
+        "url": "/models/details/mar-exterior-7caa85f71d12.glb",
+        "bytes": 3616820,
+        "triangles": 337258,
+        "sha256": "7caa85f71d126361c09e93853d525120eef7db7f8ec38a1ad6d6f10855eca61d",
         "bounds": {
           "min": [
             -45.36549377441406,
