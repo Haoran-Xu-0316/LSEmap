@@ -1,8 +1,10 @@
 # LSEmap模型状态
 
-当前本地完整模型为186版：result/blender/LSE_campus_detailed_v186.blend。已保存并重开验证，6436个对象。
+当前本地完整模型为187版：result/blender/LSE_campus_detailed_v187.blend。6439个对象。
 
-原生SHA256：259e8ce5fd4bef961968419002151865c0e3efbe50991b2e0023c09ab7c8be49。
+原生SHA256：c451ddd9462be72cc3725aad151cdfe21fd6e1f41b7a6522b62b4189a58fbd94。
+
+187版按已建正面照片补回MAR底座中间偏右的第三组高窗及混凝土围边，保留两侧原高窗、另一侧开放柱廊及内部几何。照片注册、围边和窗洞尺寸为估算；完整体量仍未核实。
 
 186版修正SAR的4组首层临街窗：保留玻璃几何、UV与拱形窗框，改为中性透光玻璃，并加入照片可见的浅色竖向百叶。80片百叶及窗后暗面仅表达窗部构造；尺度、覆盖范围和光学参数估算，不代表完整房间。
 
@@ -42,7 +44,7 @@
 |50L|147|50A entry and opaque external round lamp are located between upper window axes using the2022 planning photograph; frame and lower panel adopt deep blue shown in latest published2025/26 LSE handbook. No50 tripartite upper window widened with true wall clearance, while its inherited4.30–6.32m vertical datum remains estimated because photo top is cropped and reference door height is not surveyed. Other upper windows and original wooden No50 portal retained. Glass browser opacity0.82; no invented complete interior. Shared49L interference is archived and replaced in49L own exterior collection.|
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|178|Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.|
-|MAR|177|107 Great Hall panes and54 mezzanine guards retain their apertures; one sheet per pane replaces six-face boxes.|
+|MAR|187|补回北立面底座第三组双层高窗及混凝土围边；保留原有两窗、开放柱廊和内部几何。位置尺寸依据照片估算，完整体量与现状内部未核实。|
 |OLD|185|入口楼名与校训重新注册并贴合现有石材；楼名适配石柱宽度，保留字体、颜色和全部立面网格。字样尺度及间隙估算，完整外观与内部仍未完成。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
@@ -58,4 +60,4 @@
 
 ## 保存和发布
 
-186版构建、重开、网页与发布证据记录在result/blender/stage186。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
+187版构建、重开、网页与发布证据记录在result/blender/stage187。历史旧整模仅在当前源文件、线上资源和GitHub核对通过后删除；本轮清理结果见该目录cleanup.json。原始照片、必要组件和证据记录保留。
