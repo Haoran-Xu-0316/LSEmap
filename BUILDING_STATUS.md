@@ -107,3 +107,11 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 ## OLD蓝色涂漆框件
 
 193版把20组已识别的蓝色涂漆框件改为介电漆面，12种独立材质保留原蓝色色值，仅改变金属度与粗糙度。主入口、Clare Market和阁楼窗框沿用既有几何与UV，不改变玻璃透明度、银色扶手或已独立修正的壁灯。资料为用户提供的Clare Market照片及Webb Yates已建项目照片06，拍摄日期未知；粗糙度0.46是视觉估计。完整当前外观、内部结构及全部房间仍未完成。证据见result/blender/old-painted-frame-review与stage193。
+
+## 2026-10-14补充核对与清理
+
+重新核对线上发行清单、入口脚本、目录和3段压缩模型，均与本地193版一致。17项加载检查通过；1440px桌面和390px手机实测均使用压缩分片，无原始分片回退、页面报错、缺图或横向溢出。删除3个未跟踪且当前目录、图库和发行清单均未引用的LRB/OLD旧导出，并清理可再生缓存，共释放36628722字节。193版完整源文件及全部保留运行模型、展示图哈希通过核对。证据见result/web/loading-optimization/current-live-check.json、current-browser-check.json及result/cleanup/loading-optimization-final/cleanup.json。
+
+## CBG屋顶待核对候选
+
+独立候选修正顶部端面开口、分层屋面和低玻璃护栏，并保留原始归档网格。裁切保留204278个未受影响低层面的精确原生顶点、材质及逐角UV；12条局部视线、36组裁切实体闭合检查和6个生产渲染器对比视角通过。屋面范围、设备围护和上层楼梯位置仍未完整注册，悬挂灰色构件功能未确认，2016年剖面仅作设计资料。候选保存在result/blender/cbg-roof-candidate，工具为web/tools/refine_cbg_roof_envelope.py，检查为web/tests/verify_cbg_roof_candidate_blender.py；未合入193版或发布到网站，不代表整栋或校园完成。
