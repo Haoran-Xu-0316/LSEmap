@@ -2,6 +2,7 @@
 import { readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
+import { gzipSync } from 'node:zlib';
 import { detailFor } from '../src/content.js';
 import { galleryRendererSignature, galleryModelSignature } from './gallery_signature.mjs';
 const root = 'dist';
@@ -39,10 +40,19 @@ for (let offset = 0; offset < campus.length; offset += 16 * 1024 * 1024) {
   const hash = createHash('sha256').update(bytes).digest('hex');
   const path = `models/campus-${parts.length}-${hash.slice(0,12)}.bin`;
   await writeFile(join(root, path), bytes);
-  parts.push({path:'/'+path, bytes:bytes.length, sha256:hash});
+  // Gzip is lossless on the already-compressed GLB and stream-decodable in browsers.
+  // Retain the raw segment for clients without DecompressionStream support.
+  const compressed = gzipSync(bytes, {level:6});
+  const compressedHash = createHash('sha256').update(compressed).digest('hex');
+  const compressedPath = `models/campus-${parts.length}-${compressedHash.slice(0,12)}.bin.gz`;
+  await writeFile(join(root, compressedPath), compressed);
+  parts.push({path:'/'+path, bytes:bytes.length, sha256:hash,
+    compressed:{path:'/'+compressedPath, bytes:compressed.length, sha256:compressedHash, encoding:'gzip'}});
   models.add(path.replace('models/',''));
+  models.add(compressedPath.replace('models/',''));
 }
-const campusTransport = {bytes:campus.length, sha256:campusHash, parts};
+const campusTransport = {bytes:campus.length, sha256:campusHash,
+  transferBytes:parts.reduce((sum,part)=>sum+part.compressed.bytes,0), parts};
 await writeFile(join(root, 'models/campus-parts.json'), JSON.stringify(campusTransport)+'\n');
 models.delete('campus.glb');models.add('campus-parts.json');
 const paths = [...models].map(name => `models/${name}`).concat([...images].map(name => `images/${name}.webp`));
