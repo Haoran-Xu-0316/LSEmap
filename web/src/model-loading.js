@@ -110,50 +110,104 @@ export async function downloadVerifiedModel(url, {
   }
 }
 
-/** Fetch the published campus segments concurrently into one final buffer. */
+/** Download lossless compressed campus segments concurrently into the final GLB. */
 export async function downloadCampusModel(url, options = {}) {
-  const {signal, onProgress, fetchModel = fetch} = options;
+  const {signal, onProgress, fetchModel = fetch,
+    supportsCompression = typeof DecompressionStream === 'function'} = options;
   const query = url.includes('?') ? url.slice(url.indexOf('?')) : '';
+  signal?.throwIfAborted();
   const response = await fetchModel('/models/campus-parts.json' + query, {signal, cache:'no-cache'});
   // Development serves the original GLB without the release-only segment index.
-  if (response.status === 404 || response.headers.get('Content-Type')?.includes('text/html')) return downloadVerifiedModel(url, options);
+  if (response.status === 404 || response.headers.get('Content-Type')?.includes('text/html'))
+    return downloadVerifiedModel(url, options);
   if (!response.ok) throw new Error(`Campus index request failed: HTTP${response.status}`);
   const manifest = await response.json();
   const validHash = value => /^[a-f0-9]{64}$/.test(value || '');
+  const validCompression = part => !part.compressed || (
+    part.compressed.encoding === 'gzip' &&
+    /^\/models\/campus-\d+-[a-f0-9]{12}\.bin\.gz$/.test(part.compressed.path) &&
+    Number.isSafeInteger(part.compressed.bytes) && part.compressed.bytes > 0 &&
+    part.compressed.bytes < 25 * 1024 * 1024 && validHash(part.compressed.sha256)
+  );
   if (!Number.isSafeInteger(manifest.bytes) || manifest.bytes < 20 ||
       !validHash(manifest.sha256) || !Array.isArray(manifest.parts) || !manifest.parts.length ||
-      manifest.parts.length > 4 || manifest.parts.some(p => !/^\/models\/campus-\d+-[a-f0-9]{12}\.bin$/.test(p.path) || !Number.isSafeInteger(p.bytes) || p.bytes <= 0 || !validHash(p.sha256)) ||
-      manifest.parts.reduce((n,p) => n+p.bytes,0) !== manifest.bytes) throw new Error('Invalid campus segment index');
+      manifest.parts.length > 4 || manifest.parts.some(part =>
+        !/^\/models\/campus-\d+-[a-f0-9]{12}\.bin$/.test(part.path) ||
+        !Number.isSafeInteger(part.bytes) || part.bytes <= 0 ||
+        !validHash(part.sha256) || !validCompression(part)) ||
+      manifest.parts.reduce((sum,part) => sum+part.bytes,0) !== manifest.bytes)
+    throw new Error('Invalid campus segment index');
+
   const bytes = new Uint8Array(manifest.bytes);
   const controller = new AbortController();
   const abort = () => controller.abort(signal.reason);
-  signal?.throwIfAborted();signal?.addEventListener('abort',abort,{once:true});
-  const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256',data))].map(n=>n.toString(16).padStart(2,'0')).join('');
-  let offset=0,loaded=0;
+  signal?.throwIfAborted();
+  signal?.addEventListener('abort',abort,{once:true});
+  const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256',data))]
+    .map(value=>value.toString(16).padStart(2,'0')).join('');
+  const received = manifest.parts.map(() => 0);
+  let offset = 0;
+  const reportProgress = () => onProgress?.({
+    loaded:received.reduce((sum,size)=>sum+size,0), total:manifest.bytes, lengthComputable:true,
+  });
+
+  async function readSegment(part, index, begin, compressed) {
+    controller.signal.throwIfAborted();
+    const result = await fetchModel(compressed ? part.compressed.path : part.path,
+      {signal:controller.signal});
+    if (!result.ok) throw new Error(`Campus segment request failed: HTTP${result.status}`);
+    let stream = result.body;
+    if (!stream) stream = new Blob([await result.arrayBuffer()]).stream();
+    // Some static hosts advertise HTTP gzip. Fetch already decodes that body;
+    // decode manually only when the host serves the compressed file as raw bytes.
+    const decodedByFetch = /\bgzip\b/i.test(result.headers.get('Content-Encoding') || '');
+    if (compressed && !decodedByFetch)
+      stream = stream.pipeThrough(new DecompressionStream('gzip'));
+    const reader = stream.getReader();
+    received[index] = 0;
+    try {
+      for (;;) {
+        const {done,value} = await reader.read();
+        if (done) break;
+        controller.signal.throwIfAborted();
+        if (received[index]+value.byteLength > part.bytes)
+          throw new Error('Campus segment length mismatch');
+        bytes.set(value,begin+received[index]);
+        received[index] += value.byteLength;
+        reportProgress();
+      }
+      if (received[index] !== part.bytes ||
+          await digest(bytes.subarray(begin,begin+part.bytes)) !== part.sha256)
+        throw new Error('Campus segment integrity mismatch');
+    } catch (error) {
+      await reader.cancel(error).catch(()=>{});
+      throw error;
+    } finally { reader.releaseLock(); }
+  }
+
   try {
-    const tasks=manifest.parts.map(part=>{
-      const begin=offset;offset+=part.bytes;
-      return (async()=>{
-        const result=await fetchModel(part.path,{signal:controller.signal});
-        if (!result.ok) throw new Error(`Campus segment request failed: HTTP${result.status}`);
-        let received=0;const reader=result.body?.getReader();
-        const append=value=>{
-          if(received+value.byteLength>part.bytes)throw new Error('Campus segment length mismatch');
-          bytes.set(value,begin+received);received+=value.byteLength;loaded+=value.byteLength;
-          onProgress?.({loaded,total:manifest.bytes,lengthComputable:true});
-        };
-        if(reader){
-          try{for(;;){const {done,value}=await reader.read();if(done)break;append(value);}}
-          catch(error){await reader.cancel(error).catch(()=>{});throw error;}
-          finally{reader.releaseLock();}
-        }else append(new Uint8Array(await result.arrayBuffer()));
-        if(received!==part.bytes || await digest(bytes.subarray(begin,begin+received))!==part.sha256)throw new Error('Campus segment integrity mismatch');
+    await Promise.all(manifest.parts.map((part,index) => {
+      const begin = offset;
+      offset += part.bytes;
+      return (async () => {
+        if (!supportsCompression || !part.compressed)
+          return readSegment(part,index,begin,false);
+        try { await readSegment(part,index,begin,true); }
+        catch (error) {
+          // A failed compressed transport can retry the identical raw segment.
+          // Cancellation still stops the complete load, including sibling streams.
+          controller.signal.throwIfAborted();
+          received[index] = 0;
+          await readSegment(part,index,begin,false);
+        }
       })();
-    });
-    await Promise.all(tasks);signal?.throwIfAborted();
-    const header=new DataView(bytes.buffer);
-    if(header.getUint32(0,true)!==0x46546c67 || header.getUint32(4,true)!==2 || header.getUint32(8,true)!==bytes.length || await digest(bytes)!==manifest.sha256)throw new Error('Campus model integrity mismatch');
+    }));
+    signal?.throwIfAborted();
+    const header = new DataView(bytes.buffer);
+    if (header.getUint32(0,true) !== 0x46546c67 || header.getUint32(4,true) !== 2 ||
+        header.getUint32(8,true) !== bytes.length || await digest(bytes) !== manifest.sha256)
+      throw new Error('Campus model integrity mismatch');
     return bytes.buffer;
-  }catch(error){controller.abort(error);throw error;}
-  finally{signal?.removeEventListener('abort',abort);}
+  } catch (error) { controller.abort(error); throw error; }
+  finally { signal?.removeEventListener('abort',abort); }
 }
