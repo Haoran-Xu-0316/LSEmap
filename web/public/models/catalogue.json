@@ -8,8 +8,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "190",
-  "sourceModelSha256": "0984a8425f17a4d20c9f2214f9aebca0297b4ebfee028b1fe752415562a414c3",
+  "version": "191",
+  "sourceModelSha256": "d98dc9b31c2b6177aebd4fb0343a3adf8b1c68d3218e04779f3a219ae0c7394c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3544,13 +3544,13 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 178,
-        "scope": "Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.",
-        "source": "https://food.lse.ac.uk/outlets",
-        "photographDate": "unknown",
-        "audit": "result/blender/lrb_exterior178/audit.json",
-        "addedObjects": 1,
-        "archivedObjects": 1
+        "version": 191,
+        "scope": "Portugal Street85 main and18 dormer panes use one outward optical sheet each, removing1030 box-back and edge triangles. Original front coordinates, corner UVs, tint, roughness and opaque proxy status retained. Roof panes are shared with the interior cutaway; no room structure altered. Other elevations and complete current interiors remain unverified.",
+        "source": "data/collections/library-roof-2025/existing-nw-elevation.pdf",
+        "drawing": "4556-FBR-LR-ZZ-DR-A-114 P01, 17 April 2025",
+        "audit": "result/blender/stage191/reopened-verification.json",
+        "addedObjects": 2,
+        "archivedObjects": 2
       },
       "interiorSections": [
         {
@@ -3662,6 +3662,15 @@
               "supports": "Dome north-cut skylight and retained triangular metal frame"
             }
           ]
+        },
+        {
+          "version": 191,
+          "scope": "Portugal Street85 main and18 dormer panes use one outward optical sheet each, removing1030 box-back and edge triangles. Original front coordinates, corner UVs, tint, roughness and opaque proxy status retained. Roof panes are shared with the interior cutaway; no room structure altered. Other elevations and complete current interiors remain unverified.",
+          "source": "data/collections/library-roof-2025/existing-nw-elevation.pdf",
+          "drawing": "4556-FBR-LR-ZZ-DR-A-114 P01, 17 April 2025",
+          "audit": "result/blender/stage191/reopened-verification.json",
+          "addedObjects": 2,
+          "archivedObjects": 2
         }
       ],
       "entranceCanopyReview": {
@@ -3744,10 +3753,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-ea687b3ff414.glb",
-        "bytes": 6123216,
-        "triangles": 682367,
-        "sha256": "ea687b3ff414e2e8c39859a683acfd810cf3f2f2fee6241c6e4785254a86886d",
+        "url": "/models/details/lrb-exterior-d17156f3869c.glb",
+        "bytes": 6110460,
+        "triangles": 681337,
+        "sha256": "d17156f3869ce2de044e30e2c7e709a668414693496680b2945b8b991979f1f5",
         "bounds": {
           "min": [
             24.830078125,
@@ -3762,10 +3771,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-1f57457f73e9.glb",
-        "bytes": 4670552,
-        "triangles": 580348,
-        "sha256": "1f57457f73e923f31d79bc4916dee31e0af68b6b9c974bb1001c0185f1049a46",
+        "url": "/models/details/lrb-interior-c35683d865d3.glb",
+        "bytes": 4668300,
+        "triangles": 580168,
+        "sha256": "c35683d865d381a6e13ae6e9736219753eae4d7420f89d61e1a6550ae0cf315c",
         "bounds": {
           "min": [
             25.21265411376953,
