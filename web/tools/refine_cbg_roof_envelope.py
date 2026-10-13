@@ -1,7 +1,7 @@
 """Build CBG's photographed open top end and stepped roof as a private candidate.
 
 Apply to an already loaded campus. This module never opens, saves or publishes a
-file. Coordinates and the relocated upper stair connection are estimates; the
+file. Coordinates and registered design-stage stair dimensions are estimates; the
 candidate requires full roof and circulation registration before release.
 """
 from pathlib import Path
@@ -19,6 +19,9 @@ REAR_ROOF = 12 * STEP
 ROOF_TERRACE_END_X = -22.4
 ROOF_TERRACE_FRONT_Y = 6.2
 CORE_END_X = -.5
+# Rectangular estimate from the four registered level12 stair-well corners.
+UPPER_STAIR_X = (-12.95, -9.25)
+UPPER_STAIR_Y = (-1.02, 4.08)
 SOURCES = [
     'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_05.jpg',
     'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_12.jpg',
@@ -352,6 +355,112 @@ def add_roof_garden(mesh_object,box,slab,frame,exterior):
     box('core_green_roof',(-20.35,4.95,HEIGHT+.075),(-1.55,13.15,HEIGHT+.125),turf)
 
 
+
+def add_registered_upper_stair(mesh_object, box, frame, slab, interior):
+    """Replace the estimated top straight flight with the plan's return stair."""
+    x_left, x_right = UPPER_STAIR_X
+    y_front, y_rear = UPPER_STAIR_Y
+    base = TERRACE - .02
+    rise = STEP / 28
+    going = .268
+    landing_end = y_rear - 14 * going
+    lane_width = 1.515
+    lanes = [(x_right - .12 - lane_width, x_right - .12),
+             (x_left + .12, x_left + .12 + lane_width)]
+    wood = bpy.data.objects['CBG_D_tower_meandering_stair_treads'].data.materials[0]
+    blue = bpy.data.objects['CBG_D_tower_stair_stringers'].data.materials[0]
+    pale = bpy.data.objects['CBG_D_tower_stair_slotted_pale_guards'].data.materials[0]
+    treads, tread_faces, slots, slot_faces = [], [], [], []
+
+    def packed_box(vertices, faces, lo, hi):
+        offset = len(vertices)
+        vertices.extend(tuple(lo[i] + (hi[i] - lo[i]) * bit[i] for i in range(3))
+                        for bit in CORNERS)
+        faces.extend(tuple(offset + i for i in face) for face in BOX_FACES)
+
+    def beam(name, start, end, width, depth, material):
+        start, end = Vector(start), Vector(end)
+        direction = (end - start).normalized()
+        across = Vector((1, 0, 0)) * width / 2
+        normal = direction.cross(across.normalized()).normalized() * depth / 2
+        points = [tuple(point + a * across + b * normal)
+                  for point in (start, end)
+                  for a, b in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+        return mesh_object(name, points, BOX_FACES, material, interior)
+
+    def handrail(name, start, end):
+        start, end = Vector(start), Vector(end)
+        direction = (end - start).normalized()
+        across = Vector((1, 0, 0))
+        if abs(direction.dot(across)) > .9:
+            across = Vector((0, 1, 0))
+        across = (across - direction * across.dot(direction)).normalized()
+        normal = direction.cross(across)
+        points = [tuple(point + .023 * (across * math.cos(i * math.tau / 8)
+                                        + normal * math.sin(i * math.tau / 8)))
+                  for point in (start, end) for i in range(8)]
+        faces = [tuple(reversed(range(8))), tuple(range(8, 16))]
+        faces.extend((i, (i + 1) % 8, (i + 1) % 8 + 8, i + 8) for i in range(8))
+        return mesh_object(name, points, faces, frame, interior)
+
+    for flight, (x0, x1) in enumerate(lanes):
+        start_y, end_y = (y_rear, landing_end) if flight == 0 else (landing_end, y_rear)
+        start_z = base + flight * STEP / 2
+        direction = -1 if flight == 0 else 1
+        for step in range(14):
+            edge_a = start_y + direction * step * going
+            edge_b = edge_a + direction * going
+            top = start_z + (step + 1) * rise
+            packed_box(treads, tread_faces, (x0, min(edge_a, edge_b), top - .12),
+                       (x1, max(edge_a, edge_b), top))
+        for side, x in enumerate((x0 - .025, x1 + .025)):
+            beam(f'upper_stair_stringer_{flight}_{side}', (x, start_y, start_z - .07),
+                 (x, end_y, start_z + STEP / 2 - .07), .12, .24, blue)
+            handrail(f'upper_stair_handrail_{flight}_{side}', (x, start_y, start_z + 1.05),
+                     (x, end_y, start_z + STEP / 2 + 1.05))
+            beam(f'upper_stair_guard_base_{flight}_{side}', (x, start_y, start_z + .08),
+                 (x, end_y, start_z + STEP / 2 + .08), .06, .13, pale)
+            beam(f'upper_stair_guard_cap_{flight}_{side}', (x, start_y, start_z + .995),
+                 (x, end_y, start_z + STEP / 2 + .995), .075, .09, pale)
+            for strip in range(35):
+                fraction = strip / 34
+                y = start_y + (end_y - start_y) * fraction
+                z = start_z + STEP / 2 * fraction
+                packed_box(slots, slot_faces, (x - .035, y - .04, z + .14),
+                           (x + .035, y + .04, z + .97))
+    mesh_object('upper_stair_treads', treads, tread_faces, wood, interior)
+    # The mid landing joins both lanes. The top landing joins the existing
+    # academic floor behind the registered well instead of floating at its side.
+    mid = base + STEP / 2
+    box('upper_stair_mid_landing', (x_left, y_front, mid - .17),
+        (x_right, landing_end, mid), slab, interior)
+    box('upper_stair_top_landing', (x_left, y_rear, REAR_ROOF - .19),
+        (x_right, y_rear + 1.1, REAR_ROOF - .02), slab, interior)
+    for strip in range(33):
+        x = x_left + (strip + .5) * (x_right - x_left) / 33
+        packed_box(slots, slot_faces, (x - .035, y_front - .04, mid + .12),
+                   (x + .035, y_front + .04, mid + .98))
+    handrail('upper_stair_mid_guard', (x_left, y_front, mid + 1.05),
+             (x_right, y_front, mid + 1.05))
+    box('upper_stair_mid_guard_base', (x_left, y_front - .04, mid - .005),
+        (x_right, y_front + .04, mid + .15), pale, interior)
+    box('upper_stair_mid_guard_cap', (x_left, y_front - .04, mid + .96),
+        (x_right, y_front + .04, mid + 1.035), pale, interior)
+    # The retained upper floor must have a guard at the open well's outer edges.
+    for side, x in enumerate((x_left - .04, x_right + .04)):
+        handrail(f'upper_stair_floor_guard_{side}', (x, y_front, REAR_ROOF + 1.03),
+                 (x, y_rear, REAR_ROOF + 1.03))
+        box(f'upper_stair_floor_guard_base_{side}', (x - .04, y_front, REAR_ROOF - .02),
+            (x + .04, y_rear, REAR_ROOF + .14), pale, interior)
+        box(f'upper_stair_floor_guard_cap_{side}', (x - .04, y_front, REAR_ROOF + .94),
+            (x + .04, y_rear, REAR_ROOF + 1.025), pale, interior)
+        for strip in range(46):
+            y = y_front + (strip + .5) * (y_rear - y_front) / 46
+            packed_box(slots, slot_faces, (x - .035, y - .04, REAR_ROOF + .1),
+                       (x + .035, y + .04, REAR_ROOF + .96))
+    mesh_object('upper_stair_pale_slots', slots, slot_faces, pale, interior)
+
+
 def apply_cbg_roof_envelope():
     """Create a full roof-envelope candidate; do not silently publish it."""
     assert not any(o.name.startswith(PREFIX) for o in bpy.data.objects), 'Candidate already present'
@@ -361,20 +470,30 @@ def apply_cbg_roof_envelope():
     before=set(bpy.data.objects)
     originals=sorted([o for o in set(exterior.all_objects)|set(interior.all_objects) if o.type=='MESH' and not o.hide_render],key=lambda o:o.name)
     replacements=[]
-    # Relocate the last estimated stair as a whole flight, never crop individual
-    # steps to manufacture a void. The new connection remains subject to review.
-    for name,(count,last) in STAIR_PARTS.items():
-        source=bpy.data.objects[name]
-        assert len(source.data.vertices)==count*8
-        target=source.copy();target.data=source.data.copy();target.name=PREFIX+'connected_'+name
-        inverse=source.matrix_world.inverted()
-        for vertex in target.data.vertices[(count-last)*8:]:
-            point=local(source.matrix_world@vertex.co);point.x-=4.65
-            vertex.co=inverse@world(point)
-        for owner in source.users_collection:owner.objects.link(target)
-        target['originalObject']=source.name
-        target.hide_render=False;target.hide_set(False);source.hide_render=True;source.hide_set(True)
-        replacements.append(dict(source=name,target=target.name,wholeFlightShiftX=-4.65))
+    # Preserve the first eight inherited flights exactly. The registered upper
+    # well is a different return-stair layout; translating the old ninth flight
+    # cannot reproduce its footprint, midpoint landing or floor connection.
+    import bmesh
+    for name, (count, last) in STAIR_PARTS.items():
+        source = bpy.data.objects[name]
+        assert len(source.data.vertices) == count * 8
+        target = source.copy()
+        target.data = source.data.copy()
+        target.name = PREFIX + 'connected_' + name
+        mesh = bmesh.new()
+        mesh.from_mesh(target.data)
+        mesh.verts.ensure_lookup_table()
+        bmesh.ops.delete(mesh, geom=list(mesh.verts)[(count - last) * 8:], context='VERTS')
+        mesh.to_mesh(target.data)
+        mesh.free()
+        for owner in source.users_collection:
+            owner.objects.link(target)
+        target['originalObject'] = source.name
+        target.hide_render = False
+        target.hide_set(False)
+        source.hide_render = True
+        source.hide_set(True)
+        replacements.append(dict(source=name, target=target.name, removedUpperComponents=last))
     for source in originals:
         if source.name in STAIR_PARTS:continue
         glass=any(m and ('glass' in m.name.lower() or m.get('webOpacity',1)<1) for m in source.data.materials)
@@ -387,6 +506,11 @@ def apply_cbg_roof_envelope():
         # canopy. Secondary mullions and the middle floor cannot span the void.
         if 'external_I_columns' not in source.name and 'roof_and_ground_plates' not in source.name and 'red_roof_recess' not in source.name:
             regions.append(((-.5,-2.5,TERRACE-.01 if glass else TERRACE+.40),(7.5,4.2,56.0 if glass else HEIGHT-.38)))
+        if any(part in source.name for part in ('tower_floor_plates', 'tower_front_galleries')):
+            # A real floor12 opening above both flights, without cutting the
+            # level11 entry floor or laying a slab across the walking headroom.
+            regions.append(((UPPER_STAIR_X[0] + .03, UPPER_STAIR_Y[0], REAR_ROOF - .30),
+                            (UPPER_STAIR_X[1] - .03, UPPER_STAIR_Y[1], REAR_ROOF + .12)))
         selected=[]
         for region in regions:
             pts=[local(source.matrix_world@v.co) for v in source.data.vertices]
@@ -415,7 +539,8 @@ def apply_cbg_roof_envelope():
     box('end_setback_roof',(-.5,4.2,REAR_ROOF-.08),(7,14,REAR_ROOF+.04),slab,interior)
     # A bridge joins the prior landing and the relocated flight beside the stair,
     # with no slab laid across walking treads.
-    box('upper_stair_connection',(-9.25,1.55,TERRACE-.10),(-3.40,2.45,TERRACE+.04),slab,interior)
+    box('upper_stair_connection',(-8.60,1.55,TERRACE-.18),(-3.40,2.70,TERRACE-.02),slab,interior)
+    add_registered_upper_stair(mesh_object, box, frame, slab, interior)
     box('end_guard',(7.03,-1.85,TERRACE+.22),(7.055,4.10,TERRACE+1.30),glass)
     box('end_guard_shoe',(7.0,-1.85,TERRACE+.15),(7.12,4.10,TERRACE+.24),frame)
     box('end_guard_cap',(7.025,-1.85,TERRACE+1.29),(7.065,4.10,TERRACE+1.32),frame)
@@ -461,17 +586,18 @@ def apply_cbg_roof_envelope():
     # Its function and absolute elevation remain unknown, so it is a visible
     # envelope study rather than a fabricated plant-room interior.
     screen=glass.copy();screen.name=PREFIX+'pale_green_screen'
-    screen.diffuse_color=(.42,.57,.55,1);screen['webOpacity']=.72
+    screen.diffuse_color=(.42,.57,.55,1);screen['webOpacity']=.80
     node=screen.node_tree.nodes['Principled BSDF']
     node.inputs['Base Color'].default_value=screen.diffuse_color
-    node.inputs['Roughness'].default_value=.25
+    node.inputs['Roughness'].default_value=.42
+    # Joas Souza's built end view shows four rows of translucent screen panels.
     for column in range(4):
-        for row in range(3):
-            y=5.45+column*1.87;z=REAR_ROOF+.24+row*1.18
-            box(f'green_screen_{column}_{row}',(-.39,y,z),(-.365,y+1.85,z+1.16),screen)
+        for row in range(4):
+            y=5.45+column*1.87;z=REAR_ROOF+.24+row*.885
+            box(f'green_screen_{column}_{row}',(-.39,y,z),(-.365,y+1.85,z+.865),screen)
             for side in (0,1):
                 yy=y+.06+side*1.72
-                box(f'green_screen_clamp_{column}_{row}_{side}',(-.445,yy,z+.54),(-.31,yy+.05,z+.59),frame)
+                box(f'green_screen_clamp_{column}_{row}_{side}',(-.445,yy,z+.405),(-.31,yy+.05,z+.455),frame)
     box('green_screen_base',(-.5,5.4,REAR_ROOF+.15),(-.27,12.95,REAR_ROOF+.23),frame)
     # Twin folded assemblies reproduce visible silhouette and underside panels.
     # Their exact equipment function, materials and dimensions remain unverified.
@@ -489,11 +615,11 @@ def apply_cbg_roof_envelope():
     added=[o.name for o in set(bpy.data.objects)-before]
     return dict(status='private-candidate-awaiting-roof-and-circulation-registration',
         addedObjects=added,archivedObjects=[r['source'] for r in replacements],changedObjects=[],replacements=replacements,
-        dimensions=dict(top=HEIGHT,openEndFloor=TERRACE,rearRoof=REAR_ROOF,cornerStartX=-.5,roofTerraceEndX=ROOF_TERRACE_END_X,roofTerraceFrontY=ROOF_TERRACE_FRONT_Y,retainedCoreX=[ROOF_TERRACE_END_X,CORE_END_X]),
+        dimensions=dict(top=HEIGHT,openEndFloor=TERRACE,rearRoof=REAR_ROOF,cornerStartX=-.5,roofTerraceEndX=ROOF_TERRACE_END_X,roofTerraceFrontY=ROOF_TERRACE_FRONT_Y,retainedCoreX=[ROOF_TERRACE_END_X,CORE_END_X],upperStairX=UPPER_STAIR_X,upperStairY=UPPER_STAIR_Y,upperStairFlights=2,upperStairTreads=28),
         references=[dict(path=p,sha256=hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),captureDate='unknown',
                          role='published2016design-drawing' if ('archdaily_03' in p or '-plan-' in p) else 'built-photograph') for p in SOURCES],
         sourceURL='https://rshp.com/projects/education/lse-centre-building/',
         limitations=['Only overall52.2m height is cited; local dimensions and inherited equal storeys are estimates.',
-                     'The rear terrace/core split is proportionally registered from the2016 level12 plan; the published built photograph supports a bounded garden, not an empty full-length roof. Absolute geometry and upper-stair relocation still require review.',
+                     'The rear terrace/core split is proportionally registered from the2016 level12 plan; the published built photograph supports a bounded garden, not an empty full-length roof. Absolute geometry and actual current stair dimensions still require review.',
                      'Suspended assemblies are photo-derived forms; equipment function is not established.',
                      'Current hidden plant, all upper rooms and full internal layout remain unverified.'])
