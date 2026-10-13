@@ -8,16 +8,16 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition 194 contains 31 building records,30 detailed exteriors,25 interior views
+Edition 195 contains 31 building records,30 detailed exteriors,25 interior views
 and 13 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v194.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v195.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The first overview and selected-building views use the same authored exterior
 objects and finishes, including retained public floors, stairs and atria. All 125 gallery images are captured with the production viewer
 and checked against the model and renderer signatures before release.
 
-This edition refines OLD's wall, arch and relief stone with one shared 512px
+Edition 194 refined OLD's wall, arch and relief stone with one shared 512px
 original finish map. It preserves existing geometry, blue frames and entrance
 glazing. CBG's painted structure and red/orange blades use a dielectric coating,
 and its neutral glazing reveals more of the retained interior. The red-primary
@@ -30,7 +30,17 @@ not a claim that the entire campus road network has been resurveyed. Stone,
 paint and louvers inside a historically named GLAZING collection now retain
 an explicit opaque material role rather than receiving a glass finish.
 
-The viewer uses a self-hosted CC0 sky after the campus is usable. Roads, paving
+Edition 195 refines KSW's brick, stone, painted frames, shopfront and timber
+entry, and restores twelve missing upper sash mullions. COL's street-facing
+stone, painted joinery, timber and glazing receive separate finishes. MAR was
+reviewed without speculative geometry changes. Existing interior studies remain
+unchanged.
+
+The viewer uses a self-hosted CC0 sky after the campus is usable. Two shared
+512px CC0 ground captures add asphalt wear and stone variation at world scale,
+adding 123,528 bytes, no geometry and no extra render pass. Captured maps and
+procedural finishes retain separate ownership, so authored stone maps remain
+visible. Optional ground-download failures preserve the procedural fallback. Roads, paving
 and greenery share distance-filtered finishes. Lossless gzip segments reduce
 first-load transfer; a single content-verified browser cache replaces the
 previous campus edition and avoids repeated model downloads. Storage or sky
