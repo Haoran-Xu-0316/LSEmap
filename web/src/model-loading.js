@@ -1,3 +1,5 @@
+import {campusByteCache, persistCampusBytes} from "./model-byte-cache.js";
+
 /** A progressing download has no fixed deadline. Decoding has its own budget. */
 export function loadModelInStages(download, decode, {
   signal,
@@ -113,7 +115,8 @@ export async function downloadVerifiedModel(url, {
 /** Download lossless compressed campus segments concurrently into the final GLB. */
 export async function downloadCampusModel(url, options = {}) {
   const {signal, onProgress, fetchModel = fetch,
-    supportsCompression = typeof DecompressionStream === 'function'} = options;
+    supportsCompression = typeof DecompressionStream === 'function',
+    byteCache = campusByteCache} = options;
   const query = url.includes('?') ? url.slice(url.indexOf('?')) : '';
   signal?.throwIfAborted();
   const response = await fetchModel('/models/campus-parts.json' + query, {signal, cache:'no-cache'});
@@ -138,13 +141,28 @@ export async function downloadCampusModel(url, options = {}) {
       manifest.parts.reduce((sum,part) => sum+part.bytes,0) !== manifest.bytes)
     throw new Error('Invalid campus segment index');
 
+  const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256', data))]
+    .map(value => value.toString(16).padStart(2, '0')).join('');
+  const validHeader = buffer => {
+    if (!(buffer instanceof ArrayBuffer) || buffer.byteLength !== manifest.bytes) return false;
+    const header = new DataView(buffer);
+    return header.getUint32(0, true) === 0x46546c67 && header.getUint32(4, true) === 2 &&
+      header.getUint32(8, true) === manifest.bytes;
+  };
+  // The fresh index selects the cache by content hash, never by a mutable URL.
+  let cached;
+  try { cached = await byteCache?.read(manifest.sha256); } catch { /* Network fallback. */ }
+  signal?.throwIfAborted();
+  if (validHeader(cached) && await digest(cached) === manifest.sha256) {
+    signal?.throwIfAborted();
+    onProgress?.({loaded:manifest.bytes, total:manifest.bytes, lengthComputable:true});
+    return cached;
+  }
   const bytes = new Uint8Array(manifest.bytes);
   const controller = new AbortController();
   const abort = () => controller.abort(signal.reason);
   signal?.throwIfAborted();
   signal?.addEventListener('abort',abort,{once:true});
-  const digest = async data => [...new Uint8Array(await crypto.subtle.digest('SHA-256',data))]
-    .map(value=>value.toString(16).padStart(2,'0')).join('');
   const received = manifest.parts.map(() => 0);
   let offset = 0;
   const reportProgress = () => onProgress?.({
@@ -207,6 +225,7 @@ export async function downloadCampusModel(url, options = {}) {
     if (header.getUint32(0,true) !== 0x46546c67 || header.getUint32(4,true) !== 2 ||
         header.getUint32(8,true) !== bytes.length || await digest(bytes) !== manifest.sha256)
       throw new Error('Campus model integrity mismatch');
+    if (byteCache) persistCampusBytes(byteCache, manifest.sha256, bytes.buffer, signal);
     return bytes.buffer;
   } catch (error) { controller.abort(error); throw error; }
   finally { signal?.removeEventListener('abort',abort); }
