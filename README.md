@@ -10,7 +10,7 @@ A browser-based architectural study of the London School of Economics campus.
 
 The current campus transport uses lossless gzip segments with streamed browser
 extraction. First-load model transfer falls from49.6MB to23.1MB, a53.5% reduction;
-the original GLB, geometry, materials and all125 gallery images remain identical.
+the original GLB, geometry, materials and all 125 gallery images remain identical.
 The gzip OS header is normalized so macOS and Linux builds produce identical
 asset hashes. Raw segments remain available for unsupported clients and failed gzip transfers.
 Controlled50Mbps/30ms desktop profiling reduced first rendered output from about
@@ -258,6 +258,18 @@ session. Pushing GitHub and deploying are separate checks. The online
 `/release.json` identifies the production source hash and asset checksums.
 See [deployment instructions](DEPLOYMENT.md).
 
+## Outdoor presentation and loading
+
+The shared renderer resolves stone joints, matte road aggregate and irregular
+lawn tones in overview and building views. Authored physical paving keeps its
+existing tile and border geometry. The optional 1K CC0 photographic sky loads
+after the campus becomes usable; offline failures keep the startup lighting.
+
+Verified campus bytes are cached as one file-backed Blob in browser storage.
+A fresh release index and SHA256 validation prevent reuse of obsolete or corrupt
+models. Reloads can skip all campus segment downloads; first visits retain the
+parallel lossless compressed transfer. Storage failures use the network path.
+
 ## Source layout
 
 - `web/src/`: rendering, controls, interface and building content.
@@ -267,9 +279,10 @@ See [deployment instructions](DEPLOYMENT.md).
 - `data/`: private reference photographs, maps and documents.
 - `result/`: private latest native model, required component and verification records.
 
-The local editable source is `result/blender/LSE_campus_detailed_v175.blend`.
-Edition174 small components cover the OLD entrance foyer, MAR north loggia,
-LRB north aperture and John Watkins seating. Accepted earlier facade components
+The accepted local editable source is `result/blender/LSE_campus_detailed_v193.blend`.
+Small native components retain the OLD entrance foyer, LRB façade and interior,
+and current street and landscape refinements. The private CBG roof candidate is
+not part of the accepted public model. Accepted earlier facade components
 remain as source evidence within the integrated model.
 Native sources, reference photos and local verification output remain outside
 GitHub. Historical authoring checks may require their original local evidence;
