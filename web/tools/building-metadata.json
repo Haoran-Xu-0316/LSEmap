@@ -294,6 +294,14 @@
         "reversedShells": 136,
         "batchCount": 4,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorFinish194": {
+        "version": 194,
+        "scope": "Neutral glazing and dielectric painted structure retain existing geometry and the user-selected red-primary/orange-return palette.",
+        "references": [
+          "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf"
+        ],
+        "limitations": "The red-primary faces follow user direction. Contractor photographs mostly show pale broad faces and orange/gold returns. Roof and complete current interiors remain unverified."
       }
     },
     {
@@ -1990,6 +1998,16 @@
         "reversedShells": 531,
         "batchCount": 11,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorFinish194": {
+        "version": 194,
+        "scope": "Photo-estimated neutral warm limestone finish across61existing wall, arch and relief objects. Geometry, blue frames and clear entrance glazing retained.",
+        "references": [
+          "data/collections/old-exterior-2026/user-references/houghton-arch-masonry.png",
+          "data/collections/old-exterior-2026/user-references/houghton-entrance-latest.png",
+          "data/collections/old-clare-reference/front.png"
+        ],
+        "limitations": "The original stone map approximates tonal variation; it is not photographed or measured weathering."
       }
     },
     {
@@ -3286,5 +3304,6 @@
       "https://threejs.org/docs/pages/MeshStandardMaterial.html"
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
-  }
+  },
+  "sourceVersion": 194
 }
