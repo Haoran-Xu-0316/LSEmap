@@ -25,6 +25,19 @@ export function isGlazingMaterial(material) {
     /^(?:WEB_(?:DETAIL_)?)?MAR168_0[0-3]_0[01]_dielectric$/.test(material.name);
 }
 
+// Stable semantic roles apply to both merged campus and individual buildings.
+export function outdoorSurfaceKind(name) {
+  if (/asphalt/i.test(name)) return 'asphalt';
+  if (/Lincoln Inn Fields grass/i.test(name)) return 'grass';
+  if (/Pale campus paving|MAR25_paving|CKK_V80_paving/i.test(name)) return 'paving-grid';
+  if (/SITE_V47_(?:slab|yorkstone|edge)|PORTSMOUTH_estimated_yorkstone/i.test(name)) return 'stone';
+  if (/SITE_V47_wood/i.test(name)) return 'timber';
+  if (/(?:^|_)soil$/i.test(name)) return 'soil';
+  if (/(?:^|_)bark$/i.test(name)) return 'bark';
+  if (/foliage/i.test(name)) return 'foliage';
+  return null;
+}
+
 const preparedMaterials = new WeakSet();
 const detailedMaterials = new WeakSet();
 
@@ -32,6 +45,7 @@ const detailedMaterials = new WeakSet();
 // They describe a material finish, not measured ageing or photographic textures.
 export function refineMaterialFinish(material, environmentMap = null) {
   const name = material.name.toLowerCase();
+  const outdoorKind = outdoorSurfaceKind(name);
   const matches = (pattern) => pattern.test(name);
   // With a scene-inherited environment, Three.js uses scene intensity instead
   // of material intensity. Bind the shared PMREM explicitly for glazing so its
@@ -87,15 +101,22 @@ export function refineMaterialFinish(material, environmentMap = null) {
   } else if (matches(/SITE_V47_wood/i)) {
     material.metalness = 0;
     material.roughness = 0.76;
-  } else if (matches(/SITE_V47_(?:slab|yorkstone|edge|grout)|campus paving|MAR25_paving|CKK_V80_paving/i)) {
+  } else if (outdoorKind === "paving-grid" || outdoorKind === "stone" || matches(/SITE_V47_grout/i)) {
     material.metalness = 0;
     material.roughness = 0.9;
+    if (outdoorKind === "paving-grid")
+      material.color.lerp(new THREE.Color(.31, .32, .305), .65);
   } else if (matches(/foliage|Lincoln Inn Fields grass|(?:^|_)soil$|(?:^|_)bark$/i)) {
     material.metalness = 0;
     material.roughness = matches(/foliage/) ? 0.88 : 0.96;
-  } else if (matches(/Road asphalt/i)) {
+    if (outdoorKind === "grass")
+      material.color.lerp(new THREE.Color(.115, .20, .095), .65);
+  } else if (outdoorKind === "asphalt") {
     material.metalness = 0;
     material.roughness = 0.97;
+    // Keep the already dark Clement House asphalt; correct the pale base roads.
+    if (matches(/Road asphalt/i))
+      material.color.lerp(new THREE.Color(.065, .075, .082), .8);
   } else if (matches(/gold|bronze|brass|copper/)) {
     material.metalness = Math.max(material.metalness, 0.72);
     material.roughness = Math.min(material.roughness, 0.34);
@@ -110,18 +131,18 @@ export function refineMaterialFinish(material, environmentMap = null) {
 
 export function applySurfaceDetail(material) {
   if (detailedMaterials.has(material)) return;
-  const landscape = /(?:^|_)(?:soil|bark)$|London plane foliage|Lincoln Inn Fields grass/i.test(material.name);
-  const asphalt = /Road asphalt/i.test(material.name);
-  const bark = /(?:^|_)bark$/i.test(material.name);
-  const outdoor = landscape || /SITE_V47_(?:slab|yorkstone|edge|soil|wood)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt|Lincoln Inn Fields grass|London plane foliage/i.test(material.name);
-  const timber = /SITE_V47_wood/i.test(material.name);
-  const paving = /SITE_V47_(?:slab|yorkstone|edge)|campus paving|MAR25_paving|CKK_V80_paving|Road asphalt/i.test(material.name);
+  const kind = outdoorSurfaceKind(material.name);
+  const asphalt = kind === 'asphalt', bark = kind === 'bark';
+  const outdoor = Boolean(kind), timber = kind === 'timber';
+  const pavingGrid = kind === 'paving-grid';
+  const paving = pavingGrid || kind === 'stone' || asphalt;
+  const grass = kind === 'grass';
   let detail = material.userData.surfaceDetail;
   if (!detail && outdoor) {
     // Preserve mapped geometry and palette; resolve aggregate and foliage tones
     // in the shared renderer rather than adding subpixel blades or leaf meshes.
     detail = {
-      kind: "noise", scale: /foliage|grass/.test(material.name) ? 1.8 : bark ? 5 : asphalt ? 22 : 9,
+      kind: "noise", scale: /foliage|grass/i.test(material.name) ? 1.8 : bark ? 5 : asphalt ? 28 : 9,
       bump: /foliage|grass/.test(material.name) ? 0 : bark ? 0.0012 : /asphalt|soil/.test(material.name) ? 0.0008 : 0.00035,
       colorA: material.color.clone().multiplyScalar(0.82).toArray(),
       colorB: material.color.clone().multiplyScalar(1.10).toArray(),
@@ -146,7 +167,7 @@ export function applySurfaceDetail(material) {
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-finish7-${brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish8-${pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -197,6 +218,31 @@ export function applySurfaceDetail(material) {
       // Keep the source palette midpoint without oversized concrete blotches.
       vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * ${outdoor ? "1.2" : "0.32"});
       float surfaceHeight = resolvedGrain * surfaceBump * noiseVisibility;
+      ${pavingGrid ? `
+      // Metre-scale staggered slabs on otherwise plain approach surfaces only.
+      // Existing modelled setts retain their own borders and grout geometry.
+      vec2 slabPoint = mat2(.52992, .84805, -.84805, .52992) * vSurfacePosition.xz;
+      vec2 slabSize = vec2(.60, .40);
+      vec2 slabFootprint = fwidth(slabPoint);
+      float slabVisibility = 1.0 - smoothstep(.32, .85,
+        max(slabFootprint.x / slabSize.x, slabFootprint.y / slabSize.y));
+      slabPoint.x += mod(floor(slabPoint.y / slabSize.y), 2.0) * slabSize.x * .5;
+      vec2 inSlab = mod(slabPoint, slabSize);
+      vec2 seamDistance = min(inSlab, slabSize - inSlab);
+      vec2 seamFace = smoothstep(vec2(.003) - slabFootprint,
+                                 vec2(.003) + slabFootprint, seamDistance);
+      float slabFace = min(seamFace.x, seamFace.y);
+      float slabTone = surfaceHash(vec3(floor(slabPoint / slabSize), 3.0));
+      surfaceColor *= mix(1.0, mix(.66, .96 + slabTone * .08, slabFace), slabVisibility);
+      surfaceHeight += slabFace * .0012 * slabVisibility;
+      ` : grass ? `
+      // Broad irregular turf variation remains visible without extra grass meshes.
+      float turf = surfaceNoise(vec3(vSurfacePosition.x * .22, 9.0, vSurfacePosition.z * .22));
+      surfaceColor *= .9 + turf * .20;
+      ` : asphalt ? `
+      surfaceColor *= .97 + coarseGrain * .06;
+      ` : ""}
+
     `;
     shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", `
       #include <color_fragment>
