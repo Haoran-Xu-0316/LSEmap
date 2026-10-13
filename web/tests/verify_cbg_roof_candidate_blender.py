@@ -33,10 +33,42 @@ for y in (-.8,.4,3.0):
   hits=ray((8.0,y,z),(-1,0,0),2.0)
   if hits:failures.append(dict(scope='open-end',y=y,z=z,hits=hits[:2]))
   paths.append(dict(scope='top-end',point=[8,y,z],clearDistance=2.0))
-for x in (-31,-16,0):
+for x in (-37,-30,-24):
  hits=ray((x,15,50),(0,-1,0),2.0)
  if hits:failures.append(dict(scope='rear-upper-row',x=x,hits=hits[:2]))
  paths.append(dict(scope='rear-roof',point=[x,15,50],clearDistance=2.0))
+# Source-backed roof profile: garden on one end, retained higher middle core,
+# and the photographed lower setback at the open end. Inspect actual geometry
+# rather than accepting the candidate's own declared dimensions.
+roof_profiles=[]
+for x,y,low,high in [(-38,8.5,48.20,48.5),(-31,8.5,48.20,48.5),(-25,8.5,48.20,48.5),
+                       (-17,10,52.1,52.5),(-8,10,52.1,52.5),(2,9,48.15,48.5),(5,9,48.15,48.5)]:
+    hits=ray((x,y,54),(0,0,-1),8)
+    assert hits and low<=hits[0]['point'][2]<=high, ('roof profile',x,y,hits[:2])
+    roof_profiles.append(dict(point=[x,y],height=hits[0]['point'][2],object=hits[0]['object']))
+for x in (-39,-31,-24):
+    hits=ray((x,8,50),(0,-1,0),3)
+    assert hits and 'terrace_thermal_' in hits[0]['object'], ('exposed upper academic strip',x,hits[:2])
+for x in (-17,-8,-2):
+    hits=ray((x,15,50),(0,-1,0),2)
+    assert hits, ('middle core unexpectedly removed',x)
+for bed in range(3):
+    soil=bpy.data.objects[PREFIX+f'bed_{bed}_soil']
+    assert len(soil.data.vertices)==8 and len(soil.data.polygons)==6
+assert bpy.data.objects[PREFIX+'roof_paving_tiles'].data.polygons
+assert all(bpy.data.objects[PREFIX+f'core_terrace_door_{leaf}'].data.materials[0]['webOpacity']==.82 for leaf in range(2))
+# The inherited upper flight remains an estimate, but it must not become a
+# staircase with a hidden slab or roof through the walking headroom.
+stair=bpy.data.objects[PREFIX+'connected_CBG_D_tower_meandering_stair_treads']
+headroom=[]
+for start in range(len(stair.data.vertices)-24*8,len(stair.data.vertices),8):
+    points=[local(stair.matrix_world@vertex.co) for vertex in stair.data.vertices[start:start+8]]
+    x=sum(point.x for point in points)/8;y=sum(point.y for point in points)/8
+    z=max(point.z for point in points)+.025
+    hits=ray((x,y,z),(0,0,1),2.0)
+    assert not hits, ('upper-flight headroom',start,hits[:2])
+    headroom.append(dict(point=[x,y,z],clearHeight=2.0))
+
 guard=bpy.data.objects[PREFIX+'end_guard']
 assert len(guard.data.vertices)==8 and len(guard.data.polygons)==6
 material=guard.data.materials[0]
@@ -73,7 +105,7 @@ for obj in objects:
  bm.free();topology.append(dict(object=obj.name,nonManifoldEdges=boundary,cornerUVLayers=len(obj.data.uv_layers)))
 assert topology
 (OUT/'physical-checks.json').write_text(json.dumps(dict(candidateSha256=proof['candidateSha256'],source193Unchanged=True,
- reopened=True,preservedLowerFaces=preserved_lower_faces,clearPaths=paths,closedReplacementSolids=topology,failures=failures,
+ reopened=True,preservedLowerFaces=preserved_lower_faces,roofProfiles=roof_profiles,upperStairHeadroom=headroom,clearPaths=paths,closedReplacementSolids=topology,failures=failures,
  limitations=['Probes establish local absence of inherited top windows/plates; whole internal circulation and actual dimensions remain unverified.']),indent=2)+'\n')
 assert not failures, failures
 print('CBG_PRIVATE_ROOF_PHYSICAL_CHECKS_PASSED',len(paths),len(topology),flush=True)
