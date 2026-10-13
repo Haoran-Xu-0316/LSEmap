@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition193 gives20existing OLD blue painted-frame objects a dielectric satin
+finish across Houghton Street, Clare Market and retained roof frames. Twelve
+independent materials preserve original blue palettes and all geometry/UVs;
+glazing, exposed steel, lantern and rooms remain unchanged. Roughness is a
+visual estimate from undated photographs, not a measured specification.
+
 Edition192 reduces the grey entrance-glass veil on OLD’s eight existing panes.
 Neutral tint and estimated face-on opacity reveal the retained historical foyer;
 geometry, corner UVs, frames, roughness and transmission remain unchanged.
