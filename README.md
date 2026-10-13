@@ -8,6 +8,12 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition191 replaces103registered Portugal Street library window boxes with
+one outward optical sheet per pane. Main and dormer front coordinates, corner
+UVs and optical inputs are retained;1030hidden back/edge triangles are removed.
+The18dormer panes remain shared with the existing interior cutaway. Unregistered
+rooms retain their opaque proxy finish; full-campus fidelity remains unfinished.
+
 Edition190 aligns SAW’s openwork bricks with the surrounding masonry and adds
 recessed mortar at actual staggered overlaps. Hidden contact faces are omitted
 to limit mesh cost. Dimensions and registration remain photographic estimates;
