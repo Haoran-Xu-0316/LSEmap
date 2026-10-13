@@ -3,6 +3,7 @@ import { readdir, stat, readFile } from "node:fs/promises";
 import { resolve, relative, join } from "node:path";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { gunzipSync } from "node:zlib";
 import { detailFor } from "../src/content.js";
 
 const output = resolve("dist");
@@ -32,8 +33,18 @@ for (const part of transport.parts) {
   assert.equal(bytes.length, part.bytes);
   assert.equal(createHash('sha256').update(bytes).digest('hex'), part.sha256);
   assert(bytes.length < 25 * 1024 * 1024);
+  if (part.compressed) {
+    const compressed = await readFile(join(output, part.compressed.path));
+    assert.equal(part.compressed.encoding, 'gzip');
+    assert.equal(compressed.length, part.compressed.bytes);
+    assert.equal(createHash('sha256').update(compressed).digest('hex'), part.compressed.sha256);
+    assert(compressed.length < 25 * 1024 * 1024);
+    assert(gunzipSync(compressed).equals(bytes), 'Compressed campus segment changed model bytes');
+  }
   chunks.push(bytes);
 }
+assert.equal(transport.transferBytes, transport.parts.reduce((sum,part)=>sum+part.compressed.bytes,0));
+assert(transport.transferBytes < transport.bytes);
 const assembled = Buffer.concat(chunks);
 assert.equal(assembled.length, transport.bytes);
 assert.equal(createHash('sha256').update(assembled).digest('hex'), transport.sha256);
