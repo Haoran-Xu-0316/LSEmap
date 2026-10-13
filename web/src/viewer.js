@@ -6,6 +6,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
 
 import { loadOutdoorEnvironment } from "./outdoor-environment.js";
+import { createGroundTextureState, loadGroundTextures, disposeGroundTextures } from "./ground-textures.js";
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages, downloadVerifiedModel, downloadCampusModel } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides } from "./surface-materials.js";
@@ -63,6 +64,7 @@ export class CampusViewer {
     this.activeDetail = null;
     this.disposed = false;
     this.loadController = new AbortController();
+    this.groundTextures = createGroundTextureState();
     this.groups = new Map();
     this.interiors = new Map();
     this.interiorLoads = new Map();
@@ -178,7 +180,7 @@ export class CampusViewer {
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
     this.detailCache = new ModelCache(
       async (url) => (await this.loadAsset(url)).scene,
-      (group) => { prepareDetailedModel(group, this.environmentTarget.texture); this.applyEnvironmentRotation(group); this.scene.add(group); },
+      (group) => { prepareDetailedModel(group, this.environmentTarget.texture, this.groundTextures); this.applyEnvironmentRotation(group); this.scene.add(group); },
       disposeModel,
       matchMedia("(max-width: 720px)").matches ? 2 : 3,
     );
@@ -274,7 +276,7 @@ export class CampusViewer {
             copy.roughness = roof ? .82 : .94;
             copy.metalness = roof ? .2 : 0;
           }
-          applySurfaceDetail(copy);
+          applySurfaceDetail(copy, this.groundTextures);
           return copy;
         });
         if (object.material.length === 1) object.material = object.material[0];
@@ -302,7 +304,7 @@ export class CampusViewer {
     this.home(false);
     this.needsRender = true;
     this.canvas.dataset.ready = "true";
-    this.environmentReady = loadOutdoorEnvironment(this);
+    this.environmentReady = Promise.all([loadOutdoorEnvironment(this), loadGroundTextures(this)]);
     void this.loadCampusExteriors();
   }
 
@@ -320,7 +322,7 @@ export class CampusViewer {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
-      prepareDetailedModel(group, this.environmentTarget.texture);
+      prepareDetailedModel(group, this.environmentTarget.texture, this.groundTextures);
       this.applyEnvironmentRotation(group);
       group.userData.buildingCode = building.code;
       this.scene.add(group);
@@ -631,7 +633,7 @@ export class CampusViewer {
       }
       // The initial interior and its upgraded detail use the same finish and
       // daylight binding, so loading cannot briefly show a different glazing.
-      prepareDetailedModel(gltf.scene, this.environmentTarget.texture);
+      prepareDetailedModel(gltf.scene, this.environmentTarget.texture, this.groundTextures);
       this.applyEnvironmentRotation(gltf.scene);
       this.scene.add(gltf.scene);
       this.interiors.set(key, gltf.scene);
@@ -1014,6 +1016,7 @@ export class CampusViewer {
     this.renderPipeline.dispose();
     this.environmentTarget.dispose();
     this.skyTexture?.dispose();
+    disposeGroundTextures(this.groundTextures);
     this.scene.traverse((object) => {
       object.geometry?.dispose();
       if (object.material) {
