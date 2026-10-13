@@ -5,6 +5,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
 
+import { loadOutdoorEnvironment } from "./outdoor-environment.js";
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages, downloadVerifiedModel, downloadCampusModel } from "./model-loading.js";
 import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides } from "./surface-materials.js";
@@ -177,7 +178,7 @@ export class CampusViewer {
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
     this.detailCache = new ModelCache(
       async (url) => (await this.loadAsset(url)).scene,
-      (group) => { prepareDetailedModel(group, this.environmentTarget.texture); this.scene.add(group); },
+      (group) => { prepareDetailedModel(group, this.environmentTarget.texture); this.applyEnvironmentRotation(group); this.scene.add(group); },
       disposeModel,
       matchMedia("(max-width: 720px)").matches ? 2 : 3,
     );
@@ -211,6 +212,13 @@ export class CampusViewer {
     this.resize();
     this.tick = this.tick.bind(this);
     this.frame = requestAnimationFrame(this.tick);
+  }
+
+  applyEnvironmentRotation(group) {
+    group.traverse(object => {
+      for (const material of Array.isArray(object.material) ? object.material : [object.material])
+        if (material?.envMap) material.envMapRotation?.copy(this.scene.environmentRotation);
+    });
   }
 
   async loadAsset(url, onProgress) {
@@ -294,6 +302,7 @@ export class CampusViewer {
     this.home(false);
     this.needsRender = true;
     this.canvas.dataset.ready = "true";
+    this.environmentReady = loadOutdoorEnvironment(this);
     void this.loadCampusExteriors();
   }
 
@@ -312,6 +321,7 @@ export class CampusViewer {
         throw new Error("Viewer disposed");
       }
       prepareDetailedModel(group, this.environmentTarget.texture);
+      this.applyEnvironmentRotation(group);
       group.userData.buildingCode = building.code;
       this.scene.add(group);
       this.exteriors.set(building.code, group);
@@ -622,6 +632,7 @@ export class CampusViewer {
       // The initial interior and its upgraded detail use the same finish and
       // daylight binding, so loading cannot briefly show a different glazing.
       prepareDetailedModel(gltf.scene, this.environmentTarget.texture);
+      this.applyEnvironmentRotation(gltf.scene);
       this.scene.add(gltf.scene);
       this.interiors.set(key, gltf.scene);
       return gltf.scene;
@@ -1002,6 +1013,7 @@ export class CampusViewer {
     this.draco.dispose();
     this.renderPipeline.dispose();
     this.environmentTarget.dispose();
+    this.skyTexture?.dispose();
     this.scene.traverse((object) => {
       object.geometry?.dispose();
       if (object.material) {
