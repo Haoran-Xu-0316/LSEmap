@@ -2,7 +2,7 @@
 import { readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
-import { gzipSync } from 'node:zlib';
+import { compressCampusSegment } from './campus_transport.mjs';
 import { detailFor } from '../src/content.js';
 import { galleryRendererSignature, galleryModelSignature } from './gallery_signature.mjs';
 const root = 'dist';
@@ -42,7 +42,7 @@ for (let offset = 0; offset < campus.length; offset += 16 * 1024 * 1024) {
   await writeFile(join(root, path), bytes);
   // Gzip is lossless on the already-compressed GLB and stream-decodable in browsers.
   // Retain the raw segment for clients without DecompressionStream support.
-  const compressed = gzipSync(bytes, {level:6});
+  const compressed = compressCampusSegment(bytes);
   const compressedHash = createHash('sha256').update(compressed).digest('hex');
   const compressedPath = `models/campus-${parts.length}-${compressedHash.slice(0,12)}.bin.gz`;
   await writeFile(join(root, compressedPath), compressed);
