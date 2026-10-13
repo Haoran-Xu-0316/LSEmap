@@ -1,6 +1,15 @@
 {
   "generatedTextures": [
     {
+      "name": "col-portland-stone195",
+      "sha256": "aeeba415145f5f459cafed3e943b4db1cff9796227bffbd73b27bb25a2053b1f",
+      "bytes": 40546,
+      "kind": "material-finish",
+      "source": "Original generated material finish",
+      "scope": "Photograph-guided COL exterior stone",
+      "nativeImage": "COL195_Portland_stone_original_tone_study"
+    },
+    {
       "name": "old-portland-stone194",
       "sha256": "e76109dd514a7ec988ebaba2efbd0e4a392d808af36e66c4cc9fcb381b6e3540",
       "bytes": 80194,
@@ -19,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "194",
-  "sourceModelSha256": "bcd7292cfda4c43ed4fd7622f564a5d3ce7ef8ac0360ba00d68b4081bd363c8e",
+  "version": "195",
+  "sourceModelSha256": "93aab89a4f76c5343ee085c6271046294d6f51a801a42b118c8a4445703a4ac2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1374,6 +1383,25 @@
         "batchCount": 2,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "exteriorFinish195": {
+        "version": 195,
+        "audit": "result/blender/col-exterior195/building-refinement.json",
+        "componentSha256": "be1b40fc487ebd04a2384e735779ebe842b2c878c797ea50e961e962061d37f9",
+        "sourcePhotoDate": "unknown",
+        "scope": [
+          "Unify formerly beige/brown stone reveal and moulding material families to neutral Portland stone; real recess shadows retained.",
+          "Charcoal green painted window joinery replaces excessive metallic-bronze response.",
+          "Red-brown painted timber entrance refined; existing brass hardware retained.",
+          "Less dull neutral dielectric glass reflection; inherited transmission/alpha and room geometry retained."
+        ],
+        "limitations": [
+          "Colour is photograph guided, not a calibrated material survey; light/weather differ from the source photographs.",
+          "Photo-supported street finish extended consistently over existing street elevation; upper bay/roof counts remain estimates.",
+          "Native unseen wall, estimated mansard/parapet, granite entrance steps, interior and room geometry preserved.",
+          "Opaque unsupported window rooms remain opaque; no invented empty-room view or guessed backing wall.",
+          "Broad original tone map represents stone material only, not surveyed staining or copied photographic texture."
+        ]
+      },
       "bounds": {
         "min": [
           2.9004480838775635,
@@ -1441,10 +1469,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-b129bb1c7fd7.glb",
-        "bytes": 1032916,
+        "url": "/models/details/col-exterior-d85e59114bc0.glb",
+        "bytes": 1113020,
         "triangles": 81320,
-        "sha256": "b129bb1c7fd70f00ecba3df647890e0fb67780e29c3af41369573cab2426467a",
+        "sha256": "d85e59114bc0b40276fa337384b88474433b087af7dc87438225e40d798b4cf5",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -2443,6 +2471,27 @@
         "batchCount": 1,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "exteriorFinish195": {
+        "version": 195,
+        "audit": "result/blender/ksw-exterior195/audit.json",
+        "componentSha256": "8b342a5df1b44bacb9db8a4393522767a2eb633b812fb80c4b0482ea418d545f",
+        "sourcePhotoDate": "unknown",
+        "scope": [
+          "Lighter orange-red upper brick and lower rustication with narrower chromatic variation.",
+          "Neutral pale Portland-stone portal, mouldings, oriel and repeated upper reveals.",
+          "White paired-sash joinery and dark dielectric shopfront paint; eliminate green cast and metallic paint.",
+          "Reflective blue-grey opaque glazing with roughness0.16; retain sealed window proxies.",
+          "Darker stained timber entry, matching the handbook photograph.",
+          "12 missing centre meeting bars across all photographed flanking upper-window rows."
+        ],
+        "limitations": [
+          "Material reflectance and sash-bar dimensions are photographic estimates, not measured.",
+          "Source image capture dates unverified; no current as-built survey claim.",
+          "Opaque reflective glass retained because no full verified room enclosure is available.",
+          "Existing roof, footprint, central curved-oriel geometry, unseen envelope and interiors unchanged.",
+          "Upper paired-window schedule extrapolated from visible flanking rows; complete upper elevation not photographed."
+        ]
+      },
       "bounds": {
         "min": [
           -81.10916900634766,
@@ -2510,10 +2559,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-77ffc19c0f9c.glb",
-        "bytes": 778152,
-        "triangles": 80016,
-        "sha256": "77ffc19c0f9cda99e4b3ec3a32a3f59ccbeea41cb6946fae758d51312557e35f",
+        "url": "/models/details/ksw-exterior-f8ee72488d49.glb",
+        "bytes": 920028,
+        "triangles": 80160,
+        "sha256": "f8ee72488d49d3fc057b8bc428d7dbb0d1d8809315c6f9729a6a054456bb2e65",
         "bounds": {
           "min": [
             -81.10916900634766,
