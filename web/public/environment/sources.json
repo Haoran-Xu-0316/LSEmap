@@ -13,6 +13,46 @@
       "sha256": "9806bc452fc8e1564418e7b45b50683732c0b37584423fa026ff0e2edf4eb1ce",
       "bytes": 1428760,
       "scope": "Presentation sky and daylight reflections. This photograph is not an LSE site survey."
+    },
+    {
+      "path": "/environment/asphalt-finish-512.webp",
+      "name": "Aerial Asphalt 01",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/aerial_asphalt_01",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_asphalt_01/aerial_asphalt_01_diff_1k.jpg",
+      "originalSha256": "28bfd71288b364f825e0feb750e487410422d80bf3c31d32da01cae3bf085b58",
+      "sha256": "276a84ef3d0a491c42c7e5fe03e1c4e5c7bd66d5f75cadd414ae742dd583a040",
+      "bytes": 47358,
+      "dimensions": [
+        512,
+        512
+      ],
+      "repeatMetres": 30,
+      "linearLuminanceMean": 0.127792,
+      "scope": "Shared ground finish only; geometry, joints and recorded palette remain authored. Not an LSE survey."
+    },
+    {
+      "path": "/environment/stone-finish-512.webp",
+      "name": "Concrete Floor 02",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/concrete_floor_02",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_02/concrete_floor_02_diff_1k.jpg",
+      "originalSha256": "6db84a6d87dc50508b9d134d6fbd2b7e876b8081a5f43a118a249ca18de73af5",
+      "sha256": "5a0dea87e4177abe464fb494037454ffdadc140201b9d497b5e7178fee757ec7",
+      "bytes": 76170,
+      "dimensions": [
+        512,
+        512
+      ],
+      "repeatMetres": 2,
+      "linearLuminanceMean": 0.16799,
+      "scope": "Shared ground finish only; geometry, joints and recorded palette remain authored. Not an LSE survey."
     }
   ]
 }
