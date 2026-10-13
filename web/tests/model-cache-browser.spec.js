@@ -1,12 +1,14 @@
 import {test,expect} from '@playwright/test';
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
 
 test('production reload reuses verified campus bytes without fetching any segment',async({page})=>{
  const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));
  page.on('request',request=>{if(/\/models\/campus-\d+-.*\.bin/.test(request.url()))requests.push(request.url());});
  const coldStart=Date.now();await page.goto('/');
  await expect(page.locator('canvas')).toHaveAttribute('data-ready','true',{timeout:70000});
- const coldMs=Date.now()-coldStart;expect(requests.length).toBe(3);
+ const coldMs=Date.now()-coldStart,coldCampusSegments=requests.length;
+ const release=JSON.parse(await readFile('dist/release.json','utf8'));
+ expect(coldCampusSegments).toBe(release.campusTransport.parts.length);
  await expect.poll(()=>page.evaluate(()=>new Promise(resolve=>{
   const request=indexedDB.open('lsemap-model-bytes',1);
   request.onsuccess=()=>{
@@ -23,7 +25,7 @@ test('production reload reuses verified campus bytes without fetching any segmen
  expect(requests).toEqual([]);await expect(page.locator('canvas')).toHaveAttribute('data-sky-ready','true');
  await expect(page.locator('#fallback')).toBeHidden();expect(errors).toEqual([]);
  await mkdir('result/web/loading-cache-acceptance',{recursive:true});
- await writeFile('result/web/loading-cache-acceptance/measurement.json',JSON.stringify({coldMs,warmMs,coldCampusSegments:3,warmCampusSegments:0,errors},null,2)+'\n');
+ await writeFile('result/web/loading-cache-acceptance/measurement.json',JSON.stringify({coldMs,warmMs,coldCampusSegments,warmCampusSegments:0,errors},null,2)+'\n');
  await page.screenshot({path:'result/web/loading-cache-acceptance/desktop.png'});
 });
 
