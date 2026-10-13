@@ -1,8 +1,8 @@
 # LSEmap模型状态
 
-当前本地完整模型为190版：result/blender/LSE_campus_detailed_v190.blend。6494个对象。SAW砖屏与灰缝已合入，8项网页检查及线上资源、页面验收通过。
+当前本地完整模型为191版：result/blender/LSE_campus_detailed_v191.blend。6496个对象。LRB的Portugal Street侧103块窗面已改为单层光学表面，重开验证通过；125个展示视角已刷新，8项网页检查通过；线上发布待核对。
 
-原生SHA256：39a5c6d2f11f220e2e7b8157c34caca2f3498325d033d78e72434b2cf77ecae5。
+原生SHA256：d98dc9b31c2b6177aebd4fb0343a3adf8b1c68d3218e04779f3a219ae0c7394c。
 
 187版按已建正面照片补回MAR底座中间偏右的第三组高窗及混凝土围边，保留两侧原高窗、另一侧开放柱廊及内部几何。照片注册、围边和窗洞尺寸为估算；完整体量仍未核实。
 
@@ -51,7 +51,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 |49L|147|Retained street and corner glazing keeps original mesh, UV and color with explicit browser opacity0.84. Corner round window backing43mm behind glass is locally opened. Latest published2025/26 LSE handbook shows the fire-exit round feature as an opaque horizontal ventilation louvre, replacing its historical glass interpretation. A separate shared upper-wall component trims only proven interference with the widened No50 window; other upper areas retained. Dimensions and optics estimated; capture dates unknown.|
 |50L|147|50A entry and opaque external round lamp are located between upper window axes using the2022 planning photograph; frame and lower panel adopt deep blue shown in latest published2025/26 LSE handbook. No50 tripartite upper window widened with true wall clearance, while its inherited4.30–6.32m vertical datum remains estimated because photo top is cropped and reference door height is not surveyed. Other upper windows and original wooden No50 portal retained. Glass browser opacity0.82; no invented complete interior. Shared49L interference is archived and replaced in49L own exterior collection.|
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
-|LRB|178|Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.|
+|LRB|191|Portugal Street侧85块主楼及18块屋顶窗面保留朝外单层表面，移除1030个背面及边面三角形；正面位置、逐角UV、颜色和光学输入保留。18块屋顶窗仍与内部剖视共用，不改变房间结构；其他立面和完整现状内部未核实。|
 |MAR|188|按已建照片对齐北立面中段及上部开口，联动窗墙、四层楼板、铺砖和斜向屋面；保留底座三窗及原始网格。开口尺寸与进深估算，高层体量和完整现状内部未核实。|
 |OLD|189|保护玻璃从网格装置后方移至前方，并降低灰色遮挡；保留原人物、拱门、窗框、入口字样和UV。玻璃安装间隙与光学值估算，完整外观与内部仍未完成。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
@@ -87,3 +87,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 ## 模型加载优化
 
 校园GLB约49.6MB，现由三个既有分片并行下载、逐段校验后合并；提前准备Draco解码器，解码worker按设备配置限制为2至4。模型源、几何与纹理不变。优化前线上首载一次实测11441ms，网络环境影响较大，第一轮线上复测11668ms，未证实总耗时改善；再将目录、展示清单和3D程序并行准备，最终线上复测10467ms，较原11441ms减少974ms，单次结果受网络影响，不能作为保证。已全部push并部署a65e7a3e-2e67-40ca-a9f2-f3fa0c730f42，线上资源和OLD、总览页面核对通过。10项加载单元检查、11项网页和传输检查通过。清理25个已逐项确认合入190版的旧组件及125张重复展示图、生成缓存，释放78671517字节。证据见result/cleanup/loading-final与result/web。
+
+## LRB临街玻璃表面
+
+191版将已注册Portugal Street窗面从闭合盒体改为单层光学表面，85块主楼窗及18块屋顶窗移除1030个多余三角形。逐窗核对正面坐标、朝向、逐角UV和完整光学输入；原几何保留在完整源文件内。朝街窗位沿用2025年4月现有立面图注册，比例与窗部尺寸仍为估算；未经核实的房间保留原不透明代理状态，其他立面、屋顶体量和内部结构不因本轮视为完成。证据见result/blender/stage191。
