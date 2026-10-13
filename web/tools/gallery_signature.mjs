@@ -5,8 +5,9 @@ import { createHash } from 'node:crypto';
 export async function galleryRendererSignature() {
   const hash = createHash('sha256');
   for (const path of [
-    'web/src/viewer.js', 'web/src/surface-materials.js', 'web/src/model-cache.js',
-    'web/src/model-loading.js', 'web/src/rendering-quality.js', 'web/src/temporal-antialiasing.js',
+    'web/src/viewer.js', 'web/src/outdoor-environment.js', 'web/src/surface-materials.js', 'web/src/model-cache.js',
+    'web/public/environment/kloppenheim-sky-1k.hdr',
+    'web/src/model-loading.js', 'web/src/model-byte-cache.js', 'web/src/rendering-quality.js', 'web/src/temporal-antialiasing.js',
     'web/tools/gallery-views.json', 'web/tools/render_web_gallery.mjs',
     'web/tools/gallery_signature.mjs', 'package-lock.json',
   ]) hash.update(path).update(await readFile(path));
