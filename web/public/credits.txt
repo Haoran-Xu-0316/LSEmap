@@ -128,3 +128,5 @@ not all23520 physical LEDs or the live library-driven display. Artwork credit: M
 Presentation sky: Kloppenheim 03 (Pure Sky), Greg Zaal and Jarod Guest, Poly Haven, CC0-1.0.
 https://polyhaven.com/a/kloppenheim_03_puresky
 The sky asset is not a photograph of the LSE campus.
+
+OLD limestone finish: original512px procedural material map, guided by archived facade photographs. No reference photograph pixels are redistributed.
