@@ -18,10 +18,16 @@ float surfaceNoise(vec3 p) {
 }
 `;
 
-// These legacy MAR names lost the word “glass” during Blender material copying.
-// Match only the authored pane family; “dielectric” alone also describes stone.
+// The exporter records the physical role. Collection names such as GLAZING
+// also contain stone, painted joinery and lights, so they are not material roles.
 export function isGlazingMaterial(material) {
-  return /glass|glazing/i.test(material.name) ||
+  const role = material.userData?.webSurfaceRole;
+  if (role === "glazing" || role === "opaque") return role === "glazing";
+  // Older assets retain a narrow fallback for actual glass names. A GLAZING
+  // collection prefix alone must never turn stone or paint into reflective glass.
+  return /(?:^|_)glass(?:_|\.|$)/i.test(material.name) ||
+    /(?:^|_)glazing(?:\.\d+)?$/i.test(material.name) ||
+    /(?:^|_)glazing_(?:clear|optical|neutral|reflective|tinted)(?:_|$)/i.test(material.name) ||
     /^(?:WEB_(?:DETAIL_)?)?MAR168_0[0-3]_0[01]_dielectric$/.test(material.name);
 }
 
