@@ -18,6 +18,7 @@ import {CampusViewer} from '/src/viewer.js';
 const catalogue=await (await fetch('/models/catalogue.json')).json();
 const viewer=new CampusViewer(document.querySelector('#canvas'),document.querySelector('#labels'),catalogue.buildings,()=>{},()=>{throw Error('WebGL context lost')},()=>{},catalogue.sourceModelSha256);
 await viewer.load();
+await viewer.environmentReady;
 await Promise.all(catalogue.buildings.filter(b=>b.detailedExterior).map(b=>viewer.loadExterior(b)));
 viewer.toggleLabels(false);
 window.renderGalleryView=async(job)=>{
