@@ -8,6 +8,13 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+The current campus transport uses lossless gzip segments with streamed browser
+extraction. First-load model transfer falls from49.6MB to23.1MB, a53.5% reduction;
+the original GLB, geometry, materials and all125 gallery images remain identical.
+Raw segments remain available for unsupported clients and failed gzip transfers.
+Controlled50Mbps/30ms desktop profiling reduced first rendered output from about
+9.1s to4.8s; real connections and devices vary. The editable source remains193.
+
 Edition193 gives20existing OLD blue painted-frame objects a dielectric satin
 finish across Houghton Street, Clare Market and retained roof frames. Twelve
 independent materials preserve original blue palettes and all geometry/UVs;
