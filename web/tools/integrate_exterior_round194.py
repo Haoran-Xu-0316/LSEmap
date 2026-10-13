@@ -69,11 +69,11 @@ def geometry_policy_name(obj):
     return name.removeprefix('SAL184_').removeprefix('SAL183_').removeprefix('GLASS181_')
 
 
-def verify_saved_model():
-    record = json.loads((PROOF / 'building-refinement.json').read_text())
-    bpy.ops.wm.open_mainfile(filepath=str(DESTINATION))
+def verify_saved_model(destination=DESTINATION, proof=PROOF):
+    record = json.loads((proof / 'building-refinement.json').read_text())
+    bpy.ops.wm.open_mainfile(filepath=str(destination))
     update_scene()
-    baseline = json.loads((PROOF / 'baseline-state.json').read_text())
+    baseline = json.loads((proof / 'baseline-state.json').read_text())
     for name, expected in baseline['fingerprints'].items():
         assert object_fingerprint(bpy.data.objects[name]) == expected, name
         assert bpy.data.objects[name].hide_render == (True if name in record['archivedObjects']
@@ -83,26 +83,27 @@ def verify_saved_model():
         assert not bpy.data.objects[name].hide_render, name
     assert set(bpy.data.objects) == {bpy.data.objects[name] for name in baseline['fingerprints']} | {
         bpy.data.objects[name] for name in record['addedObjects']}
-    digest = hashlib.sha256(DESTINATION.read_bytes()).hexdigest()
+    digest = hashlib.sha256(destination.read_bytes()).hexdigest()
     assert digest == record['sourceModelSha256']
     result = dict(sourceModelSha256=digest, originalsVerified=len(baseline['fingerprints']),
                   addedObjectsVerified=len(record['addedObjects']), originalGeometryUVsAndBindingsPreserved=True,
                   listedVisibilityOnly=True, completeModelReopened=True)
-    (PROOF / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
-    print('EXTERIOR194_REOPENED', len(record['addedObjects']), flush=True)
+    (proof / 'reopened-verification.json').write_text(json.dumps(result, indent=2) + '\n')
+    print(f"EXTERIOR{record['version']}_REOPENED", len(record['addedObjects']), flush=True)
 
 
-def integrate():
-    PROOF.mkdir(parents=True, exist_ok=True)
-    assert not DESTINATION.exists(), 'Do not overwrite an accepted full campus'
-    baseline_sha = hashlib.sha256(BASE.read_bytes()).hexdigest()
-    bpy.ops.wm.open_mainfile(filepath=str(BASE))
+def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
+              version=194, scope='OLD exterior stone map, CBG coating and glazing, corrected road normals and two walking joins'):
+    proof.mkdir(parents=True, exist_ok=True)
+    assert not destination.exists(), 'Do not overwrite an accepted full campus'
+    baseline_sha = hashlib.sha256(base.read_bytes()).hexdigest()
+    bpy.ops.wm.open_mainfile(filepath=str(base))
     update_scene()
     before = {obj.name: object_fingerprint(obj) for obj in bpy.data.objects}
     visibility = {obj.name: obj.hide_render for obj in bpy.data.objects}
-    (PROOF / 'baseline-state.json').write_text(json.dumps(dict(fingerprints=before, visibility=visibility)) + '\n')
+    (proof / 'baseline-state.json').write_text(json.dumps(dict(fingerprints=before, visibility=visibility)) + '\n')
     added, archived, changes = [], [], []
-    for code, report_path, default_collection in REPORTS:
+    for code, report_path, default_collection in reports:
         report = json.loads((ROOT / report_path).read_text())
         source_sha = report.get('baselineSha256', report.get('sourceModelSha256'))
         assert source_sha == baseline_sha, code
@@ -142,16 +143,16 @@ def integrate():
     assert set(bpy.data.objects.keys()) - set(before) == set(added)
     new_state = {name: object_fingerprint(bpy.data.objects[name]) for name in added}
     # Compression changes storage only; the saved model is reopened and checked.
-    bpy.ops.wm.save_as_mainfile(filepath=str(DESTINATION), compress=True)
-    record = dict(version=194, baselineSha256=baseline_sha,
-                  sourceModelSha256=hashlib.sha256(DESTINATION.read_bytes()).hexdigest(),
+    bpy.ops.wm.save_as_mainfile(filepath=str(destination), compress=True)
+    record = dict(version=version, baselineSha256=baseline_sha,
+                  sourceModelSha256=hashlib.sha256(destination.read_bytes()).hexdigest(),
                   changes=changes, addedObjects=added, archivedObjects=archived, changedObjects=[],
                   addedFingerprints=new_state, allUnrelatedMeshesPreserved=True,
-                  scope='OLD exterior stone map, CBG coating and glazing, corrected road normals and two walking joins',
+                  scope=scope,
                   limitations='Retained estimated building geometry and interior studies remain incomplete; no claim of an as-built survey.')
-    (PROOF / 'building-refinement.json').write_text(json.dumps(record, indent=2) + '\n')
-    verify_saved_model()
-    print('EXTERIOR194_INTEGRATED', len(added), len(archived), DESTINATION.stat().st_size, flush=True)
+    (proof / 'building-refinement.json').write_text(json.dumps(record, indent=2) + '\n')
+    verify_saved_model(destination=destination, proof=proof)
+    print(f'EXTERIOR{version}_INTEGRATED', len(added), len(archived), destination.stat().st_size, flush=True)
 
 
 if __name__ == '__main__':
