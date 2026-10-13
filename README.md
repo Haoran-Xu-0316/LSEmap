@@ -8,6 +8,11 @@ A browser-based architectural study of the London School of Economics campus.
 
 ## Current version
 
+Edition192 reduces the grey entrance-glass veil on OLD’s eight existing panes.
+Neutral tint and estimated face-on opacity reveal the retained historical foyer;
+geometry, corner UVs, frames, roughness and transmission remain unchanged.
+Full present-day exteriors and interiors remain unfinished.
+
 Edition191 replaces103registered Portugal Street library window boxes with
 one outward optical sheet per pane. Main and dormer front coordinates, corner
 UVs and optical inputs are retained;1030hidden back/edge triangles are removed.
