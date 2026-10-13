@@ -1,8 +1,8 @@
 # LSEmap模型状态
 
-当前本地完整模型为191版：result/blender/LSE_campus_detailed_v191.blend。6496个对象。LRB的Portugal Street侧103块窗面已改为单层光学表面，重开验证通过；125个展示视角已刷新，8项网页检查及线上资源、页面核对通过。
+当前本地完整模型为192版：result/blender/LSE_campus_detailed_v192.blend。6497个对象。OLD入口玻璃光学修正已合入；重开、7项网页检查及125个展示视角刷新通过，线上发布待核对。
 
-原生SHA256：d98dc9b31c2b6177aebd4fb0343a3adf8b1c68d3218e04779f3a219ae0c7394c。
+原生SHA256：b970487e738a7995c9f58cff33b058dc47eb16f82120672c335a6dd9791d7d5b。
 
 187版按已建正面照片补回MAR底座中间偏右的第三组高窗及混凝土围边，保留两侧原高窗、另一侧开放柱廊及内部几何。照片注册、围边和窗洞尺寸为估算；完整体量仍未核实。
 
@@ -53,7 +53,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|191|Portugal Street侧85块主楼及18块屋顶窗面保留朝外单层表面，移除1030个背面及边面三角形；正面位置、逐角UV、颜色和光学输入保留。18块屋顶窗仍与内部剖视共用，不改变房间结构；其他立面和完整现状内部未核实。|
 |MAR|188|按已建照片对齐北立面中段及上部开口，联动窗墙、四层楼板、铺砖和斜向屋面；保留底座三窗及原始网格。开口尺寸与进深估算，高层体量和完整现状内部未核实。|
-|OLD|189|保护玻璃从网格装置后方移至前方，并降低灰色遮挡；保留原人物、拱门、窗框、入口字样和UV。玻璃安装间隙与光学值估算，完整外观与内部仍未完成。|
+|OLD|192|八块现有入口玻璃降低灰绿色罩色，网页透明度由0.46改为0.28；门框、玻璃几何、逐角UV、粗糙度、透射和已有历史门厅保留。72条入口采样射线未发现4m内旧不透明代理遮挡；参数为参考照片视觉估计，完整现状仍未核实。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
@@ -93,3 +93,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 ## LRB临街玻璃表面
 
 191版将已注册Portugal Street窗面从闭合盒体改为单层光学表面，85块主楼窗及18块屋顶窗移除1030个多余三角形。逐窗核对正面坐标、朝向、逐角UV和完整光学输入；原几何保留在完整源文件内。朝街窗位沿用2025年4月现有立面图注册，比例与窗部尺寸仍为估算；未经核实的房间保留原不透明代理状态，其他立面、屋顶体量和内部结构不因本轮视为完成。证据见result/blender/stage191。
+
+## OLD入口玻璃光学修正
+
+192版降低八块现有门玻璃的灰绿色罩色与网页透明度，保留原玻璃几何、逐角UV、粗糙度和透射参数。72条入口采样射线未发现4m内旧代理遮挡，未据包围盒重叠盲目删除窗面或墙体。生产CampusViewer私有对比完成入口近景、整楼及门部近景；已有台阶、红色墙面和入口层次更清楚。参考为用户提供的照片，拍摄日期未知；光学值为视觉估计，既有门厅基于历史资料，不代表完整当前内部。证据见result/blender/old-exterior-colour-review及stage192。
