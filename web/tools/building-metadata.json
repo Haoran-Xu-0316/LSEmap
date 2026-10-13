@@ -1504,13 +1504,13 @@
         "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
       },
       "latestReview": {
-        "version": 178,
-        "scope": "Plaza Café glazing uses66 outward single surfaces in place of66 closed glass boxes, removing duplicate alpha blending. Original outline, per-corner UVs, colour, opacity0.30, frames and café furniture retained. Main library opaque proxy windows and roof unchanged; whole present-day layout not established.",
-        "source": "https://food.lse.ac.uk/outlets",
-        "photographDate": "unknown",
-        "audit": "result/blender/lrb_exterior178/audit.json",
-        "addedObjects": 1,
-        "archivedObjects": 1
+        "version": 191,
+        "scope": "Portugal Street85 main and18 dormer panes use one outward optical sheet each, removing1030 box-back and edge triangles. Original front coordinates, corner UVs, tint, roughness and opaque proxy status retained. Roof panes are shared with the interior cutaway; no room structure altered. Other elevations and complete current interiors remain unverified.",
+        "source": "data/collections/library-roof-2025/existing-nw-elevation.pdf",
+        "drawing": "4556-FBR-LR-ZZ-DR-A-114 P01, 17 April 2025",
+        "audit": "result/blender/stage191/reopened-verification.json",
+        "addedObjects": 2,
+        "archivedObjects": 2
       },
       "interiorSections": [
         {
@@ -1623,6 +1623,15 @@
               "supports": "Dome north-cut skylight and retained triangular metal frame"
             }
           ]
+        },
+        {
+          "version": 191,
+          "scope": "Portugal Street85 main and18 dormer panes use one outward optical sheet each, removing1030 box-back and edge triangles. Original front coordinates, corner UVs, tint, roughness and opaque proxy status retained. Roof panes are shared with the interior cutaway; no room structure altered. Other elevations and complete current interiors remain unverified.",
+          "source": "data/collections/library-roof-2025/existing-nw-elevation.pdf",
+          "drawing": "4556-FBR-LR-ZZ-DR-A-114 P01, 17 April 2025",
+          "audit": "result/blender/stage191/reopened-verification.json",
+          "addedObjects": 2,
+          "archivedObjects": 2
         }
       ],
       "entranceCanopyReview": {
