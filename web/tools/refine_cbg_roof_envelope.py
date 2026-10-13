@@ -16,11 +16,16 @@ HEIGHT = 52.2
 STEP = HEIGHT / 13
 TERRACE = 11 * STEP
 REAR_ROOF = 12 * STEP
+ROOF_TERRACE_END_X = -22.4
+ROOF_TERRACE_FRONT_Y = 6.2
+CORE_END_X = -.5
 SOURCES = [
     'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_05.jpg',
     'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_12.jpg',
     'data/collections/exteriors/images/cbg_archdaily_033.jpg',
     'data/collections/exteriors/images/cbg_archdaily_034.jpg',
+    'data/collections/cbg_roof_registration/level12-plan-rshp-2016.jpg',
+    'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_17.jpg',
 ]
 CORNERS = ((0,0,0),(1,0,0),(1,1,0),(0,1,0),
            (0,0,1),(1,0,1),(1,1,1),(0,1,1))
@@ -266,6 +271,87 @@ def replace_mesh(source, local, world, regions):
     return dict(source=source.name,target=target.name,alteredComponents=altered)
 
 
+def add_roof_garden(mesh_object,box,slab,frame,exterior):
+    """Build photographed roof surfaces and planting as bounded native meshes."""
+    import random
+    def finish(name,colour,roughness=.8):
+        material=slab.copy();material.name=PREFIX+name
+        material.diffuse_color=(*colour,1)
+        node=material.node_tree.nodes['Principled BSDF']
+        node.inputs['Base Color'].default_value=material.diffuse_color
+        node.inputs['Metallic'].default_value=0
+        node.inputs['Roughness'].default_value=roughness
+        return material
+    paving=finish('roof_paving',(.67,.63,.53))
+    soil=finish('garden_soil',(.075,.060,.041))
+    edging=finish('garden_edging',(.18,.19,.17))
+    wood=finish('bench_oak',(.37,.24,.12))
+    greens=[finish('garden_leaf_'+str(i),colour) for i,colour in enumerate([
+        (.13,.24,.045),(.22,.34,.12),(.28,.36,.19)])]
+    flowers=[finish('garden_flower_'+str(i),colour) for i,colour in enumerate([
+        (.70,.35,.025),(.33,.19,.39)])]
+    buckets={material.name:[material,[],[]] for material in greens+flowers}
+    def prism(material,vertices):
+        _,points,faces=buckets[material.name];offset=len(points)
+        points.extend(vertices);faces.extend(tuple(offset+i for i in face) for face in BOX_FACES)
+    randomizer=random.Random(12)
+    floor=REAR_ROOF+.04
+    tiles,faces=[],[]
+    columns=32;rows=13
+    dx=(ROOF_TERRACE_END_X+42)/columns;dy=(14-ROOF_TERRACE_FRONT_Y)/rows
+    for column in range(columns):
+        for row in range(rows):
+            x=-42+column*dx;y=ROOF_TERRACE_FRONT_Y+row*dy
+            lo=(x+.006,y+.006,floor);hi=(x+dx-.006,y+dy-.006,floor+.028)
+            offset=len(tiles);tiles.extend(tuple(lo[i]+(hi[i]-lo[i])*bit[i] for i in range(3)) for bit in CORNERS)
+            faces.extend(tuple(offset+i for i in face) for face in BOX_FACES)
+    mesh_object('roof_paving_tiles',tiles,faces,paving,exterior)
+    for bed,(start,end) in enumerate([(-40.9,-35.8),(-34.65,-29.55),(-28.4,-23.3)]):
+        for side,x in enumerate((start,end-.10)):
+            box(f'bed_{bed}_end_{side}',(x,10.0,floor+.028),(x+.1,13.25,floor+.48),edging)
+        for side,y in enumerate((10.0,13.15)):
+            box(f'bed_{bed}_edge_{side}',(start+.10,y,floor+.028),(end-.10,y+.10,floor+.48),edging)
+        box(f'bed_{bed}_soil',(start+.10,10.10,floor+.028),(end-.10,13.15,floor+.42),soil)
+        # The photographed end benches share the bed support. Slats are batched
+        # by finish rather than represented as hundreds of separate objects.
+        slats=[];slat_faces=[]
+        for slat in range(18):
+            y=10.03+slat*.177;lo=(end-.10,y,floor+.48);hi=(end+.37,y+.145,floor+.535)
+            offset=len(slats);slats.extend(tuple(lo[i]+(hi[i]-lo[i])*bit[i] for i in range(3)) for bit in CORNERS)
+            slat_faces.extend(tuple(offset+i for i in face) for face in BOX_FACES)
+        mesh_object(f'bed_{bed}_bench_slats',slats,slat_faces,wood,exterior)
+        # Species are not inferred from pixels. Vary photographed green/yellow/
+        # purple planting forms within each retained closed bed and soil surface.
+        for plant in range(120):
+            x=randomizer.uniform(start+.24,end-.25);y=randomizer.uniform(10.24,13.01)
+            z=floor+.42;material=greens[plant%3]
+            height=randomizer.uniform(.23,.67)
+            for leaf in range(5):
+                angle=leaf*math.tau/5+randomizer.random()*.5
+                c,s=math.cos(angle),math.sin(angle);lean=randomizer.uniform(.10,.28)
+                base=(x,y,z);tip=(x+c*lean,y+s*lean,z+height)
+                a=(s*.027,-c*.027,0);b=(c*.008,s*.008,0)
+                vertices=[]
+                for point,width in ((base,1),(tip,.23)):
+                    vertices.extend(tuple(point[i]+width*(a[i]*sa+b[i]*sb) for i in range(3))
+                                    for sa,sb in ((-1,-1),(1,-1),(1,1),(-1,1)))
+                prism(material,vertices)
+            if plant%3==0:
+                colour=flowers[(plant//3)%2];radius=randomizer.uniform(.035,.065)
+                # Small closed heads, with the angular sides oriented away from
+                # the same repeated direction. All foliage shares five meshes.
+                lo=(x-radius,y-radius,z+height-.015);hi=(x+radius,y+radius,z+height+.025)
+                prism(colour,[tuple(lo[i]+(hi[i]-lo[i])*bit[i] for i in range(3)) for bit in CORNERS])
+    for material,vertices,faces in buckets.values():
+        mesh_object(material.name.removeprefix(PREFIX)+'_geometry',vertices,faces,material,exterior)
+    # The built photograph shows the core's green cap, edged by gravel. The
+    # envelope beneath is retained; no hidden plant or new rooms are invented.
+    gravel=finish('green_roof_gravel',(.41,.39,.33))
+    turf=finish('core_green_roof',(.17,.29,.045))
+    box('core_roof_gravel',(-20.8,4.5,HEIGHT+.015),(-1.1,13.6,HEIGHT+.075),gravel)
+    box('core_green_roof',(-20.35,4.95,HEIGHT+.075),(-1.55,13.15,HEIGHT+.125),turf)
+
+
 def apply_cbg_roof_envelope():
     """Create a full roof-envelope candidate; do not silently publish it."""
     assert not any(o.name.startswith(PREFIX) for o in bpy.data.objects), 'Candidate already present'
@@ -292,7 +378,11 @@ def apply_cbg_roof_envelope():
     for source in originals:
         if source.name in STAIR_PARTS:continue
         glass=any(m and ('glass' in m.name.lower() or m.get('webOpacity',1)<1) for m in source.data.materials)
-        regions=[((-45.0,4.2,REAR_ROOF-.01 if glass else REAR_ROOF+.30),(9.0,18.0,56.0))]
+        roof_cut_height=REAR_ROOF-.01 if glass else REAR_ROOF+.30
+        # The registered level12 plan reserves the middle rear volume for the
+        # core. Only the terrace end and the photographed setback are lower.
+        regions=[((-45.0,ROOF_TERRACE_FRONT_Y,roof_cut_height),(ROOF_TERRACE_END_X,18.0,56.0)),
+                 ((CORE_END_X,4.2,roof_cut_height),(9.0,18.0,56.0))]
         # Primary corner columns and the main top beam support the retained
         # canopy. Secondary mullions and the middle floor cannot span the void.
         if 'external_I_columns' not in source.name and 'roof_and_ground_plates' not in source.name and 'red_roof_recess' not in source.name:
@@ -321,7 +411,8 @@ def apply_cbg_roof_envelope():
     glass.name=PREFIX+'balustrade_glass';glass['webClosedGlazing']=True;glass['webOpacity']=.28
     glass.node_tree.nodes['Principled BSDF'].inputs['Metallic'].default_value=0
     box('end_terrace_deck',(-.5,-1.95,TERRACE+.05),(7.0,4.2,TERRACE+.17),slab,interior)
-    box('rear_terrace_deck',(-42,4.2,REAR_ROOF+.02),(7,14,REAR_ROOF+.08),slab,interior)
+    box('rear_terrace_deck',(-42,ROOF_TERRACE_FRONT_Y,REAR_ROOF-.08),(ROOF_TERRACE_END_X,14,REAR_ROOF+.04),slab,interior)
+    box('end_setback_roof',(-.5,4.2,REAR_ROOF-.08),(7,14,REAR_ROOF+.04),slab,interior)
     # A bridge joins the prior landing and the relocated flight beside the stair,
     # with no slab laid across walking treads.
     box('upper_stair_connection',(-9.25,1.55,TERRACE-.10),(-3.40,2.45,TERRACE+.04),slab,interior)
@@ -330,9 +421,58 @@ def apply_cbg_roof_envelope():
     box('end_guard_cap',(7.025,-1.85,TERRACE+1.29),(7.065,4.10,TERRACE+1.32),frame)
     box('side_guard',(-.45,-2.06,TERRACE+.22),(6.92,-2.035,TERRACE+1.30),glass)
     box('side_guard_shoe',(-.45,-2.10,TERRACE+.15),(6.92,-1.99,TERRACE+.24),frame)
-    box('rear_roof_guard',(-41.90,14.03,REAR_ROOF+.14),(6.90,14.055,REAR_ROOF+1.18),glass)
-    box('rear_roof_guard_shoe',(-41.90,14.0,REAR_ROOF+.07),(6.90,14.12,REAR_ROOF+.16),frame)
+    box('rear_roof_guard',(-41.90,14.03,REAR_ROOF+.14),(ROOF_TERRACE_END_X,14.055,REAR_ROOF+1.18),glass)
+    box('rear_roof_guard_shoe',(-41.90,14.0,REAR_ROOF+.04),(ROOF_TERRACE_END_X,14.12,REAR_ROOF+.16),frame)
+    box('terrace_far_guard',(-42.055,ROOF_TERRACE_FRONT_Y,REAR_ROOF+.14),(-42.03,13.9,REAR_ROOF+1.18),glass)
+    box('setback_rear_guard',(-.40,14.03,REAR_ROOF+.14),(6.90,14.055,REAR_ROOF+1.18),glass)
     box('end_roof_guard',(7.03,4.3,REAR_ROOF+.14),(7.055,13.90,REAR_ROOF+1.18),glass)
+    # The terrace is outside the upper academic enclosure. New cut surfaces
+    # alone would leave that occupied strip open to the garden.
+    thermal=glass.copy();thermal.name=PREFIX+'terrace_thermal_glass';thermal['webOpacity']=.82
+    for bay in range(8):
+        x=-42+bay*(ROOF_TERRACE_END_X+42)/8
+        width=(ROOF_TERRACE_END_X+42)/8
+        box(f'terrace_thermal_pane_{bay}',(x+.055,ROOF_TERRACE_FRONT_Y-.11,REAR_ROOF+.12),
+            (x+width-.055,ROOF_TERRACE_FRONT_Y-.085,HEIGHT-.20),thermal)
+        box(f'terrace_thermal_post_{bay}',(x-.035,ROOF_TERRACE_FRONT_Y-.15,REAR_ROOF+.075),
+            (x+.035,ROOF_TERRACE_FRONT_Y-.045,HEIGHT-.18),frame)
+    box('terrace_thermal_sill',(-42,ROOF_TERRACE_FRONT_Y-.155,REAR_ROOF+.075),
+        (ROOF_TERRACE_END_X,ROOF_TERRACE_FRONT_Y-.04,REAR_ROOF+.125),frame)
+    box('terrace_thermal_head',(-42,ROOF_TERRACE_FRONT_Y-.155,HEIGHT-.235),
+        (ROOF_TERRACE_END_X,ROOF_TERRACE_FRONT_Y-.04,HEIGHT-.18),frame)
+    # The design plan shows access from the retained core, with a real opening
+    # through its envelope. Door dimensions and the unpictured hardware are
+    # deliberately kept as estimates, without adding room contents.
+    x=ROOF_TERRACE_END_X
+    for name,lo,hi in [
+        ('core_terrace_wall_near',(x-.06,ROOF_TERRACE_FRONT_Y,REAR_ROOF+.075),(x+.10,7.35,HEIGHT-.20)),
+        ('core_terrace_wall_far',(x-.06,8.75,REAR_ROOF+.075),(x+.10,14,HEIGHT-.20)),
+        ('core_terrace_door_head',(x-.06,7.35,REAR_ROOF+2.25),(x+.10,8.75,HEIGHT-.20))]:
+        box(name,lo,hi,slab)
+    for leaf in range(2):
+        y=7.38+leaf*.685
+        box(f'core_terrace_door_{leaf}',(x+.01,y,REAR_ROOF+.13),(x+.035,y+.655,REAR_ROOF+2.20),thermal)
+        box(f'core_terrace_door_handle_{leaf}',(x-.06,y+.54,REAR_ROOF+.95),(x-.015,y+.57,REAR_ROOF+1.20),frame)
+    for y in (7.34,8.03,8.73):
+        box('core_door_frame_'+str(y),(x-.07,y,REAR_ROOF+.075),(x+.10,y+.04,REAR_ROOF+2.25),frame)
+    box('core_door_threshold',(x-.15,7.35,REAR_ROOF+.04),(x+.13,8.75,REAR_ROOF+.12),slab)
+    add_roof_garden(mesh_object,box,slab,frame,exterior)
+    # A photographed pale green rooftop screen returns behind the end recess.
+    # Its function and absolute elevation remain unknown, so it is a visible
+    # envelope study rather than a fabricated plant-room interior.
+    screen=glass.copy();screen.name=PREFIX+'pale_green_screen'
+    screen.diffuse_color=(.42,.57,.55,1);screen['webOpacity']=.72
+    node=screen.node_tree.nodes['Principled BSDF']
+    node.inputs['Base Color'].default_value=screen.diffuse_color
+    node.inputs['Roughness'].default_value=.25
+    for column in range(4):
+        for row in range(3):
+            y=5.45+column*1.87;z=REAR_ROOF+.24+row*1.18
+            box(f'green_screen_{column}_{row}',(-.39,y,z),(-.365,y+1.85,z+1.16),screen)
+            for side in (0,1):
+                yy=y+.06+side*1.72
+                box(f'green_screen_clamp_{column}_{row}_{side}',(-.445,yy,z+.54),(-.31,yy+.05,z+.59),frame)
+    box('green_screen_base',(-.5,5.4,REAR_ROOF+.15),(-.27,12.95,REAR_ROOF+.23),frame)
     # Twin folded assemblies reproduce visible silhouette and underside panels.
     # Their exact equipment function, materials and dimensions remain unverified.
     metal=frame.copy();metal.name=PREFIX+'folded_assembly_finish'
@@ -349,11 +489,11 @@ def apply_cbg_roof_envelope():
     added=[o.name for o in set(bpy.data.objects)-before]
     return dict(status='private-candidate-awaiting-roof-and-circulation-registration',
         addedObjects=added,archivedObjects=[r['source'] for r in replacements],changedObjects=[],replacements=replacements,
-        dimensions=dict(top=HEIGHT,openEndFloor=TERRACE,rearRoof=REAR_ROOF,cornerStartX=-.5,rearStartY=4.2),
+        dimensions=dict(top=HEIGHT,openEndFloor=TERRACE,rearRoof=REAR_ROOF,cornerStartX=-.5,roofTerraceEndX=ROOF_TERRACE_END_X,roofTerraceFrontY=ROOF_TERRACE_FRONT_Y,retainedCoreX=[ROOF_TERRACE_END_X,CORE_END_X]),
         references=[dict(path=p,sha256=hashlib.sha256((ROOT/p).read_bytes()).hexdigest(),captureDate='unknown',
-                         role='published2016design-section' if 'archdaily_03' in p else 'built-photograph') for p in SOURCES],
+                         role='published2016design-drawing' if ('archdaily_03' in p or '-plan-' in p) else 'built-photograph') for p in SOURCES],
         sourceURL='https://rshp.com/projects/education/lse-centre-building/',
         limitations=['Only overall52.2m height is cited; local dimensions and inherited equal storeys are estimates.',
-                     'Whole rear-roof extent and upper-stair relocation require registered review before integration.',
+                     'The rear terrace/core split is proportionally registered from the2016 level12 plan; the published built photograph supports a bounded garden, not an empty full-length roof. Absolute geometry and upper-stair relocation still require review.',
                      'Suspended assemblies are photo-derived forms; equipment function is not established.',
                      'Current hidden plant, all upper rooms and full internal layout remain unverified.'])
