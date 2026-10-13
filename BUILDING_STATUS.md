@@ -1,8 +1,8 @@
 # LSEmap模型状态
 
-当前本地完整模型为192版：result/blender/LSE_campus_detailed_v192.blend。6497个对象。OLD入口玻璃光学修正已合入；重开、7项网页检查、125个展示视角刷新及线上资源与页面核对通过。
+当前本地完整模型为193版：result/blender/LSE_campus_detailed_v193.blend。6497个对象。OLD蓝色涂漆框件反射修正已合入；重开、8项网页检查及125个展示视角刷新通过，线上核对待完成。
 
-原生SHA256：b970487e738a7995c9f58cff33b058dc47eb16f82120672c335a6dd9791d7d5b。
+原生SHA256：795f45f02fae1087a138cb3fd4d63a62869182d5c0cfaab202e4c2a9e98855fb。
 
 187版按已建正面照片补回MAR底座中间偏右的第三组高窗及混凝土围边，保留两侧原高窗、另一侧开放柱廊及内部几何。照片注册、围边和窗洞尺寸为估算；完整体量仍未核实。
 
@@ -53,7 +53,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|191|Portugal Street侧85块主楼及18块屋顶窗面保留朝外单层表面，移除1030个背面及边面三角形；正面位置、逐角UV、颜色和光学输入保留。18块屋顶窗仍与内部剖视共用，不改变房间结构；其他立面和完整现状内部未核实。|
 |MAR|188|按已建照片对齐北立面中段及上部开口，联动窗墙、四层楼板、铺砖和斜向屋面；保留底座三窗及原始网格。开口尺寸与进深估算，高层体量和完整现状内部未核实。|
-|OLD|192|八块现有入口玻璃降低灰绿色罩色，网页透明度由0.46改为0.28；门框、玻璃几何、逐角UV、粗糙度、透射和已有历史门厅保留。72条入口采样射线未发现4m内旧不透明代理遮挡；参数为参考照片视觉估计，完整现状仍未核实。|
+|OLD|193|20组既有蓝色框件使用12种独立漆面材质，金属度改为0、粗糙度为估计值0.46；原蓝色色值、玻璃、几何和UV保留。Houghton、Clare Market及既有屋顶窗框采用同一漆面策略，完整现状与内部仍未核实。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
@@ -99,3 +99,7 @@ MAR188独立候选已同步重建北立面上部及中段窗墙、凹入侧壁�
 ## OLD入口玻璃光学修正
 
 192版降低八块现有门玻璃的灰绿色罩色与网页透明度，保留原玻璃几何、逐角UV、粗糙度和透射参数。72条入口采样射线未发现4m内旧代理遮挡，未据包围盒重叠盲目删除窗面或墙体。生产CampusViewer私有对比完成入口近景、整楼及门部近景；已有台阶、红色墙面和入口层次更清楚。参考为用户提供的照片，拍摄日期未知；光学值为视觉估计，既有门厅基于历史资料，不代表完整当前内部。证据见result/blender/old-exterior-colour-review及stage192。
+
+## OLD蓝色涂漆框件
+
+193版把20组已识别的蓝色涂漆框件改为介电漆面，12种独立材质保留原蓝色色值，仅改变金属度与粗糙度。主入口、Clare Market和阁楼窗框沿用既有几何与UV，不改变玻璃透明度、银色扶手或已独立修正的壁灯。资料为用户提供的Clare Market照片及Webb Yates已建项目照片06，拍摄日期未知；粗糙度0.46是视觉估计。完整当前外观、内部结构及全部房间仍未完成。证据见result/blender/old-painted-frame-review与stage193。
