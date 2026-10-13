@@ -1,15 +1,26 @@
 {
   "generatedTextures": [
     {
+      "name": "old-portland-stone194",
+      "sha256": "e76109dd514a7ec988ebaba2efbd0e4a392d808af36e66c4cc9fcb381b6e3540",
+      "bytes": 80194,
+      "kind": "material-finish",
+      "source": "Original generated material finish",
+      "scope": "Photo-guided neutral warm limestone; original periodic tone study, not measured weathering",
+      "nativeImage": "OLD194_Portland_stone_original_paint_study"
+    },
+    {
       "name": "globe-map-India-green",
       "sha256": "19925e6f107d449d8f5175910f437a251d824b74efe66f59cccf475c969d9c49",
+      "bytes": 357348,
+      "kind": "cartography",
       "source": "Natural Earth public-domain cartography",
       "scope": "Authored political map with photo-estimated Australia and India fills; no source photograph",
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "193",
-  "sourceModelSha256": "795f45f02fae1087a138cb3fd4d63a62869182d5c0cfaab202e4c2a9e98855fb",
+  "version": "194",
+  "sourceModelSha256": "bcd7292cfda4c43ed4fd7622f564a5d3ce7ef8ac0360ba00d68b4081bd363c8e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -274,10 +285,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-115a0c99dfb3.glb",
-        "bytes": 1038420,
+        "url": "/models/details/61a-exterior-fcbd69ad37cd.glb",
+        "bytes": 1039464,
         "triangles": 95255,
-        "sha256": "115a0c99dfb3acca5591a2d553534de883f49e3b5f0076e5237e70454e3d45f2",
+        "sha256": "fcbd69ad37cd9e6ab7033d786621b44db59b0ce0dcfecfb69315aeff91569bb8",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -292,10 +303,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/61a-interior-3fee2be47ec5.glb",
-        "bytes": 95424,
+        "url": "/models/details/61a-interior-55bccd1fbab3.glb",
+        "bytes": 96016,
         "triangles": 8328,
-        "sha256": "3fee2be47ec551a2f9c97859e7ee02565f3d23f8fa5e44479c2417c4daceee38",
+        "sha256": "55bccd1fbab3ba28ed203a479fc94fcfabedebcd0e1ec65c1436e2fc2f7b239b",
         "bounds": {
           "min": [
             -6.199999809265137,
@@ -410,10 +421,18 @@
         "batchCount": 4,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "exteriorFinish194": {
+        "version": 194,
+        "scope": "Neutral glazing and dielectric painted structure retain existing geometry and the user-selected red-primary/orange-return palette.",
+        "references": [
+          "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf"
+        ],
+        "limitations": "The red-primary faces follow user direction. Contractor photographs mostly show pale broad faces and orange/gold returns. Roof and complete current interiors remain unverified."
+      },
       "bounds": {
         "min": [
           2.060716152191162,
-          -0.13249999284744263,
+          -0.2750000059604645,
           31.516820907592773
         ],
         "max": [
@@ -425,12 +444,12 @@
       "exteriorFramingCorners": [
         [
           42.917788356623866,
-          -0.13249999284744263,
+          -0.2750000059604645,
           24.935220366025153
         ],
         [
           68.38467507308727,
-          -0.13249999284744263,
+          -0.2750000059604645,
           40.84869928934135
         ],
         [
@@ -445,12 +464,12 @@
         ],
         [
           1.7006606868617382,
-          -0.13249999284744263,
+          -0.2750000059604645,
           90.896404982035
         ],
         [
           27.167547403325138,
-          -0.13249999284744263,
+          -0.2750000059604645,
           106.80988390535119
         ],
         [
@@ -477,10 +496,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-b85b1994f668.glb",
-        "bytes": 5255684,
+        "url": "/models/details/cbg-exterior-6baa0c0adbca.glb",
+        "bytes": 5256732,
         "triangles": 527960,
-        "sha256": "b85b1994f66888d449b5304b9b307775519721d5c9d1d233f34cc103ff799ff1",
+        "sha256": "6baa0c0adbca19cb4e212285f007e00b68fc87bd082ca22308b39c373558c05b",
         "bounds": {
           "min": [
             2.060716152191162,
@@ -495,10 +514,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/cbg-interior-db8ddd837ea0.glb",
-        "bytes": 347116,
+        "url": "/models/details/cbg-interior-17c76c95e8db.glb",
+        "bytes": 347428,
         "triangles": 38244,
-        "sha256": "db8ddd837ea0648ead4fc56dc57871282db92ac9ee5c3bb9614315672b9c539c",
+        "sha256": "17c76c95e8dba403812f076dd04e13bdaacf2e2e74e4d0b0919c33ce92b01b1e",
         "bounds": {
           "min": [
             2.8369922637939453,
@@ -536,12 +555,12 @@
             "fov": 50
           },
           "gallery": "cbg-102-interior",
-          "interiorAsset": "/models/details/cbg-102-interior-fd8d36884a1f.glb",
+          "interiorAsset": "/models/details/cbg-102-interior-e4f234bdf5b4.glb",
           "detailedInterior": {
-            "url": "/models/details/cbg-102-interior-fd8d36884a1f.glb",
-            "bytes": 349312,
+            "url": "/models/details/cbg-102-interior-e4f234bdf5b4.glb",
+            "bytes": 349868,
             "triangles": 29596,
-            "sha256": "fd8d36884a1f4fa157ec6d1b79523f7956b9c38651075cfbe6181eea5b527de3",
+            "sha256": "e4f234bdf5b4ac98a99d040ea07ea8a521fa7a4db1d9e38851dab41b3fab7ac3",
             "bounds": {
               "min": [
                 -5.800000190734863,
@@ -591,12 +610,12 @@
             "fov": 50
           },
           "gallery": "cbg-103-interior",
-          "interiorAsset": "/models/details/cbg-103-interior-7c43caf689a7.glb",
+          "interiorAsset": "/models/details/cbg-103-interior-12e1342ab12f.glb",
           "detailedInterior": {
-            "url": "/models/details/cbg-103-interior-7c43caf689a7.glb",
-            "bytes": 293380,
+            "url": "/models/details/cbg-103-interior-12e1342ab12f.glb",
+            "bytes": 293860,
             "triangles": 24668,
-            "sha256": "7c43caf689a7c72d64201256e0ef83059dba5daadc4632413153bd680d7fa980",
+            "sha256": "12e1342ab12f7605e9df16f731689a6ed5d70ff6de9d9f8c0c897b527b35ceec",
             "bounds": {
               "min": [
                 -5.98199987411499,
@@ -646,12 +665,12 @@
             "fov": 50
           },
           "gallery": "cbg-104-interior",
-          "interiorAsset": "/models/details/cbg-104-interior-9d5eac9e73ed.glb",
+          "interiorAsset": "/models/details/cbg-104-interior-69a154e2e45c.glb",
           "detailedInterior": {
-            "url": "/models/details/cbg-104-interior-9d5eac9e73ed.glb",
-            "bytes": 218544,
+            "url": "/models/details/cbg-104-interior-69a154e2e45c.glb",
+            "bytes": 218988,
             "triangles": 17764,
-            "sha256": "9d5eac9e73ed679e067cb028f9b7e105c2b60b99b6472357c1246303cf7a8242",
+            "sha256": "69a154e2e45c867a57de4932e5b1c56cf07963be9516e8edc1063e5f5e0ae5b7",
             "bounds": {
               "min": [
                 -5.73199987411499,
@@ -701,12 +720,12 @@
             "fov": 50
           },
           "gallery": "cbg-205-interior",
-          "interiorAsset": "/models/details/cbg-205-interior-a7db797ef048.glb",
+          "interiorAsset": "/models/details/cbg-205-interior-95b5e5b63de2.glb",
           "detailedInterior": {
-            "url": "/models/details/cbg-205-interior-a7db797ef048.glb",
-            "bytes": 217680,
+            "url": "/models/details/cbg-205-interior-95b5e5b63de2.glb",
+            "bytes": 218088,
             "triangles": 17840,
-            "sha256": "a7db797ef0483d4e11007ff71098702ab799d9a49df918d0ad1800c5133764b2",
+            "sha256": "95b5e5b63de237e987df2eb75c431d518f5d16191f8a3d1c259eba71859f1631",
             "bounds": {
               "min": [
                 -6.118000030517578,
@@ -846,7 +865,7 @@
       "bounds": {
         "min": [
           -138.37171936035156,
-          0.0,
+          -0.15000000596046448,
           -101.81769561767578
         ],
         "max": [
@@ -858,12 +877,12 @@
       "exteriorFramingCorners": [
         [
           -125.26999800265345,
-          0.0,
+          -0.15000000596046448,
           -52.86514737329854
         ],
         [
           -138.53583568390596,
-          0.0,
+          -0.15000000596046448,
           -84.0613310639925
         ],
         [
@@ -878,12 +897,12 @@
         ],
         [
           -81.68030941403507,
-          0.0,
+          -0.15000000596046448,
           -71.40118816361652
         ],
         [
           -94.94614709528756,
-          0.0,
+          -0.15000000596046448,
           -102.5973718543105
         ],
         [
@@ -910,10 +929,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-42147f15931a.glb",
-        "bytes": 2749512,
+        "url": "/models/details/ckk-exterior-90da621d308f.glb",
+        "bytes": 2751052,
         "triangles": 236314,
-        "sha256": "42147f15931ac775612730045947e27bf8ace055e1b068bc4da769d508cebdb2",
+        "sha256": "90da621d308f0899b2820c62334ad68ff406bf7dc540f94ad83e9862dfec8b85",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -928,10 +947,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/ckk-interior-b3468276161f.glb",
-        "bytes": 689076,
+        "url": "/models/details/ckk-interior-ed5a18b96302.glb",
+        "bytes": 689556,
         "triangles": 70212,
-        "sha256": "b3468276161f3c539dcd8f85c69137b61a436527c45f7c0a91758bd6e8823ae7",
+        "sha256": "ed5a18b963028e2c9b0a5edca6b3519ebcf2b827e0317a34c75a0bde8dc992c7",
         "bounds": {
           "min": [
             -129.93069458007812,
@@ -969,12 +988,12 @@
             "fov": 50
           },
           "gallery": "ckk-104-interior",
-          "interiorAsset": "/models/details/ckk-104-interior-82d811510e76.glb",
+          "interiorAsset": "/models/details/ckk-104-interior-df18cebc29e6.glb",
           "detailedInterior": {
-            "url": "/models/details/ckk-104-interior-82d811510e76.glb",
-            "bytes": 267884,
+            "url": "/models/details/ckk-104-interior-df18cebc29e6.glb",
+            "bytes": 268292,
             "triangles": 24401,
-            "sha256": "82d811510e76e17f1a4343df4073e8244f99198eb3e4b3252005f08924279fba",
+            "sha256": "df18cebc29e6d478e2243053dc398bca0c43e6f82539451ac3a48072376f73a6",
             "bounds": {
               "min": [
                 -4.210000038146973,
@@ -1024,12 +1043,12 @@
             "fov": 50
           },
           "gallery": "ckk-107-interior",
-          "interiorAsset": "/models/details/ckk-107-interior-94c1d92da3be.glb",
+          "interiorAsset": "/models/details/ckk-107-interior-cb3cb059ab55.glb",
           "detailedInterior": {
-            "url": "/models/details/ckk-107-interior-94c1d92da3be.glb",
-            "bytes": 87280,
+            "url": "/models/details/ckk-107-interior-cb3cb059ab55.glb",
+            "bytes": 87652,
             "triangles": 7520,
-            "sha256": "94c1d92da3beebc42c4e3965a2611c731364f2662fbb8ab22ce9b47c9f68f0a3",
+            "sha256": "cb3cb059ab558266a61b7866c68fab7feefc661af81d2e37a7ccd745f2e6b963",
             "bounds": {
               "min": [
                 -5.505000114440918,
@@ -1205,10 +1224,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-0b20a6b23c1d.glb",
-        "bytes": 757244,
+        "url": "/models/details/clm-exterior-0706628ae360.glb",
+        "bytes": 758020,
         "triangles": 66538,
-        "sha256": "0b20a6b23c1dafc7e87f0d29e1923997804261eb276730d34db8e452627692e7",
+        "sha256": "0706628ae360309f99f02a95b739cfcbbbfb0b5b431cf8e09fe756a005194db1",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -1223,10 +1242,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/clm-interior-18441fed03f8.glb",
-        "bytes": 470304,
+        "url": "/models/details/clm-interior-d60833bccf1c.glb",
+        "bytes": 470712,
         "triangles": 34420,
-        "sha256": "18441fed03f8fefce6e90f1dba8c5e90a51645a4f8c9707ff6746b32a2861536",
+        "sha256": "d60833bccf1cdc694efd9636d045abefcf0259496578676d1568aae72642d3b4",
         "bounds": {
           "min": [
             -4.2210001945495605,
@@ -1422,10 +1441,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-3c1ec6fc4d4b.glb",
-        "bytes": 1031936,
+        "url": "/models/details/col-exterior-b129bb1c7fd7.glb",
+        "bytes": 1032916,
         "triangles": 81320,
-        "sha256": "3c1ec6fc4d4bc92774820bb5382fffa04ab9f49908a4bc092312080d9adb4622",
+        "sha256": "b129bb1c7fd70f00ecba3df647890e0fb67780e29c3af41369573cab2426467a",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -1440,10 +1459,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/col-interior-cbc80d702467.glb",
-        "bytes": 829908,
+        "url": "/models/details/col-interior-2734388e5b63.glb",
+        "bytes": 830276,
         "triangles": 76608,
-        "sha256": "cbc80d702467402bd7b9e7e083b08431bb3829a0055d2e9fd06d6a87e085e062",
+        "sha256": "2734388e5b63f8e65b353b60f426f9e7fb5d6f904cb466a1421383c6d2e8c48c",
         "bounds": {
           "min": [
             -3.880000114440918,
@@ -1629,10 +1648,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-43c0ad50e106.glb",
-        "bytes": 588896,
+        "url": "/models/details/con-exterior-4287240556b1.glb",
+        "bytes": 589992,
         "triangles": 47172,
-        "sha256": "43c0ad50e106e21597c829f76c9a574300c96391a4698bf61ce8657628bdcfa9",
+        "sha256": "4287240556b1a8a252605287d74d2a36ac3433dbb778b3e01fb02cbb6f0cc8c1",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -1647,10 +1666,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/con-interior-bd4d067de12b.glb",
-        "bytes": 302712,
+        "url": "/models/details/con-interior-22c8168fc85b.glb",
+        "bytes": 303008,
         "triangles": 22552,
-        "sha256": "bd4d067de12bf3174ee279a5298c85d4e948dd2aa73992bc4200dd263b1bbb19",
+        "sha256": "22c8168fc85bf4805fde44d047a544e7c2b6a598537b7618cf380012f1e0eba6",
         "bounds": {
           "min": [
             -3.2799999713897705,
@@ -1688,12 +1707,12 @@
             "fov": 48
           },
           "gallery": "con-methodology-interior",
-          "interiorAsset": "/models/details/con-methodology-interior-b2181ca0ab15.glb",
+          "interiorAsset": "/models/details/con-methodology-interior-4575e4b0580f.glb",
           "detailedInterior": {
-            "url": "/models/details/con-methodology-interior-b2181ca0ab15.glb",
-            "bytes": 600216,
+            "url": "/models/details/con-methodology-interior-4575e4b0580f.glb",
+            "bytes": 600812,
             "triangles": 45598,
-            "sha256": "b2181ca0ab1557fc72d5c6d4b90678433b50082e7c303bc38655f3f07cb611fb",
+            "sha256": "4575e4b0580f7d3867a90b818129018f39979803030512284cc89676bf3f86c2",
             "bounds": {
               "min": [
                 -5.436797618865967,
@@ -1743,12 +1762,12 @@
             "fov": 50
           },
           "gallery": "con-tea-point-interior",
-          "interiorAsset": "/models/details/con-tea-point-interior-4841ca55b96a.glb",
+          "interiorAsset": "/models/details/con-tea-point-interior-9f4f91da14ed.glb",
           "detailedInterior": {
-            "url": "/models/details/con-tea-point-interior-4841ca55b96a.glb",
-            "bytes": 140180,
+            "url": "/models/details/con-tea-point-interior-9f4f91da14ed.glb",
+            "bytes": 140552,
             "triangles": 8854,
-            "sha256": "4841ca55b96a1a243a6b1b061c7d346f8d0f7be94e9622ce545bad2174b4b5f9",
+            "sha256": "9f4f91da14ed03505bc449740209534133673f0eaf1ce1506d78766ed9c8d312",
             "bounds": {
               "min": [
                 -1.899999976158142,
@@ -1938,10 +1957,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-9f1962e8cc79.glb",
-        "bytes": 3243220,
+        "url": "/models/details/cow-exterior-910e19a05a80.glb",
+        "bytes": 3244076,
         "triangles": 255268,
-        "sha256": "9f1962e8cc79d126f3e037dac95172937dde470decfbb7f92aa566dc507fc5bc",
+        "sha256": "910e19a05a80b8c6a7ac9c31bf015760a6ebd96ce0bfe835da007bb42304f689",
         "bounds": {
           "min": [
             -6.818561553955078,
@@ -1956,10 +1975,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/cow-interior-760673784fcb.glb",
-        "bytes": 1881456,
+        "url": "/models/details/cow-interior-91d4f8f95c35.glb",
+        "bytes": 1881828,
         "triangles": 142812,
-        "sha256": "760673784fcbd236b60939ec99a9871ddf9c36cb929e53e8e750f2b6832ac3f9",
+        "sha256": "91d4f8f95c35bd9ac3e65ea4824b8bb43bb01162576e45708fefe98ea64e504d",
         "bounds": {
           "min": [
             -4.579999923706055,
@@ -2114,10 +2133,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/faw-exterior-6586126a9bd0.glb",
-        "bytes": 1213128,
+        "url": "/models/details/faw-exterior-bec1b9ad8333.glb",
+        "bytes": 1213504,
         "triangles": 99577,
-        "sha256": "6586126a9bd0c5c112113d3a17a2fde3509504fbbc27c79b37e59bfef3d36cdc",
+        "sha256": "bec1b9ad8333e19bc23e0f0edf9873b0b5b8422b45f9e2ff1e199fbcdc3e943c",
         "bounds": {
           "min": [
             72.36564636230469,
@@ -2132,10 +2151,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/faw-interior-5cab24c5244a.glb",
-        "bytes": 555584,
+        "url": "/models/details/faw-interior-865e28b137e8.glb",
+        "bytes": 555956,
         "triangles": 42104,
-        "sha256": "5cab24c5244a74585c0bb7cf32956c9f1deb68ce88d1aa3bb0bf4ff40e5cebd8",
+        "sha256": "865e28b137e8a138b82553d57e366d1d38277dd17cf96646abf3be7242d83dbf",
         "bounds": {
           "min": [
             -4.579999923706055,
@@ -2302,10 +2321,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-5e7179ef700f.glb",
-        "bytes": 1818888,
+        "url": "/models/details/kgs-exterior-bad395009008.glb",
+        "bytes": 1819648,
         "triangles": 128851,
-        "sha256": "5e7179ef700f0764f100098858176d7660c48c0a193c3b9afc790ba0c482c78b",
+        "sha256": "bad395009008c30940cf977e6681c8555c03f88b72415c168850d3cc20cd4cf7",
         "bounds": {
           "min": [
             -33.59806823730469,
@@ -2320,10 +2339,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/kgs-interior-c09d5fd7ad61.glb",
-        "bytes": 565692,
+        "url": "/models/details/kgs-interior-dd7568f9c5c7.glb",
+        "bytes": 566028,
         "triangles": 46968,
-        "sha256": "c09d5fd7ad616d112c4c8f5f9fa88980e6ae56bcfd65e9383a18568ad8f901fe",
+        "sha256": "dd7568f9c5c7b1eda74fbc33c55fa13dc1bdd2db22b8cb4a30c35fb722af8d19",
         "bounds": {
           "min": [
             -2.9800000190734863,
@@ -2491,10 +2510,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-28d00a059343.glb",
-        "bytes": 777380,
+        "url": "/models/details/ksw-exterior-77ffc19c0f9c.glb",
+        "bytes": 778152,
         "triangles": 80016,
-        "sha256": "28d00a059343046553138e44ef2d3248480b80f7a338a0e6f80d13d2c386daf7",
+        "sha256": "77ffc19c0f9cda99e4b3ec3a32a3f59ccbeea41cb6946fae758d51312557e35f",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -2509,10 +2528,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/ksw-interior-b575b26bd4ec.glb",
-        "bytes": 638568,
+        "url": "/models/details/ksw-interior-8dd737bbd5ce.glb",
+        "bytes": 638976,
         "triangles": 51064,
-        "sha256": "b575b26bd4ecdd8a5baa10c2abad64f254d1bb8845ea6f02b78e1c4d3987c47c",
+        "sha256": "8dd737bbd5ce45fc7460b3488a6afc1eed7c9b8267825d489dc3a6a9dfd62a3f",
         "bounds": {
           "min": [
             -4.079999923706055,
@@ -2662,10 +2681,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lak-exterior-636fae0d5f38.glb",
-        "bytes": 1221148,
+        "url": "/models/details/lak-exterior-55798d56d07a.glb",
+        "bytes": 1221536,
         "triangles": 93556,
-        "sha256": "636fae0d5f3859369bb5dd24a492b230205375bfe2474fe8decaa6e711168536",
+        "sha256": "55798d56d07a720bb8090d30554abc4de9172199d4b74b63a04a50cd0c2e592c",
         "bounds": {
           "min": [
             2.2941360473632812,
@@ -2680,10 +2699,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lak-interior-9e9f41262e8b.glb",
-        "bytes": 242996,
+        "url": "/models/details/lak-interior-f78c2f0f8b15.glb",
+        "bytes": 243332,
         "triangles": 18228,
-        "sha256": "9e9f41262e8b576ca2354503c8f3680cb3a7b88de6163eba48bebeb944f655a4",
+        "sha256": "f78c2f0f8b1534a221b1afd8e301687f8ea546565cea252cebcd5f048404023f",
         "bounds": {
           "min": [
             -2.4800000190734863,
@@ -2807,10 +2826,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-bb40ea2ca544.glb",
-        "bytes": 1170848,
+        "url": "/models/details/lch-exterior-3ffe237c8c49.glb",
+        "bytes": 1171660,
         "triangles": 90536,
-        "sha256": "bb40ea2ca5449b74f8f9cd1b10b90b3457ea1af9da632d2bb27804e8cc34de78",
+        "sha256": "3ffe237c8c492d00cfc401fe4e0ef38239d50a08ed6855022e47517f207e9f69",
         "bounds": {
           "min": [
             -34.67495346069336,
@@ -2964,10 +2983,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/5lf-exterior-5d562bf07031.glb",
-        "bytes": 315884,
+        "url": "/models/details/5lf-exterior-1d4953a53e22.glb",
+        "bytes": 316620,
         "triangles": 21600,
-        "sha256": "5d562bf070314b5a37322468016c9351a79afb5afde0525a94c78b7c225e75a3",
+        "sha256": "1d4953a53e2205a2e5261258c9a12007d5fe754a1609b4a3504759a91a18e13e",
         "bounds": {
           "min": [
             -112.59539794921875,
@@ -2982,10 +3001,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/5lf-interior-201052502ecb.glb",
-        "bytes": 110500,
+        "url": "/models/details/5lf-interior-912126826bd7.glb",
+        "bytes": 110760,
         "triangles": 7260,
-        "sha256": "201052502ecb43e24a26fda2dce1cb4f2ff6b28c62ed5e166b7ae1cae0da595d",
+        "sha256": "912126826bd764a2a7a4b341e1c7a1431bf8a5b51f9c158530512ea13dddace7",
         "bounds": {
           "min": [
             -2.930000066757202,
@@ -3227,10 +3246,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/49l-exterior-465921dd5e6a.glb",
-        "bytes": 251776,
+        "url": "/models/details/49l-exterior-5ad99d8dabd0.glb",
+        "bytes": 252656,
         "triangles": 18237,
-        "sha256": "465921dd5e6af9200b90fe45020df6927646c89f3a8cec7c6c7e03cccee5dd47",
+        "sha256": "5ad99d8dabd0d84dd6dc7179ee39b4655ccc9b93fe74390d5cbf5df87924b6db",
         "bounds": {
           "min": [
             -56.261409759521484,
@@ -3245,10 +3264,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/49l-interior-70b363393af3.glb",
-        "bytes": 579236,
+        "url": "/models/details/49l-interior-9a0cbd364a0a.glb",
+        "bytes": 579644,
         "triangles": 45756,
-        "sha256": "70b363393af3907d81f2654f160d852a19b1cf9afbd7e1e6a6fe5cac8cbeed86",
+        "sha256": "9a0cbd364a0a42783a29030a0c50ea03d867a7f0b9ca31bd36b2e45801d3d458",
         "bounds": {
           "min": [
             -4.079999923706055,
@@ -3375,10 +3394,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/50l-exterior-145a2f12fc15.glb",
-        "bytes": 237692,
+        "url": "/models/details/50l-exterior-6912c3766a05.glb",
+        "bytes": 238596,
         "triangles": 15078,
-        "sha256": "145a2f12fc15cb28d436ec3f13ebcb524f901137c58719972e79de7148252540",
+        "sha256": "6912c3766a055ef94b2050e27cbc4b108211b67616d094eb89af1c8077fe29f2",
         "bounds": {
           "min": [
             -51.667205810546875,
@@ -3509,10 +3528,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-3bdce163f803.glb",
-        "bytes": 2848156,
+        "url": "/models/details/51l-exterior-f3e380adb382.glb",
+        "bytes": 2849228,
         "triangles": 219719,
-        "sha256": "3bdce163f80389d3b411690d76630fa2d0a60c5026fcd67499dc063961d73e9b",
+        "sha256": "f3e380adb382d23df3ea64b0639acd923fe49bee213236ec2d5ec4dd004aea4b",
         "bounds": {
           "min": [
             -74.71239471435547,
@@ -3753,10 +3772,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-d17156f3869c.glb",
-        "bytes": 6110460,
+        "url": "/models/details/lrb-exterior-c4c9f74b4604.glb",
+        "bytes": 6113264,
         "triangles": 681337,
-        "sha256": "d17156f3869ce2de044e30e2c7e709a668414693496680b2945b8b991979f1f5",
+        "sha256": "c4c9f74b46048154b33c42c9b8fa09f3e0b81b6549822cc098d4b53936d95764",
         "bounds": {
           "min": [
             24.830078125,
@@ -3771,10 +3790,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-c35683d865d3.glb",
-        "bytes": 4668300,
+        "url": "/models/details/lrb-interior-954775c18e47.glb",
+        "bytes": 4669828,
         "triangles": 580168,
-        "sha256": "c35683d865d381a6e13ae6e9736219753eae4d7420f89d61e1a6550ae0cf315c",
+        "sha256": "954775c18e47a2d6f899cf3e0d6fb3bfc3f59adeebad7ed6536be5f7fd5efad8",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -4011,10 +4030,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-78c000e85e90.glb",
-        "bytes": 3145812,
+        "url": "/models/details/mar-exterior-774e284fef44.glb",
+        "bytes": 3148188,
         "triangles": 289265,
-        "sha256": "78c000e85e90813c1e26dc1d34e50d3ef0d910ecfb339b479c2451e4094c82f4",
+        "sha256": "774e284fef44567bc1a6bbe27d698c40fb0ad039d71c701201d92bf61b9f7a70",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -4029,10 +4048,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-4e57f6392260.glb",
-        "bytes": 435268,
+        "url": "/models/details/mar-interior-216d8d8defd8.glb",
+        "bytes": 435904,
         "triangles": 44975,
-        "sha256": "4e57f63922606c99ca0aa710b11497dc6fe91fd1bff9233ab73b65035d7f45cc",
+        "sha256": "216d8d8defd86f758f06499b861365482244757dfc829ac1415dbcbd314698e6",
         "bounds": {
           "min": [
             -44.53135299682617,
@@ -4070,12 +4089,12 @@
             "fov": 50
           },
           "gallery": "mar-104-interior",
-          "interiorAsset": "/models/details/mar-104-interior-ab26ea5e7cb1.glb",
+          "interiorAsset": "/models/details/mar-104-interior-74fa82a62a42.glb",
           "detailedInterior": {
-            "url": "/models/details/mar-104-interior-ab26ea5e7cb1.glb",
-            "bytes": 649060,
+            "url": "/models/details/mar-104-interior-74fa82a62a42.glb",
+            "bytes": 649580,
             "triangles": 58588,
-            "sha256": "ab26ea5e7cb18e32e6f30d86c6626a7caf3c3bed63495397790bbb4d9df9c063",
+            "sha256": "74fa82a62a428a84d94171946ce63cce8ce3f6f56531bb286f065dc56c06e40a",
             "bounds": {
               "min": [
                 -6.960000038146973,
@@ -4289,6 +4308,16 @@
         "batchCount": 11,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "exteriorFinish194": {
+        "version": 194,
+        "scope": "Photo-estimated neutral warm limestone finish across61existing wall, arch and relief objects. Geometry, blue frames and clear entrance glazing retained.",
+        "references": [
+          "data/collections/old-exterior-2026/user-references/houghton-arch-masonry.png",
+          "data/collections/old-exterior-2026/user-references/houghton-entrance-latest.png",
+          "data/collections/old-clare-reference/front.png"
+        ],
+        "limitations": "The original stone map approximates tonal variation; it is not photographed or measured weathering."
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -4356,10 +4385,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-7bb3a14cf173.glb",
-        "bytes": 20183532,
+        "url": "/models/details/old-exterior-647ddd54cb63.glb",
+        "bytes": 19878800,
         "triangles": 1670352,
-        "sha256": "7bb3a14cf1737ed89eef3812547321cfd19d3f913f1f9ff634be0ab22e4f47ab",
+        "sha256": "647ddd54cb63fc0a2cc59e806a449cdbffa719e35d5bd12cdba602a68438668c",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -4374,10 +4403,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/old-interior-db7fa8b91920.glb",
-        "bytes": 1354656,
+        "url": "/models/details/old-interior-35bbce034aa7.glb",
+        "bytes": 1355064,
         "triangles": 113064,
-        "sha256": "db7fa8b91920816bdd147aaf9d68260088b8d30d484423ac9dca8513aeaa86ad",
+        "sha256": "35bbce034aa7defe7e18d882ae5850046494afc4b4ada80b62a66156282ac2a8",
         "bounds": {
           "min": [
             -8.0,
@@ -4415,12 +4444,12 @@
             "fov": 42
           },
           "gallery": "old-ssc-interior",
-          "interiorAsset": "/models/details/old-ssc-interior-4ad10aa8b604.glb",
+          "interiorAsset": "/models/details/old-ssc-interior-0fbed132fc9a.glb",
           "detailedInterior": {
-            "url": "/models/details/old-ssc-interior-4ad10aa8b604.glb",
-            "bytes": 655644,
+            "url": "/models/details/old-ssc-interior-0fbed132fc9a.glb",
+            "bytes": 656052,
             "triangles": 54160,
-            "sha256": "4ad10aa8b60403be4db528c26d29bdf5b0a4265c0137a11a1996444393f5cb59",
+            "sha256": "0fbed132fc9a99f39fd866edf0568c817469d92ba4649b6f3ae67c4af8d0c707",
             "bounds": {
               "min": [
                 -5.880000114440918,
@@ -4470,12 +4499,12 @@
             "fov": 48
           },
           "gallery": "old-foyer-interior",
-          "interiorAsset": "/models/details/old-foyer-interior-8e8b27745960.glb",
+          "interiorAsset": "/models/details/old-foyer-interior-31796425ee54.glb",
           "detailedInterior": {
-            "url": "/models/details/old-foyer-interior-8e8b27745960.glb",
-            "bytes": 19612,
+            "url": "/models/details/old-foyer-interior-31796425ee54.glb",
+            "bytes": 19872,
             "triangles": 964,
-            "sha256": "8e8b27745960a435a973d337d2f88bbe63c5162e000843f80f0bc7808c884a2f",
+            "sha256": "31796425ee546c3064967ded42a1f6310aefea6b7f51b9f30a016c5d679edf8e",
             "bounds": {
               "min": [
                 -21.745058059692383,
@@ -4618,10 +4647,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ocs-exterior-5238b9b726ae.glb",
-        "bytes": 1348640,
+        "url": "/models/details/ocs-exterior-4e6e9caebc78.glb",
+        "bytes": 1349468,
         "triangles": 115852,
-        "sha256": "5238b9b726ae25c564b7691b7d268ea0d0ea358203be267f2aea9354d4fdfbb6",
+        "sha256": "4e6e9caebc78d5edafba2d6091f57626fefc40f384fd1cf41f0a86fe178a8596",
         "bounds": {
           "min": [
             -47.91916275024414,
@@ -4636,10 +4665,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/ocs-interior-147dbfb86b18.glb",
-        "bytes": 262368,
+        "url": "/models/details/ocs-interior-7f687b6fed5f.glb",
+        "bytes": 262960,
         "triangles": 18099,
-        "sha256": "147dbfb86b18b1402bb6b558659d48891022dd0b9a5e47870a5791dddd3575ab",
+        "sha256": "7f687b6fed5fbc1a26772c50f0ac1236f95158d5ac1afb1fbf889ed194de65b4",
         "bounds": {
           "min": [
             -2.369999885559082,
@@ -4785,10 +4814,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-1ff6da64ea4c.glb",
-        "bytes": 1330204,
+        "url": "/models/details/pan-exterior-7fbb72ab6952.glb",
+        "bytes": 1331128,
         "triangles": 111961,
-        "sha256": "1ff6da64ea4c01cd8d728d284c406e26b80e0d65c295405747ad0d67bbe18944",
+        "sha256": "7fbb72ab6952c81ad6513d097d1a4f127989b8814098b4ab239090d0551208e0",
         "bounds": {
           "min": [
             53.72006607055664,
@@ -4803,10 +4832,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/pan-interior-a23abb17e8c0.glb",
-        "bytes": 733684,
+        "url": "/models/details/pan-interior-a92ae46b2fa9.glb",
+        "bytes": 734016,
         "triangles": 56212,
-        "sha256": "a23abb17e8c0e5c96effc0a64de1cc21c6b98642c09eb3c7ac1b365411f30f1e",
+        "sha256": "a92ae46b2fa9c758a4a7db4748ac8a70d1e6ae4e0d9fc6e8bc02edd92050ef75",
         "bounds": {
           "min": [
             -4.579999923706055,
@@ -4981,10 +5010,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/par-exterior-08652c778d3c.glb",
-        "bytes": 1335100,
+        "url": "/models/details/par-exterior-371c4a130038.glb",
+        "bytes": 1335652,
         "triangles": 100680,
-        "sha256": "08652c778d3c8a280c1d9e3e099de3b86a40d891a36f582d240ce85c4e1778d7",
+        "sha256": "371c4a130038048c53622d7efe6ed193227064b0ea25b464efea3ac48fd1f073",
         "bounds": {
           "min": [
             -49.058448791503906,
@@ -4999,10 +5028,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/par-interior-e51f3e8154f9.glb",
-        "bytes": 1222880,
+        "url": "/models/details/par-interior-39de2dc02e22.glb",
+        "bytes": 1223180,
         "triangles": 96344,
-        "sha256": "e51f3e8154f9f25501943556f4f31ab1ead4edef8b160088a4e556842263c633",
+        "sha256": "39de2dc02e22653407fea8425fbad15d2c69869318aca73a4e41698730e37896",
         "bounds": {
           "min": [
             -7.079999923706055,
@@ -5140,10 +5169,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pea-exterior-ebfe052afe6d.glb",
-        "bytes": 114448,
+        "url": "/models/details/pea-exterior-be1c3610075e.glb",
+        "bytes": 114912,
         "triangles": 8617,
-        "sha256": "ebfe052afe6d7ac4795a622afadab59632066d8d0db5fca141021470d35f4857",
+        "sha256": "be1c3610075e1f6f90490b64a391281ea15c56301b84b7e7938c7033d33281b8",
         "bounds": {
           "min": [
             -74.89566040039062,
@@ -5158,10 +5187,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/pea-interior-e1287011d835.glb",
-        "bytes": 930780,
+        "url": "/models/details/pea-interior-75e42ebe6640.glb",
+        "bytes": 931076,
         "triangles": 78660,
-        "sha256": "e1287011d835ab1dd4ce81b0b349f2455e0aa5288fd3069c438a5bc3a608ec9b",
+        "sha256": "75e42ebe6640bd25d9db3bebb1887edc40d8193d7133cbab73ebab6399185111",
         "bounds": {
           "min": [
             -9.75,
@@ -5304,10 +5333,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-306a544c045e.glb",
-        "bytes": 6195960,
+        "url": "/models/details/pel-exterior-04192b63bdc4.glb",
+        "bytes": 6196608,
         "triangles": 508895,
-        "sha256": "306a544c045ea0aa73fbd823b8478846765f5235c82e85ac0b54144d94d533bf",
+        "sha256": "04192b63bdc4fbe305674ab83dc3eb28d2b2b5c8f00d208764131f5af86d0714",
         "bounds": {
           "min": [
             100.59568786621094,
@@ -5322,10 +5351,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/pel-interior-fa734fc0df60.glb",
-        "bytes": 146340,
+        "url": "/models/details/pel-interior-303d0608cb95.glb",
+        "bytes": 146600,
         "triangles": 10956,
-        "sha256": "fa734fc0df601fe19e497f86d88b44152d18f94b6e4c3005c521c6c3ea0f3cb7",
+        "sha256": "303d0608cb956f246a036dd73f93295e3c18903475af91fbda3c4b24f40081c7",
         "bounds": {
           "min": [
             -3.4800000190734863,
@@ -5444,10 +5473,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/por-exterior-273ea1b3958f.glb",
-        "bytes": 1090412,
+        "url": "/models/details/por-exterior-bee14690b13b.glb",
+        "bytes": 1090960,
         "triangles": 82879,
-        "sha256": "273ea1b3958f6fc5b7de0cd9d2b045954ca22544d10baefb5f956f9e6afbe69c",
+        "sha256": "bee14690b13b8be0cd4904e6850043d1767790655d7ffa4485a394622ca5f450",
         "bounds": {
           "min": [
             -39.27674865722656,
@@ -5629,10 +5658,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sar-exterior-8ba7357a5276.glb",
-        "bytes": 1416784,
+        "url": "/models/details/sar-exterior-95c0dbde199c.glb",
+        "bytes": 1417608,
         "triangles": 112167,
-        "sha256": "8ba7357a5276e8797792631c2e3b82f92a6c36c07f0c2af869f461dfec08c3cb",
+        "sha256": "95c0dbde199ca13e08bc7d6ad6c18cd2d2c1c6ca50f8a3653819d0de5f07a466",
         "bounds": {
           "min": [
             -92.74727630615234,
@@ -5647,10 +5676,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/sar-interior-4a099bcd8062.glb",
-        "bytes": 262752,
+        "url": "/models/details/sar-interior-78612c7491c9.glb",
+        "bytes": 263012,
         "triangles": 18980,
-        "sha256": "4a099bcd8062b09b327fdf2759856fcdeca92aa85195dbcf4c62e77858f391ab",
+        "sha256": "78612c7491c95927d49d87a83497248fc1ccf080a86c268b5ef6b25795ddc119",
         "bounds": {
           "min": [
             -3.380000114440918,
@@ -5800,10 +5829,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-332ed3ece8f4.glb",
-        "bytes": 13529744,
+        "url": "/models/details/saw-exterior-598393e22ab5.glb",
+        "bytes": 13531072,
         "triangles": 1386183,
-        "sha256": "332ed3ece8f4931cce1ffafe8023291eb25c34a91e786db7a1af3cd66b7c9a3d",
+        "sha256": "598393e22ab5ae857d97bec9e94c02d92c5014e5fe61ffbd3e2f7d3e9e56cc34",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -5818,10 +5847,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-990c70852df9.glb",
-        "bytes": 157116,
+        "url": "/models/details/saw-interior-fd2518656c26.glb",
+        "bytes": 157196,
         "triangles": 11548,
-        "sha256": "990c70852df9e6d03e7dca07e306cd3b10ff1700c8a97fb6fb7815ebd7ba61ae",
+        "sha256": "fd2518656c2657c831d198a3cdb18b949b5de52c7c849a02294901a9298faff2",
         "bounds": {
           "min": [
             -75.58295440673828,
@@ -5859,12 +5888,12 @@
             "fov": 50
           },
           "gallery": "saw-denning-interior",
-          "interiorAsset": "/models/details/saw-denning-interior-4e2e6d9988ab.glb",
+          "interiorAsset": "/models/details/saw-denning-interior-8cbffff024cf.glb",
           "detailedInterior": {
-            "url": "/models/details/saw-denning-interior-4e2e6d9988ab.glb",
-            "bytes": 186644,
+            "url": "/models/details/saw-denning-interior-8cbffff024cf.glb",
+            "bytes": 187420,
             "triangles": 15976,
-            "sha256": "4e2e6d9988abf89ee41e9f6e51141fb90ec888cf243e050cd3c5ac5cfe41f42c",
+            "sha256": "8cbffff024cfb3c1d8ac5c547f6a3387db162363bdfbb665db440174c0f5a42f",
             "bounds": {
               "min": [
                 -6.199999809265137,
@@ -5914,12 +5943,12 @@
             "fov": 50
           },
           "gallery": "saw-three-tuns-interior",
-          "interiorAsset": "/models/details/saw-three-tuns-interior-ee4bfd3c3197.glb",
+          "interiorAsset": "/models/details/saw-three-tuns-interior-cd7ebccee216.glb",
           "detailedInterior": {
-            "url": "/models/details/saw-three-tuns-interior-ee4bfd3c3197.glb",
-            "bytes": 48760,
+            "url": "/models/details/saw-three-tuns-interior-cd7ebccee216.glb",
+            "bytes": 48948,
             "triangles": 4386,
-            "sha256": "ee4bfd3c31974fe48fb76e6a04857503dd6ef63c7717521ba261421b5a45cfd4",
+            "sha256": "cd7ebccee216b71b1a2837b8cc9f7e55bcf2efbe5ee15b9d3c404263445e3b03",
             "bounds": {
               "min": [
                 -5.28000020980835,
@@ -6046,10 +6075,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-cd1983d68b35.glb",
-        "bytes": 930820,
+        "url": "/models/details/shf-exterior-c3bcebb25a0b.glb",
+        "bytes": 931460,
         "triangles": 70706,
-        "sha256": "cd1983d68b3546d25de78690ae07de3f3312c34b1a72829d9a81db3708664882",
+        "sha256": "c3bcebb25a0b877ddd3759890469f71a7262f6451d95f6b7c6c646e9b1647e56",
         "bounds": {
           "min": [
             -44.019718170166016,
@@ -6267,10 +6296,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-1c66628c6f7b.glb",
-        "bytes": 5611956,
+        "url": "/models/details/sal-exterior-a447b3a6872f.glb",
+        "bytes": 5612856,
         "triangles": 462982,
-        "sha256": "1c66628c6f7bd26cf38335694013a19b16f80b2b5d911a265c83bb7e87302231",
+        "sha256": "a447b3a6872f5dde155b6175725dc49fe4999645a07cf6b8af42c0e69a57472e",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -6285,10 +6314,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/sal-interior-fae684dd8df4.glb",
-        "bytes": 527924,
+        "url": "/models/details/sal-interior-1c8cda7984b9.glb",
+        "bytes": 528296,
         "triangles": 42996,
-        "sha256": "fae684dd8df4788513577a4b7096408031c65cee02d4afe0ed6a387d303927ff",
+        "sha256": "1c8cda7984b9985f81c46807c119d64451fcf7ccd72e09dab342e4c477cf56dd",
         "bounds": {
           "min": [
             -5.079999923706055,
@@ -6450,10 +6479,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/stc-exterior-d24f22436c46.glb",
-        "bytes": 4271124,
+        "url": "/models/details/stc-exterior-ec73911aeb0b.glb",
+        "bytes": 4272188,
         "triangles": 352727,
-        "sha256": "d24f22436c467072de5e22a44c7a02733bf457eb8d6437ea4029321706d9f8d1",
+        "sha256": "ec73911aeb0b45c8958ed5c5e9a2998bf7606763eee9188a42939aa920c827f2",
         "bounds": {
           "min": [
             -17.60181427001953,
@@ -6468,10 +6497,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/stc-interior-954e7b3ae366.glb",
-        "bytes": 492420,
+        "url": "/models/details/stc-interior-f339dff42d75.glb",
+        "bytes": 492716,
         "triangles": 35468,
-        "sha256": "954e7b3ae3667a91e31f548dbd3cd236298ea382bff302b742265ea376230795",
+        "sha256": "f339dff42d75cfcaf4aeca267a5b68fee718f26043629d7c96fd1eb835358ff6",
         "bounds": {
           "min": [
             -3.5799999237060547,
