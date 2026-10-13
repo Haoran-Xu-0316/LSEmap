@@ -124,3 +124,7 @@ Observed stair counts: AccessAble, https://www.accessable.co.uk/london-school-of
 Blue Rain by Michael Brown: https://blogs.lse.ac.uk/lsehistory/2018/03/07/shimmering-cascades-of-light-blue-rain-by-michael-brown/
 The LRB artwork is an estimated static bright-point study from an archived estate photograph,
 not all23520 physical LEDs or the live library-driven display. Artwork credit: Michael Brown.
+
+Presentation sky: Kloppenheim 03 (Pure Sky), Greg Zaal and Jarod Guest, Poly Haven, CC0-1.0.
+https://polyhaven.com/a/kloppenheim_03_puresky
+The sky asset is not a photograph of the LSE campus.
