@@ -26,8 +26,8 @@ the online `/release.json`, then compare changed asset checksums and open the
 updated buildings on desktop and mobile before reporting release completion.
 Keep the existing Worker name, URL and self-hosted runtime dependencies.
 
-The optional sky and its source/license record belong to the verified release
-asset set. Gallery capture waits for the sky and records its renderer signature.
+The optional sky, two512px ground textures and their source/license record belong to the verified release
+asset set. Gallery capture waits for optional sky and ground loading and records its renderer signature.
 After renderer changes, regenerate all 125 gallery views before building.
 Campus transport uses browser-native gzip stream decoding, with raw segments as
 a compatibility fallback. A single version-checked file-backed browser cache
