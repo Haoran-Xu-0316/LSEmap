@@ -10,12 +10,15 @@ from pathlib import Path
 import hashlib
 import json
 import struct
+import re
 import bpy
 import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-MODEL = ROOT / 'result/blender/LSE_campus_detailed_v193.blend'
+AUTHORING = json.loads((ROOT / 'web/tools/building-metadata.json').read_text())
+VERSION = int(AUTHORING['sourceVersion'])
+MODEL = ROOT / f'result/blender/LSE_campus_detailed_v{VERSION}.blend'
 OUTPUT = ROOT / 'web/public/models'
 OUTPUT.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
@@ -30,7 +33,7 @@ bpy.context.window.scene = source_scene
 def source_geometry_name(obj):
     # A physical glazing replacement retains its source geometry policy.
     # Replacement naming must not change bevel/UV detail between views.
-    name=obj.name
+    name=obj.get('webGeometrySource', obj.name)
     if name.startswith('OLD_ENTRANCE192_'):
         # Optical-only replacement inherits the accepted door's UV/bevel policy.
         name=obj['originalObject']
@@ -56,7 +59,6 @@ bpy.context.view_layer.update()
 depsgraph = bpy.context.evaluated_depsgraph_get()
 # Camera presets and evidence are authored inputs, separate from generated assets.
 # A single snapshot replaces the old chain of historical stage manifests.
-AUTHORING = json.loads((ROOT / 'web/tools/building-metadata.json').read_text())
 records = AUTHORING['buildings']
 ROOM_SPACES = AUTHORING['spaces']
 assert len(records) == 31 and len({r['code'] for r in records}) == 31
@@ -121,6 +123,15 @@ def web_material(source):
             roughness = principled.inputs['Roughness'].default_value
             metallic = principled.inputs['Metallic'].default_value
             transmission = principled.inputs['Transmission Weight'].default_value
+    # The renderer must read material identity, not a collection's GLAZING prefix.
+    # Opaque legacy window proxies keep their optical role and their opacity.
+    name = source.name if source else ''
+    physical_glazing = transmission > 0.1 or bool(source and source.get('webClosedGlazing'))
+    named_glazing = bool(re.search(r'(?:^|_)glass(?:_|\.|$)', name, re.I) or
+                         re.search(r'(?:^|_)glazing(?:\.\d+)?$', name, re.I) or
+                         re.search(r'(?:^|_)glazing_(?:clear|optical|neutral|reflective|tinted)(?:_|$)', name, re.I) or
+                         re.fullmatch(r'MAR168_0[0-3]_0[01]_dielectric', name))
+    material['webSurfaceRole'] = 'glazing' if physical_glazing or named_glazing else 'opaque'
     node.inputs['Base Color'].default_value = color[:3] + (1,)
     node.inputs['Roughness'].default_value = max(0.12, roughness)
     node.inputs['Metallic'].default_value = min(1.0, metallic)
@@ -138,12 +149,26 @@ def web_material(source):
     descriptor = surface_descriptor(source)
     if descriptor:
         material['surfaceDetail'] = descriptor
-    if source and source.get('globeMap'):
-        image_node = next(n for n in source.node_tree.nodes if n.type == 'TEX_IMAGE')
+    if source and (source.get('globeMap') or source.get('webBaseColorMap')):
+        # Only explicitly authored, packed maps enter the release. Reference
+        # photographs elsewhere in the native file are never exported by inference.
+        image_node = next(n for n in source.node_tree.nodes if n.type == 'TEX_IMAGE' and n.image)
         texture = material.node_tree.nodes.new('ShaderNodeTexImage')
         texture.image = image_node.image
-        node.inputs['Base Color'].default_value = (1, 1, 1, 1)
-        material.node_tree.links.new(texture.outputs['Color'], node.inputs['Base Color'])
+        texture.interpolation = image_node.interpolation
+        tint = tuple(source.get('webBaseColorTint', (1, 1, 1, 1)))
+        if tint != (1, 1, 1, 1):
+            # A linked socket's default value is ignored. Express the tint with
+            # the same multiply node that the glTF exporter recognizes as a factor.
+            multiply = material.node_tree.nodes.new('ShaderNodeMixRGB')
+            multiply.blend_type = 'MULTIPLY'
+            multiply.inputs[0].default_value = 1
+            multiply.inputs[2].default_value = tint
+            material.node_tree.links.new(texture.outputs['Color'], multiply.inputs[1])
+            material.node_tree.links.new(multiply.outputs['Color'], node.inputs['Base Color'])
+        else:
+            node.inputs['Base Color'].default_value = (1, 1, 1, 1)
+            material.node_tree.links.new(texture.outputs['Color'], node.inputs['Base Color'])
     material_cache[key] = material
     return material
 
@@ -188,7 +213,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Joining differently named UV layers would put some facades in UV1 while
         # the browser samples UV0. Normalize only these temporary export meshes.
         # Accepted components retain their metric UVs at both viewing scales.
-        needs_uv = full_detail or original.name.startswith('MAR188_') or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and m.get('globeMap') for m in mesh.materials)
+        needs_uv = full_detail or original.name.startswith('MAR188_') or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and (m.get('globeMap') or m.get('webBaseColorMap')) for m in mesh.materials)
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
@@ -304,14 +329,33 @@ def export_scene(scene, filename):
     print('EXPORTED', filename, (OUTPUT / filename).stat().st_size, flush=True)
 
 
+def exterior_objects(record):
+    """Share the complete authored shell between the first overview and selection.
+
+    Public floors, roofs, stairs and visible furnishings already belong to the
+    selected exterior. Include them in the overview too, so transparent facades
+    do not change into an empty shell while background detail downloads.
+    """
+    code = record['code']
+    collection = bpy.data.collections.get(code + '_EXTERIOR')
+    if collection:
+        objects = list(collection.all_objects)
+    else:
+        root = next(c for c in bpy.data.collections['02_LSE_BUILDINGS'].children if c.name.startswith(code + '_'))
+        objects = [obj for child in root.children if 'INTERIOR' not in child.name and 'UNRESOLVED' not in child.name
+                   for obj in child.all_objects]
+    if record['interior'] and not record.get('interiorStudy'):
+        objects += list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
+    return list(dict.fromkeys(objects))
+
+
 campus_scene = bpy.data.scenes.new('WEB_CAMPUS')
 campus_root = bpy.data.collections['02_LSE_BUILDINGS']
 metadata = []
 for record in records:
     code = record['code']
-    root_collection = next(c for c in campus_root.children if c.name.startswith(code + '_'))
-    exterior = [o for c in root_collection.children if 'INTERIOR' not in c.name and 'UNRESOLVED' not in c.name for o in c.all_objects]
-    obj, bounds = clone_group(exterior, code, campus_scene)
+    exterior = exterior_objects(record)
+    obj, bounds = clone_group(exterior, code, campus_scene, hide_basement=code == 'LRB')
     interior = bpy.data.collections.get(record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study'))
     has_interior = bool(interior and any(o.type == 'MESH' for o in interior.all_objects))
     assert has_interior == record['interior'], f'Interior collection missing: {code}'
@@ -323,36 +367,43 @@ for collection_name, name in [('00_SITE', 'SITE'), ('01_CITY_CONTEXT_estimated_h
     collection = bpy.data.collections.get(collection_name)
     if collection:
         clone_group(collection.all_objects, name, campus_scene)
-generated_textures = []
-for material in bpy.data.materials:
-    if not material.get('globeMap'):
+# Approve only maps actually requested by the temporary campus materials.
+# A shared stone map is recorded once even when several facade materials use it.
+approved_maps = {}
+for source_name in material_cache:
+    source = bpy.data.materials.get(source_name)
+    if not source or not (source.get('globeMap') or source.get('webBaseColorMap')):
         continue
-    if not any(not obj.hide_render and obj.type == 'MESH' and material.name in obj.data.materials
-               for obj in bpy.data.collections['00_SITE'].all_objects):
-        continue
-    node = next(n for n in material.node_tree.nodes if n.type == 'TEX_IMAGE')
-    assert node.image.packed_file, 'Globe cartography must be packed in the native model'
-    generated_textures.append({'name': node.image.name,
-        'sha256': hashlib.sha256(bytes(node.image.packed_file.data)).hexdigest(),
-        'source': 'Natural Earth public-domain cartography',
-        'scope': 'Authored political map with photo-estimated Australia and India fills; no source photograph'})
-assert len(generated_textures) == 1, 'Expected one visible authored globe map'
+    node = next(n for n in source.node_tree.nodes if n.type == 'TEX_IMAGE' and n.image)
+    assert node.image.packed_file, 'Authored image maps must be packed in the native model'
+    data = bytes(node.image.packed_file.data)
+    digest = hashlib.sha256(data).hexdigest()
+    globe = bool(source.get('globeMap'))
+    approved_maps[digest] = {'name': node.image.name, 'sha256': digest, 'bytes': len(data),
+        'kind': 'cartography' if globe else 'material-finish',
+        'source': 'Natural Earth public-domain cartography' if globe else 'Original generated material finish',
+        'scope': ('Authored political map with photo-estimated Australia and India fills; no source photograph'
+                  if globe else source.get('finishScope', 'Estimated architectural material finish'))}
+assert sum(record['kind'] == 'cartography' for record in approved_maps.values()) == 1
 export_scene(campus_scene, 'campus.glb')
-# glTF names an image by its file basename, which can differ from Blender's ID.
-# Match the embedded bytes to the approved packed map before recording that name.
+# glTF uses file basenames. Match every embedded image to its approved native
+# bytes; this also prevents an unrelated archive photograph entering a release.
 campus_bytes = (OUTPUT / 'campus.glb').read_bytes()
 json_length = struct.unpack_from('<I', campus_bytes, 12)[0]
 campus_document = json.loads(campus_bytes[20:20+json_length])
 embedded_images = campus_document.get('images', [])
-assert len(embedded_images) == len(generated_textures) == 1
-image = embedded_images[0]
-assert 'bufferView' in image and not image.get('uri')
-view = campus_document['bufferViews'][image['bufferView']]
-start = 28 + json_length + view.get('byteOffset', 0)
-image_sha256 = hashlib.sha256(campus_bytes[start:start+view['byteLength']]).hexdigest()
-assert image_sha256 == generated_textures[0]['sha256'], 'Export changed authored globe map'
-generated_textures[0]['nativeImage'] = generated_textures[0]['name']
-generated_textures[0]['name'] = image['name']
+assert len(embedded_images) == len(approved_maps), 'Unexpected or missing campus image map'
+generated_textures = []
+for image in embedded_images:
+    assert 'bufferView' in image and not image.get('uri'), 'Campus maps must be self-contained'
+    view = campus_document['bufferViews'][image['bufferView']]
+    start = 28 + json_length + view.get('byteOffset', 0)
+    digest = hashlib.sha256(campus_bytes[start:start+view['byteLength']]).hexdigest()
+    assert digest in approved_maps, 'Export altered an approved native image map'
+    record = dict(approved_maps[digest])
+    record['nativeImage'] = record['name']
+    record['name'] = image['name']
+    generated_textures.append(record)
 for room in ROOM_SPACES:
     collection = bpy.data.collections[room['collection']]
     if collection.name not in source_scene.collection.children:
@@ -433,12 +484,7 @@ for record in metadata:
     code = record['code']
     if not next(r['exportExterior'] for r in records if r['code'] == code):
         continue
-    objects = list(bpy.data.collections[code + '_EXTERIOR'].all_objects)
-    if record['interior'] and not record.get('interiorStudy'):
-        # Floor plates, roof slabs and public stairs complete the visible shell.
-        # The separate interior view below retains its deliberate cutaway scope.
-        objects += list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
-    objects = list(dict.fromkeys(objects))
+    objects = exterior_objects(record)
     record['detailedExterior'] = export_detail(objects, code, 'exterior')
     if record['interior']:
         objects = list(bpy.data.collections[record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study')].all_objects)
@@ -467,7 +513,7 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': '193', 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': str(VERSION), 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
