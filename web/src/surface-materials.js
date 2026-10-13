@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { GROUND_FINISHES } from "./ground-textures.js";
 
 // Recreate source-node surface parameters without distributing reference photographs.
 // Noise is an approximation of Blender's shader, not a baked Cycles result.
@@ -135,7 +136,7 @@ export function refineMaterialFinish(material, environmentMap = null) {
   material.needsUpdate = true;
 }
 
-export function applySurfaceDetail(material) {
+export function applySurfaceDetail(material, groundTextures = null) {
   if (detailedMaterials.has(material)) return;
   const kind = outdoorSurfaceKind(material.name);
   const asphalt = kind === 'asphalt', bark = kind === 'bark';
@@ -144,6 +145,9 @@ export function applySurfaceDetail(material) {
   const paving = pavingGrid || kind === 'stone' || asphalt;
   const grass = kind === 'grass';
   let detail = material.userData.surfaceDetail;
+  // An approved authored map already supplies the visible finish. Do not
+  // overwrite its sampled colour with the procedural approximation below.
+  if (material.map) return;
   if (!detail && outdoor) {
     // Preserve mapped geometry and palette; resolve aggregate and foliage tones
     // in the shared renderer rather than adding subpixel blades or leaf meshes.
@@ -173,7 +177,14 @@ export function applySurfaceDetail(material) {
     surfaceMortar: { value: color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
-  material.customProgramCacheKey = () => `lse-surface-finish8-${pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  const groundAsset = groundTextures && paving ? GROUND_FINISHES.find(asset => asset.kind === (asphalt ? 'asphalt' : 'stone')) : null;
+  if (groundAsset) {
+    uniforms.groundFinish = groundTextures[groundAsset.kind];
+    uniforms.groundReady = groundTextures.ready;
+    uniforms.groundMetres = {value:groundAsset.metres};
+    uniforms.groundMean = {value:groundAsset.mean};
+  }
+  material.customProgramCacheKey = () => `lse-surface-finish9-${groundAsset ? "captured" : "procedural"}-${pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -187,6 +198,7 @@ export function applySurfaceDetail(material) {
       varying vec2 vSurfaceUv;
       uniform float surfaceScale, surfaceBump;
       uniform vec3 surfaceColorA, surfaceColorB, surfaceMortar, surfaceBrick;
+      ${groundAsset ? 'uniform sampler2D groundFinish; uniform float groundReady, groundMetres, groundMean;' : ''}
       ${noiseGLSL}
     ` + shader.fragmentShader;
     const pattern = brick ? `
@@ -257,6 +269,17 @@ export function applySurfaceDetail(material) {
       vec3 finePoint = vSurfacePosition * 85.0;
       float grainVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(finePoint)));
       float fineGrain = grainVisibility > .001 ? (surfaceNoise(finePoint) - 0.5) * grainVisibility : 0.0;
+      ${groundAsset ? `
+      if (groundReady > .5) {
+        // World metres retain the same scale on base campus and detailed meshes.
+        // Captured wear enriches the authored palette; modelled joints stay intact.
+        vec3 groundSample = texture2D(groundFinish, vSurfacePosition.xz / groundMetres).rgb;
+        float groundTone = dot(groundSample, vec3(.2126, .7152, .0722)) / groundMean;
+        vec3 groundNormal = normalize(cross(dFdx(vSurfacePosition), dFdy(vSurfacePosition)));
+        float groundFace = smoothstep(.65, .95, abs(groundNormal.y));
+        surfaceColor *= mix(1.0, clamp(groundTone, .72, 1.26), groundFace * .40);
+      }
+      ` : ''}
       diffuseColor.rgb = surfaceColor * (1.0 + fineGrain * 0.08);
       surfaceHeight += fineGrain * 0.00018;
     `);
@@ -304,7 +327,7 @@ export function prepareGlazingSides(material) {
   if (material.transparent && (isGlazingMaterial(material) || /optics/i.test(material.name))) material.forceSinglePass = true;
 }
 
-export function prepareDetailedModel(group, environmentMap = null) {
+export function prepareDetailedModel(group, environmentMap = null, groundTextures = null) {
   group.visible = false;
   group.traverse((object) => {
     if (!object.isMesh) return;
@@ -312,7 +335,7 @@ export function prepareDetailedModel(group, environmentMap = null) {
     for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
       prepareGlazingSides(material);
       refineMaterialFinish(material, environmentMap);
-      applySurfaceDetail(material);
+      applySurfaceDetail(material, groundTextures);
     }
   });
 }
