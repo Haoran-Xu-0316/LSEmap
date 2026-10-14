@@ -69,6 +69,25 @@ def geometry_policy_name(obj):
     return name.removeprefix('SAL184_').removeprefix('SAL183_').removeprefix('GLASS181_')
 
 
+def component_destination(report, default_collection):
+    """New room studies live in their own scenes, outside the campus overview."""
+    name = report.get('destinationCollection', default_collection)
+    spec = report.get('collectionSpec')
+    if not spec:
+        return bpy.data.collections[name]
+    assert spec['kind'] == 'independent-room', 'Only isolated room creation is supported'
+    assert spec['name'] == name == report['targetCollection'], 'Room collection identity mismatch'
+    assert name not in bpy.data.collections and spec['scene'] not in bpy.data.scenes, 'Room identity already exists'
+    collection = bpy.data.collections.new(name)
+    collection['roomSample'] = True
+    if report.get('space'):
+        collection['roomCode'] = report['space']['label']
+        collection['authoringRecord'] = json.dumps(report['space'], ensure_ascii=False)
+    scene = bpy.data.scenes.new(spec['scene'])
+    scene.collection.children.link(collection)
+    return collection
+
+
 def verify_saved_model(destination=DESTINATION, proof=PROOF):
     record = json.loads((proof / 'building-refinement.json').read_text())
     bpy.ops.wm.open_mainfile(filepath=str(destination))
@@ -83,6 +102,11 @@ def verify_saved_model(destination=DESTINATION, proof=PROOF):
         assert not bpy.data.objects[name].hide_render, name
     assert set(bpy.data.objects) == {bpy.data.objects[name] for name in baseline['fingerprints']} | {
         bpy.data.objects[name] for name in record['addedObjects']}
+    for room in record.get('independentRooms', []):
+        collection = bpy.data.collections[room['collection']]
+        assert set(obj.name for obj in collection.all_objects) == set(room['objects'])
+        assert collection.name in bpy.data.scenes[room['scene']].collection.children
+        assert not any(name in bpy.data.scenes['00_CAMPUS_COMPLETE'].objects for name in room['objects']), 'Independent room leaked into campus'
     digest = hashlib.sha256(destination.read_bytes()).hexdigest()
     assert digest == record['sourceModelSha256']
     result = dict(sourceModelSha256=digest, originalsVerified=len(baseline['fingerprints']),
@@ -102,7 +126,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
     before = {obj.name: object_fingerprint(obj) for obj in bpy.data.objects}
     visibility = {obj.name: obj.hide_render for obj in bpy.data.objects}
     (proof / 'baseline-state.json').write_text(json.dumps(dict(fingerprints=before, visibility=visibility)) + '\n')
-    added, archived, changes = [], [], []
+    added, archived, changes, independent_rooms = [], [], [], []
     for code, report_path, default_collection in reports:
         report = json.loads((ROOT / report_path).read_text())
         source_sha = report.get('baselineSha256', report.get('sourceModelSha256'))
@@ -112,6 +136,9 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
         names = report['addedObjects']
         assert len(names) == len(set(names)) and not set(names) & set(before), code
         assert not set(report['archivedObjects']) & set(archived), 'Overlapping component ownership'
+        destination_collection = component_destination(report, default_collection)
+        if report.get('collectionSpec'):
+            independent_rooms.append(dict(collection=destination_collection.name, scene=report['collectionSpec']['scene'], objects=list(names)))
         with bpy.data.libraries.load(str(path), link=False) as (source, target):
             assert set(names) <= set(source.objects)
             target.objects = list(names)
@@ -124,7 +151,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
                 obj['webGeometrySource'] = geometry_policy_name(original)
                 collections = list(original.users_collection)
             else:
-                collections = [bpy.data.collections[report.get('destinationCollection', default_collection)]]
+                collections = [destination_collection]
             for collection in collections:
                 if obj.name not in collection.objects:
                     collection.objects.link(obj)
@@ -147,7 +174,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
     record = dict(version=version, baselineSha256=baseline_sha,
                   sourceModelSha256=hashlib.sha256(destination.read_bytes()).hexdigest(),
                   changes=changes, addedObjects=added, archivedObjects=archived, changedObjects=[],
-                  addedFingerprints=new_state, allUnrelatedMeshesPreserved=True,
+                  addedFingerprints=new_state, allUnrelatedMeshesPreserved=True, independentRooms=independent_rooms,
                   scope=scope,
                   limitations='Retained estimated building geometry and interior studies remain incomplete; no claim of an as-built survey.')
     (proof / 'building-refinement.json').write_text(json.dumps(record, indent=2) + '\n')
