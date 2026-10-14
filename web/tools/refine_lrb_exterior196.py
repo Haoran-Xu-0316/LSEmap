@@ -110,7 +110,7 @@ def preview(phase):
     world.use_nodes = True
     world.node_tree.nodes['Background'].inputs[1].default_value = .65
     env = world.node_tree.nodes.new('ShaderNodeTexEnvironment')
-    env.image = bpy.data.images.load(str(ROOT / 'web/public/environment/kloppenheim-sky-1k.hdr'), check_existing=True)
+    env.image = bpy.data.images.load(str(ROOT / 'web/public/environment/kloppenheim-daylight-1k.hdr'), check_existing=True)
     world.node_tree.links.new(env.outputs['Color'], world.node_tree.nodes['Background'].inputs[0])
     scene.world = world
     light_data = bpy.data.lights.new(scene.name + '_sun', 'SUN')
