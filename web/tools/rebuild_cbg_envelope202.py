@@ -19,8 +19,8 @@ from integrate_exterior_round194 import object_fingerprint
 from refine_ground_orientation199 import closed_islands, signed_volume
 from refine_street_connections194 import corner_signature
 from build_room_samples167 import RoomGeometry
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v201.blend'
-BASE_SHA = '83f8532de4378e614f53a327b8c3397ae375e880d655bd584f5e0ea4980f2bec'
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v203.blend'
+BASE_SHA = '976e645ef4b58e19485feff1fe3ff2fb64d9b5d497739642a2429548d821df8a'
 OUTPUT = ROOT / 'result/blender/cbg-envelope202'
 PREFIX = 'CBG202_'
 
@@ -213,7 +213,7 @@ def build_candidate():
     path = OUTPUT / 'cbg-envelope202-component.blend'
     bpy.data.libraries.write(str(path), {bpy.data.objects[name] for name in added}, fake_user=True, compress=True)
     fingerprints = {name: object_fingerprint(bpy.data.objects[name]) for name in added}
-    report = {'status': 'private-partial-reconstruction-not-for-release', 'baselineSha256': BASE_SHA,
+    report = {'status': 'private-partial-reconstruction-not-for-release', 'baselineSha256': BASE_SHA, 'baselinePath':str(BASE.relative_to(ROOT)),
               'componentPath': str(path.relative_to(ROOT)), 'componentSha256': digest(path),
               'targetCollection': 'CBG_EXTERIOR', 'addedObjects': added,
               'archivedObjects': [o.name for o in sources], 'changedObjects': [],
