@@ -2149,6 +2149,12 @@
           "addedObjects": 0,
           "changedObjects": 20,
           "paintMaterials": 12
+        },
+        {
+          "version": 212,
+          "status": "bounded-historical-public-corridor-connected",
+          "audit": "result/blender/old-public212/audit.json",
+          "scope": "Connect2011-source public foyer to central/east T corridor;3 batched meshes,75.14m2 floor,8 support checks and0 exterior intersection pairs. West branch registration conflict retained; complete/current floor and lift/stair geometry unverified."
         }
       ],
       "houghtonAccessReview": {
@@ -3369,12 +3375,12 @@
       "code": "OLD",
       "collection": "OLD_MAIN_FOYER174",
       "label": "主入口门厅",
-      "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和走廊拱口可见；尺度、家具和高度为估计，未建立侧向电梯及相邻房间，也不证明当前布置。",
+      "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和拱口保留，补约75.14㎡中央喉口及东侧公共横廊；尺度与标高估算。西支路存在外壳配准冲突，侧梯、升降机及完整楼层尚未建立，不证明当前布置。",
       "gallery": "old-foyer-interior",
       "interiorStudy": {
         "kind": "registered-historical-space",
         "label": "主入口门厅",
-        "scope": "2011年历史布局，门宽注册与家具尺寸估计；仅入口空间。"
+        "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和拱口保留，补约75.14㎡中央喉口及东侧公共横廊；尺度与标高估算。西支路存在外壳配准冲突，侧梯、升降机及完整楼层尚未建立，不证明当前布置。"
       },
       "interiorView": {
         "position": [
@@ -3644,6 +3650,16 @@
       ],
       "sourceDate": "2026-09-12 OSM archive; Strand relation3, Sheffield way9 and public park way38 rechecked2026-10-15",
       "limitations": "Mapped geometry is not a current measured survey. Tile size/course alignment, colours, fence height and section remain estimates. Existing eight path/gate connections retained; no invented access state."
+    },
+    "courts212": {
+      "version": 212,
+      "scope": "Recover1586.38m2 mapped whole-facility hardcourt from five overlapping grass pitch sheets. Three tennis courts, two transverse netball overlays and three tennis-mode nets share one physical surface.",
+      "audit": "result/blender/park-courts212/audit.json",
+      "sources": [
+        "https://camdenactive.camden.gov.uk/sports/lincolnsinnfields/",
+        "https://www.openstreetmap.org/way/301471945"
+      ],
+      "limitations": "Operator image is undated; source boundary is archivedOSM. Internal marking ratios, paint tones and net dimensions remain fitted estimates, not a measured current survey."
     }
   },
   "environmentReview": {
@@ -3702,6 +3718,19 @@
       "hdrBytes": 1435119,
       "backdropBytes": 60292,
       "scope": "CC0 static partly cloudy sky, matching HDR reflections and48-degree presentation key light. Sky and HDR transfer together; no animated cloud mesh or invented water body. Historical daylight198 source remains available only for older Blender tools."
+    },
+    "strandLandmark212": {
+      "version": 212,
+      "name": "St Clement Danes",
+      "audit": "result/blender/strand-church212/audit.json",
+      "scope": "Restore omitted mapped645.61m2 church footprint and registered west tower; source-informed nave, apsidal east end, lead roofs, clock and three open octagonal steeple stages.",
+      "sources": [
+        "https://historicengland.org.uk/listing/the-list/list-entry/1237099",
+        "https://stclementdanesraf.org/steeple/",
+        "https://www.stace.co.uk/news-insights/milestone-reached-at-st-clement-danes-church/"
+      ],
+      "currentMilestone": "Project administrator2026-09-24 publication confirms steeple rebuild milestone2026-09-10. This does not confirm removal of all site scaffolding or final works completion.",
+      "limitations": "Mapped footprint and west tower alignment;42.3m overall height, elevation dimensions, finish and secondary roof construction are visual estimates. No complete church interior."
     }
   },
   "glazingReview": {
@@ -3745,7 +3774,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 211,
+  "sourceVersion": 212,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
