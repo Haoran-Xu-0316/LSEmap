@@ -3320,6 +3320,58 @@
         ],
         "fov": 48
       }
+    },
+    {
+      "id": "old-321",
+      "code": "OLD",
+      "collection": "OLD321_ROOM200_study",
+      "label": "OLD.3.21分组教室",
+      "gallery": "old-321-interior",
+      "scope": "依据LSE官方OLD.3.21历史平面与照片建立32座教室：2×2四组、每组8座、浅色拼桌、黑色椅子、中央投影与两侧弧形教学面、前右双门和左侧窗。尺寸、层高及门窗立面估计；后部为明确剖切边界，3.21A、3.2B与REF AREA不计入学生教室，不推断整层连通，不代表2026年现状。",
+      "interiorView": {
+        "position": [
+          15.2,
+          13.6,
+          -17.8
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 48
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OLD.3.21分组教室",
+        "scope": "依据LSE官方OLD.3.21历史平面与照片建立32座教室：2×2四组、每组8座、浅色拼桌、黑色椅子、中央投影与两侧弧形教学面、前右双门和左侧窗。尺寸、层高及门窗立面估计；后部为明确剖切边界，3.21A、3.2B与REF AREA不计入学生教室，不推断整层连通，不代表2026年现状。"
+      }
+    },
+    {
+      "id": "mar-107",
+      "code": "MAR",
+      "collection": "MAR107_ROOM200_study",
+      "label": "MAR.1.07研讨教室",
+      "gallery": "mar-107-interior",
+      "scope": "依据LSE官方MAR.1.07历史平面与照片建立20座研讨教室：外围U形16座、中央4座、10张双人桌、单门与后侧双格窗带；保留单投影幕、相邻木格栅墙两块白板、灰地毯和黑椅。尺寸、层高、窗高及照片与平面墙面对应关系估计；不推断整层连通，不代表2026年现状。",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "MAR.1.07研讨教室",
+        "scope": "依据LSE官方MAR.1.07历史平面与照片建立20座研讨教室：外围U形16座、中央4座、10张双人桌、单门与后侧双格窗带；保留单投影幕、相邻木格栅墙两块白板、灰地毯和黑椅。尺寸、层高、窗高及照片与平面墙面对应关系估计；不推断整层连通，不代表2026年现状。"
+      },
+      "interiorView": {
+        "position": [
+          -11.6,
+          10.0,
+          -12.6
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 48
+      }
     }
   ],
   "presentationReview": {
@@ -3495,5 +3547,27 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 199
+  "sourceVersion": "200",
+  "roomReview200": {
+    "rooms": [
+      "OLD.3.21",
+      "MAR.1.07"
+    ],
+    "scope": "Independent historical room studies from paired official plans and photos; dimensions and wall registration estimated; no full floor connectivity claimed",
+    "preserved": "All original exterior, rooms and public realm geometry"
+  },
+  "cbgGridReview200": {
+    "scope": "Read-only structural grid comparison against independently scaled2016 architect plan",
+    "designGridSpansMetres": [
+      6.045279032780848,
+      6.1853986665039455,
+      6.041612140359546,
+      5.971513375299595,
+      6.045279032780848,
+      6.045279032780848,
+      6.049757771860296
+    ],
+    "inheritedModelSpanMetres": 8.166666666666666,
+    "decision": "Roof candidate remains excluded pending structural-grid and floor-schedule reconciliation; design evidence is not current built survey"
+  }
 }
