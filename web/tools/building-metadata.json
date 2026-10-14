@@ -434,6 +434,16 @@
         "reversedShells": 264,
         "batchCount": 4,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "atriumReview209": {
+        "version": 209,
+        "scope": "Add the missing Sounding Board oak return wall and two transverse cantilever galleries in the independent public-atrium study. Preserve entrance glazing, central void and separate classroom. Historical built photographs, estimated dimensions, not a current complete fitout.",
+        "addedObjects": 30,
+        "referenceUrls": [
+          "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/",
+          "https://www.willebrand.com/en/projects/lse-london-school-of-economics-grimshaw-architects.398"
+        ],
+        "photographDate": "unknown"
       }
     },
     {
@@ -1943,7 +1953,13 @@
           ],
           "audit": "result/blender/mar_interior177/verification.json"
         }
-      ]
+      ],
+      "glazingReview209": {
+        "version": 209,
+        "scope": "Seven glass batches reduce intrinsic cyan75percent at unchanged linear luminance, geometry, UVs and original alpha/transmission. Concrete is unchanged; north elevation remains naturally backlit. Unbacked opaque window proxies are not opened.",
+        "referenceUrl": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
+        "photographDate": "unknown"
+      }
     },
     {
       "code": "OLD",
@@ -2140,6 +2156,13 @@
           "data/collections/old-clare-reference/front.png"
         ],
         "limitations": "The original stone map approximates tonal variation; it is not photographed or measured weathering."
+      },
+      "mansardReview209": {
+        "version": 209,
+        "scope": "Seventeen photographed Houghton mansard brick strips share continuous metric masonry UVs;56 boundary stations agree within0.000002m. Grey-brown brick and pale mortar follow built photographs; original UV layer, geometry, glass and unseen rear roof are retained.",
+        "referenceUrl": "https://webbyates.com/projects/the-old-building/",
+        "projectCompletion": 2024,
+        "photographDate": "unknown"
       }
     },
     {
@@ -3654,7 +3677,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 208,
+  "sourceVersion": 209,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -3700,5 +3723,13 @@
       "https://tyrensakt.com/projects/lse-centre-building/"
     ],
     "roofCandidateMerged": false
+  },
+  "pedestrianReview209": {
+    "version": 209,
+    "scope": "Match645 existing native footway strips to234 archived OSM ways. Respect50 explicit asphalt ways, dissolve repeated coverage and expose mapped path footprints beneath two park grass sheets. Retain approximate1.6m width, routes and original heights.",
+    "source": "result/blender/site_geometry.json",
+    "sourceRetrievalDate": "2026-09-12",
+    "license": "ODbL-1.0",
+    "limitations": "Inherited mapped alignment and widths, not a measured current street survey. Existing central detailed paving and water features are unchanged."
   }
 }
