@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "208",
-  "sourceModelSha256": "da07d198617bd18bceaece14682b9d0995a288655b6c5aa0ac8d2765e883b92c",
+  "version": "209",
+  "sourceModelSha256": "6398f422e2fefde66c33e0d87a36092bfad46b7fee69494d5c955caae443e455",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -893,6 +893,16 @@
         "batchCount": 4,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "atriumReview209": {
+        "version": 209,
+        "scope": "Add the missing Sounding Board oak return wall and two transverse cantilever galleries in the independent public-atrium study. Preserve entrance glazing, central void and separate classroom. Historical built photographs, estimated dimensions, not a current complete fitout.",
+        "addedObjects": 30,
+        "referenceUrls": [
+          "https://grimshaw.global/projects/education-and-science/london-school-of-economics-new-academic-building/",
+          "https://www.willebrand.com/en/projects/lse-london-school-of-economics-grimshaw-architects.398"
+        ],
+        "photographDate": "unknown"
+      },
       "bounds": {
         "min": [
           -138.37171936035156,
@@ -960,10 +970,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-90da621d308f.glb",
-        "bytes": 2751052,
-        "triangles": 236314,
-        "sha256": "90da621d308f0899b2820c62334ad68ff406bf7dc540f94ad83e9862dfec8b85",
+        "url": "/models/details/ckk-exterior-529657bfffff.glb",
+        "bytes": 2956948,
+        "triangles": 252994,
+        "sha256": "529657bfffff621df37d720b5c31ccf1c85fc0920dc7d7d7eb0650d1b8363b66",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -978,10 +988,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/ckk-interior-ed5a18b96302.glb",
-        "bytes": 689556,
-        "triangles": 70212,
-        "sha256": "ed5a18b963028e2c9b0a5edca6b3519ebcf2b827e0317a34c75a0bde8dc992c7",
+        "url": "/models/details/ckk-interior-e87158264a4c.glb",
+        "bytes": 897320,
+        "triangles": 86892,
+        "sha256": "e87158264a4ca95ac47f36531539783e1dc452e939c52ddb02c74162cd791b88",
         "bounds": {
           "min": [
             -129.93069458007812,
@@ -4218,6 +4228,12 @@
           "audit": "result/blender/mar_interior177/verification.json"
         }
       ],
+      "glazingReview209": {
+        "version": 209,
+        "scope": "Seven glass batches reduce intrinsic cyan75percent at unchanged linear luminance, geometry, UVs and original alpha/transmission. Concrete is unchanged; north elevation remains naturally backlit. Unbacked opaque window proxies are not opened.",
+        "referenceUrl": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
+        "photographDate": "unknown"
+      },
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -4285,10 +4301,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-774e284fef44.glb",
-        "bytes": 3148188,
+        "url": "/models/details/mar-exterior-385ccd73789b.glb",
+        "bytes": 3148364,
         "triangles": 289265,
-        "sha256": "774e284fef44567bc1a6bbe27d698c40fb0ad039d71c701201d92bf61b9f7a70",
+        "sha256": "385ccd73789b61b9eaa9dc5efae0a3a41d62b3bcefa78413a0c8bd713694746e",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -4628,6 +4644,13 @@
         ],
         "limitations": "The original stone map approximates tonal variation; it is not photographed or measured weathering."
       },
+      "mansardReview209": {
+        "version": 209,
+        "scope": "Seventeen photographed Houghton mansard brick strips share continuous metric masonry UVs;56 boundary stations agree within0.000002m. Grey-brown brick and pale mortar follow built photographs; original UV layer, geometry, glass and unseen rear roof are retained.",
+        "referenceUrl": "https://webbyates.com/projects/the-old-building/",
+        "projectCompletion": 2024,
+        "photographDate": "unknown"
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -4695,10 +4718,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-e56d68357458.glb",
-        "bytes": 19884456,
+        "url": "/models/details/old-exterior-9eedd0338086.glb",
+        "bytes": 19884512,
         "triangles": 1670400,
-        "sha256": "e56d6835745820ff520631815414695210304aee95d3879f71e5ad8e4ddce4bd",
+        "sha256": "9eedd0338086620ce7c3002cfcb2fb7ddbe27196914d64725a9b71d51fc00b93",
         "bounds": {
           "min": [
             -39.1646614074707,
