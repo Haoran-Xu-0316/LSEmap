@@ -754,6 +754,11 @@
         "reversedShells": 316,
         "batchCount": 2,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorEvidenceReview": {
+        "version": 198,
+        "status": "read-only-evidence-check",
+        "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
       }
     },
     {
@@ -2200,6 +2205,11 @@
         "reversedShells": 73,
         "batchCount": 6,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorEvidenceReview": {
+        "version": 198,
+        "status": "read-only-evidence-check",
+        "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
       }
     },
     {
@@ -3408,7 +3418,16 @@
       "browserVerification": "result/web/ground-acceptance/verification.json"
     },
     "groundReliefVersion": 197,
-    "groundReliefScope": "Shared CC0 asphalt and stone height/roughness maps, filtered in world metres. Presentation finish, no measured site ageing or altered road geometry. Existing daylight/cloud sky retained; no speculative water body added."
+    "groundReliefScope": "Shared CC0 asphalt and stone height/roughness maps, filtered in world metres. Presentation finish, no measured site ageing or altered road geometry. Existing daylight/cloud sky retained; no speculative water body added.",
+    "roadNetworkVersion": 198,
+    "roadNetworkScope": "Union of397 existing asphalt strips removes6562.809 square metres of repeated coplanar coverage. Original approximate boundary and23 holes retained within0.1mm computational tolerance; no inferred routes or road widths.",
+    "daylight198": {
+      "version": 198,
+      "source": "https://polyhaven.com/a/kloppenheim_05_puresky",
+      "path": "/environment/kloppenheim-daylight-1k.hdr",
+      "bytes": 1086297,
+      "scope": "Static CC0 presentation sky shared by background and glazing. Downward architectural views remain neutral; near-horizontal views use hysteresis. Not an LSE sky survey."
+    }
   },
   "glazingReview": {
     "version": 181,
@@ -3451,5 +3470,5 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 197
+  "sourceVersion": 198
 }
