@@ -152,6 +152,13 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
                 collections = list(original.users_collection)
             else:
                 collections = [destination_collection]
+            # Registered whole-building assemblies carry explicit exterior or
+            # public-interior ownership. The native alias still supplies the
+            # accepted geometry policy, but must not relocate a new floor or stair.
+            authored_collection = obj.get('destinationCollection')
+            if authored_collection:
+                assert authored_collection in bpy.data.collections, authored_collection
+                collections = [bpy.data.collections[authored_collection]]
             for collection in collections:
                 if obj.name not in collection.objects:
                     collection.objects.link(obj)
