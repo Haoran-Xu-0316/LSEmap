@@ -25,6 +25,24 @@
     "label": "Cheng Kin Ku公共中庭"
   },
   {
+    "code": "CKK",
+    "name": "ckk-sounding-board-interior",
+    "label": "公共中庭木墙与双层廊桥",
+    "view": {
+      "position": [
+        -111.61483764648438,
+        3.5999999046325684,
+        -80.34170532226562
+      ],
+      "target": [
+        -105.69605255126953,
+        6.599999904632568,
+        -65.69219970703125
+      ],
+      "fov": 65
+    }
+  },
+  {
     "code": "CLM",
     "name": "clm-exterior",
     "label": "Clement House曲面立面与临街护栏"
