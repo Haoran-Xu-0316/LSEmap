@@ -1,19 +1,19 @@
 {
-  "version": "206",
-  "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+  "version": "207",
+  "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
   "renderer": "campus-viewer",
-  "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-  "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
+  "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+  "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
   "images": [
     {
       "name": "61a-exterior",
       "code": "61A",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 155548,
-      "sha256": "5b64788f4895b23a8a75bdcc71f7b7214f4883f4e3296a52d0d241fe93527e49",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 161916,
+      "sha256": "0fa6ad10f60163924f085f8478008a034c510bd42d32cbd8c68a795c3e4a7c70",
       "view": {
         "position": [
           -136.14639045113876,
@@ -34,12 +34,12 @@
     {
       "name": "cbg-exterior",
       "code": "CBG",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 260686,
-      "sha256": "a4f4ce956acf76818a611b5bc53622cdc9f5d57855d95a09c14330fd695255b8",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 269258,
+      "sha256": "4d8e455d06dbbee86755954dc7f635e0a850a757f843042ff8991edf7de17d98",
       "view": {
         "position": [
           -74.79694057376946,
@@ -60,12 +60,12 @@
     {
       "name": "ckk-exterior",
       "code": "CKK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 119622,
-      "sha256": "2e0ef4a925bd4f983c9cd1ee6d4570b3585dcb608c9fabaac35c255981316bd9",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 121894,
+      "sha256": "e82f4933df04900c195d34fabd52d2dbd42555d73e425f267f057db740763e44",
       "view": {
         "position": [
           -11.230418762479218,
@@ -86,12 +86,12 @@
     {
       "name": "ckk-entrance",
       "code": "CKK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 137468,
-      "sha256": "64e0fbf80b376cc2116c3efec4e0b1b8708300f2912b03ef20e236fa3cc899d1",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 145164,
+      "sha256": "b2592c154f78d643f79fd4c87d4ea77e79ec57c2ac3d9847d558f71c742dc850",
       "view": {
         "position": [
           -73,
@@ -112,12 +112,12 @@
     {
       "name": "ckk-interior",
       "code": "CKK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 486698,
-      "sha256": "38ed9bea5e4f9161a945f6db1d934b8f922796f12790d49e7d05e2f31dd125e0",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 483920,
+      "sha256": "830dd6f887984177997702aeb7a76a028e5bdf3f45929c2393a2fbd7d0a0c09a",
       "view": {
         "position": [
           -97.46191406250001,
@@ -138,12 +138,12 @@
     {
       "name": "clm-exterior",
       "code": "CLM",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 137630,
-      "sha256": "9cdb19515602bcafc629ed4ed781ce3558c486a052e5376087323e9327ce7b0a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 137250,
+      "sha256": "dc0d3c601557bf67aa586d48fd77dec892d6f475bb85990b174a4a2aa2a59cef",
       "view": {
         "position": [
           78.97448361312908,
@@ -164,12 +164,12 @@
     {
       "name": "clm-interior",
       "code": "CLM",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 104394,
-      "sha256": "6313650b8ca9f45b69a2f5085f9aa2f58f436617cbe552fa8cf1ca5c8f3abb1b",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 102468,
+      "sha256": "a594d99a9195115fcb47a46c9b1d4f07ac1cd4906613e83b0c504854078033f3",
       "view": {
         "position": [
           7.999999999999998,
@@ -190,12 +190,12 @@
     {
       "name": "col-exterior",
       "code": "COL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 108042,
-      "sha256": "45e1dc109dd11ddd48134fb55de51c1b1b158c6f9a438b956120c1ffaacd8bdd",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 108982,
+      "sha256": "c1a1fff5aadb47d49a2ccac4d0cecb4b603549bdc05afaa846c67d388a6add34",
       "view": {
         "position": [
           -42.79586039231451,
@@ -216,12 +216,12 @@
     {
       "name": "col-garrick-entrance",
       "code": "COL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 131744,
-      "sha256": "5cfef53f3d1034a83e9b64560b839d310d05478ff09f6bb6cbb15207e6216a4d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 127766,
+      "sha256": "547c95ba7e8273368c4e007859e05d74eb97265e37461f79b8320dc5753fe087",
       "view": {
         "position": [
           -0.10679554999999841,
@@ -242,12 +242,12 @@
     {
       "name": "col-entrance",
       "code": "COL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 188432,
-      "sha256": "d424100249ba1b12b31fca00a70fe45a3a1ea3419c2bcfa2e35ed4ebfaa4e064",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 189626,
+      "sha256": "f6db8a273289256f47f2e5997235bb8417dcb5200a5c6ff8bf8f2513aaf73a07",
       "view": {
         "position": [
           15.614480018615723,
@@ -268,12 +268,12 @@
     {
       "name": "col-interior",
       "code": "COL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 131294,
-      "sha256": "11683567c702a9477ab682454f831db83e70e0f76e2428e58e8365f484dfcf3a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 128096,
+      "sha256": "15dd3da76fc228c455057c6a071280f5ba2af076ec20f0966f61aaaf5d749763",
       "view": {
         "position": [
           10.999999999999998,
@@ -294,12 +294,12 @@
     {
       "name": "con-entrance",
       "code": "CON",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 222254,
-      "sha256": "fad41c359b996b2392bb4bb4345ef2810362c536e113f432f0c5f974b23bec4d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 188268,
+      "sha256": "a95b1cb6435190aea7c462904e444ab22f09e6d9a836f53db8a221e58806955d",
       "view": {
         "position": [
           -15.132238388061523,
@@ -320,12 +320,12 @@
     {
       "name": "con-exterior",
       "code": "CON",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 102672,
-      "sha256": "7224773ff33651f57441299d92669649a9128d2e393007cde88c05e61d8789a2",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 99162,
+      "sha256": "d98e94caea31d2146f6d2e01ad67c5f347e157b16482674e5d5e39e2fc97cc1b",
       "view": {
         "position": [
           -36.03432095294664,
@@ -346,12 +346,12 @@
     {
       "name": "con-interior",
       "code": "CON",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 82334,
-      "sha256": "91f7b0fd927ef80fe6cbc711eb80630964297dbdfe1e9ff5cee60bb7c3a0ee0f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 83328,
+      "sha256": "f98e19e6faf1109917f1310c0d5967d80f648cf5d6e13d4d990e3b3aa76aa88b",
       "view": {
         "position": [
           -7.0000000000000036,
@@ -372,12 +372,12 @@
     {
       "name": "cow-exterior",
       "code": "COW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 130390,
-      "sha256": "515bcd935feee34392ce739273dae6c3eab5491d59978dec9f03cfb9e0e46219",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 131552,
+      "sha256": "d7362ffa69700781217a22381717e046b8b544e017d9b23fa5bc5a4f88ec6d28",
       "view": {
         "position": [
           -70.51837032115756,
@@ -398,12 +398,12 @@
     {
       "name": "cow-entrance",
       "code": "COW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 230652,
-      "sha256": "b85c039b32adde7e8471826073a91007c0e6375a5100e9b67d2e24eca6d35563",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 241840,
+      "sha256": "894078bfb17616aec464e9c2405682d7a69df8814fc4b5473b02eff6a1fba3d3",
       "view": {
         "position": [
           -14.94118948727846,
@@ -424,12 +424,12 @@
     {
       "name": "cow-interior",
       "code": "COW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 107580,
-      "sha256": "8da89d5f78ef2f1185606e673aa81d1eed9745aab59bc517f44a0140e0d03539",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 107476,
+      "sha256": "c804f0fff584a0d503489d59d782594e11ced61fb16af8d95ec27d2d540a5756",
       "view": {
         "position": [
           13,
@@ -450,12 +450,12 @@
     {
       "name": "pan-faw-exterior",
       "code": "PAN",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 150982,
-      "sha256": "b0af24b08c428b211ddf72a6871de5f9a4b9aad9c2b27b3942e566849b2349e9",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 155338,
+      "sha256": "fc94c8a4bfdfd4619c11e8330755a71466e231aeb8dd3d83df6d26f87425cdbb",
       "view": {
         "position": [
           156.6190033580808,
@@ -476,12 +476,12 @@
     {
       "name": "pan-faw-entrance",
       "code": "PAN",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 120968,
-      "sha256": "ac302737313bbbdb71af7f2eafc7084ab366d93745e1731bf55d97dd599eb364",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 128268,
+      "sha256": "8410a531baac5f94fbb8b0313db34b2ae5749e67916acb1eb300515940cc89f5",
       "view": {
         "position": [
           88.5912857055664,
@@ -502,12 +502,12 @@
     {
       "name": "faw-exterior",
       "code": "FAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 152348,
-      "sha256": "e7b2773dbef3f59c08637831321433754f53a6d1a38506b3680edd360941ee4f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 156286,
+      "sha256": "9e481e9ce7c023a9e54ab6c94f45d9f8077cfa6acd83e75aaffd96ca90f89943",
       "view": {
         "position": [
           156.61900335808082,
@@ -528,12 +528,12 @@
     {
       "name": "faw-interior",
       "code": "FAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 70216,
-      "sha256": "fc967c42d826f1fa5b0f46c43f73be9bb08c6082a29d37de15ca9411e1ecab45",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 69540,
+      "sha256": "bba56e9ff995eccbc6a579bfa2f0ef9cd315247d45ddffd595a1549376dfe2c1",
       "view": {
         "position": [
           10,
@@ -554,12 +554,12 @@
     {
       "name": "kgs-exterior",
       "code": "KGS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 110678,
-      "sha256": "7b583b7bb80a2c51197ec164e6aab53d5018ddb564c4bda3fb4f73e96f00792f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 109052,
+      "sha256": "9e14f147d869eaf09ab97f8f890a0712ec4ff136265c42ecd52ea50363345e98",
       "view": {
         "position": [
           18.646189167633654,
@@ -580,12 +580,12 @@
     {
       "name": "kgs-entrance",
       "code": "KGS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 314860,
-      "sha256": "d9ba708ef7fd731f9eb4faad0ba7a8515d6fd074d391bc24337a0770a321f038",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 341350,
+      "sha256": "46af1ae8d462178f1375f9f151ec971321d94326d5df3f04f3a7c9ef8d179d4f",
       "view": {
         "position": [
           -6.048680761775554,
@@ -606,12 +606,12 @@
     {
       "name": "kgs-interior",
       "code": "KGS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 79036,
-      "sha256": "e8bbb225b05fc7f9d8ebb8e1e28b79772c51c00e83ceab98fb104eb6bccfca81",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 79520,
+      "sha256": "cd5304f25cbe3a1a8ae56b532a96111c8f99c615b5462b57cf38410e2172d5e2",
       "view": {
         "position": [
           10.000000000000007,
@@ -632,12 +632,12 @@
     {
       "name": "ksw-exterior",
       "code": "KSW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 85242,
-      "sha256": "c377d56fa50ce908fb81725ef1741eea8c586a4a3b5fed8296a566c311b453f2",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 86796,
+      "sha256": "aa7273404d27d43cc3bce9256ecb8dbccf966665f6f789b8bc9983afd75134d7",
       "view": {
         "position": [
           -118.19468368048925,
@@ -658,12 +658,12 @@
     {
       "name": "ksw-entrance",
       "code": "KSW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 123858,
-      "sha256": "d2013b6c884d2933f0504ba49c00ec86aaa6a6338f207205b43510f556dff1b6",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 140052,
+      "sha256": "7031e6e9d73c71b1b32635eafd6ad51e04f5c4b5654039a1900315f93bfbc92c",
       "view": {
         "position": [
           -87.02011211284176,
@@ -684,12 +684,12 @@
     {
       "name": "ksw-interior",
       "code": "KSW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 72008,
-      "sha256": "1c8f3aadcc60b969912b43060e0d908ede39e42049cfa0384d9a992d3d06406f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 72278,
+      "sha256": "ba872a1c4f99aee55bfe9da4d2ad7275396814b0dfb98abe743c192316a32574",
       "view": {
         "position": [
           11.000000000000002,
@@ -710,12 +710,12 @@
     {
       "name": "lak-exterior",
       "code": "LAK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 132568,
-      "sha256": "856d6862fc7ff6cf5aef06c08951ca6059dcb90160d2bb2a78a895be769e1db0",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 135522,
+      "sha256": "645a570e0e1affcabffe2bf2a7e3984203e6572c999170630ace9ed4bc7bbf85",
       "view": {
         "position": [
           -7.832807205924016,
@@ -736,12 +736,12 @@
     {
       "name": "lak-windows",
       "code": "LAK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 214930,
-      "sha256": "ebbd21abbae7c0a9f65e7e1e2584796830f42b9357e31a8ab8463c25c90a5fe6",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 218716,
+      "sha256": "a7e805e432a08caed2daae9074815320a52ebc58f994096b64b37089ca94c2a3",
       "view": {
         "position": [
           22.02361314676945,
@@ -762,12 +762,12 @@
     {
       "name": "lak-interior",
       "code": "LAK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 62456,
-      "sha256": "4d5dd0b7a1ea31aeef444fecdee1f77779caccf9d148b6da02057a6ba274d098",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 63134,
+      "sha256": "45b482931ddb4f3d05384fa4a1b2ff2f40cdbe6acb571015bca42b3f68c4edc8",
       "view": {
         "position": [
           8,
@@ -788,12 +788,12 @@
     {
       "name": "lch-exterior",
       "code": "LCH",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 83614,
-      "sha256": "929a18e56b0812bae7d845e7afed1b07710e4cd3e8591d08ecb8e046a24b845e",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 88438,
+      "sha256": "daf51f6d8a16224005d6b502a92cee1e2cabf8d1bff8c4e227f47b31db948271",
       "view": {
         "position": [
           -8.672376450441934,
@@ -814,12 +814,12 @@
     {
       "name": "lch-entrance",
       "code": "LCH",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 121490,
-      "sha256": "d5c5b1045b16dfe5e84e69f3fc390dcf9277ed2267f614cabd2749e70c731e21",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 131440,
+      "sha256": "3cd08da08f88ae4a6fcf4a415e02f273f70810ab1eb0b8b9c9460dd819392d78",
       "view": {
         "position": [
           -17.700000000000003,
@@ -840,12 +840,12 @@
     {
       "name": "5lf-exterior",
       "code": "5LF",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 81206,
-      "sha256": "f4a7af3189564b814a1c7647fb363e2f662f072c4591448314a92ba266912a45",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 82584,
+      "sha256": "d98d8538c58df3a53ed872dee5486891c5a428e4d397d40539a52cfbbc569a7b",
       "view": {
         "position": [
           -85.22250281088387,
@@ -866,12 +866,12 @@
     {
       "name": "5lf-interior",
       "code": "5LF",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 48280,
-      "sha256": "cedc7ca611156ce07ecf7a35a384f88cc2ccd07ba9c55accdf78adcafce5d4b3",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 48766,
+      "sha256": "0f77787d56192a3dda2314ac0a597cf6b47afd659aaf14fb1a9eb174c4c120c7",
       "view": {
         "position": [
           0,
@@ -892,12 +892,12 @@
     {
       "name": "49l-exterior",
       "code": "49L",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 68608,
-      "sha256": "636c8e57b74dcae84e6f16faffec0a902186e2371ef9be4233f8554478732316",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 69644,
+      "sha256": "9a19e8e4fb787e17bdcd80c9d19f1be28dc41244702d7742bd513875080d0cd4",
       "view": {
         "position": [
           -73.6742341579916,
@@ -918,12 +918,12 @@
     {
       "name": "49l-interior",
       "code": "49L",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 131644,
-      "sha256": "c2d86c1aebc34d4f4f45ebdcb5ec04c03c8efeaa6355f92eaca735c1f6aac690",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 132676,
+      "sha256": "c681db2d4d4089e26c60db00f28c23acb8a2e451be4a6e39243fd05cd8b665bf",
       "view": {
         "position": [
           8.999999999999998,
@@ -944,12 +944,12 @@
     {
       "name": "50l-exterior",
       "code": "50L",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 78320,
-      "sha256": "5f08611319ee2476dd15297846eadfcf4e39571d826a7155bf2de1643f607a9e",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 78010,
+      "sha256": "d212d2091fc90291e4db6cd8d2d79c5c1ce6bb0ef527a49cc1dcc63e53cf9da5",
       "view": {
         "position": [
           -76.90092313936566,
@@ -970,12 +970,12 @@
     {
       "name": "50l-entrance",
       "code": "50L",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 89488,
-      "sha256": "d95fcda5f8027ac6614b4a8bc2c9e68684533baaf2517ca31d2dd398c6826eca",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 99328,
+      "sha256": "558a6b801e335aac0fe8da38300289f1898b73836eda150554db5cacd2533f86",
       "view": {
         "position": [
           -57.17638778890998,
@@ -996,12 +996,12 @@
     {
       "name": "51l-exterior",
       "code": "51L",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 81062,
-      "sha256": "4d88b9817df2f706804999ce3958356f622734485086899ed757f0d5598cd7f9",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 83144,
+      "sha256": "dc4756a3e2f289eb09d189bf071a96cd8c42a1b91db6e16bcf23366e4d0adc18",
       "view": {
         "position": [
           -90.8741629957025,
@@ -1022,12 +1022,12 @@
     {
       "name": "51l-entrance",
       "code": "51L",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 276182,
-      "sha256": "1b4aa80031197d8df0b79cc3dcbe3a34d7b069df513ffae18ffd4d7d55f6f787",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 287672,
+      "sha256": "e71ea4b4495b8877f71fc7115cd2ca1094898dbc70ba4ff1358fd182533ac0c5",
       "view": {
         "position": [
           -61.77983943876207,
@@ -1048,12 +1048,12 @@
     {
       "name": "lrb-exterior",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 113986,
-      "sha256": "5c7cde8170c0bb8ad6bd1e30d2a777afcc4b240acc9ecb637553775b18561794",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 114960,
+      "sha256": "add96a6ed692e00aecec44701e6bcd799c07e8a5d2840cc66a96f77e5f03d105",
       "view": {
         "position": [
           -29.959054335464472,
@@ -1074,12 +1074,12 @@
     {
       "name": "lrb-plaza-cafe",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 262932,
-      "sha256": "1c625049b88518695b75efc89ba5a6747999ac2809cfafbe34c0a315b2e8389f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 261436,
+      "sha256": "cf35750caae621f27b89d4e5bc0e1c7a8bdb58a8f39800af307cf7aabcd51893",
       "view": {
         "position": [
           38.99999999999999,
@@ -1100,12 +1100,12 @@
     {
       "name": "lrb-portugal-street",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 192570,
-      "sha256": "e8ed59a6c2f7acff250b4ae024fbf9322e6e0c4637e2d58cbcbfa87f93a925d7",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 186580,
+      "sha256": "9e015557bb19d508bd7bd54fae54e3cc360231b90352f28e01861d017f233b36",
       "view": {
         "position": [
           20.892953700157626,
@@ -1126,12 +1126,12 @@
     {
       "name": "lrb-carey-street",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 285656,
-      "sha256": "46dc7031d4ac765a94ad638a76bb6d964d763068d022567d8c50b04fdb1aa680",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 291558,
+      "sha256": "69c63e563f457e7124308630e9275019ff9b9b2d388cf54d1ee343eda359608c",
       "view": {
         "position": [
           120.77786023475589,
@@ -1152,12 +1152,12 @@
     {
       "name": "lrb-corner-entrance",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 415120,
-      "sha256": "94a9b51fd00eb87366b7e79db6d00bab9ddbd660ba9c7579ffb53b13b27dac37",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 418304,
+      "sha256": "32939bef31c0ef779cc4f5dbea715aab7864de3a61e7de7e2281f7f13cd9c0be",
       "view": {
         "position": [
           80.10842350521455,
@@ -1178,12 +1178,12 @@
     {
       "name": "lrb-roof",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 218430,
-      "sha256": "09ff73fcbf46b5dbabf39f2cec7748253c828c6791eecfe4fa5e362d4b087722",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 221666,
+      "sha256": "6a76b99c9848c2d134f0d157a847a1ffa3ab0829ddaddb9541591370e23cbc0e",
       "view": {
         "position": [
           95,
@@ -1204,12 +1204,12 @@
     {
       "name": "lrb-interior",
       "code": "LRB",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 253972,
-      "sha256": "33b3635bcd23f7c1b79c158179905d107ef4801f23c5bfe46dd8ce85bab26831",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 269566,
+      "sha256": "1dc5097dd7b08c216469c4735059f243bd29bd6f163e266cb1463ba30f6a5413",
       "view": {
         "position": [
           75.5933837890625,
@@ -1230,12 +1230,12 @@
     {
       "name": "mar-exterior",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 98248,
-      "sha256": "2281775a272c3825e0feca1ec5dc92e16c2e8a5c9b8f49b11c60b952dae7291a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 100694,
+      "sha256": "3973911013a5b94ef0e9d4b151308677ee90eadffe7b7f451bb25bed0663bc4d",
       "view": {
         "position": [
           -56.6412533767359,
@@ -1256,12 +1256,12 @@
     {
       "name": "mar-entrance",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 114978,
-      "sha256": "b245bf468d802ca77ece6952081d31f07f2968115d4aa9f323fcd17e70f7d408",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 121340,
+      "sha256": "cda8e115c717ddaaad2a30b1fdd7fb636fc6a43bf5eafb9b7738581e8bcad790",
       "view": {
         "position": [
           -28.220057467323834,
@@ -1282,12 +1282,12 @@
     {
       "name": "mar-hall",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 114512,
-      "sha256": "b1f540c34893439d6e4163a6aeacedcb88f1552a9f8470b6190e725d3c25eb1f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 122854,
+      "sha256": "ff78bac96143949237cc701a97e05db29e59032a8da9ff57e6d2814bd7a7366c",
       "view": {
         "position": [
           1.6433366537094134,
@@ -1308,12 +1308,12 @@
     {
       "name": "mar-stair",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 115408,
-      "sha256": "b1fe7faa4efdbb7f87d02c1b8a83b021f417cba687e6f8d4952cdd49be4ba7d1",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 119814,
+      "sha256": "99c5c6c169435c8025c0162cf1f3bc5c288060e305682423c5e5c33932263812",
       "view": {
         "position": [
           -12.067785263061523,
@@ -1334,12 +1334,12 @@
     {
       "name": "old-exterior",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 195950,
-      "sha256": "840fe52578b61ff40c233b3cbf87e8f0d421aa890a8479230fa0075baafcebc7",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 198410,
+      "sha256": "f5d8f37be9f53e16f3a3e5107be8c4f69b84d4a500c75f298bdbe74c3258f6e4",
       "view": {
         "position": [
           91.52131715752117,
@@ -1360,12 +1360,12 @@
     {
       "name": "old-houghton-entrance",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 334454,
-      "sha256": "56e8500f7f570d81ae3ba2a57c32e324a9e5bc2ef9c2854048a32729c8bb1f06",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 340426,
+      "sha256": "f90a61b9b140f781199179aa19cf39d64c429fdec2eb4c3827319fefab8643f1",
       "view": {
         "position": [
           14.206281663142812,
@@ -1386,12 +1386,12 @@
     {
       "name": "old-interior",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 105482,
-      "sha256": "b2fc419dd005bcc931c06f853e7d7160489c58ef5f48012ea299cb05a23b2afe",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 105324,
+      "sha256": "44dd4face52f92a343533e65288fd48e94f9b63bad47fa258d44b624524e4974",
       "view": {
         "position": [
           17,
@@ -1412,12 +1412,12 @@
     {
       "name": "ocs-exterior",
       "code": "OCS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 85606,
-      "sha256": "8a0f602f8b1750b8e52760efc5aad64c3a93ede0caedb76acbc1333ff04ade32",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 86084,
+      "sha256": "409b6df75f53bdf33d4aacb9a960fc4dce16a971399fa50e86e64405bbcbe4de",
       "view": {
         "position": [
           -49.3495048974211,
@@ -1438,12 +1438,12 @@
     {
       "name": "ocs-roof",
       "code": "OCS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 87188,
-      "sha256": "e25abf0746a590f1133e7176cf417701faf70af16df3057d9200f26dcfc9064a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 88030,
+      "sha256": "26132e6eefeff518ba6caa96deccff3177de82e1e173104628eb39d1333e72ff",
       "view": {
         "position": [
           -47.05178451538086,
@@ -1464,12 +1464,12 @@
     {
       "name": "ocs-interior",
       "code": "OCS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 91882,
-      "sha256": "f31f9cebc17938582ee07004e53fcf12922a255403f1bf427d124936c6f9ef96",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 93624,
+      "sha256": "6ba620901cbaed799ea9ee0065b334533b07f3fbf2d8c14ee52de3c085fe1de3",
       "view": {
         "position": [
           7.599999999999999,
@@ -1490,12 +1490,12 @@
     {
       "name": "pan-interior",
       "code": "PAN",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 87366,
-      "sha256": "dc64fba26b3604bec011f348674fa59c97c2b35e01bc43d3fb7ba612f6e9271f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 86882,
+      "sha256": "ab1b90ca6d1dc43a682e3b533d90ca532446580aafa41faa02a939e9125de782",
       "view": {
         "position": [
           10,
@@ -1516,12 +1516,12 @@
     {
       "name": "par-exterior",
       "code": "PAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 145700,
-      "sha256": "1860953b09ba05b21f222565ef9a4a062fdbccba8e26441fd4f047777f0f70fc",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 147124,
+      "sha256": "64b491c04a43786ec8feb66bdfda30c99428c2d8f3be5f0d6153bf8a42460132",
       "view": {
         "position": [
           -27.165544164291912,
@@ -1542,12 +1542,12 @@
     {
       "name": "par-entrance",
       "code": "PAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 173556,
-      "sha256": "2b5ba1e855a7d803071838ed69e1b78a057dd61d8c8bf9bf2aa96a6eee41d431",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 181146,
+      "sha256": "8e5e2e4f735866211b037a205653b7bd0a0d35a92947c605311449f0b7c793a2",
       "view": {
         "position": [
           -24.36343053666185,
@@ -1568,12 +1568,12 @@
     {
       "name": "par-interior",
       "code": "PAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 81388,
-      "sha256": "4eac4cd98e006ba5e7a3a90a20fd5de2f92edabb50d4ec7c763d0bb5695fd84d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 81294,
+      "sha256": "daa614e306194723c608328d74ab4b2e3fec47cfdda0deb5b63dc13113bb33cc",
       "view": {
         "position": [
           15.000000000000004,
@@ -1594,12 +1594,12 @@
     {
       "name": "pea-exterior",
       "code": "PEA",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 59476,
-      "sha256": "3b51f7d74b1086dc265c7753b75f16576e1b254efa8382ef8440834e420ede01",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 63350,
+      "sha256": "39608ac5ca3f0e8dfc3e27c81df46ce30d0c7b03d39c3d49f6d1b5cd3f4f9cde",
       "view": {
         "position": [
           -45.37923028564228,
@@ -1620,22 +1620,22 @@
     {
       "name": "pea-interior",
       "code": "PEA",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 88498,
-      "sha256": "6779b9ef839e3b9a275281344875f53e51756f03235b9ec6059753d1a5dc9b05",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 181408,
+      "sha256": "9993686040d143e9180dd51940c2dcc9c9154b5cd7ad6d4d0b1a98250e8ed20d",
       "view": {
         "position": [
-          23.000000000000007,
-          18,
-          -22.000000000000004
+          28.999999999999996,
+          23,
+          -30.000000000000007
         ],
         "target": [
           0,
-          2.6,
-          1
+          3.1,
+          -5
         ],
         "fov": 50
       },
@@ -1646,12 +1646,12 @@
     {
       "name": "pel-exterior",
       "code": "PEL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 107416,
-      "sha256": "165447838ba3fbdb1ff13d24dd417c4c065ae780fd76fa81bbfaac2447602f32",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 114554,
+      "sha256": "42570c518bde4d8098898c76b37b8918cc0b602ef07280dce1812fc7117231be",
       "view": {
         "position": [
           166.4503479096543,
@@ -1672,12 +1672,12 @@
     {
       "name": "pel-interior",
       "code": "PEL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 65530,
-      "sha256": "4604405146323dffe484927f0c55559960ab87ab613b656e0d89430d84aebcbe",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 65008,
+      "sha256": "8b5891c465c19e57fd2339e2458ddf5988421e751712d706af7a42b996e4e787",
       "view": {
         "position": [
           7.999999999999998,
@@ -1698,12 +1698,12 @@
     {
       "name": "por-exterior",
       "code": "POR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 96074,
-      "sha256": "844314508c8467d993ab8e5b13ce6eaa7ff6201594b524622723333963855eac",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 96488,
+      "sha256": "02dd088a87fac3a618e202889ee9d9b7f32efea1b261353f6b9889d7cdaaddf1",
       "view": {
         "position": [
           -51.658564206568116,
@@ -1724,12 +1724,12 @@
     {
       "name": "por-entrance",
       "code": "POR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 161768,
-      "sha256": "b62f151dea675629524934adb908a7c283b5bf2b8a49627002078e0b4a1d5d2a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 168970,
+      "sha256": "874e5b2c599e2e9977a5cdfca5e22e4b2f4b3309866d1258fa1c0fa28a01e1b0",
       "view": {
         "position": [
           -38.240465215674796,
@@ -1750,12 +1750,12 @@
     {
       "name": "sar-exterior",
       "code": "SAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 97490,
-      "sha256": "3e29f4e0ffc8ede4dc774a51f52bc127834ba1efd0939627804d014000ca0ed7",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 101292,
+      "sha256": "eed2d242b9d374255d04e552528e7eb3065f05600b8472e61ce918f9b744c9fa",
       "view": {
         "position": [
           -103.07465402964505,
@@ -1776,12 +1776,12 @@
     {
       "name": "sar-windows",
       "code": "SAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 159118,
-      "sha256": "cd6938e242a6260d4a6429b938f618ae05451da7e909cb2235f160144d98917a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 164672,
+      "sha256": "05261c13afeb3271f32a5d83d66dea5ae98a7fac8906347593a2ff3d83dda70f",
       "view": {
         "position": [
           -87.78780499350427,
@@ -1802,16 +1802,16 @@
     {
       "name": "sar-interior",
       "code": "SAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 80264,
-      "sha256": "bcd73d65184740fe9912b940f5392053ed8a16e56b348236cee7725c81323881",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 81232,
+      "sha256": "85eecebc13d9d3c0c0b3581e1fb53682e6958347682a469cf93322829c29a8b7",
       "view": {
         "position": [
           8.000000000000004,
-          6.4,
+          6.400000000000001,
           7.0000000000000036
         ],
         "target": [
@@ -1828,12 +1828,12 @@
     {
       "name": "saw-exterior",
       "code": "SAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 193064,
-      "sha256": "6556800fb7fefee03eb464c819dd5487a0e8b1dd5905ac894e6f9d8984d6f0f7",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 197218,
+      "sha256": "85b268a22eb63344cd8ae9fc5e501d58e22b9046255410ed8d5bc6531160e43f",
       "view": {
         "position": [
           31.338255012141353,
@@ -1854,12 +1854,12 @@
     {
       "name": "saw-brick",
       "code": "SAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 765674,
-      "sha256": "dda37bcdd8df1b865b0fa4615eb4e6b541f46d04d10989cfcefc13b6b107367a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 788154,
+      "sha256": "5d52105918b261bc950057e59cd951d5c8ca9fb46cc70d87dfdda799e092c7b2",
       "view": {
         "position": [
           -42.71118164062499,
@@ -1880,12 +1880,12 @@
     {
       "name": "shf-exterior",
       "code": "SHF",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 98612,
-      "sha256": "8deed1340fb22b0e97f730b4696c4dcb25c49a177b8fed676da31701a1cc4fbc",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 102564,
+      "sha256": "7af3d32323aff4f4592b69bf33a326e1776e5b15f25926de6aead04128c5e62a",
       "view": {
         "position": [
           -73.6707169586183,
@@ -1906,12 +1906,12 @@
     {
       "name": "sal-exterior",
       "code": "SAL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 168436,
-      "sha256": "045eade6680713dacd065f5bf97756f24f3739b12d203571837981a7f5f82ced",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 164136,
+      "sha256": "ea3880118f3b1bbd0850e8cb9b27a921bf395358605977dc8f9d55febcf85734",
       "view": {
         "position": [
           25.65194299649579,
@@ -1932,12 +1932,12 @@
     {
       "name": "sal-tower-roofs",
       "code": "SAL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 124736,
-      "sha256": "af5e25bf011f10beab23a438422f0205de3316138ecddc393a66771e95954cf1",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 122296,
+      "sha256": "47dbda88f48afcd327fd0a4f667b93e6d89f7deffd2412389e2036cc8b1e2f96",
       "view": {
         "position": [
           138.7076514661312,
@@ -1958,12 +1958,12 @@
     {
       "name": "sal-interior",
       "code": "SAL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 86970,
-      "sha256": "e600daf095c2fd913f1dc1f7f5787fc339dcce7bb17fa996b7674352e88c3b18",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 88196,
+      "sha256": "fdaab5f760e6342c3f4e0b50b413b1320bafeb6b9dff041a884c032c496a94ab",
       "view": {
         "position": [
           12,
@@ -1984,12 +1984,12 @@
     {
       "name": "stc-exterior",
       "code": "STC",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 74642,
-      "sha256": "5317ce9b7e224751426e50e3f82193ffe4a927106f2878de33cfe0ada46bd46b",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 79500,
+      "sha256": "0a1cbebf4d06fbd7d329e18c76ae3ab5f8e36c858875e2ca1fb57da3b0b8f9a1",
       "view": {
         "position": [
           -86.88985173042558,
@@ -2010,12 +2010,12 @@
     {
       "name": "stc-entrance",
       "code": "STC",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 261966,
-      "sha256": "51d32d9c92e4c14e51c453d35c601ae6f9845184c7d082ead13d40305b3d456e",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 280590,
+      "sha256": "027c177329eeff023e3406bd4828929c2b061d3be61bd7925805b91d17ca226c",
       "view": {
         "position": [
           -2.481489256186876,
@@ -2036,12 +2036,12 @@
     {
       "name": "stc-interior",
       "code": "STC",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 60768,
-      "sha256": "855675b0ab3a1f1f721221a1c06904c76fb71445488d047f22e2e6ae3cdd9167",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 62034,
+      "sha256": "79012df62cf6fdfe3160ca9dd2b8a7170d79b68d7dd2fa5d766201e11e18a981",
       "view": {
         "position": [
           8.999999999999998,
@@ -2062,12 +2062,12 @@
     {
       "name": "mar-104-interior",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 122938,
-      "sha256": "d9c50649cfa24459102a0e44ef95175010154c7e4ffd5a0cd37341de7eb05ff8",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 124054,
+      "sha256": "ece8edfc1f087858db39124715b828478bc498b6dfb659537a797df7004bf88b",
       "view": {
         "position": [
           17.800000000000004,
@@ -2088,12 +2088,12 @@
     {
       "name": "cbg-102-interior",
       "code": "CBG",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 100862,
-      "sha256": "188482380487d0af9760e2a03c79857264f1fe2bccc33b8987bc74b1858ff1ac",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 102538,
+      "sha256": "d03bf9d4a15ffd67f45818cf4cde515b0b40619139e1895bdecffd1ea62f509c",
       "view": {
         "position": [
           13.999999999999998,
@@ -2114,12 +2114,12 @@
     {
       "name": "cbg-103-interior",
       "code": "CBG",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 84982,
-      "sha256": "958b6141bbcd72eb9adbd61d20abce11188ef96222a79b6c8b1082c82527f211",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 86530,
+      "sha256": "92eacd258983088f112200737d1c159176e48875bd0edf11e38306f585b499b8",
       "view": {
         "position": [
           13.999999999999998,
@@ -2140,12 +2140,12 @@
     {
       "name": "ckk-104-interior",
       "code": "CKK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 79868,
-      "sha256": "c44ee5f614bfead4c544ca2dc3eecdcb6d7de387e9ad2eb0af5aae582ab9cf1f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 83760,
+      "sha256": "0ce5b8912949ca0ab7914cf60f376572e37c8d6a5e84437f5185606ad1b7de77",
       "view": {
         "position": [
           -14.500000000000002,
@@ -2166,12 +2166,12 @@
     {
       "name": "saw-denning-interior",
       "code": "SAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 84568,
-      "sha256": "0367531077af25242cfca134da7b0e3e86bb9f3a08b09b96758a9cd26f551de0",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 82234,
+      "sha256": "f536a758db68bfdef3ffe80f8cddf60021199a4fdbf08f57ac701c571f1b3573",
       "view": {
         "position": [
           12.200000000000005,
@@ -2192,12 +2192,12 @@
     {
       "name": "61a-interior",
       "code": "61A",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 60390,
-      "sha256": "202fb574281b682109fef84c4237488493ed9a0c21f6e851e01572745c614afd",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 62578,
+      "sha256": "10fc591a42b7c019dc27990d14dfcbf28d9c20c0fe70bd9bf590aafddb91ab49",
       "view": {
         "position": [
           -14.800000000000004,
@@ -2218,12 +2218,12 @@
     {
       "name": "campus",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 309398,
-      "sha256": "569c3b712ef83f14dfd613dd5c23c10562a737fef26c94eaf892da3839f26624",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 306692,
+      "sha256": "ec2d10ae578532674094e4fe7cba9646b73ef516fb7d5a3725d7cfc46e088118",
       "view": {
         "position": [
           -428.39275842384626,
@@ -2244,12 +2244,12 @@
     {
       "name": "saw-globe",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 449592,
-      "sha256": "6c543f50113f57bef38b5d5545cb509acf963e3c5e0fd12c796a507c37ea6acd",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 431510,
+      "sha256": "12d7a671cf50b0bfd5245c43a9f329c85bfcf65638e1471ff1e38bf7fa6077a3",
       "view": {
         "position": [
           -43.00000000000001,
@@ -2270,12 +2270,12 @@
     {
       "name": "sheffield-street",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 469056,
-      "sha256": "1d66a6e6b906be4650db11beec5c6bc64f5fe15f1abdc75e5ea312e3a30a01b1",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 441696,
+      "sha256": "684150eec27d103c073274c53ebb15908ee402f926de20a73be1fdcf7688c856",
       "view": {
         "position": [
           -43,
@@ -2296,12 +2296,12 @@
     {
       "name": "portsmouth-street",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 501992,
-      "sha256": "a793936c8bea84c4817f6adb0682adf3e3e5e9ff09911cf370b59f34f723b9b4",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 508862,
+      "sha256": "432ba8cf21df3cfc9f386c0cccdb839cb89ac4c2d95fed09bd3b6d041daadea4",
       "view": {
         "position": [
           -44,
@@ -2322,12 +2322,12 @@
     {
       "name": "watkins-plaza",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 406114,
-      "sha256": "8db85ca1d2b9d12770201418890df8bd0bf4ae26a9f88dce77c9075df2e3ae06",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 424606,
+      "sha256": "9c9ccae0e3198c7b083b1446950f3c9fb72621c3c87fb96e5218c54b9ad81e39",
       "view": {
         "position": [
           18.999999999999993,
@@ -2348,12 +2348,12 @@
     {
       "name": "portsmouth-bench",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 694252,
-      "sha256": "d5ae7206ff411ccc2a47da4ac78c2de0ac18827d98d7c88533b847fa22b975be",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 682188,
+      "sha256": "ccfe50899f608ac112ca908e1d8fed343047bbbf0a0878af2c30cc64d9eaedc1",
       "view": {
         "position": [
           -49,
@@ -2374,12 +2374,12 @@
     {
       "name": "portsmouth-drainage",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 407434,
-      "sha256": "ddde4ec0f65e6f810aa1575258ff60cdca53f47d31ab9cd26d6c0c336e757bb8",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 416686,
+      "sha256": "956cd9b7e2380d6180028ee2423cb8bc7dfb1c28240ee9eaf2126f7d92982fa0",
       "view": {
         "position": [
           -51.05,
@@ -2400,12 +2400,12 @@
     {
       "name": "mar-lse-sign",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 128764,
-      "sha256": "7acf1da49bede28196ab3b52fd41386a47083eab9f827c4925c30a8c19022e7d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 134348,
+      "sha256": "abc7962130f070dae0cf96c96deb442587e60bb3e4ec98a009c095a96bab02f4",
       "view": {
         "position": [
           -44.89505967263311,
@@ -2426,12 +2426,12 @@
     {
       "name": "saw-three-tuns-interior",
       "code": "SAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 50104,
-      "sha256": "72b433b5c0aaf114316a992a2c5386dfafef5e4edd4203297ceaa10823cc1542",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 48692,
+      "sha256": "2c20b6ab39811cd88092d92b01f1db2d9332759dc4e8d3d375836a7cdb860739",
       "view": {
         "position": [
           0.9999999999999999,
@@ -2452,12 +2452,12 @@
     {
       "name": "old-clare-market",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 178748,
-      "sha256": "03eea0b2ccc8343726b681bb895a145ad9b7b9d3dfa3c13ecbbc3125d6d49146",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 198162,
+      "sha256": "75f5fee4564e3da115e3d57506ebf2fc74cb45f3cefd4e2bc1000759d1651c78",
       "view": {
         "position": [
           5.040815830230714,
@@ -2478,12 +2478,12 @@
     {
       "name": "shf-roof",
       "code": "SHF",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 106490,
-      "sha256": "dbed288f8267ab8acf21ea953856572dd92de65c3c8a5122c5cd33311704917c",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 112738,
+      "sha256": "008843a1f3341f7e39d1134e27cf754a78b435e91b3a1de59c3d13e32e40e918",
       "view": {
         "position": [
           -63.09621047973633,
@@ -2504,12 +2504,12 @@
     {
       "name": "por-roof",
       "code": "POR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 153232,
-      "sha256": "41d7961275417c21d936b8287f7a2b784a315b10cf4f429e2fbe578a9cdd37ff",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 151124,
+      "sha256": "1b1ec691b0c5e3c060ca8f545069cc3b20e3a839bcb027c2c4b914bcae24748d",
       "view": {
         "position": [
           -42.15,
@@ -2530,12 +2530,12 @@
     {
       "name": "pel-entrance",
       "code": "PEL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 135872,
-      "sha256": "7b91be5ab862f4b5d262da9b8857c2a3cadd0585be9bf4f126e94c38ea07ed91",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 145720,
+      "sha256": "bc693dbe15e7a735716381152b41543450ff2e67c77aff6bd276e03b5282afb3",
       "view": {
         "position": [
           120.52918,
@@ -2556,12 +2556,12 @@
     {
       "name": "pea-frontage",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 325310,
-      "sha256": "08614ef094089073d8a581e6f077525263087d5e64eca0d31c20cd6127e6a55f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 319160,
+      "sha256": "a2739de6fa4907cd966545921e76fc12c82844998c99d6489c9d550d9a200454",
       "view": {
         "position": [
           -62.99999999999999,
@@ -2582,12 +2582,12 @@
     {
       "name": "pea-side",
       "code": "PEA",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 147514,
-      "sha256": "dbbb3519bf6f93206d2688c9a90089108790d2e6583193d1829e4bc66c855fbf",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 163284,
+      "sha256": "991cfb931c4cfd47df2ae36a88ba843c56e98a6b0ddc21f6391089d54430aa30",
       "view": {
         "position": [
           -46.900000000000006,
@@ -2608,12 +2608,12 @@
     {
       "name": "61a-pavilion",
       "code": "61A",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 293410,
-      "sha256": "ed4da8859164eb71c8305edd92909a4ab77656298074a804253dee341501088a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 306830,
+      "sha256": "1fd5ca5a8ca87e01522ce36ab17e0497778052947b66518177bceb79157ab0c5",
       "view": {
         "position": [
           -69.34005,
@@ -2634,12 +2634,12 @@
     {
       "name": "61a-belts",
       "code": "61A",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 174048,
-      "sha256": "ab56e4a929540b22323183d6efb39be19dc698340eb2bf750170bb7766554f76",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 178886,
+      "sha256": "f75f2166dc8fa1e95c1c2c8d08254514e8b919525f4264c644d727489bd236e6",
       "view": {
         "position": [
           -81,
@@ -2660,12 +2660,12 @@
     {
       "name": "61a-portal",
       "code": "61A",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 249088,
-      "sha256": "e67308fc04a5539570fab80897a591d781ea0cfd04d100319094510a0dc212ee",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 257264,
+      "sha256": "da57539ba080cbff51c9a7e29cdc4a4b32cf1e12798b138d0192ec54806c7661",
       "view": {
         "position": [
           -56.61,
@@ -2686,12 +2686,12 @@
     {
       "name": "par-roof",
       "code": "PAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 239942,
-      "sha256": "9a7f14fe78341b355fa888b5ae494092c303d5cd9190e6c9dd12b01f12c6e077",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 240924,
+      "sha256": "92b75f28f541827cacbe203c112f37b6c44ffc583ba5cf1ff4b6458a90e22db9",
       "view": {
         "position": [
           -32.57233067965582,
@@ -2712,12 +2712,12 @@
     {
       "name": "sal-oriels",
       "code": "SAL",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 383648,
-      "sha256": "0908b97d77bc48c2ae5bc3c440072c1337ba97340b0a87d4311a190f96b261bd",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 387752,
+      "sha256": "b128cf6f091b4b59c8f7b5a93a3da4f08e1b76e29b0f958aebf7d39d1867f310",
       "view": {
         "position": [
           81.09600969347721,
@@ -2738,12 +2738,12 @@
     {
       "name": "clm-capitals",
       "code": "CLM",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 107388,
-      "sha256": "69395661c6f6e44176fe07c0493deffbc3376c3e47e6b6100fd440a75a7c84a5",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 107122,
+      "sha256": "26a0c765065790cb9d7b7fbbdb81d298157f9c23fed83f839ff32ec5107e9ee6",
       "view": {
         "position": [
           106.00408322248786,
@@ -2764,12 +2764,12 @@
     {
       "name": "old-relief",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 299484,
-      "sha256": "79e195e08e982b64d19b2e7a3abe94b08c5bcbbc60115f9baf59c966c7476b17",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 301192,
+      "sha256": "e7288d2713f7f7a28629274530392540fd67c949cf15b456107d60911447e4a8",
       "view": {
         "position": [
           2.9302800805789087,
@@ -2790,12 +2790,12 @@
     {
       "name": "old-heraldry",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 161652,
-      "sha256": "0a18df700243f1918c08c3c9570b7be5ed5e73c9c365fb927164f4d26839591b",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 164252,
+      "sha256": "d5df82da496b0a590e8e1291c55ed2ce666672cfa23c8cefab36a0f190e29caf",
       "view": {
         "position": [
           -0.6930262178733235,
@@ -2816,12 +2816,12 @@
     {
       "name": "mar-academic-wings",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 228424,
-      "sha256": "e75bcd140bc6d87cc5798296e366a25f216f667399421254d7c27ac0f143ee1d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 227432,
+      "sha256": "b73b4bd426b811e076622d293d21b2217b9215b8ae31fc0727471ee84ca26865",
       "view": {
         "position": [
           89.92113733220792,
@@ -2842,12 +2842,12 @@
     {
       "name": "old-entablature",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 354026,
-      "sha256": "74b856ca16ac7f42acd8a3e78c6d5d9d4a54988257f29d4706c1d664e62a4f48",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 371576,
+      "sha256": "08974d903f2a91da84dbbe9887170f1a6d0ddd13e07b83af519950a66dc12be5",
       "view": {
         "position": [
           22.445723863132585,
@@ -2868,12 +2868,12 @@
     {
       "name": "ckk-roof-pavilion",
       "code": "CKK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 199320,
-      "sha256": "c8b00c408846940e2347e3d10806f27ebce610b9e033b47ad34ea48e807a5fc5",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 198112,
+      "sha256": "4edd8d2bca978123665ed68814a2ddf717198e63fa7391b99302aa647d710853",
       "view": {
         "position": [
           -92.19129294233593,
@@ -2894,12 +2894,12 @@
     {
       "name": "mar-podium-windows",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 94054,
-      "sha256": "b21e90726337366a57f6a9f791d3f636c2d5ec5af3b1f8200050aee1da428fde",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 100570,
+      "sha256": "5c2a07e66eaa751240f15570c2867ee42d5964356843ee7eb6dfec1d5d921829",
       "view": {
         "position": [
           -14.443042932656155,
@@ -2920,12 +2920,12 @@
     {
       "name": "old-roof",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 352776,
-      "sha256": "df6e6dd453a6b0257b1b05934fad994a289ddd67e21e851c8749e194a3ee25b0",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 359776,
+      "sha256": "10c2b195c11318034ba227e15064c9006e526479518fa6be9016f218fe470c31",
       "view": {
         "position": [
           57.923171639442444,
@@ -2946,12 +2946,12 @@
     {
       "name": "con-methodology-interior",
       "code": "CON",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 100526,
-      "sha256": "2e28161149b25c2c78cb3a89cd197d2cab22a1f6a4c061ac363fd21d1faa3300",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 100442,
+      "sha256": "02035ca9fc0d9dc36cd11b74965f10ccf868ee2a870d6c260b59b2ef9a49ed97",
       "view": {
         "position": [
           12.959999999999997,
@@ -2972,12 +2972,12 @@
     {
       "name": "con-tea-point-interior",
       "code": "CON",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 68882,
-      "sha256": "91c57f700c3c5797fe6f5855decade5752add241b0fac0e8e3e06034fff3e00b",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 70158,
+      "sha256": "8dc033f8afad92fa0e0f5ccd6c1f687a0f0303df78ba29249cf5b4b756f03d16",
       "view": {
         "position": [
           0.4000000000000001,
@@ -2998,12 +2998,12 @@
     {
       "name": "old-side-approach",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 380246,
-      "sha256": "3570eb5d70782849e0156fcde433e06c76e176c8e205d1d771f6812f22dbf82f",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 397682,
+      "sha256": "f8c538929ffabc77e59276b49401cdc7ebc9fe50571039c3ef0438f6c18022d9",
       "view": {
         "position": [
           -0.5,
@@ -3024,12 +3024,12 @@
     {
       "name": "stc-artwork",
       "code": "STC",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 235066,
-      "sha256": "15958811689147ddf2151f2ca556b2bf06aa82e43b9ca6e50532caaa48c8067d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 266492,
+      "sha256": "9ada56054e897ddb080fb666ef597c7b83a424e27cbaf96f9b5a4e7e8670fc00",
       "view": {
         "position": [
           -41.93,
@@ -3050,12 +3050,12 @@
     {
       "name": "mar-rear-wall",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 206708,
-      "sha256": "b19b3ba3f552f31d2449f280e6346f72e7e63bb0185f30bbdc52ef329e213a80",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 208148,
+      "sha256": "9a10190b2e8e91b2bd1a88a0b88ddfb373d5f8c5233e62209dcad02f2b18fcfd",
       "view": {
         "position": [
           -45.41037491865108,
@@ -3076,12 +3076,12 @@
     {
       "name": "old-ssc-interior",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 122498,
-      "sha256": "5373695c485f85e02e43dda5fa35921c8bc232dfd51aa8c523f94e23bcb33f53",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 128426,
+      "sha256": "ea8f7b2648d8477f77bb0fe2f87c0d8668e1445217e17ef5a8e405622efc5942",
       "view": {
         "position": [
           11.499999999999998,
@@ -3102,12 +3102,12 @@
     {
       "name": "cbg-square-registration",
       "code": "CBG",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 450264,
-      "sha256": "51477259fc4b9d102f37019dc4760388359371efb54b08e17548a2f41d6b9815",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 469472,
+      "sha256": "4d07e8275e74b0239ba95b52ec9fda082050bade94f26cd85bc8350160998a53",
       "view": {
         "position": [
           -50.90681500000001,
@@ -3128,12 +3128,12 @@
     {
       "name": "portsmouth-tree-pools",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 440736,
-      "sha256": "d1aa4469d8a0ba21d388a1a40b75a2b4be66fc88a2f842a10eeef8e915e79416",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 441450,
+      "sha256": "0c858adee516bc1f8d2f5196b454fc41ceb1f7babab8a13eacbabd601955f49c",
       "view": {
         "position": [
           -33,
@@ -3154,12 +3154,12 @@
     {
       "name": "cbg-104-interior",
       "code": "CBG",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 83722,
-      "sha256": "9a3beb594e388af6cae57e41a45a401a0a18f3809ff52c1aa5830f1ced7a2943",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 86528,
+      "sha256": "01f63c65d3add6d295237b791b498c8324feea209c777952714081526ceb234c",
       "view": {
         "position": [
           14.000000000000004,
@@ -3180,12 +3180,12 @@
     {
       "name": "ckk-107-interior",
       "code": "CKK",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 94358,
-      "sha256": "4216c46eab5331e032781e7d5a687db46e3d41924dcab8f806e6e20aa702c4e4",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 92840,
+      "sha256": "89490cdec3047ee770196625cf78838069a26f7cde7c58ca31e08056af5728be",
       "view": {
         "position": [
           14.000000000000004,
@@ -3206,12 +3206,12 @@
     {
       "name": "cbg-205-interior",
       "code": "CBG",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 114274,
-      "sha256": "7817ef4c5dbf75163acff73a4ec39bbbd21823b38db0e6294cfb7c9cac1b7f6a",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 114572,
+      "sha256": "7e29187e08215c594af3e247d062a49d48f4db3059266225a879c2ebb1e1bd47",
       "view": {
         "position": [
           -13,
@@ -3232,12 +3232,12 @@
     {
       "name": "old-foyer-interior",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 41226,
-      "sha256": "3ea6abdd607a3da7f15604c5448f608df1d39cec7c9980ec646928f4d36dff5d",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 40294,
+      "sha256": "d5fd2342fa636e823f71ca41bd368734f9b099c5dd8a8e793374ea830df11def",
       "view": {
         "position": [
           3.3157599999999974,
@@ -3258,12 +3258,12 @@
     {
       "name": "faw-401-interior",
       "code": "FAW",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 77608,
-      "sha256": "5235643d9d674de7fd2f95ef516f23828d76fc6fd41e358fa08c51c3c618f06c",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 77380,
+      "sha256": "5a2783da19b85a5bda5f6278dc657ebd18ab7ef3e67fa5688c89a06196c35b21",
       "view": {
         "position": [
           -12,
@@ -3284,12 +3284,12 @@
     {
       "name": "clm-502-interior",
       "code": "CLM",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 120706,
-      "sha256": "5839be588b13c371db16f5951b661b479612a6139323a4c26bf88ad07c9dedd9",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 119310,
+      "sha256": "d186f9da618aa48e9d829b502182c39ea915bfeff9827b9bf487fc9f95fe57c1",
       "view": {
         "position": [
           13.8,
@@ -3310,12 +3310,12 @@
     {
       "name": "old-321-interior",
       "code": "OLD",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 62096,
-      "sha256": "d24e34d49eea4bbfba1f9a95cf1993c14a8eb4bdd81dc869a30f1b7058b307d0",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 61558,
+      "sha256": "9c843712e87e53ffab04e71dfff0a09dc69baa3619bb2d5bbe285ef13b469d25",
       "view": {
         "position": [
           15.199999999999996,
@@ -3336,12 +3336,12 @@
     {
       "name": "mar-107-interior",
       "code": "MAR",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 93666,
-      "sha256": "886d539e17478b796f6aa8d3feae75d286baecaf09eccc02ef36179639d69b3b",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 95416,
+      "sha256": "26eb3c74302a7ec1e959ce71555c6062952fa6d996ff51b075367bd2881e1a2f",
       "view": {
         "position": [
           -11.600000000000001,
@@ -3362,12 +3362,12 @@
     {
       "name": "lse-square-paving",
       "code": "CAMPUS",
-      "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
       "renderer": "campus-viewer",
-      "rendererSha256": "7c98bf701d358aeeb93ad9a896fbb08dcce592ad8e9db66a8ddac25267183617",
-      "modelAssetsSha256": "142b1e91179353a145bd2048e029248ad549b7d0408e22fc69eb61aad3505526",
-      "bytes": 488452,
-      "sha256": "83f8d124c73a8ded95668557ea482d5c3ae5fcf395461359b49a6fa84d34f6cf",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 515680,
+      "sha256": "ac89ee11004e205d93ffe00ad42422cc02f8590bcca824523b980c529e2ed891",
       "view": {
         "position": [
           20.00000000000003,
@@ -3384,6 +3384,58 @@
       "mode": "campus",
       "spaceId": null,
       "detail": null
+    },
+    {
+      "name": "pea-stalls-interior",
+      "code": "PEA",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
+      "renderer": "campus-viewer",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 79694,
+      "sha256": "ce0d5dfca3c57c3b371ad0fbaef71ad183031ef8f9b3a4f6ddbe5ce17fdd1664",
+      "view": {
+        "position": [
+          1.7389984547892417e-15,
+          2.3999999999999995,
+          -12.4
+        ],
+        "target": [
+          0,
+          3.649999999999999,
+          1.8
+        ],
+        "fov": 50
+      },
+      "mode": "interior",
+      "spaceId": null,
+      "detail": "interior-PEA"
+    },
+    {
+      "name": "pea-circle-interior",
+      "code": "PEA",
+      "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
+      "renderer": "campus-viewer",
+      "rendererSha256": "bfbd5b64da5deff17c15806d19150d1abc8c814f90c0168a77eb250c689f6673",
+      "modelAssetsSha256": "174cb8954442ad5d90d4e6d17ca0dc9e0fa024fc189599c09038ff423569ec44",
+      "bytes": 255608,
+      "sha256": "ac5a35201b5f07907c303a4312138c531ed782202e3c062c89e7b866a884a9f7",
+      "view": {
+        "position": [
+          0,
+          3.200000000000001,
+          -1.5999999999999996
+        ],
+        "target": [
+          0,
+          4.4,
+          -16
+        ],
+        "fov": 60
+      },
+      "mode": "interior",
+      "spaceId": null,
+      "detail": "interior-PEA"
     }
   ]
 }
