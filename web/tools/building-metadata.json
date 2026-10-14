@@ -2861,11 +2861,11 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 143,
-        "status": "photo-registered-thames-and-silver-artwork-profiles",
-        "scope": "Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.",
-        "source": "LSE History2015 and2017 Warren Wilson panel photographs and descriptions",
-        "photographDate": "historical; precise image capture dates unresolved"
+        "version": 197,
+        "status": "photo-guided-whole-facade-finishes",
+        "scope": "Neutral white walls and painted frames, red-brown stair, grey entrance base/sign and less frosted glass. Geometry, artwork, room, glass tint and transparency retained. Historical photographs guide presentation; unseen elevations are not verified.",
+        "addedObjects": 26,
+        "archivedObjects": 26
       },
       "interiorView": {
         "position": [
@@ -3258,6 +3258,58 @@
         "referencePeriod": "2011 built refurbishment",
         "limitations": "Photographic finish and mat dimensions are estimates. No current2026condition or complete floor-layout claim."
       }
+    },
+    {
+      "id": "faw-401",
+      "code": "FAW",
+      "collection": "FAW401_ROOM197_study",
+      "label": "FAW.4.01协作教室",
+      "scope": "同房号历史平面与实拍支持的30座协作教室。4组圆形及带延伸桌、黄色转椅、折角边界、7组平面窗位及教学墙按图近似；尺度、层高和不可见构造估计，未与整栋楼层配准，不代表2026年现状。",
+      "gallery": "faw-401-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "FAW.4.01协作教室",
+        "scope": "同房号历史平面与实拍支持的30座协作教室。4组圆形及带延伸桌、黄色转椅、折角边界、7组平面窗位及教学墙按图近似；尺度、层高和不可见构造估计，未与整栋楼层配准，不代表2026年现状。"
+      },
+      "interiorView": {
+        "position": [
+          -12,
+          12,
+          15
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 48
+      }
+    },
+    {
+      "id": "clm-502",
+      "code": "CLM",
+      "collection": "CLM502_ROOM197_study",
+      "label": "CLM.5.02排式教室",
+      "scope": "依据LSE官方CLM.5.02历史平面与照片建立120座教室：6排、每排4+12+4座、60张双人桌、双纵向通道、双投影幕、教学墙与门。尺寸、层高及照片不可见构造估计；外侧窗洞无法可靠核实，侧后墙和顶面剖开；不推断整层连通，不代表2026年现状。",
+      "gallery": "clm-502-interior",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CLM.5.02排式教室",
+        "scope": "依据LSE官方CLM.5.02历史平面与照片建立120座教室：6排、每排4+12+4座、60张双人桌、双纵向通道、双投影幕、教学墙与门。尺寸、层高及照片不可见构造估计；外侧窗洞无法可靠核实，侧后墙和顶面剖开；不推断整层连通，不代表2026年现状。"
+      },
+      "interiorView": {
+        "position": [
+          13.8,
+          11.2,
+          -14.6
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "fov": 48
+      }
     }
   ],
   "presentationReview": {
@@ -3354,7 +3406,9 @@
       "scope": "Shared CC0 captured ground finishes at physical world scale; source geometry and authored slab joints retained. No invented water feature.",
       "bytes": 123528,
       "browserVerification": "result/web/ground-acceptance/verification.json"
-    }
+    },
+    "groundReliefVersion": 197,
+    "groundReliefScope": "Shared CC0 asphalt and stone height/roughness maps, filtered in world metres. Presentation finish, no measured site ageing or altered road geometry. Existing daylight/cloud sky retained; no speculative water body added."
   },
   "glazingReview": {
     "version": 181,
@@ -3397,5 +3451,5 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 196
+  "sourceVersion": 197
 }
