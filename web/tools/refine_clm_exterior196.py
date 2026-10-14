@@ -113,7 +113,7 @@ def preview(phase):
     world=bpy.data.worlds.new(scene.name+'_world');world.use_nodes=True;scene.world=world
     background=world.node_tree.nodes['Background'];background.inputs[1].default_value=.65
     env=world.node_tree.nodes.new('ShaderNodeTexEnvironment')
-    env.image=bpy.data.images.load(str(ROOT/'web/public/environment/kloppenheim-sky-1k.hdr'),check_existing=True)
+    env.image=bpy.data.images.load(str(ROOT/'web/public/environment/kloppenheim-daylight-1k.hdr'),check_existing=True)
     world.node_tree.links.new(env.outputs['Color'],background.inputs[0])
     data=bpy.data.lights.new(scene.name+'_sun','SUN');data.energy=1.8;data.angle=.12
     sun=bpy.data.objects.new(data.name,data);collection.objects.link(sun)
