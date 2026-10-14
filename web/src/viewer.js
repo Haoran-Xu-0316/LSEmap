@@ -1016,6 +1016,8 @@ export class CampusViewer {
     this.renderPipeline.dispose();
     this.environmentTarget.dispose();
     this.skyTexture?.dispose();
+    this.skyBackdrop?.dispose();
+    this.skyBackdrop?.image.close();
     disposeGroundTextures(this.groundTextures);
     this.scene.traverse((object) => {
       object.geometry?.dispose();
