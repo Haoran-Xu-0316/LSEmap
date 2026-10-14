@@ -1,12 +1,17 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v206.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v207.blend。
 
-原生SHA256：605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78。
+原生SHA256：44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、17个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+网页环境复用已核验CC0天空、白云、日光与地面素材；天空和HDR并行传输，路面颜色先刷新，凹凸数据独立加载。CBG露台铺地和LRB广场补接共享石材质感，不改现有铺装几何，不增加虚构水面。
+
+207版按2022DWG曲线和剖面重建PEA历史观众厅，新增Stalls坡地层、Circle悬挑楼座、4条纵通道及侧箱席，修正舞台口13米×5.9米。846席是可视化样本，非完整999席座位图；后台、门厅及当前内装未复原。POR修正转角檐下托座和门拉手，玻璃及其他立面保留。7257个原对象保留，新增33个批次、归档25个旧批次。
+
 
 206版补齐LSE Square约716.71㎡石材铺装，按归档地图保留6个树池，连接已配准CBG入口，原道路不变。SAW六组玻璃的几何、UV和法线保持，修正入口深青吸色和两组不透明屋顶玻璃。7249个原对象保留，新增8个批次、归档6个玻璃批次；完整模型保存重开验证。
 
@@ -56,9 +61,9 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
-|PEA|146|Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.|
+|PEA|207内部/146外观|Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.|
 |PEL|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
-|POR|148|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
+|POR|207入口/148玻璃|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
 |SAW|206玻璃/190砖屏|9828块镂空砖与周围墙面齐平，18673处搭接砂浆连接相邻砖层。保留砖块尺寸、UV、颜色和室内；206修正入口与屋顶六组玻璃光学，原窗面不变；移除砂浆隐藏接触面，安装尺寸仍为照片估计。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
