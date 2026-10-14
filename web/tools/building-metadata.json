@@ -201,9 +201,9 @@
       "status": "detailed",
       "interior": true,
       "exteriorDirection": [
-        0.3290587365627289,
-        0.49755552411079407,
-        0.8025950193405151
+        -0.7268347144,
+        0.3318593502,
+        -0.6013157368
       ],
       "localRefinement": {
         "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
@@ -211,24 +211,23 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Eight entrance leaves now have one thin pane each, with matching apertures through the overlapping curtain panes. User red/orange shades and optical parameters retained.",
-        "evidence": [
-          "data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_02.jpg"
-        ],
-        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
-        "audit": "result/blender/cbg_detail166/audit.json"
+        "version": 205,
+        "status": "registered-whole-building-envelope-and-circulation",
+        "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
+        "source": "https://rshp.com/projects/education/lse-centre-building/",
+        "audit": "result/blender/cbg-assembled205/audit.json",
+        "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
       },
       "interiorView": {
         "position": [
-          43.64379119873047,
+          33.1301155,
           1.75,
-          57.76911926269531
+          64.9372635
         ],
         "target": [
-          53.48973083496094,
-          9.151405334472656,
-          42.01232147216797
+          20.0600796,
+          9.1514053,
+          87.3900452
         ],
         "fov": 65
       },
@@ -281,12 +280,23 @@
           "scope": "East tower louvres registered to rear service zone; west rear open louvre screen added behindXbrace. Front circulation glazing remains open. Vision crossbars and40shallow charcoal floor-edge bands follow built photographs. Retained neutral70/37 glass and red-front/orange-return shades. Red dominance follows user preference rather than measured photographic colour. Dimensions remain estimated.",
           "source": "https://rshp.com/projects/education/lse-centre-building/",
           "photographDate": "unknown"
+        },
+        {
+          "version": 205,
+          "status": "registered-whole-building-envelope-and-circulation",
+          "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
+          "source": "https://rshp.com/projects/education/lse-centre-building/",
+          "audit": "result/blender/cbg-assembled205/audit.json",
+          "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
         }
       ],
       "wholeFacadeReview": {
-        "version": 138,
-        "status": "retained-with-interior-registration-gap",
-        "scope": "Retained red primary/orange side shades, main curtain and accepted entrance. Real office glass first-surface probes pass. Existing high-wing floor plates stop4.2m behind main glass, in a zone including a wandering stair; horizontal rays find distant opposing glass but cannot establish missing slabs. Office partitions, stair apertures and measured complete floor layouts remain unregistered; no false backplates or speculative filling added."
+        "version": 205,
+        "status": "registered-whole-building-envelope-and-circulation",
+        "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
+        "source": "https://rshp.com/projects/education/lse-centre-building/",
+        "audit": "result/blender/cbg-assembled205/audit.json",
+        "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
       },
       "glazingReview": {
         "version": 181,
@@ -3543,7 +3553,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": "204",
+  "sourceVersion": 205,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
