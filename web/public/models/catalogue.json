@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "204",
-  "sourceModelSha256": "a12a1ae48f98b7b0447af030667ec17e1c25eb757405a056e62b2ddc772be956",
+  "version": "205",
+  "sourceModelSha256": "bd8171002dda80d4228b99ded708b1a31da4645d333b518fd10125d8b3278a7a",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -337,9 +337,9 @@
       "status": "detailed",
       "interior": true,
       "exteriorDirection": [
-        0.3290587365627289,
-        0.49755552411079407,
-        0.8025950193405151
+        -0.7268347144,
+        0.3318593502,
+        -0.6013157368
       ],
       "localRefinement": {
         "description": "folded jamb return; cap shadow joint; head flashing; flashing downstand; sill front fascia; sill expansion joint",
@@ -347,24 +347,23 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Eight entrance leaves now have one thin pane each, with matching apertures through the overlapping curtain panes. User red/orange shades and optical parameters retained.",
-        "evidence": [
-          "data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_02.jpg"
-        ],
-        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
-        "audit": "result/blender/cbg_detail166/audit.json"
+        "version": 205,
+        "status": "registered-whole-building-envelope-and-circulation",
+        "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
+        "source": "https://rshp.com/projects/education/lse-centre-building/",
+        "audit": "result/blender/cbg-assembled205/audit.json",
+        "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
       },
       "interiorView": {
         "position": [
-          43.64379119873047,
+          33.1301155,
           1.75,
-          57.76911926269531
+          64.9372635
         ],
         "target": [
-          53.48973083496094,
-          9.151405334472656,
-          42.01232147216797
+          20.0600796,
+          9.1514053,
+          87.3900452
         ],
         "fov": 65
       },
@@ -416,12 +415,23 @@
           "scope": "East tower louvres registered to rear service zone; west rear open louvre screen added behindXbrace. Front circulation glazing remains open. Vision crossbars and40shallow charcoal floor-edge bands follow built photographs. Retained neutral70/37 glass and red-front/orange-return shades. Red dominance follows user preference rather than measured photographic colour. Dimensions remain estimated.",
           "source": "https://rshp.com/projects/education/lse-centre-building/",
           "photographDate": "unknown"
+        },
+        {
+          "version": 205,
+          "status": "registered-whole-building-envelope-and-circulation",
+          "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
+          "source": "https://rshp.com/projects/education/lse-centre-building/",
+          "audit": "result/blender/cbg-assembled205/audit.json",
+          "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
         }
       ],
       "wholeFacadeReview": {
-        "version": 138,
-        "status": "retained-with-interior-registration-gap",
-        "scope": "Retained red primary/orange side shades, main curtain and accepted entrance. Real office glass first-surface probes pass. Existing high-wing floor plates stop4.2m behind main glass, in a zone including a wandering stair; horizontal rays find distant opposing glass but cannot establish missing slabs. Office partitions, stair apertures and measured complete floor layouts remain unregistered; no false backplates or speculative filling added."
+        "version": 205,
+        "status": "registered-whole-building-envelope-and-circulation",
+        "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
+        "source": "https://rshp.com/projects/education/lse-centre-building/",
+        "audit": "result/blender/cbg-assembled205/audit.json",
+        "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
       },
       "glazingReview": {
         "version": 181,
@@ -440,103 +450,103 @@
       },
       "bounds": {
         "min": [
-          2.060716152191162,
+          3.49135684967041,
           -0.2750000059604645,
-          31.516820907592773
+          27.87520980834961
         ],
         "max": [
-          68.16556549072266,
+          72.62397766113281,
           53.279998779296875,
-          100.0077896118164
+          104.0209732055664
         ]
       },
       "exteriorFramingCorners": [
         [
-          42.917788356623866,
+          26.6961840562808,
           -0.2750000059604645,
-          24.935220366025153
+          106.67812276873252
         ],
         [
-          68.38467507308727,
+          -1.8081159373536408,
           -0.2750000059604645,
-          40.84869928934135
+          87.53263177426336
         ],
         [
-          42.917788356623866,
+          26.6961840562808,
           53.279998779296875,
-          24.935220366025153
+          106.67812276873252
         ],
         [
-          68.38467507308727,
+          -1.8081159373536408,
           53.279998779296875,
-          40.84869928934135
+          87.53263177426336
         ],
         [
-          1.7006606868617382,
+          72.91510657845495,
           -0.2750000059604645,
-          90.896404982035
+          37.8662007691772
         ],
         [
-          27.167547403325138,
+          44.41080658482051,
           -0.2750000059604645,
-          106.80988390535119
+          18.720709774708055
         ],
         [
-          1.7006606868617382,
+          72.91510657845495,
           53.279998779296875,
-          90.896404982035
+          37.8662007691772
         ],
         [
-          27.167547403325138,
+          44.41080658482051,
           53.279998779296875,
-          106.80988390535119
+          18.720709774708055
         ]
       ],
       "interiorBounds": {
         "min": [
-          2.8369922637939453,
+          4.401201248168945,
           -0.2750000059604645,
-          32.052616119384766
+          28.4105224609375
         ],
         "max": [
-          67.38612365722656,
+          71.81797790527344,
           52.19499969482422,
-          99.47199249267578
+          104.0209732055664
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-6baa0c0adbca.glb",
-        "bytes": 5256732,
-        "triangles": 527960,
-        "sha256": "6baa0c0adbca19cb4e212285f007e00b68fc87bd082ca22308b39c373558c05b",
+        "url": "/models/details/cbg-exterior-a4e001594cd5.glb",
+        "bytes": 4540692,
+        "triangles": 396092,
+        "sha256": "a4e001594cd55057e162c0e191675e0c034f96a1e585f5211399af9f6b413e2b",
         "bounds": {
           "min": [
-            2.060716152191162,
+            3.49135684967041,
             -0.2750000059604645,
-            31.516820907592773
+            27.87520980834961
           ],
           "max": [
-            68.16556549072266,
+            72.62397766113281,
             53.279998779296875,
-            100.0077896118164
+            104.0209732055664
           ]
         }
       },
       "detailedInterior": {
-        "url": "/models/details/cbg-interior-17c76c95e8db.glb",
-        "bytes": 347428,
-        "triangles": 38244,
-        "sha256": "17c76c95e8dba403812f076dd04e13bdaacf2e2e74e4d0b0919c33ce92b01b1e",
+        "url": "/models/details/cbg-interior-9c8248b174d1.glb",
+        "bytes": 422092,
+        "triangles": 39436,
+        "sha256": "9c8248b174d131749f6059a1450586378c9d0696bf4d5348ae11bdb88359bb36",
         "bounds": {
           "min": [
-            2.8369922637939453,
+            4.401201248168945,
             -0.2750000059604645,
-            32.052616119384766
+            28.4105224609375
           ],
           "max": [
-            67.38612365722656,
+            71.81797790527344,
             52.19499969482422,
-            99.47199249267578
+            104.0209732055664
           ]
         }
       },
