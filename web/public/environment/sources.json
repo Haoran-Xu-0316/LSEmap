@@ -20,23 +20,43 @@
       "scope": "Presentation sky and daylight reflections. Not an LSE site survey."
     },
     {
+      "path": "/environment/daylight-sky-2k.webp",
+      "name": "Kloppenheim 05 (Pure Sky) backdrop",
+      "authors": [
+        "Greg Zaal",
+        "Jarod Guest"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/kloppenheim_05_puresky",
+      "licenseSource": "https://polyhaven.com/license",
+      "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/kloppenheim_05_puresky.jpg",
+      "originalSha256": "a09c8bb8f362ec5bb584b49c2b6332f9b3cffc1edf26801e7eb0c96178256b7b",
+      "sha256": "b2f83aaf1538e6558401e815a4e6fe4cb6a84bd7a567bef530e4d2867c391552",
+      "bytes": 27616,
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "scope": "Static photographic sky backdrop; existing HDR supplies lighting. Not an LSE survey."
+    },
+    {
       "path": "/environment/asphalt-finish-512.webp",
-      "name": "Aerial Asphalt 01",
+      "name": "Asphalt 02",
       "authors": [
         "Rob Tuytel"
       ],
       "license": "CC0-1.0",
-      "source": "https://polyhaven.com/a/aerial_asphalt_01",
-      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_asphalt_01/aerial_asphalt_01_diff_1k.jpg",
-      "originalSha256": "28bfd71288b364f825e0feb750e487410422d80bf3c31d32da01cae3bf085b58",
-      "sha256": "276a84ef3d0a491c42c7e5fe03e1c4e5c7bd66d5f75cadd414ae742dd583a040",
-      "bytes": 47358,
+      "source": "https://polyhaven.com/a/asphalt_02",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg",
+      "originalSha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed",
+      "sha256": "14c852b9998069afb0be35ef0ec26544271f0454650729692deee4b92da3987a",
+      "bytes": 66326,
       "dimensions": [
         512,
         512
       ],
-      "repeatMetres": 30,
-      "linearLuminanceMean": 0.127792,
+      "repeatMetres": 3,
+      "linearLuminanceMean": 0.105896,
       "scope": "Shared ground finish only; geometry, joints and recorded palette remain authored. Not an LSE survey."
     },
     {
@@ -61,41 +81,42 @@
     },
     {
       "path": "/environment/asphalt-relief-512.webp",
-      "name": "Aerial Asphalt 01 surface data",
+      "name": "Asphalt 02 surface data",
       "authors": [
         "Rob Tuytel"
       ],
       "license": "CC0-1.0",
-      "source": "https://polyhaven.com/a/aerial_asphalt_01",
+      "source": "https://polyhaven.com/a/asphalt_02",
       "originals": [
         {
           "channel": "red",
           "semantic": "Displacement",
-          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_asphalt_01/aerial_asphalt_01_disp_1k.jpg",
-          "originalSha256": "997f6d2d8515b04cffbdf94138a8a69221e9126dc95cd681e621bf8b6d201d87",
-          "bytes": 157955
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_disp_1k.jpg",
+          "originalSha256": "9e651a0fdb6f9749e9cd7a85b0f470b76c4b1a96837bd7ff30fb5f6bea92d3f1",
+          "bytes": 354943
         },
         {
           "channel": "green",
           "semantic": "Rough",
-          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_asphalt_01/aerial_asphalt_01_rough_1k.jpg",
-          "originalSha256": "19ca745417e36a1cd1114411801933b3144a351d1409d0d9caa1046b9a20c0ec",
-          "bytes": 312445
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_rough_1k.jpg",
+          "originalSha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712",
+          "bytes": 544032
         }
       ],
-      "sha256": "997d51d65f90c0923a3857da5a57d4d19dd6e783600275cb112b49bce387a363",
-      "bytes": 214480,
+      "sha256": "b16bdb910db321351e6457158d970cf42c2dac5e4a7f091b9a8b1a598d8795ed",
+      "bytes": 175942,
       "dimensions": [
         512,
         512
       ],
-      "repeatMetres": 30,
+      "repeatMetres": 3,
       "channels": {
         "red": "height",
         "green": "roughness",
         "blue": "unused"
       },
       "colorSpace": "linear-data",
+      "precisionBits": 5,
       "scope": "Presentation relief only. Not an LSE survey."
     },
     {
@@ -135,6 +156,7 @@
         "blue": "unused"
       },
       "colorSpace": "linear-data",
+      "precisionBits": 8,
       "scope": "Presentation relief only. Not an LSE survey."
     }
   ]
