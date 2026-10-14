@@ -1,12 +1,14 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v208.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v209.blend。
 
-原生SHA256：da07d198617bd18bceaece14682b9d0995a288655b6c5aa0ac8d2765e883b92c。
+原生SHA256：6398f422e2fefde66c33e0d87a36092bfad46b7fee69494d5c955caae443e455。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、17个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+209版保留7331个原对象，新增42个批次，归档11个旧批次。恢复两片草地原先遮挡的约2008.6㎡地图步道，645段逐一对应234条归档地图道路，50条有明确沥青标签的步道改用沥青；路径、原估算宽度和表面标高保留。MAR只修7组玻璃固有偏青，混凝土及原透明度不变。OLD修17片有照片支持的斜砖墙，56处砌筑接缝连续。CKK独立公共中庭补橡木端墙及两层廊桥，入口、挑空和教室保留。
 
 208版保留7290个原对象，新增41个批次。61A只对10个已有屋面近背衬的老虎窗启用有限透明，其余243个窗保持不透明代理并减轻偏青；整楼平面仍为provisional。CON入口花岗岩去黄偏；OCS屋瓦改为低对比红褐色、店面改为深橄榄绿。LRB按官方导览图补4处G层公共服务柜台，轮廓部分插值，位置、标高和材质为估算；未宣称完整当前内部。
 
@@ -42,7 +44,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |---|---|---|
 |61A|208玻璃/177屋面|253个窗壳形状、UV和法线保留；10个有屋面背衬的老虎窗有限透明，其余243窗继续不透明并减青。177屋面修正保留；整楼平面仍未独立配准，未证实当前完整内部。|
 |CBG|205|独立配准42米塔楼与阶梯教学翼；补齐两层裙房、屋顶退台及连续顶层楼梯。保留中性玻璃和红橙内侧遮阳，外观/总览共用组件；4个独立房间样本保持。尺寸及未见内部仍为估计。|
-|CKK|178|Read-only review of principal elevation, entrance columns, fanlight, window groups and cornices against archived Grimshaw and Willebrand built photographs. Retained164/173 glazing corrections; no reliable additional geometry correction established.|
+|CKK|209中庭/178外观|公共中庭按历史建成照片补Sounding Board橡木端墙及两层悬挑廊桥，6处楼板和8处侧廊拼接射线通过；尺寸估算，不代表当前整楼内装。外观、入口及独立教室保留。|
 |CLM|196|统一临街灰暖白石材、深棕涂饰窗框与木门；玻璃粗糙度调整，原色值、透明度、透射、几何和旧UV保留。上层照片受树遮挡，不声称新测绘。|
 |COL|195|临街石材、涂漆窗框、木门和玻璃材质分离；32个原对象仅替换材质，原几何、旧UV及透明度保留。|
 |CON|208入口石材/180玻璃|入口花岗岩修正黄偏并保留噪声节点、几何及UV。180版入口玻璃保留；上层、屋顶和完整内部仍未核验。|
@@ -58,8 +60,8 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |50L|147|50A entry and opaque external round lamp are located between upper window axes using the2022 planning photograph; frame and lower panel adopt deep blue shown in latest published2025/26 LSE handbook. No50 tripartite upper window widened with true wall clearance, while its inherited4.30–6.32m vertical datum remains estimated because photo top is cropped and reference door height is not surveyed. Other upper windows and original wooden No50 portal retained. Glass browser opacity0.82; no invented complete interior. Shared49L interference is archived and replaced in49L own exterior collection.|
 |51L|204|6组不透明玻璃代理改为克制的中性玻璃；101个玻璃组件形状、UV和原窗组保留。未见近背衬，透明度有限；无完整内部重建。|
 |LRB|208公共柜台/196外观|G层按官方导览图补4处公共柜台；75个支撑点和2552个原家具顶点检查通过。继承配准残差最大0.789米，轮廓部分插值，高度及材质估算。196外观、楼板、中庭和独立房间保留。|
-|MAR|188/195复核|保留188北立面开口及楼板修正；195三向整体核对未形成可证的新形体修正，未重复加屋面。|
-|OLD|201入口/196门厅|外墙沿用194版石材修正；196完善历史门厅的石材接缝、深色入口地垫与浅色圆盘灯。保留台阶、门槛和房间注册，不代表完整当前内部。|
+|MAR|209玻璃/188结构|7组玻璃减少75%固有青蓝并保持线性明度，原几何、UV和透明参数保持。北面背光不通过改白混凝土补偿；未给无近背衬窗户强行透明。|
+|OLD|209斜砖墙/201入口|17片前部两层斜砖墙采用连续米制UV，56处接缝全部连续；灰棕砖及浅灰灰缝按2024完工项目实拍估算。原UV、玻璃和后部屋面保留；未宣称完整当前内部。|
 |OCS|208色彩/145形体|32个对象仅替换材质，修正屋瓦过橙及店面近黑偏色，转为低对比红褐瓦和深橄榄绿。门窗分格、屋形、UV、玻璃及历史鞋店内部保留，未宣称当前全内装。|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
