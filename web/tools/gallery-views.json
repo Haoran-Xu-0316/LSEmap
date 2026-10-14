@@ -1281,5 +1281,23 @@
       ],
       "fov": 48
     }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "lse-square-paving",
+    "label": "LSE Square石材铺装与CBG入口",
+    "view": {
+      "position": [
+        20,
+        30,
+        40
+      ],
+      "target": [
+        38,
+        0.1,
+        45
+      ],
+      "fov": 58
+    }
   }
 ]
