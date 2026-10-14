@@ -125,8 +125,8 @@ Blue Rain by Michael Brown: https://blogs.lse.ac.uk/lsehistory/2018/03/07/shimme
 The LRB artwork is an estimated static bright-point study from an archived estate photograph,
 not all23520 physical LEDs or the live library-driven display. Artwork credit: Michael Brown.
 
-Presentation sky: Kloppenheim 05 (Pure Sky), Greg Zaal and Jarod Guest, Poly Haven, CC0-1.0.
-https://polyhaven.com/a/kloppenheim_05_puresky
+Presentation sky: Kloofendal 48d Partly Cloudy (Pure Sky), Greg Zaal and Jarod Guest, Poly Haven, CC0-1.0.
+https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky
 The sky asset is not a photograph of the LSE campus.
 
 OLD limestone finish: original512px procedural material map, guided by archived facade photographs. No reference photograph pixels are redistributed.
