@@ -135,3 +135,6 @@ Ground finishes: Aerial Asphalt 01 and Concrete Floor 02 by Rob Tuytel, Poly Hav
 https://polyhaven.com/a/aerial_asphalt_01
 https://polyhaven.com/a/concrete_floor_02
 Shared 512px finishes are presentation material, not photographs of LSE ground.
+
+Ground relief uses the matching CC0 height and roughness captures from the same two assets.
+Lossless linear-data maps pack height in red and roughness in green. These are presentation finishes, not measured LSE wear.
