@@ -8,34 +8,27 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition199 contains31 building records,30 detailed exteriors,25 interior views
-and15 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v199.blend`. GitHub contains
+Edition200 contains31 building records,30 detailed exteriors,25 interior views
+and17 independently selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v200.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All127 gallery images use the
+finishes and public structural elements. All129 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-The landscape refines510 previously coarse crown masses while retaining all522
-crown envelopes, centres and tree positions. Earlier Watkins/Houghton refinements
-remain intact. One opaque batched canopy adds122,400 triangles, with no new
-textures, alpha leaf cards, trees or animation.
+Two newly selectable rooms extend the interior collection: OLD.3.21 has four
+8-seat groups; MAR.1.07 has16 seats around a U and4 central seats. Both use
+paired official historical plans/photos, independently isolated from the campus
+scene. Plan arrangements and photographed teaching finishes are retained;
+metric scale, hidden construction and some photo-to-plan registration are estimates.
 
-Twenty-four surrounding context buildings gain13 wall/roof finishes from
-singular archived mapped material/colour attributes. Their existing world faces
-remain exact; no windows or facade details are invented. Mixed or absent tags
-keep their previous finish. Numeric colours and standard brick coursing are
-presentation estimates, not a current photographic survey.
-
-The original park black patch was traced to downward grass faces. Orientation
-repair corrects120 ground objects without changing coordinates, coverage or
-corner UVs; native before/after renders verify the patch is gone.
-
-Every LSE exterior and interior asset retains its edition198 checksum. The
-continuous road network and clearer static daylight remain in place. Nine
-archived pedestrian centre lines totalling280.681m were checked against current
-paving without finding evidence for a new broad route expansion.
+All edition199 campus, building and prior room assets retain their checksums.
+The refined landscape, mapped context finishes, continuous road network and
+static daylight remain in place. The private CBG roof candidate stays excluded:
+a separately scaled2016architect plan shows an approximately6m structural grid,
+whereas the inherited model uses about8.17m. Design-stage drawings alone do not
+establish current built dimensions or justify silently resizing the campus.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. Optional asset or storage failures retain
