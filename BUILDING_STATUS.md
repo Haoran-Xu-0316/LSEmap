@@ -1,22 +1,22 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v196.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v197.blend。
 
-原生SHA256：1c1185738e796221c6d30f06aec906b99829cad4867fbb2bced77d657afc298b。
+原生SHA256：5a225f1d5227e0b173bc93d9ba4aa5da1e539ec73b003f31ea575ccea807d854。
 
-31栋楼有目录记录，30栋有独立外观，25个内部视图、13个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
+31栋楼有目录记录，30栋有独立外观，25个内部视图、15个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
 
-196版合入LRB、CLM外观及OLD历史门厅三个组件，80个新增对象替换79个原对象。6654个原对象的几何、UV、材质绑定逐项保留，新完整模型保存后重开核对。证据：result/blender/stage196/reopened-verification.json。
+197版合入STC外观及FAW.4.01、CLM.5.02独立教室。94个新增对象、26个原对象归档；6734个原对象的几何、UV和绑定保留，完整模型重开验证。两个教室各有独立场景，不进入校园总览，不构造未验证的整层连通。
 
-LRB纠正屋顶高起围护的浅灰颜色，统一棕砖、灰缝、深色涂装窗框及玻璃反射。现有公制程序砖纹原已进入网页，本轮没有为此新增替代贴图。玻璃透明度、穹顶、café玻璃和内部几何保持。4种内外共用屋面材质同步进入内部视图；原43组压缩几何保持一致。
+室外路面复用Poly Haven的CC0沥青与石材素材，补充匹配的高度和粗糙度图。两张512px无损数据图共463298字节，使用公制坐标、mipmap和远景细纹衰减；没有新增路面网格或渲染通道。下载失败时保留已有颜色与程序材质。现有日光白云天空继续用于背景和玻璃反射。素材为呈现用途，不代表LSE路面实测。
 
-CLM统一临街石材色调，降低窗框过强金属感并调整玻璃粗糙度；玻璃色值、透明度、透射、原几何和旧UV保留。复用已有原创石材色调图，新增贴图字节为零。树木遮住的上层和未验证后立面仍为估计。
+STC按已有整体及入口照片纠正白墙、浅色涂装窗框、红棕楼梯、灰色招牌与基座，并调整玻璃粗糙度；几何、透明度、艺术板和原房间不变。FAW整栋只读复核没有发现资料可证的新偏差，未臆改未见上层和屋顶。
 
-OLD门厅按Design Engine2011年已建照片补充深色入口地垫、石材接缝和浅色圆盘灯。地垫9个覆盖采样点均落在现有下层平台内，台阶、门槛、墙、接待台与长凳不变。它仍是历史入口空间，未补造相邻房间或声称当前完整楼层。
+FAW.4.01依据同房号历史平面和实拍建立4组桌、30座协作教室。CLM.5.02建立6排4+12+4座、60张双人桌和双纵向通道。尺寸、层高及不可见构造仍为估计，不代表2026年现状。
 
-道路、天空与上轮加载优化保留。总览、选楼和125张图库使用同一生产渲染器，发行前校验同源与哈希。
+总览、选楼和127张图库使用同一生产渲染器，发行前校验素材、模型与图库哈希。
 
 ## 建筑核验范围
 
@@ -31,7 +31,7 @@ OLD门厅按Design Engine2011年已建照片补充深色入口地垫、石材接
 |COL|195|临街石材、涂漆窗框、木门和玻璃材质分离；32个原对象仅替换材质，原几何、旧UV及透明度保留。|
 |CON|180|Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.|
 |COW|177|Outward normals of all110glass boxes and seated solid roof sheets on11photographed street dormers. No facade-layout, window-count, material-opacity or fullroof-layout change.|
-|FAW|176|核对FAW整栋模型、曲折窗带和PAN共用入口归属；未发现照片可证的整片修正，本轮无模型改动。|
+|FAW|197只读复核|核对FAW整栋模型、曲折窗带和PAN共用入口归属；未发现照片可证的整片修正，本轮无模型改动。|
 |KGS|176|Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.|
 |KSW|195|整段砖、石、窗框、店面、木门及玻璃颜色修正，补12根上层侧窗中梃；屋顶及后立面仍缺完整证据。|
 |LAK|179|Read-only review retains photo-supported sash windows and dormer apertures; no evidence-supported new geometry correction. Undated official imagery is not a current measured survey.|
@@ -54,4 +54,4 @@ OLD门厅按Design Engine2011年已建照片补充深色入口地垫、石材接
 |SAW|190|9828块镂空砖与周围墙面齐平，18673处搭接砂浆连接相邻砖层。保留砖块尺寸、UV、颜色及原玻璃和室内；移除砂浆隐藏接触面，安装尺寸仍为照片估计。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
 |SAL|184|7条连续闭合山花压顶取代154段重叠杆件；7组玻璃退入原窗洞，补出中央三联窗后的砖墙开口。原压顶路径、窗洞轮廓、光学材质和暖橙褐砖色保留；截面及退入深度估算，完整现状与内部未完成。|
-|STC|143|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
+|STC|197外观/143艺术板|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
