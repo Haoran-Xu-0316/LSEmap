@@ -8,9 +8,9 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition210 contains31 building records,30 detailed exteriors,25 interior views
+Edition211 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v210.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v211.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
@@ -31,7 +31,7 @@ and projecting bays, entrance and lower white panels are retained.
 All101pane shapes and the photographed window arrangement are retained; no
 verified full interior exists, so transparency remains deliberately limited.
 
-The17 previous independent room-study assets retain their checksums in edition210.
+The17 previous independent room-study assets retain their checksums in edition211.
 CON.7.05 adds an eighteenth sample from paired official plan and photography:18
 committee seats, paneled oak walls, a solid conference table and black swivel chairs.
 Dimensions, wall registration and image chronology remain estimates.
@@ -74,7 +74,7 @@ OLD mansard brick bonding now continues across17 photographed wall strips.
 CKK’s independent atrium adds its missing oak return wall and two galleries;
 the original entrance, central void and separate classroom remain intact.
 
-Edition210 corrects the library’s south upper-roof setback and corresponding
+Edition211 corrects the library’s south upper-roof setback and corresponding
 cladding, opaque windows and frames against the April2025 As Existing plan.
 About138m of upper-roof safety handrails follow the supported source trace;
 558 roof support probes pass. Lower-roof rails need separate height registration.
@@ -99,6 +99,12 @@ the normal lighting, procedural surface and network fallbacks.
 Geometry, weathering and optical values remain photographic or plan-based
 estimates. Many references are historical or undated. Complete current room
 layouts, unseen elevations and full-campus as-built fidelity remain unfinished.
+
+Mapped pedestrian areas now restore2,104.9m² of omitted Strand and Sheffield
+paving, with177.4m² of misplaced asphalt removed. The public Lincoln’s Inn
+Fields boundary has a merged metal fence and eight source-width openings
+connected to the retained footways. Paver courses and fence dimensions remain
+visual estimates; building and room assets are unchanged.
 
 ## Project files
 
