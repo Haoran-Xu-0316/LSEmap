@@ -2,10 +2,15 @@ import * as THREE from 'three';
 import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 
 export const SKY_BACKDROP_URL = '/environment/daylight-sky-2k.webp';
-export const SKY_URL = '/environment/kloppenheim-daylight-1k.hdr';
+export const SKY_URL = '/environment/daylight-1k.hdr';
 // Orient the photographed daylight toward the campus key light. This is a
 // presentation sky; its capture location is not campus survey evidence.
-const SKY_ROTATION = new THREE.Euler(0, -0.27, 0);
+// The source sun is at48 degrees elevation. Match its azimuth to the
+// campus key light without tilting the horizon or adding a second sun sprite.
+const SKY_ROTATION = new THREE.Euler(0, -0.297803, 0);
+export const DAYLIGHT_DIRECTION = new THREE.Vector3(
+  0.8, Math.tan(48 * Math.PI / 180) * Math.hypot(0.8, 1), 1,
+).normalize();
 const MAP_BACKGROUND = new THREE.Color(0xe9edf0);
 
 /** Keep downward elevation studies clear; reveal the sky near street level.
@@ -38,9 +43,11 @@ async function loadSkyBackdrop(viewer) {
 
 /** Upgrade the lightweight startup lighting after the model becomes usable. */
 export async function loadOutdoorEnvironment(viewer) {
-  let texture, target, backdrop, committed = false;
+  let texture, target, backdrop, backdropPending, committed = false;
   try {
     if (viewer.disposed) return false;
+    // The tiny sky and independent HDR can transfer together after first frame.
+    backdropPending = loadSkyBackdrop(viewer);
     const response = await fetch(SKY_URL, {signal:viewer.loadController.signal});
     if (!response.ok) throw new Error('Sky asset unavailable');
     const bytes = await response.arrayBuffer();
@@ -59,7 +66,7 @@ export async function loadOutdoorEnvironment(viewer) {
     finally { generator.dispose(); }
     viewer.loadController.signal.throwIfAborted();
     if (viewer.disposed) return false;
-    backdrop = await loadSkyBackdrop(viewer);
+    backdrop = await backdropPending;
     viewer.loadController.signal.throwIfAborted();
     if (viewer.disposed) return false;
     const previousBackdrop = viewer.skyBackdrop;
@@ -109,6 +116,12 @@ export async function loadOutdoorEnvironment(viewer) {
     if (!viewer.disposed) viewer.canvas.dataset.skyReady = 'fallback';
     return false;
   } finally {
-    if (!committed) { target?.dispose(); texture?.dispose();backdrop?.dispose();backdrop?.image.close(); }
+    if (!committed) {
+      target?.dispose();
+      texture?.dispose();
+      const unusedBackdrop = backdrop ?? await backdropPending;
+      unusedBackdrop?.dispose();
+      unusedBackdrop?.image.close();
+    }
   }
 }
