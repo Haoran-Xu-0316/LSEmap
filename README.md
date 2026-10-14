@@ -8,9 +8,9 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition203 contains31 building records,30 detailed exteriors,25 interior views
+Edition204 contains31 building records,30 detailed exteriors,25 interior views
 and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v203.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v204.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
@@ -27,14 +27,20 @@ LCH now has the seven-position street elevation visible in the official photogra
 between them. Actual wall openings replace the previous single columns. Central
 and projecting bays, entrance and lower white panels are retained.
 
+51L’s opaque glass proxies now use a restrained neutral dielectric finish.
+All101pane shapes and the photographed window arrangement are retained; no
+verified full interior exists, so transparency remains deliberately limited.
+
 All previous room studies and other building assets retain their checksums.
 A separate built-photo review confirms8 major axes and7 bays across CBG’s tower
 front; the inherited model has7 axes and6 bays. The structural engineer publishes
 a6m×9m grid, corroborating the scaled2016architect drawing. Independent202registration against OLD, STC and TowerOne finds the inherited
 tower/teaching-wing placement reversed. A private42m tower/grid candidate has
 been saved and reopened. Registered stepped-wing floor/envelope and highest-roof
-cutback candidates now exist, but facade modules, staircase interfaces, podium
-and camera corrections remain unfinished and are not released. Thirteen storeys are retained; facade
+cutbacks and metric office modules now share a saved whole-building
+review. Teaching-wing double-height shading and end bracing are included.
+Staircase interfaces, southern podium and camera corrections remain unfinished
+and are not released. Thirteen storeys are retained; facade
 bands omitted within double-height spaces are not treated as missing floors.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
