@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "197",
-  "sourceModelSha256": "5a225f1d5227e0b173bc93d9ba4aa5da1e539ec73b003f31ea575ccea807d854",
+  "version": "198",
+  "sourceModelSha256": "b45a6a433f350226beecfd201457420d86b2d253796098f86ff5417d5752b27e",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1684,6 +1684,11 @@
         "reversedShells": 316,
         "batchCount": 2,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorEvidenceReview": {
+        "version": 198,
+        "status": "read-only-evidence-check",
+        "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
       },
       "bounds": {
         "min": [
@@ -4946,6 +4951,11 @@
         "reversedShells": 73,
         "batchCount": 6,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorEvidenceReview": {
+        "version": 198,
+        "status": "read-only-evidence-check",
+        "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
       },
       "bounds": {
         "min": [
