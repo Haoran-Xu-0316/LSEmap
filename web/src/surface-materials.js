@@ -180,11 +180,14 @@ export function applySurfaceDetail(material, groundTextures = null) {
   const groundAsset = groundTextures && paving ? GROUND_FINISHES.find(asset => asset.kind === (asphalt ? 'asphalt' : 'stone')) : null;
   if (groundAsset) {
     uniforms.groundFinish = groundTextures[groundAsset.kind];
+    uniforms.groundRelief = groundTextures[groundAsset.kind+"Relief"];
+    uniforms.groundReliefReady = groundTextures.reliefReady;
+    uniforms.groundHeight = {value:groundAsset.height};
     uniforms.groundReady = groundTextures.ready;
     uniforms.groundMetres = {value:groundAsset.metres};
     uniforms.groundMean = {value:groundAsset.mean};
   }
-  material.customProgramCacheKey = () => `lse-surface-finish9-${groundAsset ? "captured" : "procedural"}-${pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish10-${groundAsset ? "captured" : "procedural"}-${pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -198,7 +201,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
       varying vec2 vSurfaceUv;
       uniform float surfaceScale, surfaceBump;
       uniform vec3 surfaceColorA, surfaceColorB, surfaceMortar, surfaceBrick;
-      ${groundAsset ? 'uniform sampler2D groundFinish; uniform float groundReady, groundMetres, groundMean;' : ''}
+      ${groundAsset ? 'uniform sampler2D groundFinish, groundRelief; uniform float groundReady, groundReliefReady, groundMetres, groundMean, groundHeight;' : ''}
       ${noiseGLSL}
     ` + shader.fragmentShader;
     const pattern = brick ? `
@@ -234,7 +237,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
       float resolvedGrain = noiseVisibility > .001 ? mix(.5, surfaceNoise(surfacePoint), noiseVisibility) : .5;
       float grain = ${outdoor ? "resolvedGrain * .55 + coarseGrain * .45" : "resolvedGrain"};
       // Keep the source palette midpoint without oversized concrete blotches.
-      vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * ${outdoor ? "1.2" : "0.32"});
+      vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * ${paving ? "0.45" : outdoor ? "1.2" : "0.32"});
       float surfaceHeight = resolvedGrain * surfaceBump * noiseVisibility;
       ${pavingGrid ? `
       // Metre-scale staggered slabs on otherwise plain approach surfaces only.
@@ -270,6 +273,8 @@ export function applySurfaceDetail(material, groundTextures = null) {
       float grainVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(finePoint)));
       float fineGrain = grainVisibility > .001 ? (surfaceNoise(finePoint) - 0.5) * grainVisibility : 0.0;
       ${groundAsset ? `
+      float capturedRoughness = .5;
+      float capturedFace = 0.0;
       if (groundReady > .5) {
         // World metres retain the same scale on base campus and detailed meshes.
         // Captured wear enriches the authored palette; modelled joints stay intact.
@@ -277,7 +282,17 @@ export function applySurfaceDetail(material, groundTextures = null) {
         float groundTone = dot(groundSample, vec3(.2126, .7152, .0722)) / groundMean;
         vec3 groundNormal = normalize(cross(dFdx(vSurfacePosition), dFdy(vSurfacePosition)));
         float groundFace = smoothstep(.65, .95, abs(groundNormal.y));
-        surfaceColor *= mix(1.0, clamp(groundTone, .72, 1.26), groundFace * .40);
+        surfaceColor *= mix(1.0, clamp(groundTone, .72, 1.26), groundFace * .30);
+        if (groundReliefReady > .5) {
+          // One filtered sample supplies both wear and shallow relief. World
+          // coordinates align it exactly with the captured colour map.
+          vec2 reliefPoint = vSurfacePosition.xz / groundMetres;
+          vec2 reliefData = texture2D(groundRelief, reliefPoint).rg;
+          float reliefVisibility = 1.0 - smoothstep(.5, 2.0, length(fwidth(reliefPoint * 512.0)));
+          surfaceHeight += (reliefData.r - .5) * groundHeight * reliefVisibility * groundFace;
+          capturedRoughness = reliefData.g;
+          capturedFace = groundFace;
+        }
       }
       ` : ''}
       diffuseColor.rgb = surfaceColor * (1.0 + fineGrain * 0.08);
@@ -285,6 +300,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     `);
     shader.fragmentShader = shader.fragmentShader.replace("#include <roughnessmap_fragment>", `
       #include <roughnessmap_fragment>
+      ${groundAsset ? "roughnessFactor = clamp(roughnessFactor + (capturedRoughness - .5) * .18 * capturedFace, .72, 1.0);" : ""}
       // Reuse the resolved grain. No additional noise evaluations are needed
       // for the worn satin wood and dry stone microfacet variation.
       roughnessFactor = clamp(roughnessFactor + fineGrain * ${timber ? "0.22" : paving ? "0.18" : "0.12"}
