@@ -156,6 +156,15 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
             target.objects = list(names)
         for obj in target.objects:
             assert obj and obj.parent is None and not obj.constraints, code
+            # A replacement may deliberately reuse accepted source materials.
+            # Blender append can suffix identical material names; bind explicit
+            # identities before recording the complete-model fingerprint.
+            bindings = report.get('replacementMaterialBindings', {}).get(obj.name)
+            if bindings is not None:
+                assert obj.type == 'MESH' and len(obj.data.materials) == len(bindings), obj.name
+                for index, material_name in enumerate(bindings):
+                    assert material_name in bpy.data.materials, material_name
+                    obj.data.materials[index] = bpy.data.materials[material_name]
             source_name = obj.get('originalObject')
             if source_name:
                 assert source_name in before, source_name
