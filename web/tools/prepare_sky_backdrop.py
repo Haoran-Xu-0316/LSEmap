@@ -1,7 +1,7 @@
-"""Prepare a compact CC0 sky backdrop, keeping HDR lighting independent.
+"""Prepare one verified CC0 cloudy sky and its compact matching backdrop.
 
-Call prepare_backdrop() in the existing Python environment. Original downloads
-are held in memory; only the current web asset and its provenance are saved.
+Use the existing Python environment. Source downloads stay in memory; current
+web assets and source hashes are saved, with no original JPG backup copies.
 """
 from hashlib import md5, sha256
 from io import BytesIO
@@ -12,39 +12,55 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 DESTINATION = ROOT / 'web/public/environment'
-IDENTIFIER = 'kloppenheim_05_puresky'
+IDENTIFIER = 'kloofendal_48d_partly_cloudy_puresky'
 
 
 def download(url):
-    with urlopen(Request(url, headers={'User-Agent': 'Mozilla/5.0'}), timeout=50) as response:
+    with urlopen(Request(url, headers={'User-Agent': 'LSEmap asset preparation'}), timeout=50) as response:
         return response.read()
+
+
+def verified_download(descriptor):
+    content = download(descriptor['url'])
+    assert len(content) == descriptor['size']
+    assert md5(content).hexdigest() == descriptor['md5']
+    return content
 
 
 def prepare_backdrop():
     files = json.loads(download('https://api.polyhaven.com/files/' + IDENTIFIER))
+    records = []
+    common = dict(authors=['Greg Zaal', 'Jarod Guest'], license='CC0-1.0',
+                  source='https://polyhaven.com/a/' + IDENTIFIER,
+                  licenseSource='https://polyhaven.com/license',
+                  scope='Presentation daylight and clouds, not an LSE weather record or survey.')
+    hdr_descriptor = files['hdri']['1k']['hdr']
+    hdr = verified_download(hdr_descriptor)
+    assert len(hdr) < 2_000_000
+    hdr_path = DESTINATION / 'daylight-1k.hdr'
+    hdr_path.write_bytes(hdr)
+    records.append(dict(common, path='/environment/' + hdr_path.name,
+                        name='Kloofendal 48d Partly Cloudy (Pure Sky)',
+                        download=hdr_descriptor['url'], sha256=sha256(hdr).hexdigest(),
+                        bytes=len(hdr), dimensions=[1024, 512]))
     descriptor = files['tonemapped']
-    original = download(descriptor['url'])
-    assert len(original) == descriptor['size']
-    assert md5(original).hexdigest() == descriptor['md5']
-    image = Image.open(BytesIO(original)).convert('RGB')
-    image = image.resize((2048, 1024), Image.Resampling.LANCZOS)
+    original = verified_download(descriptor)
+    image = Image.open(BytesIO(original)).convert('RGB').resize((2048, 1024), Image.Resampling.LANCZOS)
     output = DESTINATION / 'daylight-sky-2k.webp'
     image.save(output, format='WEBP', quality=83, method=6)
     content = output.read_bytes()
-    assert len(content) < 250_000, 'Sky backdrop exceeds optional transfer budget'
-    record = dict(path='/environment/' + output.name, name='Kloppenheim 05 (Pure Sky) backdrop',
-                  authors=['Greg Zaal', 'Jarod Guest'], license='CC0-1.0',
-                  source='https://polyhaven.com/a/' + IDENTIFIER,
-                  licenseSource='https://polyhaven.com/license', download=descriptor['url'],
-                  originalSha256=sha256(original).hexdigest(), sha256=sha256(content).hexdigest(),
-                  bytes=len(content), dimensions=[2048, 1024],
-                  scope='Static photographic sky backdrop; existing HDR supplies lighting. Not an LSE survey.')
+    assert len(content) < 100_000, 'Cloudy sky exceeds optional transfer budget'
+    records.append(dict(common, path='/environment/' + output.name,
+                        name='Kloofendal 48d Partly Cloudy backdrop', download=descriptor['url'],
+                        originalSha256=sha256(original).hexdigest(), sha256=sha256(content).hexdigest(),
+                        bytes=len(content), dimensions=[2048, 1024]))
     manifest_path = DESTINATION / 'sources.json'
     manifest = json.loads(manifest_path.read_text())
-    manifest['assets'] = [item for item in manifest['assets'] if item['path'] != record['path']] + [record]
+    replaced = {record['path'] for record in records} | {'/environment/kloppenheim-daylight-1k.hdr'}
+    manifest['assets'] = [item for item in manifest['assets'] if item['path'] not in replaced] + records
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
-    print(json.dumps(dict(path=record['path'], bytes=len(content))))
-    return record
+    print(json.dumps([dict(path=record['path'], bytes=record['bytes']) for record in records]))
+    return records
 
 
 if __name__ == '__main__':
