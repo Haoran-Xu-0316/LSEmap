@@ -34,6 +34,7 @@ window.renderGalleryView=async(job)=>{
   }else if(/-(entrance|windows)$/.test(job.name)&&building.detailView) {
    viewer.showDetail(building); await viewer.upgradeModel(building,'exterior');
   }
+  if(job.sectionId && !viewer.setInteriorSection(building,job.sectionId)) throw Error('Interior section unavailable: '+job.name);
   if(!interior && job.context) viewer.toggleContext(true);
   const expected=(interior?'interior-':'exterior-')+job.code+(job.spaceId?':'+job.spaceId:'');
   if(viewer.canvas.dataset.detailReady!==expected) throw Error('Detail unavailable: '+job.name);
@@ -87,7 +88,7 @@ try {
     records.push({ name: job.name, code: job.code, sourceModelSha256: catalogue.sourceModelSha256,
       renderer: 'campus-viewer', rendererSha256, modelAssetsSha256, bytes: bytes.length,
       sha256: createHash('sha256').update(bytes).digest('hex'),
-      view: capture.view, mode: capture.mode, spaceId: job.spaceId ?? null, detail: capture.detail });
+      view: capture.view, mode: capture.mode, spaceId: job.spaceId ?? null, sectionId: job.sectionId ?? null, detail: capture.detail });
     console.log(`WEB_GALLERY ${records.length}/${jobs.length} ${job.name}`);
   }
   // Publish only after every view has rendered successfully.
