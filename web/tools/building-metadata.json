@@ -1816,6 +1816,12 @@
           "scope": "LSE confirms the heat-pump project completed in2025. Existing detailed model placement remains based on approved plans and is not an as-built equipment survey."
         },
         "limitations": "Manual drawing trace, source-to-site registration, post spacing and tube diameters are estimates.2025 existing survey does not establish complete2026 condition."
+      },
+      "circulationReview213": {
+        "version": 213,
+        "audit": "result/blender/library-circulation213/audit.json",
+        "scope": "Open existing ramp/gallery guard connections on six public levels without changing floors, roofs, envelope or room studies.",
+        "verification": "Six passage connections and108existing support probes verified in the component; dimensions and connection bearings remain inherited estimates."
       }
     },
     {
@@ -3660,6 +3666,59 @@
         "https://www.openstreetmap.org/way/301471945"
       ],
       "limitations": "Operator image is undated; source boundary is archivedOSM. Internal marking ratios, paint tones and net dimensions remain fitted estimates, not a measured current survey."
+    },
+    "streets213": {
+      "version": 213,
+      "audit": "result/blender/streets213/audit.json",
+      "scope": "Include previously omitted named footways, respect explicit asphalt and align estimated slab UV courses with every mapped route. Retain flush edge courses, original widths and height; remove surfaces already covered by higher detailed paving or road crossings.",
+      "sourceWays": 218,
+      "retainedAreaM2": 12318.632750168763,
+      "explicitAsphaltM2": 286.2515649051089,
+      "namedWays": {
+        "way/4075812": "Grange Court",
+        "way/949062530": "Carey Street",
+        "way/1539232809": "Wild Court",
+        "way/4255472": "New Inn Passage",
+        "way/161485174": "Bush House Arcade",
+        "way/949062534": "Serle Street",
+        "way/949062536": "Serle Street",
+        "way/949065961": "Great Queen Street",
+        "way/969732239": "Kingsway",
+        "way/969732241": "Kingsway",
+        "way/1046073058": "St Clement's Lane",
+        "way/1253755670": "Arundel Street",
+        "way/1336881995": "Kingsway",
+        "way/1336881997": "Great Queen Street",
+        "way/1337628697": "Portugal Street",
+        "way/1337628698": "Portugal Street",
+        "way/1337628700": "Portugal Street",
+        "way/1337628703": "Portugal Street",
+        "way/1337628708": "Portugal Street",
+        "way/1337628709": "Carey Street",
+        "way/1337628713": "Portugal Street",
+        "way/1340113213": "Strand",
+        "way/1340113219": "Strand",
+        "way/1340125728": "Aldwych",
+        "way/1340125729": "Aldwych",
+        "way/1340125736": "Aldwych",
+        "way/1340149832": "Keeley Street",
+        "way/1340149833": "Keeley Street",
+        "way/1340149843": "Kingsway",
+        "way/1340152542": "Wild Street",
+        "way/1340212337": "Kemble Street",
+        "way/1344384546": "Wild Street",
+        "way/1377758646": "Strand",
+        "way/1418616869": "Carey Street",
+        "way/1418616872": "Portugal Street",
+        "way/1418630830": "Keeley Street",
+        "way/1418630831": "Kemble Street",
+        "way/1442038620": "Kingsway",
+        "way/1489987534": "Kingsway",
+        "way/1511808431": "Aldwych",
+        "way/1512459414": "Kingsway",
+        "way/1526099749": "Serle Street"
+      },
+      "limitations": "OSM archived surface tags and existing1.6m strip widths. Slab modules, flush edge courses and colours are presentation estimates; no survey, new route, raised kerb or traffic marking. Higher detailed paving and road crossing surfaces remain authoritative."
     }
   },
   "environmentReview": {
@@ -3774,7 +3833,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 212,
+  "sourceVersion": 213,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
