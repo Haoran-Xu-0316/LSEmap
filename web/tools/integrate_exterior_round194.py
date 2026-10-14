@@ -28,6 +28,18 @@ def update_scene():
     bpy.context.window.scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
 
 
+def set_layer_hidden(obj, hidden):
+    """Apply viewport visibility only to the view layers that own the object.
+
+    Independent room studies intentionally do not belong to the campus layer.
+    Render visibility remains global; editor visibility is local to each layer.
+    """
+    for scene in bpy.data.scenes:
+        for layer in scene.view_layers:
+            if obj.name in layer.objects:
+                obj.hide_set(hidden, view_layer=layer)
+
+
 def object_fingerprint(obj):
     digest = hashlib.sha256((obj.type + str([list(row) for row in obj.matrix_world])).encode())
     if obj.type == 'MESH':
@@ -163,12 +175,14 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
                 if obj.name not in collection.objects:
                     collection.objects.link(obj)
             obj.hide_render = False
-            obj.hide_set(False)
             added.append(obj.name)
+        update_scene()
+        for name in names:
+            set_layer_hidden(bpy.data.objects[name], False)
         for name in report['archivedObjects']:
             assert name in before and not visibility[name], name
             bpy.data.objects[name].hide_render = True
-            bpy.data.objects[name].hide_set(True)
+            set_layer_hidden(bpy.data.objects[name], True)
             archived.append(name)
         changes.append(dict(code=code, report=report_path, componentSha256=report['componentSha256'],
                             addedObjects=names, archivedObjects=report['archivedObjects']))
