@@ -1299,5 +1299,41 @@
       ],
       "fov": 58
     }
+  },
+  {
+    "code": "PEA",
+    "name": "pea-stalls-interior",
+    "label": "Peacock Stalls与舞台口",
+    "view": {
+      "position": [
+        0,
+        2.4,
+        -12.4
+      ],
+      "target": [
+        0,
+        3.65,
+        1.8
+      ],
+      "fov": 50
+    }
+  },
+  {
+    "code": "PEA",
+    "name": "pea-circle-interior",
+    "label": "Peacock楼座与池座",
+    "view": {
+      "position": [
+        0,
+        3.2,
+        -1.6
+      ],
+      "target": [
+        0,
+        4.4,
+        -16
+      ],
+      "fov": 60
+    }
   }
 ]
