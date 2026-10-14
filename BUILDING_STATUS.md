@@ -1,18 +1,18 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v200.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v201.blend。
 
-原生SHA256：f893370b3bb5c7e87720ff38a8e1f3c65a1bf0aebc71265cba0c4137408fc552。
+原生SHA256：83f8532de4378e614f53a327b8c3397ae375e880d655bd584f5e0ea4980f2bec。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、17个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
 
-200版新增OLD.3.21和MAR.1.07两个独立历史房间。OLD平面支持四组各8座，共32座；MAR平面支持外围U形16座和中央4座，共20座。保留照片可见的教学墙、门窗、桌椅及主要色彩，尺度、层高及部分照片与平面对应关系估计。两个房间各自独立，不补造整层连通或当前布局。
+201版修正OLD Clare Market Student Services入口缺失的宽蓝色内衬，同步收窄并后退对应门窗，移动标识和拉手。普通窗列、台阶、坡道、Houghton拱门和所有房间保留；衬板比例与深度为照片估计，颜色和玻璃参数沿用。
 
-6963个原对象逐项保留，新完整模型保存后重开验证。全部既有建筑外观、默认内部、15个独立房间、道路和周边场景与199版资产一致。17个独立房间及129张图库使用同一生产渲染器。
+7038个原对象逐项保留，新增7个构件、仅归档6个入口源对象；完整模型保存后重开验证。全部默认内部、17个独立房间及其他建筑外观保持200版资产，OLD入口在总览和独立外观中共用修正。129张图库使用同一生产渲染器。
 
-CBG柱网只读核对：2016年建筑师设计图按20米比例尺读取7个柱距，约6米；继承模型为6个约8.17米柱距。旧屋顶候选依赖继承柱网，仍未合入。设计阶段尺寸不能直接称现状测量，后续须先核实结构轴网及楼层，再重建顶部形体。
+CBG建成照片确认主立面8条柱轴、7个开间，现有继承模型7轴6跨错误。结构工程师公开6米×9米柱网，与2016建筑师图纸独立比例尺相符；图纸左右与立面照片相反，已记录方向。整栋包络、低翼接口和柱网需统一配准，尚未修改CBG模型或合入旧屋顶候选。13层数量保留，双层空间省略外立面横带不解释为缺层。
 
 ## 建筑核验范围
 
@@ -39,7 +39,7 @@ CBG柱网只读核对：2016年建筑师设计图按20米比例尺读取7个柱�
 |51L|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |LRB|196|统一低对比棕砖和暖灰缝，屋顶高起围护改为照片支持的深灰，涂饰窗框降低金属感并减轻乳蓝反射。原几何、UV、透明穹顶、café玻璃及内部保留。|
 |MAR|188/195复核|保留188北立面开口及楼板修正；195三向整体核对未形成可证的新形体修正，未重复加屋面。|
-|OLD|194/196门厅|外墙沿用194版石材修正；196完善历史门厅的石材接缝、深色入口地垫与浅色圆盘灯。保留台阶、门槛和房间注册，不代表完整当前内部。|
+|OLD|201入口/196门厅|外墙沿用194版石材修正；196完善历史门厅的石材接缝、深色入口地垫与浅色圆盘灯。保留台阶、门槛和房间注册，不代表完整当前内部。|
 |OCS|145|Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
