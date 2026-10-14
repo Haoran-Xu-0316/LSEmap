@@ -8,13 +8,13 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition209 contains31 building records,30 detailed exteriors,25 interior views
-and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v209.blend`. GitHub contains
+Edition210 contains31 building records,30 detailed exteriors,25 interior views
+and18 independently selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v210.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All134 gallery images use the
+finishes and public structural elements. All135 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
 OLD’s Clare Market Student Services entrance now has the broad recessed blue
@@ -31,7 +31,10 @@ and projecting bays, entrance and lower white panels are retained.
 All101pane shapes and the photographed window arrangement are retained; no
 verified full interior exists, so transparency remains deliberately limited.
 
-The17 independent room-study assets retain their checksums across edition209.
+The17 previous independent room-study assets retain their checksums in edition210.
+CON.7.05 adds an eighteenth sample from paired official plan and photography:18
+committee seats, paneled oak walls, a solid conference table and black swivel chairs.
+Dimensions, wall registration and image chronology remain estimates.
 CBG now uses an independently registered42m tower with8axes and7bays,
 its stepped teaching wing and a two-storey amenity podium. Offices follow the
 published2m glazing/1m opaque-leaf module. Roof terraces, folded canopies and
@@ -70,6 +73,13 @@ MAR glass loses excessive cyan without changing concrete or transparency.
 OLD mansard brick bonding now continues across17 photographed wall strips.
 CKK’s independent atrium adds its missing oak return wall and two galleries;
 the original entrance, central void and separate classroom remain intact.
+
+Edition210 corrects the library’s south upper-roof setback and corresponding
+cladding, opaque windows and frames against the April2025 As Existing plan.
+About138m of upper-roof safety handrails follow the supported source trace;
+558 roof support probes pass. Lower-roof rails need separate height registration.
+SAL and CON exterior reviews retain existing geometry where the sources do not
+establish a reliable further correction.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. The outdoor renderer uses a sharp2048px photographic sky alongside independent
