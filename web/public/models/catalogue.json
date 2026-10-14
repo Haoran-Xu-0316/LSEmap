@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "201",
-  "sourceModelSha256": "83f8532de4378e614f53a327b8c3397ae375e880d655bd584f5e0ea4980f2bec",
+  "version": "203",
+  "sourceModelSha256": "976e645ef4b58e19485feff1fe3ff2fb64d9b5d497739642a2429548d821df8a",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2936,9 +2936,9 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 148,
-        "status": "shopfront-current-photo-corrected",
-        "scope": "Official May2025 street photograph replaces the historical left lower shopfront glazing with continuous white paneling. Both shop overlights gain the photographed2-row4-column grids, and two fictitious large-pane middle rails are removed. Obscured right basement, original large glass, timber entry and other upper/roof geometry remain unchanged. Dimensions and optical finishes are estimates; no complete interior claimed."
+        "version": 203,
+        "status": "street-window-columns-corrected",
+        "scope": "Official photograph published September2025 shows two narrow sash columns in each brick field. Restore eight narrow windows across the two upper levels and two black downpipes. Original side bays, central windows, entrance and white lower shopfront panels retained. Widths, pipe sizes and concealed conditions are photographic estimates; no verified interior."
       },
       "closeupImage": "lch-entrance",
       "previousReviews": [
@@ -3013,10 +3013,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-3ffe237c8c49.glb",
-        "bytes": 1171660,
-        "triangles": 90536,
-        "sha256": "3ffe237c8c492d00cfc401fe4e0ef38239d50a08ed6855022e47517f207e9f69",
+        "url": "/models/details/lch-exterior-586497d7d9e8.glb",
+        "bytes": 1274680,
+        "triangles": 97520,
+        "sha256": "586497d7d9e847f00923427d33f5cafae4e6536dc28db9dc8f069bdc56decc06",
         "bounds": {
           "min": [
             -34.67495346069336,
