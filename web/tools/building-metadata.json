@@ -198,6 +198,12 @@
         "scope": "Visible native bounds match the union of archivedOSMways181939023/181939031. Rechecked2021brochure and propertyhandbook; independent drawing-to-world registration still required.",
         "audit": "result/blender/61a-registration207/source-review.json",
         "geometryChanges": 0
+      },
+      "review208": {
+        "version": 208,
+        "scope": "253个窗壳几何、UV及法线保留；243个未连通窗继续不透明并减轻青色，仅10个有既有屋面近背衬的Kingsway老虎窗采用有限透明。整栋平面仍未独立配准，状态保持provisional。",
+        "audit": "result/blender/61a-exterior208/audit.json",
+        "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
       }
     },
     {
@@ -775,6 +781,12 @@
         "version": 198,
         "status": "read-only-evidence-check",
         "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
+      },
+      "review208": {
+        "version": 208,
+        "scope": "入口花岗岩独立材质去除局部黄偏，与既有冷灰基座统一；1对象替换，几何、UV、玻璃和未证实上层保留。",
+        "audit": "result/blender/con-exterior208/audit.json",
+        "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
       }
     },
     {
@@ -1627,7 +1639,7 @@
           "label": "G层：LSE LIFE学习区",
           "minHeight": -0.02,
           "maxHeight": 3.92,
-          "scope": "依据官方G层导览图布置LSE LIFE学习区，已移除无依据的通用书架；服务柜台与封闭房间尚未重建。"
+          "scope": "按官方G层导览图布置LSE LIFE学习区及4处公共服务柜台。柜台轮廓部分插值，高度和材质估算；封闭房间及当前完整内装未重建。"
         },
         {
           "id": "1",
@@ -1766,6 +1778,14 @@
           "Opaque windows remain opaque pending registered rooms; public interior structure and all original meshes/UVs/material bindings untouched.",
           "Metric brick dimensions and per-corner UVs inherited, not a newly measured masonry survey."
         ]
+      },
+      "interiorReview208": {
+        "version": 208,
+        "scope": "按官方当前公开导览图补入G层Enquiries、Security、Support及LSE LIFE reception四处公共柜台，2个合并批次。75个支撑射线通过，无现有G层家具碰撞或中庭侵入。",
+        "audit": "result/blender/lrb-interior208/audit.json",
+        "limitations": "继承原平面仿射注册；3处文字遮挡部分插值，柜台高度和材质估算。未改变中庭、楼板、封闭房间或17个独立房间样本。",
+        "inheritedRegistrationMaxResidualMetres": 0.7888271896420499,
+        "owningSceneVerification": "result/blender/lrb-interior208/owning-scene-verification.json"
       }
     },
     {
@@ -2169,7 +2189,13 @@
           "status": "reviewed-no-change",
           "addedObjects": 0
         }
-      ]
+      ],
+      "review208": {
+        "version": 208,
+        "scope": "屋瓦收敛为低对比红褐色，近黑蓝绿店面修正为实拍支持的深橄榄绿；32个对象仅替换材质，屋形、几何、UV、玻璃及历史内部保留。",
+        "audit": "result/blender/ocs-exterior208/audit.json",
+        "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
+      }
     },
     {
       "code": "PAN",
@@ -3628,7 +3654,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 207,
+  "sourceVersion": 208,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
