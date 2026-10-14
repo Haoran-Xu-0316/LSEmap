@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "209",
-  "sourceModelSha256": "6398f422e2fefde66c33e0d87a36092bfad46b7fee69494d5c955caae443e455",
+  "version": "210",
+  "sourceModelSha256": "7a9483a9aaacc37f2461516f22eca464231d4b73ab11d8a825176e9d27950ba5",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1708,6 +1708,12 @@
               "supports": "CON entrance crop only, no complete facade registration"
             }
           ]
+        },
+        {
+          "version": 210,
+          "status": "reviewed-no-exterior-change",
+          "scope": "Entrance source remains supported. Architect nine-storey text and official eighth-floor rooftop reference flag a storey-count question but do not resolve facade rows or setbacks; no unsupported new floors added.",
+          "audit": "result/blender/con-exterior210/audit.json"
         }
       ],
       "glazingReview": {
@@ -1938,6 +1944,61 @@
               1.899999976158142,
               2.9000000953674316,
               2.450000047683716
+            ]
+          }
+        },
+        {
+          "id": "con-705",
+          "label": "CON.7.05会议室",
+          "scope": "依据LSE官方CON.7.05同房号历史平面与实拍建立18座会议室样本。座位和折角房间边界按图近似；整板木桌、木饰墙、黑色旋转椅及大屏按照片表达。尺度、墙面对应、窗高与不可见构造为估计；侧墙和吊顶剖开，不推断整层连通，不代表2026年现状。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CON.7.05会议室",
+            "scope": "依据LSE官方CON.7.05同房号历史平面与实拍建立18座会议室样本。座位和折角房间边界按图近似；整板木桌、木饰墙、黑色旋转椅及大屏按照片表达。尺度、墙面对应、窗高与不可见构造为估计；侧墙和吊顶剖开，不推断整层连通，不代表2026年现状。"
+          },
+          "interiorView": {
+            "position": [
+              10.8,
+              8.6,
+              -9.8
+            ],
+            "target": [
+              0.25,
+              1.0,
+              -0.55
+            ],
+            "fov": 48
+          },
+          "gallery": "con-705-interior",
+          "interiorAsset": "/models/details/con-705-interior-da65d084455b.glb",
+          "detailedInterior": {
+            "url": "/models/details/con-705-interior-da65d084455b.glb",
+            "bytes": 123076,
+            "triangles": 10240,
+            "sha256": "da65d084455b117926446cff7d4af0e5c2e7ce4bac2b6ded724c9ceff9284461",
+            "bounds": {
+              "min": [
+                -4.019999980926514,
+                -0.11999999731779099,
+                -3.680000066757202
+              ],
+              "max": [
+                5.139847755432129,
+                3.1700000762939453,
+                2.4200000762939453
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -4.019999980926514,
+              -0.11999999731779099,
+              -3.680000066757202
+            ],
+            "max": [
+              5.139847755432129,
+              3.1700000762939453,
+              2.4200000762939453
             ]
           }
         }
@@ -3970,6 +4031,20 @@
         "inheritedRegistrationMaxResidualMetres": 0.7888271896420499,
         "owningSceneVerification": "result/blender/lrb-interior208/owning-scene-verification.json"
       },
+      "roofReview210": {
+        "version": 210,
+        "scope": "Correct the upper south setback boundary and its corresponding cladding, opaque window proxies and frames against the2025 As Existing drawing. Add138.03m of supported1.10m upper-roof safety handrails. Preserve the lightwell, other roof edges and public interior. Lower-roof handrails and the second plant room remain unregistered.",
+        "sourceDrawing": "4556-FBR-LR-ZZ-DR-A-110 P01,17April2025,Roof Plan As Existing",
+        "upperRoofAddedAreaM2": 22.069395101488986,
+        "upperRoofRemovedAreaM2": 7.94494541573444,
+        "handrailSupportSamples": 558,
+        "plantCompletion": {
+          "sourceUrl": "https://info.lse.ac.uk/staff/divisions/estates-division/sustainable-lse/what-we-do/energy",
+          "checkedDate": "2026-10-15",
+          "scope": "LSE confirms the heat-pump project completed in2025. Existing detailed model placement remains based on approved plans and is not an as-built equipment survey."
+        },
+        "limitations": "Manual drawing trace, source-to-site registration, post spacing and tube diameters are estimates.2025 existing survey does not establish complete2026 condition."
+      },
       "bounds": {
         "min": [
           24.830078125,
@@ -4037,10 +4112,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-c720e94e7709.glb",
-        "bytes": 6113792,
-        "triangles": 681337,
-        "sha256": "c720e94e7709c3a432ca541dfb7bc96eb60f11497e3a12177bb06e8847c4648e",
+        "url": "/models/details/lrb-exterior-233450f20e28.glb",
+        "bytes": 6138420,
+        "triangles": 684105,
+        "sha256": "233450f20e28851c888b1d64b35cf7ae999c44f3ca15bb6f4f5b8630fbdce31c",
         "bounds": {
           "min": [
             24.830078125,
@@ -4055,10 +4130,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-3385d4ed46b4.glb",
-        "bytes": 4678984,
-        "triangles": 580704,
-        "sha256": "3385d4ed46b4e7f23472170dcaf515cfbf8d9b4ebc247121b63a97dc8c4cbcc8",
+        "url": "/models/details/lrb-interior-8c5682c44ff4.glb",
+        "bytes": 4703608,
+        "triangles": 583472,
+        "sha256": "8c5682c44ff4640e05e2fbfc7a0656a933c2ccdfa9d499905bc90b8d764363bc",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -6648,6 +6723,12 @@
           "archivedObjects": 6,
           "changedObjects": 0,
           "audit": "result/blender/stage183/building-refinement.json"
+        },
+        {
+          "version": 210,
+          "status": "reviewed-no-exterior-change",
+          "scope": "SAL main elevation, gables, oriels and towers match available photographs; CON upper storeys and roof lack clear full-elevation evidence. Retain original exterior rather than infer unknown changes.",
+          "audit": "result/blender/sal-exterior210/audit.json"
         }
       ],
       "glazingReview": {
