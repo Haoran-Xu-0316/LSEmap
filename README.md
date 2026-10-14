@@ -8,9 +8,9 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition211 contains31 building records,30 detailed exteriors,25 interior views
+Edition212 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v211.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v212.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
@@ -74,7 +74,7 @@ OLD mansard brick bonding now continues across17 photographed wall strips.
 CKK’s independent atrium adds its missing oak return wall and two galleries;
 the original entrance, central void and separate classroom remain intact.
 
-Edition211 corrects the library’s south upper-roof setback and corresponding
+Edition212 corrects the library’s south upper-roof setback and corresponding
 cladding, opaque windows and frames against the April2025 As Existing plan.
 About138m of upper-roof safety handrails follow the supported source trace;
 558 roof support probes pass. Lower-roof rails need separate height registration.
@@ -105,6 +105,12 @@ paving, with177.4m² of misplaced asphalt removed. The public Lincoln’s Inn
 Fields boundary has a merged metal fence and eight source-width openings
 connected to the retained footways. Paver courses and fence dimensions remain
 visual estimates; building and room assets are unchanged.
+
+The public park now has its mapped1,586.4m² hardcourt facility, three tennis
+layouts and two transverse netball overlays. The omitted St Clement Danes
+landmark follows its mapped footprint and west tower; elevation dimensions
+remain estimates. OLD’s historical foyer connects to a bounded75.1m² public
+corridor, with the unresolved west branch and complete floors kept explicit.
 
 ## Project files
 
