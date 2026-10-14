@@ -3427,6 +3427,31 @@
       "path": "/environment/kloppenheim-daylight-1k.hdr",
       "bytes": 1086297,
       "scope": "Static CC0 presentation sky shared by background and glazing. Downward architectural views remain neutral; near-horizontal views use hysteresis. Not an LSE sky survey."
+    },
+    "canopy199": {
+      "version": 199,
+      "scope": "510 existing crown masses gain estimated irregular contours and smooth normals; all522 crown envelopes, centres and tree positions retained. The12 earlier refined crowns and Houghton trees remain unchanged. No new textures, alpha foliage or animation.",
+      "addedTriangles": 122400,
+      "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/2022-LSE-Public-Realm-Strategy.pdf",
+      "limitations": "Historical planting character only; species, exact contours and current condition are not surveyed."
+    },
+    "contextPalette199": {
+      "version": 199,
+      "scope": "24 existing surrounding buildings receive13 finishes from singular archived mapped wall/roof material and colour attributes. Existing world faces retained; no facade openings invented.",
+      "source": "result/blender/site_geometry.json",
+      "sourceDate": "2026-09-12 archived attributes",
+      "limitations": "Numeric colour and optical values are estimates; mixed or absent attributes retained."
+    },
+    "pedestrianReview199": {
+      "version": 199,
+      "status": "read-only",
+      "scope": "Nine archived pedestrian centre lines totalling280.681m remain covered by existing paving. No evidence-supported broad missing route found; no route expansion."
+    },
+    "groundOrientation199": {
+      "version": 199,
+      "scope": "120 existing ground objects receive outward closed-shell or upward flat-grass normals. Positions, coverage, corner UVs and material bindings retained; no extra surface layer added.",
+      "facesReoriented": 5241,
+      "diagnosis": "Native park black patch: GIS_green_way/30613392 had downward flat sheet faces atz0.05. Other closed ground shells were inward."
     }
   },
   "glazingReview": {
@@ -3470,5 +3495,5 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 198
+  "sourceVersion": 199
 }
