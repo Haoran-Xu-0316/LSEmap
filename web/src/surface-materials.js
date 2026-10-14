@@ -37,7 +37,7 @@ export function outdoorSurfaceKind(name) {
   if (/asphalt/i.test(name)) return 'asphalt';
   if (/Lincoln Inn Fields grass/i.test(name)) return 'grass';
   if (/Pale campus paving|MAR25_paving|CKK_V80_paving/i.test(name)) return 'paving-grid';
-  if (/SITE_V47_(?:slab|yorkstone|edge)|PORTSMOUTH_estimated_yorkstone/i.test(name)) return 'stone';
+  if (/SITE_V47_(?:slab|yorkstone|edge)|PORTSMOUTH_estimated_yorkstone|(?:^|_)pale_gray_stone_\d+(?:\.|$)/i.test(name)) return 'stone';
   if (/SITE_V47_wood/i.test(name)) return 'timber';
   if (/(?:^|_)soil$/i.test(name)) return 'soil';
   if (/(?:^|_)bark$/i.test(name)) return 'bark';
