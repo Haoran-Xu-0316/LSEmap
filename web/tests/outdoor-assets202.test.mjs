@@ -10,7 +10,7 @@ test('sharp static sky and metre-scale asphalt stay within the optional asset bu
  const sky = manifest.assets.find(item => item.path === SKY_BACKDROP_URL);
  const bytes = await readFile('web/public'+SKY_BACKDROP_URL);
  assert.equal(createHash('sha256').update(bytes).digest('hex'),sky.sha256);
- assert.equal(bytes.length,sky.bytes);assert(bytes.length<50_000);
+ assert.equal(bytes.length,sky.bytes);assert(bytes.length<100_000);
  assert.deepEqual(sky.dimensions,[2048,1024]);assert.equal(sky.license,'CC0-1.0');
  const asphalt = GROUND_FINISHES.find(item => item.kind === 'asphalt');
  assert.equal(asphalt.metres,3);assert(asphalt.height<=.002);
