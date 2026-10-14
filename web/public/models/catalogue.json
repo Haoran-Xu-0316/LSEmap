@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "195",
-  "sourceModelSha256": "93aab89a4f76c5343ee085c6271046294d6f51a801a42b118c8a4445703a4ac2",
+  "version": "196",
+  "sourceModelSha256": "1c1185738e796221c6d30f06aec906b99829cad4867fbb2bced77d657afc298b",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1166,6 +1166,25 @@
         "batchCount": 4,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "exteriorFinish196": {
+        "version": 196,
+        "audit": "result/blender/clm-exterior196/audit.json",
+        "componentSha256": "61e5c776e632ea00b91ac0941aae745b53c042ebc97bb8de2e4c396542b589dc",
+        "sourcePhotoDate": "unknown",
+        "scope": [
+          "Unify tan-yellow street stone and ochre reveal trim to photograph-guided neutral warm-gray Portland stone.",
+          "Dark brown painted window frames lose incorrect 0.55 bare-metal response.",
+          "Refine warm timber door finish from the official close portal photograph.",
+          "Reduce dielectric glass roughness to0.18 while retaining every original glass colour, alpha, transmission, face and room."
+        ],
+        "limitations": [
+          "Photograph-guided estimated colours, not calibrated surface measurements or a2026 condition survey.",
+          "Official whole-front image is tree-obscured above lower storeys; upper street stone finish is extended consistently, not a new geometric claim.",
+          "Unobserved rear envelope, rear attic, roof/chimney stone and all interior collections remain unchanged.",
+          "Seven tall bays, opaque cross-storey spandrels, existing window divisions, sculptural silhouette approximations and roof geometry retain inherited estimates.",
+          "Reused tone map is original artwork, not evidence of actual CLM stains, joints or surveyed block dimensions."
+        ]
+      },
       "bounds": {
         "min": [
           99.0441665649414,
@@ -1233,10 +1252,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-0706628ae360.glb",
-        "bytes": 758020,
+        "url": "/models/details/clm-exterior-96c31ab36ab6.glb",
+        "bytes": 844236,
         "triangles": 66538,
-        "sha256": "0706628ae360309f99f02a95b739cfcbbbfb0b5b431cf8e09fe756a005194db1",
+        "sha256": "96c31ab36ab6d47e185f0b513e1ba60924a335d451aacad07428b420ef62f91c",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -3754,6 +3773,24 @@
         "batchCount": 7,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "exteriorFinish196": {
+        "version": 196,
+        "audit": "result/blender/lrb-exterior196/audit.json",
+        "componentSha256": "b3bc10cf55b0cceba3e51ea126cfc4fefbb4e245116ddb3a7fe0d5f3d21d4854",
+        "sourcePhotoDate": "unknown",
+        "scope": [
+          "Roof pavilion cladding changed from pale grey to photo-supported dark grey; original roof mass and dormers retained.",
+          "Existing two brick colour families harmonised to lower-contrast brown pigment with subdued warm-grey mortar, retaining metric bonds and browser antialiasing.",
+          "Painted exterior joinery receives lower metallic charcoal finish; actual geometry and window divisions retained.",
+          "Reflective opaque window proxies use less milky colour and lower roughness; transparent dome aperture and café panes retained exactly."
+        ],
+        "limitations": [
+          "Colour is photograph guided, not a calibrated material survey; aerial and plaza references are historical/undated.",
+          "No2026 roof completion claim; existing roof mass, unknown backs and entrance canopy retained.",
+          "Opaque windows remain opaque pending registered rooms; public interior structure and all original meshes/UVs/material bindings untouched.",
+          "Metric brick dimensions and per-corner UVs inherited, not a newly measured masonry survey."
+        ]
+      },
       "bounds": {
         "min": [
           24.830078125,
@@ -3821,10 +3858,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-c4c9f74b4604.glb",
-        "bytes": 6113264,
+        "url": "/models/details/lrb-exterior-c720e94e7709.glb",
+        "bytes": 6113792,
         "triangles": 681337,
-        "sha256": "c4c9f74b46048154b33c42c9b8fa09f3e0b81b6549822cc098d4b53936d95764",
+        "sha256": "c720e94e7709c3a432ca541dfb7bc96eb60f11497e3a12177bb06e8847c4648e",
         "bounds": {
           "min": [
             24.830078125,
@@ -3839,10 +3876,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-954775c18e47.glb",
-        "bytes": 4669828,
+        "url": "/models/details/lrb-interior-aa2bdded983d.glb",
+        "bytes": 4669904,
         "triangles": 580168,
-        "sha256": "954775c18e47a2d6f899cf3e0d6fb3bfc3f59adeebad7ed6536be5f7fd5efad8",
+        "sha256": "aa2bdded983d0a9113883611b21f4a831074bef85f1825adc2155838a21f9923",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -4434,10 +4471,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-647ddd54cb63.glb",
-        "bytes": 19878800,
-        "triangles": 1670352,
-        "sha256": "647ddd54cb63fc0a2cc59e806a449cdbffa719e35d5bd12cdba602a68438668c",
+        "url": "/models/details/old-exterior-b19651843038.glb",
+        "bytes": 19883244,
+        "triangles": 1670364,
+        "sha256": "b196518430389a11c94a11754f1c10c1268530c00eaaf0af56d23bed57c28826",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -4548,12 +4585,12 @@
             "fov": 48
           },
           "gallery": "old-foyer-interior",
-          "interiorAsset": "/models/details/old-foyer-interior-31796425ee54.glb",
+          "interiorAsset": "/models/details/old-foyer-interior-e85e8f82cbfe.glb",
           "detailedInterior": {
-            "url": "/models/details/old-foyer-interior-31796425ee54.glb",
-            "bytes": 19872,
-            "triangles": 964,
-            "sha256": "31796425ee546c3064967ded42a1f6310aefea6b7f51b9f30a016c5d679edf8e",
+            "url": "/models/details/old-foyer-interior-e85e8f82cbfe.glb",
+            "bytes": 24284,
+            "triangles": 976,
+            "sha256": "e85e8f82cbfe364d7b351c735b16b6c594544bd05e9ff79083e86b7bb2f34f19",
             "bounds": {
               "min": [
                 -21.745058059692383,
