@@ -19,7 +19,7 @@ from integrate_exterior_round194 import object_fingerprint
 from refine_ground_orientation199 import closed_islands, signed_volume
 
 BASE = ROOT / 'result/blender/cbg-envelope202/cbg-envelope202-component.blend'
-NATIVE = ROOT / 'result/blender/LSE_campus_detailed_v201.blend'
+NATIVE = ROOT / 'result/blender/LSE_campus_detailed_v203.blend'
 OUT = ROOT / 'result/blender/cbg-wing203'
 PREFIX = 'CBG203_WING_'
 
@@ -42,7 +42,7 @@ def clip_below(outline, maximum_y):
 def build_candidate():
     OUT.mkdir(parents=True, exist_ok=True)
     source_sha, native_sha = sha(BASE), sha(NATIVE)
-    assert native_sha == '83f8532de4378e614f53a327b8c3397ae375e880d655bd584f5e0ea4980f2bec'
+    assert native_sha == '976e645ef4b58e19485feff1fe3ff2fb64d9b5d497739642a2429548d821df8a'
     mapping = json.loads((ROOT/'result/blender/cbg-georegistration202/rebuild-mapping.json').read_text())
     source_audit = json.loads((BASE.parent/'audit.json').read_text())
     frame = mapping['frame'];ox,oy = frame['origin_G7_SW_world']
@@ -141,7 +141,7 @@ def build_candidate():
     report=dict(status='private-partial-reconstruction-not-for-release',componentPath=str(component.relative_to(ROOT)),componentSha256=sha(component),
                 inputComponentSha256=source_sha,nativeBaselineSha256=native_sha,addedObjects=list(fingerprints),changed202Objects=changes,
                 registeredWingPolygon=outline,nominalHeight=H,inheritedVisibleLevels=LEVELS,GISLevelTag=7,perimeter=perimeter,
-                floorSolidProof=g.solid_proof,source202Preserved=True,native201Preserved=True,
+                floorSolidProof=g.solid_proof,source202Preserved=True,nativeBaselinePreserved=True,
                 limitations=['Height25m and6visiblelevels remain inherited photographic estimates, not a reconciliation of GIS7levels.',
                 'Perimeter glass and structural counts are estimated modules; solar shades, exposed end bracing and photographed facade counts need reconstruction.',
                 'Public interior circulation retained; room partitions and the low southern amenity podium are not completed.',
@@ -158,7 +158,7 @@ def build_candidate():
         assert all(closed and signed_volume(faces)>0 for faces,closed in closed_islands(bm)),obj.name
         bm.free()
     report['verification']=dict(reopenedFingerprintCount=len(fingerprints),newShellsOutward=True,
-                                native201Unchanged=sha(NATIVE)==native_sha,input202Unchanged=sha(BASE)==source_sha)
+                                nativeBaselineUnchanged=sha(NATIVE)==native_sha,input202Unchanged=sha(BASE)==source_sha)
     (OUT/'audit.json').write_text(json.dumps(report,indent=2)+'\n')
     # Whole-candidate review, with no expensive animation or duplicate full campus.
     scene=bpy.context.scene;scene.world=bpy.data.worlds.new('CBG203_wing_review_world');scene.world.color=(.8,.82,.84)
