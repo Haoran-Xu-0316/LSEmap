@@ -192,6 +192,12 @@
         "reversedShells": 253,
         "batchCount": 6,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "footprintReview207": {
+        "status": "read-only-registration-preflight",
+        "scope": "Visible native bounds match the union of archivedOSMways181939023/181939031. Rechecked2021brochure and propertyhandbook; independent drawing-to-world registration still required.",
+        "audit": "result/blender/61a-registration207/source-review.json",
+        "geometryChanges": 0
       }
     },
     {
@@ -2339,8 +2345,8 @@
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
-        "label": "Peacock舞台与前排观众席",
-        "scope": "历史室内局部样本；非整栋内部，未确认现时布局。舞台口尺寸来自运营方技术规格，其余估算。"
+        "label": "Peacock观众厅与舞台",
+        "scope": "依据2022DWG及2023技术规格制作的历史观众厅研究，含Stalls、Circle、舞台与侧箱席。846席为可视化样本，非完整999席座位图；部分围护剖开，未还原后台和现时内装。"
       },
       "exteriorDirection": [
         0.32542428374290466,
@@ -2362,14 +2368,14 @@
       },
       "interiorView": {
         "position": [
+          29,
           23,
-          18,
-          -22
+          -30
         ],
         "target": [
           0,
-          2.6,
-          1
+          3.1,
+          -5
         ],
         "fov": 50
       },
@@ -2387,6 +2393,14 @@
         "reversedShells": 11,
         "batchCount": 3,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "interiorReview207": {
+        "version": 207,
+        "scope": "Reconstruct historical auditorium from64stalls-bank arcs,22stalls elevation anchors and8Circle section anchors;13mby5.9m clearstageopening.846individualseats are a visual sample, with seatspacing and Circleplanwidth estimated.",
+        "audit": "result/blender/pea-interior207/audit.json",
+        "source": "https://www.sadlerswells.com/about-us/technical-specifications/sadlers-wells-theatre/peacock-theatre/",
+        "sourceDate": "2022DWG/2023PDF",
+        "limitations": "No complete individual-seat layout in inspected DWG. Backstage, foyer and current2026fitout excluded; cutaway omits right/rear walls and ceiling."
       }
     },
     {
@@ -2484,15 +2498,22 @@
         "scope": "Photo-guided corner bookshop with neutral pale joinery, warm mixed masonry and two photographed roof stacks. Undated image; window geometry retained, roof registration estimated, Current bookshop name confirmed by LSE facilities guide; exact lettering and unseen interior unverified."
       },
       "latestReview": {
-        "version": 148,
-        "status": "retained-street-glazing-transparent",
-        "scope": "Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated."
+        "version": 207,
+        "status": "photo-supported-corner-corbel-and-door-pull",
+        "scope": "Narrow lower corbel neck to40percentof top width and move dark door pull to photographed left stile. Fascia shell, panes, optics, original UVs and all other exterior parts retained.",
+        "audit": "result/blender/por-exterior207/audit.json",
+        "limitations": "Relative photographed proportions, not measured joinery. Glassopacity.82retained; no fullinterior invented."
       },
       "exportExterior": true,
       "previousReviews": [
         {
           "version": 122,
           "scope": "Six Portsmouth-side paired sashes and two upper chamfer windows corrected to photographed glazing patterns; thirty-two glass-first probes. Lower chamfer and unseen glazing remain unverified."
+        },
+        {
+          "version": 148,
+          "status": "retained-street-glazing-transparent",
+          "scope": "Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated."
         }
       ],
       "glazingReview": {
@@ -3555,6 +3576,15 @@
       "scope": "120 existing ground objects receive outward closed-shell or upward flat-grass normals. Positions, coverage, corner UVs and material bindings retained; no extra surface layer added.",
       "facesReoriented": 5241,
       "diagnosis": "Native park black patch: GIS_green_way/30613392 had downward flat sheet faces atz0.05. Other closed ground shells were inward."
+    },
+    "daylight207": {
+      "version": 207,
+      "source": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+      "path": "/environment/daylight-1k.hdr",
+      "backdropPath": "/environment/daylight-sky-2k.webp",
+      "hdrBytes": 1435119,
+      "backdropBytes": 60292,
+      "scope": "CC0 static partly cloudy sky, matching HDR reflections and48-degree presentation key light. Sky and HDR transfer together; no animated cloud mesh or invented water body. Historical daylight198 source remains available only for older Blender tools."
     }
   },
   "glazingReview": {
@@ -3598,7 +3628,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 206,
+  "sourceVersion": 207,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
