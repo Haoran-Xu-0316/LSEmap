@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "212",
-  "sourceModelSha256": "65165c8a72c8208170c839085fef2954bf61a4f19a4a134d75ebcd289b9d7207",
+  "version": "213",
+  "sourceModelSha256": "31b15a84a0080a69db300183d107d51cddc019a9b54a6aed609e6ab050222bbb",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4045,6 +4045,12 @@
         },
         "limitations": "Manual drawing trace, source-to-site registration, post spacing and tube diameters are estimates.2025 existing survey does not establish complete2026 condition."
       },
+      "circulationReview213": {
+        "version": 213,
+        "audit": "result/blender/library-circulation213/audit.json",
+        "scope": "Open existing ramp/gallery guard connections on six public levels without changing floors, roofs, envelope or room studies.",
+        "verification": "Six passage connections and108existing support probes verified in the component; dimensions and connection bearings remain inherited estimates."
+      },
       "bounds": {
         "min": [
           24.830078125,
@@ -4130,10 +4136,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-8c5682c44ff4.glb",
-        "bytes": 4703608,
-        "triangles": 583472,
-        "sha256": "8c5682c44ff4640e05e2fbfc7a0656a933c2ccdfa9d499905bc90b8d764363bc",
+        "url": "/models/details/lrb-interior-2a443254840e.glb",
+        "bytes": 4667784,
+        "triangles": 578012,
+        "sha256": "2a443254840e0d7f38f147bc11ddfb3fe3e07834387ad29cc8b0d320163db756",
         "bounds": {
           "min": [
             25.21265411376953,
