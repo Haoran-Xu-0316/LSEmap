@@ -26,7 +26,7 @@ the online `/release.json`, then compare changed asset checksums and open the
 updated buildings on desktop and mobile before reporting release completion.
 Keep the existing Worker name, URL and self-hosted runtime dependencies.
 
-The optional sky, four512px ground colour/data textures and their source/license record belong to the verified release
+The optional HDR sky, compact2048px sky backdrop, four512px ground colour/data textures and their source/license record belong to the verified release
 asset set. Gallery capture waits for optional sky and ground loading and records its renderer signature.
 After renderer changes, regenerate all current gallery views before building.
 Campus transport uses browser-native gzip stream decoding, with raw segments as
