@@ -34,7 +34,7 @@ export function isGlazingMaterial(material) {
 
 // Stable semantic roles apply to both merged campus and individual buildings.
 export function outdoorSurfaceKind(name) {
-  if (/asphalt/i.test(name)) return 'asphalt';
+  if (/asphalt|tarmac/i.test(name)) return 'asphalt';
   if (/Lincoln Inn Fields grass/i.test(name)) return 'grass';
   if (/Pale campus paving|MAR25_paving|CKK_V80_paving/i.test(name)) return 'paving-grid';
   if (/SITE_V47_(?:slab|yorkstone|edge)|PORTSMOUTH_estimated_yorkstone|(?:^|_)pale_gray_stone_\d+(?:\.|$)|CBG(?:203_ROOF|205_PODIUM)_paving|LRB_NEXT_PLAZA155_stone/i.test(name)) return 'stone';
