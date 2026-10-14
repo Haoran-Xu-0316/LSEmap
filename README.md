@@ -8,27 +8,28 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition196 contains31 building records,30 detailed exteriors,25 interior views
-and13 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v196.blend`. GitHub contains
+Edition197 contains31 building records,30 detailed exteriors,25 interior views
+and15 independently selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v197.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All125 gallery images use the
+finishes and public structural elements. All127 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-This edition harmonises LRB's brick, mortar and painted frames, corrects its
-raised roof enclosure to photograph-supported dark grey, and reduces the
-milky glazing tint. CLM's street stone and window frames receive consistent
-neutral finishes while existing glazing opacity and geometry are retained.
+Roads gain captured asphalt and stone height/roughness, packed into two shared
+512px lossless data textures totalling463,298 bytes. World-metre sampling aligns
+relief with the existing colour finishes; mipmaps and distance filtering reduce
+far-view shimmer. No extra road geometry or render passes are added. A missing
+relief download retains the usable colour finish. The existing self-hosted CC0
+daylight/cloud sky supplies the background and glazing reflections.
 
-The registered historical OLD entrance foyer gains stone slab joints, a dark
-ribbed entrance mat and pale illuminated disc lamps. Its original steps,
-threshold, walls and room registration remain intact. This is a refinement of
-the documented2011 layout, not a claim of a new current floor survey.
+STC's documented white walls, painted frames, red-brown stair and grey entrance
+receive consistent finishes. Geometry, art panel and glazing opacity remain.
+Two isolated historical room studies add FAW.4.01 with30 seats and CLM.5.02
+with120 seats, using paired official plans and photographs. These studies do
+not appear at the campus origin or claim complete current floor layouts.
 
-The viewer uses a self-hosted CC0 sky and two shared512px ground captures.
-Road finishes add123,528 bytes without extra geometry or render passes.
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. Optional asset or storage failures retain
 the normal lighting, procedural surface and network fallbacks.
