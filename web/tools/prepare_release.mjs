@@ -63,7 +63,8 @@ paths.push('gallery-manifest.json', 'index.html', 'favicon.svg', 'logo-lse.svg',
   'draco/LICENSE.txt', 'draco/THREE-LICENSE.txt', 'draco/README.md',
   '_headers', 'credits.txt', 'font-licenses/Roboto-OFL.txt',
   'environment/kloppenheim-sky-1k.hdr', 'environment/sources.json',
-  'environment/asphalt-finish-512.webp', 'environment/stone-finish-512.webp');
+  'environment/asphalt-finish-512.webp', 'environment/stone-finish-512.webp',
+  'environment/asphalt-relief-512.webp', 'environment/stone-relief-512.webp');
 const html = await readFile(join(root, 'index.html'), 'utf8');
 const entryScript = html.match(/<script[^>]*src="(\/assets\/[^"]+\.js)"/)?.[1];
 if (!entryScript) throw new Error('Missing application entry script');
