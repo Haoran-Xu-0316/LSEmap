@@ -1372,5 +1372,11 @@
       ],
       "fov": 58
     }
+  },
+  {
+    "code": "CON",
+    "name": "con-705-interior",
+    "spaceId": "con-705",
+    "label": "CON.7.05会议室"
   }
 ]
