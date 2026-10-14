@@ -1,18 +1,23 @@
 {
   "assets": [
     {
-      "path": "/environment/kloppenheim-sky-1k.hdr",
-      "name": "Kloppenheim 03 (Pure Sky)",
+      "path": "/environment/kloppenheim-daylight-1k.hdr",
+      "name": "Kloppenheim 05 (Pure Sky)",
       "authors": [
         "Greg Zaal",
         "Jarod Guest"
       ],
       "license": "CC0-1.0",
-      "source": "https://polyhaven.com/a/kloppenheim_03_puresky",
-      "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloppenheim_03_puresky_1k.hdr",
-      "sha256": "9806bc452fc8e1564418e7b45b50683732c0b37584423fa026ff0e2edf4eb1ce",
-      "bytes": 1428760,
-      "scope": "Presentation sky and daylight reflections. This photograph is not an LSE site survey."
+      "licenseSource": "https://polyhaven.com/license",
+      "source": "https://polyhaven.com/a/kloppenheim_05_puresky",
+      "download": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloppenheim_05_puresky_1k.hdr",
+      "sha256": "9da5a7f9c799fa6e41cac8fbc4fb7aa2d4556e2f00ce9943abe0fd83b6d4caf5",
+      "bytes": 1086297,
+      "dimensions": [
+        1024,
+        512
+      ],
+      "scope": "Presentation sky and daylight reflections. Not an LSE site survey."
     },
     {
       "path": "/environment/asphalt-finish-512.webp",
