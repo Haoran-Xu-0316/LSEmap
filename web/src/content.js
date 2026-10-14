@@ -75,8 +75,8 @@ export const buildingDetails = {
   },
   "PEA": {
     "description": "Peacock Theatre入口为蓝黑色门面、黄铜星形装饰和暖色雨棚灯。上部为三列窗的浅色体量，右侧较低并设屋顶百叶，侧面保留深色砖墙。",
-    "note": "依据场馆现行页面实拍建模，图片上传路径为2023年，准确拍摄日期未核实。楼高、体量分界与未见立面为估算，内部保留既有模型。",
-    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-frontage", "剧院入口、路桩与双黄线"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "剧院内部"]]
+    "note": "外观依据场馆页面实拍，准确拍摄日期未核实。内部按2022DWG与2023技术规格重建，846席为样本；后台、门厅及当前内装未复原。",
+    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-frontage", "剧院入口、路桩与双黄线"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "Peacock观众厅与舞台"], ["pea-stalls-interior", "Peacock Stalls与舞台口"], ["pea-circle-interior", "Peacock楼座与池座"]]
 },
   "PEL": {
     "description": "Pethick-Lawrence House入口采用外挑银色金属门楣、黄色侧边、首层窗盒和旋转玻璃门。",
