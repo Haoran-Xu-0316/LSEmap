@@ -8,27 +8,29 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition197 contains31 building records,30 detailed exteriors,25 interior views
+Edition198 contains31 building records,30 detailed exteriors,25 interior views
 and15 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v197.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v198.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All127 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-Roads gain captured asphalt and stone height/roughness, packed into two shared
-512px lossless data textures totalling463,298 bytes. World-metre sampling aligns
-relief with the existing colour finishes; mipmaps and distance filtering reduce
-far-view shimmer. No extra road geometry or render passes are added. A missing
-relief download retains the usable colour finish. The existing self-hosted CC0
-daylight/cloud sky supplies the background and glazing reflections.
+The street network now dissolves397 overlapping road strips into one continuous
+watertight mesh. This removes6,562.809 square metres of duplicate coplanar
+coverage while retaining the original estimated street boundaries and23 holes.
+All building and room assets remain byte-identical to edition197.
 
-STC's documented white walls, painted frames, red-brown stair and grey entrance
-receive consistent finishes. Geometry, art panel and glazing opacity remain.
-Two isolated historical room studies add FAW.4.01 with30 seats and CLM.5.02
-with120 seats, using paired official plans and photographs. These studies do
-not appear at the campus origin or claim complete current floor layouts.
+A clearer CC0 daylight panorama replaces the previous sky, reducing its download
+by342,463 bytes. Downward building studies use the neutral background; near-level
+street views reveal the sky with a small hysteresis band to prevent switching
+flicker. Background and glazing reuse one static PMREM texture.
+
+Asphalt and stone retain the shared512px captured colour/height/roughness maps.
+World-metre sampling, mipmaps and distance filtering resolve their fine finish
+without adding separate render passes. Optional loading failures retain the
+startup environment and procedural road finishes.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. Optional asset or storage failures retain
