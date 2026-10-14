@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "205",
-  "sourceModelSha256": "bd8171002dda80d4228b99ded708b1a31da4645d333b518fd10125d8b3278a7a",
+  "version": "206",
+  "sourceModelSha256": "605fc53169bd40b830fa817d7ecb17be2a6d38658236f3d69c9dd48aedc91c78",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3228,29 +3228,47 @@
         "scope": "Schematic construction boundary only, not the current workstage"
       },
       "latestReview": {
-        "version": 176,
+        "version": 206,
         "status": "construction-reference-review-only",
-        "scope": "核对2026年5月官方施工通讯的2页及4张局部施工照片；记录入口切割、窗洞扩大与结构施工阶段，保留示意围挡。",
-        "limitations": [
-          "2026年5月是通讯出版日期，4张照片具体拍摄日期未知。",
-          "局部施工图像不足以注册2026年10月完整现场轮廓、围挡和测量尺寸。",
-          "不得用未来2027效果图替代建成或当前施工几何，不标为完整实景模型。"
-        ],
-        "sourceUrls": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/35L/Newsletters/NewsLetter-Firoz-Lalji-Global-Hub-May-2026.pdf"
-        ],
-        "publicationDate": "May2026",
+        "scope": "核对2026年7月官方施工通讯第2页的施工进度与4张现场局部照片，保留现有示意围挡；新窗安装和CLT施工已有记录，未据局部图像扩展完整外观或内部。",
+        "publicationDate": "July2026",
         "photographDate": "unknown",
+        "sourceUrls": [
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2026-July-CD-Newsletter-V5.pdf"
+        ],
+        "limitations": [
+          "通讯记录而非2026年10月现场实测；完整围挡、外墙开口与施工楼层无法从局部照片注册。",
+          "2027年完工、2028年投入使用是当时计划，不能视为已完成。"
+        ],
         "addedObjects": 0,
         "archivedObjects": 0,
         "changedObjects": 0,
-        "audit": "result/blender/35l_reference176/source-review.json"
+        "audit": "result/blender/stage206/official-update-review.json"
       },
       "reviewHistory": [
         {
           "version": 43,
           "status": "reviewed-no-change",
           "addedObjects": 0
+        },
+        {
+          "version": 176,
+          "status": "construction-reference-review-only",
+          "scope": "核对2026年5月官方施工通讯的2页及4张局部施工照片；记录入口切割、窗洞扩大与结构施工阶段，保留示意围挡。",
+          "limitations": [
+            "2026年5月是通讯出版日期，4张照片具体拍摄日期未知。",
+            "局部施工图像不足以注册2026年10月完整现场轮廓、围挡和测量尺寸。",
+            "不得用未来2027效果图替代建成或当前施工几何，不标为完整实景模型。"
+          ],
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/35L/Newsletters/NewsLetter-Firoz-Lalji-Global-Hub-May-2026.pdf"
+          ],
+          "publicationDate": "May2026",
+          "photographDate": "unknown",
+          "addedObjects": 0,
+          "archivedObjects": 0,
+          "changedObjects": 0,
+          "audit": "result/blender/35l_reference176/source-review.json"
         }
       ],
       "bounds": {
@@ -6037,13 +6055,13 @@
         "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "125 photographed timber-curtain lights use their original outward face and UV, removing duplicated transparent-box backs and edges. Existing stair, timber frames, brick and all room studies retained.",
-        "evidence": [
-          "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
-        ],
-        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
-        "audit": "result/blender/saw_detail166/audit.json"
+        "version": 206,
+        "status": "neutral-dielectric-curtain-and-roof-glass",
+        "scope": "Six retained entrance/roof glass families receive neutral dielectric optics. Four curtain families retainwebOpacity0.55; two previously opaque roof families use0.62 browser opacity. All pane geometry, UVs, normals, transforms, screen brickwork and interior assets retained.",
+        "audit": "result/blender/saw-exterior206/audit.json",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/development-projects/saw/breeam",
+        "photographDate": "unknown",
+        "limitations": "Optical parameters estimated from historical built photos. July2026ThreeTuns refurbishment plans do not prove the current post-refurbishment interior."
       },
       "reviewHistory": [
         {
@@ -6072,6 +6090,15 @@
             "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
           ],
           "photographDate": "Unknown;2017 upload path does not establish current condition"
+        },
+        {
+          "version": 166,
+          "scope": "125 photographed timber-curtain lights use their original outward face and UV, removing duplicated transparent-box backs and edges. Existing stair, timber frames, brick and all room studies retained.",
+          "evidence": [
+            "https://www.photography909.co.uk/saw-swee-hocklse-gallery"
+          ],
+          "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
+          "audit": "result/blender/saw_detail166/audit.json"
         }
       ],
       "latestInteriorReview": {
@@ -6087,6 +6114,11 @@
         "reversedShells": 0,
         "batchCount": 3,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "currentInteriorEvidenceReview": {
+        "publicationDate": "July2026",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2026-July-CD-Newsletter-V5.pdf",
+        "scope": "Three Tuns改造当时计划2026年8月施工、9月重开；现有室内为历史研究，未获取竣工照片确认2026年改造后布局。"
       },
       "bounds": {
         "min": [
@@ -6155,10 +6187,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-598393e22ab5.glb",
-        "bytes": 13531072,
+        "url": "/models/details/saw-exterior-d5d8a04a62cd.glb",
+        "bytes": 13535832,
         "triangles": 1386183,
-        "sha256": "598393e22ab5ae857d97bec9e94c02d92c5014e5fe61ffbd3e2f7d3e9e56cc34",
+        "sha256": "d5d8a04a62cd46e0ea035e783ab976d28d02a986e1ebd1a162ff4f12ab14e97c",
         "bounds": {
           "min": [
             -84.64329528808594,
