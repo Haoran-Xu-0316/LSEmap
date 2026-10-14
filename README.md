@@ -8,9 +8,9 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition201 contains31 building records,30 detailed exteriors,25 interior views
+Edition203 contains31 building records,30 detailed exteriors,25 interior views
 and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v201.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v203.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
@@ -23,13 +23,18 @@ entrance. Joinery, pulls and signage move together. The original opening, landin
 ordinary glazed bays and Houghton arch are retained. Proportions and recess depth
 remain photographic estimates; blue paint and glass finishes are inherited.
 
+LCH now has the seven-position street elevation visible in the official photograph publishedSeptember2025: two narrow sash columns in each brick field, with a black downpipe
+between them. Actual wall openings replace the previous single columns. Central
+and projecting bays, entrance and lower white panels are retained.
+
 All previous room studies and other building assets retain their checksums.
 A separate built-photo review confirms8 major axes and7 bays across CBG’s tower
 front; the inherited model has7 axes and6 bays. The structural engineer publishes
 a6m×9m grid, corroborating the scaled2016architect drawing. Independent202registration against OLD, STC and TowerOne finds the inherited
 tower/teaching-wing placement reversed. A private42m tower/grid candidate has
-been saved and reopened, but stepped-wing, roof and facade-module corrections
-remain unfinished and are not released. Thirteen storeys are retained; facade
+been saved and reopened. Registered stepped-wing floor/envelope and highest-roof
+cutback candidates now exist, but facade modules, staircase interfaces, podium
+and camera corrections remain unfinished and are not released. Thirteen storeys are retained; facade
 bands omitted within double-height spaces are not treated as missing floors.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
