@@ -778,6 +778,12 @@
               "supports": "CON entrance crop only, no complete facade registration"
             }
           ]
+        },
+        {
+          "version": 210,
+          "status": "reviewed-no-exterior-change",
+          "scope": "Entrance source remains supported. Architect nine-storey text and official eighth-floor rooftop reference flag a storey-count question but do not resolve facade rows or setbacks; no unsupported new floors added.",
+          "audit": "result/blender/con-exterior210/audit.json"
         }
       ],
       "glazingReview": {
@@ -1796,6 +1802,20 @@
         "limitations": "继承原平面仿射注册；3处文字遮挡部分插值，柜台高度和材质估算。未改变中庭、楼板、封闭房间或17个独立房间样本。",
         "inheritedRegistrationMaxResidualMetres": 0.7888271896420499,
         "owningSceneVerification": "result/blender/lrb-interior208/owning-scene-verification.json"
+      },
+      "roofReview210": {
+        "version": 210,
+        "scope": "Correct the upper south setback boundary and its corresponding cladding, opaque window proxies and frames against the2025 As Existing drawing. Add138.03m of supported1.10m upper-roof safety handrails. Preserve the lightwell, other roof edges and public interior. Lower-roof handrails and the second plant room remain unregistered.",
+        "sourceDrawing": "4556-FBR-LR-ZZ-DR-A-110 P01,17April2025,Roof Plan As Existing",
+        "upperRoofAddedAreaM2": 22.069395101488986,
+        "upperRoofRemovedAreaM2": 7.94494541573444,
+        "handrailSupportSamples": 558,
+        "plantCompletion": {
+          "sourceUrl": "https://info.lse.ac.uk/staff/divisions/estates-division/sustainable-lse/what-we-do/energy",
+          "checkedDate": "2026-10-15",
+          "scope": "LSE confirms the heat-pump project completed in2025. Existing detailed model placement remains based on approved plans and is not an as-built equipment survey."
+        },
+        "limitations": "Manual drawing trace, source-to-site registration, post spacing and tube diameters are estimates.2025 existing survey does not establish complete2026 condition."
       }
     },
     {
@@ -2932,6 +2952,12 @@
           "archivedObjects": 6,
           "changedObjects": 0,
           "audit": "result/blender/stage183/building-refinement.json"
+        },
+        {
+          "version": 210,
+          "status": "reviewed-no-exterior-change",
+          "scope": "SAL main elevation, gables, oriels and towers match available photographs; CON upper storeys and roof lack clear full-elevation evidence. Retain original exterior rather than infer unknown changes.",
+          "audit": "result/blender/sal-exterior210/audit.json"
         }
       ],
       "glazingReview": {
@@ -3480,6 +3506,32 @@
         ],
         "fov": 48
       }
+    },
+    {
+      "id": "con-705",
+      "code": "CON",
+      "collection": "CON705_ROOM210_study",
+      "label": "CON.7.05会议室",
+      "gallery": "con-705-interior",
+      "scope": "依据LSE官方CON.7.05同房号历史平面与实拍建立18座会议室样本。座位和折角房间边界按图近似；整板木桌、木饰墙、黑色旋转椅及大屏按照片表达。尺度、墙面对应、窗高与不可见构造为估计；侧墙和吊顶剖开，不推断整层连通，不代表2026年现状。",
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CON.7.05会议室",
+        "scope": "依据LSE官方CON.7.05同房号历史平面与实拍建立18座会议室样本。座位和折角房间边界按图近似；整板木桌、木饰墙、黑色旋转椅及大屏按照片表达。尺度、墙面对应、窗高与不可见构造为估计；侧墙和吊顶剖开，不推断整层连通，不代表2026年现状。"
+      },
+      "interiorView": {
+        "position": [
+          10.8,
+          8.6,
+          -9.8
+        ],
+        "target": [
+          0.25,
+          1.0,
+          -0.55
+        ],
+        "fov": 48
+      }
     }
   ],
   "presentationReview": {
@@ -3677,7 +3729,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 209,
+  "sourceVersion": 210,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
