@@ -53,6 +53,84 @@
       "repeatMetres": 2,
       "linearLuminanceMean": 0.16799,
       "scope": "Shared ground finish only; geometry, joints and recorded palette remain authored. Not an LSE survey."
+    },
+    {
+      "path": "/environment/asphalt-relief-512.webp",
+      "name": "Aerial Asphalt 01 surface data",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/aerial_asphalt_01",
+      "originals": [
+        {
+          "channel": "red",
+          "semantic": "Displacement",
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_asphalt_01/aerial_asphalt_01_disp_1k.jpg",
+          "originalSha256": "997f6d2d8515b04cffbdf94138a8a69221e9126dc95cd681e621bf8b6d201d87",
+          "bytes": 157955
+        },
+        {
+          "channel": "green",
+          "semantic": "Rough",
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_asphalt_01/aerial_asphalt_01_rough_1k.jpg",
+          "originalSha256": "19ca745417e36a1cd1114411801933b3144a351d1409d0d9caa1046b9a20c0ec",
+          "bytes": 312445
+        }
+      ],
+      "sha256": "997d51d65f90c0923a3857da5a57d4d19dd6e783600275cb112b49bce387a363",
+      "bytes": 214480,
+      "dimensions": [
+        512,
+        512
+      ],
+      "repeatMetres": 30,
+      "channels": {
+        "red": "height",
+        "green": "roughness",
+        "blue": "unused"
+      },
+      "colorSpace": "linear-data",
+      "scope": "Presentation relief only. Not an LSE survey."
+    },
+    {
+      "path": "/environment/stone-relief-512.webp",
+      "name": "Concrete Floor 02 surface data",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/concrete_floor_02",
+      "originals": [
+        {
+          "channel": "red",
+          "semantic": "Displacement",
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_02/concrete_floor_02_disp_1k.jpg",
+          "originalSha256": "83e828fc3a4f3b0bbd9d92757cab67e56b5e22e7f1bbd3f5fbef241f30be6529",
+          "bytes": 125142
+        },
+        {
+          "channel": "green",
+          "semantic": "Rough",
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_02/concrete_floor_02_rough_1k.jpg",
+          "originalSha256": "c7f026a611b7859903c61ec7fd4574944157223e9e7796413dd6e2a66eaeac7a",
+          "bytes": 318550
+        }
+      ],
+      "sha256": "e7c3be091da2f0de7443fe65041c42a42dc4ad571b37ffdcbf677cae0f2a60bd",
+      "bytes": 248818,
+      "dimensions": [
+        512,
+        512
+      ],
+      "repeatMetres": 2,
+      "channels": {
+        "red": "height",
+        "green": "roughness",
+        "blue": "unused"
+      },
+      "colorSpace": "linear-data",
+      "scope": "Presentation relief only. Not an LSE survey."
     }
   ]
 }
