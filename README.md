@@ -8,46 +8,33 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition 195 contains 31 building records,30 detailed exteriors,25 interior views
-and 13 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v195.blend`. GitHub contains
+Edition196 contains31 building records,30 detailed exteriors,25 interior views
+and13 independently selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v196.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
-The first overview and selected-building views use the same authored exterior
-objects and finishes, including retained public floors, stairs and atria. All 125 gallery images are captured with the production viewer
-and checked against the model and renderer signatures before release.
+The overview and selected-building views share authored exterior objects,
+finishes and public structural elements. All125 gallery images use the
+production viewer and are checked against model and renderer signatures.
 
-Edition 194 refined OLD's wall, arch and relief stone with one shared 512px
-original finish map. It preserves existing geometry, blue frames and entrance
-glazing. CBG's painted structure and red/orange blades use a dielectric coating,
-and its neutral glazing reveals more of the retained interior. The red-primary
-CBG palette follows the user's choice; contractor photographs predominantly
-show pale broad blade faces and orange/gold returns.
+This edition harmonises LRB's brick, mortar and painted frames, corrects its
+raised roof enclosure to photograph-supported dark grey, and reduces the
+milky glazing tint. CLM's street stone and window frames receive consistent
+neutral finishes while existing glazing opacity and geometry are retained.
 
-Five main pedestrian surfaces receive corrected face orientation. Two existing
-walking joins are brought flush over 2.0756m²; this is a local continuity repair,
-not a claim that the entire campus road network has been resurveyed. Stone,
-paint and louvers inside a historically named GLAZING collection now retain
-an explicit opaque material role rather than receiving a glass finish.
+The registered historical OLD entrance foyer gains stone slab joints, a dark
+ribbed entrance mat and pale illuminated disc lamps. Its original steps,
+threshold, walls and room registration remain intact. This is a refinement of
+the documented2011 layout, not a claim of a new current floor survey.
 
-Edition 195 refines KSW's brick, stone, painted frames, shopfront and timber
-entry, and restores twelve missing upper sash mullions. COL's street-facing
-stone, painted joinery, timber and glazing receive separate finishes. MAR was
-reviewed without speculative geometry changes. Existing interior studies remain
-unchanged.
-
-The viewer uses a self-hosted CC0 sky after the campus is usable. Two shared
-512px CC0 ground captures add asphalt wear and stone variation at world scale,
-adding 123,528 bytes, no geometry and no extra render pass. Captured maps and
-procedural finishes retain separate ownership, so authored stone maps remain
-visible. Optional ground-download failures preserve the procedural fallback. Roads, paving
-and greenery share distance-filtered finishes. Lossless gzip segments reduce
-first-load transfer; a single content-verified browser cache replaces the
-previous campus edition and avoids repeated model downloads. Storage or sky
-failures retain the normal network and startup-lighting fallbacks.
+The viewer uses a self-hosted CC0 sky and two shared512px ground captures.
+Road finishes add123,528 bytes without extra geometry or render passes.
+Lossless gzip segments reduce first-load transfer; one verified browser cache
+replaces the previous campus edition. Optional asset or storage failures retain
+the normal lighting, procedural surface and network fallbacks.
 
 Geometry, weathering and optical values remain photographic or plan-based
-estimates. Many references are historical or undated. Current complete room
+estimates. Many references are historical or undated. Complete current room
 layouts, unseen elevations and full-campus as-built fidelity remain unfinished.
 
 ## Project files
