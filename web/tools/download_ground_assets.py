@@ -12,11 +12,11 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 DESTINATION = ROOT / 'web/public/environment'
-ASSETS = [('aerial_asphalt_01', 'asphalt', 30), ('concrete_floor_02', 'stone', 2)]
+ASSETS = [('asphalt_02', 'asphalt', 3), ('concrete_floor_02', 'stone', 2)]
 
 
 def read_url(url):
-    request = urllib.request.Request(url, headers={'User-Agent': 'LSEmap asset provenance'})
+    request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     with urllib.request.urlopen(request, timeout=40) as response:
         return response.read()
 
@@ -35,7 +35,7 @@ def prepare_assets():
         image = Image.open(BytesIO(original)).convert('RGB')
         image.thumbnail((512, 512), Image.Resampling.LANCZOS)
         output = DESTINATION / f'{kind}-finish-512.webp'
-        image.save(output, format='WEBP', quality=78, method=6)
+        image.save(output, format='WEBP', quality=74 if kind == 'asphalt' else 78, method=6)
         pixels = Image.open(output).convert('RGB')
         linear = lambda c: c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4
         luminance = sum(sum(linear(c / 255) * w for c, w in zip(pixel, (.2126, .7152, .0722)))
