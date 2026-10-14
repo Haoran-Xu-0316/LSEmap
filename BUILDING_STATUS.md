@@ -1,18 +1,22 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v201.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v203.blend。
 
-原生SHA256：83f8532de4378e614f53a327b8c3397ae375e880d655bd584f5e0ea4980f2bec。
+原生SHA256：976e645ef4b58e19485feff1fe3ff2fb64d9b5d497739642a2429548d821df8a。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、17个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
 
+203版按官方2025年发布照片修正LCH整片街立面：两侧砖区各2列窄窗，补黑色落水管；保留中央及凸窗、门廊、148版白色下墙板。7045个源对象保留，新增15个构件、归档8个源对象；完整模型保存重开验证。
+
+CBG独立配准发现塔楼与教学翼位置反向。42米8轴塔楼、阶梯教学翼和屋顶退台正在独立组件中重建；幕墙模块、接口与相机未完成，未上线。
+
 201版修正OLD Clare Market Student Services入口缺失的宽蓝色内衬，同步收窄并后退对应门窗，移动标识和拉手。普通窗列、台阶、坡道、Houghton拱门和所有房间保留；衬板比例与深度为照片估计，颜色和玻璃参数沿用。
 
 7038个原对象逐项保留，新增7个构件、仅归档6个入口源对象；完整模型保存后重开验证。全部默认内部、17个独立房间及其他建筑外观保持200版资产，OLD入口在总览和独立外观中共用修正。129张图库使用同一生产渲染器。
 
-CBG建成照片确认主立面8条柱轴、7个开间，现有继承模型7轴6跨错误。结构工程师公开6米×9米柱网，与2016建筑师图纸独立比例尺相符；图纸左右与立面照片相反，已记录方向。整栋包络、低翼接口和柱网需统一配准，尚未修改CBG模型或合入旧屋顶候选。13层数量保留，双层空间省略外立面横带不解释为缺层。
+CBG建成照片确认主立面8条柱轴、7个开间，现有线上模型7轴6跨错误。结构工程师公开6米×9米柱网；独立配准已纠正塔楼与教学翼的方位。新的42米塔楼、阶梯教学翼楼板/外围幕墙、屋顶退台和双折雨棚均已保存重开检查，尚待幕墙模块、楼梯连接、低矮裙房及相机统一后合入。13层保留，标高仍是继承估计。
 
 ## 建筑核验范围
 
@@ -31,7 +35,7 @@ CBG建成照片确认主立面8条柱轴、7个开间，现有继承模型7轴6�
 |KGS|176|Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.|
 |KSW|195|整段砖、石、窗框、店面、木门及玻璃颜色修正，补12根上层侧窗中梃；屋顶及后立面仍缺完整证据。|
 |LAK|179|Read-only review retains photo-supported sash windows and dormer apertures; no evidence-supported new geometry correction. Undated official imagery is not a current measured survey.|
-|LCH|148|Official May2025 street photograph replaces the historical left lower shopfront glazing with continuous white paneling. Both shop overlights gain the photographed2-row4-column grids, and two fictitious large-pane middle rails are removed. Obscured right basement, original large glass, timber entry and other upper/roof geometry remain unchanged. Dimensions and optical finishes are estimates; no complete interior claimed.|
+|LCH|203|按官方2025年发布照片补足两侧各2列窄窗和黑色落水管；保留凸窗、中央窗、门廊及白色下墙板。窗宽和构件截面为照片估计，内部未完成。|
 |5LF|147|11 existing panes retain mesh, UV and original neutral color; finite transmission with explicit browser opacity0.78. Right chimney now carries photograph-supported twin pots across frontage.44 front and44 two-metre behind-glass checks plus two pot first hits passed after reopening. Pot offsets and optical parameters estimated; unseen roof and complete interiors unverified.|
 |35L|176|核对2026年5月官方施工通讯的2页及4张局部施工照片；记录入口切割、窗洞扩大与结构施工阶段，保留示意围挡。|
 |49L|147|Retained street and corner glazing keeps original mesh, UV and color with explicit browser opacity0.84. Corner round window backing43mm behind glass is locally opened. Latest published2025/26 LSE handbook shows the fire-exit round feature as an opaque horizontal ventilation louvre, replacing its historical glass interpretation. A separate shared upper-wall component trims only proven interference with the widened No50 window; other upper areas retained. Dimensions and optics estimated; capture dates unknown.|
