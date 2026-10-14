@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "211",
-  "sourceModelSha256": "630ebd5e999685f8d646a2613774bc925dabe6f62f5c23404882703ed8a96eca",
+  "version": "212",
+  "sourceModelSha256": "65165c8a72c8208170c839085fef2954bf61a4f19a4a134d75ebcd289b9d7207",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4691,6 +4691,12 @@
           "addedObjects": 0,
           "changedObjects": 20,
           "paintMaterials": 12
+        },
+        {
+          "version": 212,
+          "status": "bounded-historical-public-corridor-connected",
+          "audit": "result/blender/old-public212/audit.json",
+          "scope": "Connect2011-source public foyer to central/east T corridor;3 batched meshes,75.14m2 floor,8 support checks and0 exterior intersection pairs. West branch registration conflict retained; complete/current floor and lift/stair geometry unverified."
         }
       ],
       "houghtonAccessReview": {
@@ -4793,10 +4799,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-9eedd0338086.glb",
-        "bytes": 19884512,
-        "triangles": 1670400,
-        "sha256": "9eedd0338086620ce7c3002cfcb2fb7ddbe27196914d64725a9b71d51fc00b93",
+        "url": "/models/details/old-exterior-3a4b15ca83cc.glb",
+        "bytes": 19887744,
+        "triangles": 1670476,
+        "sha256": "3a4b15ca83cc1f37e5b59deb7c62493751ebe3335e1c49d956e6cb67d90b8207",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -4887,11 +4893,11 @@
         {
           "id": "old-foyer",
           "label": "主入口门厅",
-          "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和走廊拱口可见；尺度、家具和高度为估计，未建立侧向电梯及相邻房间，也不证明当前布置。",
+          "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和拱口保留，补约75.14㎡中央喉口及东侧公共横廊；尺度与标高估算。西支路存在外壳配准冲突，侧梯、升降机及完整楼层尚未建立，不证明当前布置。",
           "interiorStudy": {
             "kind": "registered-historical-space",
             "label": "主入口门厅",
-            "scope": "2011年历史布局，门宽注册与家具尺寸估计；仅入口空间。"
+            "scope": "依据Design Engine2011年改造实拍和平面建立，接回Houghton Street既有门扇。分层接待、四级台阶、长凳、红色展示墙和拱口保留，补约75.14㎡中央喉口及东侧公共横廊；尺度与标高估算。西支路存在外壳配准冲突，侧梯、升降机及完整楼层尚未建立，不证明当前布置。"
           },
           "interiorView": {
             "position": [
@@ -4907,17 +4913,17 @@
             "fov": 48
           },
           "gallery": "old-foyer-interior",
-          "interiorAsset": "/models/details/old-foyer-interior-e85e8f82cbfe.glb",
+          "interiorAsset": "/models/details/old-foyer-interior-ba3fa9e37629.glb",
           "detailedInterior": {
-            "url": "/models/details/old-foyer-interior-e85e8f82cbfe.glb",
-            "bytes": 24284,
-            "triangles": 976,
-            "sha256": "e85e8f82cbfe364d7b351c735b16b6c594544bd05e9ff79083e86b7bb2f34f19",
+            "url": "/models/details/old-foyer-interior-ba3fa9e37629.glb",
+            "bytes": 27500,
+            "triangles": 1052,
+            "sha256": "ba3fa9e376294f6358fa5b738139a217d6f063bd3744e3581bc69e38fc258b3d",
             "bounds": {
               "min": [
-                -21.745058059692383,
+                -26.841442108154297,
                 0.550000011920929,
-                79.52955627441406
+                67.3704833984375
               ],
               "max": [
                 -5.286540508270264,
@@ -4928,9 +4934,9 @@
           },
           "interiorBounds": {
             "min": [
-              -21.745058059692383,
+              -26.841442108154297,
               0.550000011920929,
-              79.52955627441406
+              67.3704833984375
             ],
             "max": [
               -5.286540508270264,
