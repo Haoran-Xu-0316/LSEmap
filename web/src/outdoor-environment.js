@@ -11,8 +11,8 @@ const MAP_BACKGROUND = new THREE.Color(0xe9edf0);
 /** Keep downward elevation studies clear; reveal the sky near street level.
  * The small hysteresis band prevents flicker while orbiting near the boundary.
  */
-export function outdoorSkyVisible(mode, verticalDirection, wasVisible = false) {
-  return mode !== 'interior' && verticalDirection > (wasVisible ? -.26 : -.18);
+export function outdoorSkyVisible(mode, verticalDirection, wasVisible = false, isolatedElevation = false) {
+  return !isolatedElevation && mode !== 'interior' && verticalDirection > (wasVisible ? -.26 : -.18);
 }
 
 // A sharp LDR background and the filtered HDR reflections have separate roles.
@@ -78,7 +78,8 @@ export async function loadOutdoorEnvironment(viewer) {
     viewer.scene.onBeforeRender = () => {
       if (viewer.disposed) return;
       viewer.camera.getWorldDirection(direction);
-      skyVisible = outdoorSkyVisible(viewer.mode, direction.y, skyVisible);
+      const isolatedElevation = Boolean(viewer.activeCode) && viewer.mode === 'campus' && !viewer.contextVisible;
+      skyVisible = outdoorSkyVisible(viewer.mode, direction.y, skyVisible, isolatedElevation);
       const background = skyVisible ? (backdrop ?? texture) : MAP_BACKGROUND;
       if (viewer.scene.background !== background) viewer.scene.background = background;
     };
