@@ -3628,6 +3628,22 @@
       "audit": "result/blender/cbg-ground206/audit.json",
       "limitations": "ArchivedOSM/photo boundary and estimated slabcourse/levels, not a current surveyed publicrealm plan. No future Portugal Street pedestrianisation.",
       "finish": "Five independent palegraystone materials retain source noise/roughness/node links, with estimated visible colour variation guided by archived RSHP020. Shared stone texture classification retained."
+    },
+    "streets211": {
+      "version": 211,
+      "scope": "Restore2104.93m2 of mapped pedestrian-area gaps in Strand forecourt and Sheffield Street. Remove177.40m2 of asphalt intrusion, retain detailed existing paving and building/green exclusions. Add mapped Lincoln Inn Fields metal boundary with8 measured-width entrance openings.",
+      "audits": [
+        "result/blender/street-surfaces211/audit.json",
+        "result/blender/park-boundary211/audit.json"
+      ],
+      "sourceUrls": [
+        "https://www.openstreetmap.org/relation/5992662",
+        "https://www.openstreetmap.org/way/429289484",
+        "https://www.openstreetmap.org/way/30613392",
+        "https://www.wsp.com/en-gb/projects/strand-aldwych"
+      ],
+      "sourceDate": "2026-09-12 OSM archive; Strand relation3, Sheffield way9 and public park way38 rechecked2026-10-15",
+      "limitations": "Mapped geometry is not a current measured survey. Tile size/course alignment, colours, fence height and section remain estimates. Existing eight path/gate connections retained; no invented access state."
     }
   },
   "environmentReview": {
@@ -3729,7 +3745,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 210,
+  "sourceVersion": 211,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
