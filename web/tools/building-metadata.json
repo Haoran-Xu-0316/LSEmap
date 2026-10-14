@@ -3547,7 +3547,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": "200",
+  "sourceVersion": "201",
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -3569,5 +3569,29 @@
     ],
     "inheritedModelSpanMetres": 8.166666666666666,
     "decision": "Roof candidate remains excluded pending structural-grid and floor-schedule reconciliation; design evidence is not current built survey"
+  },
+  "oldPortalReview201": {
+    "scope": "Clare Market Student Services recessed blue portal; surrounding window bays, stairs, Houghton arch and all room studies retained",
+    "references": [
+      "data/collections/old-clare-reference/front.png"
+    ],
+    "dimensions": "Photo-estimated proportions and depth, not current measured survey"
+  },
+  "cbgBuiltGridReview201": {
+    "majorAxisCount": 8,
+    "majorBayCount": 7,
+    "engineerGridMetres": [
+      6,
+      9
+    ],
+    "nativeAxes": 7,
+    "nativeBays": 6,
+    "nativeGridPitchMetres": 8.166666666666666,
+    "scope": "Built-photo and primary engineer evidence verify inherited structural-grid mismatch; absolute envelope/wing registration and native correction remain incomplete",
+    "primarySources": [
+      "https://rshp.com/projects/education/lse-centre-building/",
+      "https://tyrensakt.com/projects/lse-centre-building/"
+    ],
+    "roofCandidateMerged": false
   }
 }
