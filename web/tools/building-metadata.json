@@ -1230,9 +1230,9 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 148,
-        "status": "shopfront-current-photo-corrected",
-        "scope": "Official May2025 street photograph replaces the historical left lower shopfront glazing with continuous white paneling. Both shop overlights gain the photographed2-row4-column grids, and two fictitious large-pane middle rails are removed. Obscured right basement, original large glass, timber entry and other upper/roof geometry remain unchanged. Dimensions and optical finishes are estimates; no complete interior claimed."
+        "version": 203,
+        "status": "street-window-columns-corrected",
+        "scope": "Official photograph published September2025 shows two narrow sash columns in each brick field. Restore eight narrow windows across the two upper levels and two black downpipes. Original side bays, central windows, entrance and white lower shopfront panels retained. Widths, pipe sizes and concealed conditions are photographic estimates; no verified interior."
       },
       "closeupImage": "lch-entrance",
       "exportExterior": true,
@@ -3547,7 +3547,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": "201",
+  "sourceVersion": "203",
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
