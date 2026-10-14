@@ -8,14 +8,23 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition212 contains31 building records,30 detailed exteriors,25 interior views
+Edition213 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v212.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v213.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All135 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition213 includes218 mapped footways across about12,318.6m². Named paths
+such as Carey Street, Kingsway and Grange Court now participate in the same
+surface review. Explicit asphalt tags correct286.3m² of previously pale paths;
+slab courses follow route bearings, with flush edge bands. About3,591.1m² of
+coplanar paving over existing road surfaces is removed. Original widths and
+levels remain unchanged; slab modules and colours are presentation estimates.
+The library's existing spiral-ramp/gallery connections have six guard openings,
+with108 support probes checked. No new floor plan or access certification is implied.
 
 OLD’s Clare Market Student Services entrance now has the broad recessed blue
 portal lining visible in the supplied photograph, surrounding a narrower glazed
