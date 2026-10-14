@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "196",
-  "sourceModelSha256": "1c1185738e796221c6d30f06aec906b99829cad4867fbb2bced77d657afc298b",
+  "version": "197",
+  "sourceModelSha256": "5a225f1d5227e0b173bc93d9ba4aa5da1e539ec73b003f31ea575ccea807d854",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1286,7 +1286,64 @@
             3.200000047683716
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "clm-502",
+          "label": "CLM.5.02排式教室",
+          "scope": "依据LSE官方CLM.5.02历史平面与照片建立120座教室：6排、每排4+12+4座、60张双人桌、双纵向通道、双投影幕、教学墙与门。尺寸、层高及照片不可见构造估计；外侧窗洞无法可靠核实，侧后墙和顶面剖开；不推断整层连通，不代表2026年现状。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CLM.5.02排式教室",
+            "scope": "依据LSE官方CLM.5.02历史平面与照片建立120座教室：6排、每排4+12+4座、60张双人桌、双纵向通道、双投影幕、教学墙与门。尺寸、层高及照片不可见构造估计；外侧窗洞无法可靠核实，侧后墙和顶面剖开；不推断整层连通，不代表2026年现状。"
+          },
+          "interiorView": {
+            "position": [
+              13.8,
+              11.2,
+              -14.6
+            ],
+            "target": [
+              0,
+              1,
+              0
+            ],
+            "fov": 48
+          },
+          "gallery": "clm-502-interior",
+          "interiorAsset": "/models/details/clm-502-interior-f69ff40df7f5.glb",
+          "detailedInterior": {
+            "url": "/models/details/clm-502-interior-f69ff40df7f5.glb",
+            "bytes": 326516,
+            "triangles": 30344,
+            "sha256": "f69ff40df7f576c07b3ff12a9ce60223b292514e3419e6522ed212d5cd4c57fd",
+            "bounds": {
+              "min": [
+                -6.064000129699707,
+                -0.12999999523162842,
+                -4.21999979019165
+              ],
+              "max": [
+                6.099999904632568,
+                3.0899999141693115,
+                4.0879998207092285
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -6.064000129699707,
+              -0.12999999523162842,
+              -4.21999979019165
+            ],
+            "max": [
+              6.099999904632568,
+              3.0899999141693115,
+              4.0879998207092285
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "COL",
@@ -2214,7 +2271,64 @@
             3.0950000286102295
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "faw-401",
+          "label": "FAW.4.01协作教室",
+          "scope": "同房号历史平面与实拍支持的30座协作教室。4组圆形及带延伸桌、黄色转椅、折角边界、7组平面窗位及教学墙按图近似；尺度、层高和不可见构造估计，未与整栋楼层配准，不代表2026年现状。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "FAW.4.01协作教室",
+            "scope": "同房号历史平面与实拍支持的30座协作教室。4组圆形及带延伸桌、黄色转椅、折角边界、7组平面窗位及教学墙按图近似；尺度、层高和不可见构造估计，未与整栋楼层配准，不代表2026年现状。"
+          },
+          "interiorView": {
+            "position": [
+              -12,
+              12,
+              15
+            ],
+            "target": [
+              0,
+              1,
+              0
+            ],
+            "fov": 48
+          },
+          "gallery": "faw-401-interior",
+          "interiorAsset": "/models/details/faw-401-interior-9717ffdc3aa0.glb",
+          "detailedInterior": {
+            "url": "/models/details/faw-401-interior-9717ffdc3aa0.glb",
+            "bytes": 178384,
+            "triangles": 14872,
+            "sha256": "9717ffdc3aa08bed114bce277de699a9bd13d59a3af0d8860f3bcdb92087d4d8",
+            "bounds": {
+              "min": [
+                -4.482852935791016,
+                -0.14000000059604645,
+                -5.308000087738037
+              ],
+              "max": [
+                4.415999889373779,
+                3.2100000381469727,
+                5.370426177978516
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -4.482852935791016,
+              -0.14000000059604645,
+              -5.308000087738037
+            ],
+            "max": [
+              4.415999889373779,
+              3.2100000381469727,
+              5.370426177978516
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "KGS",
@@ -6455,11 +6569,11 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 143,
-        "status": "photo-registered-thames-and-silver-artwork-profiles",
-        "scope": "Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.",
-        "source": "LSE History2015 and2017 Warren Wilson panel photographs and descriptions",
-        "photographDate": "historical; precise image capture dates unresolved"
+        "version": 197,
+        "status": "photo-guided-whole-facade-finishes",
+        "scope": "Neutral white walls and painted frames, red-brown stair, grey entrance base/sign and less frosted glass. Geometry, artwork, room, glass tint and transparency retained. Historical photographs guide presentation; unseen elevations are not verified.",
+        "addedObjects": 26,
+        "archivedObjects": 26
       },
       "interiorView": {
         "position": [
@@ -6565,10 +6679,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/stc-exterior-ec73911aeb0b.glb",
-        "bytes": 4272188,
+        "url": "/models/details/stc-exterior-fea36b07c193.glb",
+        "bytes": 4278368,
         "triangles": 352727,
-        "sha256": "ec73911aeb0b45c8958ed5c5e9a2998bf7606763eee9188a42939aa920c827f2",
+        "sha256": "fea36b07c193d8dfc0dd7238194ecc1a32352671bcb176d1299e88a77b9c98b5",
         "bounds": {
           "min": [
             -17.60181427001953,
