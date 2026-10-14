@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "203",
-  "sourceModelSha256": "976e645ef4b58e19485feff1fe3ff2fb64d9b5d497739642a2429548d821df8a",
+  "version": "204",
+  "sourceModelSha256": "a12a1ae48f98b7b0447af030667ec17e1c25eb757405a056e62b2ddc772be956",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3617,13 +3617,9 @@
         "scope": "LSE Global School of Sustainability image published 31 July 2025 supports the three-bay frontage and front roof character. Capture date unknown; dimensions, roof material specification, hidden dormer depth, attic grids and partly obscured left triangular pediment estimated. Central triangular and right segmental silhouettes distinguished. Original objects, other faces and interiors preserved; A photo-guided cubic curve replaces the GIS corner chamfer in owned mesh copies, joining adjacent wall tangents while preserving their endpoints. Corner masonry, glazing, frames and stone bands follow the curve; entry joinery remains flat. Curve depth, radius and portal placement are estimates; rear roof layout, unseen elevations and complete interiors remain unverified."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
-        "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
-        ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "version": 204,
+        "status": "restrained-neutral-glazing-corrected",
+        "scope": "Six formerly opaque glass batches receive restrained neutral dielectric finish and browser opacity0.72. All101pane shapes/UVs and the original window arrangement remain. No opaque backing was observed within1.2m, so no full interior is exposed or invented. Photograph published2025-07-31; capture date unknown. Optical values remain presentation estimates."
       },
       "detailView": {
         "label": "入口细节",
@@ -3715,10 +3711,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/51l-exterior-f3e380adb382.glb",
-        "bytes": 2849228,
+        "url": "/models/details/51l-exterior-5f72390b5604.glb",
+        "bytes": 2849388,
         "triangles": 219719,
-        "sha256": "f3e380adb382d23df3ea64b0639acd923fe49bee213236ec2d5ec4dd004aea4b",
+        "sha256": "5f72390b560451fe1483b812157fd4e608a7fe0572a94f7f3f4206bd86d85945",
         "bounds": {
           "min": [
             -74.71239471435547,
