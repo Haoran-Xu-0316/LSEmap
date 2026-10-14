@@ -8,13 +8,13 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition205 contains31 building records,30 detailed exteriors,25 interior views
+Edition206 contains31 building records,30 detailed exteriors,25 interior views
 and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v205.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v206.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All129 gallery images use the
+finishes and public structural elements. All130 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
 OLD’s Clare Market Student Services entrance now has the broad recessed blue
@@ -39,6 +39,13 @@ published2m glazing/1m opaque-leaf module. Roof terraces, folded canopies and
 World cameras follow the corrected footprint; four independent room studies
 retain their original local spaces. Design-plan/photo dimensions and podium
 height remain estimates, rather than a current as-built survey.
+
+LSE Square now has716.7m² of additional bounded stone paving, including its
+registered CBG entrance joins. Six mapped tree-pool openings and the original
+road network remain intact. SAW’s retained curtain and roof panes use neutral
+dielectric optics; two previously opaque roof glazing groups now transmit light.
+The July2026official construction update keeps35L and future Portugal Street
+pedestrianisation distinct from present built geometry.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. The outdoor renderer uses a sharp2048px photographic sky alongside independent
