@@ -24,7 +24,7 @@ def digest(path):
 def verify():
     report = json.loads((OUTPUT / 'audit.json').read_text())
     mapping = json.loads((ROOT / 'result/blender/cbg-georegistration202/rebuild-mapping.json').read_text())
-    master = ROOT / 'result/blender/LSE_campus_detailed_v201.blend'
+    master = ROOT / report.get('baselinePath','result/blender/LSE_campus_detailed_v203.blend')
     assert digest(master) == report['baselineSha256']
     component = ROOT / report['componentPath']
     assert digest(component) == report['componentSha256']
