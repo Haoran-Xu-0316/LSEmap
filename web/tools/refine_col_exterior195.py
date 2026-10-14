@@ -163,7 +163,7 @@ def preview(phase):
     world.node_tree.nodes['Background'].inputs[0].default_value = (.78, .82, .87, 1)
     world.node_tree.nodes['Background'].inputs[1].default_value = .65
     scene.world = world
-    sky = ROOT / 'web/public/environment/kloppenheim-sky-1k.hdr'
+    sky = ROOT / 'web/public/environment/kloppenheim-daylight-1k.hdr'
     env = world.node_tree.nodes.new('ShaderNodeTexEnvironment')
     env.image = bpy.data.images.load(str(sky), check_existing=True)
     world.node_tree.links.new(env.outputs['Color'], world.node_tree.nodes['Background'].inputs[0])
