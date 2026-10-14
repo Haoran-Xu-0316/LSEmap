@@ -8,27 +8,28 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition200 contains31 building records,30 detailed exteriors,25 interior views
+Edition201 contains31 building records,30 detailed exteriors,25 interior views
 and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v200.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v201.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All129 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-Two newly selectable rooms extend the interior collection: OLD.3.21 has four
-8-seat groups; MAR.1.07 has16 seats around a U and4 central seats. Both use
-paired official historical plans/photos, independently isolated from the campus
-scene. Plan arrangements and photographed teaching finishes are retained;
-metric scale, hidden construction and some photo-to-plan registration are estimates.
+OLD’s Clare Market Student Services entrance now has the broad recessed blue
+portal lining visible in the supplied photograph, surrounding a narrower glazed
+entrance. Joinery, pulls and signage move together. The original opening, landing,
+ordinary glazed bays and Houghton arch are retained. Proportions and recess depth
+remain photographic estimates; blue paint and glass finishes are inherited.
 
-All edition199 campus, building and prior room assets retain their checksums.
-The refined landscape, mapped context finishes, continuous road network and
-static daylight remain in place. The private CBG roof candidate stays excluded:
-a separately scaled2016architect plan shows an approximately6m structural grid,
-whereas the inherited model uses about8.17m. Design-stage drawings alone do not
-establish current built dimensions or justify silently resizing the campus.
+All previous room studies and other building assets retain their checksums.
+A separate built-photo review confirms8 major axes and7 bays across CBG’s tower
+front; the inherited model has7 axes and6 bays. The structural engineer publishes
+a6m×9m grid, corroborating the scaled2016architect drawing. Whole-envelope and
+wing-junction registration must be reconciled before this structural correction
+or the private roof candidate is released. Thirteen storeys are retained; facade
+bands omitted within double-height spaces are not treated as missing floors.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. Optional asset or storage failures retain
