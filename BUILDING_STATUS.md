@@ -1,6 +1,6 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v204.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v205.blend。
 
 原生SHA256：a12a1ae48f98b7b0447af030667ec17e1c25eb757405a056e62b2ddc772be956。
 
@@ -10,17 +10,17 @@
 
 204版修正51L原本不透明的6组玻璃代理，使用克制的中性玻璃材质；101个窗玻璃组件的几何和UV保持，未编造完整室内。7060个原对象逐项保留，新增6个替换对象，完整模型重开验证。
 
-CBG的3米办公室模数、教学翼双层遮阳/端部X支撑及屋顶已合成整栋候选，86个办公室模数组件的172个表面探针通过。低矮裙房、上层楼梯接口及世界相机尚未统一，未上线。
+205版已将CBG的42米8轴塔楼、阶梯教学翼、两层南侧裙房、屋顶退台及28级顶层折返楼梯统一。172个办公室表面探针通过；楼梯31处净空及3处端点支承检查通过。原有7066个对象几何、UV和绑定保留，新增183个合并批次，归档87个旧CBG批次。
 
 203版按官方2025年发布照片修正LCH整片街立面：两侧砖区各2列窄窗，补黑色落水管；保留中央及凸窗、门廊、148版白色下墙板。7045个源对象保留，新增15个构件、归档8个源对象；完整模型保存重开验证。
 
-CBG独立配准发现塔楼与教学翼位置反向。42米8轴塔楼、阶梯教学翼和屋顶退台正在独立组件中重建；幕墙模块、接口与相机未完成，未上线。
+CBG世界相机随正确方位重设，公共结构与外观由同一原生组件导出；4个独立教室样本保持原坐标和文件哈希。
 
 201版修正OLD Clare Market Student Services入口缺失的宽蓝色内衬，同步收窄并后退对应门窗，移动标识和拉手。普通窗列、台阶、坡道、Houghton拱门和所有房间保留；衬板比例与深度为照片估计，颜色和玻璃参数沿用。
 
 7038个原对象逐项保留，新增7个构件、仅归档6个入口源对象；完整模型保存后重开验证。全部默认内部、17个独立房间及其他建筑外观保持200版资产，OLD入口在总览和独立外观中共用修正。129张图库使用同一生产渲染器。
 
-CBG建成照片确认主立面8条柱轴、7个开间，现有线上模型7轴6跨错误。结构工程师公开6米×9米柱网；独立配准已纠正塔楼与教学翼的方位。新的42米塔楼、阶梯教学翼楼板/外围幕墙、屋顶退台和双折雨棚均已保存重开检查，3米幕墙模块已恢复，尚待楼梯连接、低矮裙房及相机统一后合入。13层与52.2米整体高度由建筑师资料支持，分层标高仍是估计。
+CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2米玻璃加1米实叶模数。两层裙房有建筑师资料支持，8.333米高度及未见房间仍为估计，未宣称2026年实测完整内部。
 
 ## 建筑核验范围
 
@@ -29,7 +29,7 @@ CBG建成照片确认主立面8条柱轴、7个开间，现有线上模型7轴6�
 |楼号|最近核验版|最近范围|
 |---|---|---|
 |61A|177|Replace the inward-facing uncut slate apron behind ten retained near-corner Kingsway dormers; remove overlapping original roof surfaces locally. Preserve original dormers and unregistered roof areas. Photographic dimensions are estimates; full current roof and interiors remain unverified.|
-|CBG|194|涂漆遮阳构件采用介电涂层，中性玻璃透明度调整。红色为主遵循用户选择；屋顶候选尚未合入。|
+|CBG|205|独立配准42米塔楼与阶梯教学翼；补齐两层裙房、屋顶退台及连续顶层楼梯。保留中性玻璃和红橙内侧遮阳，外观/总览共用组件；4个独立房间样本保持。尺寸及未见内部仍为估计。|
 |CKK|178|Read-only review of principal elevation, entrance columns, fanlight, window groups and cornices against archived Grimshaw and Willebrand built photographs. Retained164/173 glazing corrections; no reliable additional geometry correction established.|
 |CLM|196|统一临街灰暖白石材、深棕涂饰窗框与木门；玻璃粗糙度调整，原色值、透明度、透射、几何和旧UV保留。上层照片受树遮挡，不声称新测绘。|
 |COL|195|临街石材、涂漆窗框、木门和玻璃材质分离；32个原对象仅替换材质，原几何、旧UV及透明度保留。|
