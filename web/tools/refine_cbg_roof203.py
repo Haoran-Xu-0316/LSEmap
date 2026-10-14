@@ -1,6 +1,6 @@
 """Reconstruct a private CBG highest-roof component in the independent202 frame.
 
-Run build_candidate() in Blender's Text Editor. Fixed local files only. The201
+Run build_candidate() in Blender's Text Editor. Fixed local files only. The203
 campus and202 component are read-only; no published assets are written. Plan
 landmarks supply XY boundaries, while all Z values remain inherited estimates.
 """
@@ -20,8 +20,8 @@ from integrate_exterior_round194 import object_fingerprint
 from refine_ground_orientation199 import closed_islands, signed_volume
 from refine_cbg_roof_envelope import components, CORNERS, BOX_FACES
 
-BASE = ROOT / 'result/blender/LSE_campus_detailed_v201.blend'
-BASE_SHA = '83f8532de4378e614f53a327b8c3397ae375e880d655bd584f5e0ea4980f2bec'
+BASE = ROOT / 'result/blender/LSE_campus_detailed_v203.blend'
+BASE_SHA = '976e645ef4b58e19485feff1fe3ff2fb64d9b5d497739642a2429548d821df8a'
 SOURCE = ROOT / 'result/blender/cbg-envelope202/cbg-envelope202-component.blend'
 OUT = ROOT / 'result/blender/cbg-roof203'
 PREFIX = 'CBG203_ROOF_'
@@ -233,7 +233,7 @@ def trim_object(source, local, world, volumes):
     target['originalObject'] = source['originalObject']
     target['replaces202Object'] = source.name
     target['candidateScope'] = 'Registered highest roof cutbacks; lower transformed202 parts retained'
-    return target, {'source202': source.name, 'source201': source['originalObject'], 'target': target.name, 'alteredIslands': altered, 'skippedIslands': rejected}
+    return target, {'source202': source.name, 'sourceNative': source['originalObject'], 'target': target.name, 'alteredIslands': altered, 'skippedIslands': rejected}
 
 
 def review(scene, collection, world, name, viewpoint, focus=(-20,8,45), scale=58):
@@ -473,7 +473,7 @@ def build_candidate():
         bm.free()
         candidate.objects.link(target)
         source.hide_render=True
-        replacements.append({'source202':source.name,'source201':source['originalObject'],'target':target.name,'removedObsoleteUpperComponents':stair_parts[key],'sourceOwners':source_owners[source['originalObject']]})
+        replacements.append({'source202':source.name,'sourceNative':source['originalObject'],'target':target.name,'removedObsoleteUpperComponents':stair_parts[key],'sourceOwners':source_owners[source['originalObject']]})
     assert all(object_fingerprint(obj)==before[obj.name] for obj in sources)
     added=list(candidate.objects)
     # Validate native outward solids and reject degenerate geometry.
@@ -518,11 +518,12 @@ def build_candidate():
     review(scene,candidate,world,'registered-roof-rear',(-65,68,100))
     review(scene,candidate,world,'registered-open-end',(24,4,47),focus=(-2,4,49),scale=22)
     review_path=OUT/'cbg-roof203-review.blend'
+    bpy.context.preferences.filepaths.save_version=0
     bpy.ops.wm.save_as_mainfile(filepath=str(review_path),check_existing=False)
     path=OUT/'cbg-roof203-component.blend'
     bpy.data.libraries.write(str(path),set(added),fake_user=True,compress=True)
     fingerprints={obj.name:object_fingerprint(obj) for obj in added}
-    report={'status':'private-partial-reconstruction-not-for-release','baselineSha256':BASE_SHA,'source202Sha256':digest(SOURCE),'mappingSha256':digest(mapping_path),'reviewPath':str(review_path.relative_to(ROOT)),'reviewSha256':digest(review_path),'componentPath':str(path.relative_to(ROOT)),'componentSha256':digest(path),'targetCollection':'CBG_EXTERIOR','addedObjects':[obj.name for obj in added],'archivedObjects':sorted({r['source201'] for r in replacements}),'changedObjects':[],'replacements':replacements,'newGeometry':mesh_records,'cutbackFootprints':{'rearTerrace':rear_polygon,'coreEndSetback':end_polygon,'openCanopy':canopy_polygon,'upperStairWell':stair_polygon},'inheritedProvisionalHeights':{'top':HEIGHT,'rearDeck':REAR_DECK,'canopyDeck':END_DECK},'references':[{'path': 'data/collections/cbg_roof_registration/level12-plan-rshp-2016.jpg', 'sha256': '5dc5b500a66ebcd630031c999f8a347a0de21daab443d3f009908337c32c29cc', 'role': 'published2016designplan; XYonly', 'captureDate': 'unknown'}, {'path': 'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_05.jpg', 'sha256': '175417c5a88f5d6278476a8edf5b95891ea8d028dc51a8bb794aa91663d65b39', 'role': 'builtphotograph; openend,screen,twinfoldedcanopy', 'captureDate': 'unknown'}, {'path': 'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_17.jpg', 'sha256': '57793c8e36552b4d60558f525b9df35ced609eba655647a1b06965e8cfa3d86e', 'role': 'builtphotograph; greencap,boundedroofgarden', 'captureDate': 'unknown'}],'heightEvidence':'Inherited52.2m/13equalstoreys; no new current measured elevation established','topology':topology,'geometricChecks':geometric_checks,'remainingBeforeRelease':['Boundedgardenbeds,furniture,coreterraceaccessandserviceequipmentremainunmodelled.', 'Reconcile nonuniform actual upper floor heights and screen/canopy elevations against current measured evidence.','Integrate roof voids after independent office module reconstruction; do not overwrite its lower facade objects.','Twin folded canopy forms now reproduce the photographedsilhouette; exactdimensions,equipmentfunctionandconnectionsremainunverified.','Upper stair finalguards,stringers,toplandingandconnectionremainunverified; lower eighth flight not connected by this candidate.','Shared internal partition faces between independently closed trim fragments remain; no boolean-union claim.']}
+    report={'status':'private-partial-reconstruction-not-for-release','baselineSha256':BASE_SHA,'source202Sha256':digest(SOURCE),'mappingSha256':digest(mapping_path),'reviewPath':str(review_path.relative_to(ROOT)),'reviewSha256':digest(review_path),'componentPath':str(path.relative_to(ROOT)),'componentSha256':digest(path),'targetCollection':'CBG_EXTERIOR','addedObjects':[obj.name for obj in added],'archivedObjects':sorted({r['sourceNative'] for r in replacements}),'changedObjects':[],'replacements':replacements,'newGeometry':mesh_records,'cutbackFootprints':{'rearTerrace':rear_polygon,'coreEndSetback':end_polygon,'openCanopy':canopy_polygon,'upperStairWell':stair_polygon},'inheritedProvisionalHeights':{'top':HEIGHT,'rearDeck':REAR_DECK,'canopyDeck':END_DECK},'references':[{'path': 'data/collections/cbg_roof_registration/level12-plan-rshp-2016.jpg', 'sha256': '5dc5b500a66ebcd630031c999f8a347a0de21daab443d3f009908337c32c29cc', 'role': 'published2016designplan; XYonly', 'captureDate': 'unknown'}, {'path': 'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_05.jpg', 'sha256': '175417c5a88f5d6278476a8edf5b95891ea8d028dc51a8bb794aa91663d65b39', 'role': 'builtphotograph; openend,screen,twinfoldedcanopy', 'captureDate': 'unknown'}, {'path': 'data/collections/campus_photos_round2/images/CBG/CBG_cbg_joas_17.jpg', 'sha256': '57793c8e36552b4d60558f525b9df35ced609eba655647a1b06965e8cfa3d86e', 'role': 'builtphotograph; greencap,boundedroofgarden', 'captureDate': 'unknown'}],'heightEvidence':'Inherited52.2m/13equalstoreys; no new current measured elevation established','topology':topology,'geometricChecks':geometric_checks,'remainingBeforeRelease':['Boundedgardenbeds,furniture,coreterraceaccessandserviceequipmentremainunmodelled.', 'Reconcile nonuniform actual upper floor heights and screen/canopy elevations against current measured evidence.','Integrate roof voids after independent office module reconstruction; do not overwrite its lower facade objects.','Twin folded canopy forms now reproduce the photographedsilhouette; exactdimensions,equipmentfunctionandconnectionsremainunverified.','Upper stair finalguards,stringers,toplandingandconnectionremainunverified; lower eighth flight not connected by this candidate.','Shared internal partition faces between independently closed trim fragments remain; no boolean-union claim.']}
     (OUT/'audit.json').write_text(json.dumps(report,indent=2)+'\n')
     bpy.ops.wm.read_factory_settings(use_empty=True)
     with bpy.data.libraries.load(str(path),link=False) as (src,dst):
