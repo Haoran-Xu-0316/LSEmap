@@ -8,9 +8,9 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition204 contains31 building records,30 detailed exteriors,25 interior views
+Edition205 contains31 building records,30 detailed exteriors,25 interior views
 and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v204.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v205.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
@@ -32,16 +32,13 @@ All101pane shapes and the photographed window arrangement are retained; no
 verified full interior exists, so transparency remains deliberately limited.
 
 All previous room studies and other building assets retain their checksums.
-A separate built-photo review confirms8 major axes and7 bays across CBG’s tower
-front; the inherited model has7 axes and6 bays. The structural engineer publishes
-a6m×9m grid, corroborating the scaled2016architect drawing. Independent202registration against OLD, STC and TowerOne finds the inherited
-tower/teaching-wing placement reversed. A private42m tower/grid candidate has
-been saved and reopened. Registered stepped-wing floor/envelope and highest-roof
-cutbacks and metric office modules now share a saved whole-building
-review. Teaching-wing double-height shading and end bracing are included.
-Staircase interfaces, southern podium and camera corrections remain unfinished
-and are not released. Thirteen storeys are retained; facade
-bands omitted within double-height spaces are not treated as missing floors.
+CBG now uses an independently registered42m tower with8axes and7bays,
+its stepped teaching wing and a two-storey amenity podium. Offices follow the
+published2m glazing/1m opaque-leaf module. Roof terraces, folded canopies and
+28 connected upper stair risers share one exterior/public-structure assembly.
+World cameras follow the corrected footprint; four independent room studies
+retain their original local spaces. Design-plan/photo dimensions and podium
+height remain estimates, rather than a current as-built survey.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. The outdoor renderer uses a sharp2048px photographic sky alongside independent
