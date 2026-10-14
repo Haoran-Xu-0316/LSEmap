@@ -1335,5 +1335,24 @@
       ],
       "fov": 60
     }
+  },
+  {
+    "code": "LRB",
+    "name": "lrb-services-interior",
+    "label": "图书馆G层公共服务区",
+    "sectionId": "G",
+    "view": {
+      "position": [
+        71.5,
+        17,
+        -11
+      ],
+      "target": [
+        71.5,
+        0.8,
+        -27.5
+      ],
+      "fov": 58
+    }
   }
 ]
