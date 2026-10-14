@@ -8,29 +8,34 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition198 contains31 building records,30 detailed exteriors,25 interior views
+Edition199 contains31 building records,30 detailed exteriors,25 interior views
 and15 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v198.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v199.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All127 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-The street network now dissolves397 overlapping road strips into one continuous
-watertight mesh. This removes6,562.809 square metres of duplicate coplanar
-coverage while retaining the original estimated street boundaries and23 holes.
-All building and room assets remain byte-identical to edition197.
+The landscape refines510 previously coarse crown masses while retaining all522
+crown envelopes, centres and tree positions. Earlier Watkins/Houghton refinements
+remain intact. One opaque batched canopy adds122,400 triangles, with no new
+textures, alpha leaf cards, trees or animation.
 
-A clearer CC0 daylight panorama replaces the previous sky, reducing its download
-by342,463 bytes. Downward building studies use the neutral background; near-level
-street views reveal the sky with a small hysteresis band to prevent switching
-flicker. Background and glazing reuse one static PMREM texture.
+Twenty-four surrounding context buildings gain13 wall/roof finishes from
+singular archived mapped material/colour attributes. Their existing world faces
+remain exact; no windows or facade details are invented. Mixed or absent tags
+keep their previous finish. Numeric colours and standard brick coursing are
+presentation estimates, not a current photographic survey.
 
-Asphalt and stone retain the shared512px captured colour/height/roughness maps.
-World-metre sampling, mipmaps and distance filtering resolve their fine finish
-without adding separate render passes. Optional loading failures retain the
-startup environment and procedural road finishes.
+The original park black patch was traced to downward grass faces. Orientation
+repair corrects120 ground objects without changing coordinates, coverage or
+corner UVs; native before/after renders verify the patch is gone.
+
+Every LSE exterior and interior asset retains its edition198 checksum. The
+continuous road network and clearer static daylight remain in place. Nine
+archived pedestrian centre lines totalling280.681m were checked against current
+paving without finding evidence for a new broad route expansion.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. Optional asset or storage failures retain
