@@ -3,7 +3,7 @@ import * as THREE from 'three';
 // One pair of uniform slots per viewer serves overview and selected buildings.
 // Slots update after optional downloads without recompiling every road material.
 export const GROUND_FINISHES = Object.freeze([
-  {kind:'asphalt',url:'/environment/asphalt-finish-512.webp',reliefUrl:'/environment/asphalt-relief-512.webp',metres:30,mean:0.127792,height:.008},
+  {kind:'asphalt',url:'/environment/asphalt-finish-512.webp',reliefUrl:'/environment/asphalt-relief-512.webp',metres:3,mean:0.105896,height:.002},
   {kind:'stone',url:'/environment/stone-finish-512.webp',reliefUrl:'/environment/stone-relief-512.webp',metres:2,mean:0.16799,height:.0025},
 ]);
 
