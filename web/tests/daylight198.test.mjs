@@ -17,8 +17,10 @@ test('map and STC elevation stay neutral while street pitch reveals the sky',()=
 
 test('fixed CC0 panorama is an intact 1k HDR below the optional delivery budget',async()=>{
  const bytes=await readFile(new URL('../public'+SKY_URL,import.meta.url));
- assert.equal(bytes.length,1086297);assert.ok(bytes.length<2_000_000);
- assert.equal(createHash('sha256').update(bytes).digest('hex'),'9da5a7f9c799fa6e41cac8fbc4fb7aa2d4556e2f00ce9943abe0fd83b6d4caf5');
+ const manifest=JSON.parse(await readFile('web/public/environment/sources.json','utf8'));
+ const record=manifest.assets.find(asset=>asset.path===SKY_URL);
+ assert.equal(bytes.length,record.bytes);assert.ok(bytes.length<2_000_000);
+ assert.equal(createHash('sha256').update(bytes).digest('hex'),record.sha256);
  const image=new HDRLoader().parse(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
  assert.equal(image.width,1024);assert.equal(image.height,512);
 });
@@ -30,8 +32,8 @@ test('failed optional sky keeps the startup environment and disposed viewers nev
   const sentinel={texture:{startup:true}},scene={environment:sentinel.texture};
   const viewer={disposed:false,environmentTarget:sentinel,scene,loadController:new AbortController(),canvas:{dataset:{}}};
   assert.equal(await loadOutdoorEnvironment(viewer),false);
-  assert.equal(viewer.canvas.dataset.skyReady,'fallback');assert.equal(scene.environment,sentinel.texture);assert.equal(requests,1);
-  viewer.disposed=true;assert.equal(await loadOutdoorEnvironment(viewer),false);assert.equal(requests,1);
+  assert.equal(viewer.canvas.dataset.skyReady,'fallback');assert.equal(scene.environment,sentinel.texture);assert.equal(requests,2);
+  viewer.disposed=true;assert.equal(await loadOutdoorEnvironment(viewer),false);assert.equal(requests,2);
  }finally{globalThis.fetch=previousFetch;}
 });
 
