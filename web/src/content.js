@@ -177,8 +177,8 @@ export const buildingDetails = {
   CBG: {
     description:
       "Centre Building以红色为主、橙色侧面的遮阳构件组织立面，配合灰白框架与玻璃幕墙。面向Houghton Street形成开放的首层空间。",
-    note: "已深化遮阳构件与局部公共内部，尺寸和室内位置仍含估计。",
-    images: [["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"]],
+    note: "塔楼、教学翼、裙房与广场铺装按资料配准，尺寸和未见内部仍含估计。",
+    images: [["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"]],
   },
   LRB: {
     description:
