@@ -1233,5 +1233,17 @@
     "name": "old-foyer-interior",
     "spaceId": "old-foyer",
     "label": "Old Building主入口分层门厅"
+  },
+  {
+    "code": "FAW",
+    "name": "faw-401-interior",
+    "label": "FAW.4.01协作教室",
+    "spaceId": "faw-401"
+  },
+  {
+    "code": "CLM",
+    "name": "clm-502-interior",
+    "label": "CLM.5.02排式教室",
+    "spaceId": "clm-502"
   }
 ]
