@@ -8,13 +8,13 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition206 contains31 building records,30 detailed exteriors,25 interior views
+Edition207 contains31 building records,30 detailed exteriors,25 interior views
 and17 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v206.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v207.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All130 gallery images use the
+finishes and public structural elements. All132 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
 OLD’s Clare Market Student Services entrance now has the broad recessed blue
@@ -47,11 +47,24 @@ dielectric optics; two previously opaque roof glazing groups now transmit light.
 The July2026official construction update keeps35L and future Portugal Street
 pedestrianisation distinct from present built geometry.
 
+Peacock’s independent historical auditorium now follows the archived2022DWG
+seat-bank curves and section levels, with raked Stalls, cantilevered Circle,
+longitudinal aisles, side boxes and a13m×5.9m stage opening. Its846 modeled seats
+are a visual sample: individual spacing and Circle plan width remain estimated.
+POR’s photographed corner corbel and dark left door pull are corrected while
+its existing glazing and other elevations remain intact.
+
 Lossless gzip segments reduce first-load transfer; one verified browser cache
 replaces the previous campus edition. The outdoor renderer uses a sharp2048px photographic sky alongside independent
 HDR reflections. Asphalt uses the source3m scale and shallow2mm presentation
 relief; packed roughness/height data removes unnecessary download noise.
 These CC0 materials are self-hosted and do not add animated clouds or scene meshes.
+A60KB partly cloudy backdrop replaces the sparse sky; its matching1k HDR
+shares the48-degree sun direction with direct light and glass reflections.
+The small sky transfers alongside HDR lighting. Road colour pairs transfer in
+parallel and refresh before optional relief finishes; a disposed viewer releases
+late decoded pixels. CBG terrace paving and the LRB plaza reuse the same stone
+finish without adding joints over their existing geometry.
 
 Optional asset or storage failures retain
 the normal lighting, procedural surface and network fallbacks.
