@@ -5,7 +5,7 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
 
-import { loadOutdoorEnvironment } from "./outdoor-environment.js";
+import { loadOutdoorEnvironment, DAYLIGHT_DIRECTION } from "./outdoor-environment.js";
 import { createGroundTextureState, loadGroundTextures, disposeGroundTextures } from "./ground-textures.js";
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages, downloadVerifiedModel, downloadCampusModel } from "./model-loading.js";
@@ -13,7 +13,6 @@ import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialF
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const COMPANION_CODES = {PAN: "FAW", FAW: "PAN"};
-const DAYLIGHT_DIRECTION = new THREE.Vector3(0.8, 1.6, 1).normalize();
 
 // Static outdoor radiance for glazing: a pale sky, a neutral horizon and stone
 // ground. Generate once; no downloaded panorama or per-frame reflection capture.
