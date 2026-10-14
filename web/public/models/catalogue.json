@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "207",
-  "sourceModelSha256": "44a0b2f09a6a13bbb9532e3a75e415aea7798bef63798e62036bbceb89ded7b0",
+  "version": "208",
+  "sourceModelSha256": "da07d198617bd18bceaece14682b9d0995a288655b6c5aa0ac8d2765e883b92c",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -233,6 +233,12 @@
         "audit": "result/blender/61a-registration207/source-review.json",
         "geometryChanges": 0
       },
+      "review208": {
+        "version": 208,
+        "scope": "253个窗壳几何、UV及法线保留；243个未连通窗继续不透明并减轻青色，仅10个有既有屋面近背衬的Kingsway老虎窗采用有限透明。整栋平面仍未独立配准，状态保持provisional。",
+        "audit": "result/blender/61a-exterior208/audit.json",
+        "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
+      },
       "bounds": {
         "min": [
           -77.13259887695312,
@@ -300,10 +306,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-fcbd69ad37cd.glb",
-        "bytes": 1039464,
+        "url": "/models/details/61a-exterior-7f7a5e86ac18.glb",
+        "bytes": 1040704,
         "triangles": 95255,
-        "sha256": "fcbd69ad37cd9e6ab7033d786621b44db59b0ce0dcfecfb69315aeff91569bb8",
+        "sha256": "7f7a5e86ac1822ea602d071cbe924a0fe1c0a3fdd24fe539e9249d36c32a2a49",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -1706,6 +1712,12 @@
         "status": "read-only-evidence-check",
         "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
       },
+      "review208": {
+        "version": 208,
+        "scope": "入口花岗岩独立材质去除局部黄偏，与既有冷灰基座统一；1对象替换，几何、UV、玻璃和未证实上层保留。",
+        "audit": "result/blender/con-exterior208/audit.json",
+        "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
+      },
       "bounds": {
         "min": [
           -34.34856414794922,
@@ -1773,10 +1785,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-4287240556b1.glb",
+        "url": "/models/details/con-exterior-e287fc0d2730.glb",
         "bytes": 589992,
         "triangles": 47172,
-        "sha256": "4287240556b1a8a252605287d74d2a36ac3433dbb778b3e01fb02cbb6f0cc8c1",
+        "sha256": "e287fc0d273068216b01f5d1b2af149ffb06b9f1b48b2a26332e7c884a95c750",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -3801,7 +3813,7 @@
           "label": "G层：LSE LIFE学习区",
           "minHeight": -0.02,
           "maxHeight": 3.92,
-          "scope": "依据官方G层导览图布置LSE LIFE学习区，已移除无依据的通用书架；服务柜台与封闭房间尚未重建。"
+          "scope": "按官方G层导览图布置LSE LIFE学习区及4处公共服务柜台。柜台轮廓部分插值，高度和材质估算；封闭房间及当前完整内装未重建。"
         },
         {
           "id": "1",
@@ -3940,6 +3952,14 @@
           "Metric brick dimensions and per-corner UVs inherited, not a newly measured masonry survey."
         ]
       },
+      "interiorReview208": {
+        "version": 208,
+        "scope": "按官方当前公开导览图补入G层Enquiries、Security、Support及LSE LIFE reception四处公共柜台，2个合并批次。75个支撑射线通过，无现有G层家具碰撞或中庭侵入。",
+        "audit": "result/blender/lrb-interior208/audit.json",
+        "limitations": "继承原平面仿射注册；3处文字遮挡部分插值，柜台高度和材质估算。未改变中庭、楼板、封闭房间或17个独立房间样本。",
+        "inheritedRegistrationMaxResidualMetres": 0.7888271896420499,
+        "owningSceneVerification": "result/blender/lrb-interior208/owning-scene-verification.json"
+      },
       "bounds": {
         "min": [
           24.830078125,
@@ -4025,10 +4045,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-aa2bdded983d.glb",
-        "bytes": 4669904,
-        "triangles": 580168,
-        "sha256": "aa2bdded983d0a9113883611b21f4a831074bef85f1825adc2155838a21f9923",
+        "url": "/models/details/lrb-interior-3385d4ed46b4.glb",
+        "bytes": 4678984,
+        "triangles": 580704,
+        "sha256": "3385d4ed46b4e7f23472170dcaf515cfbf8d9b4ebc247121b63a97dc8c4cbcc8",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -4925,6 +4945,12 @@
           "addedObjects": 0
         }
       ],
+      "review208": {
+        "version": 208,
+        "scope": "屋瓦收敛为低对比红褐色，近黑蓝绿店面修正为实拍支持的深橄榄绿；32个对象仅替换材质，屋形、几何、UV、玻璃及历史内部保留。",
+        "audit": "result/blender/ocs-exterior208/audit.json",
+        "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
+      },
       "bounds": {
         "min": [
           -47.91916275024414,
@@ -4992,10 +5018,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ocs-exterior-4e6e9caebc78.glb",
-        "bytes": 1349468,
+        "url": "/models/details/ocs-exterior-a92e7af175ff.glb",
+        "bytes": 1351148,
         "triangles": 115852,
-        "sha256": "4e6e9caebc78d5edafba2d6091f57626fefc40f384fd1cf41f0a86fe178a8596",
+        "sha256": "a92e7af175ffb8b8ffe5c33cc80257ddb4bbd3fa8a989c8d3b0f6554858d1706",
         "bounds": {
           "min": [
             -47.91916275024414,
