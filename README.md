@@ -26,13 +26,19 @@ remain photographic estimates; blue paint and glass finishes are inherited.
 All previous room studies and other building assets retain their checksums.
 A separate built-photo review confirms8 major axes and7 bays across CBG’s tower
 front; the inherited model has7 axes and6 bays. The structural engineer publishes
-a6m×9m grid, corroborating the scaled2016architect drawing. Whole-envelope and
-wing-junction registration must be reconciled before this structural correction
-or the private roof candidate is released. Thirteen storeys are retained; facade
+a6m×9m grid, corroborating the scaled2016architect drawing. Independent202registration against OLD, STC and TowerOne finds the inherited
+tower/teaching-wing placement reversed. A private42m tower/grid candidate has
+been saved and reopened, but stepped-wing, roof and facade-module corrections
+remain unfinished and are not released. Thirteen storeys are retained; facade
 bands omitted within double-height spaces are not treated as missing floors.
 
 Lossless gzip segments reduce first-load transfer; one verified browser cache
-replaces the previous campus edition. Optional asset or storage failures retain
+replaces the previous campus edition. The outdoor renderer uses a sharp2048px photographic sky alongside independent
+HDR reflections. Asphalt uses the source3m scale and shallow2mm presentation
+relief; packed roughness/height data removes unnecessary download noise.
+These CC0 materials are self-hosted and do not add animated clouds or scene meshes.
+
+Optional asset or storage failures retain
 the normal lighting, procedural surface and network fallbacks.
 
 Geometry, weathering and optical values remain photographic or plan-based
