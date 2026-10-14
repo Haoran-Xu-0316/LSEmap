@@ -1245,5 +1245,41 @@
     "name": "clm-502-interior",
     "label": "CLM.5.02排式教室",
     "spaceId": "clm-502"
+  },
+  {
+    "name": "old-321-interior",
+    "code": "OLD",
+    "spaceId": "old-321",
+    "view": {
+      "position": [
+        15.2,
+        13.6,
+        -17.8
+      ],
+      "target": [
+        0,
+        1,
+        0
+      ],
+      "fov": 48
+    }
+  },
+  {
+    "name": "mar-107-interior",
+    "code": "MAR",
+    "spaceId": "mar-107",
+    "view": {
+      "position": [
+        -11.6,
+        10.0,
+        -12.6
+      ],
+      "target": [
+        0,
+        1,
+        0
+      ],
+      "fov": 48
+    }
   }
 ]
