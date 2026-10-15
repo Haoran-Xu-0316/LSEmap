@@ -458,6 +458,12 @@
           "https://www.willebrand.com/en/projects/lse-london-school-of-economics-grimshaw-architects.398"
         ],
         "photographDate": "unknown"
+      },
+      "exteriorFinishReview219": {
+        "version": 219,
+        "audit": "result/blender/ckk-exterior219/audit.json",
+        "scope": "Six front-elevation batches retain original geometry and UVs. Three glazing families lose inherent cyan cast at retained linear luminance; three painted frame families become graphite gray. Roof pavilion finite transparency, stone and atrium retained.",
+        "limitations": "198 rays avoiding frames find no opaque backing within1.5m. Preserve existing opaque proxies; built photographs are undated and finish values remain visual estimates."
       }
     },
     {
@@ -1203,6 +1209,12 @@
           "Existing roof, footprint, central curved-oriel geometry, unseen envelope and interiors unchanged.",
           "Upper paired-window schedule extrapolated from visible flanking rows; complete upper elevation not photographed."
         ]
+      },
+      "exteriorFinishReview219": {
+        "version": 219,
+        "audit": "result/blender/ksw-exterior219/audit.json",
+        "scope": "One retained glazing batch loses excess inherent blue at the same linear luminance. Retain all geometry, UVs, roughness, transmission, opacity, painted frames and brick/stone finishes.",
+        "limitations": "274 rays meet existing dark recess liners14.3–66.2mm behind the panes, not a verified interior. Preserve the opaque proxy; source photograph dates unknown."
       }
     },
     {
@@ -1855,6 +1867,13 @@
         "audit": "result/blender/library-circulation213/audit.json",
         "scope": "Open existing ramp/gallery guard connections on six public levels without changing floors, roofs, envelope or room studies.",
         "verification": "Six passage connections and108existing support probes verified in the component; dimensions and connection bearings remain inherited estimates."
+      },
+      "exteriorReview219": {
+        "version": 219,
+        "audit": "result/blender/lrb-exterior219/audit.json",
+        "nativeChanged": false,
+        "scope": "Reopen accepted218 and compare two exterior views with archived built photographs and2025 existing-elevation drawings. No supported new correction found; retain196 facade finishes and210 roof coordination. Nine active glazing batches remain dielectric.",
+        "limitations": "No claim of full current condition survey; lower-roof registration, unseen details and complete interiors remain unresolved."
       }
     },
     {
@@ -3709,11 +3728,43 @@
         ],
         "fov": 48
       }
+    },
+    {
+      "code": "CLM",
+      "id": "clm-hongkong",
+      "label": "CLM.G.02 Hong Kong Theatre",
+      "collection": "CLMG02_ROOM220_study",
+      "gallery": "clm-hongkong-interior",
+      "scope": "依据LSE官方同房号历史平面与照片建立Hong Kong Theatre独立室内样本。平面逐椅提取260个学生座位，左50、中160、右50；保留交错排、后部凹口、门洞和前舞台。木护墙板、橙棕软座、投影屏、白板、讲桌及银扶手坡道按实拍估算。米制尺度、层高与隐蔽构造未测量，不增未见第二层，不作为2026年现状或整栋楼层注册。",
+      "interiorView": {
+        "position": [
+          17,
+          14,
+          -20
+        ],
+        "target": [
+          0,
+          1.7,
+          0.6
+        ],
+        "fov": 48
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CLM.G.02 Hong Kong Theatre",
+        "scope": "依据LSE官方同房号历史平面与照片建立Hong Kong Theatre独立室内样本。平面逐椅提取260个学生座位，左50、中160、右50；保留交错排、后部凹口、门洞和前舞台。木护墙板、橙棕软座、投影屏、白板、讲桌及银扶手坡道按实拍估算。米制尺度、层高与隐蔽构造未测量，不增未见第二层，不作为2026年现状或整栋楼层注册。"
+      }
     }
   ],
   "presentationReview": {
     "version": 139,
-    "scope": "Shared environment binding retained from138. Clear alpha-blended glazing no longer casts solid PCF depth shadows; received shadows, source opacity, tint, opaque/masked panes and structural frame shadows retained. Unattenuated daylight is a rendering approximation, not coloured transmittance or caustic simulation. Same mesh preparation applies to overview, exterior and initial/upgraded interior views without added meshes or textures."
+    "scope": "Shared environment binding retained from138. Clear alpha-blended glazing no longer casts solid PCF depth shadows; received shadows, source opacity, tint, opaque/masked panes and structural frame shadows retained. Unattenuated daylight is a rendering approximation, not coloured transmittance or caustic simulation. Same mesh preparation applies to overview, exterior and initial/upgraded interior views without added meshes or textures.",
+    "interiorLighting220": {
+      "version": 220,
+      "audit": "result/blender/stage220/lighting-verification.json",
+      "scope": "Reuse hemisphere, sun and fill for softer cutaway-room lighting; raise diffuse bounce, lower direct outdoor-sun contrast, and restore exact daylight settings on facade/campus return. No added lights or shadow maps.",
+      "limitations": "Presentation lighting estimate, not a measured room luminaire or illuminance model."
+    }
   },
   "currentOfficialMapReview": {
     "checked": "2026-10-04",
@@ -4004,7 +4055,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 218,
+  "sourceVersion": 220,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4058,5 +4109,11 @@
     "sourceRetrievalDate": "2026-09-12",
     "license": "ODbL-1.0",
     "limitations": "Inherited mapped alignment and widths, not a measured current street survey. Existing central detailed paving and water features are unchanged."
+  },
+  "roomReview220": {
+    "version": 220,
+    "audit": "result/blender/clm-hongkong220/audit.json",
+    "scope": "Add an isolated historical Hong Kong Theatre sample from official same-room plan and photograph;260student symbols plus photo-supported stage seating, panelled wall, dual screens, whiteboard and guarded stage approach. Preserve all18prior spaces and every geographic building.",
+    "limitations": "Unknown source dates; plan symbol count does not establish current hire capacity. Metric scale, height and concealed construction estimated. No unseen second level or full-floor registration."
   }
 }
