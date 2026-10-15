@@ -18,7 +18,7 @@ def public_interior_objects(record):
                    min((obj.matrix_world @ Vector(corner)).z for corner in obj.bound_box) < maximum]
     if code == 'MAR':
         objects += [obj for obj in bpy.data.collections['MAR_EXTERIOR'].all_objects
-                    if 'ground_glass_panes' in obj.name]
+                    if not obj.hide_render and (obj.get('publicInteriorComponent') or 'ground_glass_panes' in obj.name)]
     elif code == 'LRB':
         objects += [obj for obj in bpy.data.collections['LRB_EXTERIOR'].all_objects
                     if 'roof_' in obj.name or obj.get('sharedInteriorRoof')]
