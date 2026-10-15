@@ -8,14 +8,38 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition214 contains31 building records,30 detailed exteriors,25 interior views
+Edition216 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v214.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v216.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
+The local `stage216` acceptance records are retained with the native: integration
+and export compare loaded objects with the accepted fingerprint snapshots before
+writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All135 gallery images use the
+finishes and public structural elements. All136 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition216 replaces SAW's six repeated ground-plan upper floors with individually
+traced historical outlines, registered through12 shared lift-core controls per
+level. Existing stair treads remain; coordinated floor openings and landings pass
+730 sampled headroom rays and six independent saved-mesh connection checks.
+Ground plus six upper floors are available in both public-interior exports and
+through floor sections. The2014 guide supports relative floor differences;
+absolute scale, vertical datums and retained stair placement remain estimates,
+and complete current room layouts are not reconstructed.
+
+The Strand Underpass's tunnel-tagged route no longer appears as a surface road.
+About3035.6m² of erroneous exclusive asphalt is removed while137 mapped at-grade
+road footprints remain. Existing surface footways are retained, and the same
+flat display datum extends beneath paths previously outside its rectangle.
+This is presentation support, not a new measured terrain model. OLD's relief
+visibility audit does not justify a geometry change; MAR's coordinated source
+plan is retained privately pending reliable geographic registration.
+
+Edition215 removes125.45m² of false transverse edging at internal footway joins,
+retaining the accepted218 routes and their coverage. Clean CC0 asphalt maps use
+56.5KB instead of242.3KB, with restrained relief and lighter Houghton stone.
 
 Edition214 restores the photographed left portal transom at Clement House,
 including coordinated stone/joinery and conservative backing behind the new
