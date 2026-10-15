@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "216",
-  "sourceModelSha256": "12376d6365bbc57fa9eec97617453dbbfcf9235a8200bb90726f80c2147c1a60",
+  "version": "217",
+  "sourceModelSha256": "daac71eaf581c94e544fe7098e51f897273223a981bd8f1b4b637d56d4469423",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2048,24 +2048,16 @@
         "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review. Entrance guide confirms three external steps and a 73cm active opening; total paired width, 15cm risers, treads and ornamental profiles are photo-guided estimates. New entry has genuine glazing apertures. The guide survey and photo capture dates are unverified. Carved mask and scrolls are authored approximations, not scans."
       },
       "latestReview": {
-        "version": 177,
-        "status": "street-glass-normals-and-roof-cap-seating",
-        "scope": "Outward normals of all110glass boxes and seated solid roof sheets on11photographed street dormers. No facade-layout, window-count, material-opacity or fullroof-layout change.",
-        "addedObjects": 3,
-        "archivedObjects": 3,
+        "version": 217,
+        "status": "photo-supported-brick-stone-paint-and-glass-finish",
+        "scope": "Forty copied exterior objects use19 independent material copies. Reduce red-brick chroma, separate pale limestone from painted white joinery, add shallow mortar relief and restrained slate variation; neutralize glazing tint without changing opaque proxy behavior. All source geometry,UV,177 roofs and normals retained.",
+        "audit": "result/blender/cow-exterior217/audit.json",
         "sourceUrls": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Cowdray-web.jpg",
           "https://www.russellcawberry.com/projects/cowdray-house",
-          "https://www.russellcawberry.com/files/projects/Cowdray%2520House/056_cowdray_house_MR.jpg"
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Cowdray-web.jpg"
         ],
-        "photographDate": "unknown",
-        "limitations": [
-          "Existing110pane positions, widths, subdivisions and optical material retained.",
-          "Four unphotographed cap pairs and their cheeks remain untouched; roof layout and measured rear elevations unresolved.",
-          "Cap0.06m effective assembly depth and matching raised cheek tops are estimates; no lead-sheet thickness or2026survey claim.",
-          "Glass stays reflective opaque in actual canonical GLB; no unverified room transparency."
-        ],
-        "audit": "result/blender/cow_exterior177/verification.json"
+        "photographDate": "unknown; contractor project2019",
+        "limitations": "Photographic color estimates under unknown light; no measured albedo, current refurbishment claim or complete unseen interiors."
       },
       "interiorView": {
         "position": [
@@ -2096,6 +2088,26 @@
           "status": "photo-supported-short-side-ground-brick",
           "scope": "Correct only existing short-side lower masonry to inherited red brick. Retain long-side stone and chamfer entrance, all apertures, coordinates, topology, UV, glass and roof. Short-side window dimensions, roof slopes, unseen walls and full interiors remain unmeasured.",
           "source": "Completed contractor project2019 photograph05 and archived LSE Estates006; capture dates unknown"
+        },
+        {
+          "version": 177,
+          "status": "street-glass-normals-and-roof-cap-seating",
+          "scope": "Outward normals of all110glass boxes and seated solid roof sheets on11photographed street dormers. No facade-layout, window-count, material-opacity or fullroof-layout change.",
+          "addedObjects": 3,
+          "archivedObjects": 3,
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Cowdray-web.jpg",
+            "https://www.russellcawberry.com/projects/cowdray-house",
+            "https://www.russellcawberry.com/files/projects/Cowdray%2520House/056_cowdray_house_MR.jpg"
+          ],
+          "photographDate": "unknown",
+          "limitations": [
+            "Existing110pane positions, widths, subdivisions and optical material retained.",
+            "Four unphotographed cap pairs and their cheeks remain untouched; roof layout and measured rear elevations unresolved.",
+            "Cap0.06m effective assembly depth and matching raised cheek tops are estimates; no lead-sheet thickness or2026survey claim.",
+            "Glass stays reflective opaque in actual canonical GLB; no unverified room transparency."
+          ],
+          "audit": "result/blender/cow_exterior177/verification.json"
         }
       ],
       "glazingReview": {
@@ -2172,10 +2184,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-910e19a05a80.glb",
-        "bytes": 3244076,
+        "url": "/models/details/cow-exterior-45ebdb589bfc.glb",
+        "bytes": 3246436,
         "triangles": 255268,
-        "sha256": "910e19a05a80b8c6a7ac9c31bf015760a6ebd96ce0bfe835da007bb42304f689",
+        "sha256": "45ebdb589bfcf834e6af3c804fc23bd8f74681627131d4ce93f891539a9bacc9",
         "bounds": {
           "min": [
             -6.818561553955078,
@@ -4203,14 +4215,14 @@
       },
       "interiorView": {
         "position": [
-          1.6433366537094116,
-          1.7000000476837158,
-          -66.45145416259766
+          -0.211031,
+          2,
+          -65.702243
         ],
         "target": [
-          -12.009961128234863,
-          3.3012337684631348,
-          -51.9248046875
+          -0.381216,
+          3.1,
+          -44.306484
         ],
         "fov": 65
       },
@@ -4329,6 +4341,20 @@
         "scope": "Dedicated Great Hall/public-study exports retain the inherited structure up to12.8m. Exclude detached17.5-30.5mupper-floor infill patches accidentally missed by the previous floor-name filter. Complete geographic exterior/campus floors remain untouched.",
         "limitations": "This repairs export ownership and framing; retained public floor heights and layout remain estimated, with upper-office and full current floor plans unverified."
       },
+      "interiorStructureReview217": {
+        "version": 217,
+        "audit": "result/blender/mar-registration217/audit.json",
+        "scope": "Ground enclosure, three entrance groups with five revolving-door units, six relocated tree assemblies plus three rear supports, retained main stair centre and dependent slab openings and guards. Upper envelope, vertical datums and independent rooms retained.",
+        "sourcePublicationYear": 2022,
+        "source": "https://cdn.ca.emap.com/wp-content/uploads/sites/12/2022/04/grafton-architects-architectural-review.pdf",
+        "coreFitMaximumMetres": 0.015047589077168863,
+        "heldOutCoreMaximumMetres": 0.09373812200104127,
+        "geographicIndependentMaximumMetres": 0.6187723800419973,
+        "accuracy": "Source-aligned geographic estimate, not an as-built survey; retained stair shape and floor heights remain estimated.",
+        "componentObjects": 47,
+        "archivedObjects": 55,
+        "independentRoomObjectsPreserved": 623
+      },
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -4386,7 +4412,7 @@
       "interiorBounds": {
         "min": [
           -44.53135299682617,
-          0.10000000149011612,
+          0.07000000029802322,
           -77.66929626464844
         ],
         "max": [
@@ -4396,10 +4422,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-385ccd73789b.glb",
-        "bytes": 3148364,
-        "triangles": 289265,
-        "sha256": "385ccd73789b61b9eaa9dc5efae0a3a41d62b3bcefa78413a0c8bd713694746e",
+        "url": "/models/details/mar-exterior-c296c7a47c3d.glb",
+        "bytes": 3012956,
+        "triangles": 274261,
+        "sha256": "c296c7a47c3d5b53800c742936400cf39fd200d0611fa8eaf57e9d48de85c7aa",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -4414,14 +4440,14 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-13b6b14e48c9.glb",
-        "bytes": 435152,
-        "triangles": 44925,
-        "sha256": "13b6b14e48c945e6465d7dfc1b40fa712c3047053c81973560520e7501e815b1",
+        "url": "/models/details/mar-interior-d3c11f99bdde.glb",
+        "bytes": 517624,
+        "triangles": 51231,
+        "sha256": "d3c11f99bdde51db9243d6b1200fa162cdb658da9bbd53fdd3b860469bb2c705",
         "bounds": {
           "min": [
             -44.53135299682617,
-            0.10000000149011612,
+            0.07000000029802322,
             -77.66929626464844
           ],
           "max": [
@@ -4752,6 +4778,29 @@
         "projectCompletion": 2024,
         "photographDate": "unknown"
       },
+      "glazingFinishReview": {
+        "version": 217,
+        "status": "neutral-houghton-entry-window-proxies",
+        "scope": "Three retained entrance window families,16frontward panes, use neutral dielectric glass copies. Preserve linear luminance, roughness, alpha1, transmission0, all geometry and UV; retain blue painted frames, doors and artwork glazing.",
+        "audit": "result/blender/old-glazing217/audit.json",
+        "source": "Supplied Houghton photographs archived underdata/collections/old-exterior-2026/user-references andold-user-reference.",
+        "limitations": "No near backing within1.5m across16tested panes; do not add fabricated room transparency. Photographs are undated and optical values remain estimates."
+      },
+      "formAudit217": {
+        "version": 217,
+        "audit": "result/blender/old-exterior-audit217/audit.json",
+        "nativeChanged": false,
+        "findings": [
+          "Houghton door group uses four equal panes with equally heavy85.6mm stiles, unlike the two broad glazed fields and finer seam hierarchy in the photographs. Actual fixed/door leaf definitions remain unresolved.",
+          "Final Sale figures and products retain coarse repeated lattice silhouettes; drapery, overlaps and trolley forms require a coordinated sculptural reconstruction."
+        ],
+        "retainedPhotoSupportedFeatures": [
+          "Four-column tall window casements",
+          "Four exterior steps with estimated16cm rises",
+          "Existing recessed stone arch and radial ashlar"
+        ],
+        "nextScope": "Coordinate frame, glass and handles together from a rectified close photograph or joinery reference; retain the separate OLDGLASS217 window replacements."
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -4819,10 +4868,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-3a4b15ca83cc.glb",
-        "bytes": 19887744,
+        "url": "/models/details/old-exterior-69b515f1f209.glb",
+        "bytes": 19889944,
         "triangles": 1670476,
-        "sha256": "3a4b15ca83cc1f37e5b59deb7c62493751ebe3335e1c49d956e6cb67d90b8207",
+        "sha256": "69b515f1f209e21dbb235f971fa5be1bc80d037e22d84377d7d9fe23f69c4522",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -6343,6 +6392,17 @@
         }
       ],
       "interiorSectionScope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。",
+      "liftCoreConsistencyReview": {
+        "version": 217,
+        "readOnly": true,
+        "sourcePublicationYear": 2014,
+        "sourceURL": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
+        "sourceReference": "https://s3-eu-west-1.amazonaws.com/odonnell-tuomey-static/publications/2014.03_AR.pdf",
+        "audit": "result/blender/saw-circulation217/lift-stair-conflicts.json",
+        "scope": "Actual tread projections compared with the two exact historical cabin outlines show38estimated tread surfaces overlapping cabin footprints, summed5.81m2across different heights. This is separate from the prior floor-headroom check.",
+        "nextRequiredChange": "Coordinate all connected main flights and floor apertures against the actual core before installing continuous shafts; existing studies remain incomplete.",
+        "nativeChanged": false
+      },
       "bounds": {
         "min": [
           -84.64329528808594,
