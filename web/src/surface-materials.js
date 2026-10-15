@@ -108,6 +108,10 @@ export function refineMaterialFinish(material, environmentMap = null) {
   } else if (matches(/SITE_V47_wood/i)) {
     material.metalness = 0;
     material.roughness = 0.76;
+  } else if (matches(/SITE172_SITE_V47_grout_Houghton/i)) {
+    material.metalness = 0;
+    material.roughness = .94;
+    material.color.setRGB(.125, .133, .128);
   } else if (outdoorKind === "paving-grid" || outdoorKind === "stone" || matches(/SITE_V47_grout/i)) {
     material.metalness = 0;
     material.roughness = 0.9;
@@ -142,6 +146,8 @@ export function applySurfaceDetail(material, groundTextures = null) {
   const asphalt = kind === 'asphalt', bark = kind === 'bark';
   const outdoor = Boolean(kind), timber = kind === 'timber';
   const pavingGrid = kind === 'paving-grid';
+  const edgeCourse = /SITE213_SITE_V47_slab_flush_edge_courses/i.test(material.name);
+  const houghtonPaving = /SITE(?:172_SITE_V47_slab_\d+_Houghton|173_SITE_V47_slab_Houghton_paving_continuation)/i.test(material.name);
   const paving = pavingGrid || kind === 'stone' || asphalt;
   const grass = kind === 'grass';
   let detail = material.userData.surfaceDetail;
@@ -168,13 +174,19 @@ export function applySurfaceDetail(material, groundTextures = null) {
   if (!detail || !["noise", "brick"].includes(detail.kind)) return;
   detailedMaterials.add(material);
   const brick = detail.kind === "brick";
-  const color = (value) => value ? new THREE.Color(...value) : material.color.clone();
+  // Keep the authored slab-to-slab variation, while giving the photographed
+  // Houghton grey setts a calmer daylight finish. This is a display palette,
+  // not a measured stone reflectance or a change to source material metadata.
+  const color = (value) => {
+    const result = value ? new THREE.Color(...value) : material.color.clone();
+    return houghtonPaving ? result.lerp(new THREE.Color(.29, .30, .285), .70) : result;
+  };
   const uniforms = {
     surfaceScale: { value: detail.scale },
     surfaceBump: { value: Math.min(0.006, Math.max(brick ? 0.0008 : 0, detail.bump || 0)) },
     surfaceColorA: { value: color(detail.colorA) },
     surfaceColorB: { value: color(detail.colorB) },
-    surfaceMortar: { value: color(detail.mortarColor) },
+    surfaceMortar: { value: houghtonPaving ? new THREE.Color(.125, .133, .128) : color(detail.mortarColor) },
     surfaceBrick: { value: new THREE.Vector3(detail.brickWidth || .225, detail.rowHeight || .078, detail.mortarSize || .007) },
   };
   const groundAsset = groundTextures && paving ? GROUND_FINISHES.find(asset => asset.kind === (asphalt ? 'asphalt' : 'stone')) : null;
@@ -187,7 +199,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     uniforms.groundMetres = {value:groundAsset.metres};
     uniforms.groundMean = {value:groundAsset.mean};
   }
-  material.customProgramCacheKey = () => `lse-surface-finish10-${groundAsset ? "captured" : "procedural"}-${pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish11-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -239,7 +251,18 @@ export function applySurfaceDetail(material, groundTextures = null) {
       // Keep the source palette midpoint without oversized concrete blotches.
       vec3 surfaceColor = mix(surfaceColorA, surfaceColorB, 0.5 + (grain - 0.5) * ${paving ? "0.45" : outdoor ? "1.2" : "0.32"});
       float surfaceHeight = resolvedGrain * surfaceBump * noiseVisibility;
-      ${pavingGrid ? `
+      ${edgeCourse ? `
+      // The existing flush bands carry route-aligned metric UVs. Resolve
+      // short stone lengths without adding coplanar meshes or raised kerbs.
+      float coursePoint = vSurfaceUv.x;
+      float courseFootprint = fwidth(coursePoint);
+      float courseVisibility = 1.0 - smoothstep(.18, .60, courseFootprint);
+      float courseDistance = min(mod(coursePoint, .60), .60 - mod(coursePoint, .60));
+      float courseFace = smoothstep(.002 - courseFootprint, .002 + courseFootprint, courseDistance);
+      float courseTone = surfaceHash(vec3(floor(coursePoint / .60), 13.0, 2.0));
+      surfaceColor *= mix(1.0, mix(.68, .97 + courseTone * .06, courseFace), courseVisibility);
+      surfaceHeight += courseFace * .0006 * courseVisibility;
+      ` : pavingGrid ? `
       // Metre-scale staggered slabs on otherwise plain approach surfaces only.
       // Existing modelled setts retain their own borders and grout geometry.
       vec2 slabPoint = mat2(.52992, .84805, -.84805, .52992) * vSurfacePosition.xz;
