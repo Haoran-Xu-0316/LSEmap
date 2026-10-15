@@ -138,7 +138,8 @@ export class CampusViewer {
       this.lastNavigationAt = performance.now();
       this.needsRender = true;
     });
-    this.scene.add(new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65));
+    this.hemisphere = new THREE.HemisphereLight(0xf4f6ff, 0x8d8274, 0.65);
+    this.scene.add(this.hemisphere);
     const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
     sun.position.copy(DAYLIGHT_DIRECTION).multiplyScalar(290);
     sun.castShadow = true;
@@ -480,6 +481,14 @@ export class CampusViewer {
     this.fitSunShadow(this.campusBounds);
   }
 
+  setInteriorLighting(interior) {
+    // Approximate diffuse bounce from pale indoor floors and walls. Reuse the
+    // existing hemisphere light; outdoor ground response stays unchanged.
+    this.hemisphere.groundColor.setHex(interior ? 0xddd5c7 : 0x8d8274);
+    this.hemisphere.intensity = interior ? 0.85 : 0.65;
+    this.needsRender = true;
+  }
+
   showCampus() {
     this.clearInteriorSection();
     this.viewRequest += 1;
@@ -495,6 +504,7 @@ export class CampusViewer {
     this.controls.minDistance = 0.25;
     this.camera.fov = 38;
     this.mode = "campus";
+    this.setInteriorLighting(false);
     this.updateCameraProjection();
     this.renderer.shadowMap.needsUpdate = true;
     for (const group of this.interiors.values()) group.visible = false;
@@ -673,6 +683,7 @@ export class CampusViewer {
     for (const [name, group] of this.interiors) group.visible = name === key;
     this.clearInteriorSection();
     this.mode = "interior";
+    this.setInteriorLighting(true);
     this.fitSunShadow(boxFromData(interior.interiorBounds));
     this.toggleContext(this.contextVisible);
     this.updateCameraProjection();
