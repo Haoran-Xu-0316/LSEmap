@@ -162,6 +162,7 @@ export class CampusViewer {
     this.scene.add(sun);
     const fill = new THREE.DirectionalLight(0xe7edff, 0.25);
     fill.position.set(100, 70, -130);
+    this.fill = fill;
     this.scene.add(fill);
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     const environment = createDaylightTexture();
@@ -482,10 +483,13 @@ export class CampusViewer {
   }
 
   setInteriorLighting(interior) {
-    // Approximate diffuse bounce from pale indoor floors and walls. Reuse the
-    // existing hemisphere light; outdoor ground response stays unchanged.
-    this.hemisphere.groundColor.setHex(interior ? 0xddd5c7 : 0x8d8274);
-    this.hemisphere.intensity = interior ? 0.85 : 0.65;
+    // Cutaway rooms need broad diffuse bounce instead of outdoor sun contrast.
+    // Reuse all three lights and the existing shadow map; restore daylight when
+    // returning to a facade or the campus so material colours stay consistent.
+    this.hemisphere.groundColor.setHex(interior ? 0xe8e3da : 0x8d8274);
+    this.hemisphere.intensity = interior ? 1.75 : 0.65;
+    this.sun.intensity = interior ? 1.25 : 3.0;
+    this.fill.intensity = interior ? 0.6 : 0.25;
     this.needsRender = true;
   }
 
