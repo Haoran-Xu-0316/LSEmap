@@ -11,7 +11,10 @@ import hashlib
 import json
 import struct
 import re
+import sys
 import bpy
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from public_interior_objects import public_interior_objects
 import bmesh
 from mathutils import Vector
 
@@ -422,15 +425,7 @@ for record in metadata:
         continue
     code = record['code']
     interior_scene = bpy.data.scenes.new('WEB_INTERIOR_' + code)
-    collection = bpy.data.collections[record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study')]
-    interior_objects = list(collection.all_objects)
-    if code == 'MAR':
-        interior_objects = [o for o in interior_objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
-        interior_objects += [o for o in bpy.data.collections['MAR_EXTERIOR'].all_objects if 'ground_glass_panes' in o.name]
-    if code == 'SAW':
-        interior_objects = [o for o in interior_objects if '_floor_' not in o.name or 'landing' in o.name]
-    if code == 'LRB':
-        interior_objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
+    interior_objects = public_interior_objects(record)
     _, bounds = clone_group(interior_objects, code + '_INTERIOR', interior_scene)
     assert bounds, f'No public-interior geometry exported for {code}'
     # Preserve approved presets; rooms without one use the viewer's bounds fit.
@@ -487,14 +482,7 @@ for record in metadata:
     objects = exterior_objects(record)
     record['detailedExterior'] = export_detail(objects, code, 'exterior')
     if record['interior']:
-        objects = list(bpy.data.collections[record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study')].all_objects)
-        if code == 'MAR':
-            objects = [o for o in objects if '_floor_way/' not in o.name or max((o.matrix_world @ Vector(c)).z for c in o.bound_box) <= 13]
-            objects += [o for o in bpy.data.collections['MAR_EXTERIOR'].all_objects if 'ground_glass_panes' in o.name]
-        elif code == 'SAW':
-            objects = [o for o in objects if '_floor_' not in o.name or 'landing' in o.name]
-        elif code == 'LRB':
-            objects += [o for o in bpy.data.collections['LRB_EXTERIOR'].all_objects if 'roof_' in o.name or o.get('sharedInteriorRoof')]
+        objects = public_interior_objects(record)
         record['detailedInterior'] = export_detail(objects, code, 'interior')
 
 # Additional rooms retain their own identity instead of replacing the building's hall.
