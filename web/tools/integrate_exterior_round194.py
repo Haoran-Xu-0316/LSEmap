@@ -153,6 +153,15 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
         assert not mismatches, 'Loaded source differs from prior accepted geometry: ' + str(mismatches[:20])
     visibility = {obj.name: obj.hide_render for obj in bpy.data.objects}
     (proof / 'baseline-state.json').write_text(json.dumps(dict(fingerprints=before, visibility=visibility)) + '\n')
+    # Building-wide edits must not hide detached room studies that happen to
+    # share a building prefix. Room components may change their own collection.
+    metadata = json.loads((ROOT / 'web/tools/building-metadata.json').read_text())
+    room_owners = {}
+    for room in metadata['spaces']:
+        collection = bpy.data.collections.get(room['collection'])
+        if collection:
+            for obj in collection.all_objects:
+                room_owners.setdefault(obj.name, set()).add(collection.name)
     added, archived, changes, independent_rooms = [], [], [], []
     for code, report_path, default_collection in reports:
         report = json.loads((ROOT / report_path).read_text())
@@ -164,6 +173,9 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
         assert len(names) == len(set(names)) and not set(names) & set(before), code
         assert not set(report['archivedObjects']) & set(archived), 'Overlapping component ownership'
         destination_collection = component_destination(report, default_collection)
+        room_conflicts = [name for name in report['archivedObjects']
+                          if name in room_owners and destination_collection.name not in room_owners[name]]
+        assert not room_conflicts, 'Building component would alter an independent room: ' + str(room_conflicts)
         if report.get('collectionSpec'):
             independent_rooms.append(dict(collection=destination_collection.name, scene=report['collectionSpec']['scene'], objects=list(names)))
         with bpy.data.libraries.load(str(path), link=False) as (source, target):
