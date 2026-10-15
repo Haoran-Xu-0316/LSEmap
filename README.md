@@ -8,17 +8,34 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition218 contains31 building records,30 detailed exteriors,25 interior views
-and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v218.blend`. GitHub contains
+Edition220 contains31 building records,30 detailed exteriors,25 interior views
+and19 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v220.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage218` acceptance records are retained with the native: integration
+The local `stage220` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All136 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition220 adds an isolated Hong Kong Theatre study from the official paired
+CLM.G.02 plan and photograph. Its260 historical plan symbols retain the actual
+three seating banks, staggered rows and rear recess. Wood panelling, two screens,
+central whiteboard, low stage, desk and guarded approach use43,360 triangles.
+Scale, height and concealed construction are estimates; no unseen second level,
+current capacity or complete geographic floor is inferred. All18 preceding
+spaces and25 default interior assets remain unchanged. Room presentation reuses
+the existing lights for softer diffuse fill, restoring exact daylight settings
+when returning outdoors.
+
+Edition219 refines CKK front glazing and painted frames plus Kingsway glazing
+without extra geometry. Inherent cyan/blue casts are reduced at retained linear
+luminance; original optics, stone, brick, roof pavilion transparency and rooms
+remain. Frame-excluding backing probes do not establish new interiors, so opaque
+window proxies are retained. A read-only LRB comparison preserves the accepted
+facade and roof; it does not claim a new current measured survey.
 
 Edition218 coordinates Old Building's fixed doorway framing, fine paired-leaf
 seams, eight glass panes and existing handles. The Final Sale artwork uses six
