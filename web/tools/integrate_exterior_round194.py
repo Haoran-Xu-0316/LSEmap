@@ -128,14 +128,29 @@ def verify_saved_model(destination=DESTINATION, proof=PROOF):
     print(f"EXTERIOR{record['version']}_REOPENED", len(record['addedObjects']), flush=True)
 
 
+def accepted_fingerprints(proof, source_sha):
+    """Read the preceding accepted snapshot, independently of a new process."""
+    previous = json.loads((proof / 'building-refinement.json').read_text())
+    assert previous['sourceModelSha256'] == source_sha, 'Accepted native identity mismatch'
+    expected = json.loads((proof / 'baseline-state.json').read_text())['fingerprints']
+    expected.update(previous['addedFingerprints'])
+    return expected
+
+
 def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
-              version=194, scope='OLD exterior stone map, CBG coating and glazing, corrected road normals and two walking joins'):
+              version=194, scope='OLD exterior stone map, CBG coating and glazing, corrected road normals and two walking joins',
+              baseline_proof=None):
     proof.mkdir(parents=True, exist_ok=True)
     assert not destination.exists(), 'Do not overwrite an accepted full campus'
     baseline_sha = hashlib.sha256(base.read_bytes()).hexdigest()
     bpy.ops.wm.open_mainfile(filepath=str(base))
     update_scene()
     before = {obj.name: object_fingerprint(obj) for obj in bpy.data.objects}
+    if baseline_proof is not None:
+        expected = accepted_fingerprints(baseline_proof, baseline_sha)
+        mismatches = sorted(name for name in set(expected) | set(before)
+                            if expected.get(name) != before.get(name))
+        assert not mismatches, 'Loaded source differs from prior accepted geometry: ' + str(mismatches[:20])
     visibility = {obj.name: obj.hide_render for obj in bpy.data.objects}
     (proof / 'baseline-state.json').write_text(json.dumps(dict(fingerprints=before, visibility=visibility)) + '\n')
     added, archived, changes, independent_rooms = [], [], [], []
