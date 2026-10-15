@@ -182,10 +182,12 @@ function renderDetail(building) {
           if (spaceControl) {
             $("#interior-spaces").hidden = false;
             spaceControl.value = spaceId || "default";
-            $("#interior-space-scope").textContent = space?.scope || building.interiorStudy?.scope || "公共空间与楼梯局部研究，未复原全部楼层。";
+            const spaceScope = $("#interior-space-scope");
+            spaceScope.textContent = space?.scope || building.interiorStudy?.scope || building.interiorSectionScope || "公共空间与楼梯局部研究，未复原全部楼层。";
+            spaceScope.hidden = spaceId === null && Boolean(building.interiorSections?.length);
           }
           if ($("#interior-sections")) {
-            $("#interior-sections").hidden = false;
+            $("#interior-sections").hidden = spaceId !== null;
             $("#interior-level").value = "all";
             $("#interior-section-scope").textContent = building.interiorSectionScope;
           }
@@ -212,7 +214,7 @@ function renderDetail(building) {
     label.htmlFor = "interior-space";
     const select = element("select", "");
     select.id = "interior-space";
-    for (const space of [{id: "default", label: building.interiorStudy?.label || (building.code === "MAR" ? "Grand Hall与公共楼梯" : building.code === "SAW" ? "公共楼梯" : "公共中庭与楼梯")}, ...building.interiorSpaces]) {
+    for (const space of [{id: "default", label: building.interiorStudy?.label || (building.code === "MAR" ? "Grand Hall与公共楼梯" : building.code === "SAW" ? "公共楼层与楼梯" : "公共中庭与楼梯")}, ...building.interiorSpaces]) {
       const option = element("option", "", space.label);
       option.value = space.id;
       select.append(option);
