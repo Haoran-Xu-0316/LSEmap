@@ -1378,5 +1378,10 @@
     "name": "con-705-interior",
     "spaceId": "con-705",
     "label": "CON.7.05会议室"
+  },
+  {
+    "code": "SAW",
+    "name": "saw-public-interior",
+    "label": "公共楼层与主楼梯"
   }
 ]
