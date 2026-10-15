@@ -1,12 +1,18 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v212.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v216.blend。
 
-原生SHA256：65165c8a72c8208170c839085fef2954bf61a4f19a4a134d75ebcd289b9d7207。
+原生SHA256：12376d6365bbc57fa9eec97617453dbbfcf9235a8200bb90726f80c2147c1a60。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、18个独立房间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+216版保留7461个原对象及1958个原材质节点，新增9个批次。SAW按2014官方指南区分六个上层外围轮廓，以双电梯12个共同矢量控制点逐层配准，保留原主梯并协调净空开口和平台；730个踏步净空射线及六层保存后实际面片连接检查通过。公共内部导出恢复首层与六个上层，并支持分层查看。绝对尺度、层高、主梯定位及开口余量仍为估计，完整当前房间、逃生梯和地下Venue未完成。
+
+道路移除Strand Underpass被误铺到地面的3035.56㎡独占沥青，保留137条原地面道路及独立映射的人行道。平面展示底板按现有路径边界延展，保持原高度和材质，属于背景支承而非新地形测绘。OLD浮雕检查未发现支持改动的遮挡；MAR完成统一比例的柱网、入口和主梯源计划，尚未完成可靠地理配准，不将其冒充已建成当前模型。
+
+215版去除125.45㎡人行道内部段落交接处的错误横向边带，保留218条路径及约12318.62㎡铺装覆盖。网页采用较轻的Houghton石材和56.5KB的CC0干净沥青贴图，较旧贴图减少约77%传输。
 
 212版保留7421个原对象，新增16个批次，归档5张错误草地球场面。恢复公园1586.38㎡整片硬质球场，保留3组网球及2组横向篮网球布局，复用沥青细粒纹理；划线和球网尺度估计。补回Strand遗漏的St Clement Danes教堂645.61㎡地图轮廓及西侧塔位，拱窗有真实墙洞，三层八角尖塔为公开立面图支持的轮廓估算；42.3米总高并非实测。项目方2026年9月确认尖塔重建节点，不等于全部现场工程完成。OLD依2011年平面续接75.14㎡中央及东侧公共横廊，保留原入口与独立房间；西支路仍有外壳配准冲突，侧梯、升降机和全楼层仍未完成。
 
@@ -75,7 +81,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |PEL|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |POR|207入口/148玻璃|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
-|SAW|206玻璃/190砖屏|9828块镂空砖与周围墙面齐平，18673处搭接砂浆连接相邻砖层。保留砖块尺寸、UV、颜色和室内；206修正入口与屋顶六组玻璃光学，原窗面不变；移除砂浆隐藏接触面，安装尺寸仍为照片估计。|
+|SAW|216公共楼层/206玻璃/190砖屏|9828块镂空砖与周围墙面齐平，18673处搭接砂浆连接相邻砖层。216按2014指南区分六个上层轮廓并协调保留主梯的平台，绝对注册及层高估计，完整房间未复原。保留砖块尺寸、UV和颜色；206修正入口与屋顶六组玻璃光学，原窗面不变；移除砂浆隐藏接触面，安装尺寸仍为照片估计。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
 |SAL|210只读复核/184结构|建筑师与官方实拍未显示可可靠注册的新实质偏差，保留184压顶、窗洞及183砖色。四视角重开前后图一致；精细雕饰及未见立面仍简化。|
 |STC|197外观/143艺术板|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
