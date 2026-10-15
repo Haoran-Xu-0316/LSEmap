@@ -545,6 +545,13 @@
           "Seven tall bays, opaque cross-storey spandrels, existing window divisions, sculptural silhouette approximations and roof geometry retain inherited estimates.",
           "Reused tone map is original artwork, not evidence of actual CLM stains, joints or surveyed block dimensions."
         ]
+      },
+      "exteriorReview214": {
+        "version": 214,
+        "audit": "result/blender/clm-exterior214/audit.json",
+        "scope": "Restore only the officially photographed left portal upper transom, with coordinated stone/joinery and a conservative dark backing behind its newly exposed pane. Right portal and rooms remain unchanged.",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Clement-House-web.jpg",
+        "limitations": "Photo date unknown; window head rise0.585m and backing0.18m are photo-guided model estimates, not measured construction or verified interior."
       }
     },
     {
@@ -1985,6 +1992,13 @@
         "scope": "Seven glass batches reduce intrinsic cyan75percent at unchanged linear luminance, geometry, UVs and original alpha/transmission. Concrete is unchanged; north elevation remains naturally backlit. Unbacked opaque window proxies are not opened.",
         "referenceUrl": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
         "photographDate": "unknown"
+      },
+      "interiorDisplayMaxZ": 13,
+      "interiorStructureReview214": {
+        "version": 214,
+        "audit": "result/blender/mar-structure214/audit.json",
+        "scope": "Dedicated Great Hall/public-study exports retain the inherited structure up to12.8m. Exclude detached17.5-30.5mupper-floor infill patches accidentally missed by the previous floor-name filter. Complete geographic exterior/campus floors remain untouched.",
+        "limitations": "This repairs export ownership and framing; retained public floor heights and layout remain estimated, with upper-office and full current floor plans unverified."
       }
     },
     {
@@ -2978,6 +2992,12 @@
         "reversedShells": 158,
         "batchCount": 6,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorReview214": {
+        "version": 214,
+        "audit": "result/blender/sal-exterior214/audit.json",
+        "status": "no-new-geometry",
+        "scope": "66first-surface probes confirm existing charcoal, pale and blue frame groups. Flank massing/height registration remains unresolved; no repeated recolouring or unsupported block rebuild."
       }
     },
     {
@@ -3833,7 +3853,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 213,
+  "sourceVersion": 214,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
