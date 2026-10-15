@@ -131,8 +131,8 @@ The sky asset is not a photograph of the LSE campus.
 
 OLD limestone finish: original512px procedural material map, guided by archived facade photographs. No reference photograph pixels are redistributed.
 
-Ground finishes: Asphalt 02 and Concrete Floor 02 by Rob Tuytel, Poly Haven, CC0-1.0.
-https://polyhaven.com/a/asphalt_02
+Ground finishes: Clean Asphalt by Dimitrios Savva and Concrete Floor 02 by Rob Tuytel, Poly Haven, CC0-1.0.
+https://polyhaven.com/a/clean_asphalt
 https://polyhaven.com/a/concrete_floor_02
 Shared 512px finishes are presentation material, not photographs of LSE ground.
 
