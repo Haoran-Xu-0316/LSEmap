@@ -8,17 +8,26 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition217 contains31 building records,30 detailed exteriors,25 interior views
+Edition218 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v217.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v218.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage217` acceptance records are retained with the native: integration
+The local `stage218` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All136 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition218 coordinates Old Building's fixed doorway framing, fine paired-leaf
+seams, eight glass panes and existing handles. The Final Sale artwork uses six
+photo-guided shallow open-mesh figures, drapery, trolley, baskets and varied goods.
+Its four replacement batches use80,132 triangles instead of519,272. The exterior
+asset falls from19.89MB to14.84MB; every other building asset, all25 default
+interior fallbacks and18 room assets retain their preceding checksums. Depth,
+reverse surfaces and photographic dimensions remain estimates, without public
+photographic textures or a claim of a scanned sculpture.
 
 Edition217 registers Marshall's ground plan through12 shared lift-core corners
 in the architect's built2022 drawings. Three entrance groups with five revolving
@@ -32,10 +41,13 @@ panes receive a restrained neutral reflective finish while blue frames remain.
 Two tunnel-tagged pedestrian routes lose57.64m² of erroneous surface paving,
 while their2.61m² overlap with real surface paths remains.
 
-Old Building's door-frame hierarchy and sculptural figures still need further
-work. A read-only SAW audit identifies38 retained estimated treads overlapping
-the published lift-cabin footprint. The earlier floor-headroom checks do not
-establish a correct lift/stair core; a coordinated circulation rebuild remains.
+SAW218 circulation remains a rejected source diagnostic, with no new component:
+12 same-flight conflicts and an unsupported0.232m fourth-to-fifth corner change
+remain. The retained stair still has38 tread/lift-cabin conflicts. A street audit
+also locates10.505m² of pale paving/asphalt coplanarity whose estimated strip
+boundaries require curb evidence. Neither review changes the native model.
+61A's historical floor-plan fit remains a hypothesis; its unfitted front tip is
+7.85m from the mapped boundary, requiring joint61A/Connaught registration.
 
 Edition216 replaces SAW's six repeated ground-plan upper floors with individually
 traced historical outlines, registered through12 shared lift-core controls per
