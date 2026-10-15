@@ -12,7 +12,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 DESTINATION = ROOT / 'web/public/environment'
-ASSETS = [('asphalt_02', 'asphalt', 3), ('concrete_floor_02', 'stone', 2)]
+ASSETS = [('clean_asphalt', 'asphalt', 2.1), ('concrete_floor_02', 'stone', 2)]
 
 
 def read_url(url):
