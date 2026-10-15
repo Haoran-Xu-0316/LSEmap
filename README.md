@@ -8,17 +8,34 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition216 contains31 building records,30 detailed exteriors,25 interior views
+Edition217 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v216.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v217.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage216` acceptance records are retained with the native: integration
+The local `stage217` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All136 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition217 registers Marshall's ground plan through12 shared lift-core corners
+in the architect's built2022 drawings. Three entrance groups with five revolving
+doors, nine support positions, the retained main stair, slab openings and guards
+are coordinated together. Source and map registration remains approximate;
+upper storeys, vertical datums and independent room studies are retained.
+
+Cowdray's brick, pale stone, painted joinery, glass and slate finishes use19
+independent materials with no extra geometry. Old Building's16 entrance-window
+panes receive a restrained neutral reflective finish while blue frames remain.
+Two tunnel-tagged pedestrian routes lose57.64m² of erroneous surface paving,
+while their2.61m² overlap with real surface paths remains.
+
+Old Building's door-frame hierarchy and sculptural figures still need further
+work. A read-only SAW audit identifies38 retained estimated treads overlapping
+the published lift-cabin footprint. The earlier floor-headroom checks do not
+establish a correct lift/stair core; a coordinated circulation rebuild remains.
 
 Edition216 replaces SAW's six repeated ground-plan upper floors with individually
 traced historical outlines, registered through12 shared lift-core controls per
@@ -33,9 +50,8 @@ The Strand Underpass's tunnel-tagged route no longer appears as a surface road.
 About3035.6m² of erroneous exclusive asphalt is removed while137 mapped at-grade
 road footprints remain. Existing surface footways are retained, and the same
 flat display datum extends beneath paths previously outside its rectangle.
-This is presentation support, not a new measured terrain model. OLD's relief
-visibility audit does not justify a geometry change; MAR's coordinated source
-plan is retained privately pending reliable geographic registration.
+This is presentation support, not a new measured terrain model. The216 ground audit retained the mapped surface footways. Edition217 adds the
+explicitly bounded Marshall registration described above.
 
 Edition215 removes125.45m² of false transverse edging at internal footway joins,
 retaining the accepted218 routes and their coverage. Clean CC0 asphalt maps use
