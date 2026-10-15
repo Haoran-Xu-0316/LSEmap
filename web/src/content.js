@@ -166,10 +166,11 @@ export const buildingDetails = {
   SAW: {
     description:
       "折面红砖表皮围合Sheffield Street转角。立面凹折、透空砖屏与窗洞形成丰富层次。",
-    note: "砖屏为几何重建；内部补充螺旋楼梯内外扶手和托架，仍不代表完整功能布局或实际通行条件。",
+    note: "内部按2014指南区分七层轮廓，保留主楼梯并协调平台连接。绝对尺度、层高和楼梯位置为估算，未复原完整房间及2026年布局。",
     images: [
       ["saw-exterior", "Saw Swee Hock折面立面"],
       ["saw-brick", "透空砖屏细节"],
+      ["saw-public-interior", "公共楼层与主楼梯"],
       ["saw-globe", "The World Turned Upside Down"],
       ["sheffield-street", "Sheffield Street"],
     ],
