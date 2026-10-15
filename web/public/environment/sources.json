@@ -2,22 +2,22 @@
   "assets": [
     {
       "path": "/environment/asphalt-finish-512.webp",
-      "name": "Asphalt 02",
+      "name": "Clean Asphalt",
       "authors": [
-        "Rob Tuytel"
+        "Dimitrios Savva"
       ],
       "license": "CC0-1.0",
-      "source": "https://polyhaven.com/a/asphalt_02",
-      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg",
-      "originalSha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed",
-      "sha256": "14c852b9998069afb0be35ef0ec26544271f0454650729692deee4b92da3987a",
-      "bytes": 66326,
+      "source": "https://polyhaven.com/a/clean_asphalt",
+      "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_diff_1k.jpg",
+      "originalSha256": "ddf9224e9cfa3eb2998d9097e4cd34bd3630c85e0e6798e5a0a000415a684083",
+      "sha256": "4750ade068fc44e2e95c8c0bee7dd2844a94b31d01ec89dd3ebe0a169cde3bb9",
+      "bytes": 2534,
       "dimensions": [
         512,
         512
       ],
-      "repeatMetres": 3,
-      "linearLuminanceMean": 0.105896,
+      "repeatMetres": 2.1,
+      "linearLuminanceMean": 0.061517,
       "scope": "Shared ground finish only; geometry, joints and recorded palette remain authored. Not an LSE survey."
     },
     {
@@ -42,35 +42,35 @@
     },
     {
       "path": "/environment/asphalt-relief-512.webp",
-      "name": "Asphalt 02 surface data",
+      "name": "Clean Asphalt surface data",
       "authors": [
-        "Rob Tuytel"
+        "Dimitrios Savva"
       ],
       "license": "CC0-1.0",
-      "source": "https://polyhaven.com/a/asphalt_02",
+      "source": "https://polyhaven.com/a/clean_asphalt",
       "originals": [
         {
           "channel": "red",
           "semantic": "Displacement",
-          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_disp_1k.jpg",
-          "originalSha256": "9e651a0fdb6f9749e9cd7a85b0f470b76c4b1a96837bd7ff30fb5f6bea92d3f1",
-          "bytes": 354943
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_disp_1k.jpg",
+          "originalSha256": "72becb48961ae5d106b43614a6df7053492603fb860cf9e5dc47ac79017f80ab",
+          "bytes": 379692
         },
         {
           "channel": "green",
           "semantic": "Rough",
-          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_rough_1k.jpg",
-          "originalSha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712",
-          "bytes": 544032
+          "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/clean_asphalt/clean_asphalt_rough_1k.jpg",
+          "originalSha256": "2280be133c104eb04370b625ebcc7f6709d2173b43ae2cd15a0074c26f492bf9",
+          "bytes": 641634
         }
       ],
-      "sha256": "b16bdb910db321351e6457158d970cf42c2dac5e4a7f091b9a8b1a598d8795ed",
-      "bytes": 175942,
+      "sha256": "cea7a53bf514be75f94e609fdabb29755c016e11ad6bed7663ae2a94ce7ae83e",
+      "bytes": 53972,
       "dimensions": [
         512,
         512
       ],
-      "repeatMetres": 3,
+      "repeatMetres": 2.1,
       "channels": {
         "red": "height",
         "green": "roughness",
