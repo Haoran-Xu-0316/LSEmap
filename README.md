@@ -8,14 +8,25 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition213 contains31 building records,30 detailed exteriors,25 interior views
+Edition214 contains31 building records,30 detailed exteriors,25 interior views
 and18 independently selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v213.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v214.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All135 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition214 restores the photographed left portal transom at Clement House,
+including coordinated stone/joinery and conservative backing behind the new
+upper pane. Dimensions are photographic estimates; the opposite portal is retained.
+MAR's dedicated public-interior export now excludes eight detached upper-floor
+infill patches at17.5–30.5m that escaped a name-based filter. The existing12.8m
+public study, stair and ground glazing remain; indoor diffuse bounce is improved
+using the existing hemisphere light, without changing exterior lighting or source
+material colours. Complete campus/exterior upper
+floors are preserved. SAL's grey and pale side-frame groups are confirmed present;
+its unresolved side-wing registration is not replaced with a guessed massing.
 
 Edition213 includes218 mapped footways across about12,318.6m². Named paths
 such as Carey Street, Kingsway and Grange Court now participate in the same
