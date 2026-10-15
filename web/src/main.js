@@ -219,10 +219,8 @@ function renderDetail(building) {
       option.value = space.id;
       select.append(option);
     }
-    const scope = element("p", "");
-    scope.id = "interior-space-scope";
     select.addEventListener("change", () => openInterior(select.value === "default" ? null : select.value));
-    panel.append(label, select, scope);
+    panel.append(label, select);
     detailPanel.append(panel);
   }
   if (building.interiorSections?.length) {
@@ -285,6 +283,12 @@ function renderDetail(building) {
     element("summary", "", "模型依据与范围"),
     element("p", "", details.note),
   );
+  if (building.interiorSpaces?.length) {
+    const scope = element("p", "");
+    scope.id = "interior-space-scope";
+    scope.hidden = true;
+    note.append(scope);
+  }
   detailPanel.append(note);
   detailPanel.scrollTop = 0;
 }
