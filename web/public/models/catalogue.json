@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "218",
-  "sourceModelSha256": "d57142ea7dce27ea052bbd508f63dcd8c15136faccc132ac4f5915dff64fe27d",
+  "version": "220",
+  "sourceModelSha256": "974c47b4af06a6caa5f474c1c75e05ffb4084285cb1ef8a4ceb11bd93738f6c0",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -917,6 +917,12 @@
         ],
         "photographDate": "unknown"
       },
+      "exteriorFinishReview219": {
+        "version": 219,
+        "audit": "result/blender/ckk-exterior219/audit.json",
+        "scope": "Six front-elevation batches retain original geometry and UVs. Three glazing families lose inherent cyan cast at retained linear luminance; three painted frame families become graphite gray. Roof pavilion finite transparency, stone and atrium retained.",
+        "limitations": "198 rays avoiding frames find no opaque backing within1.5m. Preserve existing opaque proxies; built photographs are undated and finish values remain visual estimates."
+      },
       "bounds": {
         "min": [
           -138.37171936035156,
@@ -984,10 +990,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ckk-exterior-529657bfffff.glb",
-        "bytes": 2956948,
+        "url": "/models/details/ckk-exterior-06b27b1c7308.glb",
+        "bytes": 2957016,
         "triangles": 252994,
-        "sha256": "529657bfffff621df37d720b5c31ccf1c85fc0920dc7d7d7eb0650d1b8363b66",
+        "sha256": "06b27b1c7308bed83fae6c7485a2bb3a6d549851756ff751ed5813de2706f70a",
         "bounds": {
           "min": [
             -138.37171936035156,
@@ -1393,6 +1399,61 @@
               6.099999904632568,
               3.0899999141693115,
               4.0879998207092285
+            ]
+          }
+        },
+        {
+          "id": "clm-hongkong",
+          "label": "CLM.G.02 Hong Kong Theatre",
+          "scope": "依据LSE官方同房号历史平面与照片建立Hong Kong Theatre独立室内样本。平面逐椅提取260个学生座位，左50、中160、右50；保留交错排、后部凹口、门洞和前舞台。木护墙板、橙棕软座、投影屏、白板、讲桌及银扶手坡道按实拍估算。米制尺度、层高与隐蔽构造未测量，不增未见第二层，不作为2026年现状或整栋楼层注册。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CLM.G.02 Hong Kong Theatre",
+            "scope": "依据LSE官方同房号历史平面与照片建立Hong Kong Theatre独立室内样本。平面逐椅提取260个学生座位，左50、中160、右50；保留交错排、后部凹口、门洞和前舞台。木护墙板、橙棕软座、投影屏、白板、讲桌及银扶手坡道按实拍估算。米制尺度、层高与隐蔽构造未测量，不增未见第二层，不作为2026年现状或整栋楼层注册。"
+          },
+          "interiorView": {
+            "position": [
+              17,
+              14,
+              -20
+            ],
+            "target": [
+              0,
+              1.7,
+              0.6
+            ],
+            "fov": 48
+          },
+          "gallery": "clm-hongkong-interior",
+          "interiorAsset": "/models/details/clm-hongkong-interior-0fa6fa355c22.glb",
+          "detailedInterior": {
+            "url": "/models/details/clm-hongkong-interior-0fa6fa355c22.glb",
+            "bytes": 508760,
+            "triangles": 43360,
+            "sha256": "0fa6fa355c2207e8753b00a87bc90cf2cafafce11b0f04badf292ed53d9899c3",
+            "bounds": {
+              "min": [
+                -10.980010032653809,
+                -0.1599999964237213,
+                -7.733992576599121
+              ],
+              "max": [
+                10.46399974822998,
+                6.65500020980835,
+                7.944000244140625
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -10.980010032653809,
+              -0.1599999964237213,
+              -7.733992576599121
+            ],
+            "max": [
+              10.46399974822998,
+              6.65500020980835,
+              7.944000244140625
             ]
           }
         }
@@ -2762,6 +2823,12 @@
           "Upper paired-window schedule extrapolated from visible flanking rows; complete upper elevation not photographed."
         ]
       },
+      "exteriorFinishReview219": {
+        "version": 219,
+        "audit": "result/blender/ksw-exterior219/audit.json",
+        "scope": "One retained glazing batch loses excess inherent blue at the same linear luminance. Retain all geometry, UVs, roughness, transmission, opacity, painted frames and brick/stone finishes.",
+        "limitations": "274 rays meet existing dark recess liners14.3–66.2mm behind the panes, not a verified interior. Preserve the opaque proxy; source photograph dates unknown."
+      },
       "bounds": {
         "min": [
           -81.10916900634766,
@@ -2829,10 +2896,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ksw-exterior-f8ee72488d49.glb",
-        "bytes": 920028,
+        "url": "/models/details/ksw-exterior-61f6a8a3f935.glb",
+        "bytes": 919952,
         "triangles": 80160,
-        "sha256": "f8ee72488d49d3fc057b8bc428d7dbb0d1d8809315c6f9729a6a054456bb2e65",
+        "sha256": "61f6a8a3f935a323e7bc03d83f6020ddaa17729550299ea713f19741d8b8d4e7",
         "bounds": {
           "min": [
             -81.10916900634766,
@@ -4083,6 +4150,13 @@
         "audit": "result/blender/library-circulation213/audit.json",
         "scope": "Open existing ramp/gallery guard connections on six public levels without changing floors, roofs, envelope or room studies.",
         "verification": "Six passage connections and108existing support probes verified in the component; dimensions and connection bearings remain inherited estimates."
+      },
+      "exteriorReview219": {
+        "version": 219,
+        "audit": "result/blender/lrb-exterior219/audit.json",
+        "nativeChanged": false,
+        "scope": "Reopen accepted218 and compare two exterior views with archived built photographs and2025 existing-elevation drawings. No supported new correction found; retain196 facade finishes and210 roof coordination. Nine active glazing batches remain dielectric.",
+        "limitations": "No claim of full current condition survey; lower-roof registration, unseen details and complete interiors remain unresolved."
       },
       "bounds": {
         "min": [
