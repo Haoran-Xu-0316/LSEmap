@@ -15,6 +15,7 @@ import sys
 import bpy
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from public_interior_objects import public_interior_objects
+from integrate_exterior_round194 import accepted_fingerprints, object_fingerprint
 import bmesh
 from mathutils import Vector
 
@@ -29,6 +30,16 @@ bpy.ops.wm.open_mainfile(filepath=str(MODEL))
 for scene in bpy.data.scenes:
     for layer in scene.view_layers:
         layer.update()
+# Do not accept a newly loaded Blender snapshot merely because it is internally
+# consistent. Compare it with the independently retained accepted native record
+# before changing temporary modifier states or overwriting any browser assets.
+expected_geometry = accepted_fingerprints(
+    ROOT / f'result/blender/stage{VERSION}', hashlib.sha256(MODEL.read_bytes()).hexdigest())
+actual_geometry = {obj.name: object_fingerprint(obj) for obj in bpy.data.objects}
+geometry_mismatches = sorted(name for name in set(expected_geometry) | set(actual_geometry)
+                             if expected_geometry.get(name) != actual_geometry.get(name))
+assert not geometry_mismatches, 'Loaded export source differs from accepted geometry: ' + str(geometry_mismatches[:20])
+print('ACCEPTED_SOURCE_GEOMETRY', len(actual_geometry), flush=True)
 source_scene = bpy.data.scenes['00_CAMPUS_COMPLETE']
 bpy.context.window.scene = source_scene
 # Small bevels multiply the triangle count without changing the campus silhouette.
