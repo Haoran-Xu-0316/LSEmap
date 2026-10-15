@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "213",
-  "sourceModelSha256": "31b15a84a0080a69db300183d107d51cddc019a9b54a6aed609e6ab050222bbb",
+  "version": "214",
+  "sourceModelSha256": "58d38dabb75db4fed63d79e1e26ad46da5c7ba809567ab074c70329f9b4880a6",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1217,6 +1217,13 @@
           "Reused tone map is original artwork, not evidence of actual CLM stains, joints or surveyed block dimensions."
         ]
       },
+      "exteriorReview214": {
+        "version": 214,
+        "audit": "result/blender/clm-exterior214/audit.json",
+        "scope": "Restore only the officially photographed left portal upper transom, with coordinated stone/joinery and a conservative dark backing behind its newly exposed pane. Right portal and rooms remain unchanged.",
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Clement-House-web.jpg",
+        "limitations": "Photo date unknown; window head rise0.585m and backing0.18m are photo-guided model estimates, not measured construction or verified interior."
+      },
       "bounds": {
         "min": [
           99.0441665649414,
@@ -1284,10 +1291,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-96c31ab36ab6.glb",
-        "bytes": 844236,
-        "triangles": 66538,
-        "sha256": "96c31ab36ab6d47e185f0b513e1ba60924a335d451aacad07428b420ef62f91c",
+        "url": "/models/details/clm-exterior-f2db85289ac9.glb",
+        "bytes": 849784,
+        "triangles": 66562,
+        "sha256": "f2db85289ac97ae9bcda778ede12d7f3700e5c6e8f5536416a11a974c2323cdc",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -4315,6 +4322,13 @@
         "referenceUrl": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
         "photographDate": "unknown"
       },
+      "interiorDisplayMaxZ": 13,
+      "interiorStructureReview214": {
+        "version": 214,
+        "audit": "result/blender/mar-structure214/audit.json",
+        "scope": "Dedicated Great Hall/public-study exports retain the inherited structure up to12.8m. Exclude detached17.5-30.5mupper-floor infill patches accidentally missed by the previous floor-name filter. Complete geographic exterior/campus floors remain untouched.",
+        "limitations": "This repairs export ownership and framing; retained public floor heights and layout remain estimated, with upper-office and full current floor plans unverified."
+      },
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -4377,7 +4391,7 @@
         ],
         "max": [
           23.157800674438477,
-          30.5,
+          12.800000190734863,
           -24.454532623291016
         ]
       },
@@ -4400,10 +4414,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-216d8d8defd8.glb",
-        "bytes": 435904,
-        "triangles": 44975,
-        "sha256": "216d8d8defd86f758f06499b861365482244757dfc829ac1415dbcbd314698e6",
+        "url": "/models/details/mar-interior-13b6b14e48c9.glb",
+        "bytes": 435152,
+        "triangles": 44925,
+        "sha256": "13b6b14e48c945e6465d7dfc1b40fa712c3047053c81973560520e7501e815b1",
         "bounds": {
           "min": [
             -44.53135299682617,
@@ -4412,7 +4426,7 @@
           ],
           "max": [
             23.157800674438477,
-            30.5,
+            12.800000190734863,
             -24.454532623291016
           ]
         }
@@ -6749,6 +6763,12 @@
         "reversedShells": 158,
         "batchCount": 6,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "exteriorReview214": {
+        "version": 214,
+        "audit": "result/blender/sal-exterior214/audit.json",
+        "status": "no-new-geometry",
+        "scope": "66first-surface probes confirm existing charcoal, pale and blue frame groups. Flank massing/height registration remains unresolved; no repeated recolouring or unsupported block rebuild."
       },
       "bounds": {
         "min": [
