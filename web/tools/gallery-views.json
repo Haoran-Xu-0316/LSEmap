@@ -1383,5 +1383,11 @@
     "code": "SAW",
     "name": "saw-public-interior",
     "label": "公共楼层与主楼梯"
+  },
+  {
+    "code": "CLM",
+    "name": "clm-hongkong-interior",
+    "label": "CLM.G.02 Hong Kong Theatre",
+    "spaceId": "clm-hongkong"
   }
 ]
