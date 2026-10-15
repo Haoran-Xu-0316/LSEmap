@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "217",
-  "sourceModelSha256": "daac71eaf581c94e544fe7098e51f897273223a981bd8f1b4b637d56d4469423",
+  "version": "218",
+  "sourceModelSha256": "d57142ea7dce27ea052bbd508f63dcd8c15136faccc132ac4f5915dff64fe27d",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -238,6 +238,20 @@
         "scope": "253个窗壳几何、UV及法线保留；243个未连通窗继续不透明并减轻青色，仅10个有既有屋面近背衬的Kingsway老虎窗采用有限透明。整栋平面仍未独立配准，状态保持provisional。",
         "audit": "result/blender/61a-exterior208/audit.json",
         "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
+      },
+      "footprintReview218": {
+        "version": 218,
+        "status": "read-only-independent-registration-hypothesis",
+        "audit": "result/blender/61a-registration218/registration-hypothesis.json",
+        "sourcePublication": "May2021 indicative letting plans",
+        "sourcePage": 9,
+        "fitWallControlCount": 3,
+        "fitMaximumMetres": 0.4233507294470852,
+        "unfittedFrontTipDistanceToMappedBoundaryMetres": 7.850111080019511,
+        "sourceFillOutsideMappedAreaSquareMetres": 67.61366589446148,
+        "nativeChanged": false,
+        "completeGeographicRegistrationAccepted": false,
+        "nextRequiredEvidence": "Resolve the adjoining61A/CON front boundary using independent surveyed or planning controls; retain provisional ownership rather than moving either building from a three-corner fit."
       },
       "bounds": {
         "min": [
@@ -4801,6 +4815,18 @@
         ],
         "nextScope": "Coordinate frame, glass and handles together from a rectified close photograph or joinery reference; retain the separate OLDGLASS217 window replacements."
       },
+      "portalReview218": {
+        "version": 218,
+        "audit": "result/blender/old-portal218/audit.json",
+        "scope": "Keep the existing four candidate door leaves and handles; distinguish two broad glazed fields with estimated18mm paired-leaf seams and160mm fixed central framing. Coordinate all eight glass panes without changing the opening, threshold or optics.",
+        "limitations": "Profile widths follow undated photographs; door operation and surveyed dimensions remain unverified."
+      },
+      "artworkReview218": {
+        "version": 218,
+        "audit": "result/blender/old-artwork218/audit.json",
+        "scope": "Replace four Final Sale batches with six source-guided shallow open-mesh figures, garment folds, staggered poses, trolley, two baskets and varied goods. Actual geometry falls from519272to80132triangles; source glazing and frame retained.",
+        "limitations": "Depth, backs and photo-to-model registration remain estimates. Private reference photographs are not public textures; no claim of a scanned sculpture or complete current interior."
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -4868,10 +4894,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-69b515f1f209.glb",
-        "bytes": 19889944,
-        "triangles": 1670476,
-        "sha256": "69b515f1f209e21dbb235f971fa5be1bc80d037e22d84377d7d9fe23f69c4522",
+        "url": "/models/details/old-exterior-c3c5906e25b9.glb",
+        "bytes": 14840064,
+        "triangles": 1231336,
+        "sha256": "c3c5906e25b947bdf5efeb066dc7f60428675bdf02fa508ec5b3bd43d223c633",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -6402,6 +6428,13 @@
         "scope": "Actual tread projections compared with the two exact historical cabin outlines show38estimated tread surfaces overlapping cabin footprints, summed5.81m2across different heights. This is separate from the prior floor-headroom check.",
         "nextRequiredChange": "Coordinate all connected main flights and floor apertures against the actual core before installing continuous shafts; existing studies remain incomplete.",
         "nativeChanged": false
+      },
+      "circulationReview218": {
+        "version": 218,
+        "audit": "result/blender/saw-circulation218/audit.json",
+        "nativeChanged": false,
+        "status": "not-accepted-no-component",
+        "scope": "Source-line diagnostic still has12same-flight conflicts and an unsupported0.232m fourth-to-fifth corner adjustment. Preserve the existing217 public stair; its38native tread/cabin conflicts remain unresolved. No new complete circulation or floor-height claim."
       },
       "bounds": {
         "min": [
