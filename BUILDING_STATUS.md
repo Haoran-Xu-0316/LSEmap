@@ -1,12 +1,16 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v220.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v221.blend。
 
-原生SHA256：974c47b4af06a6caa5f474c1c75e05ffb4084285cb1ef8a4ceb11bd93738f6c0。
+原生SHA256：62b61a56a402120ab5047096113b02e20f85f7957442e39b6262557c151c69cb。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、19个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+221版在220基础上新增20批次，精确归档10个LRB替代原件，保留7631原对象与2004原材质节点及19空间678对象。图书馆六层坡道接桥采用短水平区及连续坡度过渡，协调饰面、底灯、栏杆与36根桥侧立柱。237落脚面、79饰面支承及144净空检查通过；半径、4米层距、坡形和最大9.8873%中线坡度均属估计，不作无障碍或结构认证。网页总览/外观改用当前168公共集合；原生校园和LRB细节场景排除旧公共集合并链接同一当前集合，旧原件仍在独立来源场景内可求值保存，避免新旧双层几何。
+
+SAL按Jestico+Whiles建成照片，在原玻璃亭内补连续地坪、三组白色屋面支承/遮阳、木接待台和三通道闸机，共868三角形；15处支承与24条门后/旁路检查通过。原玻璃参数、历史立面和默认SAL.G.01教室保持。尺度继承原亭、内装比例与照片日期限制保留，不代表完整大厅或2026现状。SAW只读复核保留38处旧梯踏步与电梯舱冲突；0碰撞候选因下部两段踏深0.197/0.151米明显小于源中位0.303米被拒绝，未集成。道路和其他19房间本轮不变。
 
 220版在已核验219版基础上新增55个独立房间批次，保留7576个原对象、1989个原材质节点和原18空间623对象。CLM.G.02 Hong Kong Theatre依据官方同房号平面逐座提取260个学生椅符号，另按照片补2把嘉宾椅和1把讲台椅，三组座席、木护墙、双投影幕、中央白板、低台与银扶手坡道共43360三角形。观众朝教学墙的左右关系已按照片校正；1040椅脚、10处扶手/讲桌支撑、9条门洞穿越及两侧0.90米检查带通过。米制尺度、层高和遮挡构造估计，不补造未见第二层、不作为现用容量或整栋楼层注册。原25个默认内部、18空间、地理楼体及道路保持。网页室内复用既有三盏灯，提高漫反射补光并降低室外直射反差，返回外观与总览时恢复原日光参数；不增加灯具、阴影贴图或原生模型改动。
 
@@ -85,7 +89,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |49L|147|Retained street and corner glazing keeps original mesh, UV and color with explicit browser opacity0.84. Corner round window backing43mm behind glass is locally opened. Latest published2025/26 LSE handbook shows the fire-exit round feature as an opaque horizontal ventilation louvre, replacing its historical glass interpretation. A separate shared upper-wall component trims only proven interference with the widened No50 window; other upper areas retained. Dimensions and optics estimated; capture dates unknown.|
 |50L|147|50A entry and opaque external round lamp are located between upper window axes using the2022 planning photograph; frame and lower panel adopt deep blue shown in latest published2025/26 LSE handbook. No50 tripartite upper window widened with true wall clearance, while its inherited4.30–6.32m vertical datum remains estimated because photo top is cropped and reference door height is not surveyed. Other upper windows and original wooden No50 portal retained. Glass browser opacity0.82; no invented complete interior. Shared49L interference is archived and replaced in49L own exterior collection.|
 |51L|204|6组不透明玻璃代理改为克制的中性玻璃；101个玻璃组件形状、UV和原窗组保留。未见近背衬，透明度有限；无完整内部重建。|
-|LRB|219只读复核/210屋顶/208公共柜台|按2025现状图修正南侧上层屋顶错切及对应围护、窗带和框架，增22.07㎡、减7.94㎡；新增138.03米上层栏杆，558点有屋面支承。低屋面栏杆和第二机房未配准；保留穹顶、孔洞、公共柜台和独立房间。|
+|LRB|221坡道接桥与显示统一/210屋顶/208公共柜台|六层坡道与平接桥连续连接，补栏杆支承；原生与网页采用同一当前公共集合。按2025现状图修正南侧上层屋顶错切及对应围护、窗带和框架，增22.07㎡、减7.94㎡；新增138.03米上层栏杆，558点有屋面支承。低屋面栏杆和第二机房未配准；保留穹顶、孔洞、公共柜台和独立房间。|
 |MAR|217地面配准/209玻璃|按2022建成图配准3组入口5个圆门、9处支柱、原主梯及关联梯孔护栏；核心最大误差0.015米、独立地图控制0.62米，属于估算。上层外壳、层高和房间保留，非整栋完整内装。|
 |OLD|218门组与入口雕塑/217玻璃/209斜砖墙|门组固定框与细分缝区分，四个候选门叶及八片玻璃协调；六个人物、衣褶及篮具按照片重建浅层开孔网，三角形减约85%。16片入口窗玻璃保持中性反射灰和蓝框。17片前部两层斜砖墙采用连续米制UV，56处接缝全部连续；灰棕砖及浅灰灰缝按2024完工项目实拍估算。原UV、玻璃和后部屋面保留；未宣称完整当前内部。|
 |OCS|208色彩/145形体|32个对象仅替换材质，修正屋瓦过橙及店面近黑偏色，转为低对比红褐瓦和深橄榄绿。门窗分格、屋形、UV、玻璃及历史鞋店内部保留，未宣称当前全内装。|
@@ -97,5 +101,5 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
 |SAW|216公共楼层/206玻璃/190砖屏|9828块镂空砖与周围墙面齐平，18673处搭接砂浆连接相邻砖层。216按2014指南区分六个上层轮廓并协调保留主梯的平台，绝对注册及层高估计，完整房间未复原。保留砖块尺寸、UV和颜色；206修正入口与屋顶六组玻璃光学，原窗面不变；移除砂浆隐藏接触面，安装尺寸仍为照片估计。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
-|SAL|210只读复核/184结构|建筑师与官方实拍未显示可可靠注册的新实质偏差，保留184压顶、窗洞及183砖色。四视角重开前后图一致；精细雕饰及未见立面仍简化。|
+|SAL|221公共入口亭/184外观结构|原玻璃亭内补地坪、白色支撑、接待台和闸机，历史立面与教室保持。建筑师与官方实拍未显示可可靠注册的新实质偏差，保留184压顶、窗洞及183砖色。四视角重开前后图一致；精细雕饰及未见立面仍简化。|
 |STC|197外观/143艺术板|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
