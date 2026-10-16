@@ -2685,6 +2685,12 @@
         "version": 198,
         "status": "read-only-evidence-check",
         "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
+      },
+      "roomStudyReview226": {
+        "version": 226,
+        "spaceId": "pan-201",
+        "audit": "result/blender/pan201-room226/audit.json",
+        "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
       }
     },
     {
@@ -4227,6 +4233,32 @@
         "label": "KSW.2.12协作教室",
         "scope": "依据LSE同房号历史平面与实照建立KSW.2.12独立协作教室样本。按68㎡统一比例描摹完整周界、弧形端窗与真实门洞，保留6组六席三角桌和6个独立座位；两组星号高桌、深色座垫白壳椅、双屏教学墙及侧窗帘按实照估算。层高、家具细节与照片年代差异未实测，不接地理楼层，不表示2026当前全楼。"
       }
+    },
+    {
+      "code": "PAN",
+      "id": "pan-201",
+      "label": "PAN.2.01协作教室",
+      "collection": "PAN201_ROOM226_study",
+      "gallery": "pan-201-default-interior",
+      "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。",
+      "interiorView": {
+        "position": [
+          -3.680000066757202,
+          1.7,
+          -2.431999921798706
+        ],
+        "target": [
+          0.35199999809265137,
+          1.25,
+          0.9599999785423279
+        ],
+        "fov": 73.74
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "PAN.2.01协作教室",
+        "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
+      }
     }
   ],
   "presentationReview": {
@@ -4528,7 +4560,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 225,
+  "sourceVersion": 226,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
