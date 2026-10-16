@@ -8,26 +8,26 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition222 contains31 building records,30 detailed exteriors,25 interior views
+Edition223 contains31 building records,30 detailed exteriors,25 interior views
 and21 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v222.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v223.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage222` acceptance records are retained with the native: integration
+The local `stage223` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All147 gallery images use the
+finishes and public structural elements. All153 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-Edition222 adds indicative2021 fourth/sixth-floor plates and twin atria to
-61 Aldwych, enabling limited glazing transmission only where floors and soffits
-exist. SAL gains connected historical public corridors, three side portals and
-two main stairs across LG/G. Their former reception/classroom studies remain
-available as separate selectable spaces. Six existing campus tree holes gain
-closed soil beds and low stone enclosures. All7651 original objects,2010 material
-nodes and19 prior room studies pass preservation checks. Dimensions and historical
-fitout remain estimates; complete current interiors remain unfinished.
+Edition223 restores CBG's source-supported LG-G-1-2 academic stair and
+connected corridor structure. MAR gains a real second-floor plate with source
+voids, column supports and guards. SAW's fifth/sixth-floor connector moves to
+the documented spiral-stair location, resolving six old lift conflicts while
+32 lower-route conflicts remain. All7688 source objects,2022 material nodes
+and21 selectable studies are protected. Public levels now use their authored
+inspection cameras; dimensions and complete current interiors remain unverified.
+
 
 
 Edition220 adds an isolated Hong Kong Theatre study from the official paired
