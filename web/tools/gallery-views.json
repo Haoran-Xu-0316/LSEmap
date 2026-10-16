@@ -2201,5 +2201,118 @@
       ],
       "fov": 86
     }
+  },
+  {
+    "name": "old-127-teaching-interior",
+    "code": "OLD",
+    "spaceId": "old-127",
+    "label": "OLD.1.27三组六人桌与教学端",
+    "view": {
+      "position": [
+        3.0399999618530273,
+        1.65,
+        2.4000000953674316
+      ],
+      "target": [
+        -3.380000114440918,
+        1.4,
+        -1.0
+      ],
+      "fov": 86.9
+    }
+  },
+  {
+    "name": "old-127-seating-interior",
+    "code": "OLD",
+    "spaceId": "old-127",
+    "label": "OLD.1.27小组座位与木饰面窗湾",
+    "view": {
+      "position": [
+        3.119999885559082,
+        1.65,
+        -2.440000057220459
+      ],
+      "target": [
+        -1.899999976158142,
+        1.27,
+        2.859999895095825
+      ],
+      "fov": 86.9
+    }
+  },
+  {
+    "name": "faw-103-teaching-interior",
+    "code": "FAW",
+    "spaceId": "faw-103",
+    "label": "FAW.1.03四组六人桌与教学端",
+    "view": {
+      "position": [
+        -4.739999771118164,
+        1.65,
+        -1.7000000476837158
+      ],
+      "target": [
+        2.5,
+        1.4,
+        2.0
+      ],
+      "fov": 86.9
+    }
+  },
+  {
+    "name": "faw-103-seating-interior",
+    "code": "FAW",
+    "spaceId": "faw-103",
+    "label": "FAW.1.03小组座位与斜边窗带",
+    "view": {
+      "position": [
+        4.840000152587891,
+        1.65,
+        1.399999976158142
+      ],
+      "target": [
+        -3.0,
+        1.27,
+        -1.2000000476837158
+      ],
+      "fov": 86.9
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "LIF-tree-contour",
+    "label": "Lincoln’s Inn Fields树冠",
+    "view": {
+      "position": [
+        -84,
+        24,
+        -88
+      ],
+      "target": [
+        -43,
+        7,
+        -142
+      ],
+      "fov": 58
+    }
+  },
+  {
+    "code": "LRB",
+    "name": "lrb-watkins-entrance",
+    "label": "Watkins广场入口与台阶",
+    "context": true,
+    "view": {
+      "position": [
+        26.90169906616211,
+        2.299999952316284,
+        -6.50435733795166
+      ],
+      "target": [
+        33.21852111816406,
+        1.0499999523162842,
+        -8.676980972290039
+      ],
+      "fov": 57
+    }
   }
 ]
