@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "220",
-  "sourceModelSha256": "974c47b4af06a6caa5f474c1c75e05ffb4084285cb1ef8a4ceb11bd93738f6c0",
+  "version": "221",
+  "sourceModelSha256": "62b61a56a402120ab5047096113b02e20f85f7957442e39b6262557c151c69cb",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4090,6 +4090,18 @@
           "audit": "result/blender/stage191/reopened-verification.json",
           "addedObjects": 2,
           "archivedObjects": 2
+        },
+        {
+          "version": 221,
+          "status": "ramp-gallery-joins-coordinated",
+          "scope": "Six inherited library ramp/gallery joins use short flat joining areas and continuous estimated grade transitions. Replace ten exact ramp/finish/guard batches, add LG finish on the existing slab plus36 bridge guard uprights and their bases. Source floor outlines, core XY radii and4m pitch retained. The overview, selected exterior, interior and native campus/detail views now select the same current public collection.",
+          "audit": "result/blender/lrb-structure221/audit.json",
+          "integration": "result/blender/stage221/building-refinement.json",
+          "limitations": [
+            "Official guide supports six public-level connections, not measured ramp geometry. Profile, radii and floor pitch remain estimates.",
+            "Maximum estimated centreline grade9.8873% is geometry only, not accessibility or structural certification.",
+            "Full building interiors, complete rooms, unseen construction and2026condition remain unverified."
+          ]
         }
       ],
       "entranceCanopyReview": {
@@ -4158,10 +4170,22 @@
         "scope": "Reopen accepted218 and compare two exterior views with archived built photographs and2025 existing-elevation drawings. No supported new correction found; retain196 facade finishes and210 roof coordination. Nine active glazing batches remain dielectric.",
         "limitations": "No claim of full current condition survey; lower-roof registration, unseen details and complete interiors remain unresolved."
       },
+      "publicStructureReview221": {
+        "version": 221,
+        "status": "ramp-gallery-joins-coordinated",
+        "scope": "Six inherited library ramp/gallery joins use short flat joining areas and continuous estimated grade transitions. Replace ten exact ramp/finish/guard batches, add LG finish on the existing slab plus36 bridge guard uprights and their bases. Source floor outlines, core XY radii and4m pitch retained. The overview, selected exterior, interior and native campus/detail views now select the same current public collection.",
+        "audit": "result/blender/lrb-structure221/audit.json",
+        "integration": "result/blender/stage221/building-refinement.json",
+        "limitations": [
+          "Official guide supports six public-level connections, not measured ramp geometry. Profile, radii and floor pitch remain estimates.",
+          "Maximum estimated centreline grade9.8873% is geometry only, not accessibility or structural certification.",
+          "Full building interiors, complete rooms, unseen construction and2026condition remain unverified."
+        ]
+      },
       "bounds": {
         "min": [
           24.830078125,
-          -0.25999999046325684,
+          -4.019999980926514,
           -43.38092041015625
         ],
         "max": [
@@ -4173,12 +4197,12 @@
       "exteriorFramingCorners": [
         [
           66.68691202118042,
-          -0.25999999046325684,
+          -4.019999980926514,
           39.56016642187355
         ],
         [
           14.415599188163526,
-          -0.25999999046325684,
+          -4.019999980926514,
           -7.74193201695265
         ],
         [
@@ -4193,12 +4217,12 @@
         ],
         [
           115.86960114599552,
-          -0.25999999046325684,
+          -4.019999980926514,
           -14.789298275490601
         ],
         [
           63.59828831297863,
-          -0.25999999046325684,
+          -4.019999980926514,
           -62.0913967143168
         ],
         [
@@ -4225,14 +4249,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-233450f20e28.glb",
-        "bytes": 6138420,
-        "triangles": 684105,
-        "sha256": "233450f20e28851c888b1d64b35cf7ae999c44f3ca15bb6f4f5b8630fbdce31c",
+        "url": "/models/details/lrb-exterior-88c93602ebfc.glb",
+        "bytes": 6552060,
+        "triangles": 731071,
+        "sha256": "88c93602ebfcbe6d456678c50f4d716bc79fe910860c340948e61b48bb0e9842",
         "bounds": {
           "min": [
             24.830078125,
-            -0.25999999046325684,
+            -4.019999980926514,
             -43.38092041015625
           ],
           "max": [
@@ -4243,10 +4267,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-2a443254840e.glb",
-        "bytes": 4667784,
-        "triangles": 578012,
-        "sha256": "2a443254840e0d7f38f147bc11ddfb3fe3e07834387ad29cc8b0d320163db756",
+        "url": "/models/details/lrb-interior-fb4688dec53e.glb",
+        "bytes": 4696632,
+        "triangles": 579850,
+        "sha256": "fb4688dec53ed75797a9bef52f79f7fe53a6b614f8abae9c38fb25be9f4d5ef8",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -6419,6 +6443,16 @@
           ],
           "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
           "audit": "result/blender/saw_detail166/audit.json"
+        },
+        {
+          "version": 221,
+          "status": "candidate-rejected",
+          "scope": "Reopened220confirms38retained tread/lift conflicts. A zero-collision route candidate is rejected because lower flights shorten source-supported tread spacing from median0.303m to0.197/0.151m. Cut lines and upper projections do not uniquely establish whole-storey routing; no candidate geometry accepted.",
+          "audit": "result/blender/saw-circulation221/audit.json",
+          "limitations": [
+            "Existing stair/lift conflict remains unresolved.",
+            "Requires floor-labelled continuous imagery or main-stair construction plans to distinguish all upper/lower flights."
+          ]
         }
       ],
       "latestInteriorReview": {
@@ -6509,6 +6543,16 @@
         "nativeChanged": false,
         "status": "not-accepted-no-component",
         "scope": "Source-line diagnostic still has12same-flight conflicts and an unsupported0.232m fourth-to-fifth corner adjustment. Preserve the existing217 public stair; its38native tread/cabin conflicts remain unresolved. No new complete circulation or floor-height claim."
+      },
+      "publicStructureReview221": {
+        "version": 221,
+        "status": "candidate-rejected",
+        "scope": "Reopened220confirms38retained tread/lift conflicts. A zero-collision route candidate is rejected because lower flights shorten source-supported tread spacing from median0.303m to0.197/0.151m. Cut lines and upper projections do not uniquely establish whole-storey routing; no candidate geometry accepted.",
+        "audit": "result/blender/saw-circulation221/audit.json",
+        "limitations": [
+          "Existing stair/lift conflict remains unresolved.",
+          "Requires floor-labelled continuous imagery or main-stair construction plans to distinguish all upper/lower flights."
+        ]
       },
       "bounds": {
         "min": [
@@ -6974,6 +7018,17 @@
           "status": "reviewed-no-exterior-change",
           "scope": "SAL main elevation, gables, oriels and towers match available photographs; CON upper storeys and roof lack clear full-elevation evidence. Retain original exterior rather than infer unknown changes.",
           "audit": "result/blender/sal-exterior210/audit.json"
+        },
+        {
+          "version": 221,
+          "status": "public-entry-pavilion-structure",
+          "scope": "Add continuous entrance floor, three photograph-supported white triangular roof support/shade assemblies, oak reception counter and three steel gate lanes inside the retained glass pavilion. Seven merged batches add868triangles; original historic facades, roof, glazing and room sample remain unchanged.",
+          "audit": "result/blender/sal-structure221/audit.json",
+          "source": "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
+          "limitations": [
+            "Pavilion footprint and3.3mroof datum inherited; fittings proportioned from built photographs with unknown capture dates.",
+            "Public entrance belongs to the complete exterior. Default indoor view remains the separate SAL.G.01 classroom study; no complete hall, floor or2026layout inferred."
+          ]
         }
       ],
       "glazingReview": {
@@ -6988,6 +7043,17 @@
         "audit": "result/blender/sal-exterior214/audit.json",
         "status": "no-new-geometry",
         "scope": "66first-surface probes confirm existing charcoal, pale and blue frame groups. Flank massing/height registration remains unresolved; no repeated recolouring or unsupported block rebuild."
+      },
+      "publicStructureReview221": {
+        "version": 221,
+        "status": "public-entry-pavilion-structure",
+        "scope": "Add continuous entrance floor, three photograph-supported white triangular roof support/shade assemblies, oak reception counter and three steel gate lanes inside the retained glass pavilion. Seven merged batches add868triangles; original historic facades, roof, glazing and room sample remain unchanged.",
+        "audit": "result/blender/sal-structure221/audit.json",
+        "source": "https://www.jesticowhiles.com/project/lincolns-inn-fields-london-school-of-economics/",
+        "limitations": [
+          "Pavilion footprint and3.3mroof datum inherited; fittings proportioned from built photographs with unknown capture dates.",
+          "Public entrance belongs to the complete exterior. Default indoor view remains the separate SAL.G.01 classroom study; no complete hall, floor or2026layout inferred."
+        ]
       },
       "bounds": {
         "min": [
@@ -7056,10 +7122,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-a447b3a6872f.glb",
-        "bytes": 5612856,
-        "triangles": 462982,
-        "sha256": "a447b3a6872f5dde155b6175725dc49fe4999645a07cf6b8af42c0e69a57472e",
+        "url": "/models/details/sal-exterior-601bb36fe1ee.glb",
+        "bytes": 5628804,
+        "triangles": 463850,
+        "sha256": "601bb36fe1ee5bcd0b2ec4f4e4136aa2338c06a288c8555970384775b5b9354d",
         "bounds": {
           "min": [
             91.77310180664062,
