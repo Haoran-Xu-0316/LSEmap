@@ -1805,5 +1805,99 @@
       ],
       "fov": 73.74
     }
+  },
+  {
+    "name": "ckk-115-default-interior",
+    "code": "CKK",
+    "spaceId": "ckk-115",
+    "label": "CKK.1.15排式教室与教学端",
+    "view": {
+      "position": [
+        -3.9519999027252197,
+        1.73,
+        2.318000078201294
+      ],
+      "target": [
+        0.6650000214576721,
+        1.45,
+        -3.4200000762939453
+      ],
+      "fov": 73.74
+    }
+  },
+  {
+    "name": "ckk-115-rear-windows-interior",
+    "code": "CKK",
+    "spaceId": "ckk-115",
+    "label": "CKK.1.15排式座位与转角窗",
+    "view": {
+      "position": [
+        -3.8949999809265137,
+        1.78,
+        -2.755000114440918
+      ],
+      "target": [
+        1.3300000429153442,
+        1.45,
+        2.2230000495910645
+      ],
+      "fov": 73.74
+    }
+  },
+  {
+    "name": "old-606-default-interior",
+    "label": "OLD.6.06两列20席与教学端",
+    "code": "OLD",
+    "spaceId": "old-606",
+    "view": {
+      "position": [
+        0.109375,
+        1.7,
+        4.5
+      ],
+      "target": [
+        -0.015625,
+        1.3,
+        -3.15625
+      ],
+      "fov": 73.74
+    }
+  },
+  {
+    "name": "old-606-teaching-wall-interior",
+    "label": "OLD.6.06教学墙与悬挂投影",
+    "code": "OLD",
+    "spaceId": "old-606",
+    "view": {
+      "position": [
+        -2.171875,
+        1.72,
+        0.625
+      ],
+      "target": [
+        0.484375,
+        1.55,
+        -4.28125
+      ],
+      "fov": 73.74
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "campus-stc-junction-top",
+    "label": "StClement’s Lane交界铺装",
+    "view": {
+      "position": [
+        29.4,
+        12,
+        18.4
+      ],
+      "target": [
+        29.4,
+        0.024,
+        18.4
+      ],
+      "fov": 43
+    }
   }
 ]
