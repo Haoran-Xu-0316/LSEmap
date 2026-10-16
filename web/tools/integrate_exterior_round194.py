@@ -82,21 +82,24 @@ def geometry_policy_name(obj):
 
 
 def component_destination(report, default_collection):
-    """New room studies live in their own scenes, outside the campus overview."""
+    """Create isolated rooms or a public assembly shared with the campus."""
     name = report.get('destinationCollection', default_collection)
     spec = report.get('collectionSpec')
     if not spec:
         return bpy.data.collections[name]
-    assert spec['kind'] == 'independent-room', 'Only isolated room creation is supported'
-    assert spec['name'] == name == report['targetCollection'], 'Room collection identity mismatch'
-    assert name not in bpy.data.collections and spec['scene'] not in bpy.data.scenes, 'Room identity already exists'
+    assert spec['kind'] in {'independent-room', 'public-interior'}, 'Unsupported authored collection kind'
+    assert spec['name'] == name == report['targetCollection'], 'Authored collection identity mismatch'
+    assert name not in bpy.data.collections and spec['scene'] not in bpy.data.scenes, 'Authored collection identity already exists'
     collection = bpy.data.collections.new(name)
-    collection['roomSample'] = True
+    collection['roomSample'] = spec['kind'] == 'independent-room'
+    collection['publicInteriorStudy'] = spec['kind'] == 'public-interior'
     if report.get('space'):
         collection['roomCode'] = report['space']['label']
         collection['authoringRecord'] = json.dumps(report['space'], ensure_ascii=False)
     scene = bpy.data.scenes.new(spec['scene'])
     scene.collection.children.link(collection)
+    if spec['kind'] == 'public-interior':
+        bpy.data.scenes['00_CAMPUS_COMPLETE'].collection.children.link(collection)
     return collection
 
 
@@ -119,6 +122,12 @@ def verify_saved_model(destination=DESTINATION, proof=PROOF):
         assert set(obj.name for obj in collection.all_objects) == set(room['objects'])
         assert collection.name in bpy.data.scenes[room['scene']].collection.children
         assert not any(name in bpy.data.scenes['00_CAMPUS_COMPLETE'].objects for name in room['objects']), 'Independent room leaked into campus'
+    for public in record.get('publicInteriors', []):
+        collection = bpy.data.collections[public['collection']]
+        assert set(obj.name for obj in collection.all_objects) == set(public['objects']) | set(public['sharedObjects'])
+        assert collection.name in bpy.data.scenes[public['scene']].collection.children
+        assert collection.name in bpy.data.scenes['00_CAMPUS_COMPLETE'].collection.children
+        assert all(name in bpy.data.collections[public['exteriorCollection']].objects for name in public['exteriorObjects'])
     digest = hashlib.sha256(destination.read_bytes()).hexdigest()
     assert digest == record['sourceModelSha256']
     result = dict(sourceModelSha256=digest, originalsVerified=len(baseline['fingerprints']),
@@ -162,7 +171,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
         if collection:
             for obj in collection.all_objects:
                 room_owners.setdefault(obj.name, set()).add(collection.name)
-    added, archived, changes, independent_rooms = [], [], [], []
+    added, archived, changes, independent_rooms, public_interiors = [], [], [], [], []
     for code, report_path, default_collection in reports:
         report = json.loads((ROOT / report_path).read_text())
         source_sha = report.get('baselineSha256', report.get('sourceModelSha256'))
@@ -176,8 +185,26 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
         room_conflicts = [name for name in report['archivedObjects']
                           if name in room_owners and destination_collection.name not in room_owners[name]]
         assert not room_conflicts, 'Building component would alter an independent room: ' + str(room_conflicts)
-        if report.get('collectionSpec'):
-            independent_rooms.append(dict(collection=destination_collection.name, scene=report['collectionSpec']['scene'], objects=list(names)))
+        spec = report.get('collectionSpec')
+        is_public = bool(spec and spec['kind'] == 'public-interior')
+        shared = report.get('sharedObjects', [])
+        exterior_names = report.get('exteriorObjects', [])
+        public_names = report.get('publicObjects', names if is_public else [])
+        assert len(shared) == len(set(shared)) and len(exterior_names) == len(set(exterior_names)), code
+        assert set(shared) <= set(before) and not set(shared) & set(report['archivedObjects']), code
+        assert all(not visibility[name] and name not in room_owners for name in shared), 'Cannot repurpose archived or detached-room objects'
+        assert set(exterior_names) <= set(names), code
+        assert len(public_names) == len(set(public_names)) and set(public_names) <= set(names), code
+        assert not is_public or set(public_names) | set(exterior_names) == set(names), 'Every public component object needs an explicit display owner'
+        assert is_public or not (shared or exterior_names), 'Shared source ownership requires an explicit public-interior collection'
+        if spec and spec['kind'] == 'independent-room':
+            independent_rooms.append(dict(collection=destination_collection.name, scene=spec['scene'], objects=list(names)))
+        if is_public:
+            exterior_collection = bpy.data.collections[code + '_EXTERIOR']
+            for name in shared:
+                destination_collection.objects.link(bpy.data.objects[name])
+            public_interiors.append(dict(collection=destination_collection.name, scene=spec['scene'], objects=list(public_names),
+                                         sharedObjects=list(shared), exteriorCollection=exterior_collection.name, exteriorObjects=list(exterior_names)))
         with bpy.data.libraries.load(str(path), link=False) as (source, target):
             assert set(names) <= set(source.objects)
             target.objects = list(names)
@@ -207,6 +234,14 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
             if authored_collection:
                 assert authored_collection in bpy.data.collections, authored_collection
                 collections = [bpy.data.collections[authored_collection]]
+            if is_public:
+                # A public component owns its whole circulation assembly, while
+                # the explicit shell subset also belongs to the shared exterior.
+                # Reuse original source objects through declared memberships.
+                assert not authored_collection or authored_collection in {destination_collection.name, exterior_collection.name}, obj.name
+                collections = [destination_collection] if obj.name in public_names else []
+                if obj.name in exterior_names:
+                    collections.append(exterior_collection)
             for collection in collections:
                 if obj.name not in collection.objects:
                     collection.objects.link(obj)
@@ -221,7 +256,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
             set_layer_hidden(bpy.data.objects[name], True)
             archived.append(name)
         changes.append(dict(code=code, report=report_path, componentSha256=report['componentSha256'],
-                            addedObjects=names, archivedObjects=report['archivedObjects']))
+                            addedObjects=names, archivedObjects=report['archivedObjects'], sharedObjects=list(shared), exteriorObjects=list(exterior_names), publicObjects=list(public_names)))
     update_scene()
     assert all(object_fingerprint(bpy.data.objects[name]) == fingerprint for name, fingerprint in before.items())
     assert set(bpy.data.objects.keys()) - set(before) == set(added)
@@ -231,7 +266,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
     record = dict(version=version, baselineSha256=baseline_sha,
                   sourceModelSha256=hashlib.sha256(destination.read_bytes()).hexdigest(),
                   changes=changes, addedObjects=added, archivedObjects=archived, changedObjects=[],
-                  addedFingerprints=new_state, allUnrelatedMeshesPreserved=True, independentRooms=independent_rooms,
+                  addedFingerprints=new_state, allUnrelatedMeshesPreserved=True, independentRooms=independent_rooms, publicInteriors=public_interiors,
                   scope=scope,
                   limitations='Retained estimated building geometry and interior studies remain incomplete; no claim of an as-built survey.')
     (proof / 'building-refinement.json').write_text(json.dumps(record, indent=2) + '\n')
