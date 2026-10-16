@@ -884,8 +884,8 @@
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
-        "label": "CON.7.04会议室",
-        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+        "label": "CON.7.04木饰面会议室",
+        "scope": "依据LSE同房号历史平面与照片建立CON.7.04独立8人会议室。固定平面8椅位置，保留左侧入口、上下外开门、右端斜窗、木饰面、弧边木桌、黑色扶手会议椅和连续完整天花；比例、竖向尺寸、设备精确位置及来源同期性未核实。"
       },
       "exteriorDirection": [
         -0.13161249458789825,
@@ -920,19 +920,19 @@
       },
       "interiorView": {
         "position": [
-          -7,
-          5.7,
-          6
+          -2.940000057220459,
+          1.67,
+          1.159999966621399
         ],
         "target": [
-          0,
-          0.75,
-          0
+          2.799999952316284,
+          1.45,
+          -0.4000000059604645
         ],
-        "fov": 50
+        "fov": 86
       },
       "exportExterior": true,
-      "defaultInteriorSpace": "con-methodology",
+      "defaultInteriorSpace": null,
       "interiorReview": {
         "version": 124,
         "spaces": [
@@ -997,6 +997,16 @@
         "scope": "入口花岗岩独立材质去除局部黄偏，与既有冷灰基座统一；1对象替换，几何、UV、玻璃和未证实上层保留。",
         "audit": "result/blender/con-exterior208/audit.json",
         "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
+      },
+      "interiorCollection": "CON704_ROOM231_study",
+      "defaultRoomRefinement231": {
+        "audit": "result/blender/con704-room231/audit.json",
+        "retainedLegacyCollection": "CON_PUBLIC_INTERIOR_study",
+        "scope": "Replace the existing same-room default presentation with complete source-based geometry and an inside camera; retain the legacy native objects unchanged.",
+        "galleryNames": [
+          "con-interior",
+          "con-704-panels-interior"
+        ]
       }
     },
     {
@@ -4517,6 +4527,32 @@
         "label": "KSW.1.02写字板椅教室",
         "scope": "依据LSE历史同房号平面与照片建立KSW.1.02独立教室。保留凹凸周界、后侧上端入口、下侧窗带、两排共18把带白色写字板的绿色学生椅、红色教师椅、AV台、双显示屏、白板、前端投影幕和连续完整天花。尺度、构造与源间同期性未知，不作地理配准或2026现况认证。"
       }
+    },
+    {
+      "code": "OLD",
+      "id": "old-126",
+      "label": "OLD.1.26小组教室",
+      "collection": "OLD126_ROOM231_study",
+      "gallery": "old-126-teaching-interior",
+      "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.26独立教室。按图保留3张六人小组桌、18把学生椅、1处门洞、入口内退、下侧窗湾和AV讲台；照片控制木饰面、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、投影幕、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。",
+      "interiorView": {
+        "position": [
+          2.9000000953674316,
+          1.65,
+          3.0999999046325684
+        ],
+        "target": [
+          -0.6600000262260437,
+          1.4,
+          -2.9600000381469727
+        ],
+        "fov": 86.9
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OLD.1.26小组教室",
+        "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.26独立教室。按图保留3张六人小组桌、18把学生椅、1处门洞、入口内退、下侧窗湾和AV讲台；照片控制木饰面、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、投影幕、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。"
+      }
     }
   ],
   "presentationReview": {
@@ -4818,7 +4854,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 230,
+  "sourceVersion": 231,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4953,5 +4989,20 @@
     "audit": "result/blender/streets230/audit.json",
     "scope": "One complete obsolete slatted bench assembly crosses the accepted stone tree-surround by17.5mm with independently verified positive solid overlap; archive that whole35-part assembly and retain the other six benches exactly. Paving, planting, stone surrounds and paths unchanged.",
     "limitations": "No unsupported replacement location or current as-built survey claimed."
+  },
+  "roomReview231": {
+    "version": 231,
+    "audits": [
+      "result/blender/old126-room231/audit.json",
+      "result/blender/con704-room231/audit.json"
+    ],
+    "scope": "Independent historical OLD.1.26 classroom and replacement of the existing CON.7.04 default presentation; no duplicate room registration. Source chair positions,continuous enclosures and saved-mesh connected approach routes retained.",
+    "limitations": "Historical plan/photo pairing and estimated dimensions do not establish2026conditions or complete building registration. OLD.1.16 unavailable-plan placeholder explicitly excluded."
+  },
+  "streetFixturesReview231": {
+    "version": 231,
+    "audit": "result/blender/plaza-environment231/audit.json",
+    "scope": "Four Watkins concrete tree containers from the official public-realm existing-condition audit. Original tree positions,paving and unrelated furniture retained;container bottom footprints remain inside original grate polygons.",
+    "limitations": "Heights,diameters and concealed construction estimated from photographs. The2022publication is not a2026site survey."
   }
 }
