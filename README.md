@@ -8,17 +8,28 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition224 contains31 building records,30 detailed exteriors,25 interior views
-and21 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v224.blend`. GitHub contains
+Edition225 contains31 building records,30 detailed exteriors,25 interior views
+and22 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v225.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage224` acceptance records are retained with the native: integration
+The local `stage225` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All155 gallery images use the
+finishes and public structural elements. All158 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition225 restores Peacock's three paired entrance doors and photo-supported
+shallow street roof frame, preserving all11 glazing solids and their optics.
+An independent KSW.2.12 study follows the paired historical plan and photograph:
+six collaborative tables,42 plan chair symbols, real door/window openings and
+a dual-screen teaching wall. Dimensions and current capacity remain unverified.
+All21 prior spaces and25 default interior assets remain unchanged.
+
+The city-context pass now preserves the shared glazing reflection finish instead
+of overwriting it with opaque-wall roughness. Source opacity, transparency and
+the existing reflection environment remain intact, without extra render passes.
 
 Edition224 replaces the RCS gray street-front proxy with its photo-supported
 stone facade,56 rectangular and14 circular backed window openings and six-column
