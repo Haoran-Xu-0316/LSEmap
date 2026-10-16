@@ -211,13 +211,13 @@ export const buildingDetails = {
     description:
       "面向Aldwych的凸弧石材立面，中部跨层高窗配窄阳台，下方为柱列门廊，上方为带老虎窗的阁楼屋顶。",
     note: "门廊雕饰、后侧与屋顶仍有简化。内部新增CLM.1.01小组教室，三角桌、木墙裙和窗户依据历史资料研究，尺寸估算。",
-    images: [["clm-exterior", "Clement House曲面立面与临街护栏"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"], ["clm-g03-seating-interior", "CLM.G.03环绕座位与窗湾"]],
+    images: [["clm-exterior", "Clement House曲面立面与临街护栏"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"], ["clm-g03-seating-interior", "CLM.G.03环绕座位与窗湾"], ["clm-102-seating-interior", "CLM.1.02五组六人桌与古典木墙"]],
   },
   KSW: {
     description:
       "Kingsway短边入口以石门廊嵌入红砖墙面，中央凸窗、石窗套与蓝色门灯形成辨识特征。",
     note: "主门面方向已根据资料校正；背面和屋顶仍为简化形态。",
-    images: [["ksw-exterior", "20 Kingsway完整主立面"], ["ksw-212-teaching-wall-interior", "KSW.2.12双屏教学墙"]],
+    images: [["ksw-exterior", "20 Kingsway完整主立面"], ["ksw-212-teaching-wall-interior", "KSW.2.12双屏教学墙"], ["ksw-102-seating-interior", "KSW.1.02两排写字板椅与侧窗"]],
   },
   OCS: {
     description:
