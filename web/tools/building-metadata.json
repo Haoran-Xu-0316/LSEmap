@@ -7,11 +7,6 @@
       "address": "61 Aldwych",
       "status": "provisional",
       "interior": true,
-      "interiorStudy": {
-        "kind": "room-sample",
-        "label": "2021历史接待厅",
-        "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。"
-      },
       "exteriorDirection": [
         -0.533357560634613,
         0.4952605664730072,
@@ -154,16 +149,16 @@
       },
       "interiorView": {
         "position": [
-          -14.8,
-          12.1,
-          -18.5
+          -105,
+          85,
+          150
         ],
         "target": [
-          0,
-          1.8,
-          0.5
+          -50,
+          22.2,
+          93
         ],
-        "fov": 50
+        "fov": 48
       },
       "exportExterior": true,
       "reviewHistory": [
@@ -218,6 +213,40 @@
         "nativeChanged": false,
         "completeGeographicRegistrationAccepted": false,
         "nextRequiredEvidence": "Resolve the adjoining61A/CON front boundary using independent surveyed or planning controls; retain provisional ownership rather than moving either building from a three-corner fit."
+      },
+      "interiorCollection": "61A_PUBLIC_STRUCTURE222_study",
+      "interiorSections": [
+        {
+          "id": "4",
+          "label": "4层：2021楼板与双中庭",
+          "minHeight": 14.7,
+          "maxHeight": 18.3,
+          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。"
+        },
+        {
+          "id": "6",
+          "label": "6层：2021楼板与双中庭",
+          "minHeight": 21.9,
+          "maxHeight": 25.5,
+          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。"
+        }
+      ],
+      "interiorDisplayMaxZ": 25.5,
+      "interiorSectionScope": "历史平面与实拍支持的公共结构；标高及构造尺寸估算，未完成整栋当前内部。",
+      "publicStructureReview222": {
+        "version": 222,
+        "audit": "result/blender/aldwych-registration222/audit.json",
+        "addedObjects": 11,
+        "archivedObjects": 1,
+        "limitations": [
+          "The2021 plans explicitly state indicative purposes;three external controls do not survey the sharedCON wall.",
+          "Source floor ownership extending intoCON is clipped to the accepted61A shell,not presented as a complete measured floor.",
+          "Floor4z15m,floor6z22.2m,3.35m clear height,250mm slab,16mmfinish,200mmsoffit and140mm lightwell wall are inherited/model estimates.",
+          "Sixth-floor registration uses corresponding source atria,not independent external survey controls.",
+          "Only fourth and sixth floor plates are evidenced here;intermediate,lower and upper floor layouts remain unmodeled.",
+          "Physical ray/volume checks concern modeled connections and enclosure only,not structure,fire,accessibility or current fitout certification.",
+          "Historical property-manager and2021/LSE corner-roof photographs differ;capture dates and end views are unresolved,so the accepted roof is retained."
+        ]
       }
     },
     {
@@ -3064,11 +3093,6 @@
       "address": "32 Lincoln’s Inn Fields",
       "status": "detailed",
       "interior": true,
-      "interiorStudy": {
-        "kind": "room-sample",
-        "label": "SAL.G.01研讨教室",
-        "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
-      },
       "exteriorDirection": [
         -0.6556274890899658,
         0.4838261604309082,
@@ -3099,16 +3123,16 @@
       },
       "interiorView": {
         "position": [
-          12,
-          9,
-          10
+          111.94117736816406,
+          1.75,
+          -109.93136596679688
         ],
         "target": [
-          0,
-          0.6,
-          0
+          114.66321563720703,
+          2.5,
+          -103.91670989990234
         ],
-        "fov": 50
+        "fov": 60.822162534250744
       },
       "exportExterior": true,
       "flankReview": {
@@ -3227,6 +3251,39 @@
         "limitations": [
           "Pavilion footprint and3.3mroof datum inherited; fittings proportioned from built photographs with unknown capture dates.",
           "Public entrance belongs to the complete exterior. Default indoor view remains the separate SAL.G.01 classroom study; no complete hall, floor or2026layout inferred."
+        ]
+      },
+      "interiorCollection": "SAL_PUBLIC_INTERIOR222",
+      "interiorSections": [
+        {
+          "id": "LG",
+          "label": "LG入口与公共环廊",
+          "minHeight": -0.05,
+          "maxHeight": 4.54,
+          "scope": "2015示意图支持的连续LG公共环廊、三处侧向门洞与两座主梯。G楼板作剖切隐藏。"
+        },
+        {
+          "id": "G",
+          "label": "G公共环廊与主梯到达",
+          "minHeight": 4.55,
+          "maxHeight": 8.4,
+          "scope": "2015示意图支持的G公共环廊及主梯到达，不含未见房间。"
+        }
+      ],
+      "interiorDisplayMaxZ": 8.4,
+      "interiorSectionScope": "历史平面与实拍支持的公共结构；标高及构造尺寸估算，未完成整栋当前内部。",
+      "publicStructureReview222": {
+        "version": 222,
+        "audit": "result/blender/sal-public222/audit.json",
+        "addedObjects": 24,
+        "archivedObjects": 13,
+        "limitations": [
+          "2015wayfinding plans are schematic historical route evidence, not a measured survey. OSM registration and source proportional fit are estimates; no2026complete current interior claim.",
+          "2026planning index listsEXISTINGplans but document download links requirerecaptcha and return404; no proposed works or unread2026drawing used.",
+          "NativeLG/Gfloor datum and4.8mstorey height inherited, stair13+13riserspercore,31cmtread, handrails, wall heights and finishes are modelling estimates.",
+          "Unpictured rooms, precise lift doors/cars, fully continuous lift shafts, complete upper floors andBlevelcafe/learning void remain unbuilt.",
+          "Only plan-known public-facing room boundaries are represented; closed landings/core volumes are not invented room interiors.",
+          "Reference photographs are not redistributed or embedded as public textures; fine ornamental historic balustrade is simplified."
         ]
       }
     },
@@ -3820,6 +3877,58 @@
         "label": "CLM.G.02 Hong Kong Theatre",
         "scope": "依据LSE官方同房号历史平面与照片建立Hong Kong Theatre独立室内样本。平面逐椅提取260个学生座位，左50、中160、右50；保留交错排、后部凹口、门洞和前舞台。木护墙板、橙棕软座、投影屏、白板、讲桌及银扶手坡道按实拍估算。米制尺度、层高与隐蔽构造未测量，不增未见第二层，不作为2026年现状或整栋楼层注册。"
       }
+    },
+    {
+      "code": "61A",
+      "id": "61a-reception",
+      "label": "2021历史接待厅",
+      "collection": "61A_PUBLIC_INTERIOR_study",
+      "gallery": "61a-reception-interior",
+      "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。",
+      "interiorView": {
+        "position": [
+          -14.8,
+          12.1,
+          -18.5
+        ],
+        "target": [
+          0,
+          1.8,
+          0.5
+        ],
+        "fov": 50
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "2021历史接待厅",
+        "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。"
+      }
+    },
+    {
+      "code": "SAL",
+      "id": "sal-g01",
+      "label": "SAL.G.01研讨教室",
+      "collection": "SAL_PUBLIC_INTERIOR_study",
+      "gallery": "sal-g01-interior",
+      "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。",
+      "interiorView": {
+        "position": [
+          12,
+          9,
+          10
+        ],
+        "target": [
+          0,
+          0.6,
+          0
+        ],
+        "fov": 50
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "SAL.G.01研讨教室",
+        "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
+      }
     }
   ],
   "presentationReview": {
@@ -4121,7 +4230,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 221,
+  "sourceVersion": 222,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4181,5 +4290,9 @@
     "audit": "result/blender/clm-hongkong220/audit.json",
     "scope": "Add an isolated historical Hong Kong Theatre sample from official same-room plan and photograph;260student symbols plus photo-supported stage seating, panelled wall, dual screens, whiteboard and guarded stage approach. Preserve all18prior spaces and every geographic building.",
     "limitations": "Unknown source dates; plan symbol count does not establish current hire capacity. Metric scale, height and concealed construction estimated. No unseen second level or full-floor registration."
+  },
+  "publicRealmReview222": {
+    "audit": "result/blender/street-environment222/audit.json",
+    "scope": "Six existing tree holes receive closed soil beds and low stone enclosures; disputed curb boundaries retained."
   }
 }
