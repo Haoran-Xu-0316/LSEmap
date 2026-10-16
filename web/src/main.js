@@ -221,7 +221,7 @@ function renderDetail(building) {
     label.htmlFor = "interior-space";
     const select = element("select", "");
     select.id = "interior-space";
-    for (const space of [{id: "default", label: building.interiorStudy?.label || (building.code === "MAR" ? "Grand Hall与公共楼梯" : building.code === "SAW" ? "公共楼层与楼梯" : "公共中庭与楼梯")}, ...building.interiorSpaces]) {
+    for (const space of [{id: "default", label: building.interiorStudy?.label || "公共空间"}, ...building.interiorSpaces]) {
       const option = element("option", "", space.label);
       option.value = space.id;
       select.append(option);
