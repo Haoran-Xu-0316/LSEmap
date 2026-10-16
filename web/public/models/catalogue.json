@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "224",
-  "sourceModelSha256": "02714d14231c7413f3202b6d2946ffcb698da9517485afd7124202e60da5a024",
+  "version": "225",
+  "sourceModelSha256": "81cc0cd66d4472b7b575654330802d33b09c693829aaaeb276b12c7c17c88d04",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3140,7 +3140,64 @@
             4.800000190734863
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "ksw-212",
+          "label": "KSW.2.12协作教室",
+          "scope": "依据LSE同房号历史平面与实照建立KSW.2.12独立协作教室样本。按68㎡统一比例描摹完整周界、弧形端窗与真实门洞，保留6组六席三角桌和6个独立座位；两组星号高桌、深色座垫白壳椅、双屏教学墙及侧窗帘按实照估算。层高、家具细节与照片年代差异未实测，不接地理楼层，不表示2026当前全楼。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "KSW.2.12协作教室",
+            "scope": "依据LSE同房号历史平面与实照建立KSW.2.12独立协作教室样本。按68㎡统一比例描摹完整周界、弧形端窗与真实门洞，保留6组六席三角桌和6个独立座位；两组星号高桌、深色座垫白壳椅、双屏教学墙及侧窗帘按实照估算。层高、家具细节与照片年代差异未实测，不接地理楼层，不表示2026当前全楼。"
+          },
+          "interiorView": {
+            "position": [
+              4.448938846588135,
+              1.78,
+              -2.3615221977233887
+            ],
+            "target": [
+              -1.5813764333724976,
+              1.15,
+              2.319352149963379
+            ],
+            "fov": 70.85
+          },
+          "gallery": "ksw-212-default-interior",
+          "interiorAsset": "/models/details/ksw-212-interior-f739b909d402.glb",
+          "detailedInterior": {
+            "url": "/models/details/ksw-212-interior-f739b909d402.glb",
+            "bytes": 258508,
+            "triangles": 21712,
+            "sha256": "f739b909d402c7e59c300a004a303325e84bc5a6e3bc77dfcb79a15281c6053b",
+            "bounds": {
+              "min": [
+                -5.88946533203125,
+                -0.12999999523162842,
+                -3.2355828285217285
+              ],
+              "max": [
+                5.807954788208008,
+                2.984999895095825,
+                3.1584126949310303
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -5.88946533203125,
+              -0.12999999523162842,
+              -3.2355828285217285
+            ],
+            "max": [
+              5.807954788208008,
+              2.984999895095825,
+              3.1584126949310303
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "LAK",
@@ -6031,11 +6088,13 @@
         "scope": "Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained."
       },
       "latestReview": {
-        "version": 146,
-        "status": "real-entry-ticket-apertures-and-bounded-glass",
-        "scope": "Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.",
-        "source": "Archived Sadlers Wells Peacock built exterior photograph; near-field native ray tests",
-        "photographDate": "unknown"
+        "version": 225,
+        "status": "photo-supported-entry-and-street-roof-frame",
+        "scope": "Restore three paired entrance leaves and their transom framing; add only the photo-visible shallow street roof lattice. Retain11 glazing solids, their0.82web opacity, original openings, main volumes and auditorium.",
+        "addedObjects": 9,
+        "archivedObjects": 3,
+        "audit": "result/blender/pea-exterior225/audit.json",
+        "limitations": "Photo dates unknown; dimensions, roof member sections and unseen construction estimated. Unseen rear roof remains unverified."
       },
       "interiorView": {
         "position": [
@@ -6080,7 +6139,7 @@
         ],
         "max": [
           -54.22328186035156,
-          19.530000686645508,
+          20.219999313354492,
           31.9190673828125
         ]
       },
@@ -6097,12 +6156,12 @@
         ],
         [
           -68.13151265330761,
-          19.530000686645508,
+          20.219999313354492,
           31.939345784761763
         ],
         [
           -75.1213148198488,
-          19.530000686645508,
+          20.219999313354492,
           15.342195974239122
         ],
         [
@@ -6117,12 +6176,12 @@
         ],
         [
           -54.214741533247924,
-          19.530000686645508,
+          20.219999313354492,
           26.07837097663065
         ],
         [
           -61.20454369978913,
-          19.530000686645508,
+          20.219999313354492,
           9.48122116610801
         ]
       ],
@@ -6139,10 +6198,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pea-exterior-be1c3610075e.glb",
-        "bytes": 114912,
-        "triangles": 8617,
-        "sha256": "be1c3610075e1f6f90490b64a391281ea15c56301b84b7e7938c7033d33281b8",
+        "url": "/models/details/pea-exterior-8fa6a2a767d4.glb",
+        "bytes": 120196,
+        "triangles": 9049,
+        "sha256": "8fa6a2a767d4dcce2b9fefe9c80d8b1a842730d4f1d40ac99f0a57f2fea69da6",
         "bounds": {
           "min": [
             -74.89566040039062,
@@ -6151,7 +6210,7 @@
           ],
           "max": [
             -54.22328186035156,
-            19.530000686645508,
+            20.219999313354492,
             31.9190673828125
           ]
         }
