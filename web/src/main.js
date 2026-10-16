@@ -105,15 +105,20 @@ function renderDetail(building) {
     element("p", "detail-address", building.address),
   );
   if (details.images.length) {
+    // Gallery order can lead with a public interior. The exterior selection
+    // still needs its own building preview and matching enlarged image.
+    const exteriorName = `${building.code.toLowerCase()}-exterior`;
+    const previewIndex = Math.max(0, details.images.findIndex(([name]) => name === exteriorName));
+    const [previewName, previewLabel] = details.images[previewIndex];
     const photo = element("button", "detail-photo");
-    photo.setAttribute("aria-label", `放大查看${details.images[0][1]}`);
+    photo.setAttribute("aria-label", `放大查看${previewLabel}`);
     const image = element("img");
-    image.src = galleryImageUrl(details.images[0][0]);
-    image.alt = details.images[0][1];
+    image.src = galleryImageUrl(previewName);
+    image.alt = previewLabel;
     image.width = 500;
     image.height = 360;
     photo.append(image, element("span", "", "查看细节 ↗"));
-    photo.addEventListener("click", () => showGallery(details.images, 0));
+    photo.addEventListener("click", () => showGallery(details.images, previewIndex));
     detailPanel.append(photo);
   }
   const actions = element("div", "detail-actions");
