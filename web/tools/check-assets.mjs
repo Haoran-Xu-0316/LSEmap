@@ -96,6 +96,21 @@ for (const building of catalogue.buildings) {
   assert(authored, `Unregistered building: ${building.code}`);
   assert.deepEqual(building.interiorStudy ?? null, authored.interiorStudy ?? null,
     `${building.code} default interior identity drifted from its authoring record`);
+  const levels = building.interiorSections || [];
+  assert.deepEqual(levels, authored.interiorSections || [], `${building.code} public level views drifted from authoring`);
+  assert.equal(new Set(levels.map(level => level.id)).size, levels.length,
+    `${building.code} has duplicate public level identities`);
+  for (const level of levels) {
+    assert(Number.isFinite(level.minHeight) && Number.isFinite(level.maxHeight)
+      && level.maxHeight > level.minHeight, `${building.code}:${level.id} has invalid clipping heights`);
+    if (!level.view) continue;
+    const {position, target, fov} = level.view;
+    assert([position, target].every(point => Array.isArray(point) && point.length === 3
+      && point.every(Number.isFinite)), `${building.code}:${level.id} has an invalid camera`);
+    assert(Number.isFinite(fov) && fov > 0 && fov < 180
+      && Math.hypot(...position.map((value, index) => value - target[index])) > 0.01,
+      `${building.code}:${level.id} has a degenerate public viewpoint`);
+  }
 }
 assert.equal(catalogue.buildings.reduce((sum, b) => sum + (b.interiorSpaces || []).length, 0), authoring.spaces.length);
 assert.equal(catalogue.buildings.filter((b) => b.status === "facade").length, 15);
