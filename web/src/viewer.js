@@ -9,7 +9,7 @@ import { loadOutdoorEnvironment, DAYLIGHT_DIRECTION } from "./outdoor-environmen
 import { createGroundTextureState, loadGroundTextures, disposeGroundTextures } from "./ground-textures.js";
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages, downloadVerifiedModel, downloadCampusModel } from "./model-loading.js";
-import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides } from "./surface-materials.js";
+import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides, isGlazingMaterial } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const COMPANION_CODES = {PAN: "FAW", FAW: "PAN"};
@@ -269,7 +269,9 @@ export class CampusViewer {
           const copy = material.clone();
           prepareGlazingSides(copy);
           refineMaterialFinish(copy, this.environmentTarget.texture);
-          if (contextMeshes.has(object)) {
+          if (contextMeshes.has(object) && !isGlazingMaterial(copy)) {
+            // Calm opaque surroundings without overwriting the same glass
+            // reflection finish used by selected campus buildings.
             // Retain authored wall/roof colour roles before shader uniforms exist.
             const luminance = copy.color.r * .2126 + copy.color.g * .7152 + copy.color.b * .0722;
             copy.color.lerp(new THREE.Color(luminance, luminance, luminance), .14);
