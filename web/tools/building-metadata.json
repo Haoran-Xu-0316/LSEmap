@@ -4553,6 +4553,58 @@
         "label": "OLD.1.26小组教室",
         "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.26独立教室。按图保留3张六人小组桌、18把学生椅、1处门洞、入口内退、下侧窗湾和AV讲台；照片控制木饰面、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、投影幕、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。"
       }
+    },
+    {
+      "code": "OLD",
+      "id": "old-127",
+      "label": "OLD.1.27小组教室",
+      "collection": "OLD127_ROOM232_study",
+      "gallery": "old-127-teaching-interior",
+      "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.27独立教室。按图保留3张六人小组桌、18把学生椅、上右入口、下侧两窗湾、左侧教学端和左下AV讲台；照片控制黑椅白桌、灰色拼块地毯、木门和窗侧木饰面、投影设备及连续方格吊顶。尺度、层高、隐蔽构造与两来源同期性未经测绘确认，独立局部样本，不作现用容量或整楼完成声明。",
+      "interiorView": {
+        "position": [
+          3.0399999618530273,
+          1.65,
+          2.4000000953674316
+        ],
+        "target": [
+          -3.380000114440918,
+          1.4,
+          -1.0
+        ],
+        "fov": 86.9
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OLD.1.27小组教室",
+        "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.27独立教室。按图保留3张六人小组桌、18把学生椅、上右入口、下侧两窗湾、左侧教学端和左下AV讲台；照片控制黑椅白桌、灰色拼块地毯、木门和窗侧木饰面、投影设备及连续方格吊顶。尺度、层高、隐蔽构造与两来源同期性未经测绘确认，独立局部样本，不作现用容量或整楼完成声明。"
+      }
+    },
+    {
+      "code": "FAW",
+      "id": "faw-103",
+      "label": "FAW.1.03小组教室",
+      "collection": "FAW103_ROOM232_study",
+      "gallery": "faw-103-teaching-interior",
+      "scope": "依据LSE官方历史同房号归档平面与照片建立FAW.1.03独立教室。按图保留4张六人小组桌、24把学生椅、1处门洞、上侧窗带、右上斜边及AV讲台；照片控制蓝绿窗区、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。",
+      "interiorView": {
+        "position": [
+          -4.739999771118164,
+          1.65,
+          -1.7000000476837158
+        ],
+        "target": [
+          2.5,
+          1.4,
+          2.0
+        ],
+        "fov": 86.9
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "FAW.1.03小组教室",
+        "scope": "依据LSE官方历史同房号归档平面与照片建立FAW.1.03独立教室。按图保留4张六人小组桌、24把学生椅、1处门洞、上侧窗带、右上斜边及AV讲台；照片控制蓝绿窗区、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。"
+      }
     }
   ],
   "presentationReview": {
@@ -4854,7 +4906,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 231,
+  "sourceVersion": 232,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5004,5 +5056,23 @@
     "audit": "result/blender/plaza-environment231/audit.json",
     "scope": "Four Watkins concrete tree containers from the official public-realm existing-condition audit. Original tree positions,paving and unrelated furniture retained;container bottom footprints remain inside original grate polygons.",
     "limitations": "Heights,diameters and concealed construction estimated from photographs. The2022publication is not a2026site survey."
+  },
+  "roomReview232": {
+    "version": 232,
+    "audits": [
+      "result/blender/old127-room232/audit.json",
+      "result/blender/faw103-room232/audit.json"
+    ],
+    "scope": "Independent historical OLD.1.27 and FAW.1.03 group classrooms with source seat positions, complete enclosures and saved-mesh connected approach checks.",
+    "limitations": "Dimensions and current layouts are unverified. The samples are not registered whole floors or complete interiors."
+  },
+  "streetEnvironmentReview232": {
+    "version": 232,
+    "audits": [
+      "result/blender/street-environment232/audit.json",
+      "result/blender/street-environment232/audit-candidate.json"
+    ],
+    "scope": "Fifty mapped Lincoln Inn Fields trees receive closed continuous organic crowns at retained positions and envelopes. The library street entry gains a real opening and local landing connected to its accepted interior floor, shared by overview and selected exterior.",
+    "limitations": "Crown shapes, landing dimensions and risers are estimates. The25 default interior assets remain intact; exterior entry context belongs to LRB_EXTERIOR. No as-built or accessibility certification."
   }
 }
