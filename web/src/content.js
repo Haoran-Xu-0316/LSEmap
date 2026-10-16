@@ -161,6 +161,8 @@ export const buildingDetails = {
       ["portsmouth-tree-pools", "Portsmouth Street树池与步行街"],
       ["portsmouth-bench", "街道长椅与铺装"],
       ["portsmouth-drainage", "石材接缝与排水篦子"],
+      ["campus-rcs-streetfront", "周边RCS浅石立面"],
+      ["campus-rcs-portico", "周边RCS入口柱廊"],
     ],
   },
   SAW: {
