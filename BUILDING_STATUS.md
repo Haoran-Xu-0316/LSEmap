@@ -1,12 +1,18 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v224.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v225.blend。
 
-原生SHA256：02714d14231c7413f3202b6d2946ffcb698da9517485afd7124202e60da5a024。
+原生SHA256：81cc0cd66d4472b7b575654330802d33b09c693829aaaeb276b12c7c17c88d04。
 
-31栋楼有目录记录，30栋有独立外观，25个内部视图、21个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
+31栋楼有目录记录，30栋有独立外观，25个内部视图、22个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+225版新增46批次、精确归档3个旧入口框件；7763原对象、2030原材质及21旧空间767对象保护通过。PEA按场馆实拍补临街浅挑格架、三组双扇入口和上亮框，共552三角面；7处格架脚和12条门叶探针通过。原11片玻璃、0.82透明度、洞口、高低翼和剧院样本保留，未知后屋架未补造。
+
+KSW.2.12新增37批次、21712三角面的独立房间：按同房号官方平面与实照建立6组桌、36组桌席加6独立席、门窗、双屏教学墙、灯顶和地毯。186处椅桌脚、12条门洞射线、59个通路采样及8灯具顶面支撑通过；连续吊顶1685个内域上射点全部命中，不保留失败候选的条形开孔。68㎡统一比例、2.91米层高、家具高度与构造估计；42符号属于历史平面座位，不作现用容量。新样本未硬接未配准楼层，21旧空间和25个默认内部保留。网页增加3张对应生产渲染图，共158张。
+
+网页修复周边玻璃在共享光学处理后又被统一粗糙度0.94覆盖的问题，保留与校园建筑一致的玻璃反射处理、原透明度与共享环境，不增加渲染通道。真实viewer检查两份背景窗材通过；RCS实际为0.25有限透明配不透明背衬，保留原参数并修正旧作者说明。PAN/COL无新图支持整段改动，SAL.1.05平面链接失效，均仅存缺口，不计作新模型完成。
 
 224版在已有城市背景内替换RCS面向Lincoln’s Inn Fields的灰色正面和错误高柱廊屋顶投影，新增26批次、精确归档11原件，共38980三角面。按建筑师建成实拍补浅石立面、56矩形窗和14圆窗、六柱入口、栏杆与前檐。70处窗洞背衬、6柱落脚及地图边界检查通过，原生校园和网页共用同一背景集合。7737原对象、2023原材质及21空间767对象保留；所有LSE外观与内部资产不变。2021竣工及2023奖项是项目/发布日期，照片拍摄日期未知；尺寸与细节估计，未见后侧和后屋顶仍为代理，RCS不等同35L施工地块。网页增加2张对应生产渲染图，共155张。
 
@@ -99,7 +105,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |COW|217材质/177屋面|40个对象仅换独立砖、石、窗框、玻璃和屋面材质，几何及UV保留；程序砖缝、浅浮雕和低对比屋面纹理传递网页。177玻璃法线与老虎窗屋盖保留，未改变整栋布局。|
 |FAW|197只读复核|核对FAW整栋模型、曲折窗带和PAN共用入口归属；未发现照片可证的整片修正，本轮无模型改动。|
 |KGS|176|Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.|
-|KSW|219玻璃/195饰面|玻璃保亮度减蓝，原暗衬及不透明参数保持，不新增几何。整段砖、石、窗框、店面、木门及玻璃颜色修正，补12根上层侧窗中梃；屋顶及后立面仍缺完整证据。|
+|KSW|225独立KSW.2.12/219玻璃/195饰面|玻璃保亮度减蓝，原暗衬及不透明参数保持，不新增几何。整段砖、石、窗框、店面、木门及玻璃颜色修正，补12根上层侧窗中梃；屋顶及后立面仍缺完整证据。|
 |LAK|179|Read-only review retains photo-supported sash windows and dormer apertures; no evidence-supported new geometry correction. Undated official imagery is not a current measured survey.|
 |LCH|203|按官方2025年发布照片补足两侧各2列窄窗和黑色落水管；保留凸窗、中央窗、门廊及白色下墙板。窗宽和构件截面为照片估计，内部未完成。|
 |5LF|147|11 existing panes retain mesh, UV and original neutral color; finite transmission with explicit browser opacity0.78. Right chimney now carries photograph-supported twin pots across frontage.44 front and44 two-metre behind-glass checks plus two pot first hits passed after reopening. Pot offsets and optical parameters estimated; unseen roof and complete interiors unverified.|
@@ -113,7 +119,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |OCS|208色彩/145形体|32个对象仅替换材质，修正屋瓦过橙及店面近黑偏色，转为低对比红褐瓦和深橄榄绿。门窗分格、屋形、UV、玻璃及历史鞋店内部保留，未宣称当前全内装。|
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
-|PEA|207内部/146外观|Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.|
+|PEA|225入口与格架/207内部/146外观|Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.|
 |PEL|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
 |POR|207入口/148玻璃|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
