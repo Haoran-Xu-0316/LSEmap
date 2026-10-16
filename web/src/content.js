@@ -148,8 +148,7 @@ export const buildingDetails = {
   MAR: {
     description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。上部遮阳片前缘收窄，北侧退台补充浅色铺装、金属栏杆与局部种植。可近看入口，再进入Grand Hall查看树状柱与弧形楼梯。",
     note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
-    images: [["mar-108-front-interior", "MAR.1.08完整阶梯座席与木条天花"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"],
-      ["mar-exterior", "Marshall Building北立面"],
+    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"],
       ["mar-rear-wall", "西侧石墙、板缝与相邻窗列"],
       ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
@@ -163,6 +162,7 @@ export const buildingDetails = {
       ["portsmouth-drainage", "石材接缝与排水篦子"],
       ["campus-rcs-streetfront", "周边RCS浅石立面"],
       ["campus-rcs-portico", "周边RCS入口柱廊"],
+      ["mar-108-front-interior", "MAR.1.08完整阶梯座席与木条天花"],
     ],
   },
   SAW: {
@@ -211,7 +211,7 @@ export const buildingDetails = {
     description:
       "面向Aldwych的凸弧石材立面，中部跨层高窗配窄阳台，下方为柱列门廊，上方为带老虎窗的阁楼屋顶。",
     note: "门廊雕饰、后侧与屋顶仍有简化。内部新增CLM.1.01小组教室，三角桌、木墙裙和窗户依据历史资料研究，尺寸估算。",
-    images: [["clm-g03-seating-interior", "CLM.G.03环绕座位与窗湾"], ["clm-exterior", "Clement House曲面立面与临街护栏"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"]],
+    images: [["clm-exterior", "Clement House曲面立面与临街护栏"], ["clm-capitals", "入口柱头卷饰"], ["clm-interior", "CLM.1.01小组教室，四组三角桌与木墙裙"], ["clm-g03-seating-interior", "CLM.G.03环绕座位与窗湾"]],
   },
   KSW: {
     description:
