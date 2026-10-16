@@ -1551,5 +1551,118 @@
       ],
       "fov": 60.822162534250744
     }
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-academic-route-interior",
+    "label": "CBG公共学术梯",
+    "view": {
+      "position": [
+        45.079559326171875,
+        2.0,
+        64.86641693115234
+      ],
+      "target": [
+        29.338035583496094,
+        5.0,
+        78.81111907958984
+      ],
+      "fov": 65
+    }
+  },
+  {
+    "code": "CBG",
+    "name": "cbg-level1-structure-interior",
+    "label": "CBG一层楼板与连桥",
+    "sectionId": "1",
+    "view": {
+      "position": [
+        35.09488296508789,
+        24.16666603088379,
+        99.59834289550781
+      ],
+      "target": [
+        29.869590759277344,
+        5.166666507720947,
+        71.0029525756836
+      ],
+      "fov": 50
+    }
+  },
+  {
+    "code": "MAR",
+    "name": "mar-first-transfer-interior",
+    "label": "一层至二层结构支承",
+    "sectionId": "1",
+    "view": {
+      "position": [
+        -14,
+        8.9,
+        -42
+      ],
+      "target": [
+        -14.46,
+        10.2,
+        -50.4
+      ],
+      "fov": 58.72
+    }
+  },
+  {
+    "code": "MAR",
+    "name": "mar-second-void-interior",
+    "label": "二层菱形挑空",
+    "sectionId": "2",
+    "view": {
+      "position": [
+        -19.5,
+        16.4,
+        -47
+      ],
+      "target": [
+        -14.46,
+        11.6,
+        -50.4
+      ],
+      "fov": 58.72
+    }
+  },
+  {
+    "code": "SAW",
+    "name": "saw-upper-spiral-interior",
+    "label": "五至六层螺旋梯",
+    "sectionId": "5",
+    "view": {
+      "position": [
+        -55,
+        23,
+        -3
+      ],
+      "target": [
+        -61.819,
+        19.8,
+        -11.234
+      ],
+      "fov": 50
+    }
+  },
+  {
+    "code": "SAW",
+    "name": "saw-sixth-arrival-interior",
+    "label": "六层梯孔与到达平台",
+    "sectionId": "6",
+    "view": {
+      "position": [
+        -57,
+        28,
+        -5
+      ],
+      "target": [
+        -61.819,
+        21.9,
+        -11.234
+      ],
+      "fov": 50
+    }
   }
 ]
