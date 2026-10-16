@@ -359,7 +359,7 @@ def exterior_objects(record):
         objects = [obj for child in root.children if 'INTERIOR' not in child.name and 'UNRESOLVED' not in child.name
                    for obj in child.all_objects]
     if record['interior'] and not record.get('interiorStudy'):
-        objects += list(bpy.data.collections[code + '_PUBLIC_INTERIOR_study'].all_objects)
+        objects += list(bpy.data.collections[record.get('interiorCollection', code + '_PUBLIC_INTERIOR_study')].all_objects)
     return list(dict.fromkeys(objects))
 
 
