@@ -21,7 +21,7 @@ export const buildingDetails = {
   "61A": {
     description: "61 Aldwych保留石材街角立面，中部三层窗带采用连续石柱与深色金属窗间板，屋顶角亭保留切角轮廓、分格窗和八面斜屋顶；Kingsway街翼的天窗列与连续坡屋面相接。",
     note: "沿街外观依据改造前归档照片深化。61A已确认为LSE物业，模型占地边界及与邻楼衔接仍待校准，楼高、窗距、屋顶进深和未见背面仍为估计；未将未来改造方案或内部效果图作为现状建模。",
-    images: [["61a-portal", "街角三层石柱门户"], ["61a-belts", "三层连续石柱与金属窗间板"], ["61a-pavilion", "Kingsway天窗与坡屋面"], ["61a-exterior", "61 Aldwych转角入口与石材立面"]],
+    images: [["61a-interior", "四、六层楼板与双中庭"], ["61a-floor4-interior", "4层双中庭与柱网"], ["61a-floor6-interior", "6层双中庭与柱网"], ["61a-portal", "街角三层石柱门户"], ["61a-belts", "三层连续石柱与金属窗间板"], ["61a-pavilion", "Kingsway天窗与坡屋面"], ["61a-exterior", "61 Aldwych转角入口与石材立面"]],
   },
   "5LF": {
     description: "Lincoln’s Inn Fields北侧的四层排屋，以黄褐色砖墙、三列白色推拉窗和浅色底层构成立面。入口台阶、黑色栏杆与两侧烟囱已加入模型。",
@@ -203,7 +203,7 @@ export const buildingDetails = {
     description:
       "面向Lincoln’s Inn Fields的Sir Arthur Lewis Building，以砖石立面、连续窗列和底部入口呈现历史街区尺度。",
     note: "立面主要尺度依据照片估计，未见背面仍简化。",
-    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"], ["sal-public-entrance", "玻璃入口亭与公共接待"], ["sal-entrance-exterior", "公共入口与历史立面"]],
+    images: [["sal-interior", "公共走廊与楼梯"], ["sal-lg-stairs-interior", "LG公共主梯"], ["sal-g-corridor-interior", "G公共环廊"], ["sal-connected-entry-interior", "入口亭与公共通廊"], ["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"], ["sal-public-entrance", "玻璃入口亭与公共接待"], ["sal-entrance-exterior", "公共入口与历史立面"]],
   },
   CLM: {
     description:
