@@ -63,6 +63,13 @@ function renderList() {
 
 }
 
+function clearGallery() {
+  const dialog = $("#gallery-dialog");
+  if (dialog.open) dialog.close();
+  gallery = [];
+  galleryIndex = 0;
+}
+
 function showGallery(images, index) {
   gallery = images;
   galleryIndex = index;
@@ -329,6 +336,7 @@ function selectBuilding(code, updateHash = true) {
   }
   const building = buildings.find((item) => item.code === code);
   if (!building) return;
+  if (current?.code !== code) clearGallery();
   current = building;
   $("#index-panel").hidden = true;
   detailPanel.hidden = false;
@@ -350,6 +358,7 @@ function selectBuilding(code, updateHash = true) {
 }
 
 function overview(keepIndex = false, updateHash = true) {
+  clearGallery();
   current = null;
   $("#index-panel").hidden = false;
   detailPanel.hidden = true;
