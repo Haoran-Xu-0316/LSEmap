@@ -4465,6 +4465,58 @@
         "label": "SAL.B.01U形研讨室",
         "scope": "依据LSE同房号历史平面与实照建立SAL.B.01独立研讨室。平面控制20学生席、1教师席、U形桌、右端教学桌、左上入口投影及两处窗湾；照片控制红色软包椅、白桌、灰方块地毯、橙灰条纹板、幕布和悬挂投影。尺度、层高、隐藏构造和高窗竖向几何估算，完整连续天花，入口至三组学生席和教师席接近点通过0.44米宽全高实体扫掠。不接校园楼层，不代表2026现状或通行认证。"
       }
+    },
+    {
+      "code": "CLM",
+      "id": "clm-102",
+      "label": "CLM.1.02小组教室",
+      "collection": "CLM102_ROOM230_study",
+      "gallery": "clm-102-teaching-interior",
+      "scope": "依据LSE官方历史同房号归档平面与照片建立CLM.1.02独立教室。按图保留5张六人小组桌、30把学生椅、3处门洞、上墙凹口、下侧窗湾和AV讲台；照片控制木饰面、黑壳橙褐座椅、白色桌面、灰色地毯、教学显示屏、双白板及悬挂灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。",
+      "interiorView": {
+        "position": [
+          5.40500020980835,
+          1.65,
+          1.909000039100647
+        ],
+        "target": [
+          -5.796000003814697,
+          1.46,
+          -0.0
+        ],
+        "fov": 83.97
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CLM.1.02小组教室",
+        "scope": "依据LSE官方历史同房号归档平面与照片建立CLM.1.02独立教室。按图保留5张六人小组桌、30把学生椅、3处门洞、上墙凹口、下侧窗湾和AV讲台；照片控制木饰面、黑壳橙褐座椅、白色桌面、灰色地毯、教学显示屏、双白板及悬挂灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。"
+      }
+    },
+    {
+      "code": "KSW",
+      "id": "ksw-102",
+      "label": "KSW.1.02写字板椅教室",
+      "collection": "KSW102_ROOM230_study",
+      "gallery": "ksw-102-teaching-interior",
+      "scope": "依据LSE历史同房号平面与照片建立KSW.1.02独立教室。保留凹凸周界、后侧上端入口、下侧窗带、两排共18把带白色写字板的绿色学生椅、红色教师椅、AV台、双显示屏、白板、前端投影幕和连续完整天花。尺度、构造与源间同期性未知，不作地理配准或2026现况认证。",
+      "interiorView": {
+        "position": [
+          5.349999904632568,
+          1.66,
+          0.5249999761581421
+        ],
+        "target": [
+          -4.75,
+          1.4,
+          -1.0750000476837158
+        ],
+        "fov": 86
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "KSW.1.02写字板椅教室",
+        "scope": "依据LSE历史同房号平面与照片建立KSW.1.02独立教室。保留凹凸周界、后侧上端入口、下侧窗带、两排共18把带白色写字板的绿色学生椅、红色教师椅、AV台、双显示屏、白板、前端投影幕和连续完整天花。尺度、构造与源间同期性未知，不作地理配准或2026现况认证。"
+      }
     }
   ],
   "presentationReview": {
@@ -4766,7 +4818,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 229,
+  "sourceVersion": 230,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4886,5 +4938,20 @@
     "audit": "result/blender/street-fixtures229/audit.json",
     "componentSha256": "2115d0e9b04f6c4dad9e3291088fb33ea2b3cda4ee91084b7b3ed73089f47d66",
     "scope": "Six existing stone tree surrounds retain source footprints,heights,materials and underlying soil.72 stone pieces and48 recessed joint infills;3mm joints and2mm arrises are construction estimates. No paving or path boundary changes."
+  },
+  "roomReview230": {
+    "version": 230,
+    "audits": [
+      "result/blender/clm102-room230/audit.json",
+      "result/blender/ksw102-room230/audit.json"
+    ],
+    "scope": "Independent historical CLM.1.02 five-group30-seat and KSW.1.02 two-row18-tablet-chair studies. Original29spaces retained. Fixed source seat centres, continuous ceilings and verified full-height connected approach routes.",
+    "limitations": "Historical plan/photo pairing does not establish current conditions; dimensions, ceiling heights and hidden construction estimated. Independent scenes do not imply full-floor geographic registration or comprehensive interiors."
+  },
+  "streetFixturesReview230": {
+    "version": 230,
+    "audit": "result/blender/streets230/audit.json",
+    "scope": "One complete obsolete slatted bench assembly crosses the accepted stone tree-surround by17.5mm with independently verified positive solid overlap; archive that whole35-part assembly and retain the other six benches exactly. Paving, planting, stone surrounds and paths unchanged.",
+    "limitations": "No unsupported replacement location or current as-built survey claimed."
   }
 }
