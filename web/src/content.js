@@ -74,9 +74,9 @@ export const buildingDetails = {
     images: [["par-exterior", "Parish Hall低门厅与红瓦坡屋顶"], ["par-entrance", "Parish Hall尖拱砖券与题字入口"], ["par-roof", "Parish Hall尖拱窗列与屋顶通风帽"]],
   },
   "PEA": {
-    "description": "Peacock Theatre入口为蓝黑色门面、黄铜星形装饰和暖色雨棚灯。上部为三列窗的浅色体量，右侧较低并设屋顶百叶，侧面保留深色砖墙。",
+    "description": "Peacock Theatre入口以三组双扇玻璃门、蓝黑色门面、黄铜星饰和暖色雨棚灯展开。上部浅色三列窗与临街浅挑格架相接，右侧低翼保留屋顶百叶，侧面为深色砖墙。",
     "note": "外观依据场馆页面实拍，准确拍摄日期未核实。内部按2022DWG与2023技术规格重建，846席为样本；后台、门厅及当前内装未复原。",
-    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-frontage", "剧院入口、路桩与双黄线"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "Peacock观众厅与舞台"], ["pea-stalls-interior", "Peacock Stalls与舞台口"], ["pea-circle-interior", "Peacock楼座与池座"]]
+    "images": [["pea-exterior", "Peacock Theatre外观"], ["pea-paired-entrance", "Peacock三组双扇入口"], ["pea-frontage", "剧院入口、路桩与双黄线"], ["pea-side", "砖墙侧面与低位百叶"], ["pea-interior", "Peacock观众厅与舞台"], ["pea-stalls-interior", "Peacock Stalls与舞台口"], ["pea-circle-interior", "Peacock楼座与池座"]]
 },
   "PEL": {
     "description": "Pethick-Lawrence House入口采用外挑银色金属门楣、黄色侧边、首层窗盒和旋转玻璃门。",
@@ -217,7 +217,7 @@ export const buildingDetails = {
     description:
       "Kingsway短边入口以石门廊嵌入红砖墙面，中央凸窗、石窗套与蓝色门灯形成辨识特征。",
     note: "主门面方向已根据资料校正；背面和屋顶仍为简化形态。",
-    images: [["ksw-exterior", "20 Kingsway完整主立面"]],
+    images: [["ksw-exterior", "20 Kingsway完整主立面"], ["ksw-212-teaching-wall-interior", "KSW.2.12双屏教学墙"]],
   },
   OCS: {
     description:
