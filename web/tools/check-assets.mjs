@@ -87,7 +87,17 @@ const detailAssets = catalogue.buildings.flatMap((building) =>
   [building.detailedExterior, building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)].filter(Boolean));
 assert.equal(detailAssets.length, 30 + catalogue.buildings.filter(b => b.interior).length + catalogue.buildings.reduce((count,b) => count + (b.interiorSpaces || []).length, 0));
 assert.equal(catalogue.buildings.filter((b) => b.interior).length, 25);
-assert.equal(catalogue.buildings.filter(b => b.interiorStudy).length, 20);
+// Room studies can be promoted to separately selectable spaces when a real
+// public assembly becomes available. Validate each authored identity instead
+// of fixing the number of default room samples to a historical release.
+const authoring = JSON.parse(await readFile("web/tools/building-metadata.json", "utf8"));
+for (const building of catalogue.buildings) {
+  const authored = authoring.buildings.find(item => item.code === building.code);
+  assert(authored, `Unregistered building: ${building.code}`);
+  assert.deepEqual(building.interiorStudy ?? null, authored.interiorStudy ?? null,
+    `${building.code} default interior identity drifted from its authoring record`);
+}
+assert.equal(catalogue.buildings.reduce((sum, b) => sum + (b.interiorSpaces || []).length, 0), authoring.spaces.length);
 assert.equal(catalogue.buildings.filter((b) => b.status === "facade").length, 15);
 for (const asset of detailAssets) {
   const buffer = await readFile(join(output, asset.url));
