@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "225",
-  "sourceModelSha256": "81cc0cd66d4472b7b575654330802d33b09c693829aaaeb276b12c7c17c88d04",
+  "version": "226",
+  "sourceModelSha256": "4e6c1482f97ac61b42e8a344bc503fd2fa86395006a6b43312bd6be21ac214a2",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5766,6 +5766,12 @@
         "status": "read-only-evidence-check",
         "scope": "Whole native exterior checked; available official images do not verify the unseen upper facade and roof. No unsupported shape, glazing or room changes made."
       },
+      "roomStudyReview226": {
+        "version": 226,
+        "spaceId": "pan-201",
+        "audit": "result/blender/pan201-room226/audit.json",
+        "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
+      },
       "bounds": {
         "min": [
           53.72006607055664,
@@ -5867,7 +5873,64 @@
             3.5
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "pan-201",
+          "label": "PAN.2.01协作教室",
+          "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "PAN.2.01协作教室",
+            "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
+          },
+          "interiorView": {
+            "position": [
+              -3.680000066757202,
+              1.7,
+              -2.431999921798706
+            ],
+            "target": [
+              0.35199999809265137,
+              1.25,
+              0.9599999785423279
+            ],
+            "fov": 73.74
+          },
+          "gallery": "pan-201-default-interior",
+          "interiorAsset": "/models/details/pan-201-interior-13cb7a8b5cdd.glb",
+          "detailedInterior": {
+            "url": "/models/details/pan-201-interior-13cb7a8b5cdd.glb",
+            "bytes": 240456,
+            "triangles": 19068,
+            "sha256": "13cb7a8b5cddd6259c3d61e95b833fd03edd997afec2fb212465765415109860",
+            "bounds": {
+              "min": [
+                -4.070000171661377,
+                -0.12999999523162842,
+                -2.822000026702881
+              ],
+              "max": [
+                4.127106666564941,
+                2.924999952316284,
+                2.9630000591278076
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -4.070000171661377,
+              -0.12999999523162842,
+              -2.822000026702881
+            ],
+            "max": [
+              4.127106666564941,
+              2.924999952316284,
+              2.9630000591278076
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "PAR",
