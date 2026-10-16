@@ -1389,5 +1389,60 @@
     "name": "clm-hongkong-interior",
     "label": "CLM.G.02 Hong Kong Theatre",
     "spaceId": "clm-hongkong"
+  },
+  {
+    "code": "SAL",
+    "name": "sal-public-entrance",
+    "label": "玻璃入口亭与公共接待",
+    "view": {
+      "position": [
+        95.74681854248047,
+        1.7200000286102295,
+        -112.94482421875
+      ],
+      "target": [
+        95.32618713378906,
+        1.7999999523162842,
+        -108.78099060058594
+      ],
+      "fov": 69.02
+    }
+  },
+  {
+    "code": "SAL",
+    "name": "sal-entrance-exterior",
+    "label": "公共入口与历史立面",
+    "view": {
+      "position": [
+        91.89735412597656,
+        2.3499999046325684,
+        -117.32752227783203
+      ],
+      "target": [
+        95.52568054199219,
+        1.649999976158142,
+        -109.31033325195312
+      ],
+      "fov": 69.02
+    }
+  },
+  {
+    "code": "LRB",
+    "name": "lrb-ramp-gallery-interior",
+    "label": "图书馆坡道与楼层连接",
+    "sectionId": "1",
+    "view": {
+      "position": [
+        87.3,
+        6.3,
+        -9.8
+      ],
+      "target": [
+        84.6,
+        4.7,
+        -13.26
+      ],
+      "fov": 55
+    }
   }
 ]
