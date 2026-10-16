@@ -8,17 +8,28 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition223 contains31 building records,30 detailed exteriors,25 interior views
+Edition224 contains31 building records,30 detailed exteriors,25 interior views
 and21 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v223.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v224.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage223` acceptance records are retained with the native: integration
+The local `stage224` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All153 gallery images use the
+finishes and public structural elements. All155 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition224 replaces the RCS gray street-front proxy with its photo-supported
+stone facade,56 rectangular and14 circular backed window openings and six-column
+portico. The native campus and browser share26 new context batches;11 exact
+originals remain archived. All30 LSE exterior assets,25 default interiors and21
+room assets retain their checksums. RCS is a neighboring property, separate from
+35L. Unseen rear volumes and roof retain estimated proxy geometry. Reference
+photographs stay private; the principal source is the [project architect](https://www.hawkinsbrown.com/projects/the-royal-college-of-surgeons/).
+
+MAR/SAW circulation reviews reject unregistered or obstructed additions. New
+source evidence is retained locally without claiming those routes are complete.
 
 Edition223 restores CBG's source-supported LG-G-1-2 academic stair and
 connected corridor structure. MAR gains a real second-floor plate with source
