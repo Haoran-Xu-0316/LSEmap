@@ -185,7 +185,7 @@ export const buildingDetails = {
     description:
       "葡萄牙街侧设历史三联窗和阁楼窗，Carey Street侧为五组大拱窗、三层凸窗与圆角入口。北向采光圆顶下方是螺旋坡道和玻璃电梯。",
     note: "两段街道立面依据2025年现状图纸重建。配准、未标尺寸、色彩及室内层高仍含估算。",
-    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-plaza-cafe", "Plaza Café玻璃亭"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-carey-street", "Carey Street拱窗与凸窗"], ["lrb-corner-entrance", "图书馆圆角入口"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["lrb-services-interior", "图书馆G层公共服务区"], ["watkins-plaza", "John Watkins Plaza木桌、树池与铺装"]],
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-plaza-cafe", "Plaza Café玻璃亭"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-carey-street", "Carey Street拱窗与凸窗"], ["lrb-corner-entrance", "图书馆圆角入口"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["lrb-services-interior", "图书馆G层公共服务区"], ["lrb-ramp-gallery-interior", "图书馆坡道与楼层连接"], ["watkins-plaza", "John Watkins Plaza木桌、树池与铺装"]],
   },
   CKK: {
     description:
@@ -203,7 +203,7 @@ export const buildingDetails = {
     description:
       "面向Lincoln’s Inn Fields的Sir Arthur Lewis Building，以砖石立面、连续窗列和底部入口呈现历史街区尺度。",
     note: "立面主要尺度依据照片估计，未见背面仍简化。",
-    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"]],
+    images: [["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"], ["sal-public-entrance", "玻璃入口亭与公共接待"], ["sal-entrance-exterior", "公共入口与历史立面"]],
   },
   CLM: {
     description:
