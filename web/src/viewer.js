@@ -418,8 +418,9 @@ export class CampusViewer {
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     this.camera.clearViewOffset();
-    if (this.mode === "detail" && mobileLayout.matches && width > 0 && height > 0) {
-      // Frame the entrance above the mobile sheet without moving the camera underground.
+    if ((this.mode === "detail" || (this.mode === "interior" && this.activeInterior?.authoredView)) &&
+        mobileLayout.matches && width > 0 && height > 0) {
+      // Keep the authored eye inside the room; shift its view above the mobile sheet.
       this.camera.setViewOffset(width, height, 0, height * 0.22, width, height);
     }
     this.camera.updateProjectionMatrix();
@@ -456,10 +457,17 @@ export class CampusViewer {
 
   moveCamera(position, target, animate = true) {
     if (!animate || reducedMotion.matches) {
-      this.camera.position.copy(position);
-      this.controls.target.copy(target);
+      // Consume the previous drag's residual motion before installing a new scene pose.
+      const nextPosition = position.clone();
+      const nextTarget = target.clone();
+      const damping = this.controls.enableDamping;
+      this.controls.enableDamping = false;
+      this.controls.update();
+      this.camera.position.copy(nextPosition);
+      this.controls.target.copy(nextTarget);
       this.transition = null;
       this.controls.update();
+      this.controls.enableDamping = damping;
       this.needsRender = true;
       return;
     }
@@ -670,7 +678,7 @@ export class CampusViewer {
     const code = building.code;
     const key = `${code}:${spaceId ?? "default"}`;
     const request = ++this.viewRequest;
-    this.activeInterior = { code, spaceId, key };
+    this.activeInterior = { code, spaceId, key, authoredView: Boolean(interior.interiorView) };
     delete this.canvas.dataset.detailReady;
     delete this.canvas.dataset.interiorSpace;
     try {
@@ -700,20 +708,17 @@ export class CampusViewer {
       const view = interior.interiorView;
       this.camera.fov = view.fov;
       this.updateCameraProjection();
-      if (interior.interiorStudy && mobileLayout.matches) {
-        const direction = new THREE.Vector3(...view.position)
-          .sub(new THREE.Vector3(...view.target)).normalize();
-        this.fit(interior.interiorBounds, true, direction);
-      } else {
-        this.moveCamera(
-          new THREE.Vector3(...view.position),
-          new THREE.Vector3(...view.target),
-        );
-      }
+      // Both models occupy different spaces. Enter at the usable interior pose
+      // directly instead of flying through the hidden campus or fitting its shell.
+      this.moveCamera(
+        new THREE.Vector3(...view.position),
+        new THREE.Vector3(...view.target),
+        false,
+      );
     } else {
       this.fit(
         interior.interiorBounds,
-        true,
+        false,
         new THREE.Vector3(-0.7, 0.55, 1).normalize(),
       );
     }
