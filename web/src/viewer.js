@@ -715,6 +715,13 @@ export class CampusViewer {
         new THREE.Vector3(-0.7, 0.55, 1).normalize(),
       );
     }
+    // Retain the resolved entry framing as well as authored views. Buildings
+    // without a fixed camera still need a reliable return from a level closeup.
+    this.activeInterior.defaultView = {
+      position: (this.transition?.position ?? this.camera.position).toArray(),
+      target: (this.transition?.target ?? this.controls.target).toArray(),
+      fov: this.camera.fov,
+    };
     this.needsRender = true;
     void this.upgradeModel(building, "interior", spaceId);
     return true;
@@ -734,12 +741,16 @@ export class CampusViewer {
     const section = interior?.interiorSections?.find(item => item.id === id);
     if (id !== "all" && !section) return false;
     const bounds = boxFromData(interior.interiorBounds);
-    this.clearInteriorSection();
     if (section) {
       if (!Number.isFinite(section.minHeight) || !Number.isFinite(section.maxHeight)
           || section.maxHeight <= section.minHeight) return false;
       bounds.min.y = Math.max(bounds.min.y, section.minHeight);
       bounds.max.y = Math.min(bounds.max.y, section.maxHeight);
+      if (bounds.max.y <= bounds.min.y) return false;
+    }
+    // Validate the new slice before changing the current visible slice.
+    this.clearInteriorSection();
+    if (section) {
       this.renderer.clippingPlanes = [
         new THREE.Plane(new THREE.Vector3(0, 1, 0), -section.minHeight),
         new THREE.Plane(new THREE.Vector3(0, -1, 0), section.maxHeight),
@@ -748,10 +759,19 @@ export class CampusViewer {
       this.renderer.shadowMap.enabled = false;
     }
     this.canvas.dataset.interiorSection = id;
-    const direction = this.camera.position.clone().sub(this.controls.target).normalize();
-    if (direction.y < 0.25) direction.y = 0.65;
-    direction.normalize();
-    this.fit(bounds, true, direction);
+    const view = section?.view ?? (id === "all"
+      ? interior.interiorView ?? this.activeInterior.defaultView : null);
+    if (view) {
+      // Use the same authored viewpoint as its gallery when a public route has
+      // a deliberate inspection camera. Do not replace it with distant bounds.
+      this.camera.fov = view.fov;
+      this.updateCameraProjection();
+      this.moveCamera(new THREE.Vector3(...view.position), new THREE.Vector3(...view.target));
+    } else {
+      const direction = this.camera.position.clone().sub(this.controls.target).normalize();
+      if (direction.y < 0.25) direction.y = 0.65;
+      this.fit(bounds, true, direction.normalize());
+    }
     this.needsRender = true;
     return true;
   }
