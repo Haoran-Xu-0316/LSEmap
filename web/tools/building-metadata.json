@@ -2805,11 +2805,13 @@
         "scope": "Street mass division and facade based on venue photography currently published by Sadlers Wells; upload paths are 2023, exact capture date unverified. Heights and hidden elevations estimated, adjacent SAW chimney excluded. Existing interior retained."
       },
       "latestReview": {
-        "version": 146,
-        "status": "real-entry-ticket-apertures-and-bounded-glass",
-        "scope": "Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.",
-        "source": "Archived Sadlers Wells Peacock built exterior photograph; near-field native ray tests",
-        "photographDate": "unknown"
+        "version": 225,
+        "status": "photo-supported-entry-and-street-roof-frame",
+        "scope": "Restore three paired entrance leaves and their transom framing; add only the photo-visible shallow street roof lattice. Retain11 glazing solids, their0.82web opacity, original openings, main volumes and auditorium.",
+        "addedObjects": 9,
+        "archivedObjects": 3,
+        "audit": "result/blender/pea-exterior225/audit.json",
+        "limitations": "Photo dates unknown; dimensions, roof member sections and unseen construction estimated. Unseen rear roof remains unverified."
       },
       "interiorView": {
         "position": [
@@ -4199,6 +4201,32 @@
         "label": "SAL.G.01研讨教室",
         "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
       }
+    },
+    {
+      "code": "KSW",
+      "id": "ksw-212",
+      "label": "KSW.2.12协作教室",
+      "collection": "KSW212_ROOM225_study",
+      "gallery": "ksw-212-default-interior",
+      "scope": "依据LSE同房号历史平面与实照建立KSW.2.12独立协作教室样本。按68㎡统一比例描摹完整周界、弧形端窗与真实门洞，保留6组六席三角桌和6个独立座位；两组星号高桌、深色座垫白壳椅、双屏教学墙及侧窗帘按实照估算。层高、家具细节与照片年代差异未实测，不接地理楼层，不表示2026当前全楼。",
+      "interiorView": {
+        "position": [
+          4.448938846588135,
+          1.78,
+          -2.3615221977233887
+        ],
+        "target": [
+          -1.5813764333724976,
+          1.15,
+          2.319352149963379
+        ],
+        "fov": 70.85
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "KSW.2.12协作教室",
+        "scope": "依据LSE同房号历史平面与实照建立KSW.2.12独立协作教室样本。按68㎡统一比例描摹完整周界、弧形端窗与真实门洞，保留6组六席三角桌和6个独立座位；两组星号高桌、深色座垫白壳椅、双屏教学墙及侧窗帘按实照估算。层高、家具细节与照片年代差异未实测，不接地理楼层，不表示2026当前全楼。"
+      }
     }
   ],
   "presentationReview": {
@@ -4500,7 +4528,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 224,
+  "sourceVersion": 225,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4591,5 +4619,23 @@
       "status": "retained-no-geometric-change",
       "finding": "No newer registerable official construction image found; July2026 partial views lack site corners, axes and datum. Future completion design not substituted."
     }
+  },
+  "roomReview225": {
+    "audit": "result/blender/ksw212-room225/audit.json",
+    "scope": "Independent KSW.2.12 collaborative classroom from the paired official historical plan and photograph. Six grouped tables,36 grouped and6 loose chair symbols, real door/window openings, dual teaching screens and supported lighting.",
+    "limitations": "68m2 area sets a uniform estimated scale;2.91mheight and furniture construction estimated. Historical42plan symbols do not establish current capacity. No geographic full-floor registration or complete current interior claimed."
+  },
+  "presentationReview225": {
+    "scope": "Keep the shared glazing reflection finish in city context; the opaque-context pass must not overwrite glazing roughness or tint a second time.",
+    "sourceOpacityAndTransparencyPreserved": true,
+    "additionalRenderPasses": 0,
+    "actualRcsWebOpacity": 0.25,
+    "rcsBacking": "Actual glazing retains finite transmission with explicit opaque backing; older authoring prose calling the glass opaque was inaccurate."
+  },
+  "exteriorEvidenceReview225": {
+    "PAN": "result/blender/pan-exterior225/audit.json",
+    "COL": "result/blender/col-exterior225/audit.json",
+    "SAL105": "result/blender/sal105-room225/audit.json",
+    "decision": "These source-gap reviews create no component and do not count as new model completion."
   }
 }
