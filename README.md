@@ -8,17 +8,28 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition227 contains31 building records,30 detailed exteriors,25 interior views
-and25 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v227.blend`. GitHub contains
+Edition228 contains31 building records,30 detailed exteriors,25 interior views
+and27 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v228.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage227` acceptance records are retained with the native: integration
+The local `stage228` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All165 gallery images use the
+finishes and public structural elements. All169 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition228 adds paired historical MAR.1.08 and CLM.G.03 classroom studies.
+MAR follows83 visible seat symbols across tiered horseshoe and grouped tables;
+the diagram's printed87 capacity differs by four and is not silently filled.
+CLM follows14 tablet-arm student chairs, a teaching station and recessed window
+bay. Both include complete ceilings, real apertures and checked furniture
+supports. Scale, concealed finishes and present-day use remain unverified.
+All25 earlier room assets,25 default interiors and30 exteriors are unchanged.
+Mobile room entry now preserves the authored interior eye, places the view
+above the bottom sheet and switches scenes directly without an empty camera
+flight; residual drag motion is cleared before a new entry pose.
 
 Edition227 removes overlapping asphalt beneath retained stone at the street
 contact, eliminating competing coplanar faces while preserving road boundaries
