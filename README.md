@@ -8,17 +8,26 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition226 contains31 building records,30 detailed exteriors,25 interior views
-and23 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v226.blend`. GitHub contains
+Edition227 contains31 building records,30 detailed exteriors,25 interior views
+and25 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v227.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage226` acceptance records are retained with the native: integration
+The local `stage227` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All160 gallery images use the
+finishes and public structural elements. All165 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition227 removes overlapping asphalt beneath retained stone at the street
+contact, eliminating competing coplanar faces while preserving road boundaries
+and levels. Original corner UVs are continued across the clipped triangles.
+Independent CKK.1.15 and OLD.6.06 studies add complete room shells, openings,
+source-supported furniture and continuous ceilings. OLD.6.06 follows its historical
+20-seat plan; its reference photograph shows a different table arrangement.
+All23 prior room assets and existing building exterior/interior assets remain
+unchanged. Dimensions and current layouts remain unverified.
 
 Edition226 adds an independent PAN.2.01 classroom from its paired official
 plan and photograph: five triangular tables,30 student seats, a teacher station,
