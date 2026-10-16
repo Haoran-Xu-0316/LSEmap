@@ -8,17 +8,29 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition228 contains31 building records,30 detailed exteriors,25 interior views
-and27 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v228.blend`. GitHub contains
+Edition229 contains31 building records,30 detailed exteriors,25 interior views
+and29 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v229.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage228` acceptance records are retained with the native: integration
+The local `stage229` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All169 gallery images use the
+finishes and public structural elements. All174 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition229 reduces intrinsic cyan in two SAL historic-window batches at retained
+luminance and optical settings. Window geometry, frames, tower glazing and the
+entrance pavilion are preserved. Six existing square tree surrounds gain72 stone
+pieces and48 recessed joints without changing paving, footprints or heights.
+Independent FAW.1.02 and SAL.B.01 studies add24 and20 historical student positions,
+continuous ceilings, openings and source-based furniture. Full-height routes
+reach all four seating groups; rejected shortcuts remain documented. Dimensions
+and current layouts remain unverified. All27 earlier room assets,25 default
+interiors and29 other detailed exterior assets retain their checksums. Building
+previews choose the matching exterior independently of gallery order; opening
+the preview keeps the correct position within the full gallery.
 
 Edition228 adds paired historical MAR.1.08 and CLM.G.03 classroom studies.
 MAR follows83 visible seat symbols across tiered horseshoe and grouped tables;
