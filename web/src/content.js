@@ -181,7 +181,7 @@ export const buildingDetails = {
     description:
       "Centre Building以红色为主、橙色侧面的遮阳构件组织立面，配合灰白框架与玻璃幕墙。面向Houghton Street形成开放的首层空间。",
     note: "塔楼、教学翼、裙房与广场铺装按资料配准，尺寸和未见内部仍含估计。",
-    images: [["cbg-academic-route-interior", "CBG公共学术梯"], ["cbg-level1-structure-interior", "CBG一层楼板与连桥"], ["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"], ["campus-stc-junction-top", "StClement’s Lane交界铺装"]],
+    images: [["cbg-academic-route-interior", "CBG公共学术梯"], ["cbg-level1-structure-interior", "CBG一层楼板与连桥"], ["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"], ["campus-stc-junction-top", "StClement’s Lane交界铺装"], ["campus-square-stone-joints", "LSE Square石材树池"]],
   },
   LRB: {
     description:
@@ -205,7 +205,7 @@ export const buildingDetails = {
     description:
       "面向Lincoln’s Inn Fields的Sir Arthur Lewis Building，以砖石立面、连续窗列和底部入口呈现历史街区尺度。",
     note: "立面主要尺度依据照片估计，未见背面仍简化。",
-    images: [["sal-interior", "公共走廊与楼梯"], ["sal-lg-stairs-interior", "LG公共主梯"], ["sal-g-corridor-interior", "G公共环廊"], ["sal-connected-entry-interior", "入口亭与公共通廊"], ["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"], ["sal-public-entrance", "玻璃入口亭与公共接待"], ["sal-entrance-exterior", "公共入口与历史立面"]],
+    images: [["sal-interior", "公共走廊与楼梯"], ["sal-lg-stairs-interior", "LG公共主梯"], ["sal-g-corridor-interior", "G公共环廊"], ["sal-connected-entry-interior", "入口亭与公共通廊"], ["sal-exterior", "Sir Arthur Lewis Building沿街立面"], ["sal-tower-roofs", "塔楼屋顶"], ["sal-oriels", "凸窗侧窗与蓝色窗框"], ["sal-public-entrance", "玻璃入口亭与公共接待"], ["sal-entrance-exterior", "公共入口与历史立面"], ["sal-b01-seating-interior", "SAL.B.01二十席与入口窗湾"]],
   },
   CLM: {
     description:
@@ -245,6 +245,7 @@ export const buildingDetails = {
     images: [
       ["faw-exterior", "Fawcett House外观"],
       ["pan-faw-entrance", "共用入口细节"],
+      ["faw-102-seating-interior", "FAW.1.02四组六人桌与木饰面隔断"],
     ],
   },
 };
