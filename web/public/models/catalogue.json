@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "230",
-  "sourceModelSha256": "232793610db8d3ff488e7f10df9a4f96a239f7b870747777042b2332f242a0bf",
+  "version": "231",
+  "sourceModelSha256": "667c0d1a8763d1e0ad0d026316ce38186c29678fffecc6b880e29ba3663c88b7",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2092,8 +2092,8 @@
       "interior": true,
       "interiorStudy": {
         "kind": "room-sample",
-        "label": "CON.7.04会议室",
-        "scope": "历史资料中的局部房间，尺寸估算，不代表整栋内部或当前布局。"
+        "label": "CON.7.04木饰面会议室",
+        "scope": "依据LSE同房号历史平面与照片建立CON.7.04独立8人会议室。固定平面8椅位置，保留左侧入口、上下外开门、右端斜窗、木饰面、弧边木桌、黑色扶手会议椅和连续完整天花；比例、竖向尺寸、设备精确位置及来源同期性未核实。"
       },
       "exteriorDirection": [
         -0.13161249458789825,
@@ -2128,18 +2128,18 @@
       },
       "interiorView": {
         "position": [
-          -7,
-          5.7,
-          6
+          -2.940000057220459,
+          1.67,
+          1.159999966621399
         ],
         "target": [
-          0,
-          0.75,
-          0
+          2.799999952316284,
+          1.45,
+          -0.4000000059604645
         ],
-        "fov": 50
+        "fov": 86
       },
-      "defaultInteriorSpace": "con-methodology",
+      "defaultInteriorSpace": null,
       "interiorReview": {
         "version": 124,
         "spaces": [
@@ -2205,6 +2205,16 @@
         "audit": "result/blender/con-exterior208/audit.json",
         "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
       },
+      "interiorCollection": "CON704_ROOM231_study",
+      "defaultRoomRefinement231": {
+        "audit": "result/blender/con704-room231/audit.json",
+        "retainedLegacyCollection": "CON_PUBLIC_INTERIOR_study",
+        "scope": "Replace the existing same-room default presentation with complete source-based geometry and an inside camera; retain the legacy native objects unchanged.",
+        "galleryNames": [
+          "con-interior",
+          "con-704-panels-interior"
+        ]
+      },
       "bounds": {
         "min": [
           -34.34856414794922,
@@ -2261,14 +2271,14 @@
       ],
       "interiorBounds": {
         "min": [
-          -3.2799999713897705,
-          -0.23999999463558197,
-          -2.180000066757202
+          -3.819999933242798,
+          -0.14000000059604645,
+          -3.2900002002716064
         ],
         "max": [
-          3.2209999561309814,
-          3.0,
-          2.0999999046325684
+          3.479905128479004,
+          3.049999952316284,
+          3.2900002002716064
         ]
       },
       "detailedExterior": {
@@ -2290,20 +2300,20 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/con-interior-22c8168fc85b.glb",
-        "bytes": 303008,
-        "triangles": 22552,
-        "sha256": "22c8168fc85bf4805fde44d047a544e7c2b6a598537b7618cf380012f1e0eba6",
+        "url": "/models/details/con-interior-8ef0ff782fd5.glb",
+        "bytes": 118632,
+        "triangles": 8628,
+        "sha256": "8ef0ff782fd5779df4d9f51025b84aa2ef08f6ef7453581dca361181e3a6364c",
         "bounds": {
           "min": [
-            -3.2799999713897705,
-            -0.23999999463558197,
-            -2.180000066757202
+            -3.819999933242798,
+            -0.14000000059604645,
+            -3.2900002002716064
           ],
           "max": [
-            3.2209999561309814,
-            3.0,
-            2.0999999046325684
+            3.479905128479004,
+            3.049999952316284,
+            3.2900002002716064
           ]
         }
       },
@@ -5957,6 +5967,61 @@
               2.838124990463257,
               2.990000009536743,
               4.820000171661377
+            ]
+          }
+        },
+        {
+          "id": "old-126",
+          "label": "OLD.1.26小组教室",
+          "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.26独立教室。按图保留3张六人小组桌、18把学生椅、1处门洞、入口内退、下侧窗湾和AV讲台；照片控制木饰面、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、投影幕、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "OLD.1.26小组教室",
+            "scope": "依据LSE官方历史同房号归档平面与照片建立OLD.1.26独立教室。按图保留3张六人小组桌、18把学生椅、1处门洞、入口内退、下侧窗湾和AV讲台；照片控制木饰面、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、投影幕、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。"
+          },
+          "interiorView": {
+            "position": [
+              2.9000000953674316,
+              1.65,
+              3.0999999046325684
+            ],
+            "target": [
+              -0.6600000262260437,
+              1.4,
+              -2.9600000381469727
+            ],
+            "fov": 86.9
+          },
+          "gallery": "old-126-teaching-interior",
+          "interiorAsset": "/models/details/old-126-interior-23afe80e2ada.glb",
+          "detailedInterior": {
+            "url": "/models/details/old-126-interior-23afe80e2ada.glb",
+            "bytes": 174056,
+            "triangles": 13240,
+            "sha256": "23afe80e2ada20a98832cdc621e6a440de96027e26623e76c13387bfa04fff47",
+            "bounds": {
+              "min": [
+                -3.6399998664855957,
+                -0.14000000059604645,
+                -3.7699999809265137
+              ],
+              "max": [
+                3.6599998474121094,
+                3.049999952316284,
+                4.099999904632568
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -3.6399998664855957,
+              -0.14000000059604645,
+              -3.7699999809265137
+            ],
+            "max": [
+              3.6599998474121094,
+              3.049999952316284,
+              4.099999904632568
             ]
           }
         }
