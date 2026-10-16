@@ -8,17 +8,26 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition229 contains31 building records,30 detailed exteriors,25 interior views
-and29 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v229.blend`. GitHub contains
+Edition230 contains31 building records,30 detailed exteriors,25 interior views
+and31 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v230.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage229` acceptance records are retained with the native: integration
+The local `stage230` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All174 gallery images use the
+finishes and public structural elements. All178 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition230 adds independent historical CLM.1.02 and KSW.1.02 studies: five
+six-person groups with timber wall panelling, and18 individual tablet-arm chairs
+with a dual-screen teaching wall. Both retain source seat positions, complete
+ceilings and saved-mesh checks for connected full-height approach routes.
+Dimensions and current layouts remain unverified. One complete obsolete bench
+crossing a stone tree surround is retired after positive-volume verification;
+the six unaffected benches, paving and planting are preserved. All29 previous
+room assets,25 default interiors and30 detailed exteriors retain their checksums.
 
 Edition229 reduces intrinsic cyan in two SAL historic-window batches at retained
 luminance and optical settings. Window geometry, frames, tower glazing and the
