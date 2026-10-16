@@ -148,7 +148,7 @@ export const buildingDetails = {
   MAR: {
     description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。上部遮阳片前缘收窄，北侧退台补充浅色铺装、金属栏杆与局部种植。可近看入口，再进入Grand Hall查看树状柱与弧形楼梯。",
     note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
-    images: [
+    images: [["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"], 
       ["mar-exterior", "Marshall Building北立面"],
       ["mar-rear-wall", "西侧石墙、板缝与相邻窗列"],
       ["mar-academic-wings", "办公翼窗格"],
@@ -167,7 +167,7 @@ export const buildingDetails = {
     description:
       "折面红砖表皮围合Sheffield Street转角。立面凹折、透空砖屏与窗洞形成丰富层次。",
     note: "内部按2014指南区分七层轮廓，保留主楼梯并协调平台连接。绝对尺度、层高和楼梯位置为估算，未复原完整房间及2026年布局。",
-    images: [
+    images: [["saw-upper-spiral-interior", "五至六层螺旋梯"], ["saw-sixth-arrival-interior", "六层梯孔与到达平台"], 
       ["saw-exterior", "Saw Swee Hock折面立面"],
       ["saw-brick", "透空砖屏细节"],
       ["saw-public-interior", "公共楼层与主楼梯"],
@@ -179,7 +179,7 @@ export const buildingDetails = {
     description:
       "Centre Building以红色为主、橙色侧面的遮阳构件组织立面，配合灰白框架与玻璃幕墙。面向Houghton Street形成开放的首层空间。",
     note: "塔楼、教学翼、裙房与广场铺装按资料配准，尺寸和未见内部仍含估计。",
-    images: [["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"]],
+    images: [["cbg-academic-route-interior", "CBG公共学术梯"], ["cbg-level1-structure-interior", "CBG一层楼板与连桥"], ["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"]],
   },
   LRB: {
     description:
