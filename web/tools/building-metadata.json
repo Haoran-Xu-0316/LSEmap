@@ -4500,7 +4500,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 223,
+  "sourceVersion": 224,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4564,5 +4564,32 @@
   "publicRealmReview222": {
     "audit": "result/blender/street-environment222/audit.json",
     "scope": "Six existing tree holes receive closed soil beds and low stone enclosures; disputed curb boundaries retained."
+  },
+  "contextReview224": {
+    "audit": "result/blender/rcs-context224/audit.json",
+    "sourceManifest": "data/collections/rcs-context224/sources.json",
+    "scope": "RCS north-facing historic stone frontage,70 backed window openings and six-column portico in the existing city context. Completed2021 project and2023 official award imagery; photograph dates unknown. Source photos remain private.",
+    "limitations": "Footprint inherits OSM. All heights and construction details estimated; unseen rear volumes and roof remain proxy. RCS is not LSE35L; no new campus building or complete interior claimed.",
+    "sourceUrls": [
+      "https://www.hawkinsbrown.com/projects/the-royal-college-of-surgeons/",
+      "https://www.rcseng.ac.uk/news-and-events/news/archive/riba-architectural-award/"
+    ]
+  },
+  "circulationReview224": {
+    "MAR": {
+      "audit": "result/blender/mar-circulation224/audit.json",
+      "status": "retained-no-geometric-change",
+      "finding": "Built2022 source confirms first-to-second spiral; first-floor platform/void registration and reliable G/1/2 levels still missing. Existing7.24/12.8m estimates retained."
+    },
+    "SAW": {
+      "audit": "result/blender/saw-circulation224/audit.json",
+      "status": "candidate-rejected",
+      "finding": "One source-platform candidate retains six headroom conflicts; minimum1.0553m. Incoming/outgoing tread pairing and platform elevations unresolved. All32 known lower-flight conflicts and accepted223 ST04 remain unchanged."
+    },
+    "construction35L": {
+      "audit": "result/blender/35l-construction224/audit.json",
+      "status": "retained-no-geometric-change",
+      "finding": "No newer registerable official construction image found; July2026 partial views lack site corners, axes and datum. Future completion design not substituted."
+    }
   }
 }
