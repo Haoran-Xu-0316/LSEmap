@@ -235,6 +235,7 @@ export const buildingDetails = {
     images: [
       ["pan-faw-exterior", "Pankhurst House外观"],
       ["pan-faw-entrance", "双旋转门与镂空门楣"],
+      ["pan-201-teaching-wall-interior", "PAN.2.01教学墙与协作座位"],
     ],
   },
   FAW: {
