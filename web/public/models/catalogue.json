@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "228",
-  "sourceModelSha256": "0ddf5bb3791d146690d2af1f44b4cb6b113930cf687bc30d1cb916d84f4f066b",
+  "version": "229",
+  "sourceModelSha256": "2ec7b3a42776f870e99b2a63f83f0736b70a0f2400a145b477f3d80bf54baa18",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2702,6 +2702,14 @@
         "batchCount": 2,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "roomStudyReview229": {
+        "version": 229,
+        "audit": "result/blender/faw102-room229/audit.json",
+        "componentSha256": "e0f541273ccd2ae69c2b0aaf39543fe1b2012d851ec91fbc35def7d7cf5a9fcd",
+        "independentRoom": "faw-102",
+        "sourceDimensionsEstimated": true,
+        "wholeCurrentInteriorClaimed": false
+      },
       "bounds": {
         "min": [
           72.36564636230469,
@@ -2857,6 +2865,61 @@
               4.415999889373779,
               3.2100000381469727,
               5.370426177978516
+            ]
+          }
+        },
+        {
+          "id": "faw-102",
+          "label": "FAW.1.02小组教室",
+          "scope": "依据LSE历史同房号平面与照片建立FAW.1.02独立教室。按图保留五边形周界、4张六人小组桌、24把黑色网背椅、AV讲台、上侧入口、下边及斜边窗带和右侧木饰面隔断；照片控制白色桌面、灰色地毯、投影幕及吊顶设备。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准或2026现况认证。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "FAW.1.02小组教室",
+            "scope": "依据LSE历史同房号平面与照片建立FAW.1.02独立教室。按图保留五边形周界、4张六人小组桌、24把黑色网背椅、AV讲台、上侧入口、下边及斜边窗带和右侧木饰面隔断；照片控制白色桌面、灰色地毯、投影幕及吊顶设备。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准或2026现况认证。"
+          },
+          "interiorView": {
+            "position": [
+              1.215000033378601,
+              1.66,
+              2.8350000381469727
+            ],
+            "target": [
+              1.2599999904632568,
+              1.48,
+              -3.487499952316284
+            ],
+            "fov": 90
+          },
+          "gallery": "faw-102-teaching-interior",
+          "interiorAsset": "/models/details/faw-102-interior-20b6b89d7a1b.glb",
+          "detailedInterior": {
+            "url": "/models/details/faw-102-interior-20b6b89d7a1b.glb",
+            "bytes": 260888,
+            "triangles": 21448,
+            "sha256": "20b6b89d7a1beb66176c97c3620ab784a5bbc6b7368c58748472cc3fb9821bba",
+            "bounds": {
+              "min": [
+                -5.164999961853027,
+                -0.14000000059604645,
+                -3.802500009536743
+              ],
+              "max": [
+                4.872499942779541,
+                3.119999885559082,
+                3.802500009536743
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -5.164999961853027,
+              -0.14000000059604645,
+              -3.802500009536743
+            ],
+            "max": [
+              4.872499942779541,
+              3.119999885559082,
+              3.802500009536743
             ]
           }
         }
@@ -7809,6 +7872,20 @@
           "Reference photographs are not redistributed or embedded as public textures; fine ornamental historic balustrade is simplified."
         ]
       },
+      "roomStudyReview229": {
+        "version": 229,
+        "audit": "result/blender/salb01-room229/audit.json",
+        "componentSha256": "0323e6f373f4bb98873c4bb4e9fc6a914b0e4ea2bb1a7b90e478da41cdb806dc",
+        "independentRoom": "sal-b01",
+        "sourceDimensionsEstimated": true,
+        "wholeCurrentInteriorClaimed": false
+      },
+      "exteriorFinishReview229": {
+        "version": 229,
+        "audit": "result/blender/facade-material229/audit.json",
+        "componentSha256": "549e49b489b561869e1201c1d0f00d34981e608c8ac742e3a3919c9bc8075dc1",
+        "scope": "Two historical glass batches reduce intrinsic cyan at retained luminance. Geometry,window frames,entrance pavilion,tower glazing and source optical parameters preserved. Photo dates and exact optical properties remain unverified."
+      },
       "bounds": {
         "min": [
           91.76612091064453,
@@ -7876,10 +7953,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-a9f3fd25a4b4.glb",
-        "bytes": 5487896,
+        "url": "/models/details/sal-exterior-0261e838bb77.glb",
+        "bytes": 5487924,
         "triangles": 452352,
-        "sha256": "a9f3fd25a4b4841e0a1232e8d28fe9ec00611aa5e57508b867a32cf211f3dbe1",
+        "sha256": "0261e838bb77d6ddd7031dd9c8386320615794d0ab5846c259e377e8c0af6343",
         "bounds": {
           "min": [
             91.77310180664062,
@@ -7964,6 +8041,61 @@
               5.0,
               3.450000047683716,
               3.5
+            ]
+          }
+        },
+        {
+          "id": "sal-b01",
+          "label": "SAL.B.01U形研讨室",
+          "scope": "依据LSE同房号历史平面与实照建立SAL.B.01独立研讨室。平面控制20学生席、1教师席、U形桌、右端教学桌、左上入口投影及两处窗湾；照片控制红色软包椅、白桌、灰方块地毯、橙灰条纹板、幕布和悬挂投影。尺度、层高、隐藏构造和高窗竖向几何估算，完整连续天花，入口至三组学生席和教师席接近点通过0.44米宽全高实体扫掠。不接校园楼层，不代表2026现状或通行认证。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "SAL.B.01U形研讨室",
+            "scope": "依据LSE同房号历史平面与实照建立SAL.B.01独立研讨室。平面控制20学生席、1教师席、U形桌、右端教学桌、左上入口投影及两处窗湾；照片控制红色软包椅、白桌、灰方块地毯、橙灰条纹板、幕布和悬挂投影。尺度、层高、隐藏构造和高窗竖向几何估算，完整连续天花，入口至三组学生席和教师席接近点通过0.44米宽全高实体扫掠。不接校园楼层，不代表2026现状或通行认证。"
+          },
+          "interiorView": {
+            "position": [
+              -2.941499948501587,
+              1.68,
+              -0.11100000143051147
+            ],
+            "target": [
+              3.7739999294281006,
+              1.4,
+              -0.24050000309944153
+            ],
+            "fov": 76.1
+          },
+          "gallery": "sal-b01-default-interior",
+          "interiorAsset": "/models/details/sal-b01-interior-3802c10595d7.glb",
+          "detailedInterior": {
+            "url": "/models/details/sal-b01-interior-3802c10595d7.glb",
+            "bytes": 154284,
+            "triangles": 12376,
+            "sha256": "3802c10595d7ccda11d1bda66ce5da9eedd22c11b52ee96fd4b8697598bd70d0",
+            "bounds": {
+              "min": [
+                -4.991000175476074,
+                -0.14000000059604645,
+                -3.193000078201294
+              ],
+              "max": [
+                4.972500324249268,
+                3.0999999046325684,
+                3.2704999446868896
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -4.991000175476074,
+              -0.14000000059604645,
+              -3.193000078201294
+            ],
+            "max": [
+              4.972500324249268,
+              3.0999999046325684,
+              3.2704999446868896
             ]
           }
         }
