@@ -164,6 +164,7 @@ export const buildingDetails = {
       ["campus-rcs-streetfront", "周边RCS浅石立面"],
       ["campus-rcs-portico", "周边RCS入口柱廊"],
       ["mar-108-front-interior", "MAR.1.08完整阶梯座席与木条天花"],
+      ["LIF-tree-contour", "Lincoln’s Inn Fields树冠"]
     ],
   },
   SAW: {
@@ -188,7 +189,9 @@ export const buildingDetails = {
     description:
       "葡萄牙街侧设历史三联窗和阁楼窗，Carey Street侧为五组大拱窗、三层凸窗与圆角入口。北向采光圆顶下方是螺旋坡道和玻璃电梯。",
     note: "两段街道立面依据2025年现状图纸重建。配准、未标尺寸、色彩及室内层高仍含估算。",
-    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-plaza-cafe", "Plaza Café玻璃亭"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-carey-street", "Carey Street拱窗与凸窗"], ["lrb-corner-entrance", "图书馆圆角入口"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["lrb-services-interior", "图书馆G层公共服务区"], ["lrb-ramp-gallery-interior", "图书馆坡道与楼层连接"], ["watkins-plaza", "John Watkins Plaza木桌、树池与铺装"]],
+    images: [["lrb-exterior", "图书馆广场侧窗格与石带"], ["lrb-plaza-cafe", "Plaza Café玻璃亭"], ["lrb-portugal-street", "葡萄牙街三联窗与阁楼窗"], ["lrb-carey-street", "Carey Street拱窗与凸窗"], ["lrb-corner-entrance", "图书馆圆角入口"], ["lrb-roof", "分层屋顶与北向采光顶"], ["lrb-interior", "图书馆螺旋坡道与电梯"], ["lrb-services-interior", "图书馆G层公共服务区"], ["lrb-ramp-gallery-interior", "图书馆坡道与楼层连接"], ["watkins-plaza", "John Watkins Plaza木桌、树池与铺装"],
+      ["lrb-watkins-entrance", "Watkins广场入口与台阶"]
+    ],
   },
   CKK: {
     description:
@@ -200,7 +203,9 @@ export const buildingDetails = {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室，SSC展示照片可见接待区与夹层。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"], ["old-126-seating-interior", "OLD.1.26小组座位与木饰面窗湾"]],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"], ["old-126-seating-interior", "OLD.1.26小组座位与木饰面窗湾"],
+      ["old-127-seating-interior", "OLD.1.27小组座位与木饰面窗湾"]
+    ],
   },
   SAL: {
     description:
@@ -247,6 +252,7 @@ export const buildingDetails = {
       ["faw-exterior", "Fawcett House外观"],
       ["pan-faw-entrance", "共用入口细节"],
       ["faw-102-seating-interior", "FAW.1.02四组六人桌与木饰面隔断"],
+      ["faw-103-seating-interior", "FAW.1.03小组座位与斜边窗带"]
     ],
   },
 };
