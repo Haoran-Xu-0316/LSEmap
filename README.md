@@ -8,17 +8,25 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition225 contains31 building records,30 detailed exteriors,25 interior views
-and22 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v225.blend`. GitHub contains
+Edition226 contains31 building records,30 detailed exteriors,25 interior views
+and23 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v226.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage225` acceptance records are retained with the native: integration
+The local `stage226` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All158 gallery images use the
+finishes and public structural elements. All160 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition226 adds an independent PAN.2.01 classroom from its paired official
+plan and photograph: five triangular tables,30 student seats, a teacher station,
+mobile whiteboards, window blinds and a continuous suspended ceiling. The saved
+mesh passes ceiling, opening and furniture-support checks. Dimensions are
+estimates; the room is not geographically registered to the building floor.
+All22 prior room assets,25 default interiors and30 exterior assets are preserved.
+LRB floor-edge and Shaw Library source gaps remain unresolved.
 
 Edition225 restores Peacock's three paired entrance doors and photo-supported
 shallow street roof frame, preserving all11 glazing solids and their optics.
