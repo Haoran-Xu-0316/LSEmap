@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "226",
-  "sourceModelSha256": "4e6c1482f97ac61b42e8a344bc503fd2fa86395006a6b43312bd6be21ac214a2",
+  "version": "227",
+  "sourceModelSha256": "fba3318e79206e20fc9208336fb5e354ffbfcfe4721d31ad7a6a2489511204a0",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1133,6 +1133,12 @@
         "scope": "Six front-elevation batches retain original geometry and UVs. Three glazing families lose inherent cyan cast at retained linear luminance; three painted frame families become graphite gray. Roof pavilion finite transparency, stone and atrium retained.",
         "limitations": "198 rays avoiding frames find no opaque backing within1.5m. Preserve existing opaque proxies; built photographs are undated and finish values remain visual estimates."
       },
+      "roomStudyReview227": {
+        "version": 227,
+        "spaceId": "ckk-115",
+        "audit": "result/blender/ckk115-room227/audit.json",
+        "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。"
+      },
       "bounds": {
         "min": [
           -138.37171936035156,
@@ -1343,6 +1349,61 @@
               5.275000095367432,
               3.240000009536743,
               6.025000095367432
+            ]
+          }
+        },
+        {
+          "id": "ckk-115",
+          "label": "CKK.1.15排式教室",
+          "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CKK.1.15排式教室",
+            "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。"
+          },
+          "interiorView": {
+            "position": [
+              -3.9519999027252197,
+              1.73,
+              2.318000078201294
+            ],
+            "target": [
+              0.6650000214576721,
+              1.45,
+              -3.4200000762939453
+            ],
+            "fov": 73.74
+          },
+          "gallery": "ckk-115-default-interior",
+          "interiorAsset": "/models/details/ckk-115-interior-3fe3cffaf3f0.glb",
+          "detailedInterior": {
+            "url": "/models/details/ckk-115-interior-3fe3cffaf3f0.glb",
+            "bytes": 308748,
+            "triangles": 26424,
+            "sha256": "3fe3cffaf3f068638e864cba8335990381d09ab81db098b7db05b2f782319481",
+            "bounds": {
+              "min": [
+                -4.763999938964844,
+                -0.14000000059604645,
+                -4.5920000076293945
+              ],
+              "max": [
+                4.78000020980835,
+                3.2049999237060547,
+                3.8299999237060547
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -4.763999938964844,
+              -0.14000000059604645,
+              -4.5920000076293945
+            ],
+            "max": [
+              4.78000020980835,
+              3.2049999237060547,
+              3.8299999237060547
             ]
           }
         }
@@ -5271,6 +5332,12 @@
         "scope": "Replace four Final Sale batches with six source-guided shallow open-mesh figures, garment folds, staggered poses, trolley, two baskets and varied goods. Actual geometry falls from519272to80132triangles; source glazing and frame retained.",
         "limitations": "Depth, backs and photo-to-model registration remain estimates. Private reference photographs are not public textures; no claim of a scanned sculpture or complete current interior."
       },
+      "roomStudyReview227": {
+        "version": 227,
+        "spaceId": "old-606",
+        "audit": "result/blender/old606-room227/audit.json",
+        "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。"
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -5536,6 +5603,61 @@
               5.827499866485596,
               2.8499999046325684,
               5.554999828338623
+            ]
+          }
+        },
+        {
+          "id": "old-606",
+          "label": "OLD.6.06教学室",
+          "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "OLD.6.06教学室",
+            "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。"
+          },
+          "interiorView": {
+            "position": [
+              0.109375,
+              1.7,
+              4.5
+            ],
+            "target": [
+              -0.015625,
+              1.3,
+              -3.15625
+            ],
+            "fov": 73.74
+          },
+          "gallery": "old-606-default-interior",
+          "interiorAsset": "/models/details/old-606-interior-ec3a289131db.glb",
+          "detailedInterior": {
+            "url": "/models/details/old-606-interior-ec3a289131db.glb",
+            "bytes": 180364,
+            "triangles": 14088,
+            "sha256": "ec3a289131db4f7224c53128e20a849657a60cc7d23032575088fa50cf2a5e17",
+            "bounds": {
+              "min": [
+                -2.7831249237060547,
+                -0.12999999523162842,
+                -4.820000171661377
+              ],
+              "max": [
+                2.838124990463257,
+                2.990000009536743,
+                4.820000171661377
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -2.7831249237060547,
+              -0.12999999523162842,
+              -4.820000171661377
+            ],
+            "max": [
+              2.838124990463257,
+              2.990000009536743,
+              4.820000171661377
             ]
           }
         }
