@@ -8,17 +8,26 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition231 contains31 building records,30 detailed exteriors,25 interior views
-and32 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v231.blend`. GitHub contains
+Edition232 contains31 building records,30 detailed exteriors,25 interior views
+and34 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v232.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage231` acceptance records are retained with the native: integration
+The local `stage232` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All181 gallery images use the
+finishes and public structural elements. All187 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition232 repairs the library street entrance: a real opening replaces the
+continuous base obstruction, with a local landing and three low steps joined
+to the retained interior floor. Overview and selected exterior use the same
+entry geometry; the default interior asset stays unchanged. Fifty mapped
+park trees receive continuous closed crowns without moving trunks or other
+planting. OLD.1.27 and FAW.1.03 add historical18-seat and24-seat classroom
+studies. All32 previous rooms,25 default interiors and29 other exteriors
+retain their checksums. Dimensions and present-day layouts remain unverified.
 
 Edition231 restores four concrete tree containers at the retained Watkins
 Plaza tree positions using the official public-realm existing-condition audit.
