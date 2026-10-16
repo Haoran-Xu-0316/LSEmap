@@ -1180,6 +1180,14 @@
         "reversedShells": 0,
         "batchCount": 2,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "roomStudyReview229": {
+        "version": 229,
+        "audit": "result/blender/faw102-room229/audit.json",
+        "componentSha256": "e0f541273ccd2ae69c2b0aaf39543fe1b2012d851ec91fbc35def7d7cf5a9fcd",
+        "independentRoom": "faw-102",
+        "sourceDimensionsEstimated": true,
+        "wholeCurrentInteriorClaimed": false
       }
     },
     {
@@ -3591,6 +3599,20 @@
           "Only plan-known public-facing room boundaries are represented; closed landings/core volumes are not invented room interiors.",
           "Reference photographs are not redistributed or embedded as public textures; fine ornamental historic balustrade is simplified."
         ]
+      },
+      "roomStudyReview229": {
+        "version": 229,
+        "audit": "result/blender/salb01-room229/audit.json",
+        "componentSha256": "0323e6f373f4bb98873c4bb4e9fc6a914b0e4ea2bb1a7b90e478da41cdb806dc",
+        "independentRoom": "sal-b01",
+        "sourceDimensionsEstimated": true,
+        "wholeCurrentInteriorClaimed": false
+      },
+      "exteriorFinishReview229": {
+        "version": 229,
+        "audit": "result/blender/facade-material229/audit.json",
+        "componentSha256": "549e49b489b561869e1201c1d0f00d34981e608c8ac742e3a3919c9bc8075dc1",
+        "scope": "Two historical glass batches reduce intrinsic cyan at retained luminance. Geometry,window frames,entrance pavilion,tower glazing and source optical parameters preserved. Photo dates and exact optical properties remain unverified."
       }
     },
     {
@@ -4391,6 +4413,58 @@
         "scope": "依据LSE同房号历史平面与实照建立MAR.1.08独立阶梯马蹄形教室。平面控制完整周界、两处前门、马蹄桌、中央四席、前侧分组与右长排；实照控制浅木挡板、深灰桌面、黑网背椅、木条天花和教学设备。可辨座椅83席，与图示容量87存在4席差异。比例、台阶、层高、窗高和隐藏构造为估算；两图拍摄年代未知，不作2026现状、全楼覆盖或地理楼层配准。"
       },
       "scope": "依据LSE同房号历史平面与实照建立MAR.1.08独立阶梯马蹄形教室。平面控制完整周界、两处前门、马蹄桌、中央四席、前侧分组与右长排；实照控制浅木挡板、深灰桌面、黑网背椅、木条天花和教学设备。可辨座椅83席，与图示容量87存在4席差异。比例、台阶、层高、窗高和隐藏构造为估算；两图拍摄年代未知，不作2026现状、全楼覆盖或地理楼层配准。"
+    },
+    {
+      "code": "FAW",
+      "id": "faw-102",
+      "label": "FAW.1.02小组教室",
+      "collection": "FAW102_ROOM229_study",
+      "gallery": "faw-102-teaching-interior",
+      "scope": "依据LSE历史同房号平面与照片建立FAW.1.02独立教室。按图保留五边形周界、4张六人小组桌、24把黑色网背椅、AV讲台、上侧入口、下边及斜边窗带和右侧木饰面隔断；照片控制白色桌面、灰色地毯、投影幕及吊顶设备。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准或2026现况认证。",
+      "interiorView": {
+        "position": [
+          1.215000033378601,
+          1.66,
+          2.8350000381469727
+        ],
+        "target": [
+          1.2599999904632568,
+          1.48,
+          -3.487499952316284
+        ],
+        "fov": 90
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "FAW.1.02小组教室",
+        "scope": "依据LSE历史同房号平面与照片建立FAW.1.02独立教室。按图保留五边形周界、4张六人小组桌、24把黑色网背椅、AV讲台、上侧入口、下边及斜边窗带和右侧木饰面隔断；照片控制白色桌面、灰色地毯、投影幕及吊顶设备。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准或2026现况认证。"
+      }
+    },
+    {
+      "code": "SAL",
+      "id": "sal-b01",
+      "label": "SAL.B.01U形研讨室",
+      "collection": "SALB01_ROOM229_study",
+      "gallery": "sal-b01-default-interior",
+      "scope": "依据LSE同房号历史平面与实照建立SAL.B.01独立研讨室。平面控制20学生席、1教师席、U形桌、右端教学桌、左上入口投影及两处窗湾；照片控制红色软包椅、白桌、灰方块地毯、橙灰条纹板、幕布和悬挂投影。尺度、层高、隐藏构造和高窗竖向几何估算，完整连续天花，入口至三组学生席和教师席接近点通过0.44米宽全高实体扫掠。不接校园楼层，不代表2026现状或通行认证。",
+      "interiorView": {
+        "position": [
+          -2.941499948501587,
+          1.68,
+          -0.11100000143051147
+        ],
+        "target": [
+          3.7739999294281006,
+          1.4,
+          -0.24050000309944153
+        ],
+        "fov": 76.1
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "SAL.B.01U形研讨室",
+        "scope": "依据LSE同房号历史平面与实照建立SAL.B.01独立研讨室。平面控制20学生席、1教师席、U形桌、右端教学桌、左上入口投影及两处窗湾；照片控制红色软包椅、白桌、灰方块地毯、橙灰条纹板、幕布和悬挂投影。尺度、层高、隐藏构造和高窗竖向几何估算，完整连续天花，入口至三组学生席和教师席接近点通过0.44米宽全高实体扫掠。不接校园楼层，不代表2026现状或通行认证。"
+      }
     }
   ],
   "presentationReview": {
@@ -4692,7 +4766,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 228,
+  "sourceVersion": 229,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4806,5 +4880,11 @@
     "version": 227,
     "audit": "result/blender/street-layering227/audit.json",
     "scope": "Clip the existing asphalt beneath unchanged stone footprints to remove coplanar depth competition. Preserve all route boundaries and top datums; use a1mm numerical contact guard for20bit Draco quantization, with existing lower-datum support. Not a new road survey or paving-ownership claim."
+  },
+  "streetFixturesReview229": {
+    "version": 229,
+    "audit": "result/blender/street-fixtures229/audit.json",
+    "componentSha256": "2115d0e9b04f6c4dad9e3291088fb33ea2b3cda4ee91084b7b3ed73089f47d66",
+    "scope": "Six existing stone tree surrounds retain source footprints,heights,materials and underlying soil.72 stone pieces and48 recessed joint infills;3mm joints and2mm arrises are construction estimates. No paving or path boundary changes."
   }
 }
