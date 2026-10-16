@@ -8,17 +8,26 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition220 contains31 building records,30 detailed exteriors,25 interior views
+Edition221 contains31 building records,30 detailed exteriors,25 interior views
 and19 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v220.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v221.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage220` acceptance records are retained with the native: integration
+The local `stage221` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All136 gallery images use the
+finishes and public structural elements. All140 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition221 coordinates six library ramp/gallery joins and guard supports,
+retaining their estimated floor pitch and core geometry. The current library
+public collection now supplies both native campus/detail views and every web
+view, replacing the obsolete public-collection selection. SAL gains the visible
+public-entry floor, white roof supports, reception and gates inside its retained
+glass pavilion. The19 existing room studies remain unchanged. The SAW stair
+candidate was rejected for an unsupported shortened route; its existing
+stair/lift conflicts remain documented and unresolved.
 
 Edition220 adds an isolated Hong Kong Theatre study from the official paired
 CLM.G.02 plan and photograph. Its260 historical plan symbols retain the actual
