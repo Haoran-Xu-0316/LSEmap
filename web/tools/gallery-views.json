@@ -597,7 +597,7 @@
   {
     "code": "SAL",
     "name": "sal-interior",
-    "label": "SAL.G.01研讨教室"
+    "label": "公共走廊与楼梯"
   },
   {
     "code": "STC",
@@ -647,7 +647,7 @@
   {
     "code": "61A",
     "name": "61a-interior",
-    "label": "2021历史接待厅"
+    "label": "四、六层楼板与双中庭"
   },
   {
     "code": "CAMPUS",
@@ -1443,6 +1443,113 @@
         -13.26
       ],
       "fov": 55
+    }
+  },
+  {
+    "code": "61A",
+    "name": "61a-reception-interior",
+    "label": "2021历史接待厅",
+    "spaceId": "61a-reception"
+  },
+  {
+    "code": "61A",
+    "name": "61a-floor4-interior",
+    "label": "4层双中庭与柱网",
+    "sectionId": "4",
+    "view": {
+      "position": [
+        -105,
+        85,
+        150
+      ],
+      "target": [
+        -50,
+        16.6,
+        93
+      ],
+      "fov": 48
+    }
+  },
+  {
+    "code": "61A",
+    "name": "61a-floor6-interior",
+    "label": "6层双中庭与柱网",
+    "sectionId": "6",
+    "view": {
+      "position": [
+        -105,
+        85,
+        150
+      ],
+      "target": [
+        -50,
+        23.8,
+        93
+      ],
+      "fov": 48
+    }
+  },
+  {
+    "code": "SAL",
+    "name": "sal-g01-interior",
+    "label": "SAL.G.01研讨教室",
+    "spaceId": "sal-g01"
+  },
+  {
+    "code": "SAL",
+    "name": "sal-lg-stairs-interior",
+    "label": "LG公共主梯",
+    "sectionId": "LG",
+    "view": {
+      "position": [
+        111.94117736816406,
+        1.75,
+        -109.93136596679688
+      ],
+      "target": [
+        114.66321563720703,
+        2.5,
+        -103.91670989990234
+      ],
+      "fov": 60.822162534250744
+    }
+  },
+  {
+    "code": "SAL",
+    "name": "sal-g-corridor-interior",
+    "label": "G公共环廊",
+    "sectionId": "G",
+    "view": {
+      "position": [
+        111.17915344238281,
+        6.449999809265137,
+        -109.32769012451172
+      ],
+      "target": [
+        112.02755737304688,
+        5.900000095367432,
+        -97.1595687866211
+      ],
+      "fov": 60.822162534250744
+    }
+  },
+  {
+    "code": "SAL",
+    "name": "sal-connected-entry-interior",
+    "label": "入口亭与公共通廊",
+    "sectionId": "LG",
+    "view": {
+      "position": [
+        96.61964416503906,
+        1.75,
+        -105.19532775878906
+      ],
+      "target": [
+        103.9506607055664,
+        1.649999976158142,
+        -99.18316650390625
+      ],
+      "fov": 60.822162534250744
     }
   }
 ]
