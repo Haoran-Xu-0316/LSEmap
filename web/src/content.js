@@ -181,7 +181,7 @@ export const buildingDetails = {
     description:
       "Centre Building以红色为主、橙色侧面的遮阳构件组织立面，配合灰白框架与玻璃幕墙。面向Houghton Street形成开放的首层空间。",
     note: "塔楼、教学翼、裙房与广场铺装按资料配准，尺寸和未见内部仍含估计。",
-    images: [["cbg-academic-route-interior", "CBG公共学术梯"], ["cbg-level1-structure-interior", "CBG一层楼板与连桥"], ["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"]],
+    images: [["cbg-academic-route-interior", "CBG公共学术梯"], ["cbg-level1-structure-interior", "CBG一层楼板与连桥"], ["cbg-exterior", "Centre Building遮阳构件"], ["cbg-square-registration", "广场侧玻璃与红橙遮阳"], ["lse-square-paving", "LSE Square石材铺装与CBG入口"], ["campus-stc-junction-top", "StClement’s Lane交界铺装"]],
   },
   LRB: {
     description:
@@ -193,13 +193,13 @@ export const buildingDetails = {
     description:
       "面向Lincoln’s Inn Fields的石材立面以中央拱形门厅、两侧窄窗组和双排老虎窗坡顶组成。屋顶设玻璃会议亭和遮阳露台，内部设木饰面公共中庭。",
     note: "屋顶及中庭尺寸依据照片估计。2025/26计划中的Cafe54改造后布局尚未核实。",
-    images: [["ckk-exterior", "Cheng Kin Ku正立面与坡屋顶"], ["ckk-entrance", "中央拱形采光窗与柱式门厅"], ["ckk-roof-pavilion", "玻璃会议亭与遮阳露台"], ["ckk-interior", "Cheng Kin Ku公共中庭"], ["ckk-sounding-board-interior", "公共中庭木墙与双层廊桥"]],
+    images: [["ckk-exterior", "Cheng Kin Ku正立面与坡屋顶"], ["ckk-entrance", "中央拱形采光窗与柱式门厅"], ["ckk-roof-pavilion", "玻璃会议亭与遮阳露台"], ["ckk-interior", "Cheng Kin Ku公共中庭"], ["ckk-sounding-board-interior", "公共中庭木墙与双层廊桥"], ["ckk-115-rear-windows-interior", "CKK.1.15排式座位与转角窗"]],
   },
   OLD: {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室，SSC展示照片可见接待区与夹层。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"]],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"]],
   },
   SAL: {
     description:
