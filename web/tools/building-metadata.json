@@ -617,6 +617,12 @@
         "audit": "result/blender/ckk-exterior219/audit.json",
         "scope": "Six front-elevation batches retain original geometry and UVs. Three glazing families lose inherent cyan cast at retained linear luminance; three painted frame families become graphite gray. Roof pavilion finite transparency, stone and atrium retained.",
         "limitations": "198 rays avoiding frames find no opaque backing within1.5m. Preserve existing opaque proxies; built photographs are undated and finish values remain visual estimates."
+      },
+      "roomStudyReview227": {
+        "version": 227,
+        "spaceId": "ckk-115",
+        "audit": "result/blender/ckk115-room227/audit.json",
+        "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。"
       }
     },
     {
@@ -2559,6 +2565,12 @@
         "audit": "result/blender/old-artwork218/audit.json",
         "scope": "Replace four Final Sale batches with six source-guided shallow open-mesh figures, garment folds, staggered poses, trolley, two baskets and varied goods. Actual geometry falls from519272to80132triangles; source glazing and frame retained.",
         "limitations": "Depth, backs and photo-to-model registration remain estimates. Private reference photographs are not public textures; no claim of a scanned sculpture or complete current interior."
+      },
+      "roomStudyReview227": {
+        "version": 227,
+        "spaceId": "old-606",
+        "audit": "result/blender/old606-room227/audit.json",
+        "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。"
       }
     },
     {
@@ -4259,6 +4271,58 @@
         "label": "PAN.2.01协作教室",
         "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
       }
+    },
+    {
+      "code": "CKK",
+      "id": "ckk-115",
+      "label": "CKK.1.15排式教室",
+      "collection": "CKK115_ROOM227_study",
+      "gallery": "ckk-115-default-interior",
+      "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。",
+      "interiorView": {
+        "position": [
+          -3.9519999027252197,
+          1.73,
+          2.318000078201294
+        ],
+        "target": [
+          0.6650000214576721,
+          1.45,
+          -3.4200000762939453
+        ],
+        "fov": 73.74
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CKK.1.15排式教室",
+        "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。"
+      }
+    },
+    {
+      "code": "OLD",
+      "id": "old-606",
+      "label": "OLD.6.06教学室",
+      "collection": "OLD606_ROOM227_study",
+      "gallery": "old-606-default-interior",
+      "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。",
+      "interiorView": {
+        "position": [
+          0.109375,
+          1.7,
+          4.5
+        ],
+        "target": [
+          -0.015625,
+          1.3,
+          -3.15625
+        ],
+        "fov": 73.74
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "OLD.6.06教学室",
+        "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。"
+      }
     }
   ],
   "presentationReview": {
@@ -4560,7 +4624,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 226,
+  "sourceVersion": 227,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -4669,5 +4733,10 @@
     "COL": "result/blender/col-exterior225/audit.json",
     "SAL105": "result/blender/sal105-room225/audit.json",
     "decision": "These source-gap reviews create no component and do not count as new model completion."
+  },
+  "streetLayeringReview227": {
+    "version": 227,
+    "audit": "result/blender/street-layering227/audit.json",
+    "scope": "Clip the existing asphalt beneath unchanged stone footprints to remove coplanar depth competition. Preserve all route boundaries and top datums; use a1mm numerical contact guard for20bit Draco quantization, with existing lower-datum support. Not a new road survey or paving-ownership claim."
   }
 }
