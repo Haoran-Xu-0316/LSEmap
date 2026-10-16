@@ -1975,5 +1975,99 @@
       ],
       "fov": 70.61
     }
+  },
+  {
+    "name": "faw-102-teaching-interior",
+    "code": "FAW",
+    "spaceId": "faw-102",
+    "label": "FAW.1.02小组桌与投影教学端",
+    "view": {
+      "position": [
+        1.215000033378601,
+        1.66,
+        2.8350000381469727
+      ],
+      "target": [
+        1.2599999904632568,
+        1.48,
+        -3.487499952316284
+      ],
+      "fov": 90
+    }
+  },
+  {
+    "name": "faw-102-seating-interior",
+    "code": "FAW",
+    "spaceId": "faw-102",
+    "label": "FAW.1.02四组六人桌与木饰面隔断",
+    "view": {
+      "position": [
+        -3.059999942779541,
+        1.65,
+        -2.362499952316284
+      ],
+      "target": [
+        2.25,
+        1.23,
+        1.5750000476837158
+      ],
+      "fov": 90
+    }
+  },
+  {
+    "name": "sal-b01-default-interior",
+    "code": "SAL",
+    "spaceId": "sal-b01",
+    "label": "SAL.B.01红椅U形桌与教学端",
+    "view": {
+      "position": [
+        -2.941499948501587,
+        1.68,
+        -0.11100000143051147
+      ],
+      "target": [
+        3.7739999294281006,
+        1.4,
+        -0.24050000309944153
+      ],
+      "fov": 76.1
+    }
+  },
+  {
+    "name": "sal-b01-seating-interior",
+    "code": "SAL",
+    "spaceId": "sal-b01",
+    "label": "SAL.B.01二十席与入口窗湾",
+    "view": {
+      "position": [
+        4.2179999351501465,
+        1.68,
+        -0.11100000143051147
+      ],
+      "target": [
+        -1.905500054359436,
+        1.35,
+        -0.0925000011920929
+      ],
+      "fov": 76.1
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "campus-square-stone-joints",
+    "label": "LSE Square石材树池",
+    "view": {
+      "position": [
+        45,
+        3.8,
+        34
+      ],
+      "target": [
+        49.5,
+        0.26,
+        28.5
+      ],
+      "fov": 43
+    }
   }
 ]
