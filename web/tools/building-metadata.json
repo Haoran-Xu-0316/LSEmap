@@ -221,14 +221,40 @@
           "label": "4层：2021楼板与双中庭",
           "minHeight": 14.7,
           "maxHeight": 18.3,
-          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。"
+          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。",
+          "view": {
+            "position": [
+              -105,
+              85,
+              150
+            ],
+            "target": [
+              -50,
+              16.6,
+              93
+            ],
+            "fov": 48
+          }
         },
         {
           "id": "6",
           "label": "6层：2021楼板与双中庭",
           "minHeight": 21.9,
           "maxHeight": 25.5,
-          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。"
+          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。",
+          "view": {
+            "position": [
+              -105,
+              85,
+              150
+            ],
+            "target": [
+              -50,
+              23.8,
+              93
+            ],
+            "fov": 48
+          }
         }
       ],
       "interiorDisplayMaxZ": 25.5,
@@ -275,14 +301,14 @@
       },
       "interiorView": {
         "position": [
-          33.1301155,
-          1.75,
-          64.9372635
+          45.079559326171875,
+          2.0,
+          64.86641693115234
         ],
         "target": [
-          20.0600796,
-          9.1514053,
-          87.3900452
+          29.338035583496094,
+          5.0,
+          78.81111907958984
         ],
         "fov": 65
       },
@@ -367,6 +393,104 @@
           "https://www.dobler-metallbau.com/wp-content/uploads/2021/11/LSE_eng_web.pdf"
         ],
         "limitations": "The red-primary faces follow user direction. Contractor photographs mostly show pale broad faces and orange/gold returns. Roof and complete current interiors remain unverified."
+      },
+      "interiorCollection": "CBG_PUBLIC_INTERIOR_study",
+      "interiorSections": [
+        {
+          "id": "LG",
+          "label": "LG层：公共楼梯与连廊",
+          "minHeight": -4.466666666666667,
+          "maxHeight": -0.666666666666667,
+          "scope": "归档平面与建成照片支持的低翼公共路线；标高和构造尺寸估算，非当前测绘。",
+          "view": {
+            "position": [
+              35.09488296508789,
+              15.833333015441895,
+              99.59834289550781
+            ],
+            "target": [
+              29.869590759277344,
+              -3.1666667461395264,
+              71.0029525756836
+            ],
+            "fov": 50
+          }
+        },
+        {
+          "id": "G",
+          "label": "G层：公共楼梯与连廊",
+          "minHeight": -0.3,
+          "maxHeight": 3.5,
+          "scope": "归档平面与建成照片支持的低翼公共路线；标高和构造尺寸估算，非当前测绘。",
+          "view": {
+            "position": [
+              35.09488296508789,
+              20.0,
+              99.59834289550781
+            ],
+            "target": [
+              29.869590759277344,
+              1.0,
+              71.0029525756836
+            ],
+            "fov": 50
+          }
+        },
+        {
+          "id": "1",
+          "label": "1层：公共楼梯与连廊",
+          "minHeight": 3.866666666666667,
+          "maxHeight": 7.666666666666667,
+          "scope": "归档平面与建成照片支持的低翼公共路线；标高和构造尺寸估算，非当前测绘。",
+          "view": {
+            "position": [
+              35.09488296508789,
+              24.16666603088379,
+              99.59834289550781
+            ],
+            "target": [
+              29.869590759277344,
+              5.166666507720947,
+              71.0029525756836
+            ],
+            "fov": 50
+          }
+        },
+        {
+          "id": "2",
+          "label": "2层：公共楼梯与连廊",
+          "minHeight": 8.033333333333333,
+          "maxHeight": 11.833333333333334,
+          "scope": "归档平面与建成照片支持的低翼公共路线；标高和构造尺寸估算，非当前测绘。",
+          "view": {
+            "position": [
+              35.09488296508789,
+              28.33333396911621,
+              99.59834289550781
+            ],
+            "target": [
+              29.869590759277344,
+              9.333333015441895,
+              71.0029525756836
+            ],
+            "fov": 50
+          }
+        }
+      ],
+      "interiorSectionScope": "LG、G、1、2层低翼公共路线依据归档平面与建成照片修正；标高与构造尺寸估算，塔楼上层内部未完成。",
+      "publicStructureReview223": {
+        "version": 223,
+        "audit": "result/blender/cbg-structure223/audit.json",
+        "addedObjects": 33,
+        "archivedObjects": 19,
+        "limitations": [
+          "Drawings have2016copyright and were published with the completed2019project in2021.They are not certifiedasbuilt,or evidence of current fitout.",
+          "Route and openings follow traced plan landmarks;slab thickness270mm,4.1667m low-wing pitch,26risers per flight,LG pad,3m bridge deck wrapping the source column,and support/guard sections are geometric estimates;the landing handrail end gap is0.95m,not an access compliance claim.",
+          "Three-storey public route is corrected;the retained provisional third gallery,upper baffles,upper low-wing roof/floors and tower3+still need a separate whole-building vertical survey.",
+          "Only a boundedLG stair approach is modeled,not an invented complete basement or auditorium.",
+          "Geometry support/headroom/doorway checks are not structural,accessibility,fire or current-condition certification.",
+          "No independentCBGroom was moved into these geographic plates."
+        ]
       }
     },
     {
@@ -1971,16 +2095,16 @@
       },
       "interiorView": {
         "position": [
-          -0.211031,
-          2,
-          -65.702243
+          -14,
+          8.9,
+          -42
         ],
         "target": [
-          -0.381216,
-          3.1,
-          -44.306484
+          -14.46,
+          10.2,
+          -50.4
         ],
-        "fov": 65
+        "fov": 58.72
       },
       "exportExterior": true,
       "previousReview": {
@@ -2091,7 +2215,7 @@
         "referenceUrl": "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/",
         "photographDate": "unknown"
       },
-      "interiorDisplayMaxZ": 13,
+      "interiorDisplayMaxZ": 13.95,
       "interiorStructureReview214": {
         "version": 214,
         "audit": "result/blender/mar-structure214/audit.json",
@@ -2111,6 +2235,85 @@
         "componentObjects": 47,
         "archivedObjects": 55,
         "independentRoomObjectsPreserved": 623
+      },
+      "interiorCollection": "MAR_PUBLIC_INTERIOR_study",
+      "interiorSections": [
+        {
+          "id": "G",
+          "label": "G大堂与保留主梯",
+          "minHeight": -0.1,
+          "maxHeight": 6.94,
+          "scope": "217入口、九支点及主梯完整保留",
+          "view": {
+            "position": [
+              -0.211,
+              2,
+              -65.7
+            ],
+            "target": [
+              -0.381,
+              3.1,
+              -44.306
+            ],
+            "fov": 65
+          }
+        },
+        {
+          "id": "1",
+          "label": "一层公共环廊与二层支承",
+          "minHeight": 6.94,
+          "maxHeight": 12.47,
+          "scope": "保留217楼板和主梯上平台，补二层图示柱网与菱形树状支承",
+          "view": {
+            "position": [
+              -14,
+              8.9,
+              -42
+            ],
+            "target": [
+              -14.46,
+              10.2,
+              -50.4
+            ],
+            "fov": 58.72
+          }
+        },
+        {
+          "id": "2",
+          "label": "二层结构与图示挑空",
+          "minHeight": 12.47,
+          "maxHeight": 13.95,
+          "scope": "2022建成图二层结构楼板，菱形结构挑空与半圆主梯口；上行梯段未重建",
+          "view": {
+            "position": [
+              -19.5,
+              16.4,
+              -47
+            ],
+            "target": [
+              -14.46,
+              11.6,
+              -50.4
+            ],
+            "fov": 58.72
+          }
+        }
+      ],
+      "interiorSectionScope": "G、1、2层公共结构研究。二层楼板、挑空及支承依据2022建成资料；标高估算，一层至二层上行梯转接仍待证。",
+      "publicStructureReview223": {
+        "version": 223,
+        "audit": "result/blender/mar-structure223/audit.json",
+        "addedObjects": 7,
+        "archivedObjects": 6,
+        "limitations": [
+          "Built2022published plans and undated built photographs are not a2026survey.",
+          "The217horizontal registration and existing7.24m/12.8mlevels are retained estimates;notch corners,slab thickness,tree branch sections and surface finish are estimates.",
+          "Second-floor slabs include the structural footprint only,not complete classroom interiors or furniture.",
+          "The exact first-to-second main stair angular landing relation lacks a published first-floor plan;no speculative upper flight or false accessible route is introduced.",
+          "Columns extending outside the inherited first slab are omitted rather than inventing supports;see source plan omittedColumns.",
+          "Existing ground glazing,glass optical parameters,three entrances,five revolving units,nine source supports and registered ground-to-first stair remain unchanged.",
+          "Source photographs remain private reference and are not published textures."
+        ]
       }
     },
     {
@@ -2967,52 +3170,78 @@
           "label": "G层：入口与公共空间",
           "minHeight": -0.05,
           "maxHeight": 3.4,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
         },
         {
           "id": "1",
           "label": "1层：学习与社团",
           "minHeight": 3.4,
           "maxHeight": 8.05,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
         },
         {
           "id": "2",
           "label": "2层：信仰与媒体中心",
           "minHeight": 8.05,
           "maxHeight": 11.05,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
         },
         {
           "id": "3",
           "label": "3层：学生会与住宿办公室",
           "minHeight": 11.05,
           "maxHeight": 14.05,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
         },
         {
           "id": "4",
           "label": "4层：健身房",
           "minHeight": 14.05,
           "maxHeight": 17.95,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
         },
         {
           "id": "5",
           "label": "5层：职业发展中心",
           "minHeight": 17.95,
           "maxHeight": 21.85,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "官方源图支持的5→6螺旋梯、梯孔和到达平台；尺寸估算。",
+          "view": {
+            "position": [
+              -55,
+              23,
+              -3
+            ],
+            "target": [
+              -61.819,
+              19.8,
+              -11.234
+            ],
+            "fov": 50
+          }
         },
         {
           "id": "6",
           "label": "6层：咖啡厅与露台",
           "minHeight": 21.85,
           "maxHeight": 23,
-          "scope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。"
+          "scope": "官方源图支持的5→6螺旋梯、梯孔和到达平台；尺寸估算。",
+          "view": {
+            "position": [
+              -57,
+              28,
+              -5
+            ],
+            "target": [
+              -61.819,
+              21.9,
+              -11.234
+            ],
+            "fov": 50
+          }
         }
       ],
-      "interiorSectionScope": "依据2014官方指南配准各层轮廓；绝对尺度、层高与楼梯位置为估算，未复原完整房间及2026年布局。",
+      "interiorSectionScope": "G至6层轮廓依据历史图。5→6螺旋梯按官方源图修正；低五段仍有32处已知冲突，完整主梯尚未完成。",
       "liftCoreConsistencyReview": {
         "version": 217,
         "readOnly": true,
@@ -3039,6 +3268,21 @@
         "limitations": [
           "Existing stair/lift conflict remains unresolved.",
           "Requires floor-labelled continuous imagery or main-stair construction plans to distinguish all upper/lower flights."
+        ]
+      },
+      "interiorCollection": "SAW_PUBLIC_INTERIOR_study",
+      "publicStructureReview223": {
+        "version": 223,
+        "audit": "result/blender/saw-circulation223/audit.json",
+        "addedObjects": 9,
+        "archivedObjects": 5,
+        "limitations": [
+          "Historical2014/2015 source does not establish current2026 condition.",
+          "28risers,420degree total rotation, exact entrance/arrival angles and inherited18/21.9m native datums are estimates constrained by visible approximately15degree source radials; this is not a recovered construction schedule.",
+          "Inner winder going is0.165m; minimum0.278m going is evaluated0.5m from inner wall. These are model measurements, not access or compliance certification.",
+          "Wall/waist/guard/rail dimensions and finish are estimates; no source photograph is used as a texture.",
+          "Fifth floor is retained as the actual departure support; no unsupported opening into fourth floor is invented.",
+          "The old northern main-stair aperture is retained without enlargement; its exact agreement with the unresolvedG-to-fifth lower route remains unaccepted. Lower landings/guards and32cabin conflicts require separate reconstruction."
         ]
       }
     },
@@ -3260,14 +3504,40 @@
           "label": "LG入口与公共环廊",
           "minHeight": -0.05,
           "maxHeight": 4.54,
-          "scope": "2015示意图支持的连续LG公共环廊、三处侧向门洞与两座主梯。G楼板作剖切隐藏。"
+          "scope": "2015示意图支持的连续LG公共环廊、三处侧向门洞与两座主梯。G楼板作剖切隐藏。",
+          "view": {
+            "position": [
+              111.94117736816406,
+              1.75,
+              -109.93136596679688
+            ],
+            "target": [
+              114.66321563720703,
+              2.5,
+              -103.91670989990234
+            ],
+            "fov": 60.822162534250744
+          }
         },
         {
           "id": "G",
           "label": "G公共环廊与主梯到达",
           "minHeight": 4.55,
           "maxHeight": 8.4,
-          "scope": "2015示意图支持的G公共环廊及主梯到达，不含未见房间。"
+          "scope": "2015示意图支持的G公共环廊及主梯到达，不含未见房间。",
+          "view": {
+            "position": [
+              111.17915344238281,
+              6.449999809265137,
+              -109.32769012451172
+            ],
+            "target": [
+              112.02755737304688,
+              5.900000095367432,
+              -97.1595687866211
+            ],
+            "fov": 60.822162534250744
+          }
         }
       ],
       "interiorDisplayMaxZ": 8.4,
@@ -4230,7 +4500,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 222,
+  "sourceVersion": 223,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
