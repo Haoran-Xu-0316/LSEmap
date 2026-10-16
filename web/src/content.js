@@ -138,11 +138,12 @@ export const buildingDetails = {
   CON: {
     description:
       "Connaught House的Aldwych入口以下部灰色花岗岩、上部浅色石材和层叠石檐形成层次，后退的玻璃门保留门廊进深。",
-    note: "入口依据实拍重建，上层窗列仍有估计。内部新增CON.7.04会议室样本，依据历史照片和平面图研究，不代表当前布局或整栋内部。",
+    note: "入口依据实拍重建，上层窗列仍有估计。CON.7.04会议室补齐完整围护与室内视点，依据历史照片和平面图研究，不代表当前布局或整栋内部。",
     images: [
       ["con-entrance", "Connaught House凹入门廊"],
       ["con-exterior", "Aldwych立面与入口位置"],
       ["con-interior", "CON.7.04会议室，八席长桌与木饰面"],
+      ["con-704-panels-interior", "CON.7.04木饰面与8席会议桌"]
     ],
   },
   MAR: {
@@ -199,7 +200,7 @@ export const buildingDetails = {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室，SSC展示照片可见接待区与夹层。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"]],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"], ["old-126-seating-interior", "OLD.1.26小组座位与木饰面窗湾"]],
   },
   SAL: {
     description:
