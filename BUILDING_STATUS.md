@@ -1,12 +1,17 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v228.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v229.blend。
 
-原生SHA256：0ddf5bb3791d146690d2af1f44b4cb6b113930cf687bc30d1cb916d84f4f066b。
+原生SHA256：2ec7b3a42776f870e99b2a63f83f0736b70a0f2400a145b477f3d80bf54baa18。
 
-31栋楼有目录记录，30栋有独立外观，25个内部视图、27个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
+31栋楼有目录记录，30栋有独立外观，25个内部视图、29个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+229版新增105对象、精确归档3个替代源，8074原对象、2141原材质节点及27旧空间1068对象保全。SAL两批历史窗玻璃仅复制换色，线性亮度和全部光学参数保持，框色、入口亭及灯塔不动；照片日期及准确光学量未核定。六个原树池改为72块石材和48条实体浅缝填芯，保留全部铺装、内外边界、顶高和原石材绑定；120件均为正体积闭合实体，72处基础接触误差小于1e-7米，共面顶面重叠0。3毫米缝宽、2毫米倒角属构造估计，未扩展未经注册的阶梯坐沿。
+
+FAW.1.02按历史平面与实照补4桌24席、木饰面隔断和完整五边形吊顶，1537顶面点、96椅脚及16桌腿通过。SAL.B.01补20学生席、1教师席及U形桌，1354顶面点、120脚点和36桌腿接顶通过。两间均验证入口到四组席位的实际全高绕行路线，保留被门叶或椅背阻断的失败近路诊断；尺度、层高和当前布局未核实，不作全楼配准或通行认证。网页新增5张生产视图，共174张；27旧房间、25默认内部及29其他楼外观保持。32处SAW下层已知冲突仍未解决。
+
 
 228版新增104个对象，7970原对象、2106原材质节点、25旧空间964对象全部保全，独立组件不接未配准地理楼层。MAR.1.08按同房号历史平面建立阶梯马蹄桌、分组桌、83学生椅与1教师椅，图示容量87与可辨83席差异保留。474家具落地点、54桌腿接触、24门洞射线、3132天花点及151段通道体积检查通过；比例、台阶和层高估算。CLM.G.03补14写字板学生椅、1教师椅、教学桌、窗湾和完整吊顶，832顶面点、61椅脚、4桌腿及4段全高通道扫掠通过。
 
@@ -120,7 +125,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |COL|195|临街石材、涂漆窗框、木门和玻璃材质分离；32个原对象仅替换材质，原几何、旧UV及透明度保留。|
 |CON|210只读复核及会议室/208入口|现有入口保持；上部可见窗行与九层文字、8层屋顶引用尚不能可靠对应，未擅自补层。新增CON.7.05独立18座会议室历史样本，未推断全层。|
 |COW|217材质/177屋面|40个对象仅换独立砖、石、窗框、玻璃和屋面材质，几何及UV保留；程序砖缝、浅浮雕和低对比屋面纹理传递网页。177玻璃法线与老虎窗屋盖保留，未改变整栋布局。|
-|FAW|197只读复核|核对FAW整栋模型、曲折窗带和PAN共用入口归属；未发现照片可证的整片修正，本轮无模型改动。|
+|FAW|229独立FAW.1.02/197只读复核|核对FAW整栋模型、曲折窗带和PAN共用入口归属；未发现照片可证的整片修正，本轮无模型改动。|
 |KGS|176|Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.|
 |KSW|225独立KSW.2.12/219玻璃/195饰面|玻璃保亮度减蓝，原暗衬及不透明参数保持，不新增几何。整段砖、石、窗框、店面、木门及玻璃颜色修正，补12根上层侧窗中梃；屋顶及后立面仍缺完整证据。|
 |LAK|179|Read-only review retains photo-supported sash windows and dormer apertures; no evidence-supported new geometry correction. Undated official imagery is not a current measured survey.|
@@ -142,5 +147,5 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
 |SAW|223上部ST04/216楼层/206玻璃/190砖屏|按官方源图恢复5→6真实梯位螺旋梯、梯孔与到达连接，消除该段6处冲突；低五段32处仍未解决。保留外观砖屏、玻璃和所有独立样本，完整主梯及当前房间仍未完成。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
-|SAL|222公共环廊与主梯/184外观结构|入口亭、三处侧门、LG/G公共环廊与两组主梯连通；公共和外壳批次明确分开，旧SAL.G.01独立保留。历史导览与照片支持，尺寸估算，未见上层和完整当前内装未建。|
+|SAL|229历史窗去青与SAL.B.01/222公共环廊与主梯/184外观结构|入口亭、三处侧门、LG/G公共环廊与两组主梯连通；公共和外壳批次明确分开，旧SAL.G.01独立保留。历史导览与照片支持，尺寸估算，未见上层和完整当前内装未建。|
 |STC|197外观/143艺术板|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
