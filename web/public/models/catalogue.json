@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "221",
-  "sourceModelSha256": "62b61a56a402120ab5047096113b02e20f85f7957442e39b6262557c151c69cb",
+  "version": "222",
+  "sourceModelSha256": "0d31c829778d88d643d9b4001f28116730862e8703d81cb6ad0429f8113fb50b",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -42,11 +42,6 @@
       "address": "61 Aldwych",
       "status": "provisional",
       "interior": true,
-      "interiorStudy": {
-        "kind": "room-sample",
-        "label": "2021历史接待厅",
-        "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。"
-      },
       "exteriorDirection": [
         -0.533357560634613,
         0.4952605664730072,
@@ -189,16 +184,16 @@
       },
       "interiorView": {
         "position": [
-          -14.8,
-          12.1,
-          -18.5
+          -105,
+          85,
+          150
         ],
         "target": [
-          0,
-          1.8,
-          0.5
+          -50,
+          22.2,
+          93
         ],
-        "fov": 50
+        "fov": 48
       },
       "reviewHistory": [
         {
@@ -252,6 +247,40 @@
         "nativeChanged": false,
         "completeGeographicRegistrationAccepted": false,
         "nextRequiredEvidence": "Resolve the adjoining61A/CON front boundary using independent surveyed or planning controls; retain provisional ownership rather than moving either building from a three-corner fit."
+      },
+      "interiorCollection": "61A_PUBLIC_STRUCTURE222_study",
+      "interiorSections": [
+        {
+          "id": "4",
+          "label": "4层：2021楼板与双中庭",
+          "minHeight": 14.7,
+          "maxHeight": 18.3,
+          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。"
+        },
+        {
+          "id": "6",
+          "label": "6层：2021楼板与双中庭",
+          "minHeight": 21.9,
+          "maxHeight": 25.5,
+          "scope": "2021示意平面，标高及构造估算；非完整当前楼层。"
+        }
+      ],
+      "interiorDisplayMaxZ": 25.5,
+      "interiorSectionScope": "历史平面与实拍支持的公共结构；标高及构造尺寸估算，未完成整栋当前内部。",
+      "publicStructureReview222": {
+        "version": 222,
+        "audit": "result/blender/aldwych-registration222/audit.json",
+        "addedObjects": 11,
+        "archivedObjects": 1,
+        "limitations": [
+          "The2021 plans explicitly state indicative purposes;three external controls do not survey the sharedCON wall.",
+          "Source floor ownership extending intoCON is clipped to the accepted61A shell,not presented as a complete measured floor.",
+          "Floor4z15m,floor6z22.2m,3.35m clear height,250mm slab,16mmfinish,200mmsoffit and140mm lightwell wall are inherited/model estimates.",
+          "Sixth-floor registration uses corresponding source atria,not independent external survey controls.",
+          "Only fourth and sixth floor plates are evidenced here;intermediate,lower and upper floor layouts remain unmodeled.",
+          "Physical ray/volume checks concern modeled connections and enclosure only,not structure,fire,accessibility or current fitout certification.",
+          "Historical property-manager and2021/LSE corner-roof photographs differ;capture dates and end views are unresolved,so the accepted roof is retained."
+        ]
       },
       "bounds": {
         "min": [
@@ -309,21 +338,21 @@
       ],
       "interiorBounds": {
         "min": [
-          -6.199999809265137,
-          -0.20000000298023224,
-          -4.800000190734863
+          -77.04326629638672,
+          0.0,
+          47.836158752441406
         ],
         "max": [
-          6.199999809265137,
-          5.599999904632568,
-          4.820000171661377
+          -25.881681442260742,
+          29.559999465942383,
+          133.52342224121094
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/61a-exterior-7f7a5e86ac18.glb",
-        "bytes": 1040704,
-        "triangles": 95255,
-        "sha256": "7f7a5e86ac1822ea602d071cbe924a0fe1c0a3fdd24fe539e9249d36c32a2a49",
+        "url": "/models/details/61a-exterior-2b4dad61d434.glb",
+        "bytes": 1126156,
+        "triangles": 100131,
+        "sha256": "2b4dad61d43452282c56d65310a751446f9e3e3b27bb5b05f4509815102d2f9d",
         "bounds": {
           "min": [
             -77.12799072265625,
@@ -338,23 +367,80 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/61a-interior-55bccd1fbab3.glb",
-        "bytes": 96016,
-        "triangles": 8328,
-        "sha256": "55bccd1fbab3ba28ed203a479fc94fcfabedebcd0e1ec65c1436e2fc2f7b239b",
+        "url": "/models/details/61a-interior-ddbf084fb853.glb",
+        "bytes": 956600,
+        "triangles": 85284,
+        "sha256": "ddbf084fb853d1a45b67d31dee0785ccb8c55e4a3def19118c4712c0db45bc9f",
         "bounds": {
           "min": [
-            -6.199999809265137,
-            -0.20000000298023224,
-            -4.800000190734863
+            -77.03865051269531,
+            0.0,
+            47.84075927734375
           ],
           "max": [
-            6.199999809265137,
-            5.599999904632568,
-            4.820000171661377
+            -25.88298225402832,
+            29.559999465942383,
+            133.52342224121094
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "61a-reception",
+          "label": "2021历史接待厅",
+          "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "2021历史接待厅",
+            "scope": "依据2021年5月61 Aldwych租赁册页的主接待厅实景照片制作的独立历史样本。仅表达照片可见接待、候客和闸机局部；尺寸估算，不代表当前LSE内部，不与尚未校准的校园外壳连接。"
+          },
+          "interiorView": {
+            "position": [
+              -14.8,
+              12.1,
+              -18.5
+            ],
+            "target": [
+              0,
+              1.8,
+              0.5
+            ],
+            "fov": 50
+          },
+          "gallery": "61a-reception-interior",
+          "interiorAsset": "/models/details/61a-reception-interior-3f4e963e30ab.glb",
+          "detailedInterior": {
+            "url": "/models/details/61a-reception-interior-3f4e963e30ab.glb",
+            "bytes": 96044,
+            "triangles": 8328,
+            "sha256": "3f4e963e30abb0ec2d395b69a48167cafcc2a8f919fa1fa4ef6c51c92f5c1b05",
+            "bounds": {
+              "min": [
+                -6.199999809265137,
+                -0.20000000298023224,
+                -4.800000190734863
+              ],
+              "max": [
+                6.199999809265137,
+                5.599999904632568,
+                4.820000171661377
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -6.199999809265137,
+              -0.20000000298023224,
+              -4.800000190734863
+            ],
+            "max": [
+              6.199999809265137,
+              5.599999904632568,
+              4.820000171661377
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "CBG",
@@ -6891,11 +6977,6 @@
       "address": "32 Lincoln’s Inn Fields",
       "status": "detailed",
       "interior": true,
-      "interiorStudy": {
-        "kind": "room-sample",
-        "label": "SAL.G.01研讨教室",
-        "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
-      },
       "exteriorDirection": [
         -0.6556274890899658,
         0.4838261604309082,
@@ -6926,16 +7007,16 @@
       },
       "interiorView": {
         "position": [
-          12,
-          9,
-          10
+          111.94117736816406,
+          1.75,
+          -109.93136596679688
         ],
         "target": [
-          0,
-          0.6,
-          0
+          114.66321563720703,
+          2.5,
+          -103.91670989990234
         ],
-        "fov": 50
+        "fov": 60.822162534250744
       },
       "flankReview": {
         "version": 125,
@@ -7055,10 +7136,43 @@
           "Public entrance belongs to the complete exterior. Default indoor view remains the separate SAL.G.01 classroom study; no complete hall, floor or2026layout inferred."
         ]
       },
+      "interiorCollection": "SAL_PUBLIC_INTERIOR222",
+      "interiorSections": [
+        {
+          "id": "LG",
+          "label": "LG入口与公共环廊",
+          "minHeight": -0.05,
+          "maxHeight": 4.54,
+          "scope": "2015示意图支持的连续LG公共环廊、三处侧向门洞与两座主梯。G楼板作剖切隐藏。"
+        },
+        {
+          "id": "G",
+          "label": "G公共环廊与主梯到达",
+          "minHeight": 4.55,
+          "maxHeight": 8.4,
+          "scope": "2015示意图支持的G公共环廊及主梯到达，不含未见房间。"
+        }
+      ],
+      "interiorDisplayMaxZ": 8.4,
+      "interiorSectionScope": "历史平面与实拍支持的公共结构；标高及构造尺寸估算，未完成整栋当前内部。",
+      "publicStructureReview222": {
+        "version": 222,
+        "audit": "result/blender/sal-public222/audit.json",
+        "addedObjects": 24,
+        "archivedObjects": 13,
+        "limitations": [
+          "2015wayfinding plans are schematic historical route evidence, not a measured survey. OSM registration and source proportional fit are estimates; no2026complete current interior claim.",
+          "2026planning index listsEXISTINGplans but document download links requirerecaptcha and return404; no proposed works or unread2026drawing used.",
+          "NativeLG/Gfloor datum and4.8mstorey height inherited, stair13+13riserspercore,31cmtread, handrails, wall heights and finishes are modelling estimates.",
+          "Unpictured rooms, precise lift doors/cars, fully continuous lift shafts, complete upper floors andBlevelcafe/learning void remain unbuilt.",
+          "Only plan-known public-facing room boundaries are represented; closed landings/core volumes are not invented room interiors.",
+          "Reference photographs are not redistributed or embedded as public textures; fine ornamental historic balustrade is simplified."
+        ]
+      },
       "bounds": {
         "min": [
           91.76612091064453,
-          -0.03999999910593033,
+          -0.10000000149011612,
           -137.53904724121094
         ],
         "max": [
@@ -7070,12 +7184,12 @@
       "exteriorFramingCorners": [
         [
           141.89933102021797,
-          -0.03999999910593033,
+          -0.10000000149011612,
           -137.70665101298113
         ],
         [
           160.522552029703,
-          -0.03999999910593033,
+          -0.10000000149011612,
           -96.5565566527721
         ],
         [
@@ -7090,12 +7204,12 @@
         ],
         [
           90.50142389941256,
-          -0.03999999910593033,
+          -0.10000000149011612,
           -114.44559660671655
         ],
         [
           109.12464490889761,
-          -0.03999999910593033,
+          -0.10000000149011612,
           -73.29550224650751
         ],
         [
@@ -7111,25 +7225,25 @@
       ],
       "interiorBounds": {
         "min": [
-          -5.079999923706055,
-          -0.18000000715255737,
-          -3.5799999237060547
+          91.76612091064453,
+          -0.10000000149011612,
+          -131.987548828125
         ],
         "max": [
-          5.0,
-          3.450000047683716,
-          3.5
+          159.1527557373047,
+          8.350000381469727,
+          -77.09506225585938
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/sal-exterior-601bb36fe1ee.glb",
-        "bytes": 5628804,
-        "triangles": 463850,
-        "sha256": "601bb36fe1ee5bcd0b2ec4f4e4136aa2338c06a288c8555970384775b5b9354d",
+        "url": "/models/details/sal-exterior-a9f3fd25a4b4.glb",
+        "bytes": 5487896,
+        "triangles": 452352,
+        "sha256": "a9f3fd25a4b4841e0a1232e8d28fe9ec00611aa5e57508b867a32cf211f3dbe1",
         "bounds": {
           "min": [
             91.77310180664062,
-            -0.03999999910593033,
+            -0.10000000149011612,
             -137.53207397460938
           ],
           "max": [
@@ -7140,23 +7254,80 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/sal-interior-1c8cda7984b9.glb",
-        "bytes": 528296,
-        "triangles": 42996,
-        "sha256": "1c8cda7984b9985f81c46807c119d64451fcf7ccd72e09dab342e4c477cf56dd",
+        "url": "/models/details/sal-interior-a2226ab92f3c.glb",
+        "bytes": 261640,
+        "triangles": 20944,
+        "sha256": "a2226ab92f3c4fc5e76f78e13bc9d105669a8b5a921ebaa3ce210d47448aac8b",
         "bounds": {
           "min": [
-            -5.079999923706055,
-            -0.18000000715255737,
-            -3.5799999237060547
+            91.77310180664062,
+            -0.10000000149011612,
+            -131.98057556152344
           ],
           "max": [
-            5.0,
-            3.450000047683716,
-            3.5
+            159.14576721191406,
+            8.350000381469727,
+            -77.10203552246094
           ]
         }
-      }
+      },
+      "interiorSpaces": [
+        {
+          "id": "sal-g01",
+          "label": "SAL.G.01研讨教室",
+          "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "SAL.G.01研讨教室",
+            "scope": "历史资料支持的局部室内样本，非整栋完整内部。保留历史U形桌布置；尺寸和设备位置估算，非当前排课场景。"
+          },
+          "interiorView": {
+            "position": [
+              12,
+              9,
+              10
+            ],
+            "target": [
+              0,
+              0.6,
+              0
+            ],
+            "fov": 50
+          },
+          "gallery": "sal-g01-interior",
+          "interiorAsset": "/models/details/sal-g01-interior-4daec2d64d82.glb",
+          "detailedInterior": {
+            "url": "/models/details/sal-g01-interior-4daec2d64d82.glb",
+            "bytes": 528304,
+            "triangles": 42996,
+            "sha256": "4daec2d64d822a8dfd8de6f0bfc9a85dc561ea6f1df0de306721a6a5e33a8d99",
+            "bounds": {
+              "min": [
+                -5.079999923706055,
+                -0.18000000715255737,
+                -3.5799999237060547
+              ],
+              "max": [
+                5.0,
+                3.450000047683716,
+                3.5
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -5.079999923706055,
+              -0.18000000715255737,
+              -3.5799999237060547
+            ],
+            "max": [
+              5.0,
+              3.450000047683716,
+              3.5
+            ]
+          }
+        }
+      ]
     },
     {
       "code": "STC",
