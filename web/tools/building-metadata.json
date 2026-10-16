@@ -731,6 +731,14 @@
         "scope": "Restore only the officially photographed left portal upper transom, with coordinated stone/joinery and a conservative dark backing behind its newly exposed pane. Right portal and rooms remain unchanged.",
         "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Clement-House-web.jpg",
         "limitations": "Photo date unknown; window head rise0.585m and backing0.18m are photo-guided model estimates, not measured construction or verified interior."
+      },
+      "roomStudyReview228": {
+        "version": 228,
+        "audit": "result/blender/clmg03-room228/audit.json",
+        "componentSha256": "25f17a6716eec6f134c6fbbd5da4dc107a74f63a1b807cd13fed221a56c21a5e",
+        "independentRoom": "clm-g03",
+        "sourceDimensionsEstimated": true,
+        "wholeCurrentInteriorClaimed": false
       }
     },
     {
@@ -2320,6 +2328,14 @@
           "Existing ground glazing,glass optical parameters,three entrances,five revolving units,nine source supports and registered ground-to-first stair remain unchanged.",
           "Source photographs remain private reference and are not published textures."
         ]
+      },
+      "roomStudyReview228": {
+        "version": 228,
+        "audit": "result/blender/mar108-room228/audit.json",
+        "componentSha256": "a8fdf0814b80ae9eac51df6cc645788bf5e605fb011a2decca8e03021b31f6c7",
+        "independentRoom": "mar-108",
+        "sourceDimensionsEstimated": true,
+        "wholeCurrentInteriorClaimed": false
       }
     },
     {
@@ -4323,6 +4339,58 @@
         "label": "OLD.6.06教学室",
         "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。"
       }
+    },
+    {
+      "code": "CLM",
+      "id": "clm-g03",
+      "label": "CLM.G.03写字板教室",
+      "collection": "CLMG03_ROOM228_study",
+      "gallery": "clm-g03-teaching-interior",
+      "scope": "依据LSE历史同房号平面与照片建立CLM.G.03独立教室。按平面保留14个写字板椅、教学桌、凹台周界、窗湾及右下入口；照片控制白壳黑座、白写字板、灰褐地毯、教学显示屏、两侧白板与AV设备。尺度、层高、隐藏构造及窗格估算，完整连续天花，不作地理配准或2026现用认证。",
+      "interiorView": {
+        "position": [
+          1.2760000228881836,
+          1.64,
+          -1.2324999570846558
+        ],
+        "target": [
+          -1.159999966621399,
+          1.38,
+          2.2184998989105225
+        ],
+        "fov": 76.1
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CLM.G.03写字板教室",
+        "scope": "依据LSE历史同房号平面与照片建立CLM.G.03独立教室。按平面保留14个写字板椅、教学桌、凹台周界、窗湾及右下入口；照片控制白壳黑座、白写字板、灰褐地毯、教学显示屏、两侧白板与AV设备。尺度、层高、隐藏构造及窗格估算，完整连续天花，不作地理配准或2026现用认证。"
+      }
+    },
+    {
+      "code": "MAR",
+      "id": "mar-108",
+      "label": "MAR.1.08阶梯教室",
+      "collection": "MAR108_ROOM228_study",
+      "gallery": "mar-108-default-interior",
+      "interiorView": {
+        "position": [
+          5.291999816894531,
+          2.7,
+          -5.940000057220459
+        ],
+        "target": [
+          -1.440000057220459,
+          1.55,
+          4.679999828338623
+        ],
+        "fov": 70.61
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "MAR.1.08阶梯教室",
+        "scope": "依据LSE同房号历史平面与实照建立MAR.1.08独立阶梯马蹄形教室。平面控制完整周界、两处前门、马蹄桌、中央四席、前侧分组与右长排；实照控制浅木挡板、深灰桌面、黑网背椅、木条天花和教学设备。可辨座椅83席，与图示容量87存在4席差异。比例、台阶、层高、窗高和隐藏构造为估算；两图拍摄年代未知，不作2026现状、全楼覆盖或地理楼层配准。"
+      },
+      "scope": "依据LSE同房号历史平面与实照建立MAR.1.08独立阶梯马蹄形教室。平面控制完整周界、两处前门、马蹄桌、中央四席、前侧分组与右长排；实照控制浅木挡板、深灰桌面、黑网背椅、木条天花和教学设备。可辨座椅83席，与图示容量87存在4席差异。比例、台阶、层高、窗高和隐藏构造为估算；两图拍摄年代未知，不作2026现状、全楼覆盖或地理楼层配准。"
     }
   ],
   "presentationReview": {
@@ -4624,7 +4692,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 227,
+  "sourceVersion": 228,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
