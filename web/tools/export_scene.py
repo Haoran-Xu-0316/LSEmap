@@ -15,6 +15,7 @@ import sys
 import bpy
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from public_interior_objects import public_interior_objects
+from web_geometry_budget import budget_web_bevels, restore_web_bevels
 from integrate_exterior_round194 import accepted_fingerprints, object_fingerprint
 import bmesh
 from mathutils import Vector
@@ -57,6 +58,7 @@ def source_geometry_name(obj):
     return name.removeprefix('SAL184_').removeprefix('SAL183_').removeprefix('GLASS181_')
 
 
+web_bevel_states = budget_web_bevels(source_scene.objects)
 modifier_states = []
 curve_resolutions = []
 full_detail = False
@@ -520,3 +522,6 @@ payload = {
 }
 (OUTPUT / 'catalogue.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n')
 print('WEB_EXPORT_COMPLETE', flush=True)
+
+# These adjustments belong only to generated assets, never the archival model.
+restore_web_bevels(web_bevel_states)
