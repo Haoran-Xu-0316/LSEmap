@@ -8,17 +8,24 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition237 contains31 building records,30 detailed exteriors,25 interior views
+Edition238 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v237.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v238.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage237` acceptance records are retained with the native: integration
+The local `stage238` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All194 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition238 corrects the reversed PEL entrance arrangement: the existing revolving
+door and posts move to the photographed left side, with the central frame and
+side-door pull coordinated. It refines only the photographed front wall faces,
+entrance cladding and front glazing. The curved front glass receives finite
+transparency while its existing rear opaque proxy stays in place; no complete
+lobby is inferred. All original meshes, rooms and other buildings remain.
 
 Edition237 keeps the KGS cupola geometry and separate seams while giving its
 lead shell continuous corner normals, and restores photo-guided low planting
