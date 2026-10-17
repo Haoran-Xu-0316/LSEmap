@@ -1007,6 +1007,23 @@
     }
   },
   {
+    "name": "clm-inscription",
+    "code": "CLM",
+    "view": {
+      "position": [
+        112.5,
+        9.1,
+        166
+      ],
+      "target": [
+        114.02,
+        8.47,
+        154.14
+      ],
+      "fov": 35
+    }
+  },
+  {
     "name": "old-relief",
     "code": "OLD",
     "label": "Final Sale网格装置",
