@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "243",
-  "sourceModelSha256": "cd41b4372b1e690400f351ed8bce228b1b1fa91f9bc161ddbbd91fb3f4349ba8",
+  "version": "246",
+  "sourceModelSha256": "44f7745ab4c84681b9d9528b6fd5955761cf6eeb769ef6afdc7bbf05c8df0c4d",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2210,9 +2210,9 @@
         "scope": "依据LSE同房号历史平面与照片建立CON.7.04独立8人会议室。固定平面8椅位置，保留左侧入口、上下外开门、右端斜窗、木饰面、弧边木桌、黑色扶手会议椅和连续完整天花；比例、竖向尺寸、设备精确位置及来源同期性未核实。"
       },
       "exteriorDirection": [
-        -0.13161249458789825,
-        0.5131147503852844,
-        0.8481693863868713
+        0.8,
+        0.55,
+        0.45
       ],
       "localRefinement": {
         "description": "Open street portal with warm recessed vestibule, inner glazed doors and split granite-limestone casing",
@@ -2220,11 +2220,13 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 180,
-        "scope": "Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.",
-        "photographDate": "unknown",
-        "opticalValues": "estimated, not measured",
-        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate"
+        "version": 246,
+        "scope": "依据2020现状立面图重建Houghton侧89组开口、连续石材框带与凹入玻璃；总览和单楼共用完整外观。保留Aldwych入口及全部室内样本。",
+        "source": "https://idoxpa.westminster.gov.uk/online-applications/applicationDetails.do?activeTab=documents&keyVal=QDZG8ARPJFB00",
+        "sourceDate": "2020-08-28",
+        "sourcePdfSha256": "f49c9ee992fcf28615002474d79733c0035ef29e9021a1e130d96c10e96222f6",
+        "limitations": "按现有地图轮廓水平拟合3.3604%；道路保持平整，两处侧门下缘作展示适配。屋顶进深、背面封闭、材质和光学参数为估计，非2026实测完整建筑。",
+        "glazing": "80处明确窗洞采用有限透明，9处门或材质未明开口保持不透明；均有0.60米后挡板，网页透明度0.44为展示估值，旧材质保持。"
       },
       "detailView": {
         "label": "入口细节",
@@ -2295,6 +2297,13 @@
           ]
         },
         {
+          "version": 180,
+          "scope": "Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.",
+          "photographDate": "unknown",
+          "opticalValues": "estimated, not measured",
+          "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate"
+        },
+        {
           "version": 210,
           "status": "reviewed-no-exterior-change",
           "scope": "Entrance source remains supported. Architect nine-storey text and official eighth-floor rooftop reference flag a storey-count question but do not resolve facade rows or setbacks; no unsupported new floors added.",
@@ -2336,51 +2345,51 @@
           96.73214721679688
         ],
         "max": [
-          -4.919323444366455,
-          29.360000610351562,
+          -4.990743160247803,
+          33.37983322143555,
           134.03517150878906
         ]
       },
       "exteriorFramingCorners": [
         [
-          -4.277968609060814,
+          -4.374668868375199,
           -0.020000001415610313,
-          130.3097377336821
+          130.18248420336255
         ],
         [
-          -34.17924782867806,
+          -34.171871301576004,
           -0.020000001415610313,
-          134.25400607792753
+          134.26124884398706
         ],
         [
-          -4.277968609060814,
-          29.360000610351562,
-          130.3097377336821
+          -4.374668868375199,
+          33.37983322143555,
+          130.18248420336255
         ],
         [
-          -34.17924782867806,
-          29.360000610351562,
-          134.25400607792753
+          -34.171871301576004,
+          33.37983322143555,
+          134.26124884398706
         ],
         [
-          -8.71246298040489,
+          -8.954643002734091,
           -0.020000001415610313,
-          96.6920822339402
+          96.72372194454783
         ],
         [
-          -38.61374220002213,
+          -38.7518454359349,
           -0.020000001415610313,
-          100.63635057818563
+          100.80248658517236
         ],
         [
-          -8.71246298040489,
-          29.360000610351562,
-          96.6920822339402
+          -8.954643002734091,
+          33.37983322143555,
+          96.72372194454783
         ],
         [
-          -38.61374220002213,
-          29.360000610351562,
-          100.63635057818563
+          -38.7518454359349,
+          33.37983322143555,
+          100.80248658517236
         ]
       ],
       "interiorBounds": {
@@ -2396,10 +2405,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/con-exterior-e287fc0d2730.glb",
-        "bytes": 589992,
-        "triangles": 47172,
-        "sha256": "e287fc0d273068216b01f5d1b2af149ffb06b9f1b48b2a26332e7c884a95c750",
+        "url": "/models/details/con-exterior-57fbd4ccbc98.glb",
+        "bytes": 920172,
+        "triangles": 73788,
+        "sha256": "57fbd4ccbc98c8f44b794de63861561e29efa5557703bcdc0e9b089d59ce4cb2",
         "bounds": {
           "min": [
             -34.34856414794922,
@@ -2407,8 +2416,8 @@
             96.73214721679688
           ],
           "max": [
-            -4.919323444366455,
-            29.360000610351562,
+            -4.990743160247803,
+            33.37983322143555,
             134.03517150878906
           ]
         }
