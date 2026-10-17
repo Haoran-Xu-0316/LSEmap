@@ -96,6 +96,23 @@
     "label": "Aldwych立面与入口位置"
   },
   {
+    "name": "con-houghton",
+    "code": "CON",
+    "view": {
+      "position": [
+        52,
+        18,
+        111
+      ],
+      "target": [
+        -7,
+        16.5,
+        111
+      ],
+      "fov": 38
+    }
+  },
+  {
     "code": "CON",
     "name": "con-interior",
     "label": "CON.7.04会议室，八席长桌与木饰面"
