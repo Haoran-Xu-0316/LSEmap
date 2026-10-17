@@ -140,3 +140,14 @@ arrival. Control feedback is140–160ms. No automatic orbit, perpetual UI loop,
 new postprocessing pass or animation dependency. Mobile retains the compact
 bottom sheet. The north arrow follows the actual orbit bearing, updating only on rendered
 camera changes. Reduced motion removes both camera and panel transitions.
+
+Orbit inertia follows elapsed time, including input-event updates, so the same
+gesture has consistent decay across display rates. Camera change events reserve
+the navigation frame through the damping tail. Background model attachment
+waits for200ms of stillness and rechecks late input in its idle callback; explicit
+building selections retain priority. Canvas sampling and rotation limits stay unchanged.
+
+Wheel bursts use the same one-scene-draw budget as dragging. Refine once after
+the quiet interval, without redrawing a held pose. Clear only the subpixel
+inertia tail while preserving its visible camera pose, preventing repeated
+sharp/moving switches and background attachments during residual movement.
