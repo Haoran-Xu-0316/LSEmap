@@ -3,6 +3,7 @@ import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 
 export const SKY_BACKDROP_URL = '/environment/daylight-sky-2k.webp';
 export const SKY_URL = '/environment/daylight-1k.hdr';
+export const OUTDOOR_ATMOSPHERE = Object.freeze({ horizon: 0xc4d9e8, lowerSky: 0xb6cee2 });
 // Orient the photographed daylight toward the campus key light. This is a
 // presentation sky; its capture location is not campus survey evidence.
 // The source sun is at48 degrees elevation. Match its azimuth to the
@@ -13,11 +14,10 @@ export const DAYLIGHT_DIRECTION = new THREE.Vector3(
 ).normalize();
 const MAP_BACKGROUND = new THREE.Color(0xe9edf0);
 
-/** Keep downward elevation studies clear; reveal the sky near street level.
- * The small hysteresis band prevents flicker while orbiting near the boundary.
- */
+/** Keep one outdoor world throughout an orbit. Isolated elevations and
+ * interiors retain their clear study background. */
 export function outdoorSkyVisible(mode, verticalDirection, wasVisible = false, isolatedElevation = false) {
-  return !isolatedElevation && mode !== 'interior' && verticalDirection > (wasVisible ? -.26 : -.18);
+  return !isolatedElevation && mode !== 'interior';
 }
 
 // A sharp LDR background and the filtered HDR reflections have separate roles.
@@ -39,6 +39,41 @@ async function loadSkyBackdrop(viewer) {
     texture.needsUpdate = true;
     return texture;
   } catch { bitmap?.close(); return null; }
+}
+
+// A pale atmospheric surround replaces the panorama's mirrored underside.
+// Preserve the real upper sky and its single sun; reflections still use the HDR.
+function createSkySurround(texture) {
+  const material = new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthTest: false, depthWrite: false, toneMapped: false,
+    uniforms: { sky: { value: texture }, horizon: { value: new THREE.Color(OUTDOOR_ATMOSPHERE.horizon) }, lowerSky: { value: new THREE.Color(OUTDOOR_ATMOSPHERE.lowerSky) }, rotation: { value: new THREE.Matrix3().setFromMatrix4(new THREE.Matrix4().makeRotationFromEuler(SKY_ROTATION)).transpose() } },
+    vertexShader: `
+      varying vec3 direction;
+      void main() {
+        direction = position;
+        vec4 clip = projectionMatrix * mat4(mat3(viewMatrix)) * vec4(position, 1.0);
+        gl_Position = clip.xyww;
+      }
+    `,
+    fragmentShader: `
+      uniform sampler2D sky; uniform mat3 rotation; uniform vec3 horizon, lowerSky; varying vec3 direction;
+      void main() {
+        vec3 ray = normalize(rotation * direction);
+        vec2 uv = vec2(atan(ray.z, ray.x) / 6.28318530718 + .5,
+                       asin(clamp(ray.y, -1.0, 1.0)) / 3.14159265359 + .5);
+        vec3 photograph = texture2D(sky, uv).rgb;
+        vec3 atmosphere = mix(horizon, lowerSky, smoothstep(0.0, 1.0, -ray.y));
+        float realSky = smoothstep(-.04, .10, ray.y);
+        gl_FragColor = vec4(mix(atmosphere, photograph, realSky), 1.0);
+        #include <colorspace_fragment>
+      }
+    `,
+  });
+  const mesh = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), material);
+  mesh.name = 'Outdoor sky surround';
+  mesh.frustumCulled = false; mesh.renderOrder = -10000;
+  mesh.matrixAutoUpdate = false;
+  return mesh;
 }
 
 /** Upgrade the lightweight startup lighting after the model becomes usable. */
@@ -78,15 +113,21 @@ export async function loadOutdoorEnvironment(viewer) {
     viewer.scene.environment = target.texture;
     viewer.scene.environmentRotation.copy(SKY_ROTATION);
     viewer.scene.environmentIntensity = 0.25;
-    const direction = new THREE.Vector3();
-    let skyVisible = false;
+    const skySurround = backdrop ? createSkySurround(backdrop) : null;
+    if (skySurround) viewer.scene.add(skySurround);
+    const haze = new THREE.Fog(0xc4d4e0, 1400, 3000);
     // Reuse one static panorama and one PMREM. Orbiting changes only which
     // existing background is selected; it never recaptures the environment.
     viewer.scene.onBeforeRender = () => {
       if (viewer.disposed) return;
-      viewer.camera.getWorldDirection(direction);
       const isolatedElevation = Boolean(viewer.activeCode) && viewer.mode === 'campus' && !viewer.contextVisible;
-      skyVisible = outdoorSkyVisible(viewer.mode, direction.y, skyVisible, isolatedElevation);
+      const skyVisible = outdoorSkyVisible(viewer.mode, 0, false, isolatedElevation);
+      if (skySurround) skySurround.visible = skyVisible;
+      // Haze starts behind the fitted campus, never across a selected facade.
+      const orbitDistance = viewer.camera.position.distanceTo(viewer.controls.target);
+      haze.near = orbitDistance + 450;
+      haze.far = orbitDistance + 2000;
+      viewer.scene.fog = skyVisible ? haze : null;
       const background = skyVisible ? (backdrop ?? texture) : MAP_BACKGROUND;
       if (viewer.scene.background !== background) viewer.scene.background = background;
     };
