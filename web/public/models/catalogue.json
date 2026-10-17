@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "232",
-  "sourceModelSha256": "1f6ed3da66011e057233697fe8753374a55918d8c4278d56670cbd81192ae2a8",
+  "version": "233",
+  "sourceModelSha256": "b1d01b4b74a7f9e33d9bab25e73f51f39361659b9236ca98c34056137d8b6660",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4811,6 +4811,12 @@
           "Full building interiors, complete rooms, unseen construction and2026condition remain unverified."
         ]
       },
+      "glazingReview233": {
+        "version": 233,
+        "audit": "result/blender/lrb-glazing233/audit.json",
+        "scope": "Three unchanged pane batches receive bounded dielectric transmission and reduced intrinsic diffuse tint; broad and Watkins panes use browser opacity0.76, floor-connected entry leaves0.30. Existing public structures may be visible; no unverified rooms or backing added.",
+        "limitations": "Estimated optics, historical facade evidence and retained imperfect floor alignment; not measured current glass transmittance."
+      },
       "bounds": {
         "min": [
           24.830078125,
@@ -4878,10 +4884,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-6146fa0599cc.glb",
-        "bytes": 6563104,
+        "url": "/models/details/lrb-exterior-b7c166909bf9.glb",
+        "bytes": 6564172,
         "triangles": 731683,
-        "sha256": "6146fa0599cca45ebf21266d2bbdf7232d55a45dfcda19dc5004b218bf89c6e3",
+        "sha256": "b7c166909bf9c59a6598f8596101303fd0ec59c2dc2450fe4cc1e81249a04ce2",
         "bounds": {
           "min": [
             24.830078125,
@@ -5702,6 +5708,17 @@
         "audit": "result/blender/old606-room227/audit.json",
         "scope": "依据LSE标注Old Building、OLD.6.06、Capacity20的历史平面建立独立教学室样本。模型展示两列各10席及前方教学桌的plan方案，左后门和右侧两段窗按图定位；浅木桌、酒红/浅绿椅、左棕色大板、教学墙与悬挂投影按实照估算。照片为不同的矩形围桌布置，两图年代均未知，不主张照片同刻、2026现用容量或完整Shaw。比例、层高和隐藏构造未实测，不接全楼地理楼层。"
       },
+      "exteriorReview233": {
+        "version": 233,
+        "audit": "result/blender/old-exterior233/audit.json",
+        "scope": "Restore four low arched blue grilles and the central stone parapet from official completed-project photographs; retain inherited upper envelope and lower facade.",
+        "limitations": [
+          "Low grille heights,stone band thicknesses,4arch repeats,bar radii and panel widths are photographic estimates,not measured fabrication.",
+          "Existing upper-band envelope and main cornice height/setback remain inherited2024planning estimates;this candidate does not certify their complete as-built registration.",
+          "The2024completed-project photograph has unknown capture date;2025asset upload and2026review do not establish current2026condition.",
+          "No new room,backboard,hidden roof/elevation or missing sixth dormer is fabricated;only this visible upper-band composition is replaced."
+        ]
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -5769,10 +5786,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-c3c5906e25b9.glb",
-        "bytes": 14840064,
-        "triangles": 1231336,
-        "sha256": "c3c5906e25b947bdf5efeb066dc7f60428675bdf02fa508ec5b3bd43d223c633",
+        "url": "/models/details/old-exterior-2a831c568751.glb",
+        "bytes": 14901172,
+        "triangles": 1236428,
+        "sha256": "2a831c568751dd5f2273e634cf477c579b167a32a5824df098ddf59adabf501f",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -7463,11 +7480,18 @@
         }
       ],
       "latestInteriorReview": {
-        "version": 216,
-        "scope": "Replace six repeated ground-plan upper floors with independently traced2014 perimeters, registered through the common dual-lift controls. Coordinate retained173 stair headroom, floor openings and clipped shared landings; publish ground plus six upper floors with individual sections in both public-interior exports.",
-        "source": "2014 official occupants guide pages26–32",
-        "sourceURL": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
-        "limitations": "2014 historical source, manually traced enclosing wall lines and inherited173 world/height estimates. Floor openings and landing clearances are authoring estimates, not access or safety certification. Room partitions, escape stairs, complete lift shafts and basement/Venue circulation remain incomplete; no current2026 as-built claim."
+        "version": 233,
+        "audit": "result/blender/saw-circulation233/audit.json",
+        "scope": "Source-constrained estimated ST03 first-to-second and second-to-third continuous folded connections, two flat platforms, supported rails and three coordinated slab openings. Fixed lifts and accepted fifth-to-sixth ST04 preserved.",
+        "remainingLowerLiftConflicts": 11,
+        "limitations": [
+          "Historical2014 guide/design section do not establish2026 current condition.",
+          "Straight-run directions,31/20counts,1.4m widths,0.31m goings, platform shapes and guard details are estimated and visibly deviate from undocumented original winders.",
+          "New candidate stays in historicalST03and its connecting public circulation band, but is not a recovered exact construction layout.",
+          "The retained4-to-5connection still has11fixed-cabin conflicts; its joint3-to-5attempt was rejected by the historical fourth-floor public corridor constraint.",
+          "Floor surfaces retain inherited thin/slab-study conventions. No compliance or structural engineering certification.",
+          "Headroom proof uses every full tread/platform width, with0.1mm XY boundary tolerance to discard shared riser-edge contacts; tests every actual saved obstacle triangle including handrails and nosings."
+        ]
       },
       "glazingReview": {
         "version": 181,
@@ -7487,35 +7511,35 @@
           "label": "G层：入口与公共空间",
           "minHeight": -0.05,
           "maxHeight": 3.4,
-          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
+          "scope": "楼层空间示意，未复原全部房间。"
         },
         {
           "id": "1",
           "label": "1层：学习与社团",
           "minHeight": 3.4,
           "maxHeight": 8.05,
-          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
+          "scope": "楼层空间示意，未复原全部房间。"
         },
         {
           "id": "2",
           "label": "2层：信仰与媒体中心",
           "minHeight": 8.05,
           "maxHeight": 11.05,
-          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
+          "scope": "楼层空间示意，未复原全部房间。"
         },
         {
           "id": "3",
           "label": "3层：学生会与住宿办公室",
           "minHeight": 11.05,
           "maxHeight": 14.05,
-          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
+          "scope": "楼层空间示意，未复原全部房间。"
         },
         {
           "id": "4",
           "label": "4层：健身房",
           "minHeight": 14.05,
           "maxHeight": 17.95,
-          "scope": "保留历史楼层轮廓；低五段主梯仍有32处已知冲突。"
+          "scope": "楼层空间示意，未复原全部房间。"
         },
         {
           "id": "5",
@@ -7556,9 +7580,69 @@
             ],
             "fov": 50
           }
+        },
+        {
+          "id": "stair-1-2",
+          "label": "1至2层楼梯",
+          "minHeight": 3.25,
+          "maxHeight": 9.2,
+          "view": {
+            "position": [
+              -64.8,
+              6.2,
+              -7.5
+            ],
+            "target": [
+              -70.0,
+              5.9,
+              -3.9
+            ],
+            "fov": 75
+          },
+          "scope": "楼梯与平台，尺寸估算。"
+        },
+        {
+          "id": "stair-2-3",
+          "label": "2至3层楼梯",
+          "minHeight": 7.9,
+          "maxHeight": 12.2,
+          "view": {
+            "position": [
+              -64.8,
+              9.7,
+              -6.8
+            ],
+            "target": [
+              -69.5,
+              9.6,
+              -3.2
+            ],
+            "fov": 75
+          },
+          "scope": "楼梯与平台，尺寸估算。"
+        },
+        {
+          "id": "stair-5-6",
+          "label": "五至六层螺旋梯",
+          "minHeight": 17.8,
+          "maxHeight": 23.05,
+          "view": {
+            "position": [
+              -55,
+              23,
+              -3
+            ],
+            "target": [
+              -61.819,
+              19.8,
+              -11.234
+            ],
+            "fov": 50
+          },
+          "scope": "螺旋楼梯与到达平台，尺寸估算。"
         }
       ],
-      "interiorSectionScope": "G至6层轮廓依据历史图。5→6螺旋梯按官方源图修正；低五段仍有32处已知冲突，完整主梯尚未完成。",
+      "interiorSectionScope": "公共楼层与楼梯示意，未复原全部房间。",
       "liftCoreConsistencyReview": {
         "version": 217,
         "readOnly": true,
@@ -7601,6 +7685,36 @@
           "Fifth floor is retained as the actual departure support; no unsupported opening into fourth floor is invented.",
           "The old northern main-stair aperture is retained without enlargement; its exact agreement with the unresolvedG-to-fifth lower route remains unaccepted. Lower landings/guards and32cabin conflicts require separate reconstruction."
         ]
+      },
+      "publicStructureReview233": {
+        "version": 233,
+        "audit": "result/blender/saw-circulation233/audit.json",
+        "sourceCorrespondence": {
+          "upperSourceBandChecks": [],
+          "upperSourceAnchors": null,
+          "sectionFFL": {
+            "path": "data/collections/exteriors/images/saw_archdaily_041.jpg",
+            "ground": 19.55,
+            "first": 23.0,
+            "second": 27.65,
+            "third": 30.65,
+            "fourth": 33.65,
+            "fifth": 37.55,
+            "sixth": 41.45
+          },
+          "publishedRiseDifferences": [
+            3.45,
+            4.65,
+            3.0,
+            3.0,
+            3.9,
+            3.9
+          ],
+          "interpretation": "Accepted lower pair follows published visible diagonal fragments across clipped plan breaks. Upper joint candidates are rejected and recorded separately. Flight divisions, counts, exact positions and platforms are estimates; no as-built stair schedule or2026 state is claimed.",
+          "newOfficialLookups": 0
+        },
+        "remainingLowerLiftConflicts": 11,
+        "wholeBuildingCirculationComplete": false
       },
       "bounds": {
         "min": [
@@ -7669,10 +7783,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-f55764723686.glb",
-        "bytes": 13681868,
-        "triangles": 1399304,
-        "sha256": "f557647236860a7382b800fef139c7df5552b778ce8878ba09023e769860cc7c",
+        "url": "/models/details/saw-exterior-f5bc2ad6262c.glb",
+        "bytes": 13688068,
+        "triangles": 1400578,
+        "sha256": "f5bc2ad6262c8a411a6e1df5b660d11c0370ea25a64e533df09829cee377dee2",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -7687,10 +7801,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-91fdeddde5f4.glb",
-        "bytes": 326560,
-        "triangles": 25703,
-        "sha256": "91fdeddde5f4722628ab73772ef073f27522a7ac021e24a708e990fef02c3f45",
+        "url": "/models/details/saw-interior-6468c89a6e4b.glb",
+        "bytes": 332808,
+        "triangles": 26977,
+        "sha256": "6468c89a6e4b07c03a9d81214cd95f0d8da1cc438df83a74a915c325e7ff2e8a",
         "bounds": {
           "min": [
             -84.25218200683594,
