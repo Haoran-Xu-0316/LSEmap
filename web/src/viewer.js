@@ -53,13 +53,15 @@ const boxFromData = ({ min, max }) =>
 
 /** Rendering and camera state are separate from the accessible HTML interface. */
 export class CampusViewer {
-  constructor(container, labels, buildings, onPick, onContextLost, onDetailState = () => {}, modelRevision = "") {
+  constructor(container, labels, buildings, onPick, onContextLost, onDetailState = () => {}, modelRevision = "", onBearingChange = null) {
     this.container = container;
     this.labelLayer = labels;
     this.buildings = buildings;
     this.modelRevision = modelRevision;
     this.onPick = onPick;
     this.onDetailState = onDetailState;
+    this.onBearingChange = onBearingChange;
+    this.lastBearing = null;
     this.detailRequest = 0;
     this.activeDetail = null;
     this.disposed = false;
@@ -474,7 +476,7 @@ export class CampusViewer {
     }
     this.transition = {
       start: performance.now(),
-      duration: 900,
+      duration: 620,
       fromPosition: this.camera.position.clone(),
       fromTarget: this.controls.target.clone(),
       position,
@@ -1033,6 +1035,13 @@ export class CampusViewer {
     if (this.needsRender || (this.renderPipeline.needsSettle && !this.interacting)) {
       this.renderPipeline.render({ moving: this.interacting || cameraChanged || Boolean(this.transition), time });
       this.updateLabels();
+      if (this.onBearingChange) {
+        const bearing = Math.round(this.controls.getAzimuthalAngle() * 1800 / Math.PI) / 10;
+        if (bearing !== this.lastBearing) {
+          this.lastBearing = bearing;
+          this.onBearingChange(bearing);
+        }
+      }
       this.needsRender = false;
     }
   }
