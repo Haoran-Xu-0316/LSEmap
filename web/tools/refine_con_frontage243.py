@@ -15,8 +15,10 @@ import bpy
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "result/blender/con-frontage243"
-BASE = ROOT / "result/blender/LSE_campus_detailed_v242.blend"
-BASE_SHA = "b81a627db462ffbd98ca206879fea43d8da018e36edeb2e2bca62c85a2db4589"
+# The retained243 native preserves every242 source mesh and material graph.
+# Use it directly so the superseded242 full backup is no longer required.
+BASE = ROOT / "result/blender/LSE_campus_detailed_v243.blend"
+BASE_SHA = "cd41b4372b1e690400f351ed8bce228b1b1fa91f9bc161ddbbd91fb3f4349ba8"
 sys.path.insert(0, str(ROOT / "web/tools"))
 sys.dont_write_bytecode = True
 from integrate_exterior_round194 import object_fingerprint, update_scene
