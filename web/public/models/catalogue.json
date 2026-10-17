@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "234",
-  "sourceModelSha256": "0c9c4d7d5793ac3693c6ff7b9789e5300ebca32a5de39e0a39b75a910182d0b7",
+  "version": "236",
+  "sourceModelSha256": "3834a5f04b94806175ec8344944a03da7694d7ef1447e9cbb37ed44a684bf6bd",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5809,6 +5809,16 @@
           "No new room,backboard,hidden roof/elevation or missing sixth dormer is fabricated;only this visible upper-band composition is replaced."
         ]
       },
+      "clareMarketEntryReview236": {
+        "audit": "result/blender/street-public236/audit.json",
+        "scope": "Supported landing continuity and two handrail feet; retain all inherited tread, door and street levels.",
+        "limitations": [
+          "User photo and front.png are the same underlying photograph, not independent date evidence. Capture date unknown.",
+          "Four inherited stair treads, all tread Z, street Z and door Z retained. The inherited75mm sill height transition remains; no accessibility or survey claim.",
+          "Only the modified landing solid winding is corrected outward. Other inherited solid winding and all original native geometry remain untouched.",
+          "New landing depth0.13m is a bounded registration repair with under-sill overlap; not a surveyed historical construction detail."
+        ]
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -5876,10 +5886,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-2a831c568751.glb",
-        "bytes": 14901172,
+        "url": "/models/details/old-exterior-c21dcacc8071.glb",
+        "bytes": 14901424,
         "triangles": 1236428,
-        "sha256": "2a831c568751dd5f2273e634cf477c579b167a32a5824df098ddf59adabf501f",
+        "sha256": "c21dcacc80716b31d597c850f676cfe00ddec585ce080cc87554d1e990fb44e1",
         "bounds": {
           "min": [
             -39.1646614074707,
