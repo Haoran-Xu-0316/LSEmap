@@ -7,6 +7,7 @@ const sidebar = $("#sidebar");
 const stage = $("#stage");
 const list = $("#building-list");
 const detailPanel = $("#detail-panel");
+const northArrow = $("#north svg");
 const mobile = matchMedia("(max-width: 700px)");
 let buildings = [];
 let modelRevision = "";
@@ -449,6 +450,7 @@ async function start() {
       },
       updateDetailQuality,
       modelAssetRevision || modelRevision,
+      (bearing) => { northArrow.style.transform = `rotate(${bearing}deg)`; },
     );
     viewer = candidate;
     await candidate.load((event) => {
