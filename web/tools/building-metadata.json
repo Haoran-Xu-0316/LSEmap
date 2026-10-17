@@ -2657,6 +2657,16 @@
           "The2024completed-project photograph has unknown capture date;2025asset upload and2026review do not establish current2026condition.",
           "No new room,backboard,hidden roof/elevation or missing sixth dormer is fabricated;only this visible upper-band composition is replaced."
         ]
+      },
+      "clareMarketEntryReview236": {
+        "audit": "result/blender/street-public236/audit.json",
+        "scope": "Supported landing continuity and two handrail feet; retain all inherited tread, door and street levels.",
+        "limitations": [
+          "User photo and front.png are the same underlying photograph, not independent date evidence. Capture date unknown.",
+          "Four inherited stair treads, all tread Z, street Z and door Z retained. The inherited75mm sill height transition remains; no accessibility or survey claim.",
+          "Only the modified landing solid winding is corrected outward. Other inherited solid winding and all original native geometry remain untouched.",
+          "New landing depth0.13m is a bounded registration repair with under-sill overlap; not a surveyed historical construction detail."
+        ]
       }
     },
     {
@@ -5081,7 +5091,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 234,
+  "sourceVersion": 236,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5272,5 +5282,14 @@
       "The local20bit fixture uses real map extents but is not the fullWEB_CAMPUS/SITEmerge. Actual production bounds and support must be checked after final export.",
       "Eight pre-existing unsupported entrance foundation-boundary probes are preserved; they are not all exposed walking defects."
     ]
+  },
+  "roofFinishReview236": {
+    "audit": "result/blender/kgs-exterior236/audit.json",
+    "scope": "Retain authored roughness and metalness for explicit lead-word materials at every scale. Roof coefficients are model estimates, not measured optical data."
+  },
+  "oldHoughtonReview236": {
+    "audit": "result/blender/old-entrance236/audit.json",
+    "changes": 0,
+    "scope": "No unsupported entry alteration; source proportions and elevations remain estimated."
   }
 }
