@@ -156,3 +156,8 @@ Final four-sample refinement is accumulated one scene draw per animation frame.
 Keep the last displayed frame until all four samples are ready; input, scene
 changes and resize discard unfinished samples. The gallery retains synchronous
 four-sample capture and the same final pixels. Canvas resolution stays fixed.
+
+Background exterior downloads may finish while the camera moves. Defer GLTF
+parsing as well as scene attachment until navigation has been quiet for200ms.
+An explicitly selected building bypasses that wait. Waiting does not consume
+the transfer or decoding timeout, and disposing the viewer cancels queued parsing.
