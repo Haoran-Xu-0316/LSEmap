@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { GROUND_FINISHES } from "./ground-textures.js";
 import { applyFoliageDetail } from "./foliage-materials.js";
+import { OUTDOOR_ATMOSPHERE } from "./outdoor-environment.js";
 
 // Recreate source-node surface parameters without distributing reference photographs.
 // Noise is an approximation of Blender's shader, not a baked Cycles result.
@@ -37,6 +38,7 @@ export function isGlazingMaterial(material) {
 export function outdoorSurfaceKind(name) {
   if (/asphalt|tarmac/i.test(name)) return 'asphalt';
   if (/Lincoln Inn Fields grass/i.test(name)) return 'grass';
+  if (/PARK233_estimated_gravel/i.test(name)) return 'gravel';
   if (/Pale campus paving|MAR25_paving|CKK_V80_paving/i.test(name)) return 'paving-grid';
   if (/SITE_V47_(?:slab|yorkstone|edge)|PORTSMOUTH_estimated_yorkstone|(?:^|_)pale_gray_stone_\d+(?:\.|$)|CBG(?:203_ROOF|205_PODIUM)_paving|LRB_NEXT_PLAZA155_stone/i.test(name)) return 'stone';
   if (/SITE_V47_wood/i.test(name)) return 'timber';
@@ -122,7 +124,10 @@ export function refineMaterialFinish(material, environmentMap = null) {
     material.metalness = 0;
     material.roughness = matches(/foliage/) ? 0.88 : 0.96;
     if (outdoorKind === "grass")
-      material.color.lerp(new THREE.Color(.115, .20, .095), .65);
+      material.color.lerp(new THREE.Color(.10, .23, .09), .65);
+  } else if (outdoorKind === "gravel") {
+    material.metalness = 0;
+    material.roughness = 1;
   } else if (outdoorKind === "asphalt") {
     material.metalness = 0;
     material.roughness = 0.97;
@@ -154,7 +159,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
   const edgeCourse = /SITE213_SITE_V47_slab_flush_edge_courses/i.test(material.name);
   const houghtonPaving = /SITE(?:172_SITE_V47_slab_\d+_Houghton|173_SITE_V47_slab_Houghton_paving_continuation)/i.test(material.name);
   const paving = pavingGrid || kind === 'stone' || asphalt;
-  const grass = kind === 'grass';
+  const grass = kind === 'grass', gravel = kind === 'gravel';
   let detail = material.userData.surfaceDetail;
   // An approved authored map already supplies the visible finish. Do not
   // overwrite its sampled colour with the procedural approximation below.
@@ -163,8 +168,8 @@ export function applySurfaceDetail(material, groundTextures = null) {
     // Preserve mapped geometry and palette; resolve aggregate and foliage tones
     // in the shared renderer rather than adding subpixel blades or leaf meshes.
     detail = {
-      kind: "noise", scale: /foliage|grass/i.test(material.name) ? 1.8 : bark ? 5 : asphalt ? 28 : 9,
-      bump: /foliage|grass/.test(material.name) ? 0 : bark ? 0.0012 : /asphalt|soil/.test(material.name) ? 0.0008 : 0.00035,
+      kind: "noise", scale: /foliage|grass/i.test(material.name) ? 1.8 : bark ? 5 : gravel ? 32 : asphalt ? 28 : 9,
+      bump: /foliage|grass/.test(material.name) ? 0 : bark ? 0.0012 : gravel ? .001 : /asphalt|soil/.test(material.name) ? 0.0008 : 0.00035,
       colorA: material.color.clone().multiplyScalar(0.82).toArray(),
       colorB: material.color.clone().multiplyScalar(1.10).toArray(),
     };
@@ -204,7 +209,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     uniforms.groundMetres = {value:groundAsset.metres};
     uniforms.groundMean = {value:groundAsset.mean};
   }
-  material.customProgramCacheKey = () => `lse-surface-finish11-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish12-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -285,14 +290,37 @@ export function applySurfaceDetail(material, groundTextures = null) {
       surfaceColor *= mix(1.0, mix(.66, .96 + slabTone * .08, slabFace), slabVisibility);
       surfaceHeight += slabFace * .0012 * slabVisibility;
       ` : grass ? `
-      // Broad irregular turf variation remains visible without extra grass meshes.
-      float turf = surfaceNoise(vec3(vSurfacePosition.x * .22, 9.0, vSurfacePosition.z * .22));
-      surfaceColor *= .9 + turf * .20;
+      // Quiet broad turf tones, with faint maintenance bands rather than large
+      // camouflage patches. This is an estimated finish, not surveyed mowing.
+      float turf = surfaceNoise(vec3(vSurfacePosition.x * .045, 9.0, vSurfacePosition.z * .045));
+      float mowPoint = (vSurfacePosition.x * .8 + vSurfacePosition.z * .6) / 3.5;
+      float mowVisibility = 1.0 - smoothstep(.25, .8, fwidth(mowPoint));
+      float mow = sin(mowPoint * 3.14159265) * .025 * mowVisibility;
+      surfaceColor *= .94 + turf * .12 + mow;
       ` : asphalt ? `
       surfaceColor *= .97 + coarseGrain * .06;
       ` : ""}
 
     `;
+    if (pavingGrid || kind === 'stone' || asphalt) {
+      shader.uniforms.surfaceHorizon = { value: new THREE.Color(OUTDOOR_ATMOSPHERE.horizon) };
+      shader.uniforms.surfaceLowerSky = { value: new THREE.Color(OUTDOOR_ATMOSPHERE.lowerSky) };
+      shader.fragmentShader = 'uniform vec3 surfaceHorizon, surfaceLowerSky;\n' + shader.fragmentShader;
+      shader.fragmentShader = shader.fragmentShader.replace('#include <dithering_fragment>', `
+        // Feather only the outermost 55m of the existing district excerpt.
+        // Keep the mapped campus, park, thresholds and raised furniture intact.
+        // Native SITE216 base top is -.05m; flat peripheral roads are +.024m.
+        if (vSurfacePosition.y < .03) {
+          float mapMargin = min(min(vSurfacePosition.x + 375.0, 350.0 - vSurfacePosition.x),
+                                min(vSurfacePosition.z + 415.0, 375.0 - vSurfacePosition.z));
+          float edgeHaze = 1.0 - smoothstep(0.0, 55.0, mapMargin);
+          vec3 viewRay = normalize(vSurfacePosition - cameraPosition);
+          vec3 surround = mix(surfaceHorizon, surfaceLowerSky, smoothstep(0.0, 1.0, -viewRay.y));
+          gl_FragColor.rgb = mix(gl_FragColor.rgb, surround, edgeHaze);
+        }
+        #include <dithering_fragment>
+      `);
+    }
     shader.fragmentShader = shader.fragmentShader.replace("#include <color_fragment>", `
       #include <color_fragment>
       ${pattern}
