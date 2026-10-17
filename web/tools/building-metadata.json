@@ -2419,17 +2419,18 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved."
       },
       "latestReview": {
-        "version": 193,
-        "scope": "Twenty existing OLD blue painted-frame objects use twelve independent dielectric satin materials. Original blue palettes, all geometry and UVs, glass optics, lantern and exposed silver steel retained. Paint roughness.46 is a visual estimate; photographs are undated and full current exteriors and rooms remain incomplete.",
-        "sources": [
-          "data/collections/campus_photos_round2/images/OLD/OLD_old_webbyates_06.jpg",
-          "data/collections/old-clare-reference/front.png"
+        "version": 239,
+        "scope": "Rebuild the five segmented Clare Market relief studies as continuous shallow bodies with curved limbs and joined necks, retaining the registered G,E,F,D,H ordering, stone finish, backing panels and all other architecture.",
+        "evidence": [
+          "https://www.lse.ac.uk/Events/arts-and-music/art-on-campus/art-on-campus",
+          "https://jeremyhaslam.wordpress.com/wp-content/uploads/2010/01/architectural-sculpture-part-2-8-pdf.pdf"
         ],
-        "photographDate": "unknown",
-        "audit": "result/blender/stage193/reopened-verification.json",
-        "addedObjects": 0,
-        "changedObjects": 20,
-        "paintMaterials": 12
+        "audit": "result/blender/old-clare239/audit.json",
+        "limitations": [
+          "Five front poses are authored photographic interpretations, not scans or measured carving depths.",
+          "The undated study was published in2010. No assertion of2026 sculptural condition.",
+          "The unseen sixth side panel and whole-building current interiors remain unverified."
+        ]
       },
       "interiorView": {
         "position": [
@@ -2571,6 +2572,19 @@
           "status": "bounded-historical-public-corridor-connected",
           "audit": "result/blender/old-public212/audit.json",
           "scope": "Connect2011-source public foyer to central/east T corridor;3 batched meshes,75.14m2 floor,8 support checks and0 exterior intersection pairs. West branch registration conflict retained; complete/current floor and lift/stair geometry unverified."
+        },
+        {
+          "version": 193,
+          "scope": "Twenty existing OLD blue painted-frame objects use twelve independent dielectric satin materials. Original blue palettes, all geometry and UVs, glass optics, lantern and exposed silver steel retained. Paint roughness.46 is a visual estimate; photographs are undated and full current exteriors and rooms remain incomplete.",
+          "sources": [
+            "data/collections/campus_photos_round2/images/OLD/OLD_old_webbyates_06.jpg",
+            "data/collections/old-clare-reference/front.png"
+          ],
+          "photographDate": "unknown",
+          "audit": "result/blender/stage193/reopened-verification.json",
+          "addedObjects": 0,
+          "changedObjects": 20,
+          "paintMaterials": 12
         }
       ],
       "houghtonAccessReview": {
@@ -2667,6 +2681,20 @@
           "Only the modified landing solid winding is corrected outward. Other inherited solid winding and all original native geometry remain untouched.",
           "New landing depth0.13m is a bounded registration repair with under-sill overlap; not a surveyed historical construction detail."
         ]
+      },
+      "detailView": {
+        "label": "Clare Market",
+        "position": [
+          5.040815830230713,
+          7.800000190734863,
+          19.125810623168945
+        ],
+        "target": [
+          -6.517889976501465,
+          5.800000190734863,
+          37.482181549072266
+        ],
+        "fov": 42
       }
     },
     {
@@ -5119,7 +5147,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 238,
+  "sourceVersion": 239,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
