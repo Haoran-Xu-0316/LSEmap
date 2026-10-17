@@ -1,14 +1,16 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v237.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v238.blend。
 
-原生SHA256：f4ab6cfb3688820d7b6ef3a830def14bf35c9d0f4532099a7fde6005895360f5。
+原生SHA256：8f837ee09610a13d31f24fe586737b8f80ddf09a0791e61649047999302995e5。
 
 渲染审查235在当时保留234完整原生与全部浏览器模型字节。室内复用3灯，补光方向随空间边界平移，退出恢复原光照；不改曝光或材质。树冠增加按像素尺度渐隐的估计叶簇色差和浅法线，不改树位、冠形、道路或基础色。四个室内资产与近中远植被完成桌面、窄屏和旋转对比，不作真手机性能承诺。193张图库与交互共用更新渲染。LRB蓝点已核验为历史Blue Rain装置，墙距约25毫米、法线和重复面正常，未作为错误删除。几何及全校内部完成度仍按234记录。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、35个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+238版按校方入口实照修正PEL旋转门左右位置：保留原曲面玻璃与立柱，沿立面轴移动1.72米；侧门把手移至对侧，仅移动中央门框8个顶点。入口外壳、黄色内衬、22个正面窄窗、屋顶及全部房间保留。只修改照片支持的正面墙面、银灰包板及四组正面玻璃材质，旋转门前曲面有限透光，原后部不透明玻璃代理保留，不称完整门厅或2026实测现状。15个副本替代15个明确源批次，8586原对象和2327原材质节点全部保留。
 
 237版保留KGS穹顶原顶点、拓扑、UV和12条独立接缝，仅复制壳体修正分面法线；LSE Square六个既有石树池追加实照支持的低矮植被。8584原对象、2327材质节点和35空间1485成员保持，未复原未知房间。OLD/SAW共15个精确源批次仅在浏览器派生求值时倒角2段变1段，宽度、窗洞、砖和孔隙保留，原生modifier不改。网站桌面改全幅3D场景与悬浮导航，建筑镜头620毫秒，减少无必要的控件位移动画。
 
@@ -182,7 +184,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |PAN|166|Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.|
 |PAR|180|Photographed street panes receive outward closed-box winding and independent dielectric finish. Coordinates, corner UV, inherited opaque finish and unpictured side/rear panes retained; no unsupported full interior exposed.|
 |PEA|225入口与格架/207内部/146外观|Two retained podium walls receive real openings matching original entrance and ticket glazing.11 glass elements retain geometry, UV and neutral colour; explicit webOpacity0.82. Original upper3x3 windows, brick side and low wing retained. Unseen roof frame, rear and complete rooms remain unverified.|
-|PEL|166|Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.|
+|PEL|238入口位置与饰面|旋转门改至照片所示左侧，侧门把手及中央框同步协调；正面墙、银灰入口包板与四组正面玻璃分材质，后部不透明代理保留。22窄窗、原塔楼及全部室内样本保留；上部重复、44米高度、屋顶及当前整楼内部仍未核实。|
 |POR|207入口/148玻璃|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
 |SAW|223上部ST04/216楼层/206玻璃/190砖屏|按官方源图恢复5→6真实梯位螺旋梯、梯孔与到达连接，消除该段6处冲突；低五段32处仍未解决。保留外观砖屏、玻璃和所有独立样本，完整主梯及当前房间仍未完成。|
