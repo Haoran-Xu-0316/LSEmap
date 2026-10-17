@@ -36,7 +36,7 @@ export const buildingDetails = {
   "KGS": {
     description: "King’s Chambers的两组石材凸窗向街道展开，绿色陶瓷顶层、铅色弧顶与三角山花构成屋顶轮廓。中央入口保留拱券、卷饰和带金色字样的绿色铭牌。",
     note: "沿街外观与入口根据归档照片继续细化，保留原有地图轮廓。楼高、窗距、装饰截面、屋顶进深与未见背面仍为估计；未建立内部。",
-    images: [["kgs-exterior", "King’s Chambers顶部凸窗与绿色陶砖"], ["kgs-entrance", "King’s Chambers石材拱券与绿色入口铭牌"]],
+    images: [["kgs-exterior", "King’s Chambers顶部凸窗与绿色陶砖"], ["kgs-entrance", "King’s Chambers石材拱券与绿色入口铭牌"], ["kgs-cupola", "King’s Chambers穹顶与铅皮拼缝"]],
   },
   LAK: {
     description: "Lakatos Building的两侧街面分别采用大幅店面玻璃和拱形底层窗，上层保留细格推拉窗、石材窗楣、转角石带与齿饰檐口。",
