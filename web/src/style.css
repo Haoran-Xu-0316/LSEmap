@@ -21,7 +21,8 @@
   --glass-hover: rgb(255 255 255 / 90%);
   --surface: rgb(255 255 255 / 82%);
   --canvas: #e9e8e3;
-  --control-shadow: 0 4px 18px #172c3814;
+  --control-shadow: 0 8px 28px rgb(23 44 56 / 10%);
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 * {
   box-sizing: border-box;
@@ -146,6 +147,9 @@ svg {
   padding: 8px 12px;
   border-radius: 6px;
 }
+.text-button {
+  transition: background-color 160ms ease, color 160ms ease;
+}
 .text-button:hover {
   background: var(--surface-soft);
 }
@@ -229,9 +233,12 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 64px;
+  min-height: 60px;
   border-bottom: 1px solid var(--line);
   padding: 12px 2px;
+}
+.building-row {
+  transition: background-color 140ms ease;
 }
 .building-row:hover {
   background: var(--surface-soft);
@@ -996,6 +1003,46 @@ dialog::backdrop {
     bottom: 46%;
   }
 }
+/* The map owns the desktop viewport; opening the directory never resizes WebGL. */
+@media (min-width: 701px) {
+  .masthead {
+    position: absolute;
+    inset: 16px 20px auto;
+    height: 56px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: var(--control-shadow);
+  }
+  .workspace { height: 100dvh; }
+  .sidebar {
+    position: absolute;
+    top: 88px;
+    bottom: 24px;
+    left: 20px;
+    width: 292px;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: var(--control-shadow);
+  }
+  .index-panel { padding-top: 24px; }
+  .index-panel h1 { font-size: 29px; margin-bottom: 20px; }
+  .scene-heading { top: 104px; left: 336px; max-width: calc(100% - 422px); }
+  .sidebar.closed + .stage .scene-heading { left: 32px; max-width: calc(100% - 120px); }
+  .north { top: 96px; }
+  .map-caption { left: 336px; }
+  .sidebar.closed + .stage .map-caption { left: 32px; }
+  .map-toolbar { bottom: 28px; left: calc(50% + 156px); }
+  .sidebar.closed + .stage .map-toolbar { left: 50%; }
+}
+.map-toolbar button { transition: background-color 140ms ease, color 140ms ease; }
+.map-toolbar button:active:not(:disabled) { transform: translateY(1px); }
+@keyframes detail-arrival {
+  from { opacity: 0.65; }
+  to { opacity: 1; }
+}
+.detail-panel:not([hidden]) { animation: detail-arrival 180ms var(--motion-ease); }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
