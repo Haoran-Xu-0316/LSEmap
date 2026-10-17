@@ -623,6 +623,18 @@
         "spaceId": "ckk-115",
         "audit": "result/blender/ckk115-room227/audit.json",
         "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。"
+      },
+      "readOnlyReview234": {
+        "version": 234,
+        "audit": "result/blender/ckk-glazing234/audit.json",
+        "changes": 0,
+        "scope": "Source/native diagnosis only; no unsupported geometric or optical change accepted.",
+        "limitations": [
+          "No enabled browser was available; production HTTP asset retrieval returned403. The catalogue-named local production GLBs match catalogue SHAs; live viewer acceptance is not claimed.",
+          "Historical2008 project photographs do not verify2026 condition.",
+          "Native atrium dimensions and street registration are inherited estimates. The photograph does not precisely locate the unmodeled2.5m background band.",
+          "No component was made; save/reappend validation and before/after improvement are not claimed."
+        ]
       }
     },
     {
@@ -873,6 +885,18 @@
           "Native unseen wall, estimated mansard/parapet, granite entrance steps, interior and room geometry preserved.",
           "Opaque unsupported window rooms remain opaque; no invented empty-room view or guessed backing wall.",
           "Broad original tone map represents stone material only, not surveyed staining or copied photographic texture."
+        ]
+      },
+      "readOnlyReview234": {
+        "version": 234,
+        "audit": "result/blender/col-exterior234/audit.json",
+        "changes": 0,
+        "scope": "Source/native diagnosis only; no unsupported geometric or optical change accepted.",
+        "limitations": [
+          "Historical official source dates do not establish2026as-built condition.",
+          "No change candidate exists, so save/reappend validation and before/after improvement are not claimed.",
+          "The2023/24floor-numbering clue alone cannot settle street storey count, mezzanines, setbacks, cornice dimensions or roof profile.",
+          "No new glazing opacity, room backing, upper windows or roof geometry is invented."
         ]
       }
     },
@@ -2089,6 +2113,17 @@
         "audit": "result/blender/lrb-glazing233/audit.json",
         "scope": "Three unchanged pane batches receive bounded dielectric transmission and reduced intrinsic diffuse tint; broad and Watkins panes use browser opacity0.76, floor-connected entry leaves0.30. Existing public structures may be visible; no unverified rooms or backing added.",
         "limitations": "Estimated optics, historical facade evidence and retained imperfect floor alignment; not measured current glass transmittance."
+      },
+      "readOnlyReview234": {
+        "version": 234,
+        "audit": "result/blender/lrb-structure234/audit.json",
+        "changes": 0,
+        "scope": "Source/native diagnosis only; no unsupported geometric or optical change accepted.",
+        "limitations": [
+          "Necessary non-glazed clearance ranges are mathematical model constraints,not measured floor levels or an authorized geometry proposal.",
+          "Any actual floor-edge recession or pane intersection measured here describes the modeled233mesh only.",
+          "No source supports concealing the issue with a fake backing,room or optical darkening."
+        ]
       }
     },
     {
@@ -4719,6 +4754,32 @@
         "label": "FAW.1.03小组教室",
         "scope": "依据LSE官方历史同房号归档平面与照片建立FAW.1.03独立教室。按图保留4张六人小组桌、24把学生椅、1处门洞、上侧窗带、右上斜边及AV讲台；照片控制蓝绿窗区、黑色塑壳椅、白色桌面、灰色地毯、教学显示屏、教学板、AV设备和方格吊顶灯。尺度、层高、窗带解释与隐藏构造估算，连续完整天花，不作地理配准、现用容量或2026现况认证。"
       }
+    },
+    {
+      "code": "CKK",
+      "id": "ckk-110",
+      "label": "CKK.1.10U形教室",
+      "collection": "CKK110_ROOM234_study",
+      "gallery": "ckk-110-teaching-interior",
+      "scope": "依据LSE官方同房号历史平面及照片建立CKK.1.10独立U形教室。保留左6、右6、后6共18个学生椅位及1教师席、U桌、两处右窗湾和左侧不等双叶门。完整带梁天花、真实门窗洞、家具及投影支承，尺寸和门叶展示角度估算；不作校园楼层配准、现用容量或2026现况认证。",
+      "interiorView": {
+        "position": [
+          -2.625,
+          1.65,
+          3.0
+        ],
+        "target": [
+          0.45,
+          1.35,
+          -2.7
+        ],
+        "fov": 80
+      },
+      "interiorStudy": {
+        "kind": "room-sample",
+        "label": "CKK.1.10U形教室",
+        "scope": "依据LSE官方同房号历史平面及照片建立CKK.1.10独立U形教室。保留左6、右6、后6共18个学生椅位及1教师席、U桌、两处右窗湾和左侧不等双叶门。完整带梁天花、真实门窗洞、家具及投影支承，尺寸和门叶展示角度估算；不作校园楼层配准、现用容量或2026现况认证。"
+      }
     }
   ],
   "presentationReview": {
@@ -5020,7 +5081,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 233,
+  "sourceVersion": 234,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5199,6 +5260,17 @@
       "Building footprints follow archived OSM; cafe bay counts, unseen rear/end glazing layout, roof structure and heights are estimated envelope presentation.",
       "Bandstand hardstanding boundary follows mapped surrounding circle, not a photographed measured paving survey; three original tree positions retain0.55msoil holes.",
       "Nearby unidentified36.25m²one-storey service proxy retains its original estimated5.25mheight and geometry."
+    ]
+  },
+  "streetGroundReview234": {
+    "version": 234,
+    "audit": "result/blender/street-ground234/audit.json",
+    "scope": "Remove only the interior of the proven49.52286742m²coplanar asphalt intersection. Retain a bounded1mm native contact strip along all proven intersection boundaries to preserve original outer road edges and cover measured20bit quantization error. Actual removed and residual areas are recorded in budget. Preserve STREET227and every Portugal stone boundary,tree,building,footway union,datum and space.",
+    "limitations": [
+      "GIS widths and native ground datums are existing schematic estimates; no measured current2026kerb or crossfall claim.",
+      "A perceptible visual flicker benefit is not proven; same-camera previews establish no apparent regression.",
+      "The local20bit fixture uses real map extents but is not the fullWEB_CAMPUS/SITEmerge. Actual production bounds and support must be checked after final export.",
+      "Eight pre-existing unsupported entrance foundation-boundary probes are preserved; they are not all exposed walking defects."
     ]
   }
 }
