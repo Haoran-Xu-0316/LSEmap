@@ -180,7 +180,9 @@ export const buildingDetails = {
       ["saw-globe", "The World Turned Upside Down"],
       ["sheffield-street", "Sheffield Street"],
       ["saw-first-second-interior", "1至2层楼梯"],
-      ["saw-second-third-interior", "2至3层楼梯"]
+      ["saw-second-third-interior", "2至3层楼梯"],
+      ["saw-third-fourth-interior", "3至4层楼梯"],
+      ["saw-fourth-fifth-interior", "4至5层楼梯"]
     ],
   },
   CBG: {
