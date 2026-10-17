@@ -3353,17 +3353,17 @@
         }
       ],
       "latestInteriorReview": {
-        "version": 233,
-        "audit": "result/blender/saw-circulation233/audit.json",
-        "scope": "Source-constrained estimated ST03 first-to-second and second-to-third continuous folded connections, two flat platforms, supported rails and three coordinated slab openings. Fixed lifts and accepted fifth-to-sixth ST04 preserved.",
-        "remainingLowerLiftConflicts": 11,
+        "version": 242,
+        "audit": "result/blender/saw-circulation242/audit.json",
+        "scope": "Replace only estimated three-to-four and four-to-five ST03 routes with separate continuous winding waists, coordinated local floors and supported rails inside vector-extracted historical circulation. Preserve accepted lower pairs and fifth-to-sixth ST04.",
+        "remainingModelledTreadCabinOverlaps": 0,
+        "wholeBuildingCirculationComplete": false,
         "limitations": [
-          "Historical2014 guide/design section do not establish2026 current condition.",
-          "Straight-run directions,31/20counts,1.4m widths,0.31m goings, platform shapes and guard details are estimated and visibly deviate from undocumented original winders.",
-          "New candidate stays in historicalST03and its connecting public circulation band, but is not a recovered exact construction layout.",
-          "The retained4-to-5connection still has11fixed-cabin conflicts; its joint3-to-5attempt was rejected by the historical fourth-floor public corridor constraint.",
-          "Floor surfaces retain inherited thin/slab-study conventions. No compliance or structural engineering certification.",
-          "Headroom proof uses every full tread/platform width, with0.1mm XY boundary tolerance to discard shared riser-edge contacts; tests every actual saved obstacle triangle including handrails and nosings."
+          "The2014guide and design section do not establish2026current condition.",
+          "Widths1.1m,20/21risers, path controls, bends, waist and rail dimensions are authoring estimates, not recovered construction drawings.",
+          "Source controls represent cabin inner outlines; complete shaft walls, doors and all room relationships remain unverified.",
+          "Headroom checks use actual saved triangles over full usable widths; they are not accessibility or safety certification.",
+          "Level surfaces retain inherited thin-floor conventions."
         ]
       },
       "glazingReview": {
@@ -3472,7 +3472,12 @@
             ],
             "fov": 75
           },
-          "scope": "楼梯与平台，尺寸估算。"
+          "scope": "楼梯与平台，尺寸估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "lower-stairs"
+          ]
         },
         {
           "id": "stair-2-3",
@@ -3492,7 +3497,64 @@
             ],
             "fov": 75
           },
-          "scope": "楼梯与平台，尺寸估算。"
+          "scope": "楼梯与平台，尺寸估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "lower-stairs"
+          ]
+        },
+        {
+          "id": "stair-3-4",
+          "label": "3至4层楼梯",
+          "minHeight": 10.9,
+          "maxHeight": 15.2,
+          "view": {
+            "position": [
+              -74.8,
+              12.9,
+              -2.5
+            ],
+            "target": [
+              -71.5,
+              12.5,
+              -6.5
+            ],
+            "fov": 70,
+            "referenceAspect": 1.25
+          },
+          "scope": "历史平面约束的转角楼梯与平台，路线、踏步及尺寸为估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "stair-3-4"
+          ]
+        },
+        {
+          "id": "stair-4-5",
+          "label": "4至5层楼梯",
+          "minHeight": 13.9,
+          "maxHeight": 19.1,
+          "view": {
+            "position": [
+              -73.2,
+              17,
+              -3
+            ],
+            "target": [
+              -70.8,
+              16,
+              -6.6
+            ],
+            "fov": 65,
+            "referenceAspect": 1.25
+          },
+          "scope": "历史平面约束的转角楼梯与平台，路线、踏步及尺寸为估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "stair-4-5"
+          ]
         },
         {
           "id": "stair-5-6",
@@ -3512,7 +3574,12 @@
             ],
             "fov": 50
           },
-          "scope": "螺旋楼梯与到达平台，尺寸估算。"
+          "scope": "螺旋楼梯与到达平台，尺寸估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "stair-5-6"
+          ]
         }
       ],
       "interiorSectionScope": "公共楼层与楼梯示意，未复原全部房间。",
@@ -3588,6 +3655,24 @@
         },
         "remainingLowerLiftConflicts": 11,
         "wholeBuildingCirculationComplete": false
+      },
+      "publicStructureReview242": {
+        "version": 242,
+        "audit": "result/blender/saw-circulation242/audit.json",
+        "scope": "Replace only estimated three-to-four and four-to-five ST03 routes with separate continuous winding waists, coordinated local floors and supported rails inside vector-extracted historical circulation. Preserve accepted lower pairs and fifth-to-sixth ST04.",
+        "remainingModelledTreadCabinOverlaps": 0,
+        "wholeBuildingCirculationComplete": false,
+        "limitations": [
+          "The2014guide and design section do not establish2026current condition.",
+          "Widths1.1m,20/21risers, path controls, bends, waist and rail dimensions are authoring estimates, not recovered construction drawings.",
+          "Source controls represent cabin inner outlines; complete shaft walls, doors and all room relationships remain unverified.",
+          "Headroom checks use actual saved triangles over full usable widths; they are not accessibility or safety certification.",
+          "Level surfaces retain inherited thin-floor conventions."
+        ],
+        "addedObjects": 12,
+        "archivedObjects": 7,
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
+        "publicationYear": 2014
       }
     },
     {
@@ -5182,7 +5267,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 241,
+  "sourceVersion": 242,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
