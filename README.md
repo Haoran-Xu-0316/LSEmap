@@ -8,18 +8,27 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition241 contains31 building records,30 detailed exteriors,25 interior views
+Edition242 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v241.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v242.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage241` acceptance records are retained with the native: integration
+The local `stage242` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All195 gallery images use the
+finishes and public structural elements. All197 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
+
+Edition242 coordinates the estimated SAW three-to-four and four-to-five main
+stair connections with the actual uncoloured circulation extracted from the
+2014guide. Two continuous winding waists, supported rails and local floor
+interfaces remove the retained eleven tread/cabin overlaps. The original lower
+geometry and fifth-to-sixth ST04 remain. Dedicated stair views preserve coherent
+assemblies through both fallback and detailed interior loading. Routes, dimensions,
+counts and finishes remain estimates; shaft walls, doors, complete rooms and the
+current2026 layout are not established by this historical source.
 
 Edition241 conforms the existing Clement House school-name glyphs to the
 curved stone frieze, retaining their font contours, size, height and finish.
@@ -39,7 +48,8 @@ Navigation waits for camera inertia to settle before attaching background
 models, rechecks late wheel input and gives explicit building selections
 priority. Orbit damping follows elapsed time rather than the number of frames
 or input events. Wheel bursts use one scene draw per new frame; a single
-four-sample still follows the quiet interval. Subpixel inertia is cleared
+four-sample still follows the quiet interval, accumulated one scene draw per
+animation frame and immediately interruptible by new input. Subpixel inertia is cleared
 without moving the visible pose, and held gestures do not redraw unchanged
 frames. Canvas resolution and source geometry remain unchanged.
 
