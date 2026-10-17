@@ -10,7 +10,7 @@ export async function galleryRendererSignature() {
     'web/src/viewer.js', 'web/src/control-timing.js', 'web/src/outdoor-environment.js', 'web/src/surface-materials.js', 'web/src/model-cache.js',
     'web/src/interior-lighting.js', 'web/src/foliage-materials.js',
     'web/public/environment/daylight-1k.hdr', 'web/public/environment/daylight-sky-2k.webp',
-    'web/src/model-loading.js', 'web/src/model-byte-cache.js', 'web/src/rendering-quality.js', 'web/src/temporal-antialiasing.js',
+    'web/src/model-loading.js', 'web/src/model-byte-cache.js', 'web/src/rendering-quality.js', 'web/src/temporal-antialiasing.js', 'web/src/progressive-still.js',
     'web/tools/gallery-views.json', 'web/tools/render_web_gallery.mjs',
     'web/tools/gallery_signature.mjs', 'package-lock.json',
   ]) hash.update(path).update(await readFile(path));
