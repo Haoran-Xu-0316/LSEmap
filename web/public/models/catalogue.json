@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "239",
-  "sourceModelSha256": "07fae16d2afbe82fed9352b5dbf2fd8df05e809158de72541b09c7b32328403c",
+  "version": "241",
+  "sourceModelSha256": "3b49385387b8e5c53223a1151762b80b9b3e1e4c2bbfbd474dfa820af4e424b4",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1498,15 +1498,25 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 175,
-        "scope": "按官方物业手册照片补全首层两侧低护栏，曲线位置沿现有Aldwych窗列注册；中央及侧门通路保留。照片日期未知，跨度、高度和杆件尺寸估算；既有玻璃、窗格和上部模型保留。",
-        "source": [
+        "version": 241,
+        "scope": "Conform the existing school-name inscription to its convex stone frieze, preserving wording, original font contours, size, height and material. Stone, glass, rooms and other buildings remain unchanged.",
+        "evidence": [
           {
             "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
             "page": 18,
-            "supports": "Both lower street-window guard banks; photograph capture date unknown"
+            "local": "data/documents/property_handbook.pdf",
+            "sha256": "03c7aff179a689de8a389881b6414a0ab1fef7f5f897385ba6bb73413b7bb746",
+            "supports": "School-name inscription follows curved entablature above paired columns",
+            "pdfCreated": "2025-10-08",
+            "photographCaptureDate": "unknown"
           }
-        ]
+        ],
+        "limitations": [
+          "Existing font contour, inscription extent and stroke depth remain authored estimates.",
+          "No current2026 survey or exact engraving reconstruction.",
+          "Unseen elevations and complete building interiors remain incomplete."
+        ],
+        "audit": "result/blender/clm-inscription241/audit.json"
       },
       "interiorView": {
         "position": [
@@ -1547,6 +1557,17 @@
           ],
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
+        },
+        {
+          "version": 175,
+          "scope": "按官方物业手册照片补全首层两侧低护栏，曲线位置沿现有Aldwych窗列注册；中央及侧门通路保留。照片日期未知，跨度、高度和杆件尺寸估算；既有玻璃、窗格和上部模型保留。",
+          "source": [
+            {
+              "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+              "page": 18,
+              "supports": "Both lower street-window guard banks; photograph capture date unknown"
+            }
+          ]
         }
       ],
       "glazingReview": {
@@ -1589,6 +1610,20 @@
         "independentRoom": "clm-g03",
         "sourceDimensionsEstimated": true,
         "wholeCurrentInteriorClaimed": false
+      },
+      "detailView": {
+        "label": "校名题字",
+        "position": [
+          112.5,
+          9.1,
+          166
+        ],
+        "target": [
+          114.02,
+          8.47,
+          154.14
+        ],
+        "fov": 35
       },
       "bounds": {
         "min": [
@@ -1657,10 +1692,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-f2db85289ac9.glb",
-        "bytes": 849784,
+        "url": "/models/details/clm-exterior-24be2b9e51f2.glb",
+        "bytes": 849984,
         "triangles": 66562,
-        "sha256": "f2db85289ac97ae9bcda778ede12d7f3700e5c6e8f5536416a11a974c2323cdc",
+        "sha256": "24be2b9e51f23a0fdfdfe9660a88fb978e43d539e2552c08c02b1258d86d658f",
         "bounds": {
           "min": [
             99.0441665649414,
@@ -5833,6 +5868,20 @@
           "New landing depth0.13m is a bounded registration repair with under-sill overlap; not a surveyed historical construction detail."
         ]
       },
+      "detailView": {
+        "label": "Clare Market",
+        "position": [
+          5.040815830230713,
+          7.800000190734863,
+          19.125810623168945
+        ],
+        "target": [
+          -6.517889976501465,
+          5.800000190734863,
+          37.482181549072266
+        ],
+        "fov": 42
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -6266,21 +6315,7 @@
             ]
           }
         }
-      ],
-      "detailView": {
-        "label": "Clare Market",
-        "position": [
-          5.040815830230713,
-          7.800000190734863,
-          19.125810623168945
-        ],
-        "target": [
-          -6.517889976501465,
-          5.800000190734863,
-          37.482181549072266
-        ],
-        "fov": 42
-      }
+      ]
     },
     {
       "code": "OCS",
