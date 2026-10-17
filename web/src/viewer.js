@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useTimeBasedDamping, stopControlInertia } from "./control-timing.js";
+import { createBuildingPicker } from "./building-picking.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
@@ -199,6 +200,7 @@ export class CampusViewer {
       matchMedia("(max-width: 720px)").matches ? 2 : 3,
     );
     this.raycaster = new THREE.Raycaster();
+    this.pickBuilding = createBuildingPicker();
     this.pointer = new THREE.Vector2();
     this.canvas.addEventListener("pointerdown", (event) => {
       if (!event.isPrimary) {
@@ -983,7 +985,7 @@ export class CampusViewer {
     this.raycaster.setFromCamera(this.pointer, this.camera);
     const visibleBuildings = this.pickable.filter((group) => group.visible);
     visibleBuildings.push(...[...this.exteriors.values()].filter((group) => group.visible));
-    const hit = this.raycaster.intersectObjects(visibleBuildings, true)[0];
+    const hit = this.pickBuilding(this.raycaster, visibleBuildings);
     if (!hit) return;
     let object = hit.object;
     while (object && !object.userData.buildingCode) object = object.parent;
