@@ -39,7 +39,7 @@ test('outdoor surfaces and optional sky render on desktop and mobile with bounde
     let triangles=0;viewer.scene.traverse(o=>{if(o.isMesh&&o.visible)triangles+=(o.geometry.index?.count??o.geometry.attributes.position.count)/3;});
     return {view,width,skyReady:viewer.canvas.dataset.skyReady,background:viewer.scene.background.isTexture?'sky':'neutral',motionMs:times.sort((a,b)=>a-b)[3],triangles,programs:viewer.renderer.info.programs.length};
    },{view,width});
-   expect(record.skyReady).toBe('true');expect(record.background).toBe(view==='overview'?'neutral':'sky');
+   expect(record.skyReady).toBe('true');expect(record.background).toBe('sky');
    expect(record.motionMs).toBeLessThan(80);
    await page.locator('canvas').screenshot({path:directory+'/'+view+'-'+width+'.png'});proof.push(record);
   }
