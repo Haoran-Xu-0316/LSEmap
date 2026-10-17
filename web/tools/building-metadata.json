@@ -947,9 +947,9 @@
         "scope": "依据LSE同房号历史平面与照片建立CON.7.04独立8人会议室。固定平面8椅位置，保留左侧入口、上下外开门、右端斜窗、木饰面、弧边木桌、黑色扶手会议椅和连续完整天花；比例、竖向尺寸、设备精确位置及来源同期性未核实。"
       },
       "exteriorDirection": [
-        -0.13161249458789825,
-        0.5131147503852844,
-        0.8481693863868713
+        0.8,
+        0.55,
+        0.45
       ],
       "localRefinement": {
         "description": "Open street portal with warm recessed vestibule, inner glazed doors and split granite-limestone casing",
@@ -957,11 +957,13 @@
         "scope": "Entrance guided by an undated LSE estate photograph; hallway depth, heights, materials and lighting estimated. Crest remains a simplified reserve. Upper elevations, roof and complete interior remain unresolved."
       },
       "latestReview": {
-        "version": 180,
-        "scope": "Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.",
-        "photographDate": "unknown",
-        "opticalValues": "estimated, not measured",
-        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate"
+        "version": 246,
+        "scope": "依据2020现状立面图重建Houghton侧89组开口、连续石材框带与凹入玻璃；总览和单楼共用完整外观。保留Aldwych入口及全部室内样本。",
+        "source": "https://idoxpa.westminster.gov.uk/online-applications/applicationDetails.do?activeTab=documents&keyVal=QDZG8ARPJFB00",
+        "sourceDate": "2020-08-28",
+        "sourcePdfSha256": "f49c9ee992fcf28615002474d79733c0035ef29e9021a1e130d96c10e96222f6",
+        "limitations": "按现有地图轮廓水平拟合3.3604%；道路保持平整，两处侧门下缘作展示适配。屋顶进深、背面封闭、材质和光学参数为估计，非2026实测完整建筑。",
+        "glazing": "80处明确窗洞采用有限透明，9处门或材质未明开口保持不透明；均有0.60米后挡板，网页透明度0.44为展示估值，旧材质保持。"
       },
       "detailView": {
         "label": "入口细节",
@@ -1031,6 +1033,13 @@
               "supports": "CON entrance crop only, no complete facade registration"
             }
           ]
+        },
+        {
+          "version": 180,
+          "scope": "Eight previously registered entrance panes now use single outward surfaces with per-corner UV preserved. Lower/front fanlight opacity.82 retained; two supported inner doors use estimated.42 opacity and dielectric metal0. Upper/roof and29unregistered proxies retained.",
+          "photographDate": "unknown",
+          "opticalValues": "estimated, not measured",
+          "source": "https://info.lse.ac.uk/staff/divisions/estates-division/lse-estate/LSE-Estate"
         },
         {
           "version": 210,
@@ -5267,7 +5276,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 243,
+  "sourceVersion": 246,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
