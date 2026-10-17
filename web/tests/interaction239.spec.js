@@ -78,11 +78,11 @@ test('wheel input uses one scene draw and restores a sharp still without resizin
   const pixels=viewer.canvas.width*viewer.canvas.height;
   viewer.canvas.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true}));
   viewer.tick(performance.now());cancelAnimationFrame(viewer.frame);const wheelDraws=draws,motionSamples=2**viewer.renderPipeline.scenePass.sampleLevel;
-  await new Promise(r=>setTimeout(r,250));draws=0;viewer.tick(performance.now());cancelAnimationFrame(viewer.frame);
-  const result={wheelDraws,motionSamples,idleDraws:draws,idleSamples:2**viewer.renderPipeline.scenePass.sampleLevel,pixelsUnchanged:pixels===viewer.canvas.width*viewer.canvas.height,settled:!viewer.renderPipeline.needsSettle};
+  await new Promise(r=>setTimeout(r,250));const settleDraws=[];for(let i=0;i<4;i++){draws=0;viewer.tick(performance.now());cancelAnimationFrame(viewer.frame);settleDraws.push(draws);}
+  const result={wheelDraws,motionSamples,settleDraws,idleSamples:2**viewer.renderPipeline.scenePass.sampleLevel,pixelsUnchanged:pixels===viewer.canvas.width*viewer.canvas.height,settled:!viewer.renderPipeline.needsSettle};
   viewer.dispose();stage.remove();labels.remove();return result;
  });
- expect(result).toEqual({wheelDraws:1,motionSamples:1,idleDraws:4,idleSamples:4,pixelsUnchanged:true,settled:true});
+ expect(result).toEqual({wheelDraws:1,motionSamples:1,settleDraws:[1,1,1,1],idleSamples:4,pixelsUnchanged:true,settled:true});
  await mkdir('result/blender/stage239/browser',{recursive:true});await writeFile('result/blender/stage239/browser/wheel-render-budget.json',JSON.stringify(result,null,2)+'\n');
  }finally{await server.close();}
 });
