@@ -26,6 +26,8 @@ side-door pull coordinated. It refines only the photographed front wall faces,
 entrance cladding and front glazing. The curved front glass receives finite
 transparency while its existing rear opaque proxy stays in place; no complete
 lobby is inferred. All original meshes, rooms and other buildings remain.
+Desktop close views reserve clear space beside the open directory; closing it
+restores the full canvas width.
 
 Edition237 keeps the KGS cupola geometry and separate seams while giving its
 lead shell continuous corner normals, and restores photo-guided low planting
