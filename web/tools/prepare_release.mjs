@@ -14,8 +14,8 @@ const modelAssetsSha256 = await galleryModelSignature(root);
 if (gallery.modelAssetsSha256 !== modelAssetsSha256) throw new Error("Gallery models are stale. Run npm run gallery.");
 if (gallery.renderer !== 'campus-viewer' || gallery.rendererSha256 !== rendererSha256)
   throw new Error('Gallery renderer is stale. Run npm run gallery before building.');
-if (gallery.images.some(image => image.rendererSha256 !== rendererSha256 || image.renderer !== 'campus-viewer' || image.modelAssetsSha256 !== modelAssetsSha256))
-  throw new Error('Mixed gallery renderers or versions');
+if (gallery.images.some(image => image.rendererSha256 !== rendererSha256 || image.renderer !== 'campus-viewer' || image.modelAssetsSha256 !== modelAssetsSha256 || image.sceneSamples !== 4))
+  throw new Error('Mixed gallery renderers, versions or unsettled sampling');
 const models = new Set(['campus.glb', 'catalogue.json']);
 for (const building of catalogue.buildings) {
   for (const detail of [building.detailedExterior, building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)].filter(Boolean)) models.add(detail.url.replace('/models/', ''));
