@@ -49,11 +49,13 @@ window.renderGalleryView=async(job)=>{
  viewer.renderer.shadowMap.needsUpdate=true;
  // Capture the same color-managed and antialiased output as the live map.
  viewer.renderPipeline.resetHistory();
- viewer.renderPipeline.render();
+ viewer.renderPipeline.render({moving:false,stabilize:false});
+ const sceneSamples=2**viewer.renderPipeline.scenePass.sampleLevel;
+ if(sceneSamples!==4) throw Error('Gallery capture requires the settled four-sample view');
  const view={position:viewer.camera.position.toArray(),target:viewer.controls.target.toArray(),fov:viewer.camera.fov};
  return {image:viewer.canvas.toDataURL('image/webp',0.95).split(',')[1],view,
   mode:interior?'interior':job.code==='CAMPUS'?'campus':'exterior',
-  detail:viewer.canvas.dataset.detailReady??null};
+  detail:viewer.canvas.dataset.detailReady??null,sceneSamples};
 };
 window.galleryReady=true;
 </script>`;
@@ -88,7 +90,7 @@ try {
     records.push({ name: job.name, code: job.code, sourceModelSha256: catalogue.sourceModelSha256,
       renderer: 'campus-viewer', rendererSha256, modelAssetsSha256, bytes: bytes.length,
       sha256: createHash('sha256').update(bytes).digest('hex'),
-      view: capture.view, mode: capture.mode, spaceId: job.spaceId ?? null, sectionId: job.sectionId ?? null, detail: capture.detail });
+      sceneSamples: capture.sceneSamples, view: capture.view, mode: capture.mode, spaceId: job.spaceId ?? null, sectionId: job.sectionId ?? null, detail: capture.detail });
     console.log(`WEB_GALLERY ${records.length}/${jobs.length} ${job.name}`);
   }
   // Publish only after every view has rendered successfully.
