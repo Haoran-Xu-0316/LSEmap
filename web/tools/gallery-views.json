@@ -1644,7 +1644,7 @@
     "code": "SAW",
     "name": "saw-upper-spiral-interior",
     "label": "五至六层螺旋梯",
-    "sectionId": "5",
+    "sectionId": "stair-5-6",
     "view": {
       "position": [
         -55,
@@ -2313,6 +2313,80 @@
         -8.676980972290039
       ],
       "fov": 57
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "LIF-park-public",
+    "label": "Lincoln’s Inn Fields公共建筑",
+    "view": {
+      "position": [
+        -84,
+        24,
+        -88
+      ],
+      "target": [
+        -4,
+        2.8,
+        -174
+      ],
+      "fov": 58
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "LIF-bandstand",
+    "label": "公园八角亭",
+    "view": {
+      "position": [
+        -12,
+        7.2,
+        -164
+      ],
+      "target": [
+        10.45,
+        3.0,
+        -184.37
+      ],
+      "fov": 54
+    }
+  },
+  {
+    "code": "SAW",
+    "name": "saw-first-second-interior",
+    "label": "1至2层楼梯",
+    "sectionId": "stair-1-2",
+    "view": {
+      "position": [
+        -64.8,
+        6.2,
+        -7.5
+      ],
+      "target": [
+        -70.0,
+        5.9,
+        -3.9
+      ],
+      "fov": 75
+    }
+  },
+  {
+    "code": "SAW",
+    "name": "saw-second-third-interior",
+    "label": "2至3层楼梯",
+    "sectionId": "stair-2-3",
+    "view": {
+      "position": [
+        -64.8,
+        9.7,
+        -6.8
+      ],
+      "target": [
+        -69.5,
+        9.6,
+        -3.2
+      ],
+      "fov": 75
     }
   }
 ]
