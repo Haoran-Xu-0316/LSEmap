@@ -128,11 +128,13 @@ image URLs use each image's own content digest, including renderer-only changes.
 
 Use neutral translucent surfaces for the navigation and map controls, with restrained blur and charcoal selected states. No pink UI fills. Keep Roboto. The directory presents all buildings through search and names; omit model-quality filters, progress labels and secondary promotional copy. Preserve load-error recovery and keep source limitations in the collapsed detail note.
 
-## Immersive map refinement237
+## Immersive map navigation
 
-Experience mode: the architectural model occupies the full desktop viewport.
-The masthead and directory are bounded neutral translucent overlays; toggling
-the directory leaves the canvas projection unchanged. Building selection is
+Experience mode: the architectural model occupies the full desktop height.
+The masthead and directory use bounded neutral translucent surfaces. An open
+desktop directory reserves its own horizontal space, keeping close-up geometry
+clear of the panel; closing it restores the full viewport. Layout changes are
+immediate and use the viewer's existing resize path, without animating WebGL sizes. Building selection is
 the focal motion, using a620ms decelerating camera move and a brief detail
 arrival. Control feedback is140–160ms. No automatic orbit, perpetual UI loop,
 new postprocessing pass or animation dependency. Mobile retains the compact
