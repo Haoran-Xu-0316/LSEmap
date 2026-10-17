@@ -35,7 +35,7 @@ test('current streets and static daylight render without extra orbit downloads',
      const finishes=new Set();v.scene.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material])if(m&&/CBG(?:203_ROOF|205_PODIUM)_paving|LRB_NEXT_PLAZA155_stone/.test(m.name))finishes.add(m.customProgramCacheKey());});
      return{name:job.name,sky:Boolean(v.scene.background.isTexture),skyReady:v.canvas.dataset.skyReady,backdropReady:v.canvas.dataset.skyBackdropReady,groundReady:v.canvas.dataset.groundReady,reliefReady:v.canvas.dataset.groundReliefReady,medianMs:times.sort((a,b)=>a-b)[2],finishes:[...finishes],meshes:v.renderer.info.memory.geometries};
     },job);
-    expect(record.skyReady).toBe('true');expect(record.backdropReady).toBe('true');expect(record.groundReady).toBe('true');expect(record.reliefReady).toBe('true');expect(record.sky).toBe(job.name==='skyline');expect(record.finishes.length).toBeGreaterThan(0);expect(record.finishes.every(key=>key.includes('captured'))).toBe(true);
+    expect(record.skyReady).toBe('true');expect(record.backdropReady).toBe('true');expect(record.groundReady).toBe('true');expect(record.reliefReady).toBe('true');expect(record.sky).toBe(true);expect(record.finishes.length).toBeGreaterThan(0);expect(record.finishes.every(key=>key.includes('captured'))).toBe(true);
     await page.screenshot({path:folder+'/'+job.name+'-'+width+'.png'});proof.push({width,...record});
    }
   }
