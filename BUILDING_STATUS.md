@@ -1,14 +1,18 @@
 # LSEmap模型状态
 
-当前完整原生模型：result/blender/LSE_campus_detailed_v241.blend。
+当前完整原生模型：result/blender/LSE_campus_detailed_v242.blend。
 
-原生SHA256：3b49385387b8e5c53223a1151762b80b9b3e1e4c2bbfbd474dfa820af4e424b4。
+原生SHA256：b81a627db462ffbd98ca206879fea43d8da018e36edeb2e2bca62c85a2db4589。
 
 渲染审查235在当时保留234完整原生与全部浏览器模型字节。室内复用3灯，补光方向随空间边界平移，退出恢复原光照；不改曝光或材质。树冠增加按像素尺度渐隐的估计叶簇色差和浅法线，不改树位、冠形、道路或基础色。四个室内资产与近中远植被完成桌面、窄屏和旋转对比，不作真手机性能承诺。193张图库与交互共用更新渲染。LRB蓝点已核验为历史Blue Rain装置，墙距约25毫米、法线和重复面正常，未作为错误删除。几何及全校内部完成度仍按234记录。
 
 31栋楼有目录记录，30栋有独立外观，25个内部视图、35个可选空间研究。可加载不等于整栋实测完成；完整内部、每间房和未见立面仍未完成。未注明日期的照片不称最新实测。
 
 ## 本轮范围
+
+242版协调SAW估算主梯的3至4层、4至5层连接。按2014指南的实际彩色房间边界提取无色公共区域，新增两条连续转角梯、随梯扶手、防滑条及11.1、14.1、18.0米处局部楼板连接，替代显示7个旧批次。12个新对象全部用于总览、单楼外观和公共内部，保留8607个原对象、2336个材质图及35空间1485成员。独立重开后核对328个新行走面、22个保留下层行走面，实际三角面净空冲突及电梯内轮廓重叠均为0；三处楼板连接按1.1米宽度检查通过。2014图源不能证明2026现状；路线、20/21踏步、宽度、转角和构造尺度为估算，完整井壁、门及房间关系仍未验证。新增两张梯段图库，共197张。
+
+内部导出按完整梯段保留少量显示分组，避免高度剖切时混入相邻梯段的扶手残段；总览和外观继续合并。降级模型切换至详细模型、全层查看及重新进入时均须核对显示状态。交互清晰度恢复按四帧分摊场景绘制，保留原四样本画质与固定画布尺寸。
 
 241版将Clement House既有校名题字沿现有弧形檐带贴合，消除平面文字与石面最高约23厘米的悬离；原文字、字形轮廓、字号、标高、材质及原字体对象保留，只用1个新网格替代显示。字背约1毫米间隙、原12毫米字厚仍为展示估值。官方物业手册重新获取后与存档SHA一致，2025年10月8日是PDF创建日期，不是实照拍摄日期。新增校名题字3D视角及对应图库，共195张。8606原对象、35空间1485成员和其他建筑、玻璃与道路保留；完整当前内部仍未完成。
 
@@ -195,7 +199,7 @@ CBG主立面按建成照片的8条柱轴、7个开间重建，办公室恢复2�
 |PEL|238入口位置与饰面|旋转门改至照片所示左侧，侧门把手及中央框同步协调；正面墙、银灰入口包板与四组正面玻璃分材质，后部不透明代理保留。22窄窗、原塔楼及全部室内样本保留；上部重复、44米高度、屋顶及当前整楼内部仍未核实。|
 |POR|207入口/148玻璃|Twenty-three retained street and corner glass panels keep their original geometry, UVs and neutral color with explicit browser opacity0.82. Near-window backing checked before enabling transparency; no invented interior added. Undated handbook imagery supports the shopfront. Exact optical properties, roof registration and unseen sides remain estimated.|
 |SAR|186|4组首层临街窗使用中性透光玻璃及浅色竖向百叶，保留原玻璃几何、UV、窗框、入口门和上层窗。依据未注明日期的官方照片及2018年街景，百叶布置与光学参数估算，完整内部仍未建立。|
-|SAW|223上部ST04/216楼层/206玻璃/190砖屏|按官方源图恢复5→6真实梯位螺旋梯、梯孔与到达连接，消除该段6处冲突；低五段32处仍未解决。保留外观砖屏、玻璃和所有独立样本，完整主梯及当前房间仍未完成。|
+|SAW|242上层ST03/233下层ST03/223上部ST04/216楼层|历史图源约束的1至6层主梯研究；242消除保留的11处踏步与电梯内轮廓重叠。保留下层原面、ST04及独立空间。宽度、路线和构造为估算，完整井壁、门、地下空间及当前房间仍未完成。|
 |SHF|179|Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.|
 |SAL|229历史窗去青与SAL.B.01/222公共环廊与主梯/184外观结构|入口亭、三处侧门、LG/G公共环廊与两组主梯连通；公共和外壳批次明确分开，旧SAL.G.01独立保留。历史导览与照片支持，尺寸估算，未见上层和完整当前内装未建。|
 |STC|197外观/143艺术板|Retains documented38ft by7ft6in panel and frame. A perspective-registered blue Thames curve, six coarse silver landmark silhouettes and limited muted mosaic fields replace the uniform placeholder. Border and text plaque retained. These are native polygon approximations without embedded source images; fine mosaic tesserae, contour accuracy and relief depth remain unmeasured.|
