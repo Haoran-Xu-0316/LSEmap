@@ -20,6 +20,16 @@ The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All193 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
+The renderer review235 retains the complete edition234 native and every
+browser-model checksum. Interior views reuse the existing three lights with
+bounds-relative bounce and restore the exterior state on exit. Opaque foliage
+gains filtered leaf-cluster relief without new meshes, textures or render passes.
+Procedural foliage is a presentation estimate. Local desktop and narrow-viewport
+comparisons cover four interiors and near/middle/overview planting; they do not
+establish physical-phone performance. All193 stills use the updated live renderer.
+The library's blue points are the historically sourced Blue Rain artwork;
+wall separation and outward normals were checked, so they remain intact.
+
 Edition234 removes49.42square metres of coplanar duplicate asphalt
 without changing the road union, levels, remaining source faces or their UVs.
 A1mm contact belt retains0.101square metres of existing overlap to avoid
