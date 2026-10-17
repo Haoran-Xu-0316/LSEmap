@@ -8,17 +8,33 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition238 contains31 building records,30 detailed exteriors,25 interior views
+Edition239 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v238.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v239.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage238` acceptance records are retained with the native: integration
+The local `stage239` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All194 gallery images use the
-production viewer and are checked against model and renderer signatures.
+production viewer, explicitly capture its settled four-sample output and are
+checked against model and renderer signatures.
+
+Edition239 replaces the five segmented Clare Market relief studies with
+continuous shallow bodies, curved limb profiles and joined necks. It retains
+the five photographed poses and their positions, existing limestone finish,
+blue windows, panels and entrance. Sculpture contours and depths remain
+authored interpretations; the unillustrated side panel is not reconstructed.
+A direct Clare Market3D view makes the refined frontage inspectable.
+
+Navigation waits for camera inertia to settle before attaching background
+models, rechecks late wheel input and gives explicit building selections
+priority. Orbit damping follows elapsed time rather than the number of frames
+or input events. Wheel bursts use one scene draw per new frame; a single
+four-sample still follows the quiet interval. Subpixel inertia is cleared
+without moving the visible pose, and held gestures do not redraw unchanged
+frames. Canvas resolution and source geometry remain unchanged.
 
 Edition238 corrects the reversed PEL entrance arrangement: the existing revolving
 door and posts move to the photographed left side, with the central frame and
@@ -33,8 +49,7 @@ Edition237 keeps the KGS cupola geometry and separate seams while giving its
 lead shell continuous corner normals, and restores photo-guided low planting
 inside six existing LSE Square tree pools. The browser samples small bevels
 more economically in15named OLD/SAW batches without removing openings or
-changing the native source. Desktop navigation floats over a full-viewport
-3D scene; directory toggles leave its projection stable.
+changing the native source. The later238 layout reserves unobstructed desktop canvas space beside the directory.
 
 Edition236 restores a supported Clare Market entrance landing and two handrail
 feet at the Old Building while retaining every tread, door and street level.
