@@ -2982,18 +2982,23 @@
       ],
       "facadeScope": "Photo-informed street facade. Heights, bay spacing, unseen elevations and roof depth are estimated.",
       "localRefinement": {
-        "description": "Projecting silver entrance fascia, yellow reveals, first-floor window box and revolving glazing",
+        "description": "Photographed left revolving entrance, right side-door handle, silver entrance cladding and neutral front glazing",
         "newComponents": 20,
-        "scope": "Entrance guided by undated estate and 2021 public-realm photos; dimensions and colors estimated. Upper windows, massing, roof and complete interior remain unverified."
+        "scope": "Entrance positions corrected within the inherited opening;15exact batches copied. Material parameters remain photographic estimates. The tower and current full interiors remain unverified."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+        "version": 238,
+        "scope": "Correct the reversed revolving-door side relative to the photographed LSE sign: translate the existing curved glass and posts1.72m along the facade axis; move the side-door pull to the opposite field and shift only8central-post vertices0.7m. Refine photographed front wall, entrance cladding and four glass batches. Keep22narrow windows, topology/UV/normals, opaque rear pane and every room.",
         "evidence": [
-          "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Pethick-Lawrence-web.jpg"
         ],
-        "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
-        "audit": "result/blender/stage166/dielectric-audit.json"
+        "audit": "result/blender/pel-exterior238/audit.json",
+        "limitations": [
+          "Finish colours and roughness are estimates from undated photographs, not measured reflectance.",
+          "Upper continuation and inherited44m tower, roof and unseen elevations remain unverified.",
+          "Adjacent ribbon-window building is not assigned to PEL.",
+          "Only the curved revolving front becomes partly transparent; its existing opaque rear glazing proxy remains. No complete lobby or new room is inferred."
+        ]
       },
       "interiorView": {
         "position": [
@@ -3017,6 +3022,15 @@
           "narrowWindows": 22,
           "glassFirstProbes": 66,
           "limitation": "Two narrow front columns and solid central panel follow lower facade photographs. Repetition above photographed floors, 44m height and other faces remain estimates."
+        },
+        {
+          "version": 166,
+          "scope": "Correct explicitly identified legacy exterior glass metallic response to dielectric0. Geometry, UVs, colour, roughness, opacity, transmission, frames and interior studies retained.",
+          "evidence": [
+            "https://threejs.org/docs/pages/MeshStandardMaterial.html"
+          ],
+          "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
+          "audit": "result/blender/stage166/dielectric-audit.json"
         }
       ],
       "glazingReview": {
@@ -3025,6 +3039,20 @@
         "reversedShells": 310,
         "batchCount": 5,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
+      },
+      "detailView": {
+        "label": "入口细节",
+        "position": [
+          120.52918,
+          7.7,
+          78.57797
+        ],
+        "target": [
+          111.91476,
+          3.45,
+          90.8577
+        ],
+        "fov": 48
       }
     },
     {
@@ -5091,7 +5119,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 237,
+  "sourceVersion": 238,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
