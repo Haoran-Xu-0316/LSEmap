@@ -1003,7 +1003,7 @@ dialog::backdrop {
     bottom: 46%;
   }
 }
-/* The map owns the desktop viewport; opening the directory never resizes WebGL. */
+/* Floating navigation reserves clear space so close views stay fully inspectable. */
 @media (min-width: 701px) {
   .masthead {
     position: absolute;
@@ -1015,6 +1015,8 @@ dialog::backdrop {
     box-shadow: var(--control-shadow);
   }
   .workspace { height: 100dvh; }
+  .stage { margin-left: 312px; }
+  .sidebar.closed + .stage { margin-left: 0; }
   .sidebar {
     position: absolute;
     top: 88px;
@@ -1027,12 +1029,12 @@ dialog::backdrop {
   }
   .index-panel { padding-top: 24px; }
   .index-panel h1 { font-size: 29px; margin-bottom: 20px; }
-  .scene-heading { top: 104px; left: 336px; max-width: calc(100% - 422px); }
+  .scene-heading { top: 104px; left: 24px; max-width: calc(100% - 110px); }
   .sidebar.closed + .stage .scene-heading { left: 32px; max-width: calc(100% - 120px); }
   .north { top: 96px; }
-  .map-caption { left: 336px; }
+  .map-caption { left: 24px; }
   .sidebar.closed + .stage .map-caption { left: 32px; }
-  .map-toolbar { bottom: 28px; left: calc(50% + 156px); }
+  .map-toolbar { bottom: 28px; left: 50%; }
   .sidebar.closed + .stage .map-toolbar { left: 50%; }
 }
 .map-toolbar button { transition: background-color 140ms ease, color 140ms ease; }
