@@ -659,15 +659,25 @@
         "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
       },
       "latestReview": {
-        "version": 175,
-        "scope": "按官方物业手册照片补全首层两侧低护栏，曲线位置沿现有Aldwych窗列注册；中央及侧门通路保留。照片日期未知，跨度、高度和杆件尺寸估算；既有玻璃、窗格和上部模型保留。",
-        "source": [
+        "version": 241,
+        "scope": "Conform the existing school-name inscription to its convex stone frieze, preserving wording, original font contours, size, height and material. Stone, glass, rooms and other buildings remain unchanged.",
+        "evidence": [
           {
             "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
             "page": 18,
-            "supports": "Both lower street-window guard banks; photograph capture date unknown"
+            "local": "data/documents/property_handbook.pdf",
+            "sha256": "03c7aff179a689de8a389881b6414a0ab1fef7f5f897385ba6bb73413b7bb746",
+            "supports": "School-name inscription follows curved entablature above paired columns",
+            "pdfCreated": "2025-10-08",
+            "photographCaptureDate": "unknown"
           }
-        ]
+        ],
+        "limitations": [
+          "Existing font contour, inscription extent and stroke depth remain authored estimates.",
+          "No current2026 survey or exact engraving reconstruction.",
+          "Unseen elevations and complete building interiors remain incomplete."
+        ],
+        "audit": "result/blender/clm-inscription241/audit.json"
       },
       "interiorView": {
         "position": [
@@ -709,6 +719,17 @@
           ],
           "limitations": "PBR parameter correction, not a measured glazing specification or stronger transparency claim. Existing facade evidence and dimensional limitations still apply.",
           "audit": "result/blender/stage166/dielectric-audit.json"
+        },
+        {
+          "version": 175,
+          "scope": "按官方物业手册照片补全首层两侧低护栏，曲线位置沿现有Aldwych窗列注册；中央及侧门通路保留。照片日期未知，跨度、高度和杆件尺寸估算；既有玻璃、窗格和上部模型保留。",
+          "source": [
+            {
+              "url": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Property-and-Space/LSE-Property-Handbook.pdf",
+              "page": 18,
+              "supports": "Both lower street-window guard banks; photograph capture date unknown"
+            }
+          ]
         }
       ],
       "glazingReview": {
@@ -751,6 +772,20 @@
         "independentRoom": "clm-g03",
         "sourceDimensionsEstimated": true,
         "wholeCurrentInteriorClaimed": false
+      },
+      "detailView": {
+        "label": "校名题字",
+        "position": [
+          112.5,
+          9.1,
+          166
+        ],
+        "target": [
+          114.02,
+          8.47,
+          154.14
+        ],
+        "fov": 35
       }
     },
     {
@@ -5147,7 +5182,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 239,
+  "sourceVersion": 241,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
