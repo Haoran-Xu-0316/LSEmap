@@ -5267,7 +5267,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 242,
+  "sourceVersion": 243,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5478,5 +5478,19 @@
   "browserGeometryBudget237": {
     "policy": "web/tools/web_geometry_budget.py",
     "scope": "Retain every brick, opening and edge width; reduce bevel segments2to1 only in15checked exterior batches. Native source modifiers stay unchanged."
+  },
+  "streetGroundReview243": {
+    "version": 243,
+    "status": "native-verified",
+    "scope": "Houghton Street paving support and coplanar edge repair. Retain all entrance, bollard, building and room heights; clip266 conflicting edge tops and preserve55920 other paving faces with their exact geometry, UVs and materials.",
+    "supportAreaM2": 415.242,
+    "significantOverlapAreaM2": 1.525,
+    "newObjects": 2,
+    "archivedObjects": 1,
+    "limitations": [
+      "Footprint, slab pattern, dimensions and street levels remain estimates. No measured terrain claim.",
+      "Historical relative-grade candidate is excluded because its north transition conflicts with OLD access and street posts.",
+      "CON and COL historical elevation components remain private registration studies; their exteriors are not presented as replaced by243."
+    ]
   }
 }
