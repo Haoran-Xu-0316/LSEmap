@@ -5,14 +5,14 @@ import {createHash} from 'node:crypto';
 import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 import {outdoorSkyVisible,loadOutdoorEnvironment,SKY_URL} from '../src/outdoor-environment.js';
 
-test('map and STC elevation stay neutral while street pitch reveals the sky',()=>{
- assert.equal(outdoorSkyVisible('campus',-.65),false);
- assert.equal(outdoorSkyVisible('campus',-.387),false);
+test('outdoor navigation keeps its sky while rooms and isolated elevations stay neutral',()=>{
+ for (const y of [-1,-.65,-.387,-.27,-.22,0,.4,1]) {
+  assert.equal(outdoorSkyVisible('campus',y),true);
+  assert.equal(outdoorSkyVisible('campus',y,true),true);
+  assert.equal(outdoorSkyVisible('campus',y,true,true),false);
+  assert.equal(outdoorSkyVisible('interior',y,true),false);
+ }
  assert.equal(outdoorSkyVisible('detail',-.10),true);
- assert.equal(outdoorSkyVisible('interior',.4,true),false);
- assert.equal(outdoorSkyVisible('campus',-.22,false),false);
- assert.equal(outdoorSkyVisible('campus',-.22,true),true);
- assert.equal(outdoorSkyVisible('campus',-.27,true),false);
 });
 
 test('fixed CC0 panorama is an intact 1k HDR below the optional delivery budget',async()=>{
