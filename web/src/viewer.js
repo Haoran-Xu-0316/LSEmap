@@ -11,7 +11,7 @@ import { loadOutdoorEnvironment, DAYLIGHT_DIRECTION } from "./outdoor-environmen
 import { createGroundTextureState, loadGroundTextures, disposeGroundTextures } from "./ground-textures.js";
 import { ModelCache } from "./model-cache.js";
 import { loadModelInStages, downloadVerifiedModel, downloadCampusModel } from "./model-loading.js";
-import { prepareDetailedModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides, isGlazingMaterial } from "./surface-materials.js";
+import { prepareDetailedModel, prepareStaticModel, disposeModel, applySurfaceDetail, refineMaterialFinish, prepareMeshShadows, prepareGlazingSides, isGlazingMaterial } from "./surface-materials.js";
 
 const HOME_DIRECTION = new THREE.Vector3(-0.7, 0.9, 1).normalize();
 const COMPANION_CODES = {PAN: "FAW", FAW: "PAN"};
@@ -102,6 +102,8 @@ export class CampusViewer {
     );
     this.container.append(this.canvas);
     this.scene = new THREE.Scene();
+    // This root stays at identity; lights and model parents still update normally.
+    this.scene.matrixAutoUpdate = false;
     this.detailGround = new THREE.Mesh(
       new THREE.PlaneGeometry(6000, 6000),
       new THREE.ShadowMaterial({ color: 0x34312b, opacity: 0.2 }),
@@ -301,6 +303,7 @@ export class CampusViewer {
       if (object.isMesh) object.castShadow = false;
     });
     for (const object of contextMeshes) object.castShadow = false;
+    prepareStaticModel(this.campus);
     this.pickable = [...this.groups]
       .filter(([code]) => codes.has(code))
       .map(([, object]) => object);
