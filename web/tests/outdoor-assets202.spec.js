@@ -48,7 +48,7 @@ test('sharp outdoor sky and dry metre-scale roads remain stable on desktop and m
   }
   await writeFile(directory+'/measurement.json',JSON.stringify({records,errors},null,2)+'\n');
   expect(errors).toEqual([]);
-  for(const record of records){const sky=['street','sky-probe'].includes(record.view);expect(record.background).toBe(sky?'sky':'neutral');expect(record.backdropUsed).toBe(sky);}
+  for(const record of records){const sky=record.view!=='interior-background';expect(record.background).toBe(sky?'sky':'neutral');expect(record.backdropUsed).toBe(sky);}
   await page.evaluate(()=>viewer.dispose());
   // Losing only the optional photograph must retain the HDR sky and lighting.
   await page.route('**/environment/daylight-sky-2k.webp', route=>route.abort());
