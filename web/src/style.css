@@ -560,10 +560,17 @@ canvas {
 }
 .detail-gallery {
   display: flex;
-  gap: 6px;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 3px;
+  padding: 3px 3px 6px;
   margin: 12px 0;
 }
 .detail-gallery button {
+  flex: 0 0 65px;
   padding: 0;
   width: 65px;
   height: 48px;
