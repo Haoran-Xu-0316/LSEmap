@@ -14,7 +14,7 @@ import re
 import sys
 import bpy
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from public_interior_objects import public_interior_objects
+from public_interior_objects import public_interior_objects, public_interior_display_group
 from web_geometry_budget import budget_web_bevels, restore_web_bevels
 from integrate_exterior_round194 import accepted_fingerprints, object_fingerprint
 import bmesh
@@ -290,6 +290,33 @@ def clone_group(objects, name, target_scene, hide_basement=False):
     return joined, {'min': [lo[0], lo[2], -hi[1]], 'max': [hi[0], hi[2], -lo[1]]}
 
 
+
+def clone_public_interior(objects, code, target_scene):
+    """Preserve coherent SAW stair nodes; keep all other interiors unchanged."""
+    if code != 'SAW':
+        return clone_group(objects, code + '_INTERIOR', target_scene)
+    groups = {}
+    for obj in objects:
+        if obj.hide_render:
+            continue
+        key = public_interior_display_group(code, obj)
+        groups.setdefault(key, []).append(obj)
+    combined = None
+    for key, members in groups.items():
+        clone, bounds = clone_group(members, code + '_INTERIOR_' + key, target_scene)
+        if clone is None:
+            continue
+        clone['buildingCode'] = code
+        clone['interiorDisplayGroup'] = key
+        if combined is None:
+            combined = bounds
+        else:
+            combined = {'min': [min(a, b) for a, b in zip(combined['min'], bounds['min'])],
+                        'max': [max(a, b) for a, b in zip(combined['max'], bounds['max'])]}
+    assert combined, 'Missing SAW public assembly'
+    return True, combined
+
+
 def exterior_framing_corners(mesh):
     """Bound the evaluated shell in its tightest horizontal rectangle.
 
@@ -439,7 +466,7 @@ for record in metadata:
     code = record['code']
     interior_scene = bpy.data.scenes.new('WEB_INTERIOR_' + code)
     interior_objects = public_interior_objects(record)
-    _, bounds = clone_group(interior_objects, code + '_INTERIOR', interior_scene)
+    _, bounds = clone_public_interior(interior_objects, code, interior_scene)
     assert bounds, f'No public-interior geometry exported for {code}'
     # Preserve approved presets; rooms without one use the viewer's bounds fit.
     record['interiorBounds'] = bounds
@@ -465,7 +492,10 @@ detail_report = []
 
 def export_detail(objects, code, kind):
     scene = bpy.data.scenes.new('WEB_DETAIL_' + code + '_' + kind)
-    obj, bounds = clone_group(objects, code, scene, hide_basement=code == 'LRB' and kind == 'exterior')
+    if code == 'SAW' and kind == 'interior':
+        obj, bounds = clone_public_interior(objects, code, scene)
+    else:
+        obj, bounds = clone_group(objects, code, scene, hide_basement=code == 'LRB' and kind == 'exterior')
     assert obj and bounds
     staging = f'details/{code.lower()}-{kind}.glb'
     export_scene(scene, staging)
