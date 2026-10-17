@@ -373,6 +373,15 @@ export function prepareGlazingSides(material) {
   if (material.transparent && (isGlazingMaterial(material) || /optics/i.test(material.name))) material.forceSinglePass = true;
 }
 
+/** Architecture has fixed local transforms; visibility, materials and parent
+ * transforms remain live. Keep world-matrix propagation enabled for reparenting. */
+export function prepareStaticModel(group) {
+  group.traverse((object) => {
+    if (object.matrixAutoUpdate) object.updateMatrix();
+    object.matrixAutoUpdate = false;
+  });
+}
+
 export function prepareDetailedModel(group, environmentMap = null, groundTextures = null) {
   group.visible = false;
   group.traverse((object) => {
@@ -384,6 +393,7 @@ export function prepareDetailedModel(group, environmentMap = null, groundTexture
       applySurfaceDetail(material, groundTextures);
     }
   });
+  prepareStaticModel(group);
 }
 
 export function disposeModel(group) {
