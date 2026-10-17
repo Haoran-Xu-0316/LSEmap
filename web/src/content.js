@@ -137,11 +137,12 @@ export const buildingDetails = {
   },
   CON: {
     description:
-      "Connaught House的Aldwych入口以下部灰色花岗岩、上部浅色石材和层叠石檐形成层次，后退的玻璃门保留门廊进深。",
-    note: "入口依据实拍重建，上层窗列仍有估计。CON.7.04会议室补齐完整围护与室内视点，依据历史照片和平面图研究，不代表当前布局或整栋内部。",
+      "Connaught House的Houghton立面以连续石材框带、凹入窗列和分层檐口展开，Aldwych入口保留灰色花岗岩、浅色石材与后退玻璃门。",
+    note: "Houghton窗列依据2020现状立面图，宽度按现有地图轮廓拟合；侧门下缘适配保留道路，屋顶进深和背面为估计。入口及CON.7.04会议室依据历史资料，不代表2026实测完整建筑。",
     images: [
       ["con-entrance", "Connaught House凹入门廊"],
-      ["con-exterior", "Aldwych立面与入口位置"],
+      ["con-exterior", "Houghton窗列与Aldwych入口"],
+      ["con-houghton", "Houghton连续石材框带与凹窗"],
       ["con-interior", "CON.7.04会议室，八席长桌与木饰面"],
       ["con-704-panels-interior", "CON.7.04木饰面与8席会议桌"]
     ],
