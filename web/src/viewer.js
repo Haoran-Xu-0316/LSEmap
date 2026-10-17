@@ -1078,7 +1078,7 @@ export class CampusViewer {
     // the one-scene-draw path, then refine once after the quiet interval.
     const finalStill = this.renderPipeline.needsSettle && !moving;
     if (this.needsRender || finalStill) {
-      this.renderPipeline.render({ moving, time });
+      this.renderPipeline.render({ moving, time, progressive: true, restart: this.needsRender });
       this.updateLabels();
       if (this.onBearingChange) {
         const bearing = Math.round(this.controls.getAzimuthalAngle() * 1800 / Math.PI) / 10;
