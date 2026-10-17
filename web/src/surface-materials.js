@@ -133,7 +133,11 @@ export function refineMaterialFinish(material, environmentMap = null) {
     material.metalness = Math.max(material.metalness, 0.72);
     material.roughness = Math.min(material.roughness, 0.34);
     material.envMapIntensity = 0.9;
-  } else if (matches(/lead|zinc|aluminium|aluminum/)) {
+  } else if (matches(/(?:^|[_\s])lead(?:[_\s.]|$)/)) {
+    // Lead roofs already carry an authored finish. Preserve those coefficients
+    // rather than polishing a rough cupola or making a painted cowl metallic.
+    material.envMapIntensity = 0.75;
+  } else if (matches(/zinc|aluminium|aluminum/)) {
     material.metalness = Math.max(material.metalness, 0.65);
     material.roughness = 0.48;
     material.envMapIntensity = 0.75;
