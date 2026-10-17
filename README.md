@@ -8,18 +8,25 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition239 contains31 building records,30 detailed exteriors,25 interior views
+Edition241 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v239.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v241.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage239` acceptance records are retained with the native: integration
+The local `stage241` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All194 gallery images use the
+finishes and public structural elements. All195 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
+
+Edition241 conforms the existing Clement House school-name glyphs to the
+curved stone frieze, retaining their font contours, size, height and finish.
+A direct inscription view and matching gallery still make the alignment
+inspectable. The supporting official handbook was rechecked against the
+canonical archive; its photographs remain undated. Lettering depth and extent
+are authored estimates, not a measured engraving reconstruction.
 
 Edition239 replaces the five segmented Clare Market relief studies with
 continuous shallow bodies, curved limb profiles and joined necks. It retains
