@@ -8,20 +8,30 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition234 contains31 building records,30 detailed exteriors,25 interior views
+Edition236 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v234.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v236.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage234` acceptance records are retained with the native: integration
+The local `stage236` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All193 gallery images use the
+finishes and public structural elements. All194 gallery images use the
 production viewer and are checked against model and renderer signatures.
 
-The renderer review235 retains the complete edition234 native and every
-browser-model checksum. Interior views reuse the existing three lights with
+Edition236 restores a supported Clare Market entrance landing and two handrail
+feet at the Old Building while retaining every tread, door and street level.
+Two exact source batches are superseded; all35room studies and the25default
+interiors remain byte-identical. Explicit lead and mixed lead/slate finishes
+retain their authored roughness and metalness in the shared viewer, covering
+six campus buildings and context roofs without changing source geometry or
+base colours. Roof coefficients and retained dimensions remain estimates;
+current whole-building interiors and every room are still incomplete.
+A close view makes the retained King’s Chambers cupola and lead seams inspectable.
+
+Renderer review235 preserved edition234 geometry and every browser-model
+checksum before the following geometry revision. Interior views reuse the existing three lights with
 bounds-relative bounce and restore the exterior state on exit. Opaque foliage
 gains filtered leaf-cluster relief without new meshes, textures or render passes.
 Procedural foliage is a presentation estimate. Local desktop and narrow-viewport
