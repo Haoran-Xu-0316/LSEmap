@@ -5091,7 +5091,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 236,
+  "sourceVersion": 237,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5291,5 +5291,16 @@
     "audit": "result/blender/old-entrance236/audit.json",
     "changes": 0,
     "scope": "No unsupported entry alteration; source proportions and elevations remain estimated."
+  },
+  "surfaceAndLandscapeReview237": {
+    "audits": [
+      "result/blender/kgs-surface237/audit.json",
+      "result/blender/street-environment237/audit.json"
+    ],
+    "scope": "Continuous normals on the existing KGS cupola, and photo-guided low understory inside six existing Square tree pools. No measured survey or species claim."
+  },
+  "browserGeometryBudget237": {
+    "policy": "web/tools/web_geometry_budget.py",
+    "scope": "Retain every brick, opening and edge width; reduce bevel segments2to1 only in15checked exterior batches. Native source modifiers stay unchanged."
   }
 }
