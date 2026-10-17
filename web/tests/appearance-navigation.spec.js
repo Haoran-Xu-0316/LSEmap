@@ -5,6 +5,9 @@ test('successive zoom presses accumulate and retain near/far safety limits',asyn
   globalThis.matchMedia=()=>({matches:false});
   const {CampusViewer}=await import('../src/viewer.js');
   const viewer={camera:{position:new THREE.Vector3(0,0,100)},controls:{target:new THREE.Vector3(),minDistance:.15,maxDistance:2400},transition:null,moveCamera:CampusViewer.prototype.moveCamera};
+  // The real camera transition now clears orbit inertia before starting.
+  viewer.controls.object=viewer.camera;
+  viewer.controls.update=()=>{};
   for(let i=0;i<3;i++)CampusViewer.prototype.zoom.call(viewer,.78);
   expect(viewer.transition.position.length()).toBeCloseTo(100*.78**3,8);
   expect(viewer.transition.duration).toBe(180);
