@@ -8,17 +8,31 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition232 contains31 building records,30 detailed exteriors,25 interior views
+Edition233 contains31 building records,30 detailed exteriors,25 interior views
 and34 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v232.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v233.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage232` acceptance records are retained with the native: integration
+The local `stage233` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All187 gallery images use the
+finishes and public structural elements. All191 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition233 gives the library broad windows and Watkins panes finite dielectric
+transmission while preserving geometry, frames and existing public interiors.
+The Old Building upper attic band restores four low arched blue grilles and
+a wide central stone parapet while retaining the mansard and lower facade.
+Source-identified park facilities replace the17m closed bandstand proxy and
+cafe box with an open timber pavilion and a single-storey roofed envelope at
+retained footprints. Mapped hardstanding preserves all paths and three tree
+soil circles. SAW gains2 coordinated estimated stair connections,
+continuous platforms and slab openings; retained lower lift conflicts decrease
+from32 to11. These are useful source-constrained estimates, not an exact
+as-built stair reconstruction. All34 prior room assets,24 other default interiors
+and27 other detailed exteriors retain their checksums. Whole current interiors
+and every room remain incomplete.
 
 Edition232 repairs the library street entrance: a real opening replaces the
 continuous base obstruction, with a local landing and three low steps joined
