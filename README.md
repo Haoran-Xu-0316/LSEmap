@@ -8,18 +8,29 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition242 contains31 building records,30 detailed exteriors,25 interior views
+Edition246 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v242.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v246.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage242` acceptance records are retained with the native: integration
+The local `stage246` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All197 gallery images use the
+finishes and public structural elements. All198 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
+
+Edition246 registers the89-opening CON Houghton elevation from the2020 existing
+drawing, including continuous stone surrounds, recessed glass and a closed roof.
+The current footprint, Aldwych entrance, streets and all35room studies remain.
+The3.3604% horizontal fit, flat side-door lower bounds and unseen rear roof closure
+are authored estimates; this is not a current measured whole-building interior.
+COL's72-module source component remains private pending campus registration.
+
+Edition243 closes inherited Houghton paving gaps and removes overlapping edge
+tops without moving the street, entry steps or bollard bases. Static architectural
+transforms are now prepared once rather than recomputed on each navigation frame.
 
 Edition242 coordinates the estimated SAW three-to-four and four-to-five main
 stair connections with the actual uncoloured circulation extracted from the
