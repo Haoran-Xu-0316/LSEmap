@@ -430,6 +430,9 @@ export class CampusViewer {
     const width = this.container.clientWidth;
     const height = this.container.clientHeight;
     if (!width || !height) return;
+    // Read layout only on ResizeObserver notifications, not every orbit frame.
+    this.viewportWidth = width;
+    this.viewportHeight = height;
     this.renderer.setPixelRatio(stablePixelRatio(width, height));
     this.renderer.setSize(width, height);
     this.renderPipeline.resize(width, height);
@@ -1022,8 +1025,8 @@ export class CampusViewer {
   }
 
   updateLabels() {
-    const width = this.container.clientWidth;
-    const height = this.container.clientHeight;
+    const width = this.viewportWidth;
+    const height = this.viewportHeight;
     const occupied = [];
     const mobileDetail = mobileLayout.matches && this.activeCode;
     const ordered = [...this.labels].sort(
@@ -1056,10 +1059,14 @@ export class CampusViewer {
         )
       )
         visible = false;
-      label.button.hidden = !visible;
+      if (label.button.hidden === visible) label.button.hidden = !visible;
       if (visible) {
         occupied.push({ x, y, width: labelWidth });
-        label.button.style.transform = `translate(${x}px,${y}px) translate(-50%,-100%)`;
+        const transform = `translate(${x}px,${y}px) translate(-50%,-100%)`;
+        if (label.transform !== transform) {
+          label.button.style.transform = transform;
+          label.transform = transform;
+        }
       }
     }
   }
@@ -1088,7 +1095,7 @@ export class CampusViewer {
     const angularMovement = this.controlRotation.angleTo(this.camera.quaternion);
     const linearMovement = this.controlPosition.distanceTo(this.camera.position) +
       this.controlTarget.distanceTo(this.controls.target);
-    const pixelsPerRadian = this.container.clientHeight /
+    const pixelsPerRadian = this.viewportHeight /
       (2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2)));
     const pixelMovement = (angularMovement + linearMovement / distance) * pixelsPerRadian;
     // OrbitControls' change epsilon can briefly report stillness before its
@@ -1109,7 +1116,8 @@ export class CampusViewer {
     const finalStill = this.renderPipeline.needsSettle && !moving;
     if (this.needsRender || finalStill) {
       this.renderPipeline.render({ moving, time, progressive: true, restart: this.needsRender });
-      this.updateLabels();
+      // Refining the same still changes samples, not HTML label positions.
+      if (this.needsRender) this.updateLabels();
       if (this.onBearingChange) {
         const bearing = Math.round(this.controls.getAzimuthalAngle() * 1800 / Math.PI) / 10;
         if (bearing !== this.lastBearing) {
