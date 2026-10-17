@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "241",
-  "sourceModelSha256": "3b49385387b8e5c53223a1151762b80b9b3e1e4c2bbfbd474dfa820af4e424b4",
+  "version": "242",
+  "sourceModelSha256": "b81a627db462ffbd98ca206879fea43d8da018e36edeb2e2bca62c85a2db4589",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -7671,17 +7671,17 @@
         }
       ],
       "latestInteriorReview": {
-        "version": 233,
-        "audit": "result/blender/saw-circulation233/audit.json",
-        "scope": "Source-constrained estimated ST03 first-to-second and second-to-third continuous folded connections, two flat platforms, supported rails and three coordinated slab openings. Fixed lifts and accepted fifth-to-sixth ST04 preserved.",
-        "remainingLowerLiftConflicts": 11,
+        "version": 242,
+        "audit": "result/blender/saw-circulation242/audit.json",
+        "scope": "Replace only estimated three-to-four and four-to-five ST03 routes with separate continuous winding waists, coordinated local floors and supported rails inside vector-extracted historical circulation. Preserve accepted lower pairs and fifth-to-sixth ST04.",
+        "remainingModelledTreadCabinOverlaps": 0,
+        "wholeBuildingCirculationComplete": false,
         "limitations": [
-          "Historical2014 guide/design section do not establish2026 current condition.",
-          "Straight-run directions,31/20counts,1.4m widths,0.31m goings, platform shapes and guard details are estimated and visibly deviate from undocumented original winders.",
-          "New candidate stays in historicalST03and its connecting public circulation band, but is not a recovered exact construction layout.",
-          "The retained4-to-5connection still has11fixed-cabin conflicts; its joint3-to-5attempt was rejected by the historical fourth-floor public corridor constraint.",
-          "Floor surfaces retain inherited thin/slab-study conventions. No compliance or structural engineering certification.",
-          "Headroom proof uses every full tread/platform width, with0.1mm XY boundary tolerance to discard shared riser-edge contacts; tests every actual saved obstacle triangle including handrails and nosings."
+          "The2014guide and design section do not establish2026current condition.",
+          "Widths1.1m,20/21risers, path controls, bends, waist and rail dimensions are authoring estimates, not recovered construction drawings.",
+          "Source controls represent cabin inner outlines; complete shaft walls, doors and all room relationships remain unverified.",
+          "Headroom checks use actual saved triangles over full usable widths; they are not accessibility or safety certification.",
+          "Level surfaces retain inherited thin-floor conventions."
         ]
       },
       "glazingReview": {
@@ -7790,7 +7790,12 @@
             ],
             "fov": 75
           },
-          "scope": "楼梯与平台，尺寸估算。"
+          "scope": "楼梯与平台，尺寸估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "lower-stairs"
+          ]
         },
         {
           "id": "stair-2-3",
@@ -7810,7 +7815,64 @@
             ],
             "fov": 75
           },
-          "scope": "楼梯与平台，尺寸估算。"
+          "scope": "楼梯与平台，尺寸估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "lower-stairs"
+          ]
+        },
+        {
+          "id": "stair-3-4",
+          "label": "3至4层楼梯",
+          "minHeight": 10.9,
+          "maxHeight": 15.2,
+          "view": {
+            "position": [
+              -74.8,
+              12.9,
+              -2.5
+            ],
+            "target": [
+              -71.5,
+              12.5,
+              -6.5
+            ],
+            "fov": 70,
+            "referenceAspect": 1.25
+          },
+          "scope": "历史平面约束的转角楼梯与平台，路线、踏步及尺寸为估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "stair-3-4"
+          ]
+        },
+        {
+          "id": "stair-4-5",
+          "label": "4至5层楼梯",
+          "minHeight": 13.9,
+          "maxHeight": 19.1,
+          "view": {
+            "position": [
+              -73.2,
+              17,
+              -3
+            ],
+            "target": [
+              -70.8,
+              16,
+              -6.6
+            ],
+            "fov": 65,
+            "referenceAspect": 1.25
+          },
+          "scope": "历史平面约束的转角楼梯与平台，路线、踏步及尺寸为估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "stair-4-5"
+          ]
         },
         {
           "id": "stair-5-6",
@@ -7830,7 +7892,12 @@
             ],
             "fov": 50
           },
-          "scope": "螺旋楼梯与到达平台，尺寸估算。"
+          "scope": "螺旋楼梯与到达平台，尺寸估算。",
+          "displayGroups": [
+            "public",
+            "floors",
+            "stair-5-6"
+          ]
         }
       ],
       "interiorSectionScope": "公共楼层与楼梯示意，未复原全部房间。",
@@ -7907,6 +7974,24 @@
         "remainingLowerLiftConflicts": 11,
         "wholeBuildingCirculationComplete": false
       },
+      "publicStructureReview242": {
+        "version": 242,
+        "audit": "result/blender/saw-circulation242/audit.json",
+        "scope": "Replace only estimated three-to-four and four-to-five ST03 routes with separate continuous winding waists, coordinated local floors and supported rails inside vector-extracted historical circulation. Preserve accepted lower pairs and fifth-to-sixth ST04.",
+        "remainingModelledTreadCabinOverlaps": 0,
+        "wholeBuildingCirculationComplete": false,
+        "limitations": [
+          "The2014guide and design section do not establish2026current condition.",
+          "Widths1.1m,20/21risers, path controls, bends, waist and rail dimensions are authoring estimates, not recovered construction drawings.",
+          "Source controls represent cabin inner outlines; complete shaft walls, doors and all room relationships remain unverified.",
+          "Headroom checks use actual saved triangles over full usable widths; they are not accessibility or safety certification.",
+          "Level surfaces retain inherited thin-floor conventions."
+        ],
+        "addedObjects": 12,
+        "archivedObjects": 7,
+        "source": "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/SAW/Final-Web-version-of-Occupants-Guide.pdf",
+        "publicationYear": 2014
+      },
       "bounds": {
         "min": [
           -84.64329528808594,
@@ -7974,10 +8059,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-afe0c44b12b0.glb",
-        "bytes": 8488428,
-        "triangles": 771586,
-        "sha256": "afe0c44b12b013de9a6a19301813cfc2c3507f0fb8e513f04202fafd6885a9b8",
+        "url": "/models/details/saw-exterior-f03ea5fb0fb5.glb",
+        "bytes": 8642176,
+        "triangles": 788372,
+        "sha256": "f03ea5fb0fb5f34e3a7305c0586e3d1fffb5f3d6d0602e7d5b30473129f5113a",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -7992,10 +8077,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/saw-interior-6468c89a6e4b.glb",
-        "bytes": 332808,
-        "triangles": 26977,
-        "sha256": "6468c89a6e4b07c03a9d81214cd95f0d8da1cc438df83a74a915c325e7ff2e8a",
+        "url": "/models/details/saw-interior-2fcfb5ff9b7f.glb",
+        "bytes": 556516,
+        "triangles": 43763,
+        "sha256": "2fcfb5ff9b7fad867069d136fa7e4af4a9cbba14146fee45d5a190aa7605fca8",
         "bounds": {
           "min": [
             -84.25218200683594,
