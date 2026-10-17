@@ -164,7 +164,9 @@ export const buildingDetails = {
       ["campus-rcs-streetfront", "周边RCS浅石立面"],
       ["campus-rcs-portico", "周边RCS入口柱廊"],
       ["mar-108-front-interior", "MAR.1.08完整阶梯座席与木条天花"],
-      ["LIF-tree-contour", "Lincoln’s Inn Fields树冠"]
+      ["LIF-tree-contour", "Lincoln’s Inn Fields树冠"],
+      ["LIF-park-public", "Lincoln’s Inn Fields公共建筑"],
+      ["LIF-bandstand", "公园八角亭"]
     ],
   },
   SAW: {
@@ -177,6 +179,8 @@ export const buildingDetails = {
       ["saw-public-interior", "公共楼层与主楼梯"],
       ["saw-globe", "The World Turned Upside Down"],
       ["sheffield-street", "Sheffield Street"],
+      ["saw-first-second-interior", "1至2层楼梯"],
+      ["saw-second-third-interior", "2至3层楼梯"]
     ],
   },
   CBG: {
