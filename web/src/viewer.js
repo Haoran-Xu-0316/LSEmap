@@ -591,6 +591,10 @@ export class CampusViewer {
       const base = kind === "exterior" ? this.groups.get(building.code) : this.interiors.get(interiorKey);
       if (base) base.visible = false;
       group.visible = true;
+      if (kind === "interior") {
+        const section = interior?.interiorSections?.find(item => item.id === this.canvas.dataset.interiorSection);
+        this.applyInteriorDisplayGroups(section?.displayGroups);
+      }
       this.canvas.dataset.detailReady = detailKey;
       this.renderer.shadowMap.needsUpdate = true;
       this.needsRender = true;
@@ -749,7 +753,18 @@ export class CampusViewer {
     return true;
   }
 
+  applyInteriorDisplayGroups(allowedGroups = null) {
+    const allowed = allowedGroups ? new Set(allowedGroups) : null;
+    const roots = new Set(this.interiors.values());
+    if (this.activeDetail?.kind === "interior") roots.add(this.activeDetail.group);
+    for (const root of roots) root.traverse(object => {
+      const group = object.userData.interiorDisplayGroup;
+      if (group) object.visible = !allowed || allowed.has(group);
+    });
+  }
+
   clearInteriorSection() {
+    this.applyInteriorDisplayGroups();
     this.renderer.clippingPlanes = [];
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.needsUpdate = true;
@@ -780,16 +795,27 @@ export class CampusViewer {
       // Hidden upper floors must not cast shadows onto the selected floor.
       this.renderer.shadowMap.enabled = false;
     }
+    this.applyInteriorDisplayGroups(section?.displayGroups);
     this.canvas.dataset.interiorSection = id;
     const view = section?.view ?? (id === "all"
       ? interior.interiorView ?? this.activeInterior.defaultView : null);
+    // A section preset is an authored interior view even when the building's
+    // default entry was fitted automatically. Clear that state again for floor fits.
+    this.activeInterior.authoredView = Boolean(section?.view || (id === "all" && interior.interiorView));
     if (view) {
-      // Use the same authored viewpoint as its gallery when a public route has
-      // a deliberate inspection camera. Do not replace it with distant bounds.
       this.camera.fov = view.fov;
       this.updateCameraProjection();
-      this.moveCamera(new THREE.Vector3(...view.position), new THREE.Vector3(...view.target));
+      const target = new THREE.Vector3(...view.target);
+      const position = new THREE.Vector3(...view.position);
+      // Preserve the reference composition when a sidebar or phone narrows the
+      // canvas. The gallery's reference aspect keeps its original camera pose.
+      if (Number.isFinite(view.referenceAspect) && view.referenceAspect > 0) {
+        const scale = Math.max(1, view.referenceAspect / this.camera.aspect);
+        position.sub(target).multiplyScalar(scale).add(target);
+      }
+      this.moveCamera(position, target);
     } else {
+      this.updateCameraProjection();
       const direction = this.camera.position.clone().sub(this.controls.target).normalize();
       if (direction.y < 0.25) direction.y = 0.65;
       this.fit(bounds, true, direction.normalize());
