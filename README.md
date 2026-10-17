@@ -8,17 +8,28 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition233 contains31 building records,30 detailed exteriors,25 interior views
-and34 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v233.blend`. GitHub contains
+Edition234 contains31 building records,30 detailed exteriors,25 interior views
+and35 selectable room studies. The complete editable campus is
+kept locally at `result/blender/LSE_campus_detailed_v234.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage233` acceptance records are retained with the native: integration
+The local `stage234` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All191 gallery images use the
+finishes and public structural elements. All193 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition234 removes49.42square metres of coplanar duplicate asphalt
+without changing the road union, levels, remaining source faces or their UVs.
+A1mm contact belt retains0.101square metres of existing overlap to avoid
+20-bit export cracks. A visible flicker improvement is not claimed.
+An independent CKK.1.10 study follows18 historical student chair positions,
+a U-shaped table layout, two projecting window bays and a complete ceiling.
+All34 earlier room assets,25 default interiors and30 building exteriors retain
+their checksums. LRB floor datums, COL upper-elevation registration and the
+CKK atrium entry remain unresolved where current sources cannot locate a
+supported correction. Full current interiors and every room remain incomplete.
 
 Edition233 gives the library broad windows and Watkins panes finite dielectric
 transmission while preserving geometry, frames and existing public interiors.
