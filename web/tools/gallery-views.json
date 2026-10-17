@@ -2461,5 +2461,45 @@
       ],
       "fov": 32
     }
+  },
+  {
+    "code": "SAW",
+    "name": "saw-third-fourth-interior",
+    "label": "3至4层楼梯",
+    "sectionId": "stair-3-4",
+    "view": {
+      "position": [
+        -74.8,
+        12.9,
+        -2.5
+      ],
+      "target": [
+        -71.5,
+        12.5,
+        -6.5
+      ],
+      "fov": 70,
+      "referenceAspect": 1.25
+    }
+  },
+  {
+    "code": "SAW",
+    "name": "saw-fourth-fifth-interior",
+    "label": "4至5层楼梯",
+    "sectionId": "stair-4-5",
+    "view": {
+      "position": [
+        -73.2,
+        17,
+        -3
+      ],
+      "target": [
+        -70.8,
+        16,
+        -6.6
+      ],
+      "fov": 65,
+      "referenceAspect": 1.25
+    }
   }
 ]
