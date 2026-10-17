@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { GROUND_FINISHES } from "./ground-textures.js";
+import { applyFoliageDetail } from "./foliage-materials.js";
 
 // Recreate source-node surface parameters without distributing reference photographs.
 // Noise is an approximation of Blender's shader, not a baked Cycles result.
@@ -341,6 +342,8 @@ export function applySurfaceDetail(material, groundTextures = null) {
     `);
   };
   material.needsUpdate = true;
+  // Preserve the existing surface hook and use the same finish at every scale.
+  if (kind === "foliage") applyFoliageDetail(material);
 }
 
 // PCF depth shadows treat alpha-blended panes as opaque occluders. Keep their
