@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { useTimeBasedDamping, stopControlInertia } from "./control-timing.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
@@ -116,8 +117,13 @@ export class CampusViewer {
       () => this.mode === "campus" && !this.activeCode &&
         this.camera.position.distanceTo(this.controls?.target ?? this.camera.position) > 130);
     this.controls = new OrbitControls(this.camera, this.canvas);
+    this.controlPosition = new THREE.Vector3();
+    this.controlTarget = new THREE.Vector3();
+    this.controlRotation = new THREE.Quaternion();
+    this.inertiaMoving = false;
     this.controls.enableDamping = true;
     this.controls.dampingFactor = 0.08;
+    useTimeBasedDamping(this.controls);
     this.controls.minDistance = 0.25;
     this.controls.maxDistance = 2400;
     this.controls.zoomToCursor = true;
@@ -126,6 +132,8 @@ export class CampusViewer {
     this.controls.screenSpacePanning = true;
     this.controls.target.set(10, 0, -10);
     this.controls.addEventListener("change", () => {
+      // Inertia and keyboard/tween motion also reserve the navigation frame.
+      this.lastNavigationAt = performance.now();
       this.needsRender = true;
     });
     this.interacting = false;
@@ -324,7 +332,7 @@ export class CampusViewer {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
-      if (background && !await this.waitForBackgroundFrame()) {
+      if (background && !await this.waitForBackgroundFrame(() => this.activeCode === building.code)) {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
@@ -341,9 +349,14 @@ export class CampusViewer {
     finally { this.exteriorLoads.delete(building.code); }
   }
 
-  // Never attach another background model or invalidate shadows mid-gesture.
-  // Decoding stays in the loader's worker; selected buildings bypass this queue.
-  waitForBackgroundFrame() {
+  navigationIsBusy() {
+    return document.hidden || this.interacting || Boolean(this.transition) ||
+      performance.now() - this.lastNavigationAt < 200;
+  }
+
+  // Download/decode off the navigation path; attach only after inertia settles.
+  // An explicitly selected building keeps priority over background decoration.
+  waitForBackgroundFrame(isPriority = () => false) {
     return new Promise((resolve) => {
       const signal = this.loadController.signal;
       let timer = null, idle = null;
@@ -354,20 +367,24 @@ export class CampusViewer {
         resolve(ready);
       };
       const aborted = () => finish(false);
+      const busy = () => !isPriority() && this.navigationIsBusy();
+      const completeIfCurrent = () => {
+        idle = null;
+        if (signal.aborted || this.disposed) return finish(false);
+        // A wheel start/end can occur between the idle request and its callback.
+        if (busy()) return check();
+        finish(true);
+      };
       const check = () => {
         if (signal.aborted || this.disposed) return finish(false);
-        if (document.hidden || this.interacting || this.transition ||
-            performance.now() - this.lastNavigationAt < 150) {
+        if (busy()) {
           timer = setTimeout(check, 50);
           return;
         }
+        if (isPriority()) return finish(true);
         if (typeof requestIdleCallback === "function") {
-          idle = requestIdleCallback(() => {
-            idle = null;
-            if (this.interacting || this.transition) check();
-            else finish(true);
-          }, { timeout: 100 });
-        } else timer = setTimeout(() => this.interacting ? check() : finish(true), 0);
+          idle = requestIdleCallback(completeIfCurrent, { timeout: 100 });
+        } else timer = setTimeout(completeIfCurrent, 0);
       };
       signal.addEventListener("abort", aborted, { once: true });
       check();
@@ -474,6 +491,8 @@ export class CampusViewer {
       this.needsRender = true;
       return;
     }
+    stopControlInertia(this.controls);
+    this.inertiaMoving = false;
     this.transition = {
       start: performance.now(),
       duration: 620,
@@ -1031,9 +1050,35 @@ export class CampusViewer {
       this.needsRender = true;
       if (progress === 1) this.transition = null;
     }
-    const cameraChanged = this.controls.update();
-    if (this.needsRender || (this.renderPipeline.needsSettle && !this.interacting)) {
-      this.renderPipeline.render({ moving: this.interacting || cameraChanged || Boolean(this.transition), time });
+    this.controlPosition.copy(this.camera.position);
+    this.controlTarget.copy(this.controls.target);
+    this.controlRotation.copy(this.camera.quaternion);
+    this.controls.update();
+    const distance = Math.max(0.15, this.camera.position.distanceTo(this.controls.target));
+    const angularMovement = this.controlRotation.angleTo(this.camera.quaternion);
+    const linearMovement = this.controlPosition.distanceTo(this.camera.position) +
+      this.controlTarget.distanceTo(this.controls.target);
+    const pixelsPerRadian = this.container.clientHeight /
+      (2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2)));
+    const pixelMovement = (angularMovement + linearMovement / distance) * pixelsPerRadian;
+    // OrbitControls' change epsilon can briefly report stillness before its
+    // residual input is exhausted. Resolve the subpixel tail once, without a jump.
+    if (pixelMovement > 0.02) {
+      this.inertiaMoving = true;
+      this.needsRender = true;
+      this.lastNavigationAt = performance.now();
+    } else if (this.inertiaMoving && !this.interacting && !this.transition) {
+      stopControlInertia(this.controls);
+      this.inertiaMoving = false;
+      this.needsRender = true;
+    }
+    const moving = this.interacting || this.inertiaMoving || Boolean(this.transition) ||
+      performance.now() - this.lastNavigationAt < 200;
+    // Wheel start/end events may both precede this RAF. Keep that new frame on
+    // the one-scene-draw path, then refine once after the quiet interval.
+    const finalStill = this.renderPipeline.needsSettle && !moving;
+    if (this.needsRender || finalStill) {
+      this.renderPipeline.render({ moving, time });
       this.updateLabels();
       if (this.onBearingChange) {
         const bearing = Math.round(this.controls.getAzimuthalAngle() * 1800 / Math.PI) / 10;
