@@ -151,3 +151,8 @@ Wheel bursts use the same one-scene-draw budget as dragging. Refine once after
 the quiet interval, without redrawing a held pose. Clear only the subpixel
 inertia tail while preserving its visible camera pose, preventing repeated
 sharp/moving switches and background attachments during residual movement.
+
+Final four-sample refinement is accumulated one scene draw per animation frame.
+Keep the last displayed frame until all four samples are ready; input, scene
+changes and resize discard unfinished samples. The gallery retains synchronous
+four-sample capture and the same final pixels. Canvas resolution stays fixed.
