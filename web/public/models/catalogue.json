@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "233",
-  "sourceModelSha256": "b1d01b4b74a7f9e33d9bab25e73f51f39361659b9236ca98c34056137d8b6660",
+  "version": "234",
+  "sourceModelSha256": "0c9c4d7d5793ac3693c6ff7b9789e5300ebca32a5de39e0a39b75a910182d0b7",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1139,6 +1139,18 @@
         "audit": "result/blender/ckk115-room227/audit.json",
         "scope": "依据LSE同房号历史平面与实照建立CKK.1.15独立排式教室样本。完整周界保留后角斜切及左后凹口，22张双人桌与5排44个历史学生座位，大小不等双扇入口、六处真实墙窗孔、前端白板和AV台、左墙显示屏及完整连续天花。门宽比例、层高、后窗及家具细节估算，不接地理楼层，不作2026现用容量认证。"
       },
+      "readOnlyReview234": {
+        "version": 234,
+        "audit": "result/blender/ckk-glazing234/audit.json",
+        "changes": 0,
+        "scope": "Source/native diagnosis only; no unsupported geometric or optical change accepted.",
+        "limitations": [
+          "No enabled browser was available; production HTTP asset retrieval returned403. The catalogue-named local production GLBs match catalogue SHAs; live viewer acceptance is not claimed.",
+          "Historical2008 project photographs do not verify2026 condition.",
+          "Native atrium dimensions and street registration are inherited estimates. The photograph does not precisely locate the unmodeled2.5m background band.",
+          "No component was made; save/reappend validation and before/after improvement are not claimed."
+        ]
+      },
       "bounds": {
         "min": [
           -138.37171936035156,
@@ -1404,6 +1416,61 @@
               4.78000020980835,
               3.2049999237060547,
               3.8299999237060547
+            ]
+          }
+        },
+        {
+          "id": "ckk-110",
+          "label": "CKK.1.10U形教室",
+          "scope": "依据LSE官方同房号历史平面及照片建立CKK.1.10独立U形教室。保留左6、右6、后6共18个学生椅位及1教师席、U桌、两处右窗湾和左侧不等双叶门。完整带梁天花、真实门窗洞、家具及投影支承，尺寸和门叶展示角度估算；不作校园楼层配准、现用容量或2026现况认证。",
+          "interiorStudy": {
+            "kind": "room-sample",
+            "label": "CKK.1.10U形教室",
+            "scope": "依据LSE官方同房号历史平面及照片建立CKK.1.10独立U形教室。保留左6、右6、后6共18个学生椅位及1教师席、U桌、两处右窗湾和左侧不等双叶门。完整带梁天花、真实门窗洞、家具及投影支承，尺寸和门叶展示角度估算；不作校园楼层配准、现用容量或2026现况认证。"
+          },
+          "interiorView": {
+            "position": [
+              -2.625,
+              1.65,
+              3.0
+            ],
+            "target": [
+              0.45,
+              1.35,
+              -2.7
+            ],
+            "fov": 80
+          },
+          "gallery": "ckk-110-teaching-interior",
+          "interiorAsset": "/models/details/ckk-110-interior-571a3423e64c.glb",
+          "detailedInterior": {
+            "url": "/models/details/ckk-110-interior-571a3423e64c.glb",
+            "bytes": 163352,
+            "triangles": 12940,
+            "sha256": "571a3423e64c6e3992352b8bb577434a4cf7915f17aec007f300a08f4f262382",
+            "bounds": {
+              "min": [
+                -3.700000047683716,
+                -0.14000000059604645,
+                -3.5199999809265137
+              ],
+              "max": [
+                4.324999809265137,
+                3.130000114440918,
+                3.5799999237060547
+              ]
+            }
+          },
+          "interiorBounds": {
+            "min": [
+              -3.700000047683716,
+              -0.14000000059604645,
+              -3.5199999809265137
+            ],
+            "max": [
+              4.324999809265137,
+              3.130000114440918,
+              3.5799999237060547
             ]
           }
         }
@@ -1979,6 +2046,18 @@
           "Native unseen wall, estimated mansard/parapet, granite entrance steps, interior and room geometry preserved.",
           "Opaque unsupported window rooms remain opaque; no invented empty-room view or guessed backing wall.",
           "Broad original tone map represents stone material only, not surveyed staining or copied photographic texture."
+        ]
+      },
+      "readOnlyReview234": {
+        "version": 234,
+        "audit": "result/blender/col-exterior234/audit.json",
+        "changes": 0,
+        "scope": "Source/native diagnosis only; no unsupported geometric or optical change accepted.",
+        "limitations": [
+          "Historical official source dates do not establish2026as-built condition.",
+          "No change candidate exists, so save/reappend validation and before/after improvement are not claimed.",
+          "The2023/24floor-numbering clue alone cannot settle street storey count, mezzanines, setbacks, cornice dimensions or roof profile.",
+          "No new glazing opacity, room backing, upper windows or roof geometry is invented."
         ]
       },
       "bounds": {
@@ -4816,6 +4895,17 @@
         "audit": "result/blender/lrb-glazing233/audit.json",
         "scope": "Three unchanged pane batches receive bounded dielectric transmission and reduced intrinsic diffuse tint; broad and Watkins panes use browser opacity0.76, floor-connected entry leaves0.30. Existing public structures may be visible; no unverified rooms or backing added.",
         "limitations": "Estimated optics, historical facade evidence and retained imperfect floor alignment; not measured current glass transmittance."
+      },
+      "readOnlyReview234": {
+        "version": 234,
+        "audit": "result/blender/lrb-structure234/audit.json",
+        "changes": 0,
+        "scope": "Source/native diagnosis only; no unsupported geometric or optical change accepted.",
+        "limitations": [
+          "Necessary non-glazed clearance ranges are mathematical model constraints,not measured floor levels or an authorized geometry proposal.",
+          "Any actual floor-edge recession or pane intersection measured here describes the modeled233mesh only.",
+          "No source supports concealing the issue with a fake backing,room or optical darkening."
+        ]
       },
       "bounds": {
         "min": [
