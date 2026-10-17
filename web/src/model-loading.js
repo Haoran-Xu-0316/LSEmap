@@ -5,6 +5,7 @@ export function loadModelInStages(download, decode, {
   signal,
   onProgress,
   cancelDownload = () => {},
+  beforeDecode,
   discardModel = () => {},
   idleTimeout = 45000,
   decodeTimeout = 90000,
@@ -42,6 +43,12 @@ export function loadModelInStages(download, decode, {
       onProgress?.(event);
     };
     Promise.resolve().then(() => settled ? undefined : download(progress)).then(async (bytes) => {
+      if (settled) return;
+      // Downloading may finish during a gesture. Give navigation priority before
+      // GLTF parsing starts; waiting is neither a stalled transfer nor decoding.
+      clearTimeout(timer);
+      phase = "waiting";
+      if (beforeDecode) await beforeDecode();
       if (settled) return;
       phase = "decode";
       arm(decodeTimeout, "Model decoding timed out");
