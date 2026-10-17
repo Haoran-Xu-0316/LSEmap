@@ -235,7 +235,7 @@ export class CampusViewer {
     });
   }
 
-  async loadAsset(url, onProgress) {
+  async loadAsset(url, onProgress, beforeDecode) {
     // Fixed model names must follow the freshly loaded catalogue across releases.
     // Detailed models already carry their content hash in the filename.
     if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
@@ -251,6 +251,7 @@ export class CampusViewer {
       {
         signal: this.loadController.signal,
         onProgress,
+        beforeDecode,
         cancelDownload: () => transferController.abort(),
         discardModel: model => disposeModel(model.scene),
       },
@@ -327,7 +328,10 @@ export class CampusViewer {
     if (this.exteriors.has(building.code)) return this.exteriors.get(building.code);
     if (this.exteriorLoads.has(building.code)) return this.exteriorLoads.get(building.code);
     const pending = (async () => {
-      const { scene: group } = await this.loadAsset(building.detailedExterior.url);
+      const { scene: group } = await this.loadAsset(
+        building.detailedExterior.url, undefined,
+        background ? () => this.waitForBackgroundFrame(() => this.activeCode === building.code) : undefined,
+      );
       if (this.disposed) {
         disposeModel(group);
         throw new Error("Viewer disposed");
