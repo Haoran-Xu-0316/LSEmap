@@ -39,3 +39,14 @@ test('overview and close view decode the same corrected revolving entrance',asyn
  const mean=result.campus.positions.reduce((sum,p)=>sum+(p[0]-origin[0])*axis[0]+(-p[2]-origin[1])*axis[1]-width/2,0)/result.campus.positions.length;expect(mean).toBeCloseTo(.86,3);
  await (await import('node:fs/promises')).writeFile('result/blender/stage238/overview-detail-parity.json',JSON.stringify({triangles:40,worldPositionMaximumDifferenceM:error,meanFacadeAxisOffsetM:mean,materials:result.campus.materials,actualBuiltViewerAndBothProductionGlbs:true},null,2)+'\n');
 });
+
+test('desktop navigation leaves the complete 3D viewport clear of its panel',async({page})=>{
+ await page.goto('/');await expect(page.locator('canvas')).toHaveAttribute('data-ready','true',{timeout:60000});
+ for(const width of [1440,890,701]){
+  await page.setViewportSize({width,height:1000});
+  await expect.poll(async()=>{const panel=await page.locator('#sidebar').boundingBox(),canvas=await page.locator('canvas').boundingBox();return canvas.x-panel.x-panel.width;}).toBeGreaterThanOrEqual(0);
+  expect((await page.locator('canvas').boundingBox()).width).toBeGreaterThan(300);
+  await page.locator('#index-toggle').click();await expect.poll(async()=>(await page.locator('canvas').boundingBox()).width).toBe(width);
+  await page.locator('#index-toggle').click();await expect(page.locator('#sidebar')).toBeVisible();
+ }
+});
