@@ -4,6 +4,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 import { createRenderPipeline, stablePixelRatio } from "./rendering-quality.js";
+import { applyInteriorLighting, disposeInteriorLighting } from "./interior-lighting.js";
 
 import { loadOutdoorEnvironment, DAYLIGHT_DIRECTION } from "./outdoor-environment.js";
 import { createGroundTextureState, loadGroundTextures, disposeGroundTextures } from "./ground-textures.js";
@@ -493,14 +494,7 @@ export class CampusViewer {
   }
 
   setInteriorLighting(interior) {
-    // Cutaway rooms need broad diffuse bounce instead of outdoor sun contrast.
-    // Reuse all three lights and the existing shadow map; restore daylight when
-    // returning to a facade or the campus so material colours stay consistent.
-    this.hemisphere.groundColor.setHex(interior ? 0xe8e3da : 0x8d8274);
-    this.hemisphere.intensity = interior ? 1.75 : 0.65;
-    this.sun.intensity = interior ? 1.25 : 3.0;
-    this.fill.intensity = interior ? 0.6 : 0.25;
-    this.needsRender = true;
+    applyInteriorLighting(this, interior);
   }
 
   showCampus() {
@@ -1044,6 +1038,7 @@ export class CampusViewer {
   }
 
   dispose() {
+    disposeInteriorLighting(this);
     this.disposed = true;
     this.loadController.abort();
     this.detailRequest += 1;
