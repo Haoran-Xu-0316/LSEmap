@@ -8,17 +8,24 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition236 contains31 building records,30 detailed exteriors,25 interior views
+Edition237 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v236.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v237.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage236` acceptance records are retained with the native: integration
+The local `stage237` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
 finishes and public structural elements. All194 gallery images use the
 production viewer and are checked against model and renderer signatures.
+
+Edition237 keeps the KGS cupola geometry and separate seams while giving its
+lead shell continuous corner normals, and restores photo-guided low planting
+inside six existing LSE Square tree pools. The browser samples small bevels
+more economically in15named OLD/SAW batches without removing openings or
+changing the native source. Desktop navigation floats over a full-viewport
+3D scene; directory toggles leave its projection stable.
 
 Edition236 restores a supported Clare Market entrance landing and two handrail
 feet at the Old Building while retaining every tread, door and street level.
