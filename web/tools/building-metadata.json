@@ -5276,7 +5276,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 246,
+  "sourceVersion": 248,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5501,5 +5501,15 @@
       "Historical relative-grade candidate is excluded because its north transition conflicts with OLD access and street posts.",
       "CON and COL historical elevation components remain private registration studies; their exteriors are not presented as replaced by243."
     ]
+  },
+  "courtEnclosureReview": {
+    "version": 248,
+    "scope": "Mapped public court perimeter enclosure with 60 coated posts and five perforated rectangular wire panels. Existing court surface, nets, paths, trees, buildings and rooms remain unchanged.",
+    "sourceUrls": [
+      "https://camdenactive.camden.gov.uk/sports/lincolnsinnfields/"
+    ],
+    "sourceEpoch": "OSM2024 boundary and official operator photograph of unknown capture date; not a2026 measured survey.",
+    "geometryEstimates": "3m height,60mm posts,75x150mm wire pitch and2.5mm wire. Reserve2m on each edge next to the mapped corner gate; no measured gate width claimed.",
+    "rendering": "Analytically filtered wire coverage preserves holes and avoids subpixel shimmer; no opaque fence sheet or glass role."
   }
 }
