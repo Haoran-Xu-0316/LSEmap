@@ -387,6 +387,7 @@ function showFailure(message) {
   for (const id of [
     "zoom-in",
     "zoom-out",
+    "pan-toggle",
     "north",
     "labels-toggle",
     "context-toggle",
@@ -466,11 +467,13 @@ async function start() {
     for (const id of [
       "zoom-in",
       "zoom-out",
+      "pan-toggle",
       "north",
       "labels-toggle",
       "context-toggle",
     ])
       $(`#${id}`).disabled = false;
+    viewer.setPanMode($("#pan-toggle").getAttribute("aria-pressed") === "true");
     viewer.toggleLabels(
       $("#labels-toggle").getAttribute("aria-pressed") === "true",
     );
@@ -514,6 +517,7 @@ $("#zoom-in").addEventListener("click", () => viewer?.zoom(0.78));
 $("#zoom-out").addEventListener("click", () => viewer?.zoom(1.28));
 $("#north").addEventListener("click", () => viewer?.north());
 for (const [id, callback] of [
+  ["pan-toggle", (value) => viewer?.setPanMode(value)],
   ["labels-toggle", (value) => viewer?.toggleLabels(value)],
   ["context-toggle", (value) => viewer?.toggleContext(value)],
 ]) {
