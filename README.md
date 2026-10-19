@@ -8,16 +8,16 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition250 contains31 building records,30 detailed exteriors,25 interior views
+Edition251 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v250.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v251.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage250` acceptance records are retained with the native: integration
+The local `stage251` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All203 gallery images use the
+finishes and public structural elements. All204 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
@@ -27,9 +27,21 @@ Labels pass drag gestures to the map while stationary taps and keyboard activati
 still select the building. Wheel zoom and the start of a touch pinch use the actual
 surface distance, so a nearby facade can be approached without crossing it or
 stalling at the former campus pivot. One surface query is reused throughout each
-wheel burst. Exterior navigation stays above street level while retaining upward
+wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
+the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition251 integrates the source-registered COL Houghton elevation with64windows,
+8opaque ground modules and a closed roof coordinated with both upper window rows.
+The2020drawing controls the front outline and eave. Roof rear depth, unpictured
+sides and finishes remain estimates; known Aldwych/Garrick architecture is retained.
+New copies correct inward trim normals and remove bounded old glazing remnants.
+MAR gains two southern third-floor concrete cores and four source-width door gaps.
+The17.5/21.9mlevels and2.1mdoor heads remain estimates. The next generic floor
+plate is preserved because the source does not independently locate its shaft
+boundaries; this is not a full-height lift reconstruction. All35room studies and
+2341original material graphs are preserved.
 
 Edition250 corrects OLD’s four external tread corners to the long faceted
 outline visible in the completed-project photograph. All original tread heights,
@@ -38,7 +50,7 @@ remain photographic estimates. MAR’s existing third-floor slab now contains th
 three structural lift-shaft openings registered from the2022 built plan. Its
 outline, material, UVs, inter-shaft strips, other floors and35room studies remain.
 The new third-floor section and gallery view expose these openings directly;
-shaft walls, lift cars and the complete third-floor interior are not reconstructed.
+lift cars and the complete third-floor interior remain unbuilt. The walls were added in251.
 The inherited17.5m floor datum remains an estimate. The two updates add20triangles.
 
 Edition249 restores the two photographed horizontal grille rails over OLD’s
@@ -46,9 +58,9 @@ Houghton entrance doors. Existing leaf hardware, glazing, artwork and all other
 architecture remain intact. The18mm rail height,45mm depth and setback are
 photographic estimates. A new close view exposes the bounded change.
 
-COL’s72-module Houghton frontage is now privately registered with bounded old
-skin clipping and saved geometry/UV verification. It remains unintegrated pending
-whole-building roof coordination. MAR’s2022 third-floor source has been registered
+COL’s72-module Houghton frontage now shares the same accepted source geometry in
+the complete campus and selected-building view, with bounded old skin clipping
+and saved geometry/UV verification. MAR’s2022 third-floor source has been registered
 to the shared lift cores; the outer-boundary disagreement still prevents a
 whole-floor or upper-tower replacement.
 
@@ -64,7 +76,7 @@ drawing, including continuous stone surrounds, recessed glass and a closed roof.
 The current footprint, Aldwych entrance, streets and all35room studies remain.
 The3.3604% horizontal fit, flat side-door lower bounds and unseen rear roof closure
 are authored estimates; this is not a current measured whole-building interior.
-COL's72-module source component remains private pending campus registration.
+COL's72-module frontage was subsequently registered and integrated in251.
 
 Edition243 closes inherited Houghton paving gaps and removes overlapping edge
 tops without moving the street, entry steps or bollard bases. Static architectural
