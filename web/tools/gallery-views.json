@@ -59,6 +59,25 @@
   },
   {
     "code": "COL",
+    "name": "col-houghton",
+    "label": "Houghton街立面与屋顶窗",
+    "view": {
+      "position": [
+        -50.12,
+        22.0,
+        117.49
+      ],
+      "target": [
+        4.65,
+        17.35,
+        112.476
+      ],
+      "fov": 40,
+      "referenceAspect": 1.25
+    }
+  },
+  {
+    "code": "COL",
     "name": "col-garrick-entrance",
     "label": "Garrick街角入口",
     "view": {
@@ -2576,20 +2595,20 @@
   {
     "code": "MAR",
     "name": "mar-third-lift-openings-interior",
-    "label": "三层楼板与三个电梯井口",
+    "label": "三层井口与混凝土核心",
     "sectionId": "3",
     "view": {
       "position": [
-        16.6,
-        30.0,
-        -43.6
+        18.8,
+        31.5,
+        -42.0
       ],
       "target": [
         10.6,
-        17.5,
+        18.5,
         -53.6
       ],
-      "fov": 48,
+      "fov": 50,
       "referenceAspect": 1.25
     }
   },
