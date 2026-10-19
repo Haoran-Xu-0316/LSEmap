@@ -8,16 +8,16 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition248 contains31 building records,30 detailed exteriors,25 interior views
+Edition249 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v248.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v249.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage248` acceptance records are retained with the native: integration
+The local `stage249` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All200 gallery images use the
+finishes and public structural elements. All201 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
@@ -25,6 +25,17 @@ Overview navigation now exposes a drag-pan mode for mouse and touch. Wheel
 zoom follows the cursor even over building labels; double-clicking a surface approaches that point without
 opening a building. Below the true horizon, neutral atmospheric distance blends
 with the district edge instead of continuing blue sky beneath the map.
+
+Edition249 restores the two photographed horizontal grille rails over OLD’s
+Houghton entrance doors. Existing leaf hardware, glazing, artwork and all other
+architecture remain intact. The18mm rail height,45mm depth and setback are
+photographic estimates. A new close view exposes the bounded change.
+
+COL’s72-module Houghton frontage is now privately registered with bounded old
+skin clipping and saved geometry/UV verification. It remains unintegrated pending
+whole-building roof coordination. MAR’s2022 third-floor source has been registered
+to the shared lift cores; the outer-boundary disagreement still prevents a
+whole-floor or upper-tower replacement.
 
 Edition248 restores the mapped public court enclosure in Lincoln’s Inn Fields.
 Sixty coated posts and five wire panels leave the mapped corner entrance open.
