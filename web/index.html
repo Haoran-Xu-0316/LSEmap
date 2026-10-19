@@ -79,7 +79,7 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
         <div class="scene-heading">
           <p id="scene-kicker" hidden>LSE CAMPUS</p>
           <h2 id="scene-title">伦敦的这一角</h2>
-          <p id="scene-subtitle" hidden>拖动旋转，点击建筑探索</p>
+          <p id="scene-subtitle" hidden>拖动平移，右键旋转，点击建筑探索</p>
         </div>
         <div id="loading" class="loading" role="status">
           <span class="loading-indicator" aria-hidden="true"></span
@@ -110,12 +110,6 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m3 10 9-7 9 7v11h-6v-7H9v7H3Z" /></svg
             ><span>总览</span>
-          </button>
-          <button id="pan-toggle" aria-label="平移" aria-pressed="true" title="拖动平移，右键旋转">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M9 6l3-3 3 3M9 18l3 3 3-3M6 9l-3 3 3 3M18 9l3 3-3 3"/></svg><span>平移</span>
-          </button>
-          <button id="rotate-toggle" aria-label="旋转" aria-pressed="false" title="拖动旋转，右键平移">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8a9 9 0 1 0 1 7M20 3v5h-5"/></svg><span>旋转</span>
           </button>
           <span class="tool-divider"></span>
           <button id="zoom-in" title="放大" aria-label="放大">
@@ -187,12 +181,12 @@ FORM: User-selected free exploration. No introductory marketing page or auto tou
       <p class="dialog-kicker">开始探索</p>
       <h2 id="help-title">把校园放在手中</h2>
       <dl>
-        <dt>旋转</dt>
-        <dd>总览默认拖动平移，右键拖动旋转；也可点击旋转按钮后直接拖动。手机选择模式后单指拖动。</dd>
+        <dt>浏览</dt>
+        <dd>拖动平移，右键或按住Shift拖动旋转。手机单指平移，双指拖动旋转。</dd>
         <dt>旋转中心</dt>
         <dd>总览中双击建筑或路面，靠近该位置；选中建筑后，双击表面可改变旋转中心。</dd>
-        <dt>平移</dt>
-        <dd>总览直接拖动；建筑视图点击平移按钮，或右键拖动。触控板横向滑动可平移，按Shift滚动可横移；手机双指可同时平移、缩放。</dd>
+        <dt>触控板</dt>
+        <dd>横向滑动平移，按住Shift滚动横移，双指捏合缩放。</dd>
         <dt>缩放</dt>
         <dd>鼠标指向想看的位置后滚动缩放；手机双指捏合，或使用底部加减按钮。</dd>
         <dt>定位</dt>
