@@ -150,7 +150,7 @@ export const buildingDetails = {
   MAR: {
     description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。上部遮阳片前缘收窄，北侧退台补充浅色铺装、金属栏杆与局部种植。可近看入口，再进入Grand Hall查看树状柱与弧形楼梯。",
     note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
-    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"],
+    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"], ["mar-third-lift-openings-interior", "三层楼板与三个电梯井口"],
       ["mar-rear-wall", "西侧石墙、板缝与相邻窗列"],
       ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
@@ -215,7 +215,7 @@ export const buildingDetails = {
     description:
       "Houghton Street的传统石材立面，入口深凹石拱内为Recycle Group的Final Sale网格装置，配以蓝色窗框与连续石材窗列。",
     note: "入口装置、雕刻和尺寸依据照片估计。OLD.4.10展示历史阶梯教室，SSC展示照片可见接待区与夹层。",
-    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-portal-grille", "门上双横格栅"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"], ["old-126-seating-interior", "OLD.1.26小组座位与木饰面窗湾"],
+    images: [["old-exterior", "Old Building外观"], ["old-roof", "Old Building屋顶与采光顶"], ["old-houghton-entrance", "Houghton Street拱门与蓝色窗框"], ["old-portal-grille", "门上双横格栅"], ["old-approach", "入口四级台阶与长斜切角"], ["old-side-approach", "坡道扶手与通风格栅"], ["old-relief", "Final Sale网格装置"], ["old-heraldry", "入口石雕校徽"], ["old-entablature", "Houghton Street檐口与阁楼窗"], ["old-clare-market", "Clare Market蓝窗与入口"], ["old-interior", "OLD.4.10阶梯教室，三组座席与教学墙"], ["old-606-teaching-wall-interior", "OLD.6.06教学墙与悬挂投影"], ["old-126-seating-interior", "OLD.1.26小组座位与木饰面窗湾"],
       ["old-127-seating-interior", "OLD.1.27小组座位与木饰面窗湾"]
     ],
   },
