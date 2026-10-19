@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { GROUND_FINISHES } from "./ground-textures.js";
 import { applyFoliageDetail } from "./foliage-materials.js";
 import { OUTDOOR_ATMOSPHERE } from "./outdoor-environment.js";
+import { prepareWireGrid } from "./wire-grid-materials.js";
 
 // Recreate source-node surface parameters without distributing reference photographs.
 // Noise is an approximation of Blender's shader, not a baked Cycles result.
@@ -67,6 +68,7 @@ export function refineMaterialFinish(material, environmentMap = null) {
   }
   if (preparedMaterials.has(material)) return;
   preparedMaterials.add(material);
+  if (prepareWireGrid(material)) return;
   if (isGlazingMaterial(material)) {
     // Preserve tinted glazing while reducing the exaggerated cyan in older assets.
     const luminance = material.color.r * .2126 + material.color.g * .7152 + material.color.b * .0722;
@@ -315,7 +317,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
                                 min(vSurfacePosition.z + 415.0, 375.0 - vSurfacePosition.z));
           float edgeHaze = 1.0 - smoothstep(0.0, 55.0, mapMargin);
           vec3 viewRay = normalize(vSurfacePosition - cameraPosition);
-          vec3 surround = mix(surfaceHorizon, surfaceLowerSky, smoothstep(0.0, 1.0, -viewRay.y));
+          vec3 surround = mix(surfaceHorizon, surfaceLowerSky, smoothstep(0.0, .24, -viewRay.y));
           gl_FragColor.rgb = mix(gl_FragColor.rgb, surround, edgeHaze);
         }
         #include <dithering_fragment>
@@ -389,7 +391,7 @@ export function prepareMeshShadows(object) {
     ((material.transparent && material.opacity < 1) || material.transmission > 0) &&
     material.alphaTest === 0 && !material.alphaToCoverage
   );
-  object.castShadow = !clearGlazing;
+  object.castShadow = !clearGlazing && !materials.some(material => material?.userData?.wireMesh);
   object.receiveShadow = true;
 }
 
