@@ -2572,5 +2572,43 @@
       ],
       "fov": 35
     }
+  },
+  {
+    "code": "MAR",
+    "name": "mar-third-lift-openings-interior",
+    "label": "三层楼板与三个电梯井口",
+    "sectionId": "3",
+    "view": {
+      "position": [
+        16.6,
+        30.0,
+        -43.6
+      ],
+      "target": [
+        10.6,
+        17.5,
+        -53.6
+      ],
+      "fov": 48,
+      "referenceAspect": 1.25
+    }
+  },
+  {
+    "code": "OLD",
+    "name": "old-approach",
+    "label": "入口四级台阶与长斜切角",
+    "view": {
+      "position": [
+        5.5,
+        5.0,
+        96.5
+      ],
+      "target": [
+        -5.65,
+        0.65,
+        91.48
+      ],
+      "fov": 44
+    }
   }
 ]
