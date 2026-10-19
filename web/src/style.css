@@ -1135,7 +1135,3 @@ dialog::backdrop {
 /* Moving labels avoid a separate backdrop blur pass on every animation frame. */
 .map-label { background: rgb(255 255 255 / 95%); }
 .map-label.is-selected { background: var(--control-active); }
-
-@media (max-width: 700px) {
-  #pan-toggle span, #rotate-toggle span { display: none; }
-}
