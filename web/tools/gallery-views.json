@@ -2518,5 +2518,41 @@
       "fov": 65,
       "referenceAspect": 1.25
     }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "LIF-court-entry",
+    "label": "球场围网与开放入口",
+    "view": {
+      "position": [
+        -33,
+        2.3,
+        -102
+      ],
+      "target": [
+        -24,
+        1.6,
+        -118
+      ],
+      "fov": 64
+    }
+  },
+  {
+    "code": "CAMPUS",
+    "name": "LIF-courts",
+    "label": "Lincoln’s Inn Fields球场围网",
+    "view": {
+      "position": [
+        22,
+        12,
+        -105
+      ],
+      "target": [
+        -12,
+        1.5,
+        -132
+      ],
+      "fov": 58
+    }
   }
 ]
