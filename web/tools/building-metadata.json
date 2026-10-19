@@ -2458,7 +2458,7 @@
           }
         }
       ],
-      "interiorSectionScope": "G、1、2层公共结构及三层局部楼板研究。三层仅按2022建成平面修正3处电梯井口，标高沿用估算；井壁、梯段转接及完整楼层仍未完成。",
+      "interiorSectionScope": "G、1、2层公共结构及三层局部核心研究。三层包含3处井口、两组井壁与四处门口；标高及门高估算，上层贯通和完整楼层仍待协调。",
       "publicStructureReview223": {
         "version": 223,
         "audit": "result/blender/mar-structure223/audit.json",
