@@ -99,7 +99,7 @@ export class CampusViewer {
     this.canvas.tabIndex = 0;
     this.canvas.setAttribute(
       "aria-label",
-      "校园3D模型。方向键平移，加减键缩放，Home返回总览。也可使用建筑目录。",
+      "校园3D模型。拖动平移，右键或Shift拖动旋转，滚轮指向缩放。方向键平移，加减键缩放，Home返回总览。",
     );
     this.container.append(this.canvas);
     this.scene = new THREE.Scene();
@@ -164,7 +164,6 @@ export class CampusViewer {
     }, { passive: false, signal: this.loadController.signal });
     this.controls.maxPolarAngle = Math.PI;
     this.controls.screenSpacePanning = true;
-    this.panMode = true;
     this.controls.target.set(10, 0, -10);
     this.controls.addEventListener("change", () => {
       // Inertia and keyboard/tween motion also reserve the navigation frame.
@@ -237,6 +236,8 @@ export class CampusViewer {
     this.pointer = new THREE.Vector2();
     // Pointer capture lets a drag starting on a label continue on the model.
     // A stationary tap still activates that label; keyboard clicks stay native.
+    this.labelLayer.addEventListener('contextmenu', event => event.preventDefault(),
+      { signal: this.loadController.signal });
     this.labelLayer.addEventListener('pointerdown', event => {
       const button = event.target.closest('button');
       if (!button) return;
@@ -277,7 +278,7 @@ export class CampusViewer {
     });
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(container);
-    this.setPanMode(true);
+    this.configureNavigation();
     this.resize();
     this.tick = this.tick.bind(this);
     this.frame = requestAnimationFrame(this.tick);
@@ -539,6 +540,7 @@ export class CampusViewer {
   }
 
   moveCamera(position, target, animate = true) {
+    clearTimeout(this.pickTimer);
     this.surfaceZoom = null;
     if (!animate || reducedMotion.matches) {
       // Consume the previous drag's residual motion before installing a new scene pose.
@@ -572,7 +574,6 @@ export class CampusViewer {
     if (!this.ready) return;
     this.showCampus();
     this.highlight(null);
-    this.setPanMode(true);
     this.toggleContext(true);
     this.mode = "campus";
     this.fit(this.campusBounds, animate);
@@ -609,7 +610,6 @@ export class CampusViewer {
     if (!this.ready) return;
     this.showCampus();
     this.highlight(building.code);
-    this.setPanMode(false);
     this.toggleContext(false);
     // Sidebar changes can precede ResizeObserver; fit using the current canvas size.
     this.resize();
@@ -996,19 +996,14 @@ export class CampusViewer {
     }
   }
 
-  setPanMode(enabled) {
-    this.surfaceZoom = null;
-    clearTimeout(this.pickTimer);
-    stopControlInertia(this.controls);
-    this.panMode = Boolean(enabled);
-    this.controls.mouseButtons.LEFT = enabled ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
-    this.controls.mouseButtons.RIGHT = enabled ? THREE.MOUSE.ROTATE : THREE.MOUSE.PAN;
-    this.controls.touches.ONE = enabled ? THREE.TOUCH.PAN : THREE.TOUCH.ROTATE;
-    this.canvas.style.cursor = enabled ? 'grab' : '';
-    this.canvas.dataset.navigationMode = enabled ? 'pan' : 'rotate';
-    this.canvas.dispatchEvent(new CustomEvent('navigationmodechange', {
-      bubbles: true, detail: { pan: this.panMode },
-    }));
+  configureNavigation() {
+    // One gesture vocabulary in the campus, building and room views. No mode
+    // switch can leave the next view unexpectedly orbiting instead of panning.
+    this.controls.mouseButtons.LEFT = THREE.MOUSE.PAN;
+    this.controls.mouseButtons.RIGHT = THREE.MOUSE.ROTATE;
+    this.controls.touches.ONE = THREE.TOUCH.PAN;
+    this.controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
+    this.canvas.style.cursor = 'grab';
   }
 
   surfaceAt(event) {
