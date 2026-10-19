@@ -21,8 +21,9 @@ finishes and public structural elements. All204 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
-The overview starts with direct drag-to-pan and right-drag-to-orbit. Separate
-pan and orbit buttons stay synchronized when switching to a building and back.
+The campus, building and room views share direct drag-to-pan, with right-drag or
+Shift-drag to orbit. There are no navigation mode buttons. One finger pans; two
+fingers drag to orbit and pinch to zoom.
 Labels pass drag gestures to the map while stationary taps and keyboard activation
 still select the building. Wheel zoom and the start of a touch pinch use the actual
 surface distance, so a nearby facade can be approached without crossing it or
