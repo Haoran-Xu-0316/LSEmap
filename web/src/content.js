@@ -167,7 +167,9 @@ export const buildingDetails = {
       ["mar-108-front-interior", "MAR.1.08完整阶梯座席与木条天花"],
       ["LIF-tree-contour", "Lincoln’s Inn Fields树冠"],
       ["LIF-park-public", "Lincoln’s Inn Fields公共建筑"],
-      ["LIF-bandstand", "公园八角亭"]
+      ["LIF-bandstand", "公园八角亭"],
+      ["LIF-courts", "公园球场与透空围网"],
+      ["LIF-court-entry", "球场开放入口"]
     ],
   },
   SAW: {
