@@ -131,8 +131,21 @@ export class CampusViewer {
     this.controls.maxDistance = 2400;
     this.controls.zoomToCursor = true;
     this.controls.zoomSpeed = 1.25;
+    // Labels sit above the canvas, so their wheel events cannot reach controls.
+    // Preserve the pointer coordinates and pinch modifiers across that overlay.
+    this.labelLayer.addEventListener('wheel', event => {
+      event.preventDefault();
+      this.canvas.dispatchEvent(new WheelEvent('wheel', {
+        bubbles: true, cancelable: true,
+        clientX: event.clientX, clientY: event.clientY,
+        deltaX: event.deltaX, deltaY: event.deltaY, deltaZ: event.deltaZ,
+        deltaMode: event.deltaMode, ctrlKey: event.ctrlKey,
+        shiftKey: event.shiftKey, metaKey: event.metaKey,
+      }));
+    }, { passive: false, signal: this.loadController.signal });
     this.controls.maxPolarAngle = Math.PI;
     this.controls.screenSpacePanning = true;
+    this.panMode = false;
     this.controls.target.set(10, 0, -10);
     this.controls.addEventListener("change", () => {
       // Inertia and keyboard/tween motion also reserve the navigation frame.
@@ -203,6 +216,7 @@ export class CampusViewer {
     this.pickBuilding = createBuildingPicker();
     this.pointer = new THREE.Vector2();
     this.canvas.addEventListener("pointerdown", (event) => {
+      clearTimeout(this.pickTimer);
       if (!event.isPrimary) {
         this.pointerStart = null;
         return;
@@ -935,14 +949,26 @@ export class CampusViewer {
     }
   }
 
+  setPanMode(enabled) {
+    clearTimeout(this.pickTimer);
+    stopControlInertia(this.controls);
+    this.panMode = Boolean(enabled);
+    this.controls.mouseButtons.LEFT = enabled ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
+    this.controls.touches.ONE = enabled ? THREE.TOUCH.PAN : THREE.TOUCH.ROTATE;
+    this.canvas.style.cursor = enabled ? 'grab' : '';
+  }
+
   focusSurface(event) {
-    if (!this.ready || !this.activeCode || event.button !== 0) return;
+    clearTimeout(this.pickTimer);
+    if (!this.ready || event.button !== 0) return;
     const root = this.activeDetail?.group ??
       (this.activeInterior ? this.interiors.get(this.activeInterior.key) :
         this.exteriors.get(this.activeCode) ?? this.groups.get(this.activeCode));
-    if (!root?.visible) return;
+    const roots = this.activeCode ? [root] : [...this.groups.values(), ...this.exteriors.values()];
     const meshes = [];
-    root.traverseVisible(object => { if (object.isMesh) meshes.push(object); });
+    for (const group of roots) {
+      if (group?.visible) group.traverseVisible(object => { if (object.isMesh) meshes.push(object); });
+    }
     const rect = this.canvas.getBoundingClientRect();
     this.pointer.set(
       (event.clientX - rect.left) / rect.width * 2 - 1,
@@ -953,6 +979,11 @@ export class CampusViewer {
       this.renderer.clippingPlanes.every(plane => plane.distanceToPoint(hit.point) >= 0));
     if (!hit || hit.distance <= this.controls.minDistance) return;
     this.transition = null;
+    if (!this.activeCode) {
+      const position = this.camera.position.clone().lerp(hit.point, .55);
+      this.moveCamera(position, hit.point.clone());
+      return;
+    }
     // Keep the observer in place; subsequent rotation orbits the chosen detail.
     this.controls.target.copy(hit.point);
     this.controls.update();
@@ -962,6 +993,7 @@ export class CampusViewer {
   pick(event) {
     if (
       !this.ready ||
+      this.panMode ||
       this.mode !== "campus" ||
       event.button !== 0 ||
       !this.pointerStart
@@ -989,8 +1021,14 @@ export class CampusViewer {
     if (!hit) return;
     let object = hit.object;
     while (object && !object.userData.buildingCode) object = object.parent;
-    if (object && object.userData.buildingCode !== this.activeCode)
-      this.onPick(object.userData.buildingCode);
+    if (object && object.userData.buildingCode !== this.activeCode) {
+      const code = object.userData.buildingCode;
+      clearTimeout(this.pickTimer);
+      // Leave the double-click gesture available for approaching this surface.
+      this.pickTimer = setTimeout(() => {
+        if (!this.disposed && !this.panMode && this.mode === 'campus') this.onPick(code);
+      }, 300);
+    }
   }
 
   onKey(event) {
@@ -1135,6 +1173,7 @@ export class CampusViewer {
   }
 
   dispose() {
+    clearTimeout(this.pickTimer);
     disposeInteriorLighting(this);
     this.disposed = true;
     this.loadController.abort();
