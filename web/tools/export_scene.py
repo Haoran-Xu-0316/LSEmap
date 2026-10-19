@@ -159,6 +159,12 @@ def web_material(source):
     if transmission > 0.1:
         node.inputs['Alpha'].default_value = float(source.get('webOpacity', 0.30))
         material.surface_render_method = 'DITHERED'
+    if source and source.get('webWireGrid'):
+        pitch = source['webWirePitch']
+        material['wireMesh'] = {'pitchX': float(pitch[0]), 'pitchY': float(pitch[1]),
+                                'width': float(source['webWireWidth'])}
+        node.inputs['Alpha'].default_value = 0.5
+        material.surface_render_method = 'DITHERED'
     if source and source.get('webClosedGlazing'):
         material['webClosedGlazing'] = True
     material.diffuse_color = color
@@ -229,7 +235,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
         # Joining differently named UV layers would put some facades in UV1 while
         # the browser samples UV0. Normalize only these temporary export meshes.
         # Accepted components retain their metric UVs at both viewing scales.
-        needs_uv = full_detail or original.name.startswith('MAR188_') or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and (m.get('globeMap') or m.get('webBaseColorMap')) for m in mesh.materials)
+        needs_uv = full_detail or original.name.startswith('MAR188_') or has_brick or '_NEXT_' in source_geometry_name(original) or any(m and (m.get('globeMap') or m.get('webBaseColorMap') or m.get('webWireGrid')) for m in mesh.materials)
         # Accepted glass may have no native UVs. Without a canonical layer,
         # joining it with detailed trim introduces UV0 only in the close-up.
         # Create the same metric face coordinates in both temporary exports.
