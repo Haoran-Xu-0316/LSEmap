@@ -327,7 +327,7 @@ function setSceneCopy(building) {
     ? building.bounds
       ? "单栋视图，底部可切换周边环境"
       : "尚未建立独立轮廓，保留校园总览"
-    : "拖动旋转，点击建筑探索";
+    : "拖动平移，滚动缩放，右键旋转";
   $("#view-mode").textContent = building
     ? building.bounds
       ? "建筑外观"
@@ -388,6 +388,7 @@ function showFailure(message) {
     "zoom-in",
     "zoom-out",
     "pan-toggle",
+    "rotate-toggle",
     "north",
     "labels-toggle",
     "context-toggle",
@@ -468,6 +469,7 @@ async function start() {
       "zoom-in",
       "zoom-out",
       "pan-toggle",
+      "rotate-toggle",
       "north",
       "labels-toggle",
       "context-toggle",
@@ -516,8 +518,14 @@ $("#overview").addEventListener("click", () => overview());
 $("#zoom-in").addEventListener("click", () => viewer?.zoom(0.78));
 $("#zoom-out").addEventListener("click", () => viewer?.zoom(1.28));
 $("#north").addEventListener("click", () => viewer?.north());
+for (const [id, pan] of [['pan-toggle', true], ['rotate-toggle', false]]) {
+  $(`#${id}`).addEventListener('click', () => viewer?.setPanMode(pan));
+}
+$('#canvas-container').addEventListener('navigationmodechange', event => {
+  $('#pan-toggle').setAttribute('aria-pressed', String(event.detail.pan));
+  $('#rotate-toggle').setAttribute('aria-pressed', String(!event.detail.pan));
+});
 for (const [id, callback] of [
-  ["pan-toggle", (value) => viewer?.setPanMode(value)],
   ["labels-toggle", (value) => viewer?.toggleLabels(value)],
   ["context-toggle", (value) => viewer?.toggleContext(value)],
 ]) {
