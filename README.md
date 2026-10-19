@@ -8,16 +8,16 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition249 contains31 building records,30 detailed exteriors,25 interior views
+Edition250 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v249.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v250.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage249` acceptance records are retained with the native: integration
+The local `stage250` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All201 gallery images use the
+finishes and public structural elements. All203 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
@@ -30,6 +30,16 @@ stalling at the former campus pivot. One surface query is reused throughout each
 wheel burst. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition250 corrects OLD’s four external tread corners to the long faceted
+outline visible in the completed-project photograph. All original tread heights,
+thresholds and rail supports remain, with no added triangles. Corner proportions
+remain photographic estimates. MAR’s existing third-floor slab now contains the
+three structural lift-shaft openings registered from the2022 built plan. Its
+outline, material, UVs, inter-shaft strips, other floors and35room studies remain.
+The new third-floor section and gallery view expose these openings directly;
+shaft walls, lift cars and the complete third-floor interior are not reconstructed.
+The inherited17.5m floor datum remains an estimate. The two updates add20triangles.
 
 Edition249 restores the two photographed horizontal grille rails over OLD’s
 Houghton entrance doors. Existing leaf hardware, glazing, artwork and all other
