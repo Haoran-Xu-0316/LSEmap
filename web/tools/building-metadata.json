@@ -5276,7 +5276,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 248,
+  "sourceVersion": 249,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5511,5 +5511,20 @@
     "sourceEpoch": "OSM2024 boundary and official operator photograph of unknown capture date; not a2026 measured survey.",
     "geometryEstimates": "3m height,60mm posts,75x150mm wire pitch and2.5mm wire. Reserve2m on each edge next to the mapped corner gate; no measured gate width claimed.",
     "rendering": "Analytically filtered wire coverage preserves holes and avoids subpixel shimmer; no opaque fence sheet or glass role."
+  },
+  "oldPortalGrilleReview249": {
+    "version": 249,
+    "building": "OLD",
+    "scope": "Restore two photographed horizontal grille rails above the Houghton entrance doors; retain all existing geometry, glazing, artwork and rooms.",
+    "evidence": [
+      "https://webbyates.com/projects/the-old-building/"
+    ],
+    "captureDate": null,
+    "audit": "result/blender/old-exterior249/audit.json",
+    "limitations": [
+      "Rail height18mm, depth45mm and setback are estimated from the photo.",
+      "No door operation, upper foyer backing or whole-building interior reconstruction is inferred.",
+      "COL registration and MAR third-floor source plans remain private, unintegrated studies."
+    ]
   }
 }
