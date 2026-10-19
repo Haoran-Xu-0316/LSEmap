@@ -119,6 +119,25 @@ export class CampusViewer {
     this.renderPipeline = createRenderPipeline(this.renderer, this.scene, this.camera,
       () => this.mode === "campus" && !this.activeCode &&
         this.camera.position.distanceTo(this.controls?.target ?? this.camera.position) > 130);
+    // Capture first: use the actual surface distance before OrbitControls dollies.
+    this.canvas.addEventListener('wheel', event => this.prepareSurfaceZoom(event),
+      { capture: true, passive: true, signal: this.loadController.signal });
+    this.zoomTouches = new Map();
+    this.canvas.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'touch') return;
+      this.zoomTouches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (this.zoomTouches.size === 2) {
+        const [a, b] = this.zoomTouches.values();
+        this.prepareSurfaceZoom({ clientX: (a.x + b.x) / 2, clientY: (a.y + b.y) / 2 });
+      }
+    }, { capture: true, signal: this.loadController.signal });
+    this.canvas.addEventListener('pointermove', event => {
+      if (this.zoomTouches.has(event.pointerId))
+        this.zoomTouches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    }, { capture: true, signal: this.loadController.signal });
+    for (const type of ['pointerup', 'pointercancel'])
+      this.canvas.addEventListener(type, event => this.zoomTouches.delete(event.pointerId),
+        { capture: true, signal: this.loadController.signal });
     this.controls = new OrbitControls(this.camera, this.canvas);
     this.controlPosition = new THREE.Vector3();
     this.controlTarget = new THREE.Vector3();
@@ -145,7 +164,7 @@ export class CampusViewer {
     }, { passive: false, signal: this.loadController.signal });
     this.controls.maxPolarAngle = Math.PI;
     this.controls.screenSpacePanning = true;
-    this.panMode = false;
+    this.panMode = true;
     this.controls.target.set(10, 0, -10);
     this.controls.addEventListener("change", () => {
       // Inertia and keyboard/tween motion also reserve the navigation frame.
@@ -214,9 +233,26 @@ export class CampusViewer {
     );
     this.raycaster = new THREE.Raycaster();
     this.pickBuilding = createBuildingPicker();
+    this.pickSurface = createBuildingPicker();
     this.pointer = new THREE.Vector2();
+    // Pointer capture lets a drag starting on a label continue on the model.
+    // A stationary tap still activates that label; keyboard clicks stay native.
+    this.labelLayer.addEventListener('pointerdown', event => {
+      const button = event.target.closest('button');
+      if (!button) return;
+      this.labelPointer = event.isPrimary ? { id: event.pointerId, button } : null;
+      this.canvas.dispatchEvent(new PointerEvent('pointerdown', {
+        pointerId: event.pointerId, pointerType: event.pointerType,
+        isPrimary: event.isPrimary, button: event.button, buttons: event.buttons,
+        clientX: event.clientX, clientY: event.clientY,
+        shiftKey: event.shiftKey, ctrlKey: event.ctrlKey, metaKey: event.metaKey,
+        bubbles: true, cancelable: true,
+      }));
+    }, { signal: this.loadController.signal });
     this.canvas.addEventListener("pointerdown", (event) => {
+      if (event.isTrusted) this.labelPointer = null;
       clearTimeout(this.pickTimer);
+      this.surfaceZoom = null;
       if (!event.isPrimary) {
         this.pointerStart = null;
         return;
@@ -230,7 +266,7 @@ export class CampusViewer {
       };
     });
     this.canvas.addEventListener("pointermove", (event) => this.trackPointer(event));
-    this.canvas.addEventListener("pointercancel", () => { this.pointerStart = null; });
+    this.canvas.addEventListener("pointercancel", () => { this.pointerStart = null; this.labelPointer = null; });
     this.canvas.addEventListener("pointerup", (event) => this.pick(event));
     this.canvas.addEventListener("dblclick", (event) => this.focusSurface(event));
     this.canvas.addEventListener("keydown", (event) => this.onKey(event));
@@ -241,6 +277,7 @@ export class CampusViewer {
     });
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(container);
+    this.setPanMode(true);
     this.resize();
     this.tick = this.tick.bind(this);
     this.frame = requestAnimationFrame(this.tick);
@@ -502,6 +539,7 @@ export class CampusViewer {
   }
 
   moveCamera(position, target, animate = true) {
+    this.surfaceZoom = null;
     if (!animate || reducedMotion.matches) {
       // Consume the previous drag's residual motion before installing a new scene pose.
       const nextPosition = position.clone();
@@ -534,6 +572,7 @@ export class CampusViewer {
     if (!this.ready) return;
     this.showCampus();
     this.highlight(null);
+    this.setPanMode(true);
     this.toggleContext(true);
     this.mode = "campus";
     this.fit(this.campusBounds, animate);
@@ -570,6 +609,7 @@ export class CampusViewer {
     if (!this.ready) return;
     this.showCampus();
     this.highlight(building.code);
+    this.setPanMode(false);
     this.toggleContext(false);
     // Sidebar changes can precede ResizeObserver; fit using the current canvas size.
     this.resize();
@@ -950,33 +990,60 @@ export class CampusViewer {
   }
 
   setPanMode(enabled) {
+    this.surfaceZoom = null;
     clearTimeout(this.pickTimer);
     stopControlInertia(this.controls);
     this.panMode = Boolean(enabled);
     this.controls.mouseButtons.LEFT = enabled ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
+    this.controls.mouseButtons.RIGHT = enabled ? THREE.MOUSE.ROTATE : THREE.MOUSE.PAN;
     this.controls.touches.ONE = enabled ? THREE.TOUCH.PAN : THREE.TOUCH.ROTATE;
     this.canvas.style.cursor = enabled ? 'grab' : '';
+    this.canvas.dataset.navigationMode = enabled ? 'pan' : 'rotate';
+    this.canvas.dispatchEvent(new CustomEvent('navigationmodechange', {
+      bubbles: true, detail: { pan: this.panMode },
+    }));
+  }
+
+  surfaceAt(event) {
+    const root = this.activeDetail?.group ??
+      (this.activeInterior ? this.interiors.get(this.activeInterior.key) :
+        this.exteriors.get(this.activeCode) ?? this.groups.get(this.activeCode));
+    const roots = this.activeCode ? [root] : [...this.groups.values(), ...this.exteriors.values()];
+    const rect = this.canvas.getBoundingClientRect();
+    this.pointer.set((event.clientX - rect.left) / rect.width * 2 - 1,
+      -(event.clientY - rect.top) / rect.height * 2 + 1);
+    this.camera.updateMatrixWorld();
+    this.raycaster.setFromCamera(this.pointer, this.camera);
+    return this.pickSurface(this.raycaster, roots.filter(group => group?.visible), hit =>
+      this.renderer.clippingPlanes.every(plane => plane.distanceToPoint(hit.point) >= 0));
+  }
+
+  prepareSurfaceZoom(event) {
+    if (!this.ready || !this.controls.enabled || !this.controls.enableZoom) return;
+    const now = performance.now();
+    const previous = this.surfaceZoom;
+    const fresh = !previous || now - previous.time > 180 ||
+      Math.hypot(event.clientX - previous.x, event.clientY - previous.y) > 6;
+    if (fresh) {
+      this.transition = null;
+      stopControlInertia(this.controls);
+      const hit = this.surfaceAt(event);
+      this.surfaceZoom = { time: now, x: event.clientX, y: event.clientY,
+        point: hit?.point.clone() ?? null };
+    } else previous.time = now;
+    const point = this.surfaceZoom.point;
+    if (!point) return;
+    // Keep the viewing direction and screen anchor; replace only the stale
+    // campus-centre distance. A wheel burst reuses one exact surface query.
+    const distance = Math.max(this.controls.minDistance, this.camera.position.distanceTo(point));
+    const forward = this.camera.getWorldDirection(new THREE.Vector3());
+    this.controls.target.copy(this.camera.position).addScaledVector(forward, distance);
   }
 
   focusSurface(event) {
     clearTimeout(this.pickTimer);
     if (!this.ready || event.button !== 0) return;
-    const root = this.activeDetail?.group ??
-      (this.activeInterior ? this.interiors.get(this.activeInterior.key) :
-        this.exteriors.get(this.activeCode) ?? this.groups.get(this.activeCode));
-    const roots = this.activeCode ? [root] : [...this.groups.values(), ...this.exteriors.values()];
-    const meshes = [];
-    for (const group of roots) {
-      if (group?.visible) group.traverseVisible(object => { if (object.isMesh) meshes.push(object); });
-    }
-    const rect = this.canvas.getBoundingClientRect();
-    this.pointer.set(
-      (event.clientX - rect.left) / rect.width * 2 - 1,
-      -(event.clientY - rect.top) / rect.height * 2 + 1,
-    );
-    this.raycaster.setFromCamera(this.pointer, this.camera);
-    const hit = this.raycaster.intersectObjects(meshes, false).find(hit =>
-      this.renderer.clippingPlanes.every(plane => plane.distanceToPoint(hit.point) >= 0));
+    const hit = this.surfaceAt(event);
     if (!hit || hit.distance <= this.controls.minDistance) return;
     this.transition = null;
     if (!this.activeCode) {
@@ -993,7 +1060,6 @@ export class CampusViewer {
   pick(event) {
     if (
       !this.ready ||
-      this.panMode ||
       this.mode !== "campus" ||
       event.button !== 0 ||
       !this.pointerStart
@@ -1009,6 +1075,12 @@ export class CampusViewer {
       performance.now() - start.time > 600
     )
       return;
+    const label = this.labelPointer;
+    this.labelPointer = null;
+    if (label?.id === event.pointerId) {
+      label.button.click();
+      return;
+    }
     const rect = this.canvas.getBoundingClientRect();
     this.pointer.set(
       ((event.clientX - rect.left) / rect.width) * 2 - 1,
@@ -1026,7 +1098,7 @@ export class CampusViewer {
       clearTimeout(this.pickTimer);
       // Leave the double-click gesture available for approaching this surface.
       this.pickTimer = setTimeout(() => {
-        if (!this.disposed && !this.panMode && this.mode === 'campus') this.onPick(code);
+        if (!this.disposed && this.mode === 'campus') this.onPick(code);
       }, 300);
     }
   }
@@ -1134,6 +1206,13 @@ export class CampusViewer {
     this.controlTarget.copy(this.controls.target);
     this.controlRotation.copy(this.camera.quaternion);
     this.controls.update();
+    // Exterior orbits may look up at facades, but must not pass under the
+    // district's ground and expose its black underside against the sky.
+    if (this.mode !== 'interior' && this.camera.position.y < 0.25) {
+      this.camera.position.y = 0.25;
+      stopControlInertia(this.controls);
+      this.needsRender = true;
+    }
     const distance = Math.max(0.15, this.camera.position.distanceTo(this.controls.target));
     const angularMovement = this.controlRotation.angleTo(this.camera.quaternion);
     const linearMovement = this.controlPosition.distanceTo(this.camera.position) +
