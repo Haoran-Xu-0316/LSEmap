@@ -21,10 +21,15 @@ finishes and public structural elements. All201 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
-Overview navigation now exposes a drag-pan mode for mouse and touch. Wheel
-zoom follows the cursor even over building labels; double-clicking a surface approaches that point without
-opening a building. Below the true horizon, neutral atmospheric distance blends
-with the district edge instead of continuing blue sky beneath the map.
+The overview starts with direct drag-to-pan and right-drag-to-orbit. Separate
+pan and orbit buttons stay synchronized when switching to a building and back.
+Labels pass drag gestures to the map while stationary taps and keyboard activation
+still select the building. Wheel zoom and the start of a touch pinch use the actual
+surface distance, so a nearby facade can be approached without crossing it or
+stalling at the former campus pivot. One surface query is reused throughout each
+wheel burst. Exterior navigation stays above street level while retaining upward
+facade views; interior cameras keep their full range. Below the true horizon,
+neutral atmospheric distance blends with the district edge.
 
 Edition249 restores the two photographed horizontal grille rails over OLD’s
 Houghton entrance doors. Existing leaf hardware, glazing, artwork and all other
