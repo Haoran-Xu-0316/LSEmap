@@ -3,7 +3,7 @@ import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 
 export const SKY_BACKDROP_URL = '/environment/daylight-sky-2k.webp';
 export const SKY_URL = '/environment/daylight-1k.hdr';
-export const OUTDOOR_ATMOSPHERE = Object.freeze({ horizon: 0xc4d9e8, lowerSky: 0xb6cee2 });
+export const OUTDOOR_ATMOSPHERE = Object.freeze({ horizon: 0xdce5e9, lowerSky: 0xc9c7bd });
 // Orient the photographed daylight toward the campus key light. This is a
 // presentation sky; its capture location is not campus survey evidence.
 // The source sun is at48 degrees elevation. Match its azimuth to the
@@ -41,9 +41,9 @@ async function loadSkyBackdrop(viewer) {
   } catch { bitmap?.close(); return null; }
 }
 
-// A pale atmospheric surround replaces the panorama's mirrored underside.
+// Ground-coloured atmospheric distance replaces the panorama's mirrored underside.
 // Preserve the real upper sky and its single sun; reflections still use the HDR.
-function createSkySurround(texture) {
+export function createSkySurround(texture) {
   const material = new THREE.ShaderMaterial({
     side: THREE.BackSide, depthTest: false, depthWrite: false, toneMapped: false,
     uniforms: { sky: { value: texture }, horizon: { value: new THREE.Color(OUTDOOR_ATMOSPHERE.horizon) }, lowerSky: { value: new THREE.Color(OUTDOOR_ATMOSPHERE.lowerSky) }, rotation: { value: new THREE.Matrix3().setFromMatrix4(new THREE.Matrix4().makeRotationFromEuler(SKY_ROTATION)).transpose() } },
@@ -62,8 +62,10 @@ function createSkySurround(texture) {
         vec2 uv = vec2(atan(ray.z, ray.x) / 6.28318530718 + .5,
                        asin(clamp(ray.y, -1.0, 1.0)) / 3.14159265359 + .5);
         vec3 photograph = texture2D(sky, uv).rgb;
-        vec3 atmosphere = mix(horizon, lowerSky, smoothstep(0.0, 1.0, -ray.y));
-        float realSky = smoothstep(-.04, .10, ray.y);
+        vec3 atmosphere = mix(horizon, lowerSky, smoothstep(0.0, .24, -ray.y));
+        // The finite district ends below the true horizon in aerial views.
+        // Continue a neutral distant ground there, not a blue void.
+        float realSky = smoothstep(.0, .12, ray.y);
         gl_FragColor = vec4(mix(atmosphere, photograph, realSky), 1.0);
         #include <colorspace_fragment>
       }
