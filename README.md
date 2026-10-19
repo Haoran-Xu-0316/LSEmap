@@ -8,18 +8,30 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition246 contains31 building records,30 detailed exteriors,25 interior views
+Edition248 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v246.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v248.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage246` acceptance records are retained with the native: integration
+The local `stage248` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All198 gallery images use the
+finishes and public structural elements. All200 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
+
+Overview navigation now exposes a drag-pan mode for mouse and touch. Wheel
+zoom follows the cursor even over building labels; double-clicking a surface approaches that point without
+opening a building. Below the true horizon, neutral atmospheric distance blends
+with the district edge instead of continuing blue sky beneath the map.
+
+Edition248 restores the mapped public court enclosure in Lincoln’s Inn Fields.
+Sixty coated posts and five wire panels leave the mapped corner entrance open.
+Wire coverage is filtered in screen space to retain holes without distant shimmer.
+The3m height, post section, wire pitch and generous opening are estimates; the
+operator photograph has no verified capture date. Existing paths, trees, courts,
+all30building exteriors and all35room studies retain their accepted geometry.
 
 Edition246 registers the89-opening CON Houghton elevation from the2020 existing
 drawing, including continuous stone surrounds, recessed glass and a closed roof.
