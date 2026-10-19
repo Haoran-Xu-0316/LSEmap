@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "250",
-  "sourceModelSha256": "833c92b1af57b5c60fbf6f7cd85deb35ea506f680beefcbf6ffde502516dc4ee",
+  "version": "251",
+  "sourceModelSha256": "6fa67b6a4640411c1065f9ca5f4d660150bb9075968f8adf881267fe1a39a6e9",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2053,9 +2053,12 @@
         }
       ],
       "wholeFacadeReview": {
-        "version": 137,
-        "status": "retained-pending-upper-elevation-and-enclosure",
-        "scope": "Current low-level photos and2010 entrance feasibility scheme cannot calibrate upper storey count or mansard.26 distinct low panes have only distant3.49–25.03m estimated shells behind them. No speculative transparency, backplate, new storeys or new roof added."
+        "version": 251,
+        "status": "registered-houghton-with-estimated-rear-roof",
+        "scope": "2020existing Houghton elevation:64window openings and8opaque ground modules, registered to retained campus parcel with0.515484%horizontal compression. Upper outline,24.966083meave and30.786917mmain roof top follow the drawing. Rear depth, unseen sides and finishes remain estimates; known Aldwych/Garrick architecture retained.",
+        "sourceApplication": "20/04703/FULL",
+        "sourcePublished": "2020-08-28",
+        "notCurrentMeasuredSurvey": true
       },
       "glazingReview": {
         "version": 181,
@@ -2095,6 +2098,24 @@
           "No new glazing opacity, room backing, upper windows or roof geometry is invented."
         ]
       },
+      "houghtonFacadeReview251": {
+        "version": 251,
+        "componentSha256": "6d13949b128f5248b031ba51a688c8cfb52a7f8f1752c5fb32f1d01fd7a59916",
+        "audit": "result/blender/col-roof251/audit.json",
+        "sourcePdfSha256": "cd369000f7053523e3fd2bbc1a0b343c72ca5f61d96d0c66e9b29f5d0eb1d47f",
+        "scope": "Complete bounded Houghton exterior assembled with known Aldwych/Garrick returns. New source roof is a finite closed volume on inherited parcel depth. Old trim copies corrected outward; old Houghton glass fragments removed only within new apertures.",
+        "farOpeningBackingRays": 216,
+        "farFirstHitChecks": 72,
+        "farEaveAndRoofApertureRays": 96,
+        "retainedSourceFaceUVRecords": 6866,
+        "retainedAldwychTrimFaceUVRecords": 24,
+        "limitations": [
+          "Historical2020existing elevation,not2026survey.",
+          "Slate colour,rear roof depth and unseen elevations are estimates.",
+          "The high rectangular source projection remains shallow and unclassified.",
+          "Garrick room sample unchanged;complete building interior not reconstructed."
+        ]
+      },
       "bounds": {
         "min": [
           2.9004480838775635,
@@ -2103,50 +2124,50 @@
         ],
         "max": [
           23.38327980041504,
-          29.0,
+          34.723915100097656,
           128.17990112304688
         ]
       },
       "exteriorFramingCorners": [
         [
-          2.810394836609837,
+          2.810394847562387,
           -0.20250000059604645,
-          98.55690954458926
+          98.55690950275411
         ],
         [
-          22.210981689665232,
+          22.21098190331345,
           -0.20250000059604645,
-          96.77995406066272
+          96.77995429199096
         ],
         [
-          2.810394836609837,
-          29.0,
-          98.55690954458926
+          2.810394847562387,
+          34.723915100097656,
+          98.55690950275411
         ],
         [
-          22.210981689665232,
-          29.0,
-          96.77995406066272
+          22.21098190331345,
+          34.723915100097656,
+          96.77995429199096
         ],
         [
-          5.656459156946997,
+          5.656458686045317,
           -0.20250000059604645,
-          129.62989844922603
+          129.6298982479233
         ],
         [
-          25.057046010002388,
+          25.05704574179638,
           -0.20250000059604645,
-          127.85294296529949
+          127.85294303716014
         ],
         [
-          5.656459156946997,
-          29.0,
-          129.62989844922603
+          5.656458686045317,
+          34.723915100097656,
+          129.6298982479233
         ],
         [
-          25.057046010002388,
-          29.0,
-          127.85294296529949
+          25.05704574179638,
+          34.723915100097656,
+          127.85294303716014
         ]
       ],
       "interiorBounds": {
@@ -2162,10 +2183,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/col-exterior-d85e59114bc0.glb",
-        "bytes": 1113020,
-        "triangles": 81320,
-        "sha256": "d85e59114bc0b40276fa337384b88474433b087af7dc87438225e40d798b4cf5",
+        "url": "/models/details/col-exterior-1a5286b973d4.glb",
+        "bytes": 760276,
+        "triangles": 56889,
+        "sha256": "1a5286b973d405a94ad3fa502f300f0e58b1e3f94fb5bd54b0caeb8f0a5f65ef",
         "bounds": {
           "min": [
             2.9004480838775635,
@@ -2174,7 +2195,7 @@
           ],
           "max": [
             23.38327980041504,
-            29.0,
+            34.723915100097656,
             128.17990112304688
           ]
         }
@@ -5300,22 +5321,22 @@
         },
         {
           "id": "3",
-          "label": "三层楼板与电梯井口",
+          "label": "三层井口与混凝土核心",
           "minHeight": 17.3,
-          "maxHeight": 18.15,
-          "scope": "2022建成平面的3个结构井内边界；保留现有估算17.5米楼板标高、外轮廓与井间条带。井壁、轿厢与完整楼层未重建。",
+          "maxHeight": 21.91,
+          "scope": "2022平面真实填充边界支持两组井壁与四处门口；17.5/21.9米楼层标高及2.1米门高为估计。上层楼板与完整井道仍待协调。",
           "view": {
             "position": [
-              16.6,
-              30.0,
-              -43.6
+              18.8,
+              31.5,
+              -42.0
             ],
             "target": [
               10.6,
-              17.5,
+              18.5,
               -53.6
             ],
-            "fov": 48,
+            "fov": 50,
             "referenceAspect": 1.25
           }
         }
@@ -5356,8 +5377,31 @@
         "limitations": "Floor datum is inherited and estimated. No shaft walls, lift cars, unobserved stairs or entire third-floor interior are asserted."
       },
       "interiorAdditionalObjects": [
-        "MAR250_third_floor_with_source_lift_shafts"
+        "MAR250_third_floor_with_source_lift_shafts",
+        "MAR251_third_south_lift_core_walls"
       ],
+      "thirdFloorWallsReview251": {
+        "version": 251,
+        "componentSha256": "4e2f221aec5f711add94fc98c5d7b2439cd538043e25c29fa942f62982b1264c",
+        "audit": "result/blender/mar-core251/audit.json",
+        "scope": "Two source-filled southern third-floor concrete cores with four source-width wall gaps. Closed,source-supported wall feet;no shaft caps.",
+        "doorWidthRangeMetres": [
+          1.38085,
+          1.388825
+        ],
+        "doorHeightEstimatedMetres": 2.1,
+        "inheritedNativeLevelsMetres": [
+          17.5,
+          21.9
+        ],
+        "shaftClearanceRays": 243,
+        "doorClearanceRays": 36,
+        "limitations": [
+          "Published2022plan,not2026survey.",
+          "No independently identified upper-floor shaft XY controls;21.9mgeneric slab retained.",
+          "No lift cars,equipment or complete third-floor interior."
+        ]
+      },
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -5420,15 +5464,15 @@
         ],
         "max": [
           23.157800674438477,
-          17.5,
+          21.899999618530273,
           -24.454532623291016
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-16e2413ecd32.glb",
-        "bytes": 3035904,
-        "triangles": 276731,
-        "sha256": "16e2413ecd32feb454c195d1e2eee2d9fe394f3d0f188b421f9ee912df89b7d5",
+        "url": "/models/details/mar-exterior-44cc0ad7b20a.glb",
+        "bytes": 3044588,
+        "triangles": 277723,
+        "sha256": "44cc0ad7b20a8fd8dccfdc180d318c614fba4e49e4ff2947b03918cc081a96c9",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -5443,10 +5487,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-e79c52ac4a61.glb",
-        "bytes": 539620,
-        "triangles": 53705,
-        "sha256": "e79c52ac4a61418a0fa83a4d22b68b5cc1561268e925fba4dd2e912f689a622a",
+        "url": "/models/details/mar-interior-2c726f3e4099.glb",
+        "bytes": 548304,
+        "triangles": 54697,
+        "sha256": "2c726f3e40999323f78a3e2af040bf6a36654bdef92d0fc5c9c411654394e64b",
         "bounds": {
           "min": [
             -44.53135299682617,
@@ -5455,7 +5499,7 @@
           ],
           "max": [
             23.157800674438477,
-            17.5,
+            21.899999618530273,
             -24.454532623291016
           ]
         }
