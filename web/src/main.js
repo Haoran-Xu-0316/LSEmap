@@ -154,7 +154,7 @@ function renderDetail(building) {
         closeup.setAttribute("aria-pressed", "true");
         exterior.setAttribute("aria-pressed", "false");
         $("#interior-view")?.setAttribute("aria-pressed", "false");
-        $("#scene-subtitle").textContent = "拖动旋转，近距离观察入口构件";
+        $("#scene-subtitle").textContent = "拖动平移，右键或Shift拖动旋转";
         $("#view-mode").textContent = building.detailView.label;
         $("#context-toggle").disabled = true;
         $("#context-toggle").setAttribute("aria-pressed", "false");
@@ -188,7 +188,7 @@ function renderDetail(building) {
           $("#scene-kicker").textContent = `${building.code} / ${study ? "ROOM STUDY" : "PUBLIC INTERIOR"}`;
           $("#scene-subtitle").textContent = study
             ? study.label
-            : "公共空间研究模型，可旋转观察";
+            : "拖动平移，右键或Shift拖动旋转";
           $("#view-mode").textContent = interiorLabel;
           $("#context-toggle").disabled = true;
           stage.classList.add("interior-view");
@@ -387,8 +387,6 @@ function showFailure(message) {
   for (const id of [
     "zoom-in",
     "zoom-out",
-    "pan-toggle",
-    "rotate-toggle",
     "north",
     "labels-toggle",
     "context-toggle",
@@ -468,14 +466,11 @@ async function start() {
     for (const id of [
       "zoom-in",
       "zoom-out",
-      "pan-toggle",
-      "rotate-toggle",
       "north",
       "labels-toggle",
       "context-toggle",
     ])
       $(`#${id}`).disabled = false;
-    viewer.setPanMode($("#pan-toggle").getAttribute("aria-pressed") === "true");
     viewer.toggleLabels(
       $("#labels-toggle").getAttribute("aria-pressed") === "true",
     );
@@ -485,7 +480,7 @@ async function start() {
     if (current) selectBuilding(current.code, false);
   } catch (error) {
     // An abandoned attempt must never overwrite a successful retry.
-    if (attempt !== loadAttempt) return;
+    if (attempt !== loadAttempt || candidate?.disposed) return;
     candidate?.dispose();
     viewer = null;
     console.error("Campus viewer could not load:", error);
@@ -518,13 +513,6 @@ $("#overview").addEventListener("click", () => overview());
 $("#zoom-in").addEventListener("click", () => viewer?.zoom(0.78));
 $("#zoom-out").addEventListener("click", () => viewer?.zoom(1.28));
 $("#north").addEventListener("click", () => viewer?.north());
-for (const [id, pan] of [['pan-toggle', true], ['rotate-toggle', false]]) {
-  $(`#${id}`).addEventListener('click', () => viewer?.setPanMode(pan));
-}
-$('#canvas-container').addEventListener('navigationmodechange', event => {
-  $('#pan-toggle').setAttribute('aria-pressed', String(event.detail.pan));
-  $('#rotate-toggle').setAttribute('aria-pressed', String(!event.detail.pan));
-});
 for (const [id, callback] of [
   ["labels-toggle", (value) => viewer?.toggleLabels(value)],
   ["context-toggle", (value) => viewer?.toggleContext(value)],
