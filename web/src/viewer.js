@@ -120,8 +120,8 @@ export class CampusViewer {
       () => this.mode === "campus" && !this.activeCode &&
         this.camera.position.distanceTo(this.controls?.target ?? this.camera.position) > 130);
     // Capture first: use the actual surface distance before OrbitControls dollies.
-    this.canvas.addEventListener('wheel', event => this.prepareSurfaceZoom(event),
-      { capture: true, passive: true, signal: this.loadController.signal });
+    this.canvas.addEventListener('wheel', event => this.handleWheel(event),
+      { capture: true, passive: false, signal: this.loadController.signal });
     this.zoomTouches = new Map();
     this.canvas.addEventListener('pointerdown', event => {
       if (event.pointerType !== 'touch') return;
@@ -945,6 +945,13 @@ export class CampusViewer {
   }
 
   zoom(factor) {
+    // Toolbar and keyboard zoom follow the surface in the middle of the view,
+    // rather than an orbit centre left behind on the far side of the campus.
+    if (this.transition?.kind !== "zoom") {
+      const rect = this.canvas.getBoundingClientRect();
+      this.prepareSurfaceZoom({ clientX: rect.left + rect.width / 2,
+        clientY: rect.top + rect.height / 2 });
+    }
     const pending = this.transition?.kind === "zoom" ? this.transition : null;
     const target = (pending?.target ?? this.controls.target).clone();
     const offset = (pending?.position ?? this.camera.position)
@@ -1016,6 +1023,32 @@ export class CampusViewer {
     this.raycaster.setFromCamera(this.pointer, this.camera);
     return this.pickSurface(this.raycaster, roots.filter(group => group?.visible), hit =>
       this.renderer.clippingPlanes.every(plane => plane.distanceToPoint(hit.point) >= 0));
+  }
+
+  handleWheel(event) {
+    if (!this.ready || !this.controls.enabled) return;
+    const now = performance.now();
+    const continuing = this.wheelGesture && now - this.wheelGesture.time < 180;
+    // Trackpads send two axes. OrbitControls consumes only deltaY, losing
+    // sideways movement entirely. Keep one interpretation for each gesture so
+    // a diagonal tail cannot suddenly turn a pan into a zoom. Pinch stays zoom.
+    const pan = !event.ctrlKey && (event.shiftKey ||
+      (continuing ? this.wheelGesture.pan : Math.abs(event.deltaX) > Math.abs(event.deltaY)));
+    this.wheelGesture = { time: now, pan };
+    if (!pan) {
+      this.prepareSurfaceZoom(event);
+      return;
+    }
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if (!this.controls.enablePan) return;
+    this.transition = null;
+    this.surfaceZoom = null;
+    clearTimeout(this.pickTimer);
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? this.canvas.clientHeight : 1;
+    const x = event.shiftKey && !event.deltaX ? event.deltaY : event.deltaX;
+    const y = event.shiftKey && !event.deltaX ? 0 : event.deltaY;
+    this.controls.pan(-x * unit, -y * unit);
   }
 
   prepareSurfaceZoom(event) {
