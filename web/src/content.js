@@ -128,9 +128,10 @@ export const buildingDetails = {
   COL: {
     description:
       "Columbia House以浅色石材立面沿Aldwych与Houghton Street转角展开。凹入窗洞、石材分缝、连续檐口与Garrick转角店面构成沿街层次。",
-    note: "已深化街面及木门入口；窗列节奏、屋顶和未见背面为估计，未建立完整内部。",
+    note: "Houghton窗列与檐线依据2020现状图；屋顶进深、饰面和未见背面为估计，完整内部未建立。",
     images: [
       ["col-exterior", "Columbia House光整石柱与街角块石"],
+      ["col-houghton", "Houghton街立面与屋顶窗"],
       ["col-garrick-entrance", "Garrick街角入口"],
       ["col-entrance", "木门、铭牌与石门廊"],
     ],
@@ -149,8 +150,8 @@ export const buildingDetails = {
   },
   MAR: {
     description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。上部遮阳片前缘收窄，北侧退台补充浅色铺装、金属栏杆与局部种植。可近看入口，再进入Grand Hall查看树状柱与弧形楼梯。",
-    note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部仅涵盖公共大厅和局部教室。",
-    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"], ["mar-third-lift-openings-interior", "三层楼板与三个电梯井口"],
+    note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部涵盖公共大厅、局部楼层结构和教室样本。",
+    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"], ["mar-third-lift-openings-interior", "三层井口与混凝土核心"],
       ["mar-rear-wall", "西侧石墙、板缝与相邻窗列"],
       ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
