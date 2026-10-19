@@ -410,6 +410,8 @@ canvas {
   overflow: hidden;
 }
 .map-label {
+  touch-action: none;
+  user-select: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -1135,5 +1137,5 @@ dialog::backdrop {
 .map-label.is-selected { background: var(--control-active); }
 
 @media (max-width: 700px) {
-  #pan-toggle span { display: none; }
+  #pan-toggle span, #rotate-toggle span { display: none; }
 }
