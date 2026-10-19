@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "248",
-  "sourceModelSha256": "f43da0940bf835c6f769ae52341376721b3a934d8875160d7f8544e2067bcd50",
+  "version": "249",
+  "sourceModelSha256": "cad99a189122994fd484794fb617a9223c31e90fd506fb434ef22d9e87e30e24",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5958,10 +5958,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-1fc724d606d4.glb",
-        "bytes": 11650196,
-        "triangles": 959432,
-        "sha256": "1fc724d606d4e4aed5d1941cabd11cbee62b806da8da9a46a52d464009cdaee5",
+        "url": "/models/details/old-exterior-8331b7dd2b4d.glb",
+        "bytes": 11650472,
+        "triangles": 959456,
+        "sha256": "8331b7dd2b4d6383967e3fba19895ebdfb101636f95258d3fb7080bdc375a691",
         "bounds": {
           "min": [
             -39.1646614074707,
