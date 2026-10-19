@@ -18,7 +18,7 @@ export function createBuildingPicker() {
     // The observer may be inside a building or a pane's bounds.
     return box.containsPoint(raycaster.ray.origin) ? 0 : raycaster.ray.origin.distanceTo(point);
   };
-  return (raycaster, roots) => {
+  return (raycaster, roots, acceptHit = () => true) => {
     const candidates = [];
     let order = 0;
     for (const root of roots) {
@@ -31,6 +31,12 @@ export function createBuildingPicker() {
         members.set(root, objects);
       }
       for (const object of objects) {
+        let visible = true;
+        for (let parent = object; parent; parent = parent.parent) {
+          if (!parent.visible) { visible = false; break; }
+          if (parent === root) break;
+        }
+        if (!visible) continue;
         const distance = entryDistance(raycaster, object);
         if (Number.isFinite(distance) && distance <= raycaster.far) candidates.push({ object, distance, order });
         order++;
@@ -43,7 +49,7 @@ export function createBuildingPicker() {
       if (nearest && candidate.distance > nearest.distance + 1e-7 * Math.max(1, nearest.distance)) break;
       intersections.length = 0;
       raycaster.intersectObject(candidate.object, false, intersections);
-      const hit = intersections[0];
+      const hit = intersections.find(acceptHit);
       if (hit && (!nearest || hit.distance < nearest.distance ||
           (hit.distance === nearest.distance && candidate.order < nearestOrder))) {
         nearest = hit;
