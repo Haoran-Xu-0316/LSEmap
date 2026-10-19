@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "249",
-  "sourceModelSha256": "cad99a189122994fd484794fb617a9223c31e90fd506fb434ef22d9e87e30e24",
+  "version": "250",
+  "sourceModelSha256": "833c92b1af57b5c60fbf6f7cd85deb35ea506f680beefcbf6ffde502516dc4ee",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5297,9 +5297,30 @@
             ],
             "fov": 58.72
           }
+        },
+        {
+          "id": "3",
+          "label": "三层楼板与电梯井口",
+          "minHeight": 17.3,
+          "maxHeight": 18.15,
+          "scope": "2022建成平面的3个结构井内边界；保留现有估算17.5米楼板标高、外轮廓与井间条带。井壁、轿厢与完整楼层未重建。",
+          "view": {
+            "position": [
+              16.6,
+              30.0,
+              -43.6
+            ],
+            "target": [
+              10.6,
+              17.5,
+              -53.6
+            ],
+            "fov": 48,
+            "referenceAspect": 1.25
+          }
         }
       ],
-      "interiorSectionScope": "G、1、2层公共结构研究。二层楼板、挑空及支承依据2022建成资料；标高估算，一层至二层上行梯转接仍待证。",
+      "interiorSectionScope": "G、1、2层公共结构及三层局部楼板研究。三层仅按2022建成平面修正3处电梯井口，标高沿用估算；井壁、梯段转接及完整楼层仍未完成。",
       "publicStructureReview223": {
         "version": 223,
         "audit": "result/blender/mar-structure223/audit.json",
@@ -5323,6 +5344,20 @@
         "sourceDimensionsEstimated": true,
         "wholeCurrentInteriorClaimed": false
       },
+      "thirdFloorCoreReview250": {
+        "version": 250,
+        "scope": "Cut three registered structural lift-shaft openings in the existing17.5mthird-floor slab only. Preserve the outer boundary, material, interpolated UVs, inter-shaft strips, other floors and all35room studies.",
+        "source": "https://cdn.ca.emap.com/wp-content/uploads/sites/12/2022/04/grafton-architects-architectural-review.pdf",
+        "sourceYear": 2022,
+        "sourceClassification": "published completed-building plan; not a2026survey",
+        "sourceCoreMaximumErrorM": 0.024804651701811016,
+        "removedAreaSquareMetres": 17.98046046368087,
+        "addedTriangles": 20,
+        "limitations": "Floor datum is inherited and estimated. No shaft walls, lift cars, unobserved stairs or entire third-floor interior are asserted."
+      },
+      "interiorAdditionalObjects": [
+        "MAR250_third_floor_with_source_lift_shafts"
+      ],
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -5385,15 +5420,15 @@
         ],
         "max": [
           23.157800674438477,
-          13.952500343322754,
+          17.5,
           -24.454532623291016
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-87786a48407c.glb",
-        "bytes": 3035472,
-        "triangles": 276711,
-        "sha256": "87786a48407cc45fd0ca7e72496ec97bce4f22f7433577a69c5a3dbadad64805",
+        "url": "/models/details/mar-exterior-16e2413ecd32.glb",
+        "bytes": 3035904,
+        "triangles": 276731,
+        "sha256": "16e2413ecd32feb454c195d1e2eee2d9fe394f3d0f188b421f9ee912df89b7d5",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -5408,10 +5443,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-363c937eeb23.glb",
-        "bytes": 539108,
-        "triangles": 53681,
-        "sha256": "363c937eeb23bab4f17dd5168d5ce6bfe1c7c03b77fcbb4a3b169850a0b544d3",
+        "url": "/models/details/mar-interior-e79c52ac4a61.glb",
+        "bytes": 539620,
+        "triangles": 53705,
+        "sha256": "e79c52ac4a61418a0fa83a4d22b68b5cc1561268e925fba4dd2e912f689a622a",
         "bounds": {
           "min": [
             -44.53135299682617,
@@ -5420,7 +5455,7 @@
           ],
           "max": [
             23.157800674438477,
-            13.952500343322754,
+            17.5,
             -24.454532623291016
           ]
         }
@@ -5891,6 +5926,15 @@
         ],
         "fov": 42
       },
+      "approachReview250": {
+        "version": 250,
+        "scope": "Lengthen the four existing faceted tread corners to match the visible entrance approach. Preserve all tread heights and extreme bounds, threshold, rails, materials and80triangles.",
+        "source": "https://webbyates.com/projects/the-old-building/",
+        "image": "https://webbyates.com/wp-content/uploads/2025/07/J4098_N131_website.jpg",
+        "projectCompletionYear": 2024,
+        "imageCaptureDate": null,
+        "limitations": "Corner proportions are photographic estimates, not circular arcs, measurements or accessibility certification. Upper foyer and all other architecture remain unresolved or unchanged."
+      },
       "bounds": {
         "min": [
           -39.16532897949219,
@@ -5905,44 +5949,44 @@
       },
       "exteriorFramingCorners": [
         [
-          -8.7193605269369,
+          -8.837514707560295,
           -0.10000000149011612,
-          105.95552086458324
+          105.93181697378792
         ],
         [
-          -62.41959802795837,
+          -62.48386245717716,
           -0.10000000149011612,
-          82.25694925098617
+          82.14084131509725
         ],
         [
-          -8.7193605269369,
+          -8.837514707560295,
           32.04999923706055,
-          105.95552086458324
+          105.93181697378792
         ],
         [
-          -62.41959802795837,
+          -62.48386245717716,
           32.04999923706055,
-          82.25694925098617
+          82.14084131509725
         ],
         [
-          18.325096405845127,
+          18.316013747374548,
           -0.10000000149011612,
-          44.67360969896317
+          44.70323807814124
         ],
         [
-          -35.375141095176346,
+          -35.33033400224232,
           -0.10000000149011612,
-          20.975038085366087
+          20.912262419450563
         ],
         [
-          18.325096405845127,
+          18.316013747374548,
           32.04999923706055,
-          44.67360969896317
+          44.70323807814124
         ],
         [
-          -35.375141095176346,
+          -35.33033400224232,
           32.04999923706055,
-          20.975038085366087
+          20.912262419450563
         ]
       ],
       "interiorBounds": {
@@ -5958,10 +6002,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-8331b7dd2b4d.glb",
-        "bytes": 11650472,
+        "url": "/models/details/old-exterior-a92874b20028.glb",
+        "bytes": 11650516,
         "triangles": 959456,
-        "sha256": "8331b7dd2b4d6383967e3fba19895ebdfb101636f95258d3fb7080bdc375a691",
+        "sha256": "a92874b20028762f56d368ed7f2484342b06ee54ebdcc86970096cd10a1fcc08",
         "bounds": {
           "min": [
             -39.1646614074707,
