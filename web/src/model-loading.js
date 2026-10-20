@@ -63,12 +63,12 @@ export function loadModelInStages(download, decode, {
 
 /** Validate complete GLB bytes before decoding; retry transport failures once. */
 export async function downloadVerifiedModel(url, {
-  signal, onProgress, expectedSha256, fetchModel = fetch,
+  signal, onProgress, expectedSha256, fetchModel = fetch, priority = "auto",
 } = {}) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       signal?.throwIfAborted();
-      const response = await fetchModel(url, {signal, cache: attempt ? 'reload' : 'default'});
+      const response = await fetchModel(url, {signal, cache: attempt ? 'reload' : 'default', priority});
       if (!response.ok) throw new Error(`Model request failed: HTTP${response.status}`);
       const chunks = [];
       let loaded = 0;
@@ -121,12 +121,12 @@ export async function downloadVerifiedModel(url, {
 
 /** Download lossless compressed campus segments concurrently into the final GLB. */
 export async function downloadCampusModel(url, options = {}) {
-  const {signal, onProgress, fetchModel = fetch,
+  const {signal, onProgress, fetchModel = fetch, priority = "high",
     supportsCompression = typeof DecompressionStream === 'function',
     byteCache = campusByteCache} = options;
   const query = url.includes('?') ? url.slice(url.indexOf('?')) : '';
   signal?.throwIfAborted();
-  const response = await fetchModel('/models/campus-parts.json' + query, {signal, cache:'no-cache'});
+  const response = await fetchModel('/models/campus-parts.json' + query, {signal, cache:'no-cache', priority});
   // Development serves the original GLB without the release-only segment index.
   if (response.status === 404 || response.headers.get('Content-Type')?.includes('text/html'))
     return downloadVerifiedModel(url, options);
@@ -179,7 +179,7 @@ export async function downloadCampusModel(url, options = {}) {
   async function readSegment(part, index, begin, compressed) {
     controller.signal.throwIfAborted();
     const result = await fetchModel(compressed ? part.compressed.path : part.path,
-      {signal:controller.signal});
+      {signal:controller.signal, priority});
     if (!result.ok) throw new Error(`Campus segment request failed: HTTP${result.status}`);
     let stream = result.body;
     if (!stream) stream = new Blob([await result.arrayBuffer()]).stream();
