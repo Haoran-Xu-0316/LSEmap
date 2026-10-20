@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition251 contains31 building records,30 detailed exteriors,25 interior views
+Edition252 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v251.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v252.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage251` acceptance records are retained with the native: integration
+The local `stage252` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -24,6 +24,8 @@ checked against model and renderer signatures.
 The campus, building and room views share direct drag-to-pan, with right-drag or
 Shift-drag to orbit. There are no navigation mode buttons. One finger pans; two
 fingers drag to orbit and pinch to zoom.
+Foreground models request high network priority; background exterior refinements
+request low priority while retaining the same integrity checks and idle decoding.
 Labels pass drag gestures to the map while stationary taps and keyboard activation
 still select the building. Wheel zoom and the start of a touch pinch use the actual
 surface distance, so a nearby facade can be approached without crossing it or
@@ -32,6 +34,12 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition252 coordinates COL’s Houghton stone and painted frames with the retained
+photo-guided finish family. Uniform stone albedo uses the existing tone study’s
+linear mean, avoiding unsupported repeated colour patches. Original geometry,
+UVs, glass, roof and global lighting remain unchanged; colour is uncalibrated.
+The overview has no decorative scene headline. Building names remain in detail views.
 
 Edition251 integrates the source-registered COL Houghton elevation with64windows,
 8opaque ground modules and a closed roof coordinated with both upper window rows.
