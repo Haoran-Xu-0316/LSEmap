@@ -9,6 +9,7 @@ export default defineConfig({
   reporter: [["list"], ["json", { outputFile: "result/web/tests.json" }]],
   use: {
     launchOptions: {
+      channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
       args:
         process.platform === "darwin"
           ? ["--use-angle=metal"]
