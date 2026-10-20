@@ -26,6 +26,10 @@ Shift-drag to orbit. There are no navigation mode buttons. One finger pans; two
 fingers drag to orbit and pinch to zoom.
 Foreground models request high network priority; background exterior refinements
 request low priority while retaining the same integrity checks and idle decoding.
+Room entry and detail presentation reuse the same prepared scene when their asset
+URL matches. Switching rooms aborts obsolete entry/detail transfers; late decoder
+results are released without blocking or overwriting the current selection.
+Background exterior refinements pause inside a room and resume in the campus.
 Labels pass drag gestures to the map while stationary taps and keyboard activation
 still select the building. Wheel zoom and the start of a touch pinch use the actual
 surface distance, so a nearby facade can be approached without crossing it or
