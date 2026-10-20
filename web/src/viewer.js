@@ -225,7 +225,7 @@ export class CampusViewer {
     this.draco.preload();
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
     this.detailCache = new ModelCache(
-      async (url) => (await this.loadAsset(url)).scene,
+      async (url, signal) => (await this.loadAsset(url, undefined, undefined, {signal})).scene,
       (group) => { prepareDetailedModel(group, this.environmentTarget.texture, this.groundTextures); this.applyEnvironmentRotation(group); this.scene.add(group); },
       disposeModel,
       matchMedia("(max-width: 720px)").matches ? 2 : 3,
@@ -291,7 +291,10 @@ export class CampusViewer {
     });
   }
 
-  async loadAsset(url, onProgress, beforeDecode, priority = "high") {
+  async loadAsset(url, onProgress, beforeDecode, {priority = "high", signal: requestSignal} = {}) {
+    const signal = requestSignal
+      ? AbortSignal.any([this.loadController.signal, requestSignal])
+      : this.loadController.signal;
     // Fixed model names must follow the freshly loaded catalogue across releases.
     // Detailed models already carry their content hash in the filename.
     if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
@@ -305,7 +308,7 @@ export class CampusViewer {
       progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256, priority}),
       bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
       {
-        signal: this.loadController.signal,
+        signal,
         onProgress,
         beforeDecode,
         cancelDownload: () => transferController.abort(),
@@ -387,14 +390,14 @@ export class CampusViewer {
     const pending = (async () => {
       const { scene: group } = await this.loadAsset(
         building.detailedExterior.url, undefined,
-        background ? () => this.waitForBackgroundFrame(() => this.activeCode === building.code) : undefined,
-        background ? "low" : "high",
+        background ? () => this.waitForBackgroundFrame(() => this.activeCode === building.code && this.mode !== "interior") : undefined,
+        {priority: background ? "low" : "high"},
       );
       if (this.disposed) {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
-      if (background && !await this.waitForBackgroundFrame(() => this.activeCode === building.code)) {
+      if (background && !await this.waitForBackgroundFrame(() => this.activeCode === building.code && this.mode !== "interior")) {
         disposeModel(group);
         throw new Error("Viewer disposed");
       }
@@ -412,7 +415,7 @@ export class CampusViewer {
   }
 
   navigationIsBusy() {
-    return document.hidden || this.interacting || Boolean(this.transition) ||
+    return document.hidden || this.mode === "interior" || this.interacting || Boolean(this.transition) ||
       performance.now() - this.lastNavigationAt < 200;
   }
 
@@ -586,6 +589,7 @@ export class CampusViewer {
   }
 
   showCampus() {
+    this.cancelInteriorLoads();
     this.clearInteriorSection();
     this.viewRequest += 1;
     this.detailRequest += 1;
@@ -649,9 +653,15 @@ export class CampusViewer {
     const request = ++this.detailRequest;
     this.onDetailState({ code: building.code, kind, spaceId, state: "loading" });
     try {
+      const interiorUrl = typeof interior?.interiorAsset === "string"
+        ? interior.interiorAsset : interior?.interiorAsset?.url;
+      // Room studies already load their final hashed GLB on entry. Reuse that
+      // prepared scene instead of downloading, decoding and retaining it twice.
+      const sharedInterior = kind === "interior" && interiorUrl === asset.url
+        ? this.interiors.get(interiorKey) : null;
       const group = kind === "exterior"
         ? await this.loadExterior(building)
-        : await this.detailCache.request(detailKey, asset.url);
+        : sharedInterior ?? await this.detailCache.request(detailKey, asset.url);
       if (!isCurrent()) return;
       this.detailCache.hideAll();
       this.activeDetail = { code: building.code, kind, spaceId, group };
@@ -725,34 +735,39 @@ export class CampusViewer {
     this.moveCamera(position, target);
   }
 
+  cancelInteriorLoads(exceptKey = null) {
+    for (const [key, request] of this.interiorLoads) {
+      if (key === exceptKey) continue;
+      request.controller.abort(new DOMException("Interior changed", "AbortError"));
+      this.interiorLoads.delete(key);
+    }
+  }
+
   async loadInterior(building, spaceId, interior) {
     const key = `${building.code}:${spaceId ?? "default"}`;
     if (this.interiors.has(key)) return this.interiors.get(key);
-    if (this.interiorLoads.has(key)) return this.interiorLoads.get(key);
+    if (this.interiorLoads.has(key)) return this.interiorLoads.get(key).promise;
     const asset = interior.interiorAsset;
     const url = typeof asset === "string" ? asset : asset?.url;
-    // Additional rooms must never silently load the building's default lobby.
     const source = url ?? (spaceId === null ? `/models/${building.code.toLowerCase()}-interior.glb` : null);
     if (!source) throw new Error(`Missing interior asset: ${key}`);
-    const loading = (async () => {
-      const gltf = await this.loadAsset(source);
-      if (this.disposed) {
+    const request = {controller: new AbortController(), promise: null};
+    request.promise = (async () => {
+      const gltf = await this.loadAsset(source, undefined, undefined, {signal: request.controller.signal});
+      if (this.disposed || request.controller.signal.aborted) {
         disposeModel(gltf.scene);
-        return null;
+        throw new DOMException("Interior changed", "AbortError");
       }
-      // The initial interior and its upgraded detail use the same finish and
-      // daylight binding, so loading cannot briefly show a different glazing.
       prepareDetailedModel(gltf.scene, this.environmentTarget.texture, this.groundTextures);
       this.applyEnvironmentRotation(gltf.scene);
       this.scene.add(gltf.scene);
       this.interiors.set(key, gltf.scene);
       return gltf.scene;
     })();
-    this.interiorLoads.set(key, loading);
-    try {
-      return await loading;
-    } finally {
-      this.interiorLoads.delete(key);
+    this.interiorLoads.set(key, request);
+    try { return await request.promise; }
+    finally {
+      if (this.interiorLoads.get(key) === request) this.interiorLoads.delete(key);
     }
   }
 
@@ -760,9 +775,10 @@ export class CampusViewer {
     const interior = this.interiorSpace(building, spaceId);
     if (!this.ready || !interior || this.activeCode !== building.code) return false;
     this.detailRequest += 1;
-    this.detailCache.activate(null);
     const code = building.code;
     const key = `${code}:${spaceId ?? "default"}`;
+    this.detailCache.activate(`interior-${code}${spaceId === null ? "" : `:${spaceId}`}`);
+    this.cancelInteriorLoads(key);
     const request = ++this.viewRequest;
     this.activeInterior = { code, spaceId, key, authoredView: Boolean(interior.interiorView) };
     delete this.canvas.dataset.detailReady;
@@ -1284,6 +1300,7 @@ export class CampusViewer {
     clearTimeout(this.pickTimer);
     disposeInteriorLighting(this);
     this.disposed = true;
+    this.cancelInteriorLoads();
     this.loadController.abort();
     this.detailRequest += 1;
     this.detailCache.dispose();
