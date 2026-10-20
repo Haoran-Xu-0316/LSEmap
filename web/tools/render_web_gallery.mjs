@@ -12,7 +12,7 @@ const catalogue = JSON.parse(await readFile('web/public/models/catalogue.json', 
 const jobs = JSON.parse(await readFile('web/tools/gallery-views.json', 'utf8'));
 const rendererSha256 = await galleryRendererSignature();
 const modelAssetsSha256 = await galleryModelSignature();
-const html = `<!doctype html><style>html,body{margin:0}#canvas{width:1400px;height:1120px}#labels{display:none}</style>
+const html = `<!doctype html><link rel="icon" href="data:,"><style>html,body{margin:0}#canvas{width:1400px;height:1120px}#labels{display:none}</style>
 <div id="canvas"></div><div id="labels"></div><script type="module">
 import {CampusViewer} from '/src/viewer.js';
 const catalogue=await (await fetch('/models/catalogue.json')).json();
@@ -71,11 +71,11 @@ let browser;
 try {
   await server.listen();
   const { port } = server.httpServer.address();
-  browser = await chromium.launch({ args: process.platform === 'darwin' ? ['--use-angle=metal'] : ['--enable-unsafe-swiftshader'] });
+  browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined, args: process.platform === 'darwin' ? ['--use-angle=metal'] : ['--enable-unsafe-swiftshader'] });
   const page = await browser.newPage({ viewport: { width: 1400, height: 1120 }, reducedMotion: 'reduce' });
   const errors = [];
   page.on('pageerror', error => { errors.push(error.message); console.error(error.message); });
-  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+  page.on('console', message => { if (message.type() === 'error') errors.push(`${message.text()} (${message.location().url})`); });
   await page.goto(`http://127.0.0.1:${port}/__gallery-render`);
   await page.waitForFunction(() => window.galleryReady, null, { timeout: 120000 });
   const records = [];
