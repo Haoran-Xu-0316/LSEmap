@@ -157,8 +157,10 @@ test("deep links, keyboard controls and reduced motion work", async ({
   await page.keyboard.press("+");
   await page.keyboard.press("ArrowLeft");
   await page.keyboard.press("Home");
-  await expect(page.locator("#scene-title")).toHaveText("伦敦的这一角");
+  await expect(page.locator(".scene-heading")).toBeHidden();
+  await expect(page.locator("#scene-title")).toBeEmpty();
   await expect(page).not.toHaveURL(/#LRB$/);
+  await page.screenshot({path:"result/blender/stage252/browser-overview.png"});
 });
 
 test("every additional public-interior model loads with its reviewed viewpoint", async ({
