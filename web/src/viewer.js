@@ -291,7 +291,7 @@ export class CampusViewer {
     });
   }
 
-  async loadAsset(url, onProgress, beforeDecode) {
+  async loadAsset(url, onProgress, beforeDecode, priority = "high") {
     // Fixed model names must follow the freshly loaded catalogue across releases.
     // Detailed models already carry their content hash in the filename.
     if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
@@ -302,7 +302,7 @@ export class CampusViewer {
       building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)]);
     const expectedSha256 = assets.find(asset => asset?.url === url)?.sha256;
     return loadModelInStages(
-      progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256}),
+      progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256, priority}),
       bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
       {
         signal: this.loadController.signal,
@@ -388,6 +388,7 @@ export class CampusViewer {
       const { scene: group } = await this.loadAsset(
         building.detailedExterior.url, undefined,
         background ? () => this.waitForBackgroundFrame(() => this.activeCode === building.code) : undefined,
+        background ? "low" : "high",
       );
       if (this.disposed) {
         disposeModel(group);
