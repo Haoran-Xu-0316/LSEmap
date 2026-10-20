@@ -1,28 +1,31 @@
-/** One download at a time, stale queued work cancelled, and a bounded model cache. */
+/** Cancel obsolete transfers, share current requests and retain a bounded cache. */
 export class ModelCache {
   constructor(load, prepare, dispose, limit = 3) {
-    Object.assign(this, { load, prepare, disposeModel: dispose, limit });
+    Object.assign(this, {load, prepare, disposeModel: dispose, limit});
     this.models = new Map();
     this.pending = new Map();
     this.queue = [];
     this.activeKey = null;
-    this.loading = false;
+    this.activeLoad = null;
     this.closed = false;
   }
 
   activate(key) {
     this.activeKey = key;
-    for (const queued of this.queue) {
-      if (queued === key) continue;
-      this.pending.get(queued)?.reject(new DOMException("Selection changed", "AbortError"));
-      this.pending.delete(queued);
+    for (const [pendingKey, request] of this.pending) {
+      if (pendingKey === key) continue;
+      const reason = new DOMException('Selection changed', 'AbortError');
+      request.controller.abort(reason);
+      request.reject(reason);
+      this.pending.delete(pendingKey);
+      if (this.activeLoad === request) this.activeLoad = null;
     }
-    this.queue = this.queue.filter((queued) => queued === key);
+    this.queue = this.queue.filter(queued => queued === key);
     this.trim();
   }
 
   request(key, url) {
-    if (this.closed) return Promise.reject(new Error("Model cache disposed"));
+    if (this.closed) return Promise.reject(new Error('Model cache disposed'));
     this.activate(key);
     if (this.models.has(key)) {
       const model = this.models.get(key);
@@ -33,32 +36,38 @@ export class ModelCache {
     if (this.pending.has(key)) return this.pending.get(key).promise;
     let resolve, reject;
     const promise = new Promise((done, fail) => { resolve = done; reject = fail; });
-    this.pending.set(key, { promise, resolve, reject, url });
+    this.pending.set(key, {key, url, promise, resolve, reject, controller: new AbortController()});
     this.queue.push(key);
-    this.drain();
+    void this.drain();
     return promise;
   }
 
   async drain() {
-    if (this.loading || this.closed || !this.queue.length) return;
+    if (this.activeLoad || this.closed || !this.queue.length) return;
     const key = this.queue.shift();
     const request = this.pending.get(key);
-    this.loading = true;
+    if (!request) { void this.drain(); return; }
+    this.activeLoad = request;
     let model;
     try {
-      model = await this.load(request.url);
-      if (this.closed) throw new Error("Model cache disposed");
+      model = await this.load(request.url, request.controller.signal);
+      request.controller.signal.throwIfAborted();
+      if (this.closed) throw new Error('Model cache disposed');
       this.prepare(model);
       this.models.set(key, model);
       this.trim();
       request.resolve(model);
     } catch (error) {
-      if (model && !this.models.has(key)) this.disposeModel(model);
+      if (model && this.models.get(key) !== model) this.disposeModel(model);
       request.reject(error);
     } finally {
-      this.pending.delete(key);
-      this.loading = false;
-      this.drain();
+      // A -> B -> A can start a new A while the first decoder finishes late.
+      // Only the owning job may remove its pending record or release the slot.
+      if (this.pending.get(key) === request) this.pending.delete(key);
+      if (this.activeLoad === request) {
+        this.activeLoad = null;
+        void this.drain();
+      }
     }
   }
 
