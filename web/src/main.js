@@ -322,7 +322,8 @@ function setSceneCopy(building) {
   $("#scene-kicker").textContent = building
     ? `${building.code} / ARCHITECTURE`
     : "LSE CAMPUS";
-  $("#scene-title").textContent = building ? building.name : "伦敦的这一角";
+  $(".scene-heading").hidden = !building;
+  $("#scene-title").textContent = building?.name ?? "";
   $("#scene-subtitle").textContent = building
     ? building.bounds
       ? "单栋视图，底部可切换周边环境"
