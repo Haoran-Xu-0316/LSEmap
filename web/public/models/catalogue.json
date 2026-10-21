@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "256",
-  "sourceModelSha256": "31657c42eb77323d2273bc525ad4db3164fbaa644ddbe6af3b66e44c8679efa1",
+  "version": "257",
+  "sourceModelSha256": "5f73b29480de08425d4d8ab3c39aa1e2b9231656f81f1f763ee1ffa200568db9",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3924,9 +3924,13 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes."
       },
       "latestReview": {
-        "version": 203,
-        "status": "street-window-columns-corrected",
-        "scope": "Official photograph published September2025 shows two narrow sash columns in each brick field. Restore eight narrow windows across the two upper levels and two black downpipes. Original side bays, central windows, entrance and white lower shopfront panels retained. Widths, pipe sizes and concealed conditions are photographic estimates; no verified interior."
+        "version": 257,
+        "scope": "Correct the fanlight identity order: original15letter contours follow the arch above the centered number3. Title and unchanged number curve seat close to the actual retained glass. The other three original signs, joinery, glazing and upper windows are retained.",
+        "audit": "result/blender/lch257/audit.json",
+        "limitations": [
+          "Historical official photo and2011-12-10Geograph image support arrangement.",
+          "Arc, scale and gap are estimated; no invented lower address line or verified full interior."
+        ]
       },
       "closeupImage": "lch-entrance",
       "previousReviews": [
@@ -3937,6 +3941,11 @@
           "clearGlazingProbes": 24,
           "retainedLowerTimberChecks": 4,
           "limitation": "Upper facade and roof remain unverified; no interior reconstruction."
+        },
+        {
+          "version": 203,
+          "status": "street-window-columns-corrected",
+          "scope": "Official photograph published September2025 shows two narrow sash columns in each brick field. Restore eight narrow windows across the two upper levels and two black downpipes. Original side bays, central windows, entrance and white lower shopfront panels retained. Widths, pipe sizes and concealed conditions are photographic estimates; no verified interior."
         }
       ],
       "glazingReview": {
@@ -4001,10 +4010,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/lch-exterior-586497d7d9e8.glb",
-        "bytes": 1274680,
-        "triangles": 97520,
-        "sha256": "586497d7d9e847f00923427d33f5cafae4e6536dc28db9dc8f069bdc56decc06",
+        "url": "/models/details/lch-exterior-66dd0ee2be5d.glb",
+        "bytes": 1136548,
+        "triangles": 84528,
+        "sha256": "66dd0ee2be5d7fb1cbce779ecd9fea3b5c7a317f165f8b9455dbb2722c0656f8",
         "bounds": {
           "min": [
             -34.67495346069336,
@@ -6452,10 +6461,13 @@
         "scope": "Ayesa restoration completed June 2023; exterior images published in 2023/2024, precise capture date and 2026 paint condition unverified. Photo-estimated colour palette, not measured colour standards. Existing geometry, roof tiles, inscription and interiors retained. Roof silhouette, unseen elevations and full current interior still require review."
       },
       "latestReview": {
-        "version": 145,
-        "status": "restored-shopfront-reviewed-no-change",
-        "scope": "Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.",
-        "source": "Sykes works-completeMay2023 and Ayesa restoration photographs published2024; image capture dates unknown"
+        "version": 257,
+        "scope": "Restore the photographed three-column/four-row upper sashes: retain three original horizontal members per window, center the thicker meeting rail, and remove one unsupported thin bar in each window. Original pane dimensions, vertical bars, glazing, paint, roof and storefront retained.",
+        "audit": "result/blender/ocs257/audit.json",
+        "limitations": [
+          "2021-2023restoration photographs; exact capture date and current shop use not established.",
+          "Bar heights fitted proportionally to accepted approximate panes; no measured survey."
+        ]
       },
       "interiorView": {
         "position": [
@@ -6483,6 +6495,14 @@
         "audit": "result/blender/ocs-exterior208/audit.json",
         "limitations": "依据历史或未注明日期实拍；色彩和光学参数为视觉估计，非2026实测完整外观。"
       },
+      "previousReviews": [
+        {
+          "version": 145,
+          "status": "restored-shopfront-reviewed-no-change",
+          "scope": "Restoration photographs support existing three-column wide display plus separately posted narrow display, left solid door, right glazed door and three-column four-row upper sashes. Keep existing subdivisions and finishes. Roof plan and dimensional proportions remain photo estimates, full current interior unverified.",
+          "source": "Sykes works-completeMay2023 and Ayesa restoration photographs published2024; image capture dates unknown"
+        }
+      ],
       "bounds": {
         "min": [
           -47.91916275024414,
@@ -6550,10 +6570,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/ocs-exterior-a92e7af175ff.glb",
-        "bytes": 1351148,
-        "triangles": 115852,
-        "sha256": "a92e7af175ffb8b8ffe5c33cc80257ddb4bbd3fa8a989c8d3b0f6554858d1706",
+        "url": "/models/details/ocs-exterior-408985160cd2.glb",
+        "bytes": 1350752,
+        "triangles": 115816,
+        "sha256": "408985160cd249d39d809c8415ec8a6d27411733e6419053233e7345cca54d2a",
         "bounds": {
           "min": [
             -47.91916275024414,
@@ -7219,17 +7239,12 @@
         "scope": "Entrance positions corrected within the inherited opening;15exact batches copied. Material parameters remain photographic estimates. The tower and current full interiors remain unverified."
       },
       "latestReview": {
-        "version": 238,
-        "scope": "Correct the reversed revolving-door side relative to the photographed LSE sign: translate the existing curved glass and posts1.72m along the facade axis; move the side-door pull to the opposite field and shift only8central-post vertices0.7m. Refine photographed front wall, entrance cladding and four glass batches. Keep22narrow windows, topology/UV/normals, opaque rear pane and every room.",
-        "evidence": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Pethick-Lawrence-web.jpg"
-        ],
-        "audit": "result/blender/pel-exterior238/audit.json",
+        "version": 257,
+        "scope": "Only the physical lower canopy face reuses the existing yellow entry finish shown in the historical official estate photograph. The other five faces, mesh, UVs, normals, all original glass and upper architecture remain unchanged.",
+        "audit": "result/blender/pel257/audit.json",
         "limitations": [
-          "Finish colours and roughness are estimates from undated photographs, not measured reflectance.",
-          "Upper continuation and inherited44m tower, roof and unseen elevations remain unverified.",
-          "Adjacent ribbon-window building is not assigned to PEL.",
-          "Only the curved revolving front becomes partly transparent; its existing opaque rear glazing proxy remains. No complete lobby or new room is inferred."
+          "Undated historical image, not measured colour or2026condition.",
+          "Inherited tower massing, roof and complete interiors remain unverified."
         ]
       },
       "interiorView": {
@@ -7285,6 +7300,22 @@
         ],
         "fov": 48
       },
+      "previousReviews": [
+        {
+          "version": 238,
+          "scope": "Correct the reversed revolving-door side relative to the photographed LSE sign: translate the existing curved glass and posts1.72m along the facade axis; move the side-door pull to the opposite field and shift only8central-post vertices0.7m. Refine photographed front wall, entrance cladding and four glass batches. Keep22narrow windows, topology/UV/normals, opaque rear pane and every room.",
+          "evidence": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Pethick-Lawrence-web.jpg"
+          ],
+          "audit": "result/blender/pel-exterior238/audit.json",
+          "limitations": [
+            "Finish colours and roughness are estimates from undated photographs, not measured reflectance.",
+            "Upper continuation and inherited44m tower, roof and unseen elevations remain unverified.",
+            "Adjacent ribbon-window building is not assigned to PEL.",
+            "Only the curved revolving front becomes partly transparent; its existing opaque rear glazing proxy remains. No complete lobby or new room is inferred."
+          ]
+        }
+      ],
       "bounds": {
         "min": [
           100.59361267089844,
@@ -7352,10 +7383,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pel-exterior-c8946f77ede5.glb",
-        "bytes": 6201160,
+        "url": "/models/details/pel-exterior-24ba04b6d9ce.glb",
+        "bytes": 6201168,
         "triangles": 508895,
-        "sha256": "c8946f77ede599b99de84b3ca83d9eceb6e518dcfa346e88c823ddde4b50fee8",
+        "sha256": "24ba04b6d9ce0acd2db158c71f3cbf8eeddeae628f4d86017c6eb1e85db7c144",
         "bounds": {
           "min": [
             100.59568786621094,
