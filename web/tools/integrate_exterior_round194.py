@@ -215,10 +215,20 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
             # identities before recording the complete-model fingerprint.
             bindings = report.get('replacementMaterialBindings', {}).get(obj.name)
             if bindings is not None:
-                assert obj.type == 'MESH' and len(obj.data.materials) == len(bindings), obj.name
+                assert obj.type in {'MESH', 'FONT'} and len(obj.data.materials) == len(bindings), obj.name
                 for index, material_name in enumerate(bindings):
                     assert material_name in bpy.data.materials, material_name
                     obj.data.materials[index] = bpy.data.materials[material_name]
+            # Editable text can append duplicate font datablocks just as meshes
+            # append duplicate materials. Rebind only explicitly declared roles.
+            font_bindings = report.get('replacementFontBindings', {}).get(obj.name)
+            if font_bindings is not None:
+                assert obj.type == 'FONT', obj.name
+                font_roles = {'font', 'font_bold', 'font_italic', 'font_bold_italic'}
+                assert set(font_bindings) == font_roles, obj.name
+                for role, font_name in font_bindings.items():
+                    assert font_name in bpy.data.fonts, font_name
+                    setattr(obj.data, role, bpy.data.fonts[font_name])
             source_name = obj.get('originalObject')
             if source_name:
                 assert source_name in before, source_name
