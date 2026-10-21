@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "255",
-  "sourceModelSha256": "bcb85b059475971cc0e684597d2cc8e5081d47302e669e17d48a923ea44fb3ad",
+  "version": "256",
+  "sourceModelSha256": "31657c42eb77323d2273bc525ad4db3164fbaa644ddbe6af3b66e44c8679efa1",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -3233,21 +3233,11 @@
         "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 176,
-        "status": "photo-supported-portugal-attic-correction",
-        "scope": "Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.",
-        "addedObjects": 23,
-        "archivedObjects": 19,
-        "sourceUrls": [
-          "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
-        ],
-        "photographDate": "unknown",
-        "limitations": [
-          "Position, heights and widths remain photographic estimates, not a2026survey.",
-          "Complete St Clement’s window count and unseen elevations remain unresolved."
-        ],
-        "audit": "result/blender/kgs_exterior176/verification.json"
+        "version": 256,
+        "status": "photo-guided-portal-lettering-and-seating",
+        "scope": "Retain original production glyph contours and gold finish. Enlarge the title1.45times and arrange a shallow photographed arc; seat title and unchanged-size29/31numbers1mmfrom the opaque green mosaic instead of the inherited144mmgap. No triangle increase. The2011photo is historical; scale, arc and clearance are bounded estimates, and the historic typeface is still approximate.",
+        "audit": "result/blender/kgs256/audit.json",
+        "photographDate": "2011-12-10; not a current survey"
       },
       "interiorView": {
         "position": [
@@ -3281,6 +3271,25 @@
         "batchCount": 1,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
       },
+      "previousReviews": [
+        {
+          "version": 176,
+          "status": "photo-supported-portugal-attic-correction",
+          "scope": "Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.",
+          "addedObjects": 23,
+          "archivedObjects": 19,
+          "sourceUrls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
+          ],
+          "photographDate": "unknown",
+          "limitations": [
+            "Position, heights and widths remain photographic estimates, not a2026survey.",
+            "Complete St Clement’s window count and unseen elevations remain unresolved."
+          ],
+          "audit": "result/blender/kgs_exterior176/verification.json"
+        }
+      ],
       "bounds": {
         "min": [
           -33.602169036865234,
@@ -3348,10 +3357,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/kgs-exterior-483f388f827d.glb",
-        "bytes": 1824624,
-        "triangles": 128851,
-        "sha256": "483f388f827d44b3f8d212c494070ce397629964e2c0515464138a02779d659d",
+        "url": "/models/details/kgs-exterior-720f3c8b951c.glb",
+        "bytes": 1804832,
+        "triangles": 127219,
+        "sha256": "720f3c8b951cc38f69572dc31ae577c00fc1b55948046bccc0323c594e9a8f16",
         "bounds": {
           "min": [
             -33.59806823730469,
@@ -6599,13 +6608,12 @@
         "scope": "Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.",
-        "evidence": [
-          "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers"
-        ],
-        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
-        "audit": "result/blender/pan_faw_detail166/audit.json"
+        "version": 256,
+        "status": "photo-guided-entrance-mesh-and-forecourt-correction",
+        "scope": "Correct910entrance fascia apertures to horizontal diamond form and close unsupported per-cell tile gaps without adding vertices or faces. Retain full fascia outline, aperture centres, UVs, silver finish and glazing. Replace generic metal planter boxes and raised timber benches with three photo-proportioned grey planter and low-seat groups;24original leaf clusters are rigidly relocated. Archive the demonstrably wrong-side cycle proxy without inventing its unregistered new location. Verify ground contacts, closed stone bodies and three door-exterior approach volumes; no traversal through original closed doors or thresholds is proved. Dimensions and placement remain estimates from undated historical images, not2026measurements.",
+        "audit": "result/blender/pan256/audit.json",
+        "forecourtAudit": "result/blender/forecourt256/audit.json",
+        "photographDate": "unknown;2022publication and2018project completion are not photo dates"
       },
       "interiorView": {
         "position": [
@@ -6652,10 +6660,21 @@
         "audit": "result/blender/pan201-room226/audit.json",
         "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
       },
+      "previousReviews": [
+        {
+          "version": 166,
+          "scope": "Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.",
+          "evidence": [
+            "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers"
+          ],
+          "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
+          "audit": "result/blender/pan_faw_detail166/audit.json"
+        }
+      ],
       "bounds": {
         "min": [
           53.72006607055664,
-          0.0,
+          -0.05000000074505806,
           54.27970504760742
         ],
         "max": [
@@ -6666,44 +6685,44 @@
       },
       "exteriorFramingCorners": [
         [
-          51.413876734541475,
-          0.0,
-          57.03914938396028
+          85.9008684469546,
+          -0.05000000074505806,
+          64.5989577730051
         ],
         [
-          72.91276635154061,
-          0.0,
-          50.94755834708847
+          75.86471533467746,
+          -0.05000000074505806,
+          88.63718957307772
         ],
         [
-          51.413876734541475,
+          85.9008684469546,
           44.22999954223633,
-          57.03914938396028
+          64.5989577730051
         ],
         [
-          72.91276635154061,
+          75.86471533467746,
           44.22999954223633,
-          50.94755834708847
+          88.63718957307772
         ],
         [
-          60.75727285940786,
-          0.0,
-          90.0145478833896
+          58.70291007791387,
+          -0.05000000074505806,
+          53.24359366788785
         ],
         [
-          82.25616247640698,
-          0.0,
-          83.92295684651778
+          48.66675696563672,
+          -0.05000000074505806,
+          77.28182546796047
         ],
         [
-          60.75727285940786,
+          58.70291007791387,
           44.22999954223633,
-          90.0145478833896
+          53.24359366788785
         ],
         [
-          82.25616247640698,
+          48.66675696563672,
           44.22999954223633,
-          83.92295684651778
+          77.28182546796047
         ]
       ],
       "interiorBounds": {
@@ -6719,14 +6738,14 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/pan-exterior-7fbb72ab6952.glb",
-        "bytes": 1331128,
-        "triangles": 111961,
-        "sha256": "7fbb72ab6952c81ad6513d097d1a4f127989b8814098b4ab239090d0551208e0",
+        "url": "/models/details/pan-exterior-c0eebf2240c1.glb",
+        "bytes": 1320368,
+        "triangles": 111889,
+        "sha256": "c0eebf2240c1fbbe1b94f47ec3ed4ac60204b77e8ac18b90206f6e338dd0fee7",
         "bounds": {
           "min": [
             53.72006607055664,
-            0.0,
+            -0.05000000074505806,
             54.27970504760742
           ],
           "max": [
