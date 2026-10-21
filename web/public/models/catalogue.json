@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "254",
-  "sourceModelSha256": "47db5d164487cc7d5f87c4c6f0df47b4800238cb16e650ce1325e6db99f97140",
+  "version": "255",
+  "sourceModelSha256": "bcb85b059475971cc0e684597d2cc8e5081d47302e669e17d48a923ea44fb3ad",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -2666,16 +2666,11 @@
         "scope": "Cowdray contractor project photograph guides upper window subdivisions and first upper corner stone profiles. 2019 project, exact capture date unknown; dimensions and profiles estimated. Eleven street-side attic windows retain their vertical muntins and central meeting rails; two quarter rails replaced by four fine subdivisions. Original mesh archived, other sash vertices unchanged. Window centres, floor heights, roof geometry and interiors retained. Unseen elevations, roof arrangement and complete interior remain under review. Entrance guide confirms three external steps and a 73cm active opening; total paired width, 15cm risers, treads and ornamental profiles are photo-guided estimates. New entry has genuine glazing apertures. The guide survey and photo capture dates are unverified. Carved mask and scrolls are authored approximations, not scans."
       },
       "latestReview": {
-        "version": 217,
-        "status": "photo-supported-brick-stone-paint-and-glass-finish",
-        "scope": "Forty copied exterior objects use19 independent material copies. Reduce red-brick chroma, separate pale limestone from painted white joinery, add shallow mortar relief and restrained slate variation; neutralize glazing tint without changing opaque proxy behavior. All source geometry,UV,177 roofs and normals retained.",
-        "audit": "result/blender/cow-exterior217/audit.json",
-        "sourceUrls": [
-          "https://www.russellcawberry.com/projects/cowdray-house",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Cowdray-web.jpg"
-        ],
-        "photographDate": "unknown; contractor project2019",
-        "limitations": "Photographic color estimates under unknown light; no measured albedo, current refurbishment claim or complete unseen interiors."
+        "version": 255,
+        "status": "photo-supported-local-facade-correction",
+        "scope": "Remove the unsupported continuous4.9mstone belt on the short street facade and cancel only32bevel edges at four internal brick-head joints to close exposed corner slots. Keep continuous red brick, corner portal, long street stone base, upper cornices and all other geometry/UV/normals/finishes. Archived photographs do not establish2026conditions.",
+        "audit": "result/blender/cow255/audit.json",
+        "photographDate": "unknown; handbook edition and contractor project year do not establish capture date"
       },
       "interiorView": {
         "position": [
@@ -2726,6 +2721,18 @@
             "Glass stays reflective opaque in actual canonical GLB; no unverified room transparency."
           ],
           "audit": "result/blender/cow_exterior177/verification.json"
+        },
+        {
+          "version": 217,
+          "status": "photo-supported-brick-stone-paint-and-glass-finish",
+          "scope": "Forty copied exterior objects use19 independent material copies. Reduce red-brick chroma, separate pale limestone from painted white joinery, add shallow mortar relief and restrained slate variation; neutralize glazing tint without changing opaque proxy behavior. All source geometry,UV,177 roofs and normals retained.",
+          "audit": "result/blender/cow-exterior217/audit.json",
+          "sourceUrls": [
+            "https://www.russellcawberry.com/projects/cowdray-house",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Cowdray-web.jpg"
+          ],
+          "photographDate": "unknown; contractor project2019",
+          "limitations": "Photographic color estimates under unknown light; no measured albedo, current refurbishment claim or complete unseen interiors."
         }
       ],
       "glazingReview": {
@@ -2802,10 +2809,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cow-exterior-45ebdb589bfc.glb",
-        "bytes": 3246436,
-        "triangles": 255268,
-        "sha256": "45ebdb589bfcf834e6af3c804fc23bd8f74681627131d4ce93f891539a9bacc9",
+        "url": "/models/details/cow-exterior-b2945b3722f8.glb",
+        "bytes": 3241564,
+        "triangles": 254904,
+        "sha256": "b2945b3722f8e7f5e4665ea2cd015d528f99a532b52225806bc1bf1b37786cf0",
         "bounds": {
           "min": [
             -6.818561553955078,
@@ -8322,10 +8329,11 @@
         "scope": "Four-bay Sheffield Street elevation from official photographs; dimensions and roof depth estimated; no interior claimed"
       },
       "latestReview": {
-        "version": 179,
-        "scope": "Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.",
-        "reviewOnly": false,
-        "audit": "result/blender/shf_exterior179/"
+        "version": 255,
+        "status": "photo-supported-local-facade-correction",
+        "scope": "Remove two unsupported right-hand lower windows and restore the photographed blind white panel with rectangular frame. Preserve other window geometry, UVs, normals, glazing optics, roof and interiors. Wall and decorative-frame dimensions remain inherited/photo-proportioned estimates; photograph capture dates unknown.",
+        "audit": "result/blender/shf255/audit.json",
+        "photographDate": "unknown; handbook edition and contractor project year do not establish capture date"
       },
       "previousReviews": [
         {
@@ -8338,6 +8346,12 @@
           "version": 148,
           "status": "photo-covered-dormer-grid-corrected",
           "scope": "Three fully pictured right dormers now have six columns and two rows, with a wide central post dividing two groups of three. The scaffold-obscured left dormer, original horizontal transoms, glass optics and all other geometry remain unchanged. Profiles, spacing and roof depth estimated; no interior claimed."
+        },
+        {
+          "version": 179,
+          "scope": "Three photographed right dormers use single outward panes; opaque obscured left dormer and all other windows unchanged. Original UVs, tint and opacity retained; dimensions inherited photographic estimates.",
+          "reviewOnly": false,
+          "audit": "result/blender/shf_exterior179/"
         }
       ],
       "glazingReview": {
@@ -8402,10 +8416,10 @@
         ]
       ],
       "detailedExterior": {
-        "url": "/models/details/shf-exterior-c3bcebb25a0b.glb",
-        "bytes": 931460,
-        "triangles": 70706,
-        "sha256": "c3bcebb25a0b877ddd3759890469f71a7262f6451d95f6b7c6c646e9b1647e56",
+        "url": "/models/details/shf-exterior-974bc718263e.glb",
+        "bytes": 899808,
+        "triangles": 68186,
+        "sha256": "974bc718263e4f19b5e4cbc1b60af3fa6dc9894b04efb1cb7b1cf9c8e58d6717",
         "bounds": {
           "min": [
             -44.019718170166016,
