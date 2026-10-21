@@ -1333,21 +1333,11 @@
         "scope": "Photo-supported exterior correction; exact colours and unlabelled dimensions estimated. Original geometry, unverified roof forms and historical interior samples retained; not a 2026 measured survey."
       },
       "latestReview": {
-        "version": 176,
-        "status": "photo-supported-portugal-attic-correction",
-        "scope": "Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.",
-        "addedObjects": 23,
-        "archivedObjects": 19,
-        "sourceUrls": [
-          "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
-        ],
-        "photographDate": "unknown",
-        "limitations": [
-          "Position, heights and widths remain photographic estimates, not a2026survey.",
-          "Complete St Clement’s window count and unseen elevations remain unresolved."
-        ],
-        "audit": "result/blender/kgs_exterior176/verification.json"
+        "version": 256,
+        "status": "photo-guided-portal-lettering-and-seating",
+        "scope": "Retain original production glyph contours and gold finish. Enlarge the title1.45times and arrange a shallow photographed arc; seat title and unchanged-size29/31numbers1mmfrom the opaque green mosaic instead of the inherited144mmgap. No triangle increase. The2011photo is historical; scale, arc and clearance are bounded estimates, and the historic typeface is still approximate.",
+        "audit": "result/blender/kgs256/audit.json",
+        "photographDate": "2011-12-10; not a current survey"
       },
       "interiorView": {
         "position": [
@@ -1381,7 +1371,26 @@
         "reversedShells": 2,
         "batchCount": 1,
         "scope": "Outward nonmetal closed glass uses front faces; open sheets retain both directions. Colour, opacity and original geometry retained."
-      }
+      },
+      "previousReviews": [
+        {
+          "version": 176,
+          "status": "photo-supported-portugal-attic-correction",
+          "scope": "Portugal Street attic now has three central windows and two canted end bays continuing the lower storeys, five main axes and nine outward glazing facets. St Clement’s elevation unchanged.",
+          "addedObjects": 23,
+          "archivedObjects": 19,
+          "sourceUrls": [
+            "https://historicengland.org.uk/listing/the-list/list-entry/1235528",
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Images/LSE-Estate/Kings-Chambers-300x376.jpg"
+          ],
+          "photographDate": "unknown",
+          "limitations": [
+            "Position, heights and widths remain photographic estimates, not a2026survey.",
+            "Complete St Clement’s window count and unseen elevations remain unresolved."
+          ],
+          "audit": "result/blender/kgs_exterior176/verification.json"
+        }
+      ]
     },
     {
       "code": "KSW",
@@ -2913,13 +2922,12 @@
         "scope": "Shared PAN/FAW entrance guided by the AccessAble provider survey and exterior photograph. Clear width and 780mm push-pad height are documented; door registration, height and plate sizes remain estimates. The provider mentions August 2020 survey context; precise image capture and 2026 access condition unverified. Original revolving-door geometry and other facade components retained. Roof, unseen elevations and full interiors remain under review."
       },
       "latestReview": {
-        "version": 166,
-        "scope": "Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.",
-        "evidence": [
-          "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers"
-        ],
-        "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
-        "audit": "result/blender/pan_faw_detail166/audit.json"
+        "version": 256,
+        "status": "photo-guided-entrance-mesh-and-forecourt-correction",
+        "scope": "Correct910entrance fascia apertures to horizontal diamond form and close unsupported per-cell tile gaps without adding vertices or faces. Retain full fascia outline, aperture centres, UVs, silver finish and glazing. Replace generic metal planter boxes and raised timber benches with three photo-proportioned grey planter and low-seat groups;24original leaf clusters are rigidly relocated. Archive the demonstrably wrong-side cycle proxy without inventing its unregistered new location. Verify ground contacts, closed stone bodies and three door-exterior approach volumes; no traversal through original closed doors or thresholds is proved. Dimensions and placement remain estimates from undated historical images, not2026measurements.",
+        "audit": "result/blender/pan256/audit.json",
+        "forecourtAudit": "result/blender/forecourt256/audit.json",
+        "photographDate": "unknown;2022publication and2018project completion are not photo dates"
       },
       "interiorView": {
         "position": [
@@ -2966,7 +2974,18 @@
         "spaceId": "pan-201",
         "audit": "result/blender/pan201-room226/audit.json",
         "scope": "依据LSE同房号历史平面与实照建立PAN.2.01独立协作教室样本。完整描摹斜角窗边、折线隔断及右下实际门洞，5组三角桌共30个计划学生座位；白壳黑座脚轮椅、固定教学白板、两块移动白板、教师AV工作台和窗百叶按照片估算。连续矿棉板吊顶覆盖完整周界；门宽比例、层高及家具细节未实测，不接地理楼层，不表示2026当前全楼。"
-      }
+      },
+      "previousReviews": [
+        {
+          "version": 166,
+          "scope": "Five existing shared entrance glass systems and25 registered frontage windows receive independent clearer dielectric finishes. Existing frames, blinds, geometry and all FAW elevations retained.",
+          "evidence": [
+            "https://www.architectureplb.com/sectors/universities-and-colleges/lse-towers"
+          ],
+          "limitations": "Capture date unknown. Optical parameters and inherited dimensions are estimates; this does not establish full2026as-built interiors.",
+          "audit": "result/blender/pan_faw_detail166/audit.json"
+        }
+      ]
     },
     {
       "code": "PAR",
@@ -5378,7 +5397,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 255,
+  "sourceVersion": 256,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
