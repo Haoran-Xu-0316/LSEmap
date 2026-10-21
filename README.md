@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition256 contains31 building records,30 detailed exteriors,25 interior views
+Edition257 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v256.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v257.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage256` acceptance records are retained with the native: integration
+The local `stage257` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,14 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition257 restores the yellow lower face of Pethick-Lawrence’s entrance
+canopy, using its existing yellow finish. The Old Curiosity Shop’s three upper
+sashes now have the photographed four rows rather than five; the original
+thicker meeting rails sit at mid-height. Lincoln Chambers’ fanlight lettering
+follows the arch above the number3, with the original contours seated close to
+the retained glass. Photographic proportions remain estimates. Existing glass
+finishes, all35room studies and unrelated architecture are protected.
 
 Edition256 corrects King’s Chambers portal lettering to a shallow photo-guided
 arc and seats the title and retained-size door numbers close to the green mosaic.
