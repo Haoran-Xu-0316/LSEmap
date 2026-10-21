@@ -4248,7 +4248,7 @@
     {
       "id": "saw-three-tuns",
       "label": "Three Tuns入口与2014平面",
-      "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。",
+      "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。254版玻璃复用已接受的SAW Denning中性材质与浏览器透明度0.30，原几何、木框、文字、墙面及历史平面保持；光学参数为显示估计。",
       "interiorView": {
         "position": [
           1.0,
@@ -4266,7 +4266,7 @@
       "interiorStudy": {
         "kind": "room-sample",
         "label": "Three Tuns入口与2014平面",
-        "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。"
+        "scope": "依据LSE2014使用指南第32页复原Three Tuns首层区域轮廓，并按官方餐饮照片制作木框玻璃标识。尺寸和入口在样本内的位置估算；未添加无照片支持的吧台家具，也不代表2026翻新后的内部。254版玻璃复用已接受的SAW Denning中性材质与浏览器透明度0.30，原几何、木框、文字、墙面及历史平面保持；光学参数为显示估计。"
       },
       "code": "SAW",
       "collection": "SAW_THREE_TUNS_study"
@@ -5364,7 +5364,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 252,
+  "sourceVersion": 254,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
