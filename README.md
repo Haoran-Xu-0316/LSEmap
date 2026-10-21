@@ -8,16 +8,16 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition254 contains31 building records,30 detailed exteriors,25 interior views
+Edition255 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v254.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v255.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage254` acceptance records are retained with the native: integration
+The local `stage255` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All204 gallery images use the
+finishes and public structural elements. All206 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
@@ -38,6 +38,13 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition255 restores Sheffield Street's photographed lower blind panel in place
+of two unsupported windows, and removes the continuous stone belt incorrectly
+repeated across Cowdray's short street side. Internal brick-head joint bevels
+are cancelled locally to close previously concealed corner slots. Other window geometry, glazing,
+roofs and all35 room studies remain unchanged. Two close gallery views expose
+the corrected facades. Dimensions and unpictured elevations remain estimates.
 
 Edition254 corrects the opaque Three Tuns entrance pane by reusing the accepted
 SAW Denning glass family with browser opacity0.30 and no screen-space refraction.
