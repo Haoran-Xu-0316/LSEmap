@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition255 contains31 building records,30 detailed exteriors,25 interior views
+Edition256 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v255.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v256.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage255` acceptance records are retained with the native: integration
+The local `stage256` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,16 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition256 corrects King’s Chambers portal lettering to a shallow photo-guided
+arc and seats the title and retained-size door numbers close to the green mosaic.
+Pankhurst’s entrance mesh uses horizontal diamond apertures with continuous
+internal joints. Its shared forecourt gains grey stone planter seating in place
+of generic metal boxes and raised timber benches. Three exterior approaches
+are checked for furniture clearance; closed-door and threshold traversal is not
+proved. The wrong-side bicycle proxy is archived, with its actual replacement
+location still unregistered. Historical photographs guide these estimates;
+all35 room studies and the existing glass finishes are retained.
 
 Edition255 restores Sheffield Street's photographed lower blind panel in place
 of two unsupported windows, and removes the continuous stone belt incorrectly
