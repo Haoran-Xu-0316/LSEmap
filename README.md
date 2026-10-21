@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition252 contains31 building records,30 detailed exteriors,25 interior views
+Edition254 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v252.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v254.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage252` acceptance records are retained with the native: integration
+The local `stage254` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,13 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition254 corrects the opaque Three Tuns entrance pane by reusing the accepted
+SAW Denning glass family with browser opacity0.30 and no screen-space refraction.
+The original pane geometry, timber, lettering, walls and historical floor plan
+remain intact. All30 exteriors,25 default interiors and34 other room studies
+are unchanged. This remains a partial historical bar entrance, not a complete
+or current interior reconstruction; glass optics are an approximation.
 
 Edition252 coordinates COL’s Houghton stone and painted frames with the retained
 photo-guided finish family. Uniform stone albedo uses the existing tone study’s
