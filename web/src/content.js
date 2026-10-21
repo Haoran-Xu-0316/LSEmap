@@ -31,7 +31,7 @@ export const buildingDetails = {
   "COW": {
     description: "Cowdray House以红砖、浅色转角石带和斜折屋顶形成街道轮廓。细窗格、尖顶屋顶窗、齿饰檐口与转角石材门廊呈现近看的层次。",
     note: "沿街立面依据归档照片继续细化，保留原有地图轮廓。楼高、窗距、装饰截面、屋顶进深与未见背面仍为估计；未建立内部。",
-    images: [["cow-exterior", "Cowdray House屋顶窗与砖石转角"], ["cow-entrance", "Cowdray House拱券、柱饰与入口细节"]],
+    images: [["cow-exterior", "Cowdray House屋顶窗与砖石转角"], ["cow-entrance", "Cowdray House拱券、柱饰与入口细节"], ["cow-short-street", "短街面红砖与转角石饰"]],
   },
   "KGS": {
     description: "King’s Chambers的两组石材凸窗向街道展开，绿色陶瓷顶层、铅色弧顶与三角山花构成屋顶轮廓。中央入口保留拱券、卷饰和带金色字样的绿色铭牌。",
@@ -106,14 +106,15 @@ export const buildingDetails = {
     ]
 },
   "SHF": {
-    "description": "Sheffield Street长立面以四组白色多格窗、两层浅色基座与棕色砖墙组成，屋顶设四个宽窗与灰色斜坡屋面。",
+    "description": "Sheffield Street以白色多格窗、浅色基座与棕色砖墙组成四开间立面，入口右侧为带框饰的盲墙，屋顶设四个宽窗。",
     "note": "依据官方照片修正四组窗和斜坡屋顶；层高、屋面进深及背面仍为估计，内部待补。",
     "images": [
         [
             "shf-exterior",
             "Sheffield Street四开间立面"
         ],
-        ["shf-roof", "四个屋顶窗与棕砖窗列"]
+        ["shf-roof", "四个屋顶窗与棕砖窗列"],
+        ["shf-blind-wall", "入口盲墙与门洞"]
     ]
 },
   STC: {
