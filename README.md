@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition257 contains31 building records,30 detailed exteriors,25 interior views
+Edition258 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v257.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v258.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage257` acceptance records are retained with the native: integration
+The local `stage258` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,18 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition258 aligns the library’s Watkins Plaza frontage with its2025 existing
+elevation: the historic stone and modern brick divisions, broad windows, Library
+portal and visible roof edges follow the three actual GIS boundary segments.
+Existing glass finishes and the upper roof and dome are retained. Concealed roof
+returns and the source-to-GIS fit remain estimates; the independent low service
+annex is excluded where its footprint is not established.
+Marshall’s north fins use the documented slightly darker tone than their backing
+panels. Its registered third-floor deck retains the original top UVs and three
+shaft holes, with a closed section and corrected upward top normals. The0.32m
+thickness is an inherited estimate; higher-floor coordination remains incomplete.
+All35independent room studies and unrelated architecture are protected.
 
 Edition257 restores the yellow lower face of Pethick-Lawrence’s entrance
 canopy, using its existing yellow finish. The Old Curiosity Shop’s three upper
