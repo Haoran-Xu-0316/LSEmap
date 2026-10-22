@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition258 contains31 building records,30 detailed exteriors,25 interior views
+Edition259 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v258.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v259.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage258` acceptance records are retained with the native: integration
+The local `stage259` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,16 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition259 restores eight photographed Houghton window boxes on the retained
+Old Building window axes and stone sills. Three shared meshes reuse existing
+finishes; dimensions, foliage and the undated seasonal condition remain estimates.
+The library exterior exporter now resolves the current public interior collection
+from metadata or its semantic role, preventing underground carpet from appearing
+as a blue strip beneath the isolated building. Native and interior-view underground
+levels are retained. Original architecture, materials and35room studies are protected.
+CBG shade-to-window registration remains open; the available source evidence does
+not justify a complete speculative re-spacing of its facade assemblies.
 
 Edition258 aligns the library’s Watkins Plaza frontage with its2025 existing
 elevation: the historic stone and modern brick divisions, broad windows, Library
