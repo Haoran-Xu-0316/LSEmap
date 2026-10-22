@@ -212,6 +212,26 @@ def clip_below_ground(mesh):
     assert all(vertex.co.z >= -1e-5 for vertex in mesh.vertices)
 
 
+def is_public_interior_object(obj):
+    """Resolve public-study ownership from authored metadata or collection role.
+
+    AST-only preview callers must bind the same ``records`` metadata as the
+    production exporter. Missing ownership data must fail rather than silently
+    leaking a current study's basement after its collection has been renamed.
+    """
+    if any(collection.get('publicInteriorStudy') for collection in obj.users_collection):
+        return True
+    authored = globals().get('records')
+    if authored is None:
+        raise ValueError('Basement-clipped AST exports must bind authored records')
+    for record in authored:
+        name = record.get('interiorCollection', record['code'] + '_PUBLIC_INTERIOR_study')
+        collection = bpy.data.collections.get(name)
+        if collection and obj.name in collection.all_objects:
+            return True
+    return False
+
+
 def clone_group(objects, name, target_scene, hide_basement=False):
     """Merge each semantic building into one object with its material primitives."""
     copies = []
@@ -260,7 +280,7 @@ def clone_group(objects, name, target_scene, hide_basement=False):
             active.name = 'SurfaceUV'
             active.active_render = True
         mesh.transform(original.matrix_world)
-        if hide_basement and any(c.name == 'LRB_PUBLIC_INTERIOR_study' for c in original.users_collection):
+        if hide_basement and is_public_interior_object(original):
             clip_below_ground(mesh)
             if not mesh.polygons:
                 bpy.data.meshes.remove(mesh)
