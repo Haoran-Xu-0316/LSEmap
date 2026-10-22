@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition259 contains31 building records,30 detailed exteriors,25 interior views
+Edition260 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v259.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v260.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage259` acceptance records are retained with the native: integration
+The local `stage260` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,14 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition260 corrects seven Clement House tall windows to paired two-column
+sashes,following the photographed four-pane rhythm. Horizontal rails,glass,stone
+and optical properties are retained; fine dimensions remain estimates.
+Kingsway has two recessed stone treads between the retained portal piers,registered
+to the actual native ground support and original doorway threshold. Step run and
+source survey dates remain uncertain; this is not accessibility certification.
+Original architecture,materials and35room studies remain protected.
 
 Edition259 restores eight photographed Houghton window boxes on the retained
 Old Building window axes and stone sills. Three shared meshes reuse existing
