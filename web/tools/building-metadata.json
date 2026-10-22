@@ -1975,16 +1975,22 @@
       "localRefinement": {
         "description": "Portugal Street historic triple lights and mansard; Carey Street five glazed semicircular heads, three-storey projecting oriels, distinct ground glazing and curved corner entrance; retained stepped roof and skylight",
         "newComponents": 6,
-        "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
+        "scope": "April2025 As Existing elevations guide Carey, Portugal and Watkins Plaza facade rhythms and visible roof contours. Current source-backed controls remain registered to the retained GIS boundary; global datum, hidden roof returns and unlabelled sections remain estimates. Independent low service annex footprint, full current interiors and complete plant details remain unresolved."
       },
       "latestReview": {
-        "version": 191,
-        "scope": "Portugal Street85 main and18 dormer panes use one outward optical sheet each, removing1030 box-back and edge triangles. Original front coordinates, corner UVs, tint, roughness and opaque proxy status retained. Roof panes are shared with the interior cutaway; no room structure altered. Other elevations and complete current interiors remain unverified.",
-        "source": "data/collections/library-roof-2025/existing-nw-elevation.pdf",
-        "drawing": "4556-FBR-LR-ZZ-DR-A-114 P01, 17 April 2025",
-        "audit": "result/blender/stage191/reopened-verification.json",
-        "addedObjects": 2,
-        "archivedObjects": 2
+        "version": 258,
+        "scope": "Watkins Plaza southwest facade registered to the2025 As Existing elevation and the three actual GIS boundary segments. Correct historic stone/brick divisions, fine projecting historic windows, modern wide-window cadence, Library entrance, four dormers and three source rooflights. Retain original glass finishes and other elevations, upper roof and dome. Hidden roof returns, horizontal registration and pane/frame sections remain estimates. Shared roof geometry and glazing are included in the public cutaway;35 independent room studies remain protected.",
+        "source": "data/collections/library-roof-2025/existing-sw-elevation.pdf",
+        "drawing": "4556-FBR-LR-ZZ-DR-A-111 P01 As Existing 17 April 2025",
+        "audit": "result/blender/lrb258/audit.json",
+        "addedObjects": 29,
+        "archivedObjects": 39,
+        "limitations": [
+          "Source2025main-building elevation and GIS footprint differ by1.19percent; source-derived outer bay registration remains an estimate.",
+          "The concealed2.5mroof-return depth is estimated and joins the actual retained20.24mplane;23.99mupper roof and dome are protected.",
+          "Five lower glazed divisions and three by two upper lights are evidenced; door operating modes are not assigned.",
+          "The0.282mthreshold bridge follows actual retainedFFL/paving levels; its width/tread depth remain a local model estimate, not a surveyed accessible route."
+        ]
       },
       "interiorSections": [
         {
@@ -2464,9 +2470,9 @@
         {
           "id": "3",
           "label": "三层井口与混凝土核心",
-          "minHeight": 17.3,
+          "minHeight": 17.1,
           "maxHeight": 21.91,
-          "scope": "2022平面真实填充边界支持两组井壁与四处门口；17.5/21.9米楼层标高及2.1米门高为估计。上层楼板与完整井道仍待协调。",
+          "scope": "2022平面支持三处井口、两组井壁与四处门口；三层楼板补齐底面与井口侧壁。17.5米楼层标高、0.32米板厚及门高为估计，上层楼板与完整井道仍待协调。",
           "view": {
             "position": [
               18.8,
@@ -2519,8 +2525,8 @@
         "limitations": "Floor datum is inherited and estimated. No shaft walls, lift cars, unobserved stairs or entire third-floor interior are asserted."
       },
       "interiorAdditionalObjects": [
-        "MAR250_third_floor_with_source_lift_shafts",
-        "MAR251_third_south_lift_core_walls"
+        "MAR251_third_south_lift_core_walls",
+        "MAR258_third_south_deck_solid"
       ],
       "thirdFloorWallsReview251": {
         "version": 251,
@@ -2543,6 +2549,17 @@
           "No independently identified upper-floor shaft XY controls;21.9mgeneric slab retained.",
           "No lift cars,equipment or complete third-floor interior."
         ]
+      },
+      "marStructure258": {
+        "version": 258,
+        "audit": "result/blender/mar258/audit.json",
+        "scope": "Registered third-floor deck retains exact top UV and three shaft holes, now a closed0.32m solid with corrected upward top normals. Thickness remains inherited estimate, next floor and full shafts incomplete."
+      },
+      "marFinish258": {
+        "version": 258,
+        "audit": "result/blender/mar-finish258/audit.json",
+        "source": "https://www.concretecentre.com/Case-Studies/Marshall-Building,-London.aspx",
+        "scope": "North fins slightly darker than backing panels; 6percent RGB step is conservative display estimate, existing geometry, glazing, UV and all other shader parameters retained."
       }
     },
     {
@@ -5428,7 +5445,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 257,
+  "sourceVersion": 258,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
