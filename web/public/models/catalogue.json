@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "257",
-  "sourceModelSha256": "5f73b29480de08425d4d8ab3c39aa1e2b9231656f81f1f763ee1ffa200568db9",
+  "version": "258",
+  "sourceModelSha256": "46a6d58baf708af45c8a8669f85fa6b24efdbfb1d3721cd4aca315e85ba0d835",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -4758,16 +4758,22 @@
       "localRefinement": {
         "description": "Portugal Street historic triple lights and mansard; Carey Street five glazed semicircular heads, three-storey projecting oriels, distinct ground glazing and curved corner entrance; retained stepped roof and skylight",
         "newComponents": 6,
-        "scope": "April 2025 Fulkers Bailey Russell As Existing elevations 4556-FBR-LR-ZZ-DR-A-113 and 114 P01 guide Carey and Portugal Street window rhythm and labelled heights. The northeast corner is a tangent-continuous estimated curve, registered to retained GIS endpoints. Global datum, unlabelled dimensions, ornament sizes and photograph-informed colour remain estimates. Original geometry is retained. Other elevations, full interior floor layouts and remaining plant details still require reconstruction."
+        "scope": "April2025 As Existing elevations guide Carey, Portugal and Watkins Plaza facade rhythms and visible roof contours. Current source-backed controls remain registered to the retained GIS boundary; global datum, hidden roof returns and unlabelled sections remain estimates. Independent low service annex footprint, full current interiors and complete plant details remain unresolved."
       },
       "latestReview": {
-        "version": 191,
-        "scope": "Portugal Street85 main and18 dormer panes use one outward optical sheet each, removing1030 box-back and edge triangles. Original front coordinates, corner UVs, tint, roughness and opaque proxy status retained. Roof panes are shared with the interior cutaway; no room structure altered. Other elevations and complete current interiors remain unverified.",
-        "source": "data/collections/library-roof-2025/existing-nw-elevation.pdf",
-        "drawing": "4556-FBR-LR-ZZ-DR-A-114 P01, 17 April 2025",
-        "audit": "result/blender/stage191/reopened-verification.json",
-        "addedObjects": 2,
-        "archivedObjects": 2
+        "version": 258,
+        "scope": "Watkins Plaza southwest facade registered to the2025 As Existing elevation and the three actual GIS boundary segments. Correct historic stone/brick divisions, fine projecting historic windows, modern wide-window cadence, Library entrance, four dormers and three source rooflights. Retain original glass finishes and other elevations, upper roof and dome. Hidden roof returns, horizontal registration and pane/frame sections remain estimates. Shared roof geometry and glazing are included in the public cutaway;35 independent room studies remain protected.",
+        "source": "data/collections/library-roof-2025/existing-sw-elevation.pdf",
+        "drawing": "4556-FBR-LR-ZZ-DR-A-111 P01 As Existing 17 April 2025",
+        "audit": "result/blender/lrb258/audit.json",
+        "addedObjects": 29,
+        "archivedObjects": 39,
+        "limitations": [
+          "Source2025main-building elevation and GIS footprint differ by1.19percent; source-derived outer bay registration remains an estimate.",
+          "The concealed2.5mroof-return depth is estimated and joins the actual retained20.24mplane;23.99mupper roof and dome are protected.",
+          "Five lower glazed divisions and three by two upper lights are evidenced; door operating modes are not assigned.",
+          "The0.282mthreshold bridge follows actual retainedFFL/paving levels; its width/tread depth remain a local model estimate, not a surveyed accessible route."
+        ]
       },
       "interiorSections": [
         {
@@ -4999,14 +5005,14 @@
       },
       "bounds": {
         "min": [
-          24.830078125,
+          24.86898422241211,
           -4.019999980926514,
           -43.38092041015625
         ],
         "max": [
           114.51506042480469,
           32.8706169128418,
-          27.600141525268555
+          27.56313705444336
         ]
       },
       "exteriorFramingCorners": [
@@ -5064,28 +5070,28 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/lrb-exterior-b7c166909bf9.glb",
-        "bytes": 6564172,
-        "triangles": 731683,
-        "sha256": "b7c166909bf9c59a6598f8596101303fd0ec59c2dc2450fe4cc1e81249a04ce2",
+        "url": "/models/details/lrb-exterior-823377ba7343.glb",
+        "bytes": 6697160,
+        "triangles": 745574,
+        "sha256": "823377ba7343f465dd6c6fa6a67caac53f6b6c95857be2d9979d9123f6860d81",
         "bounds": {
           "min": [
-            24.830078125,
+            24.86898422241211,
             -4.019999980926514,
             -43.38092041015625
           ],
           "max": [
             114.51506042480469,
             32.8706169128418,
-            27.600141525268555
+            27.56313705444336
           ]
         }
       },
       "detailedInterior": {
-        "url": "/models/details/lrb-interior-fb4688dec53e.glb",
-        "bytes": 4696632,
-        "triangles": 579850,
-        "sha256": "fb4688dec53ed75797a9bef52f79f7fe53a6b614f8abae9c38fb25be9f4d5ef8",
+        "url": "/models/details/lrb-interior-6c4f72181041.glb",
+        "bytes": 4735856,
+        "triangles": 582747,
+        "sha256": "6c4f72181041d71fb6fe2b769631ce1601066c9cbfa9011406019e195e14f056",
         "bounds": {
           "min": [
             25.21265411376953,
@@ -5347,9 +5353,9 @@
         {
           "id": "3",
           "label": "三层井口与混凝土核心",
-          "minHeight": 17.3,
+          "minHeight": 17.1,
           "maxHeight": 21.91,
-          "scope": "2022平面真实填充边界支持两组井壁与四处门口；17.5/21.9米楼层标高及2.1米门高为估计。上层楼板与完整井道仍待协调。",
+          "scope": "2022平面支持三处井口、两组井壁与四处门口；三层楼板补齐底面与井口侧壁。17.5米楼层标高、0.32米板厚及门高为估计，上层楼板与完整井道仍待协调。",
           "view": {
             "position": [
               18.8,
@@ -5402,8 +5408,8 @@
         "limitations": "Floor datum is inherited and estimated. No shaft walls, lift cars, unobserved stairs or entire third-floor interior are asserted."
       },
       "interiorAdditionalObjects": [
-        "MAR250_third_floor_with_source_lift_shafts",
-        "MAR251_third_south_lift_core_walls"
+        "MAR251_third_south_lift_core_walls",
+        "MAR258_third_south_deck_solid"
       ],
       "thirdFloorWallsReview251": {
         "version": 251,
@@ -5426,6 +5432,17 @@
           "No independently identified upper-floor shaft XY controls;21.9mgeneric slab retained.",
           "No lift cars,equipment or complete third-floor interior."
         ]
+      },
+      "marStructure258": {
+        "version": 258,
+        "audit": "result/blender/mar258/audit.json",
+        "scope": "Registered third-floor deck retains exact top UV and three shaft holes, now a closed0.32m solid with corrected upward top normals. Thickness remains inherited estimate, next floor and full shafts incomplete."
+      },
+      "marFinish258": {
+        "version": 258,
+        "audit": "result/blender/mar-finish258/audit.json",
+        "source": "https://www.concretecentre.com/Case-Studies/Marshall-Building,-London.aspx",
+        "scope": "North fins slightly darker than backing panels; 6percent RGB step is conservative display estimate, existing geometry, glazing, UV and all other shader parameters retained."
       },
       "bounds": {
         "min": [
@@ -5494,10 +5511,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-44cc0ad7b20a.glb",
-        "bytes": 3044588,
-        "triangles": 277723,
-        "sha256": "44cc0ad7b20a8fd8dccfdc180d318c614fba4e49e4ff2947b03918cc081a96c9",
+        "url": "/models/details/mar-exterior-706d5d72e0c1.glb",
+        "bytes": 3045184,
+        "triangles": 277787,
+        "sha256": "706d5d72e0c181de5e0150cb7ad10774220822ab419c2a10901e35e4066d7332",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -5512,10 +5529,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-2c726f3e4099.glb",
-        "bytes": 548304,
-        "triangles": 54697,
-        "sha256": "2c726f3e40999323f78a3e2af040bf6a36654bdef92d0fc5c9c411654394e64b",
+        "url": "/models/details/mar-interior-7744bd290a21.glb",
+        "bytes": 548880,
+        "triangles": 54761,
+        "sha256": "7744bd290a21d887d92836a9b505f0209a915510c7e70874ab1d61ed57dea2d8",
         "bounds": {
           "min": [
             -44.53135299682617,
