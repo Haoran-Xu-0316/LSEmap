@@ -654,9 +654,9 @@
         0.7838334441184998
       ],
       "localRefinement": {
-        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained; seven uninterrupted tall middle windows and shallow bronze balcony rail",
-        "newComponents": 22,
-        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete."
+        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained; seven uninterrupted tall middle windows and shallow bronze balcony rail; seven tall windows have paired two-column sashes and stronger central meeting stiles",
+        "newComponents": 23,
+        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete. Seven tall windows now have four glass columns from paired two-column leaves, guided by2018and2023photographs. Existing horizontal rails,opaque spandrels,glass geometry and optical properties,stone,roof and rooms remain unchanged. Stiles use rigid local frames at GIS facet joins; bar widths,retained window dimensions,upper small sashes and unseen elevations remain estimates or unresolved."
       },
       "latestReview": {
         "version": 241,
@@ -1409,9 +1409,9 @@
         0.564251720905304
       ],
       "localRefinement": {
-        "description": "Lower red block faces with seven true shallow horizontal recesses; retained curved central oriel, upper fine brick and pale surrounds",
-        "newComponents": 4,
-        "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified."
+        "description": "Lower red block faces with seven true shallow horizontal recesses; retained curved central oriel, upper fine brick and pale surrounds; two recessed stone treads between the retained entrance piers",
+        "newComponents": 5,
+        "scope": "LSE Estate exterior photograph and 2025/26 property handbook guide the block finish; capture dates unknown, colors and groove dimensions estimated. Occluded flat joint strips replaced by shallow grooves in owned copies of four lower red mesh families. Original objects preserved, other buildings and interior references unchanged. Roof and unseen elevations remain unverified. AccessAble entrance photographs and its two-step description guide the recessed approach. The original doorway threshold top0.245m and actual native site support-0.05m give two estimated147.5mm rises. Original doors,portal,glass,stone colour and roof retained. Tread run and retained registration remain estimates; source/survey dates unknown. Native contact is verified,not current accessibility certification."
       },
       "latestReview": {
         "version": 166,
@@ -5445,7 +5445,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 259,
+  "sourceVersion": 260,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
