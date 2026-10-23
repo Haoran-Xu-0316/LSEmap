@@ -47,6 +47,12 @@ street group appears atomically and a three-entry cache avoids repeated work.
 Returning to the campus or entering a room removes the local copy. Gallery
 capture waits for the same complete surroundings used by the live viewer.
 
+The subsequent street-finish review reduces the large mottled contrast in the
+shared stone overlay, informed by the archived2019LSE globe photograph. Individual
+slab tones, joints, shallow relief and asphalt remain intact. This changes only
+the shared renderer: native263 geometry, glazing and interior assets are unchanged,
+and the complete gallery is regenerated to match the live finish.
+
 Clare Market gains two photo-guided hooded wall fixtures and the visible left
 conduit, reusing existing materials. The Sheffield bicycle-parking point now has
 five double-sided U stands inferred from its archived OSM capacity of ten bicycles.
