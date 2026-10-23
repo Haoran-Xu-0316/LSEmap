@@ -382,6 +382,9 @@ function overview(keepIndex = false, updateHash = true) {
 }
 
 function showFailure(message) {
+  // Fetch the fallback only when needed; metadata failure can still show it.
+  $("#fallback img").src = galleryDigests.has("campus")
+    ? galleryImageUrl("campus") : "/images/campus.webp";
   $("#loading").hidden = true;
   $("#fallback").hidden = false;
   $("#fallback-message").textContent = message;
@@ -424,7 +427,6 @@ async function start() {
       galleryDigests = new Map(galleryManifest.images.map(image => [image.name, image.sha256]));
       modelAssetRevision = galleryManifest.modelAssetsSha256 || modelRevision;
       document.documentElement.dataset.modelAssetRevision = modelAssetRevision;
-      $("#fallback img").src = galleryImageUrl("campus");
       document.documentElement.dataset.modelRevision = modelRevision;
       buildings = [...data.buildings].sort(
         (a, b) =>
