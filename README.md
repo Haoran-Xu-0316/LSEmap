@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition262 contains31 building records,30 detailed exteriors,25 interior views
+Edition263 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The combined editable model is
-kept locally at `result/blender/LSE_campus_detailed_v262.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v263.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage262` acceptance records are retained with the native: integration
+The local `stage263` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,22 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition263 keeps the immediate street setting visible when surrounding buildings
+are hidden: original nearby paving, complete trees and public furniture are
+cropped from the existing campus assets. Preparation yields between short work
+batches so the selected building and camera can respond first; the completed
+street group appears atomically and a three-entry cache avoids repeated work.
+Returning to the campus or entering a room removes the local copy. Gallery
+capture waits for the same complete surroundings used by the live viewer.
+
+Clare Market gains two photo-guided hooded wall fixtures and the visible left
+conduit, reusing existing materials. The Sheffield bicycle-parking point now has
+five double-sided U stands inferred from its archived OSM capacity of ten bicycles.
+The map point and old stand axis are retained; pitch and individual positions are
+estimates. Same-street photographs guide the form without claiming to depict that
+exact mapped group. Other furniture faces, UVs, glazing and35room studies remain
+protected. Complete interiors and unpictured exteriors remain unfinished.
 
 Edition262 enriches two street frontages. Houghton Street gains four
 photo-guided wall-mounted notice cabinets with recessed displays and clear covers,
