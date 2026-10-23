@@ -3,7 +3,7 @@ import * as THREE from 'three';
 // One set of uniform slots per viewer serves overview and selected buildings.
 export const GROUND_FINISHES = Object.freeze([
   {kind:'asphalt',url:'/environment/asphalt-finish-512.webp',reliefUrl:'/environment/asphalt-relief-512.webp',metres:2.1,mean:0.061517,height:.0012},
-  {kind:'stone',url:'/environment/stone-finish-512.webp',reliefUrl:'/environment/stone-relief-512.webp',metres:2,mean:0.16799,height:.0025},
+  {kind:'stone',url:'/environment/stone-finish-512.webp',reliefUrl:'/environment/stone-relief-512.webp',metres:2,mean:0.16799,height:.0025,roughnessMean:.51713553},
 ]);
 
 export function createGroundTextureState() {
