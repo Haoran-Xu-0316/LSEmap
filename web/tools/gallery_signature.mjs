@@ -7,7 +7,7 @@ export async function galleryRendererSignature() {
   for (const path of [
     'web/public/environment/asphalt-relief-512.webp', 'web/public/environment/stone-relief-512.webp',
     'web/src/ground-textures.js', 'web/public/environment/asphalt-finish-512.webp', 'web/public/environment/stone-finish-512.webp', 'web/public/environment/sources.json',
-    'web/src/viewer.js', 'web/src/building-picking.js', 'web/src/control-timing.js', 'web/src/outdoor-environment.js', 'web/src/surface-materials.js', 'web/src/model-cache.js',
+    'web/src/viewer.js', 'web/src/scene-context.js', 'web/src/building-picking.js', 'web/src/control-timing.js', 'web/src/outdoor-environment.js', 'web/src/surface-materials.js', 'web/src/model-cache.js',
     'web/src/interior-lighting.js', 'web/src/wire-grid-materials.js', 'web/src/foliage-materials.js',
     'web/public/environment/daylight-1k.hdr', 'web/public/environment/daylight-sky-2k.webp',
     'web/src/model-loading.js', 'web/src/model-byte-cache.js', 'web/src/rendering-quality.js', 'web/src/temporal-antialiasing.js', 'web/src/progressive-still.js',
