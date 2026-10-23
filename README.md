@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition261 contains31 building records,30 detailed exteriors,25 interior views
+Edition262 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The combined editable model is
-kept locally at `result/blender/LSE_campus_detailed_v261.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v262.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage261` acceptance records are retained with the native: integration
+The local `stage262` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,20 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition262 enriches two street frontages. Houghton Street gains four
+photo-guided wall-mounted notice cabinets with recessed displays and clear covers,
+and one camera fixture registered to the actual quoin plane. Sheffield Street
+gains two red planter and seat units around retained native trees, with open root
+wells, supported soil and twelve ground-bearing feet. These assemblies appear in
+both the campus and their selected-building exteriors. Existing architecture,
+material graphs and35room studies are protected; dated and undated source images
+guide estimated dimensions, not current surveyed furniture or event information.
+Near paving retains more filtered photographic wear and roughness variation.
+It uses the existing four texture files and sampling budget; overview appearance
+and motion remain close to the previous version. This is a visual refinement,
+not a claim of universally improved frame rate. Whole-campus and interior
+reconstruction remain incomplete.
 
 Edition261 corrects the seven upper Clement House sashes to paired two-column
 leaves, with thicker central meeting stiles. The stile at the curved GIS join
