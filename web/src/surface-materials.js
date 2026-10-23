@@ -213,7 +213,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     // Measured channel mean keeps wear variation centred on the authored dry finish.
     uniforms.groundRoughnessMean = {value:groundAsset.roughnessMean ?? .5};
   }
-  material.customProgramCacheKey = () => `lse-surface-finish13-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish14-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -337,7 +337,8 @@ export function applySurfaceDetail(material, groundTextures = null) {
       float capturedFace = 0.0;
       if (groundReady > .5) {
         // World metres retain the same scale on base campus and detailed meshes.
-        // Captured wear enriches the authored palette; modelled joints stay intact.
+        // Keep the photographed stone subtle enough to reveal individual slabs.
+        // The existing palette, joints and shallow relief remain independent.
         vec3 groundSample = texture2D(groundFinish, vSurfacePosition.xz / groundMetres).rgb;
         float groundTone = dot(groundSample, vec3(.2126, .7152, .0722)) / groundMean;
         // The same mip-filtered photo supplies centimetre-scale wear. Fade its
@@ -345,7 +346,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
         float groundDetailVisibility = 1.0 - smoothstep(.03, .16, length(fwidth(vSurfacePosition.xz)));
         vec3 groundNormal = normalize(cross(dFdx(vSurfacePosition), dFdy(vSurfacePosition)));
         float groundFace = smoothstep(.65, .95, abs(groundNormal.y));
-        surfaceColor *= mix(1.0, clamp(groundTone, .72, 1.26), groundFace * ${groundAsset.kind === 'stone' ? 'mix(.30, .42, groundDetailVisibility)' : '.30'});
+        surfaceColor *= mix(1.0, clamp(groundTone, .72, 1.26), groundFace * ${groundAsset.kind === 'stone' ? 'mix(.10, .15, groundDetailVisibility)' : '.30'});
         if (groundReliefReady > .5) {
           // One filtered sample supplies both wear and shallow relief. World
           // coordinates align it exactly with the captured colour map.
