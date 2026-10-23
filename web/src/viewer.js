@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useTimeBasedDamping, stopControlInertia } from "./control-timing.js";
 import { createBuildingPicker } from "./building-picking.js";
+import { LocalSceneContext } from "./scene-context.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
@@ -361,6 +362,9 @@ export class CampusViewer {
     });
     for (const object of contextMeshes) object.castShadow = false;
     prepareStaticModel(this.campus);
+    this.campus.updateMatrixWorld(true);
+    this.localContext = new LocalSceneContext([this.groups.get("SITE"), this.groups.get("LANDSCAPE")]);
+    this.scene.add(this.localContext.root);
     this.pickable = [...this.groups]
       .filter(([code]) => codes.has(code))
       .map(([, object]) => object);
@@ -935,6 +939,15 @@ export class CampusViewer {
       }
     }
     this.canvas.dataset.campusDetails = visibleExteriors.sort().join(",");
+    const localBuilding = this.buildings.find(building => building.code === this.activeCode);
+    if (this.mode !== "interior" && !visible && localBuilding?.bounds)
+      this.localContext?.activate(this.activeCode, boxFromData(localBuilding.bounds)).then(group => {
+        if (!group || this.disposed || this.activeCode !== group.userData.streetContext.code || this.contextVisible || this.mode === "interior") return;
+        this.renderer.shadowMap.needsUpdate = true;
+        this.renderPipeline.resetHistory();
+        this.needsRender = true;
+      }).catch(error => { if (!this.disposed) console.error("Nearby street unavailable", error); });
+    else this.localContext?.hide();
     this.renderer.shadowMap.needsUpdate = true;
     this.needsRender = true;
   }
@@ -1028,6 +1041,10 @@ export class CampusViewer {
       (this.activeInterior ? this.interiors.get(this.activeInterior.key) :
         this.exteriors.get(this.activeCode) ?? this.groups.get(this.activeCode));
     const roots = this.activeCode ? [root] : [...this.groups.values(), ...this.exteriors.values()];
+    if (this.mode !== "interior" && this.activeCode) {
+      if (this.contextVisible) roots.push(this.groups.get("SITE"), this.groups.get("LANDSCAPE"));
+      else if (this.localContext?.root.visible) roots.push(this.localContext.activeGroup);
+    }
     const rect = this.canvas.getBoundingClientRect();
     this.pointer.set((event.clientX - rect.left) / rect.width * 2 - 1,
       -(event.clientY - rect.top) / rect.height * 2 + 1);
@@ -1304,6 +1321,7 @@ export class CampusViewer {
     this.loadController.abort();
     this.detailRequest += 1;
     this.detailCache.dispose();
+    this.localContext?.dispose();
     for (const group of this.exteriors.values()) disposeModel(group);
     this.exteriors.clear();
     cancelAnimationFrame(this.frame);
