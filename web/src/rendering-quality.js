@@ -17,8 +17,9 @@ export function stablePixelRatio(width, height) {
 // The sampling pass clears before WebGLBackground updates its color space.
 // Bind the scene buffer before computing that clear, avoiding a second sRGB encode.
 class ColorManagedRenderPass extends SSAARenderPass {
-  constructor(scene, camera) {
+  constructor(scene, camera, rasterSamples) {
     super(scene, camera, new THREE.Color(0xe9e8e3), 1);
+    this.rasterSamples = rasterSamples;
     // Four fixed subpixel samples cover horizontal and vertical facade edges.
     // The optional overview resolver reuses these samples between moving frames.
     this.sampleLevel = 2;
@@ -31,9 +32,14 @@ class ColorManagedRenderPass extends SSAARenderPass {
     this.clearColor.copy(this.clearColorScratch);
     this.clearAlpha = renderer.getClearAlpha();
     renderer.setClearColor(this.clearColorScratch, renderer.getClearAlpha());
-    if (this.captureDepth && !this._sampleRenderTarget?.depthTexture) {
-      if (!this._sampleRenderTarget) this._sampleRenderTarget = new THREE.WebGLRenderTarget(
-        readBuffer.width, readBuffer.height, { type: THREE.HalfFloatType });
+    // Thin stone joints and railings need coverage samples while the camera moves.
+    // Resolve MSAA in the scene buffer, keeping one scene draw per moving frame.
+    // The default framebuffer remains single-sampled for section/clipping stability.
+    if (!this._sampleRenderTarget) this._sampleRenderTarget = new THREE.WebGLRenderTarget(
+      readBuffer.width, readBuffer.height, {
+        type: THREE.HalfFloatType, samples: this.rasterSamples,
+      });
+    if (this.captureDepth && !this._sampleRenderTarget.depthTexture) {
       this._sampleRenderTarget.dispose();
       this._sampleRenderTarget.depthTexture = new THREE.DepthTexture(readBuffer.width, readBuffer.height);
     }
@@ -52,7 +58,8 @@ class ColorManagedRenderPass extends SSAARenderPass {
 
 export function createRenderPipeline(renderer, scene, camera, allowTemporal = () => true) {
   const composer = new EffectComposer(renderer);
-  const scenePass = new ColorManagedRenderPass(scene, camera);
+  const desktopRasterSamples = Math.min(2, renderer.capabilities.maxSamples);
+  const scenePass = new ColorManagedRenderPass(scene, camera, desktopRasterSamples);
   const temporalPass = new TemporalAntialiasingPass(scenePass, camera);
   let wideViewport = false;
   let needsSettle = false;
@@ -75,6 +82,11 @@ export function createRenderPipeline(renderer, scene, camera, allowTemporal = ()
     resize(width, height) {
       // Keep narrow views on their existing light sampling budget.
       wideViewport = width > 640;
+      scenePass.rasterSamples = wideViewport ? desktopRasterSamples : 0;
+      if (scenePass._sampleRenderTarget && scenePass._sampleRenderTarget.samples !== scenePass.rasterSamples) {
+        scenePass._sampleRenderTarget.dispose();
+        scenePass._sampleRenderTarget.samples = scenePass.rasterSamples;
+      }
       scenePass.sampleLevel = wideViewport ? 2 : 0;
       needsSettle = false;
       composer.setPixelRatio(renderer.getPixelRatio());
