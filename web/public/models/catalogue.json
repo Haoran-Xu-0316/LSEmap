@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "261",
-  "sourceModelSha256": "9890521a376afabfbb3d6c130d20ce40988315c49b8adea4c00749960a97482a",
+  "version": "262",
+  "sourceModelSha256": "35547bb32309adcd934df8845c71e672e3dc7b3ca519ad5154ec9a65f143cb75",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5731,9 +5731,9 @@
         0.37447047233581543
       ],
       "localRefinement": {
-        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures; four external steps, a lowered shared threshold and four separate foyer steps; eight Houghton window boxes on retained window axes and stone sills",
-        "newComponents": 65,
-        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved. Eight near Houghton boxes follow the undated supplied street photograph, using retained native window axes and sills. Box dimensions, sparse planting silhouettes and seasonal condition are estimates. Added in three shared meshes with existing finishes; entrance, glazing, attic, courtyard and all original architecture remain unchanged."
+        "description": "Eight four-column Clare Market casements, preserved two-column doorway upper window and five raised central transoms; neutral limestone finish and Houghton four-column windows retained; five Clare Market reclining figure relief profiles and distinct flowing backgrounds; shallow dressed entrance stone courses, mounted plaques and neutral reflective semi-transparent door glazing; denser open plastic strands in the Houghton entrance artwork; finer open plastic figure lattice with continuous pose-specific robe silhouettes; existing LSE vector mark replaces generic plaque lettering; continuously shaded curved entry reveal with five restrained limestone tones; corrected Connaught-end entry wing, long Houghton window sequence and twelve mansard dormers with six triangular pediments; stepped upper roof blocks, lower courtyard roof, gabled glass skylight, separate curved Clare Market roof and three schematic heat pumps in two acoustic enclosures; four external steps, a lowered shared threshold and four separate foyer steps; eight Houghton window boxes on retained window axes and stone sills; four Houghton wall-mounted notice cabinets and one photographed camera fixture",
+        "newComponents": 72,
+        "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved. Eight near Houghton boxes follow the undated supplied street photograph, using retained native window axes and sills. Box dimensions, sparse planting silhouettes and seasonal condition are estimates. Added in three shared meshes with existing finishes; entrance, glazing, attic, courtyard and all original architecture remain unchanged. Four closed metal notice cabinets retain recessed inserts, thin clear covers and actual wall fixings. One photographed white camera housing follows the retained quoin plane. Only legible Welcome to LSE text is transcribed; other insert fields are non-semantic colour estimates. Source photograph date, exact stations and fine sections are unverified estimates. Original walls, windows and rooms remain unchanged."
       },
       "latestReview": {
         "version": 239,
@@ -6088,10 +6088,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-ce547a513d77.glb",
-        "bytes": 11630204,
-        "triangles": 962912,
-        "sha256": "ce547a513d77461c70978a36fbd3d55f91af8804d82f167807c1843b7885c604",
+        "url": "/models/details/old-exterior-f08ea8b56f6f.glb",
+        "bytes": 11678872,
+        "triangles": 967168,
+        "sha256": "f08ea8b56f6ff9e71cda1be962ee96c19e9f0ca958117f178bd0734ebaefcc4a",
         "bounds": {
           "min": [
             -39.1646614074707,
@@ -7780,9 +7780,9 @@
         -0.16823700070381165
       ],
       "localRefinement": {
-        "description": "Two roof terraces, lower green roof, timber curtain glazing, fixed guardrails, fitted photovoltaic modules and twin high brick flues; four clipped Jatoba curtain-wall fields retained",
-        "newComponents": 38,
-        "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review."
+        "description": "Two roof terraces, lower green roof, timber curtain glazing, fixed guardrails, fitted photovoltaic modules and twin high brick flues; four clipped Jatoba curtain-wall fields retained; two Sheffield Street red planter and seat units at retained native trees",
+        "newComponents": 40,
+        "scope": "LSE roof photograph guides the terrace, glazing and flue relationships; official historical areas are 115 square metres for the terrace and 254 square metres for photovoltaics. Capture date and 2026 condition unverified. Terrace boundaries, chimney placement, 159 module count and framing are estimates, not a survey or installed equipment inventory. Brick folds and complete interiors remain under review. Two photo-guided red planter and seat units reuse the accepted painted-steel and soil finishes. Root openings, supported soil, seats and twelve actual-ground bearing feet are checked against existing paving and trees. Sampled1.8m passage bands remain clear; historical and undated photographs guide estimated sections, not a current furniture survey or accessibility certificate."
       },
       "latestReview": {
         "version": 206,
@@ -8170,7 +8170,7 @@
           -37.072296142578125
         ],
         "max": [
-          -49.725101470947266,
+          -43.832576751708984,
           28.950000762939453,
           16.283767700195312
         ]
@@ -8182,9 +8182,9 @@
           -28.685403143071618
         ],
         [
-          -56.64860112303084,
+          -56.49944208436733,
           -0.09226448833942413,
-          -40.680229849963254
+          -40.743740423991746
         ],
         [
           -84.8192931361867,
@@ -8192,9 +8192,9 @@
           -28.685403143071618
         ],
         [
-          -56.64860112303084,
+          -56.49944208436733,
           28.950000762939453,
-          -40.680229849963254
+          -40.743740423991746
         ],
         [
           -65.47062059871064,
@@ -8202,9 +8202,9 @@
           16.756311709171904
         ],
         [
-          -37.29992858555479,
+          -37.150769546891276,
           -0.09226448833942413,
-          4.761485002280265
+          4.697974428251772
         ],
         [
           -65.47062059871064,
@@ -8212,9 +8212,9 @@
           16.756311709171904
         ],
         [
-          -37.29992858555479,
+          -37.150769546891276,
           28.950000762939453,
-          4.761485002280265
+          4.697974428251772
         ]
       ],
       "interiorBounds": {
@@ -8230,10 +8230,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/saw-exterior-f03ea5fb0fb5.glb",
-        "bytes": 8642176,
-        "triangles": 788372,
-        "sha256": "f03ea5fb0fb5f34e3a7305c0586e3d1fffb5f3d6d0602e7d5b30473129f5113a",
+        "url": "/models/details/saw-exterior-5545dc2da06e.glb",
+        "bytes": 8656696,
+        "triangles": 789732,
+        "sha256": "5545dc2da06edaee9b676e3f107792101853726447ec3e49d4e721d71b9ca56d",
         "bounds": {
           "min": [
             -84.64329528808594,
@@ -8241,7 +8241,7 @@
             -37.072296142578125
           ],
           "max": [
-            -49.725101470947266,
+            -43.832576751708984,
             28.950000762939453,
             16.283767700195312
           ]
