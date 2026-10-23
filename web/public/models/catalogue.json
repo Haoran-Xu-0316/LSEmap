@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "260",
-  "sourceModelSha256": "c208a1086482bcc1bf20ec25ccdd9c684a0ea88a4891e5a007439c1076c1eec2",
+  "version": "261",
+  "sourceModelSha256": "9890521a376afabfbb3d6c130d20ce40988315c49b8adea4c00749960a97482a",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -1493,9 +1493,9 @@
         0.7838334441184998
       ],
       "localRefinement": {
-        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained; seven uninterrupted tall middle windows and shallow bronze balcony rail; seven tall windows have paired two-column sashes and stronger central meeting stiles",
-        "newComponents": 23,
-        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete. Seven tall windows now have four glass columns from paired two-column leaves, guided by2018and2023photographs. Existing horizontal rails,opaque spandrels,glass geometry and optical properties,stone,roof and rooms remain unchanged. Stiles use rigid local frames at GIS facet joins; bar widths,retained window dimensions,upper small sashes and unseen elevations remain estimates or unresolved."
+        "description": "Five dark curved-cap dormers, four stone chimney stacks, shallow setback attic glazing and continuous iron railing; stone capital scrolls retained; seven uninterrupted tall middle windows and shallow bronze balcony rail; seven tall windows have paired two-column sashes and stronger central meeting stiles; seven upper sashes use paired two-column leaves with stronger central meeting stiles",
+        "newComponents": 25,
+        "scope": "Front roof silhouette guided by dated 2018 and November 2023 photographs. Attic proportions, heights and chimney positions estimated; rear roof plan, recent plant installation and complete interior remain unverified. Dated April 2018 and November 2023 built photographs guide the cross-storey window band. Heights, proportions and balcony construction estimated; figure relief, ornamental surrounds, rear elevations and full interiors remain incomplete. Seven tall windows now have four glass columns from paired two-column leaves, guided by2018and2023photographs. Existing horizontal rails,opaque spandrels,glass geometry and optical properties,stone,roof and rooms remain unchanged. Stiles use rigid local frames at GIS facet joins; bar widths,retained window dimensions,upper small sashes and unseen elevations remain estimates or unresolved. The seven upper small sashes now have four glass columns guided by2018and2023photographs. Meeting stiles are thicker than the fine subdivisions; the stile at the GIS curve join is registered back to the actual retained glass. All original glass, horizontal rails, stone, roofs and independent rooms remain protected. Fine sections, geographic registration and unseen elevations remain estimates or unresolved."
       },
       "latestReview": {
         "version": 241,
@@ -1692,10 +1692,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/clm-exterior-5d93b7df278a.glb",
-        "bytes": 852648,
-        "triangles": 66898,
-        "sha256": "5d93b7df278a41d4b71a9d0f02844ec8e4b4438444ffb3ff43de89872edf94d4",
+        "url": "/models/details/clm-exterior-eb1031cb6a6b.glb",
+        "bytes": 854624,
+        "triangles": 67066,
+        "sha256": "eb1031cb6a6b2cb199d7a9b2b189387b7f49cf2ad50274f26bd50326cf3c48b8",
         "bounds": {
           "min": [
             99.0441665649414,
