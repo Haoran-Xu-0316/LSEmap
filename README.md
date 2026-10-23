@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition260 contains31 building records,30 detailed exteriors,25 interior views
-and35 selectable room studies. The complete editable campus is
-kept locally at `result/blender/LSE_campus_detailed_v260.blend`. GitHub contains
+Edition261 contains31 building records,30 detailed exteriors,25 interior views
+and35 selectable room studies. The combined editable model is
+kept locally at `result/blender/LSE_campus_detailed_v261.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage260` acceptance records are retained with the native: integration
+The local `stage261` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -38,6 +38,20 @@ wheel burst. Horizontal trackpad gestures and Shift wheel pan; toolbar zoom uses
 the visible centre surface. Exterior navigation stays above street level while retaining upward
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
+
+Edition261 corrects the seven upper Clement House sashes to paired two-column
+leaves, with thicker central meeting stiles. The stile at the curved GIS join
+now follows its actual retained glass surface, correcting a roughly60mm gap.
+The original glass, horizontal rails, stone, roofs and35room studies are protected;
+fine sections and geographic proportions remain estimates. Desktop moving frames
+use two coverage samples in the scene buffer to reduce thin-joint flicker, while
+narrow screens retain their previous budget. Settled views retain four spatial
+samples. In one local Chrome comparison against32samples, moving-frame error
+fell34%; GPU time was close to the previous setting, not a universal speed claim.
+Eight park entrances and12connecting mapped routes were checked with323actual
+native support samples and16fence controls; no justified geometry change was found.
+Full unseen exteriors, complete interiors and the entire street network remain
+unfinished. Existing room studies are partial architectural studies.
 
 Edition260 corrects seven Clement House tall windows to paired two-column
 sashes,following the photographed four-pane rhythm. Horizontal rails,glass,stone
