@@ -5445,7 +5445,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 262,
+  "sourceVersion": 263,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5700,5 +5700,13 @@
     "status": "accepted-native",
     "scope": "Houghton stone and painted joinery coordinate with retained COL195 photo-guided finish family. Uniform albedo uses the original tone study linear mean without repeated macro-colour texture. Every original mesh,UV,glass,roof,lighting and35room studies remain unchanged.",
     "evidence": "Historical uncalibrated official photographs and existing original stone tone study; not current measured colour."
+  },
+  "streetReview263": {
+    "scope": "Two photographed Clare Market hooded wall fixtures and the observed left surface conduit; five double-sided U stands inferred from ten bicycle spaces at the retained OSM Sheffield parking node. Nearby public ground, complete trees and furniture remain visible when other buildings are hidden.",
+    "components": [
+      "result/blender/houghton263/audit.json",
+      "result/blender/sheffield263/audit.json"
+    ],
+    "limits": "Clare photographs are undated. The mapped bicycle node is a2023record; same-street photography supports form only, not exact group identity. Rack pitch, sections and individual positions are estimates. Full campus and interiors remain incomplete."
   }
 }
