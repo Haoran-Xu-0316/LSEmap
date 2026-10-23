@@ -39,6 +39,8 @@ window.renderGalleryView=async(job)=>{
   const expected=(interior?'interior-':'exterior-')+job.code+(job.spaceId?':'+job.spaceId:'');
   if(viewer.canvas.dataset.detailReady!==expected) throw Error('Detail unavailable: '+job.name);
  }
+ // Street surroundings are prepared cooperatively after the building appears.
+ await viewer.localContext?.ready;
  if(job.view){
   viewer.camera.fov=job.view.fov;viewer.updateCameraProjection();
   viewer.moveCamera(viewer.camera.position.clone().fromArray(job.view.position),viewer.controls.target.clone().fromArray(job.view.target),false);
