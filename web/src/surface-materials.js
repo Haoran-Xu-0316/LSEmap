@@ -432,7 +432,7 @@ export function prepareDetailedModel(group, environmentMap = null, groundTexture
   prepareStaticModel(group);
 }
 
-export function disposeModel(group) {
+export function disposeModel(group, releaseOwnedMaps = false) {
   group.removeFromParent();
   const geometries = new Set(), materials = new Set();
   group.traverse((object) => {
@@ -440,6 +440,16 @@ export function disposeModel(group) {
     if (object.material)
       for (const material of Array.isArray(object.material) ? object.material : [object.material]) materials.add(material);
   });
+  if (releaseOwnedMaps) {
+    const textures = new Set(), images = new Set();
+    for (const material of materials) for (const [key, value] of Object.entries(material)) {
+      // The viewer owns the shared environment and shader-uniform ground maps.
+      // GLTF surface maps belong to this model and leave with its mobile cache entry.
+      if (key !== "envMap" && value?.isTexture) textures.add(value);
+    }
+    for (const texture of textures) { texture.dispose(); if (texture.image) images.add(texture.image); }
+    for (const bitmap of images) bitmap.close?.();
+  }
   for (const geometry of geometries) geometry.dispose();
   for (const material of materials) material.dispose();
 }
