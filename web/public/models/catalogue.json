@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "263",
-  "sourceModelSha256": "f55f5975ea5e4d755f0c883bc64965b928a3d03add666c598a9b7e987bb70c2d",
+  "version": "269",
+  "sourceModelSha256": "a44026d64bb57cea159a44b1fa96b7b9be13e7d4af034f57d09beb62480ef21b",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5335,7 +5335,7 @@
           "label": "二层结构与图示挑空",
           "minHeight": 12.47,
           "maxHeight": 13.95,
-          "scope": "2022建成图二层结构楼板，菱形结构挑空与半圆主梯口；上行梯段未重建",
+          "scope": "2022建成图支持二层楼板、菱形挑空、主梯口及三处电梯井开口；楼层标高沿用估计，完整井壁、上行梯段与全高井道仍待协调。",
           "view": {
             "position": [
               -19.5,
@@ -5444,6 +5444,75 @@
         "source": "https://www.concretecentre.com/Case-Studies/Marshall-Building,-London.aspx",
         "scope": "North fins slightly darker than backing panels; 6percent RGB step is conservative display estimate, existing geometry, glazing, UV and all other shader parameters retained."
       },
+      "secondFloorShaftReview269": {
+        "version": 269,
+        "source": "data/collections/mar-built-registration-2026/grafton-marshall-built-plans-2022.pdf",
+        "sourceSha256": "d675da320087039168890f7afbf055490f9c8e4530f59921e9e5e53f6fc8bc47",
+        "sourceDate": "2022 architectural drawings; not a current survey",
+        "scope": "Three lift openings from the independently registered Second floor are cut through the retained structural slab,finish and soffit. Source perimeter,previous staircase/diamond voids,Z levels,materials and unedited faces/UVs remain intact.",
+        "editedLayers": 3,
+        "newMaterials": 0,
+        "fullHeightShaftAcceptance": false,
+        "verticalCoordination": {
+          "status": "actual_mesh_relative_boundaries_remain_uncoordinated",
+          "candidateOnly": true,
+          "fullHeightAcceptance": false,
+          "actualMeshRelationships": [
+            {
+              "secondShaft": "second-west-upper",
+              "axisOffsetM": 0.026529131147982013,
+              "axisOffsetXY_m": [
+                -3.684452342334055e-05,
+                -0.026529105562531186
+              ],
+              "actualSecondAreaM2": 6.097538125459323,
+              "actualThirdOpeningAreaM2": 6.001393745822497,
+              "overlapFractionOfSecond": 0.976573620203791,
+              "overlapFractionOfThird": 0.9922186634822028,
+              "existingThirdDeckProjectedCapM2": 0.14284324394873238,
+              "existing251WallFootprintProjectionOverlapM2": 0.09595853578869651
+            },
+            {
+              "secondShaft": "second-west-lower",
+              "axisOffsetM": 0.03456132255802545,
+              "axisOffsetXY_m": [
+                0.026259693321859956,
+                -0.022470280897259443
+              ],
+              "actualSecondAreaM2": 6.085474166238782,
+              "actualThirdOpeningAreaM2": 5.982079433093531,
+              "overlapFractionOfSecond": 0.9717519783035695,
+              "overlapFractionOfThird": 0.9885478162063953,
+              "existingThirdDeckProjectedCapM2": 0.17190260628080978,
+              "existing251WallFootprintProjectionOverlapM2": 0.16997984040511938
+            },
+            {
+              "secondShaft": "second-east-upper",
+              "axisOffsetM": 0.021091885957544288,
+              "axisOffsetXY_m": [
+                -0.004599008507060631,
+                0.020584381797810636
+              ],
+              "actualSecondAreaM2": 6.094504166997467,
+              "actualThirdOpeningAreaM2": 5.996990687061043,
+              "overlapFractionOfSecond": 0.9782023325646143,
+              "overlapFractionOfThird": 0.9941082958231715,
+              "existingThirdDeckProjectedCapM2": 0.13284736991462864,
+              "existing251WallFootprintProjectionOverlapM2": 0.13203145613081801
+            }
+          ],
+          "totalThirdDeckProjectedCapM2": 0.4475932201441708,
+          "total251ProjectedWallOverlapM2": 0.3979698323246339,
+          "relativeControlUncertainty": {
+            "coreThirdToSecondFitMaximumM": 0.024804651701811016,
+            "independentHeldOutMaximumM": 0.0976889832219393,
+            "interpretation": "Both floors share the217geographic placement. The0.619mexternal OSM residual is not an independent relative shaft offset. The0.0977mheld-out inter-floor residual and source edge picks still constrain relative accuracy."
+          },
+          "retainedContextFingerprintsVerified": true,
+          "sourcePolicy": "Second-floor inner boundaries stay on their own drawing; no upper geometry was moved or down-projected."
+        },
+        "nativeVerification": "result/blender/stage269/independent-verification.json"
+      },
       "bounds": {
         "min": [
           -45.36553955078125,
@@ -5511,10 +5580,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-706d5d72e0c1.glb",
-        "bytes": 3045184,
-        "triangles": 277787,
-        "sha256": "706d5d72e0c181de5e0150cb7ad10774220822ab419c2a10901e35e4066d7332",
+        "url": "/models/details/mar-exterior-9b13cf3f07d3.glb",
+        "bytes": 3047868,
+        "triangles": 278111,
+        "sha256": "9b13cf3f07d376f0025faf618a943ed7aa5598814a1264bb8bf2e9ca414a1176",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -5529,10 +5598,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-7744bd290a21.glb",
-        "bytes": 548880,
-        "triangles": 54761,
-        "sha256": "7744bd290a21d887d92836a9b505f0209a915510c7e70874ab1d61ed57dea2d8",
+        "url": "/models/details/mar-interior-0ee6659b31aa.glb",
+        "bytes": 551552,
+        "triangles": 55085,
+        "sha256": "0ee6659b31aa8fb71f1606c3a2070a9c95b63438685f408107ed77fd3084e34e",
         "bounds": {
           "min": [
             -44.53135299682617,
