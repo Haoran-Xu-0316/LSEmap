@@ -16,7 +16,13 @@ if (gallery.renderer !== 'campus-viewer' || gallery.rendererSha256 !== rendererS
   throw new Error('Gallery renderer is stale. Run npm run gallery before building.');
 if (gallery.images.some(image => image.rendererSha256 !== rendererSha256 || image.renderer !== 'campus-viewer' || image.modelAssetsSha256 !== modelAssetsSha256 || image.sceneSamples !== 4))
   throw new Error('Mixed gallery renderers, versions or unsettled sampling');
-const models = new Set(['campus.glb', 'catalogue.json']);
+const mobile = JSON.parse(await readFile(join(root,'models/mobile-campus.json'),'utf8'));
+if(mobile.sourceModelSha256!==catalogue.sourceModelSha256||mobile.decodedBytes>96*1024*1024)
+  throw Error('Mobile overview is stale or exceeds its budget');
+const mobileBytes=await readFile(join(root,mobile.url));
+if(mobileBytes.length!==mobile.bytes||createHash('sha256').update(mobileBytes).digest('hex')!==mobile.sha256)
+  throw Error('Mobile overview integrity mismatch');
+const models = new Set(['campus.glb', 'catalogue.json','mobile-campus.json',mobile.url.replace('/models/','')]);
 for (const building of catalogue.buildings) {
   for (const detail of [building.detailedExterior, building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)].filter(Boolean)) models.add(detail.url.replace('/models/', ''));
   if (building.interior) models.add(`${building.code.toLowerCase()}-interior.glb`);
