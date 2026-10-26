@@ -1,9 +1,10 @@
 /** Actual WebKit engine coverage; narrow desktop Chrome is not an iOS substitute. */
 import {webkit,devices} from 'playwright';
 import {createServer} from 'vite';
-import {writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
-const out='result/web/mobile266';await mkdir(out,{recursive:true});
+const catalogueIdentity=JSON.parse(await readFile('web/public/models/catalogue.json'));
+const out='result/web/release'+catalogueIdentity.version+'/webkit';await mkdir(out,{recursive:true});
 const server=await createServer({server:{host:'127.0.0.1',port:0},logLevel:'error',plugins:[{name:'ios-viewer-proof',configureServer(server){server.middlewares.use('/__ios-viewer',(_,response)=>{response.setHeader('Content-Type','text/html');response.end(`<!doctype html><link rel="icon" href="data:,"><style>body{margin:0}#stage{width:100vw;height:100vh}</style><div id="stage"></div><div id="labels"></div><script type="module">
 import {CampusViewer} from '/src/viewer.js';const c=await(await fetch('/models/catalogue.json')).json();const v=new CampusViewer(document.querySelector('#stage'),document.querySelector('#labels'),c.buildings,()=>{},()=>{window.contextLost=true;},()=>{},c.sourceModelSha256);window.viewer=v;window.catalogue=c;await v.load();await v.environmentReady;window.ready=true;
 </script>`);});}}]});
