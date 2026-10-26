@@ -39,3 +39,8 @@ with `npm run prepare:mobile`, then regenerate the gallery and build. Keep the
 original detailed exteriors and public interiors for on-demand selection. iOS
 acceptance uses WebKit with touch emulation and missing AbortSignal APIs in
 `web/tests/ios-webkit266.mjs`; a narrow Chrome viewport alone is insufficient.
+
+Mobile antialiasing is checked independently by `web/tests/mobile-antialias268.mjs`
+against matched-pose spatial references in WebKit. Record actual renderbuffer
+samples and allocation, colour calibration, landscape behaviour and the native
+fallback; a requested sample count is not proof of the GPU allocation.
