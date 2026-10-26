@@ -47,6 +47,8 @@ fallback; a requested sample count is not proof of the GPU allocation.
 
 Overview clarity is measured by `web/tests/overview-clarity271.mjs` at matched
 poses and common display dimensions, using the prior deployed pipeline and a
-higher-density spatial reference. `web/tests/mobile-render-budget271.mjs` checks
+higher-density spatial reference. Compare changes in pose-matched image residuals
+to check motion stability without counting real camera displacement as flicker.
+`web/tests/mobile-render-budget271.mjs` checks
 actual portrait, landscape and tablet attachments, HDR colour and native fallback.
 Keep browser-owned display allocations separate from the offscreen buffer budget.
