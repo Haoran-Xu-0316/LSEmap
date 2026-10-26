@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import {deviceBudget} from "./device-budget.js";
 import { GROUND_FINISHES } from "./ground-textures.js";
 import { applyFoliageDetail } from "./foliage-materials.js";
 import { OUTDOOR_ATMOSPHERE } from "./outdoor-environment.js";
@@ -195,6 +196,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
   };
   const uniforms = {
     surfaceScale: { value: detail.scale },
+    surfaceMobileFilter: { value: deviceBudget().mobile ? 1 : 0 },
     surfaceBump: { value: Math.min(0.006, Math.max(brick ? 0.0008 : 0, detail.bump || 0)) },
     surfaceColorA: { value: color(detail.colorA) },
     surfaceColorB: { value: color(detail.colorB) },
@@ -213,7 +215,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     // Measured channel mean keeps wear variation centred on the authored dry finish.
     uniforms.groundRoughnessMean = {value:groundAsset.roughnessMean ?? .5};
   }
-  material.customProgramCacheKey = () => `lse-surface-finish14-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
+  material.customProgramCacheKey = () => `lse-surface-finish15-${groundAsset ? "captured" : "procedural"}-${edgeCourse ? "edge-course" : pavingGrid ? "grid" : grass ? "grass" : asphalt ? "asphalt" : brick ? "brick" : timber ? "timber" : bark ? "bark" : paving ? "paving" : outdoor ? "outdoor" : "noise"}`;
   material.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = `varying vec3 vSurfacePosition;\nvarying vec2 vSurfaceUv;\n` + shader.vertexShader;
@@ -225,7 +227,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     shader.fragmentShader = `
       varying vec3 vSurfacePosition;
       varying vec2 vSurfaceUv;
-      uniform float surfaceScale, surfaceBump;
+      uniform float surfaceScale, surfaceBump, surfaceMobileFilter;
       uniform vec3 surfaceColorA, surfaceColorB, surfaceMortar, surfaceBrick;
       ${groundAsset ? 'uniform sampler2D groundFinish, groundRelief; uniform float groundReady, groundReliefReady, groundMetres, groundMean, groundHeight, groundRoughnessMean;' : ''}
       ${noiseGLSL}
@@ -234,7 +236,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
       vec2 brickPoint = vSurfaceUv * surfaceScale;
       // Measure the unshifted coordinates: staggered row offsets are discontinuous.
       vec2 footprint = fwidth(brickPoint);
-      float tileVisibility = 1.0 - smoothstep(0.45, 1.25,
+      float tileVisibility = 1.0 - smoothstep(mix(.45, .18, surfaceMobileFilter), mix(1.25, .65, surfaceMobileFilter),
         max(footprint.x / surfaceBrick.x, footprint.y / surfaceBrick.y));
       float row = floor(brickPoint.y / surfaceBrick.y);
       brickPoint.x += mod(row, 2.0) * surfaceBrick.x * 0.5;
@@ -255,7 +257,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
     ` : `
       vec3 surfacePoint = vec3(vSurfacePosition.x, -vSurfacePosition.z, vSurfacePosition.y) * surfaceScale;
       ${timber ? "surfacePoint *= vec3(0.12, 2.5, 1.0);" : bark ? "surfacePoint *= vec3(2.4, 2.4, 0.16);" : ""}
-      float noiseVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(surfacePoint)));
+      float noiseVisibility = 1.0 - smoothstep(mix(.35, .2, surfaceMobileFilter), mix(1.4, .75, surfaceMobileFilter), length(fwidth(surfacePoint)));
       // Filter coarse variation independently, keeping broad landscape tones
       // readable while aggregate and wood grain disappear into distant pixels.
       float coarseVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(surfacePoint * .16)));
@@ -330,7 +332,7 @@ export function applySurfaceDetail(material, groundTextures = null) {
       ${pattern}
       // Fade fine grain before it becomes a subpixel pattern at campus scale.
       vec3 finePoint = vSurfacePosition * 85.0;
-      float grainVisibility = 1.0 - smoothstep(0.35, 1.4, length(fwidth(finePoint)));
+      float grainVisibility = 1.0 - smoothstep(mix(.35, .2, surfaceMobileFilter), mix(1.4, .75, surfaceMobileFilter), length(fwidth(finePoint)));
       float fineGrain = grainVisibility > .001 ? (surfaceNoise(finePoint) - 0.5) * grainVisibility : 0.0;
       ${groundAsset ? `
       float capturedRoughness = .5;
