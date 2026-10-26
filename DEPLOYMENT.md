@@ -34,8 +34,11 @@ a compatibility fallback. A single version-checked file-backed browser cache
 avoids repeated campus downloads without accumulating model editions.
 
 Touch devices load the verified `models/mobile-campus.json` descriptor and its
-content-addressed overview. After exporting a new native campus, regenerate it
-with `npm run prepare:mobile`, then regenerate the gallery and build. Keep the
+content-addressed overview. Native export writes to a private staging directory. After fresh native
+verification, run `npm run publish:models`; it prepares the mobile overview and
+checks file identities and binary structure before promoting the complete set.
+An unsuccessful directory promotion restores the prior set. Regenerate the
+gallery and build after promotion. Keep the
 original detailed exteriors and public interiors for on-demand selection. iOS
 acceptance uses WebKit with touch emulation and missing AbortSignal APIs in
 `web/tests/ios-webkit266.mjs`; a narrow Chrome viewport alone is insufficient.
