@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "269",
-  "sourceModelSha256": "a44026d64bb57cea159a44b1fa96b7b9be13e7d4af034f57d09beb62480ef21b",
+  "version": "275",
+  "sourceModelSha256": "18a60235fd7c71c6c2864690c574f97b66a9d05577e0c584c626dee41829a4f9",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -485,12 +485,15 @@
         "scope": "Construction interpretation anchored to existing photographed openings; dimensions estimated. No new opening locations or interior changes. Shade assembly registration remains unresolved: inherited approximately0.933333m rhythm and3m office modules are not jointly calibrated. Available oblique built photographs and official2m glass plus1m solid-bay description do not establish the complete shade phase, handedness or circulation-void terminations; no speculative259rearrangement was made."
       },
       "latestReview": {
-        "version": 205,
-        "status": "registered-whole-building-envelope-and-circulation",
-        "scope": "Independently registered42m tower and stepped teachingwing;2-storey amenitypodium,8toweraxes,2mglass/1mleaf offices, highestroofterraces and connected28-riser switchback. Neutral dielectric glazing and red/orange inner teaching shades retained. World cameras follow the corrected footprint.",
-        "source": "https://rshp.com/projects/education/lse-centre-building/",
-        "audit": "result/blender/cbg-assembled205/audit.json",
-        "limitations": "2016designplan and undated built photographs support estimated geometry; podiumheight, facade subdivisions and unseen room partitions are not a current as-built survey. Four independent room studies retain their original local spaces."
+        "version": 275,
+        "scope": "Restore the upper two courtyard storeys to the photographed G4 shade boundary and replace two misplaced opaque leaves with single clear panes. Retain the red/orange finish and main framing.",
+        "audit": "result/blender/cbg274/audit.json",
+        "sourceUrls": [
+          "https://rshp.com/projects/education/lse-centre-building/"
+        ],
+        "limitations": [
+          "Photographic axes and dimensions remain estimates. Whole-facade fin spacing and unseen elevations are not fully verified."
+        ]
       },
       "interiorView": {
         "position": [
@@ -751,10 +754,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/cbg-exterior-aad8e4e1dab9.glb",
-        "bytes": 4703044,
-        "triangles": 412716,
-        "sha256": "aad8e4e1dab9245e0cb3b3f0092668b4835b864d938b26b9f9856b3341f74601",
+        "url": "/models/details/cbg-exterior-2336a8323e95.glb",
+        "bytes": 4687480,
+        "triangles": 411348,
+        "sha256": "2336a8323e95c474d660fb1b8f6fb7caceac0964c9e05c69848995ed6f7f5366",
         "bounds": {
           "min": [
             3.49135684967041,
@@ -5138,13 +5141,18 @@
         "scope": "Nick Kane completed-building photos guide academic-wing windows and pale concrete. Previous GIS footprint, floor heights and window centres retained; aperture proportions and grid profiles estimated. Hidden elevations, rear massing, current roof works and complete interiors remain under review. Nick Kane built photographs 02 and 03 guide north podium joinery. Original aperture and pane vertices retained; only twenty generic frame rails replaced with fifteen measured replacement rails. Obsolete rear-wing sill and trim overlaps and the overhanging mezzanine slab edge cut out of the three retained north podium apertures; retained floor height and stair aperture preserved. Glass finish estimated; photo capture date unknown, whole roof and full interior structure remain unresolved. ConcreteCentre Techrete project interview (2022) specifies 38 north upper fins, 11.5m height, 0.3m street width, 0.5m depth and 2.4m return. Span, absolute level and return thickness estimated. Central north opening, lower screen and full interiors remain unresolved. North fissure and roof setback follow completed-building photographs and architect-described three-wing topology. Local depths, new opening proportions, optical finish and roof datum are estimates; full massing and complete interior remain under review. Native original walls, slabs and materials retained as archived sources."
       },
       "latestReview": {
-        "version": 188,
-        "scope": "Realign north middle and upper recessed opening against the built frontal photograph. Rebuild coordinated walls and glass, recover four floor levels and terrace paving, and close the diagonal roof wedge. Retain original geometry and finishes as archived sources. Photographic registration, recess depth and higher-wing massing remain estimates.",
-        "audit": "result/blender/stage188/north-verification.json",
+        "version": 275,
+        "scope": "Coordinate four source-identified main-core lift shafts across Second and Third, including the previously filled fourth shaft; add the associated walls and source door openings.",
+        "audit": "result/blender/mar273/audit.json",
+        "sourceFile": "data/collections/mar-built-registration-2026/grafton-marshall-built-plans-2022.pdf",
         "sourceUrls": [
-          "https://nickkane.co.uk/portfolio_page/marshall-building-lse-london-grafton-architects/"
+          "https://www.accessable.co.uk/london-school-of-economics/access-guides/marshall-building"
         ],
-        "photographDate": "Unknown"
+        "limitations": [
+          "The fourth shaft is not individually named as the goods lift.",
+          "Boundary offsets are compatible with drawing registration uncertainty;their cause is not proved.",
+          "The21.9mplate remains uncut;vertical datums and door-head heights are estimates. Full-height shafts and unpictured rooms remain incomplete."
+        ]
       },
       "interiorView": {
         "position": [
@@ -5408,8 +5416,9 @@
         "limitations": "Floor datum is inherited and estimated. No shaft walls, lift cars, unobserved stairs or entire third-floor interior are asserted."
       },
       "interiorAdditionalObjects": [
-        "MAR251_third_south_lift_core_walls",
-        "MAR258_third_south_deck_solid"
+        "MAR273_third_south_deck_solid_coordinated",
+        "MAR273_third_south_lift_core_walls_coordinated",
+        "MAR273_third_transverse_lift_core_extension"
       ],
       "thirdFloorWallsReview251": {
         "version": 251,
@@ -5580,10 +5589,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-9b13cf3f07d3.glb",
-        "bytes": 3047868,
-        "triangles": 278111,
-        "sha256": "9b13cf3f07d376f0025faf618a943ed7aa5598814a1264bb8bf2e9ca414a1176",
+        "url": "/models/details/mar-exterior-bc6f5ddcacc0.glb",
+        "bytes": 3072444,
+        "triangles": 280129,
+        "sha256": "bc6f5ddcacc076be7c92e8f304286069f4f623121bf54683ab51edc6b2cfd6bd",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -5598,10 +5607,10 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-0ee6659b31aa.glb",
-        "bytes": 551552,
-        "triangles": 55085,
-        "sha256": "0ee6659b31aa8fb71f1606c3a2070a9c95b63438685f408107ed77fd3084e34e",
+        "url": "/models/details/mar-interior-f5a3b2e31c94.glb",
+        "bytes": 576128,
+        "triangles": 57103,
+        "sha256": "f5a3b2e31c940fbe3dad23d4c8be3d1f1cda645c3989643d71ddec13ecf53a94",
         "bounds": {
           "min": [
             -44.53135299682617,
@@ -5805,17 +5814,11 @@
         "scope": "Supplied frontal photograph confirms ordinary four-column windows and heavier upper central transoms. Eight ordinary windows corrected on retained estimated openings; lower five-row divisions retained where the photograph is obscured. All original meshes preserved, other blue frame parts unchanged. Roof massing, unseen elevations and full interiors still require review. Five main frontage relief panels interpreted from the supplied frontal photograph and Jeremy Haslam architectural sculpture study photos C-H, publication 2010-01, image capture dates unknown. Photo C establishes frontage order G,E,F,D,H. Contours and shallow depth are authored estimates, not scans; sixth side panel remains unillustrated and unresolved. Original architecture and finishes preserved; no source photo textures exported. User entrance photograph received 1 October 2026 guides reduced stone projections and door finish; capture date unknown. Stone depth and glazing optical values estimated, not surveyed or calibrated. Closed stone backing fills the formerly concealed support gaps; entry plaques and lettering moved with their support. Original objects and all other buildings preserved; no photo textures or speculative interior layout exported. Final Sale mesh anatomy remains coarse and unresolved. User entrance photograph received 2 October 2026 guides a photographic strand-density estimate. Two owned mesh copies widen existing figure ribbons and product strands without adding faces; poses, materials, open mesh and all original objects retained. This is not an artwork scan or measured weave specification. Figure silhouettes guided by artist front photograph and supplied entrance photograph; strand cross sections approximated by double-sided ribbons. Anatomy, cloth, lattice spacing and unseen artwork depth remain estimates. Project logo SVG contours used for three closed extruded letters on retained supports, with original emblem padding. Plaque dimensions and locations remain photo estimates; facade geometry and interiors unchanged. October 2026 user-supplied entrance photograph guides finish only; capture date unknown. Existing vertices, joints and openings retained. Analytic curve normals remove faceted shading without extra triangles; exact stone weathering, artwork, roof and full interiors remain unresolved. July 2024 HawkinsBrown proposed south elevation 080251 P2 guides frontage order and labelled AOD levels. GIS horizontal registration, window edges, roof depths and mouldings estimated; proposal is not an as-built or 2026 condition survey. Original entry and lattice meshes relocated in owned copies. Other elevations and full interior levels remain under review. July 2024 roof plan 080160 P3 and AA/BB/DD sections guide roof topology, labelled level datums, skylight type and plant enclosure layout. Roof outlines, registration, unlabelled springs, plant dimensions and optics estimated. This is a planning-based interpretation, not an as-built plant survey. Historic side elevations and full interiors remain under review. Four external and four foyer steps meet at a lowered threshold with coordinated glass, frame, true opening and handrails. Native street0.05m, threshold0.69m and GF1.245m anchor the model; dimensions are estimates. Continuous side approach and platform lift remain unresolved. Eight near Houghton boxes follow the undated supplied street photograph, using retained native window axes and sills. Box dimensions, sparse planting silhouettes and seasonal condition are estimates. Added in three shared meshes with existing finishes; entrance, glazing, attic, courtyard and all original architecture remain unchanged. Four closed metal notice cabinets retain recessed inserts, thin clear covers and actual wall fixings. One photographed white camera housing follows the retained quoin plane. Only legible Welcome to LSE text is transcribed; other insert fields are non-semantic colour estimates. Source photograph date, exact stations and fine sections are unverified estimates. Original walls, windows and rooms remain unchanged."
       },
       "latestReview": {
-        "version": 239,
-        "scope": "Rebuild the five segmented Clare Market relief studies as continuous shallow bodies with curved limbs and joined necks, retaining the registered G,E,F,D,H ordering, stone finish, backing panels and all other architecture.",
-        "evidence": [
-          "https://www.lse.ac.uk/Events/arts-and-music/art-on-campus/art-on-campus",
-          "https://jeremyhaslam.wordpress.com/wp-content/uploads/2010/01/architectural-sculpture-part-2-8-pdf.pdf"
-        ],
-        "audit": "result/blender/old-clare239/audit.json",
+        "version": 275,
+        "scope": "Correct four ordinary lower Clare Market windows to six columns and eight rows, retaining the blue finish, glazing, upper windows and opening extents.",
+        "audit": "result/blender/old270/audit.json",
         "limitations": [
-          "Five front poses are authored photographic interpretations, not scans or measured carving depths.",
-          "The undated study was published in2010. No assertion of2026 sculptural condition.",
-          "The unseen sixth side panel and whole-building current interiors remain unverified."
+          "Source photographs are undated; opening dimensions are estimates. Whole-building exteriors and interiors remain incomplete."
         ]
       },
       "interiorView": {
@@ -6157,10 +6160,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-8330f9f72efb.glb",
-        "bytes": 11679476,
-        "triangles": 967580,
-        "sha256": "8330f9f72efba335f678250b2184eeb80fc35ae69fc6287d2f0d6e868ef32c80",
+        "url": "/models/details/old-exterior-21cef03f0849.glb",
+        "bytes": 11682604,
+        "triangles": 967820,
+        "sha256": "21cef03f084959779b3d665427c14389ac4084db8207fcb415277fccf715fcb7",
         "bounds": {
           "min": [
             -39.1646614074707,
