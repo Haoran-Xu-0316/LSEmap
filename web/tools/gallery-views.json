@@ -2665,5 +2665,43 @@
       "fov": 45
     },
     "label": "Cowdray短街面红砖与转角石饰"
+  },
+  {
+    "code": "CAMPUS",
+    "name": "lincoln-western-hedge",
+    "label": "林肯公园西侧园路",
+    "view": {
+      "position": [
+        -115.0187735198073,
+        29,
+        -169.21723807376694
+      ],
+      "target": [
+        -85.0187735198073,
+        0.1,
+        -204.21723807376694
+      ],
+      "fov": 50
+    }
+  },
+  {
+    "code": "MAR",
+    "name": "mar-second-lift-openings-interior",
+    "label": "二层电梯井开口",
+    "sectionId": "2",
+    "view": {
+      "position": [
+        19.5,
+        27.65,
+        -40.5
+      ],
+      "target": [
+        10.5,
+        12.65,
+        -53.5
+      ],
+      "fov": 43,
+      "referenceAspect": 1.25
+    }
   }
 ]
