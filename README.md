@@ -39,6 +39,19 @@ the visible centre surface. Exterior navigation stays above street level while r
 facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
 
+Touch devices use a derived mobile overview and load the original full exterior
+when a building is selected. The current overview is15.4MB on disk with69.2MB of
+decoded geometry, compared with313.1MB for the desktop campus. Public ground and
+landscape primitives retain their visible surfaces; the encoder removes
+zero-area faces. At most two full exterior models and two public interiors are
+retained on mobile. A single decoder,1024px shadows and direct antialiased rendering
+keep the same resource budget after rotation. Cancellation also supports WebKit
+versions without the newer AbortSignal helpers. These are device-budget changes;
+physical iPhone memory limits still require device acceptance.
+
+After a native campus export, run `npm run prepare:mobile` before regenerating the
+gallery. The build rejects a mobile model whose source hash or memory budget is stale.
+
 Edition263 keeps the immediate street setting visible when surrounding buildings
 are hidden: original nearby paving, complete trees and public furniture are
 cropped from the existing campus assets. Preparation yields between short work
