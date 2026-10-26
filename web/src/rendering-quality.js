@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { deviceBudget } from "./device-budget.js";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { SSAARenderPass } from "three/addons/postprocessing/SSAARenderPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
@@ -11,7 +12,7 @@ import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
 // Four samples refine the final still without drawing the whole campus four times per drag frame.
 export function stablePixelRatio(width, height) {
   const area = Math.max(1, width * height);
-  return Math.max(1, Math.min(1.5, Math.sqrt(3_000_000 / area)));
+  return Math.max(1, Math.min(deviceBudget().pixelRatio, Math.sqrt(3_000_000 / area)));
 }
 
 // The sampling pass clears before WebGLBackground updates its color space.
@@ -57,6 +58,13 @@ class ColorManagedRenderPass extends SSAARenderPass {
 }
 
 export function createRenderPipeline(renderer, scene, camera, allowTemporal = () => true) {
+  if (deviceBudget().mobile) {
+    // Render straight to the antialiased display framebuffer. Tone mapping stays
+    // on the scene materials; no half-float composer/history allocations on iOS.
+    const scenePass={sampleLevel:0};
+    return {scenePass,temporalPass:{enabled:false,history:null},get needsSettle(){return false;},
+      resetHistory(){},resize(){},render(){renderer.render(scene,camera);},dispose(){}};
+  }
   const composer = new EffectComposer(renderer);
   const desktopRasterSamples = Math.min(2, renderer.capabilities.maxSamples);
   const scenePass = new ColorManagedRenderPass(scene, camera, desktopRasterSamples);
