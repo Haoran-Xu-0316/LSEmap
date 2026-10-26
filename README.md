@@ -45,14 +45,15 @@ decoded geometry, compared with313.2MB for the desktop campus. Public ground and
 landscape primitives retain their visible surfaces; the encoder removes
 zero-area faces. At most two full exterior models and two public interiors are
 retained on mobile. A single decoder and1024px shadows keep the resource budget
-stable after rotation. Mobile rendering combines format-supported two-sample
-raster coverage with a lightweight FXAA pass, using two bounded colour targets
-and no temporal history. Subpixel brick joints and procedural grain converge to
-an averaged finish instead of flickering between individual details. Devices
+stable after rotation. Mobile rendering uses up to1.75pixel density and a
+lighter FXAA subpixel blend. A single scene raster and two colour targets keep
+offscreen attachments within24MiB, with no temporal history. Desktop views retain
+their existing coverage and still-image sampling while using the same lighter
+edge filter. Subpixel brick joints and procedural grain remain pixel-filtered. Devices
 without floating-point render support retain the native antialiased fallback.
 Cancellation also supports WebKit versions without the newer AbortSignal helpers.
-The user confirmed that the published loading fix opens3D in iOS Edge; the newer
-antialiasing still requires physical-device visual acceptance.
+The user confirmed iOS Edge3D opening and reduced shimmer in the earlier
+antialiasing release. The newer clarity tuning still requires device feedback.
 
 After a native campus export, run `npm run prepare:mobile` before regenerating the
 gallery. The build rejects a mobile model whose source hash or memory budget is stale.
