@@ -56,8 +56,12 @@ Cancellation also supports WebKit versions without the newer AbortSignal helpers
 The user confirmed iOS Edge3D opening and reduced shimmer in the earlier
 antialiasing release. The newer clarity tuning still requires device feedback.
 
-After a native campus export, run `npm run prepare:mobile` before regenerating the
-gallery. The build rejects a mobile model whose source hash or memory budget is stale.
+Native exports first write a private model staging directory. After independent
+native acceptance, run `npm run publish:models` to prepare the matching mobile
+asset, verify the complete set and replace the active model directory with
+rollback protection. Regenerate the gallery and build after promotion.
+`npm run prepare:mobile` remains available when the active full campus is already
+current. The build rejects a stale source hash or an exceeded mobile budget.
 
 Edition269 restores the mapped western Lincoln Inn Fields hedge as one small
 continuous component using existing foliage materials. It also opens three
