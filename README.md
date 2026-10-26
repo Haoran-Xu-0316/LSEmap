@@ -8,16 +8,16 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition263 contains31 building records,30 detailed exteriors,25 interior views
+Edition269 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The combined editable model is
-kept locally at `result/blender/LSE_campus_detailed_v263.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v269.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage263` acceptance records are retained with the native: integration
+The local `stage269` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
 The overview and selected-building views share authored exterior objects,
-finishes and public structural elements. All206 gallery images use the
+finishes and public structural elements. All208 gallery images use the
 production viewer, explicitly capture its settled four-sample output and are
 checked against model and renderer signatures.
 
@@ -40,8 +40,8 @@ facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
 
 Touch devices use a derived mobile overview and load the original full exterior
-when a building is selected. The current overview is15.4MB on disk with69.2MB of
-decoded geometry, compared with313.1MB for the desktop campus. Public ground and
+when a building is selected. The current overview is15.4MB on disk with69.3MB of
+decoded geometry, compared with313.2MB for the desktop campus. Public ground and
 landscape primitives retain their visible surfaces; the encoder removes
 zero-area faces. At most two full exterior models and two public interiors are
 retained on mobile. A single decoder and1024px shadows keep the resource budget
@@ -56,6 +56,13 @@ antialiasing still requires physical-device visual acceptance.
 
 After a native campus export, run `npm run prepare:mobile` before regenerating the
 gallery. The build rejects a mobile model whose source hash or memory budget is stale.
+
+Edition269 restores the mapped western Lincoln Inn Fields hedge as one small
+continuous component using existing foliage materials. It also opens three
+Second-floor lift bores through the retained Marshall structural slab, finish and
+soffit. Original floor edges, previous voids and all35 detached room studies are
+preserved. The upper lift-core boundaries still need coordination; these new
+floor openings do not establish complete shafts or current full-building interiors.
 
 Edition263 keeps the immediate street setting visible when surrounding buildings
 are hidden: original nearby paving, complete trees and public furniture are
