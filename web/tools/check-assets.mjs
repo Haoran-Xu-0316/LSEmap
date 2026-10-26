@@ -120,7 +120,15 @@ for (const asset of detailAssets) {
   assert.equal(createHash("sha256").update(buffer).digest("hex"), asset.sha256);
   assert(asset.triangles > 0);
 }
+const mobile = JSON.parse(await readFile(join(output,'models/mobile-campus.json'),'utf8'));
+assert.equal(mobile.sourceModelSha256,catalogue.sourceModelSha256);
+assert.equal(mobile.sourceCampusSha256,transport.sha256);
+assert(mobile.decodedBytes<=96*1024*1024);
+const mobileBytes=await readFile(join(output,mobile.url));
+assert.equal(mobileBytes.length,mobile.bytes);
+assert.equal(createHash('sha256').update(mobileBytes).digest('hex'),mobile.sha256);
 for (const filename of [
+  mobile.url.replace('/models/',''),
   ...detailAssets.map((asset) => asset.url.replace("/models/", "")),
   "campus.glb",
   ...catalogue.buildings
@@ -150,7 +158,7 @@ for (const filename of [
       }
     }
   }
-  if (filename === "campus.glb") {
+  if (filename === "campus.glb" || filename === mobile.url.replace("/models/", "")) {
     const codes = new Set(
       document.nodes.map((node) => node.extras?.buildingCode),
     );
