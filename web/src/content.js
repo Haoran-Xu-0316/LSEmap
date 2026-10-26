@@ -152,7 +152,7 @@ export const buildingDetails = {
   MAR: {
     description: "Marshall Building北立面的遮阳构件形成有进深的折面，中央入口由斜向混凝土、后退玻璃和露台栏杆围合。上部遮阳片前缘收窄，北侧退台补充浅色铺装、金属栏杆与局部种植。可近看入口，再进入Grand Hall查看树状柱与弧形楼梯。",
     note: "立面构件、退台高度、铺装与种植位置依据实拍比例估计；色彩为中性光照下的视觉近似，内部涵盖公共大厅、局部楼层结构和教室样本。",
-    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"], ["mar-third-lift-openings-interior", "三层井口与混凝土核心"],
+    images: [["mar-exterior", "Marshall Building北立面"], ["mar-first-transfer-interior", "一层至二层结构支承"], ["mar-second-void-interior", "二层菱形挑空"], ["mar-second-lift-openings-interior", "二层电梯井开口"], ["mar-third-lift-openings-interior", "三层井口与混凝土核心"],
       ["mar-rear-wall", "西侧石墙、板缝与相邻窗列"],
       ["mar-academic-wings", "办公翼窗格"],
       ["mar-lse-sign", "LSE立体标志"],
@@ -169,6 +169,7 @@ export const buildingDetails = {
       ["mar-108-front-interior", "MAR.1.08完整阶梯座席与木条天花"],
       ["LIF-tree-contour", "Lincoln’s Inn Fields树冠"],
       ["LIF-park-public", "Lincoln’s Inn Fields公共建筑"],
+      ["lincoln-western-hedge", "林肯公园西侧园路与绿篱"],
       ["LIF-bandstand", "公园八角亭"],
       ["LIF-courts", "公园球场与透空围网"],
       ["LIF-court-entry", "球场开放入口"]
