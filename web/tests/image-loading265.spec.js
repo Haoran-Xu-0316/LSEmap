@@ -1,6 +1,8 @@
 import {test,expect} from '@playwright/test';
-import {mkdir,writeFile} from 'node:fs/promises';
-const folder='result/web/image-loading265';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+const catalogue=JSON.parse(await readFile('dist/models/catalogue.json'));
+const releaseIdentity=JSON.parse(await readFile('dist/release.json'));
+const folder='result/web/release'+catalogue.version+'/image-loading';
 
 const campusImage=request=>new URL(request.url()).pathname==='/images/campus.webp';
 async function record(name,data){await mkdir(folder,{recursive:true});await writeFile(`${folder}/${name}.json`,JSON.stringify(data,null,2)+'\n');}
@@ -25,7 +27,8 @@ test('model failure loads one current fallback image and the building gallery re
  await page.route('**/models/campus-parts.json*',route=>route.fulfill({status:503,body:'Unavailable'}));
  await page.goto('/#OLD');await expect(page.locator('#fallback')).toBeVisible();
  await expect.poll(()=>page.locator('#fallback img').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
- expect(images).toHaveLength(1);expect(images[0]).toMatch(/campus\.webp\?v=263-[a-f0-9]{12}$/);
+ expect(images).toHaveLength(1);
+ expect(new URL(images[0]).searchParams.get('v')).toBe(catalogue.version+'-'+releaseIdentity.assets['/images/campus.webp'].sha256.slice(0,12));
  await page.locator('.detail-photo').click();await expect(page.locator('#gallery-dialog')).toBeVisible();
  await expect.poll(()=>page.locator('#gallery-image').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
  expect(await page.locator('#gallery-image').getAttribute('src')).toMatch(/old-exterior\.webp\?v=/);
