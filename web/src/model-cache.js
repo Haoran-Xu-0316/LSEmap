@@ -1,3 +1,4 @@
+import {throwIfAborted} from "./abort-utils.js";
 /** Cancel obsolete transfers, share current requests and retain a bounded cache. */
 export class ModelCache {
   constructor(load, prepare, dispose, limit = 3) {
@@ -51,7 +52,7 @@ export class ModelCache {
     let model;
     try {
       model = await this.load(request.url, request.controller.signal);
-      request.controller.signal.throwIfAborted();
+      throwIfAborted(request.controller.signal);
       if (this.closed) throw new Error('Model cache disposed');
       this.prepare(model);
       this.models.set(key, model);
