@@ -1,3 +1,4 @@
+import {throwIfAborted} from "./abort-utils.js";
 import * as THREE from 'three';
 
 // One set of uniform slots per viewer serves overview and selected buildings.
@@ -24,7 +25,7 @@ async function loadTexturePair(viewer, relief) {
       const response = await fetch(relief ? asset.reliefUrl : asset.url, {signal:viewer.loadController.signal});
       if (!response.ok) throw new Error('Ground finish unavailable');
       bitmap = await createImageBitmap(await response.blob(), relief ? {colorSpaceConversion:'none'} : {});
-      viewer.loadController.signal.throwIfAborted();
+      throwIfAborted(viewer.loadController.signal);
       if (viewer.disposed) throw new Error('Viewer disposed');
       texture = new THREE.Texture(bitmap);
       texture.colorSpace = relief ? THREE.NoColorSpace : THREE.SRGBColorSpace;
