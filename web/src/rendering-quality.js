@@ -57,14 +57,76 @@ class ColorManagedRenderPass extends SSAARenderPass {
   }
 }
 
+// A bounded mobile path keeps one HDR scene buffer and one display-colour
+// buffer. It has no temporal history or progressive accumulation targets.
+function createMobilePipeline(renderer, scene, camera) {
+  const scenePass = {sampleLevel: 0};
+  const temporalPass = {enabled: false, history: null};
+  const floatingPoint = renderer.extensions.has("EXT_color_buffer_float") ||
+    renderer.extensions.has("EXT_color_buffer_half_float");
+  if (!floatingPoint) return {
+    scenePass, temporalPass, antialiasMode: "native", bufferBytes: 0,
+    get needsSettle() { return false; }, resetHistory() {}, resize() {},
+    render() { renderer.render(scene, camera); }, dispose() {},
+  };
+  // Use a format-supported count, avoiding drivers that round a request of two
+  // up to four samples and silently exceed the mobile attachment budget.
+  const gl = renderer.getContext();
+  const colourSamples = gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA16F, gl.SAMPLES);
+  const depthSamples = gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_COMPONENT24, gl.SAMPLES);
+  const rasterSamples = colourSamples.includes(2) && depthSamples.includes(2) &&
+    renderer.capabilities.maxSamples >= 2 ? 2 : 0;
+  scenePass.rasterSamples = rasterSamples;
+  const sceneTarget = new THREE.WebGLRenderTarget(1, 1, {
+    type: THREE.HalfFloatType, depthBuffer: true, samples: rasterSamples,
+  });
+  const displayTarget = new THREE.WebGLRenderTarget(1, 1, {
+    type: THREE.UnsignedByteType, depthBuffer: false,
+  });
+  const outputPass = new OutputPass();
+  const antialiasPass = new ShaderPass(FXAAShader);
+  antialiasPass.renderToScreen = true;
+  const size = new THREE.Vector2();
+  return {
+    scenePass, temporalPass, antialiasPass, antialiasMode: "mobile-fxaa",
+    get bufferBytes() { return sceneTarget.width * sceneTarget.height * (12 * (1 + rasterSamples) + 4); },
+    get needsSettle() { return false; }, resetHistory() {},
+    resize() {
+      renderer.getDrawingBufferSize(size);
+      // Bound attachment memory on tablets as well as phones. Keep the canvas
+      // stable while fitting only the offscreen buffers to this fixed budget.
+      const bytesPerPixel = 12 * (1 + rasterSamples) + 4;
+      const scale = Math.min(1, Math.sqrt(24 * 1024 * 1024 / (size.x * size.y * bytesPerPixel)));
+      const width = Math.max(1, Math.floor(size.x * scale));
+      const height = Math.max(1, Math.floor(size.y * scale));
+      sceneTarget.setSize(width, height);
+      displayTarget.setSize(width, height);
+      antialiasPass.uniforms.resolution.value.set(1 / width, 1 / height);
+    },
+    render() {
+      const previousTarget = renderer.getRenderTarget();
+      const autoClear = renderer.autoClear;
+      try {
+        renderer.autoClear = true;
+        renderer.setRenderTarget(sceneTarget);
+        renderer.render(scene, camera);
+        outputPass.render(renderer, displayTarget, sceneTarget);
+        antialiasPass.renderToScreen = previousTarget === null;
+        antialiasPass.render(renderer, previousTarget, displayTarget);
+      } finally {
+        renderer.autoClear = autoClear;
+        renderer.setRenderTarget(previousTarget);
+      }
+    },
+    dispose() {
+      sceneTarget.dispose(); displayTarget.dispose();
+      outputPass.dispose(); antialiasPass.dispose();
+    },
+  };
+}
+
 export function createRenderPipeline(renderer, scene, camera, allowTemporal = () => true) {
-  if (deviceBudget().mobile) {
-    // Render straight to the antialiased display framebuffer. Tone mapping stays
-    // on the scene materials; no half-float composer/history allocations on iOS.
-    const scenePass={sampleLevel:0};
-    return {scenePass,temporalPass:{enabled:false,history:null},get needsSettle(){return false;},
-      resetHistory(){},resize(){},render(){renderer.render(scene,camera);},dispose(){}};
-  }
+  if (deviceBudget().mobile) return createMobilePipeline(renderer, scene, camera);
   const composer = new EffectComposer(renderer);
   const desktopRasterSamples = Math.min(2, renderer.capabilities.maxSamples);
   const scenePass = new ColorManagedRenderPass(scene, camera, desktopRasterSamples);
