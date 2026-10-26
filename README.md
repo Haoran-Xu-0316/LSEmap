@@ -46,8 +46,9 @@ landscape primitives retain their visible surfaces; the encoder removes
 zero-area faces. At most two full exterior models and two public interiors are
 retained on mobile. A single decoder and1024px shadows keep the resource budget
 stable after rotation. Mobile rendering uses up to1.75pixel density and a
-lighter FXAA subpixel blend. A single scene raster and two colour targets keep
-offscreen attachments within24MiB, with no temporal history. Desktop views retain
+lighter FXAA subpixel blend, retaining format-supported two-sample edge coverage.
+A single scene submission and two colour targets keep offscreen attachments
+within24MiB, with no temporal history. Desktop views retain
 their existing coverage and still-image sampling while using the same lighter
 edge filter. Subpixel brick joints and procedural grain remain pixel-filtered. Devices
 without floating-point render support retain the native antialiased fallback.
