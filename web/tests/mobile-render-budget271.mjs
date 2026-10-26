@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import {webkit, devices} from 'playwright';
 import {createServer} from 'vite';
 
-const OUTPUT = 'result/web/clarity271/budget';
+const OUTPUT = 'result/web/clarity272/budget';
 const TRACKED_SOURCES = ['web/src/rendering-quality.js', 'web/src/surface-materials.js', 'web/src/viewer.js'];
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const sourceHashes = Object.fromEntries(await Promise.all(TRACKED_SOURCES.map(async path => [path, sha256(await readFile(path))])));
@@ -211,7 +211,11 @@ try {
   for(const r of[report.portrait,report.landscape,report.tablet]){
     assert.equal(r.antialiasMode,'mobile-fxaa');assert.equal(r.sceneSubmissions,1);assert.equal(r.targetCount,2);
     assert.equal(r.hasHistory,false);assert.equal(r.hasComposer,false);assert.equal(r.contextLost,false);
-    assert(r.actualBufferBytes<=24*1024*1024);assert(r.targets.every(t=>t.requestedSamples===0));
+    assert(r.actualBufferBytes<=24*1024*1024);
+    const samples=r.rgba16fSupportedSamples.includes(2)&&r.depth24SupportedSamples.includes(2)?2:0;
+    assert.equal(r.targets[0].requestedSamples,samples);assert.equal(r.targets[1].requestedSamples,0);
+    for(const buffer of r.targets[0].renderbuffers)assert([0,samples].includes(buffer.samples));
+    if(samples)assert(r.targets[0].renderbuffers.some(buffer=>buffer.samples===samples));
   }
   assert(report.portrait.size[0]>487&&report.portrait.size[1]>830);
   assert(report.colour.every(r=>r.maxChannelError<=2));assert.equal(report.fallback.maxChannelError,0);
