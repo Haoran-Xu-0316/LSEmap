@@ -1,3 +1,4 @@
+import {throwIfAborted} from "./abort-utils.js";
 import {campusByteCache, persistCampusBytes} from "./model-byte-cache.js";
 
 /** A progressing download has no fixed deadline. Decoding has its own budget. */
@@ -26,7 +27,9 @@ export function loadModelInStages(download, decode, {
       cancelDownload();
       reject(error);
     };
-    const abort = () => fail(signal.reason || new DOMException("Model load cancelled", "AbortError"));
+    const abort = () => {
+      try { throwIfAborted(signal); } catch (error) { fail(error); }
+    };
     const arm = (milliseconds, message) => {
       clearTimeout(timer);
       timer = setTimeout(() => fail(new Error(message)), milliseconds);
@@ -67,7 +70,7 @@ export async function downloadVerifiedModel(url, {
 } = {}) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      signal?.throwIfAborted();
+      throwIfAborted(signal);
       const response = await fetchModel(url, {signal, cache: attempt ? 'reload' : 'default', priority});
       if (!response.ok) throw new Error(`Model request failed: HTTP${response.status}`);
       const chunks = [];
@@ -91,7 +94,7 @@ export async function downloadVerifiedModel(url, {
         chunks.push(bytes); loaded = bytes.byteLength;
         onProgress?.({loaded, total, lengthComputable: total > 0});
       }
-      signal?.throwIfAborted();
+      throwIfAborted(signal);
       const bytes = new Uint8Array(loaded);
       let offset = 0;
       for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
@@ -113,7 +116,7 @@ export async function downloadVerifiedModel(url, {
       }
       return bytes.buffer;
     } catch (error) {
-      signal?.throwIfAborted();
+      throwIfAborted(signal);
       if (attempt || !['TypeError', 'ModelIntegrityError'].includes(error.name)) throw error;
     }
   }
@@ -125,7 +128,7 @@ export async function downloadCampusModel(url, options = {}) {
     supportsCompression = typeof DecompressionStream === 'function',
     byteCache = campusByteCache} = options;
   const query = url.includes('?') ? url.slice(url.indexOf('?')) : '';
-  signal?.throwIfAborted();
+  throwIfAborted(signal);
   const response = await fetchModel('/models/campus-parts.json' + query, {signal, cache:'no-cache', priority});
   // Development serves the original GLB without the release-only segment index.
   if (response.status === 404 || response.headers.get('Content-Type')?.includes('text/html'))
@@ -159,16 +162,18 @@ export async function downloadCampusModel(url, options = {}) {
   // The fresh index selects the cache by content hash, never by a mutable URL.
   let cached;
   try { cached = await byteCache?.read(manifest.sha256); } catch { /* Network fallback. */ }
-  signal?.throwIfAborted();
+  throwIfAborted(signal);
   if (validHeader(cached) && await digest(cached) === manifest.sha256) {
-    signal?.throwIfAborted();
+    throwIfAborted(signal);
     onProgress?.({loaded:manifest.bytes, total:manifest.bytes, lengthComputable:true});
     return cached;
   }
   const bytes = new Uint8Array(manifest.bytes);
   const controller = new AbortController();
-  const abort = () => controller.abort(signal.reason);
-  signal?.throwIfAborted();
+  const abort = () => {
+    try { throwIfAborted(signal); } catch (error) { controller.abort(error); }
+  };
+  throwIfAborted(signal);
   signal?.addEventListener('abort',abort,{once:true});
   const received = manifest.parts.map(() => 0);
   let offset = 0;
@@ -177,7 +182,7 @@ export async function downloadCampusModel(url, options = {}) {
   });
 
   async function readSegment(part, index, begin, compressed) {
-    controller.signal.throwIfAborted();
+    throwIfAborted(controller.signal);
     const result = await fetchModel(compressed ? part.compressed.path : part.path,
       {signal:controller.signal, priority});
     if (!result.ok) throw new Error(`Campus segment request failed: HTTP${result.status}`);
@@ -194,7 +199,7 @@ export async function downloadCampusModel(url, options = {}) {
       for (;;) {
         const {done,value} = await reader.read();
         if (done) break;
-        controller.signal.throwIfAborted();
+        throwIfAborted(controller.signal);
         if (received[index]+value.byteLength > part.bytes)
           throw new Error('Campus segment length mismatch');
         bytes.set(value,begin+received[index]);
@@ -221,13 +226,13 @@ export async function downloadCampusModel(url, options = {}) {
         catch (error) {
           // A failed compressed transport can retry the identical raw segment.
           // Cancellation still stops the complete load, including sibling streams.
-          controller.signal.throwIfAborted();
+          throwIfAborted(controller.signal);
           received[index] = 0;
           await readSegment(part,index,begin,false);
         }
       })();
     }));
-    signal?.throwIfAborted();
+    throwIfAborted(signal);
     const header = new DataView(bytes.buffer);
     if (header.getUint32(0,true) !== 0x46546c67 || header.getUint32(4,true) !== 2 ||
         header.getUint32(8,true) !== bytes.length || await digest(bytes) !== manifest.sha256)
