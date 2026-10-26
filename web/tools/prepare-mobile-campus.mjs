@@ -6,9 +6,10 @@ import draco3d from 'draco3dgltf';
 import {MeshoptSimplifier} from 'meshoptimizer';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-const source='web/public/models/campus.glb',out='result/web/mobile266';
+const source='web/public/models/campus.glb';
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const sourceBytes=await readFile(source),catalogue=JSON.parse(await readFile('web/public/models/catalogue.json'));
+const out='result/web/release'+catalogue.version+'/mobile';
 const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'draco3d.decoder':await draco3d.createDecoderModule(),'draco3d.encoder':await draco3d.createEncoderModule()});
 await MeshoptSimplifier.ready;
 // Permit removal of subpixel seams and disconnected ornaments in the distant
@@ -52,7 +53,6 @@ for(const mesh of reopened.getRoot().listMeshes())for(const primitive of mesh.li
 const decodedBytes=Object.values(after).reduce((sum,row)=>sum+row.decodedBytes,0);
 const report={sourceCampusSha256:hash(sourceBytes),sourceModelSha256:catalogue.sourceModelSha256,sourceBytes:sourceBytes.length,bytes:bytes.length,decodedBytes,before,after};
 await mkdir(out,{recursive:true});await writeFile(out+'/mobile-asset-review.json',JSON.stringify(report,null,2)+'\n');
-await writeFile(out+'/campus-mobile-candidate.glb',bytes);
 if(bytes.length>=25*1024*1024||decodedBytes>96*1024*1024)throw Error('Mobile asset exceeds the reviewed memory budget: '+decodedBytes);
 if(JSON.stringify(Object.keys(before).sort())!==JSON.stringify(Object.keys(after).sort()))throw Error('A campus group was lost');
 for(const code of ['SITE','LANDSCAPE','CONTEXT']){
