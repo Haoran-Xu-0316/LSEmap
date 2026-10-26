@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import {deviceBudget} from "./device-budget.js";
+import {combineAbortSignals} from "./abort-utils.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useTimeBasedDamping, stopControlInertia } from "./control-timing.js";
 import { createBuildingPicker } from "./building-picking.js";
@@ -57,6 +59,7 @@ const boxFromData = ({ min, max }) =>
 /** Rendering and camera state are separate from the accessible HTML interface. */
 export class CampusViewer {
   constructor(container, labels, buildings, onPick, onContextLost, onDetailState = () => {}, modelRevision = "", onBearingChange = null) {
+    this.budget = deviceBudget();
     this.container = container;
     this.labelLayer = labels;
     this.buildings = buildings;
@@ -87,7 +90,7 @@ export class CampusViewer {
     this.needsRender = true;
     this.renderer = new THREE.WebGLRenderer({
       // Keep Metal clipping stable; the output pipeline smooths edges without MSAA.
-      antialias: false,
+      antialias: this.budget.mobile,
       logarithmicDepthBuffer: true,
       powerPreference: "high-performance",
     });
@@ -189,7 +192,7 @@ export class CampusViewer {
     const sun = new THREE.DirectionalLight(0xfff4e4, 3.0);
     sun.position.copy(DAYLIGHT_DIRECTION).multiplyScalar(290);
     sun.castShadow = true;
-    sun.shadow.mapSize.set(4096, 4096);
+    sun.shadow.mapSize.set(this.budget.shadowSize, this.budget.shadowSize);
     Object.assign(sun.shadow.camera, {
       left: -310,
       right: 310,
@@ -222,14 +225,14 @@ export class CampusViewer {
         js: "/draco/draco_wasm_wrapper.js",
         wasm: "/draco/draco_decoder.wasm",
       })
-      .setWorkerLimit(Math.min(4, Math.max(2, navigator.hardwareConcurrency || 2)));
+      .setWorkerLimit(this.budget.decoderWorkers);
     this.draco.preload();
     this.loader = new GLTFLoader().setDRACOLoader(this.draco);
     this.detailCache = new ModelCache(
       async (url, signal) => (await this.loadAsset(url, undefined, undefined, {signal})).scene,
       (group) => { prepareDetailedModel(group, this.environmentTarget.texture, this.groundTextures); this.applyEnvironmentRotation(group); this.scene.add(group); },
       disposeModel,
-      matchMedia("(max-width: 720px)").matches ? 2 : 3,
+      this.budget.mobile ? 1 : (matchMedia("(max-width: 720px)").matches ? 2 : 3),
     );
     this.raycaster = new THREE.Raycaster();
     this.pickBuilding = createBuildingPicker();
@@ -292,10 +295,9 @@ export class CampusViewer {
     });
   }
 
-  async loadAsset(url, onProgress, beforeDecode, {priority = "high", signal: requestSignal} = {}) {
-    const signal = requestSignal
-      ? AbortSignal.any([this.loadController.signal, requestSignal])
-      : this.loadController.signal;
+  async loadAsset(url, onProgress, beforeDecode, {priority = "high", signal: requestSignal, sha256} = {}) {
+    const cancellation = combineAbortSignals([this.loadController.signal, requestSignal]);
+    const signal = cancellation.signal;
     // Fixed model names must follow the freshly loaded catalogue across releases.
     // Detailed models already carry their content hash in the filename.
     if (this.modelRevision && url.startsWith("/models/") && !url.startsWith("/models/details/")) {
@@ -304,7 +306,7 @@ export class CampusViewer {
     const transferController = new AbortController();
     const assets = this.buildings.flatMap(building => [building.detailedExterior,
       building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)]);
-    const expectedSha256 = assets.find(asset => asset?.url === url)?.sha256;
+    const expectedSha256 = sha256 ?? assets.find(asset => asset?.url === url)?.sha256;
     return loadModelInStages(
       progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256, priority}),
       bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
@@ -315,11 +317,23 @@ export class CampusViewer {
         cancelDownload: () => transferController.abort(),
         discardModel: model => disposeModel(model.scene),
       },
-    );
+    ).finally(cancellation.dispose);
   }
 
   async load(onProgress) {
-    const gltf = await this.loadAsset("/models/campus.glb", onProgress);
+    let startup={url:"/models/campus.glb"};
+    if (this.budget.mobile) {
+      const response=await fetch('/models/mobile-campus.json',{cache:'no-cache',signal:this.loadController.signal});
+      if(!response.ok)throw Error('Mobile campus unavailable');
+      startup=await response.json();
+      if(!/^\/models\/details\/campus-mobile-[a-f0-9]{12}\.glb$/.test(startup.url)||
+         !/^[a-f0-9]{64}$/.test(startup.sha256)||startup.decodedBytes>96*1024*1024)
+        throw Error('Invalid mobile campus');
+      const catalogue=await(await fetch('/models/catalogue.json',{cache:'no-cache',signal:this.loadController.signal})).json();
+      if(startup.sourceModelSha256!==catalogue.sourceModelSha256)throw Error('Mobile campus revision differs');
+    }
+    const gltf = await this.loadAsset(startup.url, onProgress, undefined, {sha256:startup.sha256});
+    this.canvas.dataset.resourceProfile=this.budget.mobile?'mobile':'desktop';
     this.campus = gltf.scene;
     this.scene.add(this.campus);
     const codes = new Set(this.buildings.map((b) => b.code));
@@ -410,6 +424,14 @@ export class CampusViewer {
       group.userData.buildingCode = building.code;
       this.scene.add(group);
       this.exteriors.set(building.code, group);
+      if(this.budget.mobile) {
+        const retained=new Set([this.activeCode,COMPANION_CODES[this.activeCode]]);
+        for(const [code,oldGroup] of this.exteriors) {
+          if(this.exteriors.size<=this.budget.exteriorLimit)break;
+          if(retained.has(code))continue;
+          oldGroup.removeFromParent();disposeModel(oldGroup, true);this.exteriors.delete(code);
+        }
+      }
       this.toggleContext(this.contextVisible);
       return group;
     })();
@@ -461,6 +483,7 @@ export class CampusViewer {
   }
 
   async loadCampusExteriors() {
+    if (this.budget.mobile) return;
     const buildings = this.buildings.filter((building) => building.detailedExterior);
     buildings.sort((a, b) => Number(b.code === "MAR") - Number(a.code === "MAR"));
     for (const building of buildings) {
@@ -766,6 +789,11 @@ export class CampusViewer {
       this.applyEnvironmentRotation(gltf.scene);
       this.scene.add(gltf.scene);
       this.interiors.set(key, gltf.scene);
+      if(this.budget.mobile)for(const [oldKey,oldGroup] of this.interiors){
+        if(this.interiors.size<=2)break;
+        if(oldKey===this.activeInterior?.key||oldKey===key)continue;
+        oldGroup.removeFromParent();disposeModel(oldGroup, true);this.interiors.delete(oldKey);
+      }
       return gltf.scene;
     })();
     this.interiorLoads.set(key, request);
