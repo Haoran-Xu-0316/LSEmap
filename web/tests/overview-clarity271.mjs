@@ -4,7 +4,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {createServer} from 'vite';
 import {webkit,chromium,devices} from 'playwright';
-const out='result/web/clarity271';await mkdir(out,{recursive:true});
+const out='result/web/clarity272';await mkdir(out,{recursive:true});
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const paths=['web/src/device-budget.js','web/src/rendering-quality.js','web/src/viewer.js'];
 const sourceHashes=Object.fromEntries(await Promise.all(paths.map(async p=>[p,hash(await readFile(p))])));
@@ -49,6 +49,13 @@ async function harness(){
   const truth=snapshots[name+'-reference'];for(const v of variants){v.row.error=error(v.image.pixels,truth.pixels,region);snapshots[name+'-'+v.row.label]=v.image;}return {name,region,variants:variants.map(v=>v.row)};
  };
  window.detail=async()=>{const b=c.buildings.find(x=>x.code==='OLD');v.select(b);await v.upgradeModel(b,'exterior');await v.localContext.ready;cancelAnimationFrame(v.frame);v.transition=null;const centre=new THREE.Box3().setFromObject(v.exteriors.get('OLD')).getCenter(new THREE.Vector3());v.controls.target.copy(centre);camera.position.copy(centre).add(new THREE.Vector3(...b.exteriorDirection).normalize().multiplyScalar(98));camera.fov=38;camera.lookAt(centre);camera.updateProjectionMatrix();camera.updateMatrixWorld(true);};
+ window.temporalResidual=region=>{const a=snapshots['overview-a-reference'].pixels,b=snapshots['overview-b-reference'].pixels,w=common.width,rows=[];
+  for(const label of ['before','resolution175']){const pa=snapshots['overview-a-'+label].pixels,pb=snapshots['overview-b-'+label].pixels;let sum=0,n=0;
+   for(let y=region.y0;y<=region.y1;y++)for(let x=region.x0;x<=region.x1;x++){const at=(y*w+x)*4;let gradient=0;for(let k=0;k<3;k++)gradient+=Math.abs(a[at+k+4]-a[at+k-4])+Math.abs(a[at+k+w*4]-a[at+k-w*4]);
+    if(gradient/6>12)for(let k=0;k<3;k++){const delta=(pb[at+k]-b[at+k])-(pa[at+k]-a[at+k]);sum+=delta*delta;n++;}}
+   rows.push({label,edgeResidualChangeRmse:Math.sqrt(sum/n)});
+  }return {method:'Pose-matched reference change removes actual camera displacement before measuring edge residual instability.',rows};
+ };
  window.images=()=>Object.fromEntries(Object.entries(snapshots).map(([k,v])=>[k,v.png]));
  window.testInfo={budget:v.budget,sourceModelSha256:c.sourceModelSha256,contextAttributes:context.getContextAttributes(),devicePixelRatio:devicePixelRatio,comparisonDisplaySize:[common.width,common.height]};
  v.home(false);v.transition=null;v.controls.update();window.ready=true;
@@ -57,7 +64,7 @@ const html=`<!doctype html><meta name="viewport" content="width=device-width,ini
 const server=await createServer({server:{host:'127.0.0.1',port:0},logLevel:'error',plugins:[{name:'clarity-comparison',resolveId(id){if(id==='/__clarity271/old-rendering.js')return '\0old-rendering271';if(id==='/__clarity271/old-budget.js')return '\0old-budget271';},load(id){if(id==='\0old-rendering271')return oldRendering;if(id==='\0old-budget271')return oldBudget;},configureServer(s){s.middlewares.use('/__clarity271/page',(_,r)=>{r.setHeader('Content-Type','text/html');r.end(html);});}}]});
 let browser,context,page;const report={sourceHashes,errors:[],cases:[],limits:['Desktop WebKit touch emulation does not establish physical iPhone frame time or memory pressure.','Each pose uses its own four-sample linear-HDR reference at mobile3x or desktop2x display density; no frame displacement is counted as flicker.','Buffer totals exclude browser-owned display and shadow allocations; frame times include gl.finish for comparable completed work.']};
 try{await server.listen();browser=await webkit.launch({headless:true});context=await browser.newContext({...devices['iPhone 13'],userAgent:devices['iPhone 13'].userAgent+' EdgiOS/131.0'});await context.addInitScript(()=>Object.defineProperty(navigator,'maxTouchPoints',{get:()=>5}));page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});await page.goto('http://127.0.0.1:'+server.httpServer.address().port+'/__clarity271/page');await page.waitForFunction(()=>window.ready||window.harnessError,null,{timeout:120000});const failure=await page.evaluate(()=>window.harnessError);if(failure)throw Error(failure);report.info=await page.evaluate(()=>window.testInfo);
- for(const[name,yaw]of[['overview-a',0],['overview-b',.04]])report.cases.push(await page.evaluate(([n,y])=>window.measure(n,y),[name,yaw]));await page.evaluate(()=>window.detail());report.cases.push(await page.evaluate(()=>window.measure('old-detail',0)));
+ for(const[name,yaw]of[['overview-a',0],['overview-b',.04]])report.cases.push(await page.evaluate(([n,y])=>window.measure(n,y),[name,yaw]));report.temporal=await page.evaluate(region=>window.temporalResidual(region),report.cases[0].region);assert(report.temporal.rows[1].edgeResidualChangeRmse<=report.temporal.rows[0].edgeResidualChangeRmse*1.01,'Mobile motion stability regressed');await page.evaluate(()=>window.detail());report.cases.push(await page.evaluate(()=>window.measure('old-detail',0)));
  const images=await page.evaluate(()=>window.images());for(const[name,png]of Object.entries(images))await writeFile(out+'/'+name+'.png',Buffer.from(png.split(',')[1],'base64'));
  assert.deepEqual(report.errors,[]);for(const row of report.cases)for(const v of row.variants){assert.equal(v.sceneDrawsPerFrame,1);assert.equal(v.lost,false);assert(v.bufferBytes<=24*1024*1024);}
  await page.evaluate(()=>window.viewer?.dispose());await context.close();await browser.close();
