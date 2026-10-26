@@ -11,6 +11,6 @@ export function deviceBudget(environment = globalThis) {
     shadowSize: mobile ? 1024 : 4096,
     decoderWorkers: mobile ? 1 : Math.min(4, Math.max(2, navigator.hardwareConcurrency || 2)),
     exteriorLimit: mobile ? 2 : Infinity,
-    pixelRatio: mobile ? 1.25 : 1.5,
+    pixelRatio: mobile ? 1.75 : 1.5,
   });
 }
