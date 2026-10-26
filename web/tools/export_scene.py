@@ -21,11 +21,14 @@ import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
-AUTHORING = json.loads((ROOT / 'web/tools/building-metadata.json').read_text())
+AUTHORING_PATH = ROOT / 'web/tools/building-metadata.json'
+AUTHORING_BYTES = AUTHORING_PATH.read_bytes()
+AUTHORING = json.loads(AUTHORING_BYTES)
 VERSION = int(AUTHORING['sourceVersion'])
 MODEL = ROOT / f'result/blender/LSE_campus_detailed_v{VERSION}.blend'
-OUTPUT = ROOT / 'web/public/models'
-OUTPUT.mkdir(parents=True, exist_ok=True)
+OUTPUT = ROOT / f'result/web/release{VERSION}/model-staging/models'
+SOURCE_SHA = hashlib.sha256(MODEL.read_bytes()).hexdigest()
+EXPORT_SCRIPT_SHA = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 bpy.ops.wm.open_mainfile(filepath=str(MODEL))
 # Review-only cameras need their owning view layer evaluated before matrix_world.
 for scene in bpy.data.scenes:
@@ -35,7 +38,7 @@ for scene in bpy.data.scenes:
 # consistent. Compare it with the independently retained accepted native record
 # before changing temporary modifier states or overwriting any browser assets.
 expected_geometry = accepted_fingerprints(
-    ROOT / f'result/blender/stage{VERSION}', hashlib.sha256(MODEL.read_bytes()).hexdigest())
+    ROOT / f'result/blender/stage{VERSION}', SOURCE_SHA)
 actual_geometry = {obj.name: object_fingerprint(obj) for obj in bpy.data.objects}
 geometry_mismatches = sorted(name for name in set(expected_geometry) | set(actual_geometry)
                              if expected_geometry.get(name) != actual_geometry.get(name))
@@ -419,6 +422,8 @@ def exterior_objects(record):
 
 
 campus_scene = bpy.data.scenes.new('WEB_CAMPUS')
+# A fresh private tree keeps the running preview on its last complete model set.
+OUTPUT.mkdir(parents=True, exist_ok=False)
 campus_root = bpy.data.collections['02_LSE_BUILDINGS']
 metadata = []
 for record in records:
@@ -570,14 +575,35 @@ report_path.write_text(json.dumps(detail_report, indent=2) + '\n')
 
 payload = {
     'generatedTextures': generated_textures,
-    'version': str(VERSION), 'sourceModelSha256': hashlib.sha256(MODEL.read_bytes()).hexdigest(),
+    'version': str(VERSION), 'sourceModelSha256': SOURCE_SHA,
     'coordinateSystem': 'Local metres; X east, Y up, Z south',
     'origin': [-0.1167, 51.5146], 'buildings': metadata,
     'limitations': 'Photo-informed architectural study. Most dimensions are estimates, not an as-built survey.',
     'footprintAttribution': '© OpenStreetMap contributors, ODbL 1.0',
 }
 (OUTPUT / 'catalogue.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n')
-print('WEB_EXPORT_COMPLETE', flush=True)
 
 # These adjustments belong only to generated assets, never the archival model.
 restore_web_bevels(web_bevel_states)
+
+# Publish only a completion record. The separate model-promotion step prepares
+# the matching mobile asset before replacing the live model directory.
+assert hashlib.sha256(MODEL.read_bytes()).hexdigest() == SOURCE_SHA
+assert AUTHORING_PATH.read_bytes() == AUTHORING_BYTES, 'Authoring metadata changed during export'
+assert hashlib.sha256(Path(__file__).read_bytes()).hexdigest() == EXPORT_SCRIPT_SHA
+export_files = {}
+for exported_path in sorted(OUTPUT.rglob('*')):
+    if exported_path.is_file():
+        exported_bytes = exported_path.read_bytes()
+        export_files[exported_path.relative_to(OUTPUT).as_posix()] = {
+            'bytes': len(exported_bytes),
+            'sha256': hashlib.sha256(exported_bytes).hexdigest(),
+        }
+completion = {
+    'status': 'complete-native-export', 'version': str(VERSION),
+    'sourceModelSha256': SOURCE_SHA,
+    'authoringSha256': hashlib.sha256(AUTHORING_BYTES).hexdigest(),
+    'exportScriptSha256': EXPORT_SCRIPT_SHA, 'files': export_files,
+}
+(OUTPUT.parent / 'model-export.json').write_text(json.dumps(completion, indent=2) + '\n')
+print('WEB_EXPORT_STAGED', str(OUTPUT), len(export_files), flush=True)
