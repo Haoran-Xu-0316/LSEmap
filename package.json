@@ -11,7 +11,8 @@
     "check": "node --check web/src/main.js && node --check web/src/viewer.js",
     "deploy": "npm run build && node web/tools/deploy_release.mjs",
     "gallery": "node web/tools/render_web_gallery.mjs",
-    "prepare:mobile": "node web/tools/prepare-mobile-campus.mjs"
+    "prepare:mobile": "node web/tools/prepare-mobile-campus.mjs",
+    "publish:models": "node web/tools/publish-model-staging.mjs"
   },
   "dependencies": {
     "three": "0.186.0"
