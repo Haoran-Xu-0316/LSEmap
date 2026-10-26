@@ -1,3 +1,4 @@
+import {throwIfAborted} from "./abort-utils.js";
 import * as THREE from 'three';
 import {HDRLoader} from 'three/addons/loaders/HDRLoader.js';
 
@@ -29,7 +30,7 @@ async function loadSkyBackdrop(viewer) {
     if (!response.ok) return null;
     // ImageBitmap ignores Texture.flipY during GPU upload. Orient its pixels here.
     bitmap = await createImageBitmap(await response.blob(), {imageOrientation:'flipY'});
-    viewer.loadController.signal.throwIfAborted();
+    throwIfAborted(viewer.loadController.signal);
     if (viewer.disposed) { bitmap.close(); return null; }
     const texture = new THREE.Texture(bitmap);
     texture.mapping = THREE.EquirectangularReflectionMapping;
@@ -88,7 +89,7 @@ export async function loadOutdoorEnvironment(viewer) {
     const response = await fetch(SKY_URL, {signal:viewer.loadController.signal});
     if (!response.ok) throw new Error('Sky asset unavailable');
     const bytes = await response.arrayBuffer();
-    viewer.loadController.signal.throwIfAborted();
+    throwIfAborted(viewer.loadController.signal);
     if (viewer.disposed) return false;
     const data = new HDRLoader().parse(bytes);
     texture = new THREE.DataTexture(data.data, data.width, data.height,
@@ -101,10 +102,10 @@ export async function loadOutdoorEnvironment(viewer) {
     const generator = new THREE.PMREMGenerator(viewer.renderer);
     try { target = generator.fromEquirectangular(texture); }
     finally { generator.dispose(); }
-    viewer.loadController.signal.throwIfAborted();
+    throwIfAborted(viewer.loadController.signal);
     if (viewer.disposed) return false;
     backdrop = await backdropPending;
-    viewer.loadController.signal.throwIfAborted();
+    throwIfAborted(viewer.loadController.signal);
     if (viewer.disposed) return false;
     const previousBackdrop = viewer.skyBackdrop;
     const previous = viewer.environmentTarget;
