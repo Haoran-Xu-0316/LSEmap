@@ -4,10 +4,11 @@ Run in Blender's Text Editor. The baseline is read-only, source objects remain
 intact inside the new file, and only listed replacements change visibility.
 No command-line arguments, global preferences or external downloads are used.
 """
-from pathlib import Path
 import array
 import hashlib
 import json
+from pathlib import Path
+
 import bpy
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -146,6 +147,22 @@ def accepted_fingerprints(proof, source_sha):
     return expected
 
 
+def discard_unused_component_materials(material_names_before_append, report):
+    """Drop only unclaimed, unused dependencies imported by this component.
+
+    Explicit source bindings restore the accepted material identities. Their
+    suffixed append copies then have no users and must not accumulate in native
+    releases. Preserve baseline datablocks and intentionally authored materials.
+    """
+    declared = set(report.get('newMaterialGraphs', {})) | set(report.get('addedMaterialFingerprints', {}))
+    removed = []
+    for material in list(bpy.data.materials):
+        if material.name not in material_names_before_append and material.name not in declared and material.users == 0:
+            removed.append(material.name)
+            bpy.data.materials.remove(material)
+    return sorted(removed)
+
+
 def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
               version=194, scope='OLD exterior stone map, CBG coating and glazing, corrected road normals and two walking joins',
               baseline_proof=None):
@@ -205,6 +222,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
                 destination_collection.objects.link(bpy.data.objects[name])
             public_interiors.append(dict(collection=destination_collection.name, scene=spec['scene'], objects=list(public_names),
                                          sharedObjects=list(shared), exteriorCollection=exterior_collection.name, exteriorObjects=list(exterior_names)))
+        material_names_before_append = set(bpy.data.materials.keys())
         with bpy.data.libraries.load(str(path), link=False) as (source, target):
             assert set(names) <= set(source.objects)
             target.objects = list(names)
@@ -257,6 +275,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
                     collection.objects.link(obj)
             obj.hide_render = False
             added.append(obj.name)
+        discarded_materials = discard_unused_component_materials(material_names_before_append, report)
         update_scene()
         for name in names:
             set_layer_hidden(bpy.data.objects[name], False)
@@ -266,7 +285,7 @@ def integrate(base=BASE, destination=DESTINATION, proof=PROOF, reports=REPORTS,
             set_layer_hidden(bpy.data.objects[name], True)
             archived.append(name)
         changes.append(dict(code=code, report=report_path, componentSha256=report['componentSha256'],
-                            addedObjects=names, archivedObjects=report['archivedObjects'], sharedObjects=list(shared), exteriorObjects=list(exterior_names), publicObjects=list(public_names)))
+                            addedObjects=names, archivedObjects=report['archivedObjects'], sharedObjects=list(shared), exteriorObjects=list(exterior_names), publicObjects=list(public_names), unusedImportedMaterialsDiscarded=discarded_materials))
     update_scene()
     assert all(object_fingerprint(bpy.data.objects[name]) == fingerprint for name, fingerprint in before.items())
     assert set(bpy.data.objects.keys()) - set(before) == set(added)
