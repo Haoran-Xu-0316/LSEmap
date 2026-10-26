@@ -82,9 +82,13 @@ function createMobilePipeline(renderer, scene, camera) {
     get needsSettle() { return false; }, resetHistory() {}, resize() {},
     render() { renderer.render(scene, camera); }, dispose() {},
   };
-  // Spend the bounded attachment budget on image resolution. The final FXAA
-  // pass covers edges without an additional multisampled scene allocation.
-  const rasterSamples = 0;
+  // Use a format-supported count, avoiding drivers that round a request of two
+  // up to four samples and silently exceed the mobile attachment budget.
+  const gl = renderer.getContext();
+  const colourSamples = gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA16F, gl.SAMPLES);
+  const depthSamples = gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_COMPONENT24, gl.SAMPLES);
+  const rasterSamples = colourSamples.includes(2) && depthSamples.includes(2) &&
+    renderer.capabilities.maxSamples >= 2 ? 2 : 0;
   scenePass.rasterSamples = rasterSamples;
   const sceneTarget = new THREE.WebGLRenderTarget(1, 1, {
     type: THREE.HalfFloatType, depthBuffer: true, samples: rasterSamples,
