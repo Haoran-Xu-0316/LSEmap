@@ -57,6 +57,19 @@ class ColorManagedRenderPass extends SSAARenderPass {
   }
 }
 
+// Retain the edge search while reducing the full-strength subpixel blur that
+// hides closely spaced facade grids after the scene has already been sampled.
+function createAntialiasPass() {
+  const subpixelDefault = "float _SubpixelBlending = 1.0;";
+  if (!FXAAShader.fragmentShader.includes(subpixelDefault))
+    throw new Error("Review FXAA tuning after the Three.js shader changes");
+  return new ShaderPass({
+    ...FXAAShader,
+    fragmentShader: FXAAShader.fragmentShader.replace(
+      subpixelDefault, "float _SubpixelBlending = 0.5;"),
+  });
+}
+
 // A bounded mobile path keeps one HDR scene buffer and one display-colour
 // buffer. It has no temporal history or progressive accumulation targets.
 function createMobilePipeline(renderer, scene, camera) {
@@ -69,13 +82,9 @@ function createMobilePipeline(renderer, scene, camera) {
     get needsSettle() { return false; }, resetHistory() {}, resize() {},
     render() { renderer.render(scene, camera); }, dispose() {},
   };
-  // Use a format-supported count, avoiding drivers that round a request of two
-  // up to four samples and silently exceed the mobile attachment budget.
-  const gl = renderer.getContext();
-  const colourSamples = gl.getInternalformatParameter(gl.RENDERBUFFER, gl.RGBA16F, gl.SAMPLES);
-  const depthSamples = gl.getInternalformatParameter(gl.RENDERBUFFER, gl.DEPTH_COMPONENT24, gl.SAMPLES);
-  const rasterSamples = colourSamples.includes(2) && depthSamples.includes(2) &&
-    renderer.capabilities.maxSamples >= 2 ? 2 : 0;
+  // Spend the bounded attachment budget on image resolution. The final FXAA
+  // pass covers edges without an additional multisampled scene allocation.
+  const rasterSamples = 0;
   scenePass.rasterSamples = rasterSamples;
   const sceneTarget = new THREE.WebGLRenderTarget(1, 1, {
     type: THREE.HalfFloatType, depthBuffer: true, samples: rasterSamples,
@@ -84,7 +93,7 @@ function createMobilePipeline(renderer, scene, camera) {
     type: THREE.UnsignedByteType, depthBuffer: false,
   });
   const outputPass = new OutputPass();
-  const antialiasPass = new ShaderPass(FXAAShader);
+  const antialiasPass = createAntialiasPass();
   antialiasPass.renderToScreen = true;
   const size = new THREE.Vector2();
   return {
@@ -134,7 +143,7 @@ export function createRenderPipeline(renderer, scene, camera, allowTemporal = ()
   let wideViewport = false;
   let needsSettle = false;
   const outputPass = new OutputPass();
-  const antialiasPass = new ShaderPass(FXAAShader);
+  const antialiasPass = createAntialiasPass();
   // FXAA measures contrast in sRGB, after the existing exposure and tone mapping.
   composer.addPass(scenePass);
   composer.addPass(temporalPass);
