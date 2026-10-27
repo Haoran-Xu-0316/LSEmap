@@ -1731,22 +1731,24 @@
         "scope": "Schematic construction boundary only, not the current workstage"
       },
       "latestReview": {
-        "version": 206,
+        "version": 276,
         "status": "construction-reference-review-only",
-        "scope": "核对2026年7月官方施工通讯第2页的施工进度与4张现场局部照片，保留现有示意围挡；新窗安装和CLT施工已有记录，未据局部图像扩展完整外观或内部。",
-        "publicationDate": "July2026",
+        "scope": "LSE于2026年10月15日发布新闻，确认Firoz Lalji Global Hub在10月13日封顶。保留现有示意地块与围挡，尚未据局部施工照片重建完整当期外观或内部。",
+        "publicationDate": "2026-10-15",
+        "eventDate": "2026-10-13",
         "photographDate": "unknown",
         "sourceUrls": [
-          "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2026-July-CD-Newsletter-V5.pdf"
+          "https://www.lse.ac.uk/news/lse-celebrates-topping-out-ceremony-at-the-firoz-lalji-global-hub"
         ],
         "limitations": [
-          "通讯记录而非2026年10月现场实测；完整围挡、外墙开口与施工楼层无法从局部照片注册。",
-          "2027年完工、2028年投入使用是当时计划，不能视为已完成。"
+          "封顶仍属施工阶段，不代表竣工或投入使用。",
+          "现有围挡依OSM地块示意，未获2026年10月完整临街立面及地面围界控制。",
+          "照片中的未来建筑模型及展板效果图不作为当期实景几何。"
         ],
         "addedObjects": 0,
         "archivedObjects": 0,
         "changedObjects": 0,
-        "audit": "result/blender/stage206/official-update-review.json"
+        "audit": "result/blender/35l-review276/audit.json"
       },
       "exportExterior": false,
       "reviewHistory": [
@@ -1773,6 +1775,24 @@
           "archivedObjects": 0,
           "changedObjects": 0,
           "audit": "result/blender/35l_reference176/source-review.json"
+        },
+        {
+          "version": 206,
+          "status": "construction-reference-review-only",
+          "scope": "核对2026年7月官方施工通讯第2页的施工进度与4张现场局部照片，保留现有示意围挡；新窗安装和CLT施工已有记录，未据局部图像扩展完整外观或内部。",
+          "publicationDate": "July2026",
+          "photographDate": "unknown",
+          "sourceUrls": [
+            "https://info.lse.ac.uk/staff/divisions/estates-division/Assets/Documents/Cap-Dev/2026-July-CD-Newsletter-V5.pdf"
+          ],
+          "limitations": [
+            "通讯记录而非2026年10月现场实测；完整围挡、外墙开口与施工楼层无法从局部照片注册。",
+            "2027年完工、2028年投入使用是当时计划，不能视为已完成。"
+          ],
+          "addedObjects": 0,
+          "archivedObjects": 0,
+          "changedObjects": 0,
+          "audit": "result/blender/stage206/official-update-review.json"
         }
       ]
     },
@@ -5517,7 +5537,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 275,
+  "sourceVersion": 279,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5807,5 +5827,25 @@
     "detachedRoomMembershipsProtected": 35,
     "wholeMapCompletionClaimed": false,
     "unacceptedSAWCandidatesIncluded": false
+  },
+  "streetscapeReview279": {
+    "status": "bounded-frontage-component-accepted",
+    "target": "Lindsey House,59-60Lincoln’s Inn Fields",
+    "sourceBuildingOSM": "way/181939019",
+    "scope": "Two park-facing proxy wall quads replaced by a five-axis stucco facade with14window and2door openings. Other four wall quads,roof,GIS bend,roads and terrain retained.",
+    "sourceUrls": [
+      "https://gardencourtchambers.co.uk/wp-content/uploads/old/1693413461-gardencourtch.pdf"
+    ],
+    "sourcePhotographDate": null,
+    "sourceDocumentCreated": "2021-08-13",
+    "heightMetres": 17,
+    "heightStatus": "Inherited context estimate,not surveyed",
+    "newObjects": 4,
+    "archivedObjects": 2,
+    "newMaterials": 2,
+    "newImages": 0,
+    "audit": "result/blender/street277/audit.json",
+    "nativeProof": "result/blender/stage279/independent-verification.json",
+    "limitations": "Only photographed principal facade; adjacent57-58features and unseen roof details not inferred."
   }
 }
