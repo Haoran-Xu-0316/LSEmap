@@ -282,33 +282,7 @@ canvas {
   height: 100%;
   touch-action: none;
 }
-.scene-heading {
-  max-width: calc(100% - 112px);
-  overflow-wrap: anywhere;
-  position: absolute;
-  left: 34px;
-  top: 30px;
-  pointer-events: none;
-  z-index: 2;
-}
-.scene-heading > p:first-child {
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  margin: 0 0 7px;
-  color: var(--muted);
-}
-.scene-heading h2 {
-  font-weight: 500;
-  font-size: 25px;
-  letter-spacing: -0.025em;
-  margin: 0 0 8px;
-  text-wrap: balance;
-}
-.scene-heading > p:last-child {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0;
-}
+.scene-heading { display: none; }
 .north {
   position: absolute;
   right: 26px;
@@ -759,9 +733,6 @@ dialog::backdrop {
   padding: 20px;
   z-index: 100;
 }
-.stage.interior-view .scene-heading {
-  max-width: 70%;
-}
 .stage.interior-view .north {
   display: none;
 }
@@ -782,9 +753,6 @@ dialog::backdrop {
   .detail-panel {
     padding-left: 18px;
     padding-right: 18px;
-  }
-  .scene-heading {
-    left: 24px;
   }
   .map-toolbar button {
     padding: 8px;
@@ -921,19 +889,6 @@ dialog::backdrop {
   .stage.detail-open {
     padding-bottom: 0;
   }
-  .scene-heading {
-    top: 20px;
-    left: 20px;
-  }
-  .scene-heading h2 {
-    font-size: 23px;
-  }
-  .scene-heading > p:last-child {
-    font-size: 11px;
-  }
-  .scene-heading > p:first-child {
-    font-size: 9px;
-  }
   .north {
     right: 14px;
     top: 17px;
@@ -982,9 +937,6 @@ dialog::backdrop {
   }
   .detail-open .map-caption,
   .detail-open .attribution {
-    display: none;
-  }
-  .detail-open .scene-heading > p:last-child {
     display: none;
   }
   .loading {
@@ -1038,8 +990,6 @@ dialog::backdrop {
   }
   .index-panel { padding-top: 24px; }
   .index-panel h1 { font-size: 29px; margin-bottom: 20px; }
-  .scene-heading { top: 104px; left: 24px; max-width: calc(100% - 110px); }
-  .sidebar.closed + .stage .scene-heading { left: 32px; max-width: calc(100% - 120px); }
   .north { top: 96px; }
   .map-caption { left: 24px; }
   .sidebar.closed + .stage .map-caption { left: 32px; }
@@ -1064,11 +1014,6 @@ dialog::backdrop {
   }
 }
 
-.stage.detail-open .scene-heading {
-  background: var(--glass);
-  padding: 12px 16px;
-  border-radius: 12px;
-}
 
 .detail-quality {
   display: flex;
@@ -1109,8 +1054,7 @@ dialog::backdrop {
 .interior-sections p { color: var(--muted); line-height: 1.6; margin: 8px 0 0; }
 
 /* Frosted surfaces keep controls legible over the campus without tinting them. */
-.masthead, .sidebar, .map-toolbar,
-.stage.detail-open .scene-heading {
+.masthead, .sidebar, .map-toolbar {
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
@@ -1118,13 +1062,11 @@ dialog::backdrop {
 .map-toolbar button:hover { background: var(--glass-hover); }
 .map-toolbar button[aria-pressed="true"]:hover { background: var(--control-active); }
 @supports not (backdrop-filter: blur(1px)) {
-  .masthead, .sidebar, .map-toolbar,
-  .stage.detail-open .scene-heading { background: #f5f5f2; }
+  .masthead, .sidebar, .map-toolbar { background: #f5f5f2; }
   .map-label.is-selected { background: var(--control-active); }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .masthead, .sidebar, .map-toolbar,
-  .stage.detail-open .scene-heading {
+  .masthead, .sidebar, .map-toolbar {
     background: #f5f5f2;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
