@@ -1,11 +1,11 @@
 {
-  "version": "275",
-  "url": "/models/details/campus-mobile-adc619eb89c0.glb",
-  "sha256": "adc619eb89c0077ab60c150e26fe0ad11a8da0eb2169f8cb20112494b3e0b261",
-  "bytes": 15431668,
-  "decodedBytes": 69296570,
-  "sourceModelSha256": "18a60235fd7c71c6c2864690c574f97b66a9d05577e0c584c626dee41829a4f9",
-  "sourceCampusSha256": "27387ee7f6ba46fa85c9e48efaa0b6f9d72c90097acf75bf240914b19021516f",
+  "version": "279",
+  "url": "/models/details/campus-mobile-67814380c26a.glb",
+  "sha256": "67814380c26af6eeda226bb11aff421148dc59799bf33ef26bbd780f67bd2563",
+  "bytes": 15453640,
+  "decodedBytes": 69537034,
+  "sourceModelSha256": "b03a0caec932c50e0c7d8ad2a725a43b80eb38abee716f1d1c2d30cde767982c",
+  "sourceCampusSha256": "dc3e36fe23185202f4d587d0a447066221b67a2a6f654a3d2202c4ef669d95f1",
   "buildingCodes": [
     "35L",
     "49L",
