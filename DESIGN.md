@@ -161,3 +161,7 @@ Background exterior downloads may finish while the camera moves. Defer GLTF
 parsing as well as scene attachment until navigation has been quiet for200ms.
 An explicitly selected building bypasses that wait. Waiting does not consume
 the transfer or decoding timeout, and disposing the viewer cancels queued parsing.
+
+Selected-building titles remain in the detail panel or mobile bottom sheet.
+The duplicate floating scene heading stays hidden at all widths so roofs and
+facades remain inspectable; gallery captures and renderer sampling are unchanged.
