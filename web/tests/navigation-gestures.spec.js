@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import * as THREE from 'three';
+import {createBuildingPicker} from '../src/building-picking.js';
 
 async function viewerPrototype() {
   globalThis.matchMedia = () => ({ matches: false });
@@ -32,6 +33,7 @@ test('surface focus uses visible unclipped geometry without moving the camera', 
   const target = new THREE.Vector3(0, 0, -10);
   const viewer = {
     ready: true, activeCode: 'CBG', activeDetail: { group: root }, camera,
+    surfaceAt: prototype.surfaceAt, pickSurface: createBuildingPicker(),
     canvas: { getBoundingClientRect: () => ({left:0, top:0, width:100, height:100}) },
     pointer: new THREE.Vector2(), raycaster: new THREE.Raycaster(),
     renderer: {clippingPlanes:[new THREE.Plane(new THREE.Vector3(0,0,-1),-5)]},
@@ -56,9 +58,10 @@ test('resizing preserves the entrance view and long titles clear the compass', a
   await expect(page.locator('canvas')).toHaveAttribute('data-detail-ready','exterior-LRB',{timeout:60000});
   for (const width of [390,320]) {
     await page.setViewportSize({width,height:844});
-    const heading = await page.locator('.scene-heading').boundingBox();
-    const compass = await page.locator('#north').boundingBox();
-    expect(heading.x + heading.width).toBeLessThan(compass.x);
+    await expect(page.locator('.scene-heading')).toBeHidden();
+    await expect(page.locator('#detail-panel h2')).toBeVisible();
+    const title = await page.locator('#detail-panel h2').boundingBox();
+    expect(title.x + title.width).toBeLessThanOrEqual(width);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
   await page.screenshot({path:'result/web/navigation-phone.png'});
