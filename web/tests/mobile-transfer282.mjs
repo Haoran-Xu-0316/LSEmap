@@ -15,8 +15,7 @@ const server=await preview({preview:{host:'127.0.0.1',port:0},logLevel:'error',p
    }
    const bytes=payloads.get(path);if(!bytes){next();return;}
    const compressed=path===mobile.transport.url;
-   res.setHeader('Content-Type','model/gltf-binary');res.setHeader('Content-Length',bytes.length);res.setHeader('Cache-Control','no-store');
-   if(compressed)res.setHeader('Content-Encoding','gzip');
+   res.setHeader('Content-Type',compressed?'application/gzip':'model/gltf-binary');res.setHeader('Content-Length',bytes.length);res.setHeader('Cache-Control','no-store');
    // 64KiB every40ms: identical controlled link for raw and lossless gzip.
    let offset=0,timer;
    const send=()=>{if(res.destroyed)return;if(offset===bytes.length){res.end();return;}res.write(bytes.subarray(offset,offset+65536));offset=Math.min(bytes.length,offset+65536);timer=setTimeout(send,40);};
