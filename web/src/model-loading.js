@@ -64,60 +64,80 @@ export function loadModelInStages(download, decode, {
   });
 }
 
-/** Validate complete GLB bytes before decoding; retry transport failures once. */
+/** Validate complete GLB bytes before decoding and retain one verified mobile overview. */
 export async function downloadVerifiedModel(url, {
-  signal, onProgress, expectedSha256, fetchModel = fetch, priority = "auto",
+  signal, onProgress, expectedSha256, expectedBytes, fallbackUrl,
+  fetchModel = fetch, priority = "auto",
+  byteCache = /^\/models\/details\/campus-mobile-[a-f0-9]{12}\.glb(?:\.gz)?$/.test(url) ? campusByteCache : null,
 } = {}) {
+  const digest = async bytes => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+    .map(n => n.toString(16).padStart(2, '0')).join('');
+  const validHeader = buffer => {
+    if (!(buffer instanceof ArrayBuffer) || buffer.byteLength < 20) return false;
+    const header = new DataView(buffer);
+    return header.getUint32(0,true) === 0x46546c67 && header.getUint32(4,true) === 2 &&
+      header.getUint32(8,true) === buffer.byteLength && (!expectedBytes || buffer.byteLength === expectedBytes);
+  };
+  const knownLength = Number.isSafeInteger(expectedBytes) && expectedBytes > 0 && expectedBytes < 128*1024*1024;
+  const cacheHash = /^[a-f0-9]{64}$/i.test(expectedSha256 || '') ? expectedSha256.toLowerCase() : null;
+  throwIfAborted(signal);
+  if (byteCache && cacheHash) {
+    let cached;
+    try { cached = await byteCache.read(cacheHash); } catch { /* Storage is optional. */ }
+    throwIfAborted(signal);
+    if (validHeader(cached) && await digest(cached) === cacheHash) {
+      throwIfAborted(signal);
+      onProgress?.({loaded:cached.byteLength,total:cached.byteLength,lengthComputable:true});
+      return cached;
+    }
+  }
+  const integrityError = () => Object.assign(new Error('Model download failed integrity validation'),{name:'ModelIntegrityError'});
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       throwIfAborted(signal);
-      const response = await fetchModel(url, {signal, cache: attempt ? 'reload' : 'default', priority});
-      if (!response.ok) throw new Error(`Model request failed: HTTP${response.status}`);
-      const chunks = [];
+      const requestUrl = attempt && fallbackUrl ? fallbackUrl : url;
+      const response = await fetchModel(requestUrl, {signal, cache: attempt ? 'reload' : 'default', priority});
+      if (!response.ok) {
+        const error = new Error(`Model request failed: HTTP${response.status}`);
+        error.retryable = response.status === 408 || response.status === 429 || response.status >= 500 || !!fallbackUrl;
+        throw error;
+      }
+      // The catalogue length is the decoded GLB size, even for HTTP gzip.
+      let bytes = knownLength ? new Uint8Array(expectedBytes) : null;
+      const chunks = bytes ? null : [];
       let loaded = 0;
-      const total = Number(response.headers.get('Content-Length')) || 0;
+      const total = expectedBytes || Number(response.headers.get('Content-Length')) || 0;
+      const append = value => {
+        if (bytes) {
+          if (loaded + value.byteLength > bytes.byteLength) throw integrityError();
+          bytes.set(value,loaded);
+        } else chunks.push(value);
+        loaded += value.byteLength;
+        onProgress?.({loaded,total,lengthComputable:total>0});
+      };
       const reader = response.body?.getReader();
       if (reader) {
         try {
-          for (;;) {
-            const {done, value} = await reader.read();
-            if (done) break;
-            chunks.push(value); loaded += value.byteLength;
-            onProgress?.({loaded, total, lengthComputable: total > 0});
-          }
-        } catch (error) {
-          await reader.cancel(error).catch(() => {});
-          throw error;
-        } finally { reader.releaseLock(); }
-      } else {
-        const bytes = new Uint8Array(await response.arrayBuffer());
-        chunks.push(bytes); loaded = bytes.byteLength;
-        onProgress?.({loaded, total, lengthComputable: total > 0});
-      }
+          for (;;) {const {done,value}=await reader.read();if(done)break;throwIfAborted(signal);append(value);}
+        } catch (error) {await reader.cancel(error).catch(()=>{});throw error;}
+        finally {reader.releaseLock();}
+      } else append(new Uint8Array(await response.arrayBuffer()));
       throwIfAborted(signal);
-      const bytes = new Uint8Array(loaded);
-      let offset = 0;
-      for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
-      const header = new DataView(bytes.buffer);
-      const valid = loaded >= 20 && header.getUint32(0, true) === 0x46546c67
-        && header.getUint32(4, true) === 2 && header.getUint32(8, true) === loaded;
-      const etag = response.headers.get('ETag')?.replace(/^W\//, '').replaceAll('"', '');
-      const expected = expectedSha256 || (/^[a-f0-9]{64}$/i.test(etag || '') ? etag : null);
-      let matches = true;
-      if (expected) {
-        const digest = await crypto.subtle.digest('SHA-256', bytes);
-        const actual = [...new Uint8Array(digest)].map(n => n.toString(16).padStart(2, '0')).join('');
-        matches = actual === expected.toLowerCase();
+      if (!bytes) {
+        bytes = new Uint8Array(loaded);
+        let offset = 0;
+        for (const chunk of chunks) {bytes.set(chunk,offset);offset+=chunk.byteLength;}
       }
-      if (!valid || !matches) {
-        const error = new Error('Model download failed integrity validation');
-        error.name = 'ModelIntegrityError';
-        throw error;
-      }
+      const etag=response.headers.get('ETag')?.replace(/^W\//,'').replaceAll('"','');
+      const expected=expectedSha256 || (/^[a-f0-9]{64}$/i.test(etag||'')?etag:null);
+      if (loaded !== bytes.byteLength || !validHeader(bytes.buffer) || (expected && await digest(bytes)!==expected.toLowerCase()))
+        throw integrityError();
+      throwIfAborted(signal);
+      if (byteCache && cacheHash) persistCampusBytes(byteCache,cacheHash,bytes.buffer,signal);
       return bytes.buffer;
     } catch (error) {
       throwIfAborted(signal);
-      if (attempt || !['TypeError', 'ModelIntegrityError'].includes(error.name)) throw error;
+      if (attempt || (!error.retryable && !['TypeError','ModelIntegrityError'].includes(error.name))) throw error;
     }
   }
 }
