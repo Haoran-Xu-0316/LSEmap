@@ -22,7 +22,13 @@ if(mobile.sourceModelSha256!==catalogue.sourceModelSha256||mobile.decodedBytes>9
 const mobileBytes=await readFile(join(root,mobile.url));
 if(mobileBytes.length!==mobile.bytes||createHash('sha256').update(mobileBytes).digest('hex')!==mobile.sha256)
   throw Error('Mobile overview integrity mismatch');
-const models = new Set(['campus.glb', 'catalogue.json','mobile-campus.json',mobile.url.replace('/models/','')]);
+// Preserve every original GLB byte while reducing the mobile transfer.
+const mobileCompressed = compressCampusSegment(mobileBytes);
+mobile.transport = {url:mobile.url+'.gz',encoding:'gzip',bytes:mobileCompressed.length,
+  sha256:createHash('sha256').update(mobileCompressed).digest('hex')};
+await writeFile(join(root,mobile.transport.url),mobileCompressed);
+await writeFile(join(root,'models/mobile-campus.json'),JSON.stringify(mobile,null,2)+'\n');
+const models = new Set(['campus.glb', 'catalogue.json','mobile-campus.json',mobile.url.replace('/models/',''),mobile.transport.url.replace('/models/','')]);
 for (const building of catalogue.buildings) {
   for (const detail of [building.detailedExterior, building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)].filter(Boolean)) models.add(detail.url.replace('/models/', ''));
   if (building.interior) models.add(`${building.code.toLowerCase()}-interior.glb`);
