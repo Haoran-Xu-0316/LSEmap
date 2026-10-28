@@ -36,14 +36,20 @@ async function withStore(mode, operation) {
 export const campusByteCache = {
   async read(sha256) {
     const record = await withStore('readonly', store => store.get(SLOT));
-    if (record?.sha256 !== sha256 || !(record.blob instanceof Blob)) return null;
+    if (record?.sha256 !== sha256) return null;
+    if (record.buffer instanceof ArrayBuffer) return record.buffer;
+    if (!(record.blob instanceof Blob)) return null;
     // IndexedDB clones only the Blob handle. Read binary bytes outside its
     // transaction, avoiding a second 50MB structured clone on the main thread.
     return record.blob.arrayBuffer();
   },
   async write(sha256, bytes) {
-    const blob = new Blob([bytes], {type:'model/gltf-binary'});
-    await withStore('readwrite', store => store.put({sha256, blob}, SLOT));
+    // Small overviews use binary records on WebKit, which can reject Blob writes.
+    // Keep large desktop models file-backed to avoid a50MB structured clone.
+    const record = bytes.byteLength <= 16*1024*1024
+      ? {sha256,buffer:bytes}
+      : {sha256,blob:new Blob([bytes], {type:'model/gltf-binary'})};
+    await withStore('readwrite', store => store.put(record, SLOT));
   },
 };
 
@@ -54,7 +60,7 @@ export function persistCampusBytes(cache, sha256, bytes, signal) {
   };
   setTimeout(() => {
     if (signal?.aborted) return;
-    if (typeof requestIdleCallback === 'function') requestIdleCallback(persist);
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(persist, {timeout:1500});
     else persist();
   }, 2500);
 }
