@@ -115,7 +115,12 @@ export async function downloadVerifiedModel(url, {
         loaded += value.byteLength;
         onProgress?.({loaded,total,lengthComputable:total>0});
       };
-      const reader = response.body?.getReader();
+      let body = response.body;
+      if (requestUrl.endsWith('.glb.gz')) {
+        body ??= new Blob([await response.arrayBuffer()]).stream();
+        body = body.pipeThrough(new DecompressionStream('gzip'));
+      }
+      const reader = body?.getReader();
       if (reader) {
         try {
           for (;;) {const {done,value}=await reader.read();if(done)break;throwIfAborted(signal);append(value);}
