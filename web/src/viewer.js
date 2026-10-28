@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import {fetchStartupJson} from "./startup-metadata.js";
 import {deviceBudget} from "./device-budget.js";
 import {combineAbortSignals} from "./abort-utils.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
@@ -295,7 +296,7 @@ export class CampusViewer {
     });
   }
 
-  async loadAsset(url, onProgress, beforeDecode, {priority = "high", signal: requestSignal, sha256} = {}) {
+  async loadAsset(url, onProgress, beforeDecode, {priority = "high", signal: requestSignal, sha256, expectedBytes, fallbackUrl} = {}) {
     const cancellation = combineAbortSignals([this.loadController.signal, requestSignal]);
     const signal = cancellation.signal;
     // Fixed model names must follow the freshly loaded catalogue across releases.
@@ -306,9 +307,11 @@ export class CampusViewer {
     const transferController = new AbortController();
     const assets = this.buildings.flatMap(building => [building.detailedExterior,
       building.detailedInterior, ...(building.interiorSpaces || []).map(space => space.detailedInterior)]);
-    const expectedSha256 = sha256 ?? assets.find(asset => asset?.url === url)?.sha256;
+    const asset = assets.find(asset => asset?.url === url);
+    const expectedSha256 = sha256 ?? asset?.sha256;
+    expectedBytes ??= asset?.bytes;
     return loadModelInStages(
-      progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256, priority}),
+      progress => (url.startsWith("/models/campus.glb") ? downloadCampusModel : downloadVerifiedModel)(url, {signal: transferController.signal, onProgress: progress, expectedSha256, expectedBytes, fallbackUrl, priority}),
       bytes => this.loader.parseAsync(bytes, THREE.LoaderUtils.extractUrlBase(url)),
       {
         signal,
@@ -320,19 +323,21 @@ export class CampusViewer {
     ).finally(cancellation.dispose);
   }
 
-  async load(onProgress) {
+  async load(onProgress, {sourceModelSha256, startupModel} = {}) {
     let startup={url:"/models/campus.glb"};
     if (this.budget.mobile) {
-      const response=await fetch('/models/mobile-campus.json',{cache:'no-cache',signal:this.loadController.signal});
-      if(!response.ok)throw Error('Mobile campus unavailable');
-      startup=await response.json();
+      startup=await (startupModel ?? fetchStartupJson('/models/mobile-campus.json',{signal:this.loadController.signal}));
       if(!/^\/models\/details\/campus-mobile-[a-f0-9]{12}\.glb$/.test(startup.url)||
          !/^[a-f0-9]{64}$/.test(startup.sha256)||startup.decodedBytes>96*1024*1024)
         throw Error('Invalid mobile campus');
-      const catalogue=await(await fetch('/models/catalogue.json',{cache:'no-cache',signal:this.loadController.signal})).json();
-      if(startup.sourceModelSha256!==catalogue.sourceModelSha256)throw Error('Mobile campus revision differs');
+      const source=sourceModelSha256 ?? (await fetchStartupJson('/models/catalogue.json',{signal:this.loadController.signal})).sourceModelSha256;
+      if(startup.sourceModelSha256!==source)throw Error('Mobile campus revision differs');
+      if(startup.transport && (startup.transport.encoding!=='gzip'||startup.transport.url!==startup.url+'.gz'))
+        throw Error('Invalid mobile transport');
     }
-    const gltf = await this.loadAsset(startup.url, onProgress, undefined, {sha256:startup.sha256});
+    const gltf = await this.loadAsset(startup.transport?.url ?? startup.url, onProgress, undefined, {
+      sha256:startup.sha256, expectedBytes:startup.bytes, fallbackUrl:startup.transport ? startup.url : undefined,
+    });
     this.canvas.dataset.resourceProfile=this.budget.mobile?'mobile':'desktop';
     this.campus = gltf.scene;
     this.scene.add(this.campus);
