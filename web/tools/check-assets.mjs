@@ -50,6 +50,15 @@ const assembled = Buffer.concat(chunks);
 assert.equal(assembled.length, transport.bytes);
 assert.equal(createHash('sha256').update(assembled).digest('hex'), transport.sha256);
 assert(assembled.equals(await readFile(join(output, 'models/campus.glb'))));
+const mobile = JSON.parse(await readFile(join(output,'models/mobile-campus.json'),'utf8'));
+assert.equal(mobile.transport?.url,mobile.url+'.gz');
+assert.equal(mobile.transport.encoding,'gzip');
+const mobileCompressed=await readFile(join(output,mobile.transport.url));
+const mobileOriginal=await readFile(join(output,mobile.url));
+assert.equal(mobileCompressed.length,mobile.transport.bytes);
+assert.equal(createHash('sha256').update(mobileCompressed).digest('hex'),mobile.transport.sha256);
+assert(gunzipSync(mobileCompressed).equals(mobileOriginal),'Mobile transport changed model bytes');
+assert(mobileCompressed.length<mobileOriginal.length);
 const release = JSON.parse(await readFile(join(output, 'release.json'), 'utf8'));
 assert(!release.assets['/models/campus.glb']);
 for (const asset of Object.values(release.assets)) assert(asset.bytes < 25 * 1024 * 1024);
@@ -120,7 +129,7 @@ for (const asset of detailAssets) {
   assert.equal(createHash("sha256").update(buffer).digest("hex"), asset.sha256);
   assert(asset.triangles > 0);
 }
-const mobile = JSON.parse(await readFile(join(output,'models/mobile-campus.json'),'utf8'));
+
 assert.equal(mobile.sourceModelSha256,catalogue.sourceModelSha256);
 assert.equal(mobile.sourceCampusSha256,transport.sha256);
 assert(mobile.decodedBytes<=96*1024*1024);
