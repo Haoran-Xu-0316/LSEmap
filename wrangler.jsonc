@@ -9,12 +9,5 @@
       "/models/campus.glb"
     ]
   },
-  "main": "web/worker.js",
-  "workers_dev": true,
-  "routes": [
-    {
-      "pattern": "lsemap.haoranxu.me",
-      "custom_domain": true
-    }
-  ]
+  "main": "web/worker.js"
 }
