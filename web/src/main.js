@@ -1,4 +1,6 @@
 import "./style.css";
+import {deviceBudget} from "./device-budget.js";
+import {fetchStartupJson, loadStartupMetadata} from "./startup-metadata.js";
 import { startReleaseSync } from "./release-sync.js";
 import { detailFor } from "./content.js";
 
@@ -19,6 +21,7 @@ let current = null;
 let gallery = [];
 let galleryIndex = 0;
 let loadAttempt = 0;
+let startupController;
 
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -401,6 +404,11 @@ function showFailure(message) {
 
 async function start() {
   const attempt = ++loadAttempt;
+  startupController?.abort();
+  startupController = new AbortController();
+  const startupSignal = startupController.signal;
+  const startupModel = deviceBudget().mobile ? fetchStartupJson("/models/mobile-campus.json", {signal:startupSignal}) : undefined;
+  startupModel?.catch(() => {});
   $("#loading").hidden = false;
   $("#loading-copy").textContent = "正在准备校园模型…";
   $("#fallback").hidden = true;
@@ -412,21 +420,16 @@ async function start() {
     // Observe an early module failure while the metadata requests are pending.
     viewerModule.catch(() => {});
     if (!buildings.length) {
-      const [response, galleryResponse] = await Promise.all([
-        fetch("/models/catalogue.json", { cache: "no-cache" }),
-        fetch("/gallery-manifest.json", { cache: "no-cache" }),
-      ]);
-      if (!response.ok) throw new Error("catalogue");
-      const data = await response.json();
+      const {catalogue: data, gallery: galleryManifest} = await loadStartupMetadata({signal: startupSignal});
+      if (attempt !== loadAttempt) return;
       modelRevision = data.sourceModelSha256;
       modelEdition = data.version;
-      if (!galleryResponse.ok) throw new Error("gallery manifest");
-      const galleryManifest = await galleryResponse.json();
-      if (galleryManifest.sourceModelSha256 !== modelRevision || galleryManifest.version !== modelEdition)
+      if (galleryManifest && (galleryManifest.sourceModelSha256 !== modelRevision || galleryManifest.version !== modelEdition))
         throw new Error("Model and gallery releases do not match");
-      galleryDigests = new Map(galleryManifest.images.map(image => [image.name, image.sha256]));
-      modelAssetRevision = galleryManifest.modelAssetsSha256 || modelRevision;
-      document.documentElement.dataset.modelAssetRevision = modelAssetRevision;
+      galleryDigests = new Map((galleryManifest?.images ?? []).map(image => [image.name, image.sha256]));
+      modelAssetRevision = galleryManifest?.modelAssetsSha256 || "";
+      if (modelAssetRevision) document.documentElement.dataset.modelAssetRevision = modelAssetRevision;
+      else delete document.documentElement.dataset.modelAssetRevision;
       document.documentElement.dataset.modelRevision = modelRevision;
       buildings = [...data.buildings].sort(
         (a, b) =>
@@ -458,12 +461,13 @@ async function start() {
     viewer = candidate;
     await candidate.load((event) => {
       if (attempt !== loadAttempt) return;
-      $("#loading-copy").textContent = event.total
+      const copy = event.total
         ? event.loaded >= event.total
           ? "正在整理建筑几何…"
           : `正在加载校园模型 ${Math.round((event.loaded / event.total) * 100)}%`
         : "正在加载校园模型…";
-    });
+      if ($("#loading-copy").textContent !== copy) $("#loading-copy").textContent = copy;
+    }, {sourceModelSha256:modelRevision, startupModel});
     if (attempt !== loadAttempt) return;
     $("#loading").hidden = true;
     for (const id of [
@@ -569,7 +573,10 @@ mobile.addEventListener("change", () => {
   // CSS and ResizeObserver adapt layout without rebuilding the selected view.
   if (!current) setSidebar(!mobile.matches);
 });
-window.addEventListener("pagehide", () => viewer?.dispose());
+window.addEventListener("pagehide", () => {
+  startupController?.abort();
+  viewer?.dispose();
+});
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
     viewer = null;
