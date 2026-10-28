@@ -11,8 +11,7 @@
 /models/details/*
   Cache-Control: public, max-age=31536000, immutable
 /models/details/*.glb.gz
-  Content-Type: model/gltf-binary
-  Content-Encoding: gzip
+  Content-Type: application/gzip
 /models/campus-*.bin
   Cache-Control: public, max-age=31536000, immutable
 /models/campus-*.bin.gz
