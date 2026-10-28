@@ -55,3 +55,14 @@ to check motion stability without counting real camera displacement as flicker.
 `web/tests/mobile-render-budget271.mjs` checks
 actual portrait, landscape and tablet attachments, HDR colour and native fallback.
 Keep browser-owned display allocations separate from the offscreen buffer budget.
+
+The release build also writes a lossless `.glb.gz` mobile transport, records it in
+`mobile-campus.json` and checks that decompression exactly reproduces the original
+GLB. `_headers` supplies HTTP gzip encoding for this asset. Content-addressed model
+files use immutable caching; mutable catalogue, transport and release descriptors
+remain revalidated. No domain or routing changes are part of this optimization.
+
+`web/tests/mobile-transfer282.mjs` compares original and compressed transfers over
+the same bounded local connection in WebKit and verifies a cache-only model
+reopen. It checks the existing pixel ratio and repeat-transfer count; its timings do not
+establish physical-phone performance or domain reachability without a VPN.
