@@ -335,8 +335,9 @@ export class CampusViewer {
       if(startup.transport && (startup.transport.encoding!=='gzip'||startup.transport.url!==startup.url+'.gz'))
         throw Error('Invalid mobile transport');
     }
-    const gltf = await this.loadAsset(startup.transport?.url ?? startup.url, onProgress, undefined, {
-      sha256:startup.sha256, expectedBytes:startup.bytes, fallbackUrl:startup.transport ? startup.url : undefined,
+    const compressed = startup.transport && typeof DecompressionStream === 'function';
+    const gltf = await this.loadAsset(compressed ? startup.transport.url : startup.url, onProgress, undefined, {
+      sha256:startup.sha256, expectedBytes:startup.bytes, fallbackUrl:compressed ? startup.url : undefined,
     });
     this.canvas.dataset.resourceProfile=this.budget.mobile?'mobile':'desktop';
     this.campus = gltf.scene;
