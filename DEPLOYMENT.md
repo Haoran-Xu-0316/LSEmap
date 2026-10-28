@@ -58,7 +58,7 @@ Keep browser-owned display allocations separate from the offscreen buffer budget
 
 The release build also writes a lossless `.glb.gz` mobile transport, records it in
 `mobile-campus.json` and checks that decompression exactly reproduces the original
-GLB. `_headers` supplies HTTP gzip encoding for this asset. Content-addressed model
+GLB. `_headers` identifies this asset as a gzip file; capable browsers decompress its stream explicitly. This also tolerates an extra HTTP compression layer from the edge. Content-addressed model
 files use immutable caching; mutable catalogue, transport and release descriptors
 remain revalidated. No domain or routing changes are part of this optimization.
 
