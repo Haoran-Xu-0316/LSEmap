@@ -8,6 +8,7 @@ export default defineConfig({
     rolldownOptions: {
       output: {
         manualChunks(id) {
+          if (["startup-metadata.js", "abort-utils.js", "device-budget.js"].some(name=>id.endsWith("/web/src/"+name))) return "startup";
           if (id.includes("/node_modules/three/")) return "three";
         },
       },
