@@ -634,3 +634,16 @@ verified Cloudflare deployment and live acceptance checks.
 Official LSE, architect and user-supplied references stay in the local evidence
 archive. The browser does not redistribute those photographs. Asset credits and
 self-hosted font licences are included with the release.
+
+## Resource loading
+
+Mobile loading uses a lossless HTTP-gzip copy of the existing overview, reducing
+its transfer from15,453,640 to10,193,202 bytes. The decoded GLB checksum, native
+model, textures and rendering quality stay unchanged. A failed compressed request
+can fall back to the original verified file.
+
+One content-checked model cache retains the current overview for repeat visits.
+Startup fetches the mobile descriptor alongside the application, reuses the
+loaded catalogue, and bounds metadata waits. The optional gallery index cannot
+hold the model indefinitely. Known model sizes allow direct streaming into the
+final buffer without retaining every downloaded chunk.
