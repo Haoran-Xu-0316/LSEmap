@@ -637,7 +637,7 @@ self-hosted font licences are included with the release.
 
 ## Resource loading
 
-Mobile loading uses a lossless HTTP-gzip copy of the existing overview, reducing
+Mobile loading uses a lossless gzip copy of the existing overview, reducing
 its transfer from15,453,640 to10,193,202 bytes. The decoded GLB checksum, native
 model, textures and rendering quality stay unchanged. A failed compressed request
 can fall back to the original verified file.
