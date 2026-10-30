@@ -8,11 +8,11 @@ An interactive architectural study of the London School of Economics campus.
 
 ## Current model
 
-Edition279 contains31 building records,30 detailed exteriors,25 interior views
+Edition283 contains31 building records,30 detailed exteriors,25 interior views
 and35 selectable room studies. The combined editable model is
-kept locally at `result/blender/LSE_campus_detailed_v279.blend`. GitHub contains
+kept locally at `result/blender/LSE_campus_detailed_v283.blend`. GitHub contains
 the current browser models, presentation assets and authoring/export scripts.
-The local `stage279` acceptance records are retained with the native: integration
+The local `stage283` acceptance records are retained with the native: integration
 and export compare loaded objects with the accepted fingerprint snapshots before
 writing a release.
 
@@ -40,8 +40,8 @@ facade views; interior cameras keep their full range. Below the true horizon,
 neutral atmospheric distance blends with the district edge.
 
 Touch devices use a derived mobile overview and load the original full exterior
-when a building is selected. The current overview is15.4MB on disk with69.3MB of
-decoded geometry, compared with313.2MB for the desktop campus. Public ground and
+when a building is selected. The current overview is15.4MB on disk with69.5MB of
+decoded geometry, compared with313.6MB for the desktop campus. Public ground and
 landscape primitives retain their visible surfaces; the encoder removes
 zero-area faces. At most two full exterior models and two public interiors are
 retained on mobile. A single decoder and1024px shadows keep the resource budget
@@ -62,6 +62,13 @@ asset, verify the complete set and replace the active model directory with
 rollback protection. Regenerate the gallery and build after promotion.
 `npm run prepare:mobile` remains available when the active full campus is already
 current. The build rejects a stale source hash or an exceeded mobile budget.
+
+Edition283 corrects the five-row grids in the two photographed outer Houghton
+entrance windows at OLD. It also coordinates Marshall's four Ground lift cores,
+five doorway positions and adjacent ceiling apertures, retaining all original
+objects and35 independent room studies. Ground heights remain display estimates;
+no full-height lift shaft is claimed. SAW's candidate single-slope roof conflicts
+with the published D-D section and remains excluded pending reconstruction.
 
 Edition279 adds Lindsey House's photographed five-axis stucco frontage at the
 western park edge, replacing two plain context faces with14window and2door
@@ -638,7 +645,7 @@ self-hosted font licences are included with the release.
 ## Resource loading
 
 Mobile loading uses a lossless gzip copy of the existing overview, reducing
-its transfer from15,453,640 to10,193,202 bytes. The decoded GLB checksum, native
+its transfer from15,454,084 to10,193,732 bytes. The decoded GLB checksum, native
 model, textures and rendering quality stay unchanged. A failed compressed request
 can fall back to the original verified file.
 
