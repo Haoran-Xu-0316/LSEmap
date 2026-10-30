@@ -5537,7 +5537,7 @@
     ],
     "photographicBoundary": "Physical corrections do not establish new facade dimensions or current photograph capture dates."
   },
-  "sourceVersion": 279,
+  "sourceVersion": 283,
   "roomReview200": {
     "rooms": [
       "OLD.3.21",
@@ -5847,5 +5847,15 @@
     "audit": "result/blender/street277/audit.json",
     "nativeProof": "result/blender/stage279/independent-verification.json",
     "limitations": "Only photographed principal facade; adjacent57-58features and unseen roof details not inferred."
+  },
+  "buildingReview283": {
+    "scope": "OLD two outer Houghton ground-window five-row grids; MAR Ground four-core walls, five doorways and adjoining ceiling apertures.",
+    "nativeProof": "result/blender/stage283/independent-verification.json",
+    "sourceModelSha256": "e94de986506fbb9a577314ae8d871e45c1d412a66b39d7a11c3c52e8c232d99a",
+    "originalObjectsProtected": 8774,
+    "originalMaterialGraphsProtected": 2357,
+    "independentRoomsProtected": 35,
+    "excludedCandidate": "SAW single-slope roof conflicts with D-D source section; candidate remains private.",
+    "limitations": "Ground heights, doorway heads and facade grid spacing remain estimates; no complete building or full-height lift acceptance."
   }
 }
