@@ -24,13 +24,15 @@ do not turn the experience into a mandatory guided sequence.
 
 ## Current Verified Baseline
 
-Edition 30 is the local source and release candidate; the last verified public release remains edition 24. It contains 31 catalogue records,
-30 exterior models and partial interiors in 25 buildings: five public-space studies
-and twenty-four room samples, including independent classrooms in Marshall, CBG
-and CKK. Fifteen room samples were added in edition 20, with exterior repairs
-to KSW, 50L, 51L and SAR. All 73 website gallery views use the production CampusViewer and exported GLBs.
-The build checks renderer, camera-preset and exported-model digests. Native Cycles
-renders are retained only for offline comparison.
+Edition283 is the current native model and browser export. It retains31 catalogue
+records,30 detailed exteriors,25 public-interior views and35 independent room
+studies. OLD's two outer Houghton entrance windows now use the photographed
+five-row grids. MAR's four Ground lift cores, five doorway positions and nearby
+ceiling apertures are coordinated within the available source plans. The campus
+remains a partial architectural study. SAW's unresolved roof candidate is excluded.
+All208 website gallery views use the production CampusViewer and exported GLBs.
+The build checks renderer, camera-preset and exported-model digests. Native
+comparison renders remain private.
 The viewer approximates Cycles finishes with self-hosted real-time materials.
 Detailed geometry loads on demand; the overview retains the exterior construction
 but omits sub-centimetre finishing and uses simpler shading.
