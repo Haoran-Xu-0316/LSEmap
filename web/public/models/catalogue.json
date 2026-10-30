@@ -28,8 +28,8 @@
       "nativeImage": "SITE_NEXT_globe_map_India_green"
     }
   ],
-  "version": "279",
-  "sourceModelSha256": "b03a0caec932c50e0c7d8ad2a725a43b80eb38abee716f1d1c2d30cde767982c",
+  "version": "283",
+  "sourceModelSha256": "e94de986506fbb9a577314ae8d871e45c1d412a66b39d7a11c3c52e8c232d99a",
   "coordinateSystem": "Local metres; X east, Y up, Z south",
   "origin": [
     -0.1167,
@@ -5599,7 +5599,7 @@
       "interiorBounds": {
         "min": [
           -44.53135299682617,
-          0.07000000029802322,
+          0.10000000149011612,
           -77.66929626464844
         ],
         "max": [
@@ -5609,10 +5609,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/mar-exterior-bc6f5ddcacc0.glb",
-        "bytes": 3072444,
-        "triangles": 280129,
-        "sha256": "bc6f5ddcacc076be7c92e8f304286069f4f623121bf54683ab51edc6b2cfd6bd",
+        "url": "/models/details/mar-exterior-84f221187226.glb",
+        "bytes": 3081484,
+        "triangles": 281371,
+        "sha256": "84f2211872263e880eb775950d50a24491f3603c01456f6393a7cd6cbed80b74",
         "bounds": {
           "min": [
             -45.36549377441406,
@@ -5627,14 +5627,14 @@
         }
       },
       "detailedInterior": {
-        "url": "/models/details/mar-interior-f5a3b2e31c94.glb",
-        "bytes": 576128,
-        "triangles": 57103,
-        "sha256": "f5a3b2e31c940fbe3dad23d4c8be3d1f1cda645c3989643d71ddec13ecf53a94",
+        "url": "/models/details/mar-interior-e50b20d4c265.glb",
+        "bytes": 577796,
+        "triangles": 57805,
+        "sha256": "e50b20d4c265c34f522087172875e4a59d62e8f06c6ff6b02d3d6222d088e945",
         "bounds": {
           "min": [
             -44.53135299682617,
-            0.07000000029802322,
+            0.10000000149011612,
             -77.66929626464844
           ],
           "max": [
@@ -6180,10 +6180,10 @@
         ]
       },
       "detailedExterior": {
-        "url": "/models/details/old-exterior-21cef03f0849.glb",
-        "bytes": 11682604,
-        "triangles": 967820,
-        "sha256": "21cef03f084959779b3d665427c14389ac4084db8207fcb415277fccf715fcb7",
+        "url": "/models/details/old-exterior-92ace06a7b4b.glb",
+        "bytes": 11682900,
+        "triangles": 967844,
+        "sha256": "92ace06a7b4bd6f53adf0533e43cf89cc40b03731f704631b2d1a22687ff3cea",
         "bounds": {
           "min": [
             -39.1646614074707,
